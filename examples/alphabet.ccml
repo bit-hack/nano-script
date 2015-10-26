@@ -1,0 +1,12 @@
+# this is a comment
+function main()
+    var c = 65
+    while (1)
+        putc(c)
+        c = c + 1
+        if (c > 90)
+            putc(10)
+            c = 65
+        end
+    end
+end

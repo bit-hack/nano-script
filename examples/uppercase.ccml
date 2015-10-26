@@ -1,0 +1,8 @@
+function main( )
+    var c = getc()
+    if (c >= 65 and c <= 90)
+        putc(48)
+    else
+        putc(49)
+    end
+end

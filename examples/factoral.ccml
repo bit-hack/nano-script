@@ -1,0 +1,11 @@
+function factoral(val)
+    if (val <= 1)
+        return 1
+    else
+        return val * factoral(val - 1)
+    end
+end
+
+function main()
+    return factoral(4)
+end
