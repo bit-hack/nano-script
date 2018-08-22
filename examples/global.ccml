@@ -1,0 +1,8 @@
+var my_global = 1234
+
+function main()
+
+    my_global = my_global * 2
+
+    return my_global
+end
