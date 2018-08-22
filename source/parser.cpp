@@ -68,6 +68,27 @@ bool parser_t::is_operator() {
   return op_type(stream_.type()) > 0;
 }
 
+void parser_t::load_ident(const token_t &t) {
+  assembler_t &asm_ = ccml_.assembler();
+  token_stream_t &stream_ = ccml_.lexer().stream_;
+
+  // try to load from local variable
+  int32_t index = 0;
+  if (func().find(t.str_, index)) {
+    asm_.emit(INS_GETV, index);
+    return;
+  }
+  // try to load from global variable
+  for (uint32_t i = 0; i < global_.size(); ++i) {
+    if (global_[i].token_->str_ == t.str_) {
+      asm_.emit(INS_GETG, i);
+      return;
+    }
+  }
+  // unable to find identifier
+  ccml_.on_error_(t.line_no_, "unknown identifier '%s'", t.str_.c_str());
+}
+
 void parser_t::parse_lhs() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
@@ -76,12 +97,12 @@ void parser_t::parse_lhs() {
     parse_expr();
     stream_.found(TOK_RPAREN);
   } else if (token_t *t = stream_.found(TOK_IDENT)) {
-
-    // call function
     if (stream_.found(TOK_LPAREN)) {
+      // call function
       parse_call(t);
     } else {
-      asm_.emit(INS_GETV, func().find(t->str_));
+      // load a local/global
+      load_ident(*t);
     }
   } else if (token_t *t = stream_.found(TOK_VAL)) {
     asm_.emit(INS_CONST, t->val_);
@@ -105,7 +126,7 @@ void parser_t::parse_expr() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
-  const bool has_not = stream_.found(TOK_NOT);
+  const bool has_not = (stream_.found(TOK_NOT) != nullptr);
 
   uint32_t tide = op_stack_.size();
   parse_expr_ex(tide);
@@ -123,9 +144,13 @@ void parser_t::parse_decl() {
   token_t *name = stream_.pop(TOK_IDENT);
   func().ident_.push_back(name->str_);
 
-  if (stream_.found(TOK_ASSIGN)) {
+  if (token_t *t = stream_.found(TOK_ASSIGN)) {
     parse_expr();
-    asm_.emit(INS_SETV, func().find(name->str_));
+    int32_t index = 0;
+    if (!func().find(name->str_, index)) {
+      assert(!"identifier should be known");
+    }
+    asm_.emit(INS_SETV, index);
   }
 }
 
@@ -133,7 +158,12 @@ void parser_t::parse_assign(token_t *name) {
   assembler_t &asm_ = ccml_.assembler();
 
   parse_expr();
-  asm_.emit(INS_SETV, func().find(name->str_));
+  int32_t index = 0;
+  if (!func().find(name->str_, index)) {
+    ccml_.on_error_(name->line_no_, "cant assign to unknown identifier '%s'",
+                    name->str_.c_str());
+  }
+  asm_.emit(INS_SETV, index);
 }
 
 void parser_t::parse_call(token_t *name) {

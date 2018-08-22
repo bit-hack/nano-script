@@ -15,14 +15,14 @@ struct parser_t {
 
     int32_t frame_size() const { return ident_.size(); }
 
-    int32_t find(const std::string &str) {
+    bool find(const std::string &str, int32_t &index) {
       for (uint32_t i = 0; i < ident_.size(); i++) {
         if (str == ident_[i]) {
-          return i - frame_;
+          index = i - frame_;
+          return true;
         }
       }
-      throws("unknown identifier");
-      return -1;
+      return false;
     }
   };
 
@@ -68,8 +68,7 @@ protected:
   bool is_operator();
   int32_t op_type(token_e type);
 
-  bool is_local(token_t *name) const;
-  bool is_global(token_t *name) const;
+  void load_ident(const token_t &name);
 
   void op_push(token_e op, uint32_t tide);
   void op_popall(uint32_t tide);
