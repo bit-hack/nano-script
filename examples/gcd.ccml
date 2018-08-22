@@ -1,0 +1,16 @@
+function main()
+
+    var a = 81
+    var b = 153
+
+    while (not a == b)
+        if (a > b)
+            a = a - b
+        else
+            b = b - a
+        end
+    end
+
+    # should equal 9
+    return a
+end
