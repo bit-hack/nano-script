@@ -20,6 +20,13 @@ struct lexer_t;
 struct parser_t;
 struct assembler_t;
 struct vm_t;
+struct token_t;
+struct token_stream_t;
+
+struct ccml_error_t {
+  std::string error;
+  uint32_t line;
+};
 
 struct ccml_t {
 
@@ -35,11 +42,18 @@ struct ccml_t {
   vm_t &vm() { return *vm_; }
 
 private:
+  friend struct lexer_t;
+  friend struct parser_t;
+  friend struct assembler_t;
+  friend struct vm_t;
+  friend struct token_stream_t;
+
+  void on_error_(uint32_t line, const char *fmt, ...);
+
   std::unique_ptr<lexer_t> lexer_;
   std::unique_ptr<parser_t> parser_;
   std::unique_ptr<assembler_t> assembler_;
   std::unique_ptr<vm_t> vm_;
-  std::vector<std::string> error_;
 };
 
 typedef void (*ccml_syscall_t)(struct thread_t &thread);

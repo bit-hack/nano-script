@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <cstdio>
 
 #include "assembler.h"
@@ -77,8 +78,9 @@ int main(int argc, char **argv) {
     printf("exit: %d\n", res);
     getchar();
 
-  } catch (const char *msg) {
-    printf("%s", msg);
+  } catch (const ccml_error_t &msg) {
+    fprintf(stderr, "line:%d - %s\n", msg.line, msg.error.c_str());
+    fflush(stderr);
     exit(1);
   }
 

@@ -1,8 +1,11 @@
 #pragma once
-#include "ccml.h"
-#include "token.h"
 #include <cstring>
 #include <string>
+#include <array>
+
+#include "ccml.h"
+#include "token.h"
+
 
 enum instruction_e {
   INS_ADD,
@@ -18,16 +21,24 @@ enum instruction_e {
   INS_LEQ,
   INS_GEQ,
   INS_EQ,
-  INS_JMP,
+
+  INS_JMP,      // conditional jump to code offset
   INS_CALL,     // call a function
   INS_RET,      // return to previous frame {popping args}
   INS_POP,      // pop constant from stack
   INS_CONST,    // push constant
-  INS_GETV,     // get variable
-  INS_SETV,     // set variable
+
+  INS_GETV,     // get local
+  INS_SETV,     // set local
+
   INS_NOP,      // no operation
   INS_SCALL,    // system call
   INS_LOCALS,   // number of locals to reserve on the stack
+
+  INS_GETG,     // get global
+  INS_SETG,     // set global
+
+  __INS_COUNT__,  // number of instructions
 };
 
 struct assembler_t {
@@ -54,7 +65,9 @@ struct assembler_t {
   // return a reference to the last instructions operand
   int32_t &get_fixup();
 
-  const uint8_t *get_code() const { return code_; }
+  const uint8_t *get_code() const {
+    return code_.data();
+  }
 
 protected:
   void write8(uint8_t v);
@@ -62,5 +75,5 @@ protected:
 
   ccml_t &ccml_;
   uint32_t head_;
-  uint8_t code_[1024];
+  std::array<uint8_t, 1024> code_;
 };

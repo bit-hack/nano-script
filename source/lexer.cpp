@@ -197,7 +197,8 @@ bool lexer_t::lex(const char *s) {
       }
     }
 
-    throws("unexpected character in source");
+    // raise an error
+    ccml_.on_error_(line_no_, "unexpected character '%c' in source", *s);
 
   } // while
   stream_.push(token_t{TOK_EOF, line_no_});

@@ -4,11 +4,14 @@
 namespace {
 
 const char *gMnemonic[] = {
-    "INS_ADD",  "INS_SUB",  "INS_MUL",  "INS_DIV",   "INS_MOD", "INS_AND",
-    "INS_OR",   "INS_NOT",  "INS_LT",   "INS_GT",    "INS_LEQ", "INS_GEQ",
-    "INS_EQ",   "INS_JMP",  "INS_CALL", "INS_RET",   "INS_POP", "INS_CONST",
-    "INS_GETV", "INS_SETV", "INS_NOP",  "INS_SCALL", "INS_LOCALS"
-};
+    "INS_ADD", "INS_SUB",   "INS_MUL",    "INS_DIV",  "INS_MOD",
+    "INS_AND", "INS_OR",    "INS_NOT",    "INS_LT",   "INS_GT",
+    "INS_LEQ", "INS_GEQ",   "INS_EQ",     "INS_JMP",  "INS_CALL",
+    "INS_RET", "INS_POP",   "INS_CONST",  "INS_GETV", "INS_SETV",
+    "INS_NOP", "INS_SCALL", "INS_LOCALS", "INS_GETG", "INS_SETG"};
+
+// make sure this is kept up to date with the opcode table 'instruction_e'
+static_assert(sizeof(gMnemonic) / sizeof(const char*) == __INS_COUNT__, "");
 };
 
 assembler_t::assembler_t(ccml_t &c)
@@ -18,34 +21,38 @@ assembler_t::assembler_t(ccml_t &c)
 
 int32_t *assembler_t::cjmp() {
   emit(INS_JMP, 0);
-  return (int32_t *)(code_ + (head_ - 4));
+  return (int32_t *)(code_.data() + (head_ - 4));
 }
 
-void assembler_t::cjmp(int32_t pos) { emit(INS_JMP, pos); }
+void assembler_t::cjmp(int32_t pos) {
+  emit(INS_JMP, pos);
+}
 
-void assembler_t::write8(uint8_t v) { code_[head_++] = v; }
+void assembler_t::write8(uint8_t v) {
+  code_[head_++] = v;
+}
 
 void assembler_t::write32(int32_t v) {
-  memcpy(code_ + head_, &v, sizeof(v));
+  memcpy(code_.data() + head_, &v, sizeof(v));
   head_ += 4;
 }
 
 void assembler_t::emit(instruction_e ins) {
   switch (ins) {
-  case (INS_ADD):
-  case (INS_SUB):
-  case (INS_MUL):
-  case (INS_DIV):
-  case (INS_MOD):
-  case (INS_AND):
-  case (INS_OR):
-  case (INS_NOT):
-  case (INS_LT):
-  case (INS_GT):
-  case (INS_LEQ):
-  case (INS_GEQ):
-  case (INS_EQ):
-  case (INS_NOP):
+  case INS_ADD:
+  case INS_SUB:
+  case INS_MUL:
+  case INS_DIV:
+  case INS_MOD:
+  case INS_AND:
+  case INS_OR:
+  case INS_NOT:
+  case INS_LT:
+  case INS_GT:
+  case INS_LEQ:
+  case INS_GEQ:
+  case INS_EQ:
+  case INS_NOP:
     write8(ins);
     break;
   default:
@@ -55,14 +62,16 @@ void assembler_t::emit(instruction_e ins) {
 
 void assembler_t::emit(instruction_e ins, int32_t v) {
   switch (ins) {
-  case (INS_JMP):
-  case (INS_CALL):
-  case (INS_RET):
-  case (INS_POP):
-  case (INS_CONST):
-  case (INS_GETV):
-  case (INS_SETV):
-  case (INS_LOCALS):
+  case INS_JMP:
+  case INS_CALL:
+  case INS_RET:
+  case INS_POP:
+  case INS_CONST:
+  case INS_GETV:
+  case INS_SETV:
+  case INS_LOCALS:
+  case INS_GETG:
+  case INS_SETG:
     write8(ins);
     write32(v);
     break;
@@ -73,7 +82,7 @@ void assembler_t::emit(instruction_e ins, int32_t v) {
 
 void assembler_t::emit(ccml_syscall_t sys) {
   write8(INS_SCALL);
-  memcpy(code_ + head_, &sys, sizeof(ccml_syscall_t));
+  memcpy(code_.data() + head_, &sys, sizeof(ccml_syscall_t));
   head_ += sizeof(ccml_syscall_t);
 }
 
@@ -132,6 +141,8 @@ int32_t assembler_t::disasm(const uint8_t *ptr) const {
   case INS_GETV:
   case INS_SETV:
   case INS_LOCALS:
+  case INS_GETG:
+  case INS_SETG:
     printf("%-12s %d\n", gMnemonic[op], val);
     return i;
   }
@@ -143,7 +154,7 @@ int32_t assembler_t::disasm() {
   uint32_t count = 0;
   for (uint32_t i = 0; i < head_; ++count) {
     printf("%04d ", i);
-    const int32_t nb = disasm(code_ + i);
+    const int32_t nb = disasm(code_.data() + i);
     if (nb <= 0) {
       throws("unknown opcode");
     }
@@ -173,6 +184,7 @@ void assembler_t::emit(token_e tok) {
 }
 
 int32_t &assembler_t::get_fixup() {
+  // warning: if code_ can grow this will error
   assert(head_ >= sizeof(int32_t));
-  return *reinterpret_cast<int32_t*>(code_ + (head_ - sizeof(int32_t)));
+  return *reinterpret_cast<int32_t*>(code_.data() + (head_ - sizeof(int32_t)));
 }

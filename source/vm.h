@@ -9,12 +9,13 @@ struct thread_t {
     int32_t pc_;
   };
 
-  int32_t pc_;
+  int32_t pc_;              // program counter
   std::vector<int32_t> s_;  // value stack
   std::vector<frame_t> f_;  // frames
+  std::vector<int32_t> g_;  // globals
 
   int32_t pop() {
-    int32_t v = s_.back();
+    const int32_t v = s_.back();
     s_.pop_back();
     return v;
   }
@@ -27,19 +28,19 @@ struct thread_t {
   }
 
   int32_t getv(int32_t offs) {
-    int32_t index = f_.back().sp_ + offs;
+    const int32_t index = f_.back().sp_ + offs;
     assert(index >= 0);
     return s_[index];
   }
 
   void setv(int32_t offs, int32_t val) {
-    int32_t index = f_.back().sp_ + offs;
+    const int32_t index = f_.back().sp_ + offs;
     assert(index >= 0);
     s_[index] = val;
   }
 
   int32_t ret(int32_t val) {
-    int32_t sval = pop();
+    const int32_t sval = pop();
     while (val > 0) {
       pop();
       --val;

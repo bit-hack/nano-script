@@ -72,8 +72,10 @@ struct token_t {
 
 struct token_stream_t {
 
-  token_stream_t()
-    : index_(0) {
+  token_stream_t(ccml_t &ccml)
+    : ccml_(ccml)
+    , index_(0)
+    , line_no_(0) {
   }
 
   token_e type() {
@@ -82,18 +84,24 @@ struct token_stream_t {
 
   token_t *found(token_e type) {
     if (stream_[index_].type_ == type)
-      return &stream_[index_++];
+      return pop();
     return nullptr;
   }
 
   token_t *pop(token_e type) {
     if (token_t *t = found(type))
       return t;
-    throws("unexpected token");
+    const auto &tok = stream_[index_];
+    ccml_.on_error_(
+      tok.line_no_,
+      "unexpected token '%d' expecting '%d'",
+      tok.type_,
+      type);
     return nullptr;
   }
 
   token_t *pop() {
+    line_no_ = stream_[index_].line_no_;
     return &stream_[index_++];
   }
 
@@ -105,6 +113,8 @@ struct token_stream_t {
     index_ = 0;
   }
 
+  ccml_t &ccml_;
   uint32_t index_;
+  uint32_t line_no_;
   std::vector<token_t> stream_;
 };
