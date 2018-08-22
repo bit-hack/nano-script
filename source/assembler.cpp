@@ -61,6 +61,7 @@ void assembler_t::emit(instruction_e ins) {
 }
 
 void assembler_t::emit(instruction_e ins, int32_t v) {
+  // XXX: allow this function to return a fixup reference
   switch (ins) {
   case INS_JMP:
   case INS_CALL:
