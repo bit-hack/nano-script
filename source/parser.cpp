@@ -105,11 +105,15 @@ void parser_t::parse_expr() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
-  if (stream_.found(TOK_NOT))
-    asm_.emit(INS_NOT);
+  const bool has_not = stream_.found(TOK_NOT);
+
   uint32_t tide = op_stack_.size();
   parse_expr_ex(tide);
   op_popall(tide);
+
+  if (has_not) {
+    asm_.emit(INS_NOT);
+  }
 }
 
 void parser_t::parse_decl() {
