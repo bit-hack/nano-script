@@ -10,8 +10,8 @@ struct thread_t {
   };
 
   int32_t pc_;
-  std::vector<int32_t> s_;
-  std::vector<frame_t> f_;
+  std::vector<int32_t> s_;  // value stack
+  std::vector<frame_t> f_;  // frames
 
   int32_t pop() {
     int32_t v = s_.back();
@@ -45,7 +45,7 @@ struct thread_t {
       --val;
     }
     push(sval);
-    int32_t pc = f_.back().pc_;
+    const int32_t pc = f_.back().pc_;
     f_.pop_back();
     return pc;
   }

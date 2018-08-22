@@ -111,10 +111,12 @@ void parser_t::parse_decl() {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   token_t *name = stream_.pop(TOK_IDENT);
+  func().ident_.push_back(name->str_);
+
   if (stream_.found(TOK_ASSIGN)) {
     parse_expr();
+    asm_.emit(INS_SETV, func().find(name->str_));
   }
-  func().ident_.push_back(name->str_);
 }
 
 void parser_t::parse_assign(token_t *name) {
@@ -256,13 +258,24 @@ void parser_t::parse_function() {
   stream_.pop(TOK_EOL);
   // save frame index
   func().frame_ = func().ident_.size();
+
+  // emit placeholder prologue
+  asm_.emit(INS_LOCALS, 0);
+  int32_t &locals = asm_.get_fixup();
+
   // function body
   while (!stream_.found(TOK_END)) {
     parse_stmt();
   }
-  // emit dummy prologue
+
+  // emit dummy epilogue
   asm_.emit(INS_CONST, 0);
   asm_.emit(INS_RET, func().frame_size());
+
+  // fixup the number of locals we are reserving
+  const uint32_t num_locals = func().ident_.size() - func().frame_;
+  if (num_locals)
+    locals = num_locals;
 }
 
 void parser_t::op_push(token_e op, uint32_t tide) {

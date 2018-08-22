@@ -25,67 +25,73 @@ int32_t vm_t::execute(int32_t tgt_pc, int32_t argc, int32_t *argv) {
   // while we havent returned from frame 0
   while (t.f_.size() > 0) {
 
-    uint8_t op = c[pc];
+#if 1
+    // print an instruction trace
+    printf(" > ");
+    ccml_.assembler().disasm(c + pc);
+#endif
+
+    const uint8_t op = c[pc];
     pc += 1;
 
     switch (op) {
     case (INS_ADD): {
-      int32_t r = t.pop(), l = t.pop();
+      const int32_t r = t.pop(), l = t.pop();
       t.push(l + r);
     }
       continue;
     case (INS_SUB): {
-      int32_t r = t.pop(), l = t.pop();
+      const int32_t r = t.pop(), l = t.pop();
       t.push(l - r);
     }
       continue;
     case (INS_MUL): {
-      int32_t r = t.pop(), l = t.pop();
+      const int32_t r = t.pop(), l = t.pop();
       t.push(l * r);
     }
       continue;
     case (INS_DIV): {
-      int32_t r = t.pop(), l = t.pop();
+      const int32_t r = t.pop(), l = t.pop();
       t.push(l / r);
     }
       continue;
     case (INS_MOD): {
-      int32_t r = t.pop(), l = t.pop();
+      const int32_t r = t.pop(), l = t.pop();
       t.push(l % r);
     }
       continue;
     case (INS_AND): {
-      int32_t r = t.pop(), l = t.pop();
+      const int32_t r = t.pop(), l = t.pop();
       t.push(l && r);
     }
       continue;
     case (INS_OR): {
-      int32_t r = t.pop(), l = t.pop();
+      const int32_t r = t.pop(), l = t.pop();
       t.push(l || r);
     }
       continue;
     case (INS_LT): {
-      int32_t r = t.pop(), l = t.pop();
+      const int32_t r = t.pop(), l = t.pop();
       t.push(l < r);
     }
       continue;
     case (INS_GT): {
-      int32_t r = t.pop(), l = t.pop();
+      const int32_t r = t.pop(), l = t.pop();
       t.push(l > r);
     }
       continue;
     case (INS_LEQ): {
-      int32_t r = t.pop(), l = t.pop();
+      const int32_t r = t.pop(), l = t.pop();
       t.push(l <= r);
     }
       continue;
     case (INS_GEQ): {
-      int32_t r = t.pop(), l = t.pop();
+      const int32_t r = t.pop(), l = t.pop();
       t.push(l >= r);
     }
       continue;
     case (INS_EQ): {
-      int32_t r = t.pop(), l = t.pop();
+      const int32_t r = t.pop(), l = t.pop();
       t.push(l == r);
     }
       continue;
@@ -113,6 +119,7 @@ int32_t vm_t::execute(int32_t tgt_pc, int32_t argc, int32_t *argv) {
         pc = val;
       break;
     case (INS_CALL):
+      // XXX: reserve space for local variables
       t.new_frame(pc);
       pc = val;
       break;
@@ -134,6 +141,10 @@ int32_t vm_t::execute(int32_t tgt_pc, int32_t argc, int32_t *argv) {
     case (INS_SETV):
       t.setv(val, t.pop());
       break;
+    case (INS_LOCALS):
+      while (val--) {
+        t.push(0);
+      }
     }
   }
 

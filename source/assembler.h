@@ -19,14 +19,15 @@ enum instruction_e {
   INS_GEQ,
   INS_EQ,
   INS_JMP,
-  INS_CALL,
-  INS_RET,
-  INS_POP,
-  INS_CONST,
-  INS_GETV,
-  INS_SETV,
-  INS_NOP,
-  INS_SCALL,
+  INS_CALL,     // call a function
+  INS_RET,      // return to previous frame {popping args}
+  INS_POP,      // pop constant from stack
+  INS_CONST,    // push constant
+  INS_GETV,     // get variable
+  INS_SETV,     // set variable
+  INS_NOP,      // no operation
+  INS_SCALL,    // system call
+  INS_LOCALS,   // number of locals to reserve on the stack
 };
 
 struct assembler_t {
@@ -41,16 +42,17 @@ struct assembler_t {
 
   void emit(token_e);
 
-  void print(const char *str);
-  void print(const char *str, int32_t v);
-
   void emit(instruction_e ins);
   void emit(instruction_e ins, int32_t v);
   void emit(ccml_syscall_t sys);
 
   int32_t pos() const;
 
-  void disasm();
+  int32_t disasm(const uint8_t *ptr) const;
+  int32_t disasm();
+
+  // return a reference to the last instructions operand
+  int32_t &get_fixup();
 
   const uint8_t *get_code() const { return code_; }
 

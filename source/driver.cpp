@@ -72,6 +72,7 @@ int main(int argc, char **argv) {
     printf("entry point: %d\n", func);
 
     int32_t res = ccml.vm().execute(func, 0, nullptr);
+    fflush(stdout);
 
     printf("exit: %d\n", res);
     getchar();
