@@ -59,6 +59,7 @@ int32_t parser_t::op_type(token_e type) {
   case (TOK_OR):
     return 5;
   default:
+    // this is not an operator
     return 0;
   }
 }
@@ -157,13 +158,24 @@ void parser_t::parse_decl() {
 void parser_t::parse_assign(token_t *name) {
   assembler_t &asm_ = ccml_.assembler();
 
+  // parse assignment expression
   parse_expr();
+  // assign to local variable
   int32_t index = 0;
-  if (!func().find(name->str_, index)) {
-    ccml_.on_error_(name->line_no_, "cant assign to unknown identifier '%s'",
-                    name->str_.c_str());
+  if (func().find(name->str_, index)) {
+    asm_.emit(INS_SETV, index);
+    return;
   }
-  asm_.emit(INS_SETV, index);
+  // assign to global variable
+  for (uint32_t i = 0; i < global_.size(); ++i) {
+    if (global_[i].token_->str_ == name->str_) {
+      asm_.emit(INS_SETG, i);
+      return;
+    }
+  }
+  // cant locate variable
+  ccml_.on_error_(name->line_no_, "cant assign to unknown variable '%s'",
+                  name->str_.c_str());
 }
 
 void parser_t::parse_call(token_t *name) {
