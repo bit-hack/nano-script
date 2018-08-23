@@ -85,6 +85,23 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_precedence() {
+  static const char *prog = R"(
+function main()
+  return 2 + 3 * 4 + 5 * (6 + 3)
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+  ccml.assembler().disasm();
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 59;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 static bool test_is_prime() {
   static const char *prog = R"(
 function is_prime(x)
@@ -143,7 +160,6 @@ end
   return res1 == 1 && res2 == 1 && res3 != 1;
 }
 
-
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 typedef bool (*test_t)();
 struct test_pair_t {
@@ -157,6 +173,7 @@ static const test_pair_t tests[] = {
   TEST(return_var),
   TEST(return_arg),
   TEST(test_arg_passing),
+  TEST(test_precedence),
   TEST(test_is_prime),
   TEST(test_hcf),
   // sentinel
