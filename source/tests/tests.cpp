@@ -79,7 +79,6 @@ end
     return false;
   }
   const int32_t func = ccml.parser().find_function("main")->pos_;
-  ccml.assembler().disasm();
   const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
   return res == 11;
 }
@@ -96,9 +95,87 @@ end
     return false;
   }
   const int32_t func = ccml.parser().find_function("main")->pos_;
-  ccml.assembler().disasm();
   const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
   return res == 59;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_global_1() {
+  static const char *prog = R"(
+var global = 1234
+
+function func_b()
+  return global
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("func_b")->pos_;
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 1234;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_global_2() {
+  static const char *prog = R"(
+var global = 1234
+
+function func_a()
+  global = 987
+end
+
+function func_b()
+  func_a()
+  return global
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("func_b")->pos_;
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 987;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_sqrt() {
+  static const char *prog = R"(
+function next(n, i)
+  return (n + i / n) / 2
+end
+
+function abs(i)
+  if (i >= 0)
+    return i
+  else
+    return 0 - i
+  end
+end
+
+function sqrt(number)
+  var n = 1
+  var n1 = next(n, number)
+  while (abs(n1 - n) > 1)
+    n  = n1
+    n1 = next(n, number)
+  end
+  while (n1 * n1 > number)
+    n1 = n1 - 1
+  end
+  return n1
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("sqrt")->pos_;
+  int32_t input[] = {1234};
+  const int32_t res = ccml.vm().execute(func, 1, input+0, false);
+  return res == 35;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -174,6 +251,9 @@ static const test_pair_t tests[] = {
   TEST(return_arg),
   TEST(test_arg_passing),
   TEST(test_precedence),
+  TEST(test_global_1),
+  TEST(test_global_2),
+  TEST(test_sqrt),
   TEST(test_is_prime),
   TEST(test_hcf),
   // sentinel
