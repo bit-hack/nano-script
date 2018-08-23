@@ -19,15 +19,6 @@ assembler_t::assembler_t(ccml_t &c)
   , head_(0)
 {}
 
-int32_t *assembler_t::cjmp() {
-  emit(INS_JMP, 0);
-  return (int32_t *)(code_.data() + (head_ - 4));
-}
-
-void assembler_t::cjmp(int32_t pos) {
-  emit(INS_JMP, pos);
-}
-
 void assembler_t::write8(uint8_t v) {
   code_[head_++] = v;
 }
@@ -37,7 +28,11 @@ void assembler_t::write32(int32_t v) {
   head_ += 4;
 }
 
-void assembler_t::emit(instruction_e ins) {
+void assembler_t::emit(uint32_t line, instruction_e ins) {
+  // insert into the line table
+  const uint8_t *ptr = code_.data() + head_;
+  line_table_[ptr] = line;
+  // encode this instruction
   switch (ins) {
   case INS_ADD:
   case INS_SUB:
@@ -60,8 +55,11 @@ void assembler_t::emit(instruction_e ins) {
   }
 }
 
-void assembler_t::emit(instruction_e ins, int32_t v) {
-  // XXX: allow this function to return a fixup reference
+int32_t *assembler_t::emit(uint32_t line, instruction_e ins, int32_t v) {
+  // insert into the line table
+  const uint8_t *ptr = code_.data() + head_;
+  line_table_[ptr] = line;
+  // encode this instruction
   switch (ins) {
   case INS_JMP:
   case INS_CALL:
@@ -79,9 +77,11 @@ void assembler_t::emit(instruction_e ins, int32_t v) {
   default:
     throws("unknown instruction");
   }
+  // return the operand
+  return (int32_t *)(code_.data() + (head_ - 4));
 }
 
-void assembler_t::emit(ccml_syscall_t sys) {
+void assembler_t::emit(uint32_t line, ccml_syscall_t sys) {
   write8(INS_SCALL);
   memcpy(code_.data() + head_, &sys, sizeof(ccml_syscall_t));
   head_ += sizeof(ccml_syscall_t);
@@ -94,9 +94,14 @@ int32_t assembler_t::pos() const {
 // return number of bytes disassembled or <= 0 on error
 int32_t assembler_t::disasm(const uint8_t *ptr) const {
 
-  uint32_t i = 0;
+  // dump line table mapping
+  auto itt = line_table_.find(ptr);
+  if (itt != line_table_.end()) {
+    printf("%02d  ", itt->second);
+  }
 
   // extract opcode
+  uint32_t i = 0;
   const uint8_t op = ptr[i];
   i += 1;
 
@@ -164,21 +169,21 @@ int32_t assembler_t::disasm() {
   return count;
 }
 
-void assembler_t::emit(token_e tok) {
+void assembler_t::emit(uint32_t line, token_e tok) {
   switch (tok) {
-  case TOK_ADD: emit(INS_ADD); break;
-  case TOK_SUB: emit(INS_SUB); break;
-  case TOK_MUL: emit(INS_MUL); break;
-  case TOK_DIV: emit(INS_DIV); break;
-  case TOK_MOD: emit(INS_MOD); break;
-  case TOK_AND: emit(INS_AND); break;
-  case TOK_OR:  emit(INS_OR ); break;
-  case TOK_NOT: emit(INS_NOT); break;
-  case TOK_EQ:  emit(INS_EQ ); break;
-  case TOK_LT:  emit(INS_LT ); break;
-  case TOK_GT:  emit(INS_GT ); break;
-  case TOK_LEQ: emit(INS_LEQ); break;
-  case TOK_GEQ: emit(INS_GEQ); break;
+  case TOK_ADD: emit(line, INS_ADD); break;
+  case TOK_SUB: emit(line, INS_SUB); break;
+  case TOK_MUL: emit(line, INS_MUL); break;
+  case TOK_DIV: emit(line, INS_DIV); break;
+  case TOK_MOD: emit(line, INS_MOD); break;
+  case TOK_AND: emit(line, INS_AND); break;
+  case TOK_OR:  emit(line, INS_OR ); break;
+  case TOK_NOT: emit(line, INS_NOT); break;
+  case TOK_EQ:  emit(line, INS_EQ ); break;
+  case TOK_LT:  emit(line, INS_LT ); break;
+  case TOK_GT:  emit(line, INS_GT ); break;
+  case TOK_LEQ: emit(line, INS_LEQ); break;
+  case TOK_GEQ: emit(line, INS_GEQ); break;
   default:
     throws("cant emit token type");
   }

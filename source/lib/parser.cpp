@@ -76,13 +76,13 @@ void parser_t::load_ident(const token_t &t) {
   // try to load from local variable
   int32_t index = 0;
   if (func().find(t.str_, index)) {
-    asm_.emit(INS_GETV, index);
+    asm_.emit(t.line_no_, INS_GETV, index);
     return;
   }
   // try to load from global variable
   for (uint32_t i = 0; i < global_.size(); ++i) {
     if (global_[i].token_->str_ == t.str_) {
-      asm_.emit(INS_GETG, i);
+      asm_.emit(t.line_no_, INS_GETG, i);
       return;
     }
   }
@@ -106,7 +106,7 @@ void parser_t::parse_lhs() {
       load_ident(*t);
     }
   } else if (token_t *t = stream_.found(TOK_VAL)) {
-    asm_.emit(INS_CONST, t->val_);
+    asm_.emit(t->line_no_, INS_CONST, t->val_);
   } else {
     ccml_.on_error_(stream_.line_no_, "expecting literal or identifier");
   }
@@ -117,7 +117,7 @@ void parser_t::parse_expr_ex(uint32_t tide) {
 
   parse_lhs();
   if (is_operator()) {
-    token_t *op = stream_.pop();
+    const token_t *op = stream_.pop();
     op_push(op->type_, tide);
     parse_expr_ex(tide);
   }
@@ -127,14 +127,14 @@ void parser_t::parse_expr() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
-  const bool has_not = (stream_.found(TOK_NOT) != nullptr);
+  const token_t *not = stream_.found(TOK_NOT);
 
   uint32_t tide = op_stack_.size();
   parse_expr_ex(tide);
   op_popall(tide);
 
-  if (has_not) {
-    asm_.emit(INS_NOT);
+  if (not) {
+    asm_.emit(not->line_no_, INS_NOT);
   }
 }
 
@@ -142,7 +142,7 @@ void parser_t::parse_decl() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
-  token_t *name = stream_.pop(TOK_IDENT);
+  const token_t *name = stream_.pop(TOK_IDENT);
   func().ident_.push_back(name->str_);
 
   if (token_t *t = stream_.found(TOK_ASSIGN)) {
@@ -151,7 +151,7 @@ void parser_t::parse_decl() {
     if (!func().find(name->str_, index)) {
       assert(!"identifier should be known");
     }
-    asm_.emit(INS_SETV, index);
+    asm_.emit(name->line_no_, INS_SETV, index);
   }
 }
 
@@ -163,13 +163,13 @@ void parser_t::parse_assign(token_t *name) {
   // assign to local variable
   int32_t index = 0;
   if (func().find(name->str_, index)) {
-    asm_.emit(INS_SETV, index);
+    asm_.emit(name->line_no_, INS_SETV, index);
     return;
   }
   // assign to global variable
   for (uint32_t i = 0; i < global_.size(); ++i) {
     if (global_[i].token_->str_ == name->str_) {
-      asm_.emit(INS_SETG, i);
+      asm_.emit(name->line_no_, INS_SETG, i);
       return;
     }
   }
@@ -190,9 +190,9 @@ void parser_t::parse_call(token_t *name) {
   }
   const function_t *func = find_function(name->str_);
   if (func->sys_) {
-    asm_.emit(func->sys_);
+    asm_.emit(name->line_no_, func->sys_);
   } else {
-    asm_.emit(INS_CALL, func->pos_);
+    asm_.emit(name->line_no_, INS_CALL, func->pos_);
   }
 }
 
@@ -205,8 +205,8 @@ void parser_t::parse_if() {
   stream_.pop(TOK_LPAREN);
   parse_expr();
   stream_.pop(TOK_RPAREN);
-  asm_.emit(INS_NOT);
-  int32_t *l1 = asm_.cjmp();
+  asm_.emit(stream_.line_no_, INS_NOT);
+  int32_t *l1 = asm_.emit(stream_.line_no_, INS_JMP, 0);
   // IF body
   while (!stream_.found(TOK_END)) {
     if (stream_.found(TOK_ELSE)) {
@@ -218,8 +218,8 @@ void parser_t::parse_if() {
   int32_t *l2 = nullptr;
   if (has_else) {
     // skip over ELSE body
-    asm_.emit(INS_CONST, 1);
-    l2 = asm_.cjmp();
+    asm_.emit(stream_.line_no_, INS_CONST, 1);
+    l2 = asm_.emit(stream_.line_no_, INS_JMP, 0);
   }
   // ELSE body
   *l1 = asm_.pos();
@@ -243,15 +243,15 @@ void parser_t::parse_while() {
   parse_expr();
   stream_.pop(TOK_RPAREN);
   // GOTO end if false
-  asm_.emit(INS_NOT);
-  int32_t *l2 = asm_.cjmp();
+  asm_.emit(stream_.line_no_, INS_NOT);
+  int32_t *l2 = asm_.emit(stream_.line_no_, INS_JMP, 0);
   // WHILE body
   while (!stream_.found(TOK_END)) {
     parse_stmt();
   }
   // unconditional jump to top
-  asm_.emit(INS_CONST, 1);
-  asm_.cjmp(l1);
+  asm_.emit(stream_.line_no_, INS_CONST, 1);
+  asm_.emit(stream_.line_no_, INS_JMP, l1);
   // WHILE end
   *l2 = asm_.pos();
 }
@@ -271,7 +271,7 @@ void parser_t::parse_stmt() {
     } else if (stream_.found(TOK_LPAREN)) {
       parse_call(var);
       // throw away the return value
-      asm_.emit(INS_POP, 1);
+      asm_.emit(stream_.line_no_, INS_POP, 1);
     } else {
       ccml_.on_error_(stream_.line_no_, "assignment or call expected");
     }
@@ -281,7 +281,7 @@ void parser_t::parse_stmt() {
     parse_while();
   } else if (stream_.found(TOK_RETURN)) {
     parse_expr();
-    asm_.emit(INS_RET, func().frame_size());
+    asm_.emit(stream_.line_no_, INS_RET, func().frame_size());
   } else {
     ccml_.on_error_(stream_.line_no_, "statement expected");
   }
@@ -312,7 +312,7 @@ void parser_t::parse_function() {
   func().frame_ = func().ident_.size();
 
   // emit dummy prologue
-  asm_.emit(INS_LOCALS, 0);
+  asm_.emit(stream_.line_no_, INS_LOCALS, 0);
   int32_t &locals = asm_.get_fixup();
 
   // function body
@@ -321,8 +321,8 @@ void parser_t::parse_function() {
   }
 
   // emit dummy epilogue (may be unreachable)
-  asm_.emit(INS_CONST, 0);
-  asm_.emit(INS_RET, func().frame_size());
+  asm_.emit(stream_.line_no_, INS_CONST, 0);
+  asm_.emit(stream_.line_no_, INS_RET, func().frame_size());
 
   // fixup the number of locals we are reserving with INS_LOCALS
   const uint32_t num_locals = func().ident_.size() - func().frame_;
@@ -347,10 +347,12 @@ void parser_t::parse_global() {
 }
 
 void parser_t::op_push(token_e op, uint32_t tide) {
+  token_stream_t &stream_ = ccml_.lexer().stream_;
+
   while (op_stack_.size() > tide) {
     token_e top = op_stack_.back();
     if (op_type(op) <= op_type(top)) {
-      ccml_.assembler().emit(top);
+      ccml_.assembler().emit(stream_.line_no_, top);
       op_stack_.pop_back();
     } else {
       break;
@@ -360,9 +362,11 @@ void parser_t::op_push(token_e op, uint32_t tide) {
 }
 
 void parser_t::op_popall(uint32_t tide) {
+  token_stream_t &stream_ = ccml_.lexer().stream_;
+
   while (op_stack_.size() > tide) {
     token_e op = op_stack_.back();
-    ccml_.assembler().emit(op);
+    ccml_.assembler().emit(stream_.line_no_, op);
     op_stack_.pop_back();
   }
 }

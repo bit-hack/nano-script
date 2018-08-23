@@ -141,6 +141,34 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_global_3() {
+  static const char *prog = R"(
+var global = 0
+
+function recurse( count )
+  if (not count == 0)
+    global = global + 1
+    return recurse(count-1)
+  else
+    return global
+  end
+end
+
+function driver()
+  return recurse(15)
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("driver")->pos_;
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 15;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+// integer square route
 static bool test_sqrt() {
   static const char *prog = R"(
 function next(n, i)
@@ -179,6 +207,7 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+// prime number test
 static bool test_is_prime() {
   static const char *prog = R"(
 function is_prime(x)
@@ -206,6 +235,7 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+// check for coprime
 static bool test_hcf() {
   static const char *prog = R"(
 function hcf(a, b)
@@ -238,6 +268,119 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+// fibbonacci generator
+static bool test_fib() {
+  static const char *prog = R"(
+function fib(count)
+  var a = 0
+  var b = 1
+  while (count >= 2)
+    var c = a + b
+    a = b
+    b = c
+    count = count - 1
+  end
+  return b
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("fib")->pos_;
+  const int32_t inputs[] = {9};
+  const int32_t res = ccml.vm().execute(func, 1, inputs, false);
+  return res == 34;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+// greatest common divisor
+static bool test_gcd() {
+  static const char *prog = R"(
+function main(a, b)
+  while (not a == b)
+    if (a > b)
+      a = a - b
+    else
+      b = b - a
+    end
+  end
+  return a
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+  const int32_t inputs[] = {81, 153};
+  const int32_t res = ccml.vm().execute(func, 2, inputs, false);
+  return res == 9;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+// very silly triangle number test
+static bool test_triangle() {
+  static const char *prog = R"(
+function main(a)
+  var x = a
+  var y
+  var z = 0
+  while (not x == 0)
+    y = x
+    while (not y == 0)
+      z = z + 1
+      y = y - 1
+    end
+    x = x - 1
+  end
+  return z
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+  const int32_t inputs[] = {3};
+  const int32_t res = ccml.vm().execute(func, 1, inputs, false);
+  return res == 6;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+// calculate the weekday given a day, month, year
+static bool test_weekday() {
+  static const char *prog = R"(
+# - 0 "Sunday"
+# - 1 "Monday"
+# - 2 "Tuesday"
+# - 3 "Wednesday"
+# - 4 "Thursday"
+# - 5 "Friday"
+# - 6 "Saturday"
+function weekday(day, month, year)
+  var a = 14-month
+  a = a / 12
+  var y = year-a
+  var m = month+(12*a)-2
+  var d = (day+y+(y/4)-(y/100)+(y/400)+((31*m)/12)) % 7
+  return d
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("weekday")->pos_;
+  const int32_t inputs[] = {
+    23,     // day
+    8,      // month
+    2018};  // year
+  const int32_t res = ccml.vm().execute(func, 3, inputs, false);
+  return res == 4; // thursday
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 typedef bool (*test_t)();
 struct test_pair_t {
   const char *name;
@@ -253,9 +396,14 @@ static const test_pair_t tests[] = {
   TEST(test_precedence),
   TEST(test_global_1),
   TEST(test_global_2),
+  TEST(test_global_3),
   TEST(test_sqrt),
   TEST(test_is_prime),
   TEST(test_hcf),
+  TEST(test_fib),
+  TEST(test_gcd),
+  TEST(test_triangle),
+  TEST(test_weekday),
   // sentinel
   nullptr, nullptr
 };
