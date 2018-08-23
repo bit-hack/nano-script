@@ -30,3 +30,13 @@ void ccml_t::on_error_(uint32_t line, const char *fmt, ...) {
   ccml_error_t error{buffer, line};
   throw error;
 }
+
+bool ccml_t::build(const char *source) {
+  if (!lexer_->lex(source)) {
+    return false;
+  }
+  if (!parser_->parse()) {
+    return false;
+  }
+  return true;
+}

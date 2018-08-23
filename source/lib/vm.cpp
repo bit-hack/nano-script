@@ -3,7 +3,7 @@
 #include "parser.h"
 #include <cstring>
 
-int32_t vm_t::execute(int32_t tgt_pc, int32_t argc, int32_t *argv) {
+int32_t vm_t::execute(int32_t tgt_pc, int32_t argc, const int32_t *argv, bool trace) {
 
   thread_t t;
 
@@ -30,11 +30,11 @@ int32_t vm_t::execute(int32_t tgt_pc, int32_t argc, int32_t *argv) {
   // while we haven't returned from frame 0
   while (t.f_.size() > 0) {
 
-#if 1
-    // print an instruction trace
-    printf(" > ");
-    ccml_.assembler().disasm(c + pc);
-#endif
+    if (trace) {
+      // print an instruction trace
+      printf(" > ");
+      ccml_.assembler().disasm(c + pc);
+    }
 
     // get opcode
     const uint8_t op = c[pc];

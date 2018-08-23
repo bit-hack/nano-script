@@ -56,7 +56,7 @@ struct vm_t {
 
   vm_t(ccml_t &c) : ccml_(c) {}
 
-  int32_t execute(int32_t pc, int32_t argc, int32_t *argv);
+  int32_t execute(int32_t pc, int32_t argc, const int32_t *argv, bool trace);
 
 protected:
   ccml_t &ccml_;

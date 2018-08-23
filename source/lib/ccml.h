@@ -41,6 +41,8 @@ struct ccml_t {
 
   vm_t &vm() { return *vm_; }
 
+  bool build(const char *source);
+
 private:
   friend struct lexer_t;
   friend struct parser_t;

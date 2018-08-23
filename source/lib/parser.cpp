@@ -349,7 +349,7 @@ void parser_t::parse_global() {
 void parser_t::op_push(token_e op, uint32_t tide) {
   while (op_stack_.size() > tide) {
     token_e top = op_stack_.back();
-    if (op_type(op) > op_type(top)) {
+    if (op_type(op) <= op_type(top)) {
       ccml_.assembler().emit(top);
       op_stack_.pop_back();
     } else {

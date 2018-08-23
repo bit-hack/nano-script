@@ -1,11 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <cstdio>
 
-#include "assembler.h"
-#include "ccml.h"
-#include "lexer.h"
-#include "parser.h"
-#include "vm.h"
+#include "../lib/assembler.h"
+#include "../lib/ccml.h"
+#include "../lib/lexer.h"
+#include "../lib/parser.h"
+#include "../lib/vm.h"
 
 namespace {
 
@@ -69,10 +69,10 @@ int main(int argc, char **argv) {
       return -2;
     ccml.assembler().disasm();
 
-    int32_t func = ccml.parser().find_function("main")->pos_;
+    const int32_t func = ccml.parser().find_function("main")->pos_;
     printf("entry point: %d\n", func);
 
-    int32_t res = ccml.vm().execute(func, 0, nullptr);
+    int32_t res = ccml.vm().execute(func, 0, nullptr, true);
     fflush(stdout);
 
     printf("exit: %d\n", res);
