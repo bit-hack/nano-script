@@ -1,6 +1,22 @@
 #include "token.h"
 #include "assembler.h"
 
+token_stream_t::token_stream_t(ccml_t &ccml)
+  : ccml_(ccml)
+  , index_(0)
+  , line_no_(0) {
+}
+
+token_e token_stream_t::type() {
+  return stream_[index_].type_;
+}
+
+token_t *token_stream_t::found(token_e type) {
+  if (stream_[index_].type_ == type)
+    return pop();
+  return nullptr;
+}
+
 token_t *token_stream_t::pop(token_e type) {
   if (token_t *t = found(type))
     return t;

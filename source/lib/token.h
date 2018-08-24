@@ -1,8 +1,10 @@
 #pragma once
-#include "ccml.h"
 #include <stdint.h>
 #include <string>
 #include <vector>
+
+#include "ccml.h"
+
 
 enum token_e {
   TOK_FUNC,
@@ -72,21 +74,11 @@ struct token_t {
 
 struct token_stream_t {
 
-  token_stream_t(ccml_t &ccml)
-    : ccml_(ccml)
-    , index_(0)
-    , line_no_(0) {
-  }
+  token_stream_t(ccml_t &ccml);
 
-  token_e type() {
-    return stream_[index_].type_;
-  }
+  token_e type();
 
-  token_t *found(token_e type) {
-    if (stream_[index_].type_ == type)
-      return pop();
-    return nullptr;
-  }
+  token_t *found(token_e type);
 
   token_t *pop(token_e type);
 

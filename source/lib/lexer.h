@@ -2,9 +2,14 @@
 #include "ccml.h"
 #include "token.h"
 
+
 struct lexer_t {
 
-  lexer_t(ccml_t &c) : ccml_(c), stream_(c), line_no_(0) {}
+  lexer_t(ccml_t &c)
+    : ccml_(c)
+    , stream_(c)
+    , line_no_(0) {
+  }
 
   bool lex(const char *source);
 

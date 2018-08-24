@@ -2,6 +2,7 @@
 #include "ccml.h"
 #include "token.h"
 
+
 struct parser_t {
 
   struct function_t {
@@ -39,7 +40,9 @@ struct parser_t {
     int32_t value_;
   };
 
-  parser_t(ccml_t &c) : ccml_(c) {}
+  parser_t(ccml_t &c)
+    : ccml_(c) {
+  }
 
   // parse all tokens stored in the lexer
   bool parse();

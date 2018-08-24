@@ -5,17 +5,6 @@
 #include <vector>
 
 
-#if defined(_MSC_VER)
-#define throws(X)                                                              \
-  {                                                                            \
-    __debugbreak();                                                            \
-    throw X;                                                                   \
-  }
-#else
-#define throws(X)                                                              \
-  { throw X; }
-#endif
-
 struct lexer_t;
 struct parser_t;
 struct assembler_t;

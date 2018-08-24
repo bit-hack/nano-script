@@ -162,8 +162,7 @@ int32_t vm_t::execute(int32_t tgt_pc, int32_t argc, const int32_t *argv, bool tr
       continue;
     }
 
-    throws("unknown instruction opcode");
-
+    assert(!"unknown instruction opcode");
   } // while
 
   assert(t.s_.size() > 0);

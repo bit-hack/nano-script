@@ -21,10 +21,22 @@ assembler_t::assembler_t(ccml_t &c)
 {}
 
 void assembler_t::write8(uint8_t v) {
+  // check for code space overflow
+  if (head_ + 1 >= code_.size()) {
+    ccml_.on_error_(ccml_.lexer().stream_.line_no_,
+                    "program too large, ran out of space");
+  }
+  // write int8_t to code stream
   code_[head_++] = v;
 }
 
 void assembler_t::write32(int32_t v) {
+  // check for code space overflow
+  if (head_ + 4 >= code_.size()) {
+    ccml_.on_error_(ccml_.lexer().stream_.line_no_,
+                    "program too large, ran out of space");
+  }
+  // write int32_t to code stream
   memcpy(code_.data() + head_, &v, sizeof(v));
   head_ += 4;
 }
@@ -50,7 +62,7 @@ void assembler_t::emit(instruction_e ins, const token_t *t) {
     write8(ins);
     break;
   default:
-    throws("unknown instruction");
+    assert(!"unknown instruction");
   }
 }
 
@@ -72,7 +84,7 @@ int32_t *assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
     write32(v);
     break;
   default:
-    throws("unknown instruction");
+    assert(!"unknown instruction");
   }
   // return the operand
   return (int32_t *)(code_.data() + (head_ - 4));
@@ -175,7 +187,7 @@ int32_t assembler_t::disasm() {
     printf("%04d ", i);
     const int32_t nb = disasm(code_.data() + i);
     if (nb <= 0) {
-      throws("unknown opcode");
+      assert(!"unknown opcode");
     }
     i += nb;
   }
@@ -198,7 +210,7 @@ void assembler_t::emit(token_e tok, const token_t *t) {
   case TOK_LEQ: emit(INS_LEQ, t); break;
   case TOK_GEQ: emit(INS_GEQ, t); break;
   default:
-    throws("cant emit token type");
+    assert(!"cant emit token type");
   }
 }
 

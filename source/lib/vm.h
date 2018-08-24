@@ -1,6 +1,8 @@
 #pragma once
-#include "ccml.h"
 #include <vector>
+
+#include "ccml.h"
+
 
 struct thread_t {
 
@@ -20,7 +22,9 @@ struct thread_t {
     return v;
   }
 
-  void push(int32_t v) { s_.push_back(v); }
+  void push(int32_t v) {
+    s_.push_back(v);
+  }
 
   void new_frame(int32_t pc) {
     frame_t f = {int32_t(s_.size()), pc};
@@ -54,7 +58,18 @@ struct thread_t {
 
 struct vm_t {
 
-  vm_t(ccml_t &c) : ccml_(c) {}
+  // XXX: add thread_create() method
+  // struct thread_t {
+  //   void run(uint32_t cycles);
+  //   bool finished();
+  //   int32_t return_code;
+  // protected:
+  //   impl_t *impl_;
+  // };
+
+  vm_t(ccml_t &c)
+    : ccml_(c) {
+  }
 
   int32_t execute(int32_t pc, int32_t argc, const int32_t *argv, bool trace);
 
