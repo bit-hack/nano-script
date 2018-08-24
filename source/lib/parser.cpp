@@ -19,6 +19,10 @@ bool parser_t::parse() {
       parse_function();
       continue;
     }
+
+    const token_t *tok = stream_.pop();
+    assert(tok);
+    ccml_.on_error_(tok->line_no_, "unexpected token '%s'", tok->str_.c_str());
   }
   return true;
 }
@@ -215,17 +219,18 @@ void parser_t::parse_if() {
 
   // format:
   //       V
-  //    if   ( <expr> )
+  //    if   ( <expr> ) '\n'
   //      <statements>
-  //  [ else
+  //  [ else '\n'
   //      <statements> ]
-  //    end
+  //    end '\n'
 
   bool has_else = false;
   // IF condition
   stream_.pop(TOK_LPAREN);
   parse_expr();
   stream_.pop(TOK_RPAREN);
+  stream_.pop(TOK_EOL);
 
   // this jump skips the body of the if, hence not
   asm_.emit(INS_NOT);
@@ -234,11 +239,13 @@ void parser_t::parse_if() {
   // IF body
   while (!stream_.found(TOK_END)) {
     if (stream_.found(TOK_ELSE)) {
+      stream_.pop(TOK_EOL);
       has_else = true;
       break;
     }
     parse_stmt();
   }
+
   int32_t *l2 = nullptr;
   if (has_else) {
     // skip over ELSE body
@@ -254,6 +261,8 @@ void parser_t::parse_if() {
     // END
     *l2 = asm_.pos();
   }
+
+  // note: no need to pop newline as parse_stmt() handles that
 }
 
 void parser_t::parse_while() {
@@ -262,7 +271,9 @@ void parser_t::parse_while() {
 
   // format:
   //          V
-  //    while   ( <expr> )
+  //    while   ( <expr> ) '\n'
+  //      <statments>
+  //    end '\n'
 
   // top of loop
   int32_t l1 = asm_.pos();
@@ -270,6 +281,8 @@ void parser_t::parse_while() {
   stream_.pop(TOK_LPAREN);
   parse_expr();
   stream_.pop(TOK_RPAREN);
+  stream_.pop(TOK_EOL);
+
   // GOTO end if false
   asm_.emit(INS_NOT);
   int32_t *l2 = asm_.emit(INS_JMP, 0);
@@ -277,11 +290,14 @@ void parser_t::parse_while() {
   while (!stream_.found(TOK_END)) {
     parse_stmt();
   }
+  // note: no need to pop newline as parse_stmt() handles that
+
   // unconditional jump to top
   asm_.emit(INS_CONST, 1);
   asm_.emit(INS_JMP, l1);
   // WHILE end
   *l2 = asm_.pos();
+
 }
 
 void parser_t::parse_stmt() {

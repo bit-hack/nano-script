@@ -250,7 +250,6 @@ end
     // XXX: we should really error on this case
     return false;
   }
-  ccml.assembler().disasm();
   const int32_t inputs[] = {0};
   const int32_t func = ccml.parser().find_function("scope")->pos_;
   const int32_t res = ccml.vm().execute(func, 1, inputs, false);
@@ -477,6 +476,8 @@ struct test_pair_t {
   test_t func;
 };
 
+bool test_xfails();
+
 #define TEST(X) (#X), X
 static const test_pair_t tests[] = {
   TEST(return_value),
@@ -499,6 +500,7 @@ static const test_pair_t tests[] = {
   TEST(test_gcd),
   TEST(test_triangle),
   TEST(test_weekday),
+  TEST(test_xfails),
   // sentinel
   nullptr, nullptr
 };

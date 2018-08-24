@@ -89,6 +89,7 @@ struct token_stream_t {
   }
 
   token_t *pop(token_e type) {
+    // XXX: Token to string
     if (token_t *t = found(type))
       return t;
     const auto &tok = stream_[index_];
