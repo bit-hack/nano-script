@@ -40,3 +40,10 @@ bool ccml_t::build(const char *source) {
   }
   return true;
 }
+
+void ccml_t::reset() {
+  lexer_->reset();
+  parser_->reset();
+  assembler_->reset();
+  vm_->reset();
+}

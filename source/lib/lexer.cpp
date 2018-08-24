@@ -30,6 +30,7 @@ bool is_numeric(const char t) {
 
 bool lexer_t::lex(const char *s) {
 
+  const char *new_line_ = s;
   line_no_ = 0;
 
   for (; *s; ++s) {
@@ -47,7 +48,12 @@ bool lexer_t::lex(const char *s) {
       for (; *s && *s != '\n'; ++s) {
         // empty
       }
-      ++line_no_;
+      {
+        assert(s >= new_line_);
+        lines_.push_back(std::string(new_line_, s - new_line_));
+        new_line_ = s + 1;
+        ++line_no_;
+      }
       push(TOK_EOL);
       continue;
     }
@@ -136,7 +142,12 @@ bool lexer_t::lex(const char *s) {
       push(TOK_MOD);
       continue;
     case ('\n'):
+    {
+      assert(s >= new_line_);
+      lines_.push_back(std::string(new_line_, s - new_line_));
+      new_line_ = s + 1;
       ++line_no_;
+    }
       push(TOK_EOL);
       continue;
     case ('='):
@@ -220,4 +231,8 @@ void lexer_t::push_val(const char *s, const char *e) {
     v = v * 10 + (*s - '0');
   }
   stream_.push(token_t(v, line_no_));
+}
+
+void lexer_t::reset() {
+  stream_.reset();
 }

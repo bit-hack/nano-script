@@ -111,6 +111,7 @@ struct token_stream_t {
 
   void reset() {
     index_ = 0;
+    stream_.clear();
   }
 
   ccml_t &ccml_;

@@ -169,3 +169,7 @@ int32_t vm_t::execute(int32_t tgt_pc, int32_t argc, const int32_t *argv, bool tr
   assert(t.s_.size() > 0);
   return t.s_.back();
 }
+
+void vm_t::reset() {
+  // nothing to do
+}

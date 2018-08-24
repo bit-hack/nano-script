@@ -8,11 +8,20 @@ struct lexer_t {
 
   bool lex(const char *source);
 
+  // reset any stored state
+  void reset();
+
   ccml_t &ccml_;
   token_stream_t stream_;
 
+  const std::string &get_line(uint32_t no) const {
+    return lines_.at(no);
+  }
+
 protected:
   uint32_t line_no_;
+
+  std::vector<std::string> lines_;
 
   void push(token_e);
   void push_ident(const char *start, const char *end);

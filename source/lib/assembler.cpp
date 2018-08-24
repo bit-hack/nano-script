@@ -1,5 +1,6 @@
 #include <cstring>
 #include "assembler.h"
+#include "lexer.h"
 
 namespace {
 
@@ -28,10 +29,8 @@ void assembler_t::write32(int32_t v) {
   head_ += 4;
 }
 
-void assembler_t::emit(uint32_t line, instruction_e ins) {
-  // insert into the line table
-  const uint8_t *ptr = code_.data() + head_;
-  line_table_[ptr] = line;
+void assembler_t::emit(instruction_e ins, const token_t *t) {
+  add_to_linetable(t);
   // encode this instruction
   switch (ins) {
   case INS_ADD:
@@ -55,10 +54,8 @@ void assembler_t::emit(uint32_t line, instruction_e ins) {
   }
 }
 
-int32_t *assembler_t::emit(uint32_t line, instruction_e ins, int32_t v) {
-  // insert into the line table
-  const uint8_t *ptr = code_.data() + head_;
-  line_table_[ptr] = line;
+int32_t *assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
+  add_to_linetable(t);
   // encode this instruction
   switch (ins) {
   case INS_JMP:
@@ -81,8 +78,11 @@ int32_t *assembler_t::emit(uint32_t line, instruction_e ins, int32_t v) {
   return (int32_t *)(code_.data() + (head_ - 4));
 }
 
-void assembler_t::emit(uint32_t line, ccml_syscall_t sys) {
+void assembler_t::emit(ccml_syscall_t sys, const token_t *t) {
+  add_to_linetable(t);
+  // encode this instruction
   write8(INS_SCALL);
+  // encode instruction operand
   memcpy(code_.data() + head_, &sys, sizeof(ccml_syscall_t));
   head_ += sizeof(ccml_syscall_t);
 }
@@ -93,12 +93,6 @@ int32_t assembler_t::pos() const {
 
 // return number of bytes disassembled or <= 0 on error
 int32_t assembler_t::disasm(const uint8_t *ptr) const {
-
-  // dump line table mapping
-  auto itt = line_table_.find(ptr);
-  if (itt != line_table_.end()) {
-    printf("%02d  ", itt->second);
-  }
 
   // extract opcode
   uint32_t i = 0;
@@ -158,7 +152,26 @@ int32_t assembler_t::disasm(const uint8_t *ptr) const {
 
 int32_t assembler_t::disasm() {
   uint32_t count = 0;
+  uint32_t line_no = -1;
   for (uint32_t i = 0; i < head_; ++count) {
+
+    const uint8_t *ptr = code_.data() + i;
+    bool print_line = false;
+
+    // dump line table mapping
+    auto itt = line_table_.find(ptr);
+    if (itt != line_table_.end()) {
+      if (line_no != itt->second) {
+        print_line = true;
+      }
+      line_no = itt->second;
+    }
+
+    if (print_line) {
+      const std::string &line = ccml_.lexer().get_line(line_no);
+      printf("  %02d -- %s\n", line_no, line.c_str());
+    }
+
     printf("%04d ", i);
     const int32_t nb = disasm(code_.data() + i);
     if (nb <= 0) {
@@ -169,21 +182,21 @@ int32_t assembler_t::disasm() {
   return count;
 }
 
-void assembler_t::emit(uint32_t line, token_e tok) {
+void assembler_t::emit(token_e tok, const token_t *t) {
   switch (tok) {
-  case TOK_ADD: emit(line, INS_ADD); break;
-  case TOK_SUB: emit(line, INS_SUB); break;
-  case TOK_MUL: emit(line, INS_MUL); break;
-  case TOK_DIV: emit(line, INS_DIV); break;
-  case TOK_MOD: emit(line, INS_MOD); break;
-  case TOK_AND: emit(line, INS_AND); break;
-  case TOK_OR:  emit(line, INS_OR ); break;
-  case TOK_NOT: emit(line, INS_NOT); break;
-  case TOK_EQ:  emit(line, INS_EQ ); break;
-  case TOK_LT:  emit(line, INS_LT ); break;
-  case TOK_GT:  emit(line, INS_GT ); break;
-  case TOK_LEQ: emit(line, INS_LEQ); break;
-  case TOK_GEQ: emit(line, INS_GEQ); break;
+  case TOK_ADD: emit(INS_ADD, t); break;
+  case TOK_SUB: emit(INS_SUB, t); break;
+  case TOK_MUL: emit(INS_MUL, t); break;
+  case TOK_DIV: emit(INS_DIV, t); break;
+  case TOK_MOD: emit(INS_MOD, t); break;
+  case TOK_AND: emit(INS_AND, t); break;
+  case TOK_OR:  emit(INS_OR , t); break;
+  case TOK_NOT: emit(INS_NOT, t); break;
+  case TOK_EQ:  emit(INS_EQ , t); break;
+  case TOK_LT:  emit(INS_LT , t); break;
+  case TOK_GT:  emit(INS_GT , t); break;
+  case TOK_LEQ: emit(INS_LEQ, t); break;
+  case TOK_GEQ: emit(INS_GEQ, t); break;
   default:
     throws("cant emit token type");
   }
@@ -193,4 +206,21 @@ int32_t &assembler_t::get_fixup() {
   // warning: if code_ can grow this will error
   assert(head_ >= sizeof(int32_t));
   return *reinterpret_cast<int32_t*>(code_.data() + (head_ - sizeof(int32_t)));
+}
+
+void assembler_t::add_to_linetable(const token_t *t) {
+  // insert into the line table
+  const uint8_t *ptr = code_.data() + head_;
+  if (t) {
+    line_table_[ptr] = t->line_no_;
+  }
+  else {
+    line_table_[ptr] = ccml_.lexer().stream_.line_no_;
+  }
+}
+
+void assembler_t::reset() {
+  code_.fill(0);
+  head_ = 0;
+  line_table_.clear();
 }

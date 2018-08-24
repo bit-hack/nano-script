@@ -50,10 +50,10 @@ struct assembler_t {
 
   assembler_t(ccml_t &c);
 
-  void     emit(uint32_t line, token_e);
-  void     emit(uint32_t line, instruction_e ins);
-  int32_t *emit(uint32_t line, instruction_e ins, int32_t v);
-  void     emit(uint32_t line, ccml_syscall_t sys);
+  void     emit(token_e                     , const token_t *t = nullptr);
+  void     emit(instruction_e ins           , const token_t *t = nullptr);
+  int32_t *emit(instruction_e ins, int32_t v, const token_t *t = nullptr);
+  void     emit(ccml_syscall_t sys          , const token_t *t = nullptr);
 
   int32_t pos() const;
 
@@ -67,9 +67,19 @@ struct assembler_t {
     return code_.data();
   }
 
+  // reset any stored state
+  void reset();
+
 protected:
+  // write 8bits to the code stream
   void write8(uint8_t v);
+
+  // write 32bits to the code stream
   void write32(int32_t v);
+
+  // add the current code position to the line table usign the line from the
+  // given token 't' or the current stream stored line.
+  void add_to_linetable(const token_t *t);
 
   std::map<const uint8_t *, uint32_t> line_table_;
 

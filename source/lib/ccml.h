@@ -43,6 +43,8 @@ struct ccml_t {
 
   bool build(const char *source);
 
+  void reset();
+
 private:
   friend struct lexer_t;
   friend struct parser_t;

@@ -33,7 +33,11 @@ struct parser_t {
 
   parser_t(ccml_t &c) : ccml_(c) {}
 
+  // parse all tokens stored in the lexer
   bool parse();
+
+  // reset any stored state
+  void reset();
 
   void add_function(const std::string &name, ccml_syscall_t func);
 

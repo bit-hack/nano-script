@@ -84,7 +84,7 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-static bool test_precedence() {
+static bool test_precedence_1() {
   static const char *prog = R"(
 function main()
   return 2 + 3 * 4 + 5 * (6 + 3)
@@ -97,6 +97,70 @@ end
   const int32_t func = ccml.parser().find_function("main")->pos_;
   const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
   return res == 59;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_precedence_2() {
+  static const char *prog = R"(
+function main()
+  return 2 * 3 > 4
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 1;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_precedence_3() {
+  static const char *prog = R"(
+function main()
+  return 1 + 1 * 2
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 3;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_precedence_4() {
+  static const char *prog = R"(
+function main()
+  return 1 + 2 > 2 and 2 * 5 == 10
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 1;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_precedence_5() {
+  static const char *prog = R"(
+function main()
+  return not (1 + 2 > 2 and 2 * 5 == 10)
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 0;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -165,6 +229,32 @@ end
   const int32_t func = ccml.parser().find_function("driver")->pos_;
   const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
   return res == 15;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_scope() {
+
+  // XXX: this behavior is really weird and perhaps we should ban it
+  //      or scope variables properly
+
+  static const char *prog = R"(
+function scope(flag)
+  if (flag)
+    var x = 1234
+  end
+  return x
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    // XXX: we should really error on this case
+    return false;
+  }
+  ccml.assembler().disasm();
+  const int32_t inputs[] = {0};
+  const int32_t func = ccml.parser().find_function("scope")->pos_;
+  const int32_t res = ccml.vm().execute(func, 1, inputs, false);
+  return res == 1234;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -393,10 +483,15 @@ static const test_pair_t tests[] = {
   TEST(return_var),
   TEST(return_arg),
   TEST(test_arg_passing),
-  TEST(test_precedence),
+  TEST(test_precedence_1),
+  TEST(test_precedence_2),
+  TEST(test_precedence_3),
+  TEST(test_precedence_4),
+  TEST(test_precedence_5),
   TEST(test_global_1),
   TEST(test_global_2),
   TEST(test_global_3),
+  TEST(test_scope),
   TEST(test_sqrt),
   TEST(test_is_prime),
   TEST(test_hcf),

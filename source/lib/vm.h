@@ -58,6 +58,9 @@ struct vm_t {
 
   int32_t execute(int32_t pc, int32_t argc, const int32_t *argv, bool trace);
 
+  // reset any stored state
+  void reset();
+
 protected:
   ccml_t &ccml_;
 };
