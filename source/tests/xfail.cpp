@@ -45,31 +45,31 @@ function x(hello,)
 end
   )",
   R"(
-function x(hello)
+function x()
 end
 end
   )",
   R"(
-function function(hello)
+function function()
 end
   )",
   R"(
-function and(hello)
+function and()
 end
   )",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- if
   R"(
-function look(hello)
+function look()
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   if (1)
   end
   )",
   R"(
-function look(hello)
+function look()
   if (1)
   else
   end
@@ -81,85 +81,85 @@ function look()
 end
   )",
   R"(
-function look(hello)
+function look()
   var if = 1
   if (if)
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   var if = 1
   if (if)
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   else
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   if
   else
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   if (
   else
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   if (1
   else
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   if (1))
   else
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   if 1
   else
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   if 1)
   else
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   if (1) end
 end
   )",
   R"(
-function look(hello)
+function look()
   if (1) else end
 end
   )",
   R"(
-function look(hello)
+function look()
   if (1)
   else end
 end
   )",
   R"(
-function look(hello)
+function look()
   if (1)
   end if (1)
   end
@@ -167,7 +167,7 @@ end
   )",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- if
   R"(
-function look(hello)
+function look()
   while (1)
   end
   )",
@@ -178,58 +178,141 @@ function look()
 end
   )",
   R"(
-function look(hello)
+function look()
   var while = 1
   while (while)
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   while
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   while (
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   while (1
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   while (1))
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   while 1
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   while 1)
   end
 end
   )",
   R"(
-function look(hello)
+function look()
   while (1) end
 end
   )",
   R"(
-function look(hello)
+function look()
   while (1)
   end while (1)
   end
+end
+  )",
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+  R"(
+function look()
+  var var = 1
+end
+  )",
+  R"(
+function look()
+  var = 1
+end
+  )",
+  R"(
+function look()
+  var x = y
+end
+  )",
+  R"(
+function look()
+  var x = 1 + y
+end
+  )",
+  R"(
+function look()
+  # cant reference something before its fully declared
+  var x = x
+end
+  )",
+  R"(
+function look()
+  var x = y
+  var y
+end
+  )",
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+  R"(
+var global = 1 + 1
+function look()
+  return global
+end
+  )",
+  R"(
+function look()
+  return global
+end
+var global
+  )",
+  R"(
+function look()
+  return look
+end
+  )",
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+  R"(
+function look()
+  var x = 1 + 2 3
+end
+  )",
+  R"(
+function look()
+  var x = 1 + + 2
+end
+var global
+  )",
+  R"(
+function look()
+  var x = 1 + 2 ) + 3
+end
+  )",
+  R"(
+function look()
+  var x = 1 ( + 2 ) + 3
+end
+  )",
+  R"(
+function look()
+  var x = 1 + 2 + 3 +
+end
+  )",
+  R"(
+function look()
+  var x = 1 + 2 + ( 3 + )
 end
   )",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -244,11 +327,11 @@ bool test_xfails() {
 
   for (int i = 0; xfails[i]; ++i) {
 
-    if (i == 34) {
+    const char *source = xfails[i];
+
+    if (i == 44) {
 //      __debugbreak();
     }
-
-    const char *source = xfails[i];
 
     bool failed = false;
     try {

@@ -88,32 +88,13 @@ struct token_stream_t {
     return nullptr;
   }
 
-  token_t *pop(token_e type) {
-    // XXX: Token to string
-    if (token_t *t = found(type))
-      return t;
-    const auto &tok = stream_[index_];
-    ccml_.on_error_(
-      tok.line_no_,
-      "unexpected token '%d' expecting '%d'",
-      tok.type_,
-      type);
-    return nullptr;
-  }
+  token_t *pop(token_e type);
 
-  token_t *pop() {
-    line_no_ = stream_[index_].line_no_;
-    return &stream_[index_++];
-  }
+  token_t *pop();
 
-  void push(const token_t &tok) {
-    stream_.push_back(tok);
-  }
+  void push(const token_t &tok);
 
-  void reset() {
-    index_ = 0;
-    stream_.clear();
-  }
+  void reset();
 
   ccml_t &ccml_;
   uint32_t index_;

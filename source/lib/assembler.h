@@ -70,6 +70,9 @@ struct assembler_t {
   // reset any stored state
   void reset();
 
+  // convert a token enum to a token string
+  const char *token_name(token_e e) const;
+
 protected:
   // write 8bits to the code stream
   void write8(uint8_t v);

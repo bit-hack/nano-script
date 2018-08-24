@@ -39,6 +39,7 @@ struct parser_t {
   // reset any stored state
   void reset();
 
+  // add a syscall function
   void add_function(const std::string &name, ccml_syscall_t func);
 
   // find a function by name
@@ -69,13 +70,21 @@ protected:
 
   void parse_global();
 
+  // return true if next token is an operator
   bool is_operator();
+
+  // get the precedence of this operator
   int32_t op_type(token_e type);
 
+  // load from a given identifier (local/global)
   void load_ident(const token_t &name);
 
+  // push an operator on the stack
   void op_push(token_e op, uint32_t tide);
+
+  // pop all operators off the stack
   void op_popall(uint32_t tide);
 
+  // get the current function being parsed
   function_t &func();
 };

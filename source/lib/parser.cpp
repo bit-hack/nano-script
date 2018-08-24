@@ -152,15 +152,21 @@ void parser_t::parse_decl() {
   //    var   <TOK_IDENT> [ = <expr> ]
 
   const token_t *name = stream_.pop(TOK_IDENT);
-  func().ident_.push_back(name->str_);
-
-  if (token_t *t = stream_.found(TOK_ASSIGN)) {
+  token_t *assign = stream_.found(TOK_ASSIGN);
+  // parse assignment expression
+  if (assign) {
     parse_expr();
+  }
+  // add name to identifier table
+  // note: must happen after parse_expr() to avoid 'var x = x'
+  func().ident_.push_back(name->str_);
+  // generate assignment
+  if (assign) {
     int32_t index = 0;
     if (!func().find(name->str_, index)) {
       assert(!"identifier should always be known here");
     }
-    asm_.emit(INS_SETV, index, name);
+    asm_.emit(INS_SETV, index, assign);
   }
 }
 
@@ -297,7 +303,6 @@ void parser_t::parse_while() {
   asm_.emit(INS_JMP, l1);
   // WHILE end
   *l2 = asm_.pos();
-
 }
 
 void parser_t::parse_stmt() {
