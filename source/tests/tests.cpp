@@ -164,6 +164,44 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_precedence_6() {
+  static const char *prog = R"(
+function main()
+  # check order of divides is correct
+  # should evaluate as `(8 / 4) / 2 == 1`
+  # not as             `8 / (4 / 2) == 4`
+  return 8 / 4 / 2
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 1;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_precedence_7() {
+  static const char *prog = R"(
+function main()
+  # check order of subtracts is correct
+  # should evaluate as `(12 - 7) - 5 == 0`
+  # not as             `12- (7 - 5) == 10`
+  return12 - 7 - 5
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 0;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 static bool test_global_1() {
   static const char *prog = R"(
 var global = 1234
@@ -489,6 +527,8 @@ static const test_pair_t tests[] = {
   TEST(test_precedence_3),
   TEST(test_precedence_4),
   TEST(test_precedence_5),
+  TEST(test_precedence_6),
+  TEST(test_precedence_7),
   TEST(test_global_1),
   TEST(test_global_2),
   TEST(test_global_3),

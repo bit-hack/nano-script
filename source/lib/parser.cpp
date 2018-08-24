@@ -7,8 +7,13 @@ bool parser_t::parse() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
+  // format:
+  //    var <TOK_IDENT> [ = <TOK_VAL> ]
+  //    function <TOK_IDENT> ( [ <TOK_IDENT> [ , <TOK_IDENT> ]+ ] )
+
   while (!stream_.found(TOK_EOF)) {
     if (stream_.found(TOK_EOL)) {
+      // consume any blank lines
       continue;
     }
     if (stream_.found(TOK_VAR)) {
@@ -99,6 +104,12 @@ void parser_t::parse_lhs() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
+  // format:
+  //    ( <expr> )
+  //    <TOK_IDENT>
+  //    <TOK_IDENT> ( ... )
+  //    <TOK_VAL>
+
   if (stream_.found(TOK_LPAREN)) {
     parse_expr();
     stream_.found(TOK_RPAREN);
@@ -120,6 +131,10 @@ void parser_t::parse_lhs() {
 void parser_t::parse_expr_ex(uint32_t tide) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
+  // format:
+  //    <lhs>
+  //    <lhs> <op> <expr_ex>
+
   parse_lhs();
   if (is_operator()) {
     const token_t *op = stream_.pop();
@@ -131,6 +146,10 @@ void parser_t::parse_expr_ex(uint32_t tide) {
 void parser_t::parse_expr() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
+
+  // format:
+  //    not <expr_ex>
+  //    <expr_ex>
 
   const token_t *not = stream_.found(TOK_NOT);
 
@@ -305,12 +324,20 @@ void parser_t::parse_while() {
   *l2 = asm_.pos();
 }
 
+void parser_t::parse_return() {
+  assembler_t &asm_ = ccml_.assembler();
+
+  // return <expr>
+  parse_expr();
+  asm_.emit(INS_RET, func().frame_size());
+}
+
 void parser_t::parse_stmt() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   // format:
-  //    '\n'
+  //    [ '\n' ]+
   //    var <TOK_IDENT> [ = <expr> ] '\n'
   //    <TOK_IDENT> ( <expression list> ) '\n'
   //    if ( <expr> ) '\n'
@@ -318,16 +345,20 @@ void parser_t::parse_stmt() {
   //    return <expr> '\n'
 
   while (stream_.found(TOK_EOL)) {
-    // empty
+    // consume any blank lines
   }
+
   if (stream_.found(TOK_VAR)) {
+    // var ...
     parse_decl();
   } else if (token_t *var = stream_.found(TOK_IDENT)) {
     if (stream_.found(TOK_ASSIGN)) {
+      // x = ...
       parse_assign(var);
     } else if (stream_.found(TOK_LPAREN)) {
+      // x(
       parse_call(var);
-      // throw away the return value since its not being used
+      // note: we throw away the return value since its not being used
       asm_.emit(INS_POP, 1);
     } else {
       ccml_.on_error_(stream_.line_no_,
@@ -339,8 +370,7 @@ void parser_t::parse_stmt() {
   } else if (stream_.found(TOK_WHILE)) {
     parse_while();
   } else if (stream_.found(TOK_RETURN)) {
-    parse_expr();
-    asm_.emit(INS_RET, func().frame_size());
+    parse_return();
   } else {
     ccml_.on_error_(stream_.line_no_, "statement expected");
   }
@@ -362,7 +392,7 @@ void parser_t::parse_function() {
   // new function container
   funcs_.push_back(function_t());
   func().pos_ = asm_.pos();
-  // parse function decl
+  // parse function decl.
   token_t *name = stream_.pop(TOK_IDENT);
   func().name_ = name->str_;
   // argument list
@@ -423,23 +453,29 @@ void parser_t::parse_global() {
 void parser_t::op_push(token_e op, uint32_t tide) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
+  // walk the operator stack for the current expression
   while (op_stack_.size() > tide) {
-    token_e top = op_stack_.back();
-    if (op_type(op) <= op_type(top)) {
-      ccml_.assembler().emit(top);
-      op_stack_.pop_back();
-    } else {
+    // get the top operator on the stack
+    const token_e top = op_stack_.back();
+    // if this operator is higher precedence then top of stack
+    if (op_type(op) > op_type(top)) {
       break;
     }
+    // if lower or = precedence, pop from the stack and emit it
+    ccml_.assembler().emit(top);
+    op_stack_.pop_back();
   }
+  // push this token on the top of the stack
   op_stack_.push_back(op);
 }
 
 void parser_t::op_popall(uint32_t tide) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
+  // walk the operator stack for the current expression
   while (op_stack_.size() > tide) {
-    token_e op = op_stack_.back();
+    // emit this operator
+    const token_e op = op_stack_.back();
     ccml_.assembler().emit(op);
     op_stack_.pop_back();
   }

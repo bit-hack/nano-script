@@ -11,10 +11,18 @@ struct parser_t {
     int32_t frame_;
     std::vector<std::string> ident_;
 
-    function_t() : sys_(nullptr), name_(), pos_(), frame_() {}
+    function_t()
+      : sys_(nullptr)
+      , name_()
+      , pos_()
+      , frame_() {
+    }
 
-    int32_t frame_size() const { return ident_.size(); }
+    int32_t frame_size() const {
+      return ident_.size();
+    }
 
+    // find an identifier and return its stack index relative to fp_
     bool find(const std::string &str, int32_t &index) {
       for (uint32_t i = 0; i < ident_.size(); i++) {
         if (str == ident_[i]) {
@@ -57,8 +65,10 @@ protected:
   std::vector<token_e> op_stack_;
   std::vector<global_t> global_;
 
+  // parse specific language constructs
   void parse_function();
   void parse_stmt();
+  void parse_return();
   void parse_while();
   void parse_if();
   void parse_call(token_t *name);
@@ -67,7 +77,6 @@ protected:
   void parse_expr();
   void parse_expr_ex(uint32_t tide);
   void parse_lhs();
-
   void parse_global();
 
   // return true if next token is an operator

@@ -283,6 +283,12 @@ function look()
   return look
 end
   )",
+  R"(
+var global = global
+function look()
+  return global
+end
+  )",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
   R"(
 function look()
