@@ -5,6 +5,8 @@
 #include "../lib/lexer.h"
 #include "../lib/parser.h"
 #include "../lib/vm.h"
+#include "../lib/errors.h"
+
 
 static const char *xfails[] = {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- function

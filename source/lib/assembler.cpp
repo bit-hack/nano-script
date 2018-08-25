@@ -1,6 +1,10 @@
 #include <cstring>
+
 #include "assembler.h"
 #include "lexer.h"
+#include "ccml.h"
+#include "errors.h"
+
 
 namespace {
 
@@ -23,8 +27,7 @@ assembler_t::assembler_t(ccml_t &c)
 void assembler_t::write8(uint8_t v) {
   // check for code space overflow
   if (head_ + 1 >= code_.size()) {
-    ccml_.on_error_(ccml_.lexer().stream_.line_number(),
-                    "program too large, ran out of space");
+    ccml_.errors().program_too_large();
   }
   // write int8_t to code stream
   code_[head_++] = v;
@@ -33,8 +36,7 @@ void assembler_t::write8(uint8_t v) {
 void assembler_t::write32(int32_t v) {
   // check for code space overflow
   if (head_ + 4 >= code_.size()) {
-    ccml_.on_error_(ccml_.lexer().stream_.line_number(),
-                    "program too large, ran out of space");
+    ccml_.errors().program_too_large();
   }
   // write int32_t to code stream
   memcpy(code_.data() + head_, &v, sizeof(v));

@@ -2,6 +2,8 @@
 #include "assembler.h"
 #include "lexer.h"
 #include "token.h"
+#include "errors.h"
+
 
 bool parser_t::parse() {
   assembler_t &asm_ = ccml_.assembler();
@@ -27,22 +29,32 @@ bool parser_t::parse() {
 
     const token_t *tok = stream_.pop();
     assert(tok);
-    ccml_.on_error_(tok->line_no_, "unexpected token '%s'", tok->str_.c_str());
+    ccml_.errors().unexpected_token(*tok);
   }
   return true;
 }
 
-const parser_t::function_t *parser_t::find_function(const std::string &name, bool can_fail) {
+const parser_t::function_t *parser_t::find_function(const token_t *name, bool can_fail) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   for (const function_t &func : funcs_) {
-    if (func.name_ == name) {
+    if (func.name_ == name->str_) {
       return &func;
     }
   }
 
   if (!can_fail) {
-    ccml_.on_error_(stream_.line_number(), "unknown function '%s'", name.c_str());
+    ccml_.errors().unknown_function(*name);
+  }
+  return nullptr;
+}
+
+const parser_t::function_t *parser_t::find_function(const std::string &name) {
+  token_stream_t &stream_ = ccml_.lexer().stream_;
+  for (const function_t &func : funcs_) {
+    if (func.name_ == name) {
+      return &func;
+    }
   }
   return nullptr;
 }
@@ -100,7 +112,7 @@ void parser_t::load_ident(const token_t &t) {
     }
   }
   // unable to find identifier
-  ccml_.on_error_(t.line_no_, "unknown identifier '%s'", t.str_.c_str());
+  ccml_.errors().unknown_identifier(t);
 }
 
 void parser_t::parse_lhs() {
@@ -127,7 +139,7 @@ void parser_t::parse_lhs() {
   } else if (const token_t *t = stream_.found(TOK_VAL)) {
     asm_.emit(INS_CONST, t->val_, t);
   } else {
-    ccml_.on_error_(stream_.line_number(), "expecting literal or identifier");
+    ccml_.errors().expecting_lit_or_ident(*stream_.pop());
   }
 }
 
@@ -218,8 +230,7 @@ void parser_t::parse_assign(const token_t *name) {
     }
   }
   // cant locate variable
-  ccml_.on_error_(name->line_no_, "cant assign to unknown variable '%s'",
-                  name->str_.c_str());
+  ccml_.errors().cant_assign_unknown_var(*name);
 }
 
 void parser_t::parse_call(const token_t *name) {
@@ -236,10 +247,9 @@ void parser_t::parse_call(const token_t *name) {
     } while (stream_.found(TOK_COMMA));
     stream_.pop(TOK_RPAREN);
   }
-  const function_t *func = find_function(name->str_, true);
+  const function_t *func = find_function(name, true);
   if (!func) {
-    ccml_.on_error_(stream_.line_number(), "unknown function '%s'",
-                    name->str_.c_str());
+    ccml_.errors().unknown_function(*name);
   }
   if (func->sys_) {
     asm_.emit(func->sys_, name);
@@ -371,9 +381,7 @@ void parser_t::parse_stmt() {
       // note: we throw away the return value since its not being used
       asm_.emit(INS_POP, 1);
     } else {
-      ccml_.on_error_(stream_.line_number(),
-                      "assignment or call expected after '%s'",
-                      var->str_.c_str());
+      ccml_.errors().assign_or_call_expected_after(*var);
     }
   } else if (stream_.found(TOK_IF)) {
     parse_if();
@@ -382,7 +390,7 @@ void parser_t::parse_stmt() {
   } else if (stream_.found(TOK_RETURN)) {
     parse_return();
   } else {
-    ccml_.on_error_(stream_.line_number(), "statement expected");
+    ccml_.errors().statement_expected();
   }
 
   // all statements should be on their own line
@@ -403,9 +411,8 @@ void parser_t::parse_function() {
   const token_t *name = stream_.pop(TOK_IDENT);
   assert(name);
 
-  if (find_function(name->str_, true)) {
-    ccml_.on_error_(name->line_no_, "function already exists with name '%s'",
-                    name->str_.c_str());
+  if (find_function(name, true)) {
+    ccml_.errors().function_already_exists(*name);
   }
 
   // new function container

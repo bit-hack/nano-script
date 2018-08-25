@@ -6,6 +6,7 @@
 #include "../lib/lexer.h"
 #include "../lib/parser.h"
 #include "../lib/vm.h"
+#include "../lib/errors.h"
 
 namespace {
 

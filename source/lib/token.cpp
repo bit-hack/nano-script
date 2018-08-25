@@ -1,5 +1,7 @@
 #include "token.h"
 #include "assembler.h"
+#include "errors.h"
+
 
 token_stream_t::token_stream_t(ccml_t &ccml)
   : ccml_(ccml)
@@ -21,20 +23,22 @@ const token_t *token_stream_t::pop(token_e type) {
   if (const token_t *t = found(type))
     return t;
   const auto &tok = stream_[index_];
-  static const char *expected = token_t::token_name(type);
-  ccml_.on_error_(
-    tok.line_no_,
-    "unexpected token '%s' expecting '%s'",
-                  tok.str_.c_str(), expected);
+  ccml_.errors().unexpected_token(tok, type);
   return nullptr;
 }
 
 const token_t *token_stream_t::pop() {
+  // update the current line numbmer
   line_no_ = stream_[index_].line_no_;
+  // return the popped token
+  assert(index_ < stream_.size());
   return &stream_[index_++];
 }
 
 void token_stream_t::push(const token_t &tok) {
+  // check index is zero as it could cause chaos to push to an already pop'd
+  // stream which would invalidate token_t* types
+  assert(index_ == 0);
   stream_.push_back(tok);
 }
 

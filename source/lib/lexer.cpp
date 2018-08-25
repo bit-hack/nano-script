@@ -1,4 +1,6 @@
 #include "lexer.h"
+#include "errors.h"
+
 
 namespace {
 
@@ -209,7 +211,7 @@ bool lexer_t::lex(const char *s) {
     }
 
     // raise an error
-    ccml_.on_error_(line_no_, "unexpected character '%c' in source", *s);
+    ccml_.errors().unexpected_character(line_no_, *s);
 
   } // while
   stream_.push(token_t{TOK_EOF, line_no_});

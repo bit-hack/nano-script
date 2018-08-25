@@ -107,7 +107,8 @@ struct parser_t {
 
   // find a function by name
   // if `can_fail == false` it will report an error
-  const function_t *find_function(const std::string &name, bool can_fail=false);
+  const function_t *find_function(const token_t *name, bool can_fail=false);
+  const function_t *find_function(const std::string &name);
 
   // return a list of globals
   const std::vector<global_t> globals() const {
