@@ -66,6 +66,9 @@ struct token_t {
     , line_no_(line)
   {}
 
+  // convert a token_e to a token string
+  static const char *token_t::token_name(token_e e);
+
   token_e type_;
   std::string str_;
   int32_t val_;
@@ -76,18 +79,31 @@ struct token_stream_t {
 
   token_stream_t(ccml_t &ccml);
 
+  // return the type of the next token in the stream
   token_e type();
 
-  token_t *found(token_e type);
+  // return a token if it is the next in the stream
+  const token_t *found(token_e type);
 
-  token_t *pop(token_e type);
+  // pop a token expecting it to be a certain type
+  const token_t *pop(token_e type);
 
-  token_t *pop();
+  // pop the next token from the stream
+  const token_t *pop();
 
+  // push a token onto the stream
+  // note: this can invalidate all token_t* types
   void push(const token_t &tok);
 
+  // reset all token stream state
   void reset();
 
+  // return the current line number of the token stream
+  uint32_t line_number() const {
+    return line_no_;
+  }
+
+protected:
   ccml_t &ccml_;
   uint32_t index_;
   uint32_t line_no_;

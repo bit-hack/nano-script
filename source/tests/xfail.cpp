@@ -165,7 +165,7 @@ function look()
   end
 end
   )",
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- if
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- while
   R"(
 function look()
   while (1)
@@ -232,7 +232,7 @@ function look()
   end
 end
   )",
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- var decls
   R"(
 function look()
   var var = 1
@@ -265,7 +265,7 @@ function look()
   var y
 end
   )",
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- globals
   R"(
 var global = 1 + 1
 function look()
@@ -289,7 +289,7 @@ function look()
   return global
 end
   )",
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- expression
   R"(
 function look()
   var x = 1 + 2 3
@@ -320,6 +320,25 @@ end
 function look()
   var x = 1 + 2 + ( 3 + )
 end
+  )",
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- duplicate
+  R"(
+function f()
+  return 1
+end
+function f()
+  return 1
+end
+  )",
+  R"(
+function look()
+  var l = 1
+  var l = 2
+end
+  )",
+  R"(
+var g = 1
+var g = 2
   )",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
   nullptr

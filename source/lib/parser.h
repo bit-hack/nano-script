@@ -1,7 +1,59 @@
 #pragma once
+#include <vector>
+#include <array>
+
 #include "ccml.h"
 #include "token.h"
 
+
+struct identifier_t {
+  // offset from frame pointer
+  int32_t offset;
+  // identifier token
+  const token_t *token;
+};
+
+struct scope_list_t {
+
+  scope_list_t() {
+    head_.emplace_back(0);
+  }
+
+  void enter() {
+    head_.emplace_back(head_.size());
+  }
+
+  void leave() {
+    head_.pop_back();
+  }
+
+  void add(const token_t *tok) {
+    assert(head() < int32_t(scope_.size()));
+    int32_t offset = 0;
+    scope_[head()++] = identifier_t {offset, tok};
+  }
+
+  const identifier_t *find(const std::string &name) const {
+    for (int32_t i = head(); i >= 0; --i) {
+      if (scope_[i].token->str_ == name) {
+        return &scope_[i];
+      }
+    }
+    return nullptr;
+  }
+
+protected:
+  const int32_t & head() const {
+    return head_.back();
+  }
+
+  int32_t & head() {
+    return head_.back();
+  }
+
+  std::array<identifier_t, 64> scope_;
+  std::vector<int32_t> head_;
+};
 
 struct parser_t {
 
@@ -36,7 +88,7 @@ struct parser_t {
   };
 
   struct global_t {
-    token_t *token_;
+    const token_t *token_;
     int32_t value_;
   };
 
@@ -54,7 +106,8 @@ struct parser_t {
   void add_function(const std::string &name, ccml_syscall_t func);
 
   // find a function by name
-  const function_t *find_function(const std::string &name);
+  // if `can_fail == false` it will report an error
+  const function_t *find_function(const std::string &name, bool can_fail=false);
 
   // return a list of globals
   const std::vector<global_t> globals() const {
@@ -64,8 +117,11 @@ struct parser_t {
 protected:
   ccml_t &ccml_;
 
+  // list of parsed function
   std::vector<function_t> funcs_;
+  // operator stack for expression parsing
   std::vector<token_e> op_stack_;
+  // list of parsed globals
   std::vector<global_t> global_;
 
   // parse specific language constructs
@@ -74,8 +130,8 @@ protected:
   void parse_return();
   void parse_while();
   void parse_if();
-  void parse_call(token_t *name);
-  void parse_assign(token_t *name);
+  void parse_call(const token_t *name);
+  void parse_assign(const token_t *name);
   void parse_decl();
   void parse_expr();
   void parse_expr_ex(uint32_t tide);
