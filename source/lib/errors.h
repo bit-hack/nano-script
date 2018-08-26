@@ -50,8 +50,12 @@ struct error_manager_t {
     on_error_(line_number_(), "statement expected");
   }
 
-  virtual void function_already_exists(const token_t &name) {
-    on_error_(name.line_no_, "function '%s' already exists", name.str_.c_str());
+  virtual void function_already_exists(const token_t &t) {
+    on_error_(t.line_no_, "function '%s' already exists", t.str_.c_str());
+  }
+
+  virtual void var_already_exists(const token_t &t) {
+    on_error_(t.line_no_, "var '%s' already exists in this scope", t.str_.c_str());
   }
 
   // token

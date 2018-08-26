@@ -15,44 +15,96 @@ struct identifier_t {
 
 struct scope_list_t {
 
-  scope_list_t() {
-    head_.emplace_back(0);
+  scope_list_t() : max_depth_(0) {
+    reset();
   }
 
   void enter() {
-    head_.emplace_back(head_.size());
+    const int32_t back = head();
+    var_head_.emplace_back(back);
   }
 
   void leave() {
-    head_.pop_back();
+    var_head_.pop_back();
   }
 
-  void add(const token_t *tok) {
-    assert(head() < int32_t(scope_.size()));
-    int32_t offset = 0;
-    scope_[head()++] = identifier_t {offset, tok};
+  void var_add(const token_t *tok) {
+    assert(head() < int32_t(vars_.size()));
+    const int32_t offset = head();
+    vars_[head()++] = identifier_t {offset, tok};
+    // update max depth
+    max_depth_ = std::max(max_depth_, head());
   }
 
-  const identifier_t *find(const std::string &name) const {
-    for (int32_t i = head(); i >= 0; --i) {
-      if (scope_[i].token->str_ == name) {
-        return &scope_[i];
+  int32_t var_count() const {
+    return head();
+  }
+
+  void arg_add(const token_t *tok) {
+    identifier_t ident{0, tok};
+    args_[arg_head_++] = ident;
+  }
+
+  int32_t arg_count() const {
+    return arg_head_;
+  }
+
+  // calculate argument offsets from frame pointer
+  // note: dont push any more arguments
+  void arg_calc_offsets() {
+    for (int32_t i = 0; i < arg_head_; ++i) {
+      identifier_t &arg = args_[i];
+      arg.offset = i - arg_head_;
+    }
+  }
+
+  const identifier_t *find_ident(const token_t &name) const {
+    // note: back to front search could enable shadowing
+    // search for locals
+    for (int32_t i = head()-1; i >= 0; --i) {
+      if (vars_[i].token->str_ == name.str_) {
+        return &vars_[i];
       }
     }
+    // search for arguments
+    for (int32_t i = 0; i < arg_head_; ++i) {
+      if (args_[i].token->str_ == name.str_) {
+        return &args_[i];
+      }
+    }
+    // none found
     return nullptr;
+  }
+
+  void reset() {
+    // reset vars
+    max_depth_ = 0;
+    var_head_.clear();
+    var_head_.emplace_back(0);
+    // reset args
+    arg_head_ = 0;
+  }
+
+  // return the max stack depth size encountered
+  int32_t max_depth() const {
+    return max_depth_;
   }
 
 protected:
   const int32_t & head() const {
-    return head_.back();
+    return var_head_.back();
   }
 
   int32_t & head() {
-    return head_.back();
+    return var_head_.back();
   }
 
-  std::array<identifier_t, 64> scope_;
-  std::vector<int32_t> head_;
+  std::array<identifier_t, 64> vars_;
+  std::vector<int32_t> var_head_;
+  int32_t max_depth_;
+
+  std::array<identifier_t, 64> args_;
+  int32_t arg_head_;
 };
 
 struct parser_t {
@@ -124,6 +176,8 @@ protected:
   std::vector<token_e> op_stack_;
   // list of parsed globals
   std::vector<global_t> global_;
+  // scope manager
+  scope_list_t scope_;
 
   // parse specific language constructs
   void parse_function();

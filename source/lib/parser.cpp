@@ -99,9 +99,8 @@ void parser_t::load_ident(const token_t &t) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   // try to load from local variable
-  int32_t index = 0;
-  if (func().find(t.str_, index)) {
-    asm_.emit(INS_GETV, index, &t);
+  if (const identifier_t *ident = scope_.find_ident(t)) {
+    asm_.emit(INS_GETV, ident->offset, &t);
     return;
   }
   // try to load from global variable
@@ -187,24 +186,31 @@ void parser_t::parse_decl() {
 
   const token_t *name = stream_.pop(TOK_IDENT);
 
-  // TODO: add find_ident() and check for duplicates
+  // check for duplicate function name
+  if (scope_.find_ident(*name)) {
+    ccml_.errors().var_already_exists(*name);
+  }
 
-  const token_t *assign = stream_.found(TOK_ASSIGN);
   // parse assignment expression
+  const token_t *assign = stream_.found(TOK_ASSIGN);
   if (assign) {
     parse_expr();
   }
+  else {
+    // implicitly set to zero
+    // TODO: add tests for this
+    asm_.emit(INS_CONST, 0, name);
+  }
+
   // add name to identifier table
   // note: must happen after parse_expr() to avoid 'var x = x'
   func().ident_.push_back(name->str_);
+  scope_.var_add(name);
+
   // generate assignment
-  if (assign) {
-    int32_t index = 0;
-    if (!func().find(name->str_, index)) {
-      assert(!"identifier should always be known here");
-    }
-    asm_.emit(INS_SETV, index, assign);
-  }
+  const identifier_t *ident = scope_.find_ident(*name);
+  assert(ident && "identifier should always be known here");
+  asm_.emit(INS_SETV, ident->offset, assign);
 }
 
 void parser_t::parse_assign(const token_t *name) {
@@ -217,9 +223,8 @@ void parser_t::parse_assign(const token_t *name) {
   // parse assignment expression
   parse_expr();
   // assign to local variable
-  int32_t index = 0;
-  if (func().find(name->str_, index)) {
-    asm_.emit(INS_SETV, index, name);
+  if (const identifier_t *ident = scope_.find_ident(*name)) {
+    asm_.emit(INS_SETV, ident->offset, name);
     return;
   }
   // assign to global variable
@@ -282,13 +287,17 @@ void parser_t::parse_if() {
   int32_t *l1 = asm_.emit(INS_JMP, 0);
 
   // IF body
-  while (!stream_.found(TOK_END)) {
-    if (stream_.found(TOK_ELSE)) {
-      stream_.pop(TOK_EOL);
-      has_else = true;
-      break;
+  {
+    scope_.enter();
+    while (!stream_.found(TOK_END)) {
+      if (stream_.found(TOK_ELSE)) {
+        stream_.pop(TOK_EOL);
+        has_else = true;
+        break;
+      }
+      parse_stmt();
     }
-    parse_stmt();
+    scope_.leave();
   }
 
   int32_t *l2 = nullptr;
@@ -297,11 +306,15 @@ void parser_t::parse_if() {
     asm_.emit(INS_CONST, 1);
     l2 = asm_.emit(INS_JMP, 0);
   }
-  // ELSE body
   *l1 = asm_.pos();
   if (has_else) {
-    while (!stream_.found(TOK_END)) {
-      parse_stmt();
+    // ELSE body
+    {
+      scope_.enter();
+      while (!stream_.found(TOK_END)) {
+        parse_stmt();
+      }
+      scope_.leave();
     }
     // END
     *l2 = asm_.pos();
@@ -332,8 +345,12 @@ void parser_t::parse_while() {
   asm_.emit(INS_NOT);
   int32_t *l2 = asm_.emit(INS_JMP, 0);
   // WHILE body
-  while (!stream_.found(TOK_END)) {
-    parse_stmt();
+  {
+    scope_.enter();
+    while (!stream_.found(TOK_END)) {
+      parse_stmt();
+    }
+    scope_.leave();
   }
   // note: no need to pop newline as parse_stmt() handles that
 
@@ -349,7 +366,7 @@ void parser_t::parse_return() {
 
   // return <expr>
   parse_expr();
-  asm_.emit(INS_RET, func().frame_size());
+  asm_.emit(INS_RET, scope_.arg_count() + scope_.var_count());
 }
 
 void parser_t::parse_stmt() {
@@ -406,7 +423,7 @@ void parser_t::parse_function() {
   //    function   <TOK_IDENT> ( [ <TOK_IDENT> [ , <TOK_IDENT> ]+ ] )
   //      <statements>
   //    end
-  
+
   // parse function decl.
   const token_t *name = stream_.pop(TOK_IDENT);
   assert(name);
@@ -420,18 +437,24 @@ void parser_t::parse_function() {
   func().pos_ = asm_.pos();
   func().name_ = name->str_;
 
+  // reset the scope
+  scope_.reset();
+
   // argument list
   stream_.pop(TOK_LPAREN);
   if (!stream_.found(TOK_RPAREN)) {
     do {
       const token_t *arg = stream_.pop(TOK_IDENT);
+      scope_.arg_add(arg);
+      // XXX: remove me
       func().ident_.push_back(arg->str_);
     } while (stream_.found(TOK_COMMA));
     stream_.pop(TOK_RPAREN);
+    scope_.arg_calc_offsets();
   }
   stream_.pop(TOK_EOL);
   // save frame index
-  func().frame_ = func().ident_.size();
+  func().frame_ = scope_.arg_count();
 
   // emit dummy prologue
   asm_.emit(INS_LOCALS, 0, name);
@@ -441,16 +464,20 @@ void parser_t::parse_function() {
   //       the function
 
   // function body
-  while (!stream_.found(TOK_END)) {
-    parse_stmt();
+  {
+    scope_.enter();
+    while (!stream_.found(TOK_END)) {
+      parse_stmt();
+    }
+    scope_.leave();
   }
 
   // emit dummy epilogue (may be unreachable)
   asm_.emit(INS_CONST, 0);
-  asm_.emit(INS_RET, func().frame_size());
+  asm_.emit(INS_RET, scope_.arg_count() + scope_.var_count());
 
   // fixup the number of locals we are reserving with INS_LOCALS
-  const uint32_t num_locals = func().ident_.size() - func().frame_;
+  const uint32_t num_locals = scope_.max_depth();
   if (num_locals) {
     locals = num_locals;
   }
