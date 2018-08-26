@@ -34,7 +34,7 @@ bool parser_t::parse() {
   return true;
 }
 
-const parser_t::function_t *parser_t::find_function(const token_t *name, bool can_fail) {
+const function_t *parser_t::find_function(const token_t *name, bool can_fail) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   for (const function_t &func : funcs_) {
@@ -49,7 +49,7 @@ const parser_t::function_t *parser_t::find_function(const token_t *name, bool ca
   return nullptr;
 }
 
-const parser_t::function_t *parser_t::find_function(const std::string &name) {
+const function_t *parser_t::find_function(const std::string &name) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
   for (const function_t &func : funcs_) {
     if (func.name_ == name) {
@@ -57,10 +57,6 @@ const parser_t::function_t *parser_t::find_function(const std::string &name) {
     }
   }
   return nullptr;
-}
-
-parser_t::function_t &parser_t::func() {
-  return funcs_.back();
 }
 
 int32_t parser_t::op_type(token_e type) {
@@ -204,7 +200,6 @@ void parser_t::parse_decl() {
 
   // add name to identifier table
   // note: must happen after parse_expr() to avoid 'var x = x'
-  func().ident_.push_back(name->str_);
   scope_.var_add(name);
 
   // generate assignment
@@ -433,9 +428,7 @@ void parser_t::parse_function() {
   }
 
   // new function container
-  funcs_.push_back(function_t());
-  func().pos_ = asm_.pos();
-  func().name_ = name->str_;
+  funcs_.emplace_back(name->str_, asm_.pos());
 
   // reset the scope
   scope_.reset();
@@ -446,15 +439,11 @@ void parser_t::parse_function() {
     do {
       const token_t *arg = stream_.pop(TOK_IDENT);
       scope_.arg_add(arg);
-      // XXX: remove me
-      func().ident_.push_back(arg->str_);
     } while (stream_.found(TOK_COMMA));
     stream_.pop(TOK_RPAREN);
     scope_.arg_calc_offsets();
   }
   stream_.pop(TOK_EOL);
-  // save frame index
-  func().frame_ = scope_.arg_count();
 
   // emit dummy prologue
   asm_.emit(INS_LOCALS, 0, name);
@@ -536,10 +525,7 @@ void parser_t::op_popall(uint32_t tide) {
 }
 
 void parser_t::add_function(const std::string &name, ccml_syscall_t func) {
-  function_t f;
-  f.sys_ = func;
-  f.name_ = name;
-  funcs_.push_back(f);
+  funcs_.emplace_back(name, func);
 }
 
 void parser_t::reset() {

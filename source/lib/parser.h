@@ -107,42 +107,24 @@ protected:
   int32_t arg_head_;
 };
 
+struct function_t {
+  ccml_syscall_t sys_;
+  std::string name_;
+  int32_t pos_;
+
+  function_t(const std::string &name, ccml_syscall_t sys)
+      : sys_(sys), name_(name), pos_(-1) {}
+
+  function_t(const std::string &name, int32_t pos)
+      : sys_(nullptr), name_(name), pos_(pos) {}
+};
+
+struct global_t {
+  const token_t *token_;
+  int32_t value_;
+};
+
 struct parser_t {
-
-  struct function_t {
-    ccml_syscall_t sys_;
-    std::string name_;
-    int32_t pos_;
-    int32_t frame_;
-    std::vector<std::string> ident_;
-
-    function_t()
-      : sys_(nullptr)
-      , name_()
-      , pos_()
-      , frame_() {
-    }
-
-    int32_t frame_size() const {
-      return ident_.size();
-    }
-
-    // find an identifier and return its stack index relative to fp_
-    bool find(const std::string &str, int32_t &index) {
-      for (uint32_t i = 0; i < ident_.size(); i++) {
-        if (str == ident_[i]) {
-          index = i - frame_;
-          return true;
-        }
-      }
-      return false;
-    }
-  };
-
-  struct global_t {
-    const token_t *token_;
-    int32_t value_;
-  };
 
   parser_t(ccml_t &c)
     : ccml_(c) {
@@ -207,7 +189,4 @@ protected:
 
   // pop all operators off the stack
   void op_popall(uint32_t tide);
-
-  // get the current function being parsed
-  function_t &func();
 };

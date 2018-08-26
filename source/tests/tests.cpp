@@ -273,10 +273,6 @@ end
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 static bool test_scope() {
-
-  // XXX: this behavior is really weird and perhaps we should ban it
-  //      or scope variables properly
-
   static const char *prog = R"(
 function scope(flag)
   if (flag)
@@ -286,14 +282,17 @@ function scope(flag)
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
-    // XXX: we should really error on this case
-    return false;
+  try {
+    if (!ccml.build(prog)) {
+      return true;
+    }
   }
-  const int32_t inputs[] = {0};
-  const int32_t func = ccml.parser().find_function("scope")->pos_;
-  const int32_t res = ccml.vm().execute(func, 1, inputs, false);
-  return res == 1234;
+  catch (const ccml_error_t &error) {
+    (void)error;
+    // XXX: make warning "variable cant be accessed from this scope"
+    return true;
+  }
+  return false;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
