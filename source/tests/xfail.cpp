@@ -342,6 +342,78 @@ end
 var g = 1
 var g = 2
   )",
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- arguments
+  R"(
+function f(a, b, c)
+end
+function g()
+  f(1, 2, 3, 4)
+end
+)",
+  R"(
+function f(a, b, c)
+end
+function g()
+  f(1, 2)
+end
+)",
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- arrays
+R"(
+function f()
+  var my_array[
+end
+)",
+  R"(
+function f()
+  var my_array]
+end
+)",
+  R"(
+function f()
+  var my_array[]
+end
+)",
+  R"(
+function f()
+  var my_array[-1]
+end
+)",
+  R"(
+function f()
+  var my_array[0]
+end
+)",
+  R"(
+function f()
+  var size = 10
+  var my_array[size]
+end
+)",
+  R"(
+function f(size)
+  var my_array[size]
+end
+)",
+  R"(
+function f(size)
+  var my_array[1]
+  my_array = 3
+end
+)",
+  R"(
+function f(size)
+  var x = 10
+  x[0] = 10
+end
+)",
+  R"(
+function f(x)
+end
+function g()
+  var my_array[10]
+  f(my_array)
+end
+)",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
   nullptr
 };
