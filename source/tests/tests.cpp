@@ -42,6 +42,7 @@ end
   if (!ccml.build(prog)) {
     return false;
   }
+  ccml.assembler().disasm();
   const int32_t func = ccml.parser().find_function("func_name")->pos_;
   const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
   return res == 1234;
@@ -191,7 +192,7 @@ function main()
   # check order of subtracts is correct
   # should evaluate as `(12 - 7) - 5 == 0`
   # not as             `12- (7 - 5) == 10`
-  return12 - 7 - 5
+  return 12 - 7 - 5
 end
 )";
   ccml_t ccml;
@@ -509,6 +510,78 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_lexer_1() {
+  // test fix for bug where this would be lex'd as two tokens 'return' and '1234'
+  static const char *prog = "return1234";
+  ccml_t ccml;
+  if (!ccml.lexer().lex(prog)) {
+    return false;
+  }
+  auto &stream = ccml.lexer().stream_;
+  const token_t *tok = stream.pop();
+  return (tok->type_ == TOK_IDENT) && (tok->str_ == prog);
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_array_1() {
+  static const char *prog = R"(
+function main()
+  var my_array[4]
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  ccml.assembler().disasm();
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 0;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_array_2() {
+  static const char *prog = R"(
+function main()
+  var my_array[4]
+  my_array[2] = 1234
+  return my_array[2]
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  ccml.assembler().disasm();
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 1234;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_array_3() {
+  static const char *prog = R"(
+function main()
+  var my_array[10]
+  var i = 0
+  while (i < 10)
+    my_array[i] = i
+    i = i + 1
+  end
+  return my_array[8]
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  ccml.assembler().disasm();
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+  const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
+  return res == 8;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 typedef bool (*test_t)();
 struct test_pair_t {
   const char *name;
@@ -542,6 +615,10 @@ static const test_pair_t tests[] = {
   TEST(test_triangle),
   TEST(test_weekday),
   TEST(test_xfails),
+  TEST(test_lexer_1),
+  TEST(test_array_1),
+  TEST(test_array_2),
+  TEST(test_array_3),
   // sentinel
   nullptr, nullptr
 };

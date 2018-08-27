@@ -58,6 +58,30 @@ struct error_manager_t {
     on_error_(t.line_no_, "var '%s' already exists in this scope", t.str_.c_str());
   }
 
+  virtual void global_already_exists(const token_t &t) {
+    on_error_(t.line_no_, "global with name '%s' already exists", t.str_.c_str());
+  }
+
+  virtual void use_of_unknown_array(const token_t &t) {
+    on_error_(t.line_no_, "use of unknown array '%s'", t.str_.c_str());
+  }
+
+  virtual void assign_to_unknown_array(const token_t &t) {
+    on_error_(t.line_no_, "assignment to unknown array '%s'", t.str_.c_str());
+  }
+
+  virtual void array_size_must_be_greater_than(const token_t &t) {
+    on_error_(t.line_no_, "size of array '%s' must be >= 1", t.str_.c_str());
+  }
+
+  virtual void variable_is_not_array(const token_t &t) {
+    on_error_(t.line_no_, "variable '%s' was not declared as an array", t.str_.c_str());
+  }
+
+  virtual void ident_is_array_not_var(const token_t &t) {
+    on_error_(t.line_no_, "identifier '%s' an array type not variable", t.str_.c_str());
+  }
+
   // token
 
   virtual void unexpected_token(const token_t &t, token_e e) {

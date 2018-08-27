@@ -43,6 +43,9 @@ enum instruction_e {
   INS_GETG,     // get global
   INS_SETG,     // set global
 
+  INS_GETI,     // get local indexed { stack[fp + operand + stack[0]] }
+  INS_SETI,     // set local indexed { stack[fp + operand + stack[-1]] = stack[0] }
+
   __INS_COUNT__,  // number of instructions
 };
 

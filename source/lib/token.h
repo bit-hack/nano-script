@@ -17,6 +17,8 @@ enum token_e {
   TOK_IDENT,
   TOK_LPAREN,
   TOK_RPAREN,
+  TOK_LBRACKET,
+  TOK_RBRACKET,
   TOK_COMMA,
   TOK_EOL,
   TOK_ADD,

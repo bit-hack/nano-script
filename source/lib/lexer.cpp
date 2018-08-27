@@ -4,19 +4,6 @@
 
 namespace {
 
-bool munch(const char *&s, const char *string) {
-  const char *t = s;
-  for (;; t++, string++) {
-    if (*string == '\0') {
-      s = t - 1;
-      return true;
-    }
-    if (tolower(*t) != tolower(*string)) {
-      return false;
-    }
-  }
-}
-
 bool is_alpha_numeric(const char t) {
   return (t >= 'a' && t <= 'z') ||
          (t >= 'A' && t <= 'Z') ||
@@ -26,6 +13,23 @@ bool is_alpha_numeric(const char t) {
 
 bool is_numeric(const char t) {
   return (t >= '0' && t <= '9');
+}
+
+bool munch(const char *&s, const char *string) {
+  const char *t = s;
+  for (;; t++, string++) {
+    if (*string == '\0') {
+      // avoid matching things like 'andy' as 'and'
+      if (is_alpha_numeric(*t)) {
+        return false;
+      }
+      s = t - 1;
+      return true;
+    }
+    if (tolower(*t) != tolower(*string)) {
+      return false;
+    }
+  }
 }
 
 } // namespace
@@ -62,13 +66,13 @@ bool lexer_t::lex(const char *s) {
 
     // parse keywords
     switch (tolower(*s)) {
-    case ('a'):
+    case 'a':
       if (munch(s, "and")) {
         push(TOK_AND);
         continue;
       }
       break;
-    case ('e'):
+    case 'e':
       if (munch(s, "end")) {
         push(TOK_END);
         continue;
@@ -77,73 +81,79 @@ bool lexer_t::lex(const char *s) {
         continue;
       }
       break;
-    case ('f'):
+    case 'f':
       if (munch(s, "function")) {
         push(TOK_FUNC);
         continue;
       }
       break;
-    case ('i'):
+    case 'i':
       if (munch(s, "if")) {
         push(TOK_IF);
         continue;
       }
       break;
-    case ('n'):
+    case 'n':
       if (munch(s, "not")) {
         push(TOK_NOT);
         continue;
       }
       break;
-    case ('o'):
+    case 'o':
       if (munch(s, "or")) {
         push(TOK_OR);
         continue;
       }
       break;
-    case ('r'):
+    case 'r':
       if (munch(s, "return")) {
         push(TOK_RETURN);
         continue;
       }
       break;
-    case ('v'):
+    case 'v':
       if (munch(s, "var")) {
         push(TOK_VAR);
         continue;
       }
       break;
-    case ('w'):
+    case 'w':
       if (munch(s, "while")) {
         push(TOK_WHILE);
         continue;
       }
       break;
-    case ('('):
+    case '(':
       push(TOK_LPAREN);
       continue;
-    case (')'):
+    case ')':
       push(TOK_RPAREN);
       continue;
-    case (','):
+    case '[':
+      push(TOK_LBRACKET);
+      continue;
+    case ']':
+      push(TOK_RBRACKET);
+      continue;
+    case ',':
       push(TOK_COMMA);
       continue;
-    case ('+'):
+    case '+':
       push(TOK_ADD);
       continue;
-    case ('-'):
+    case '-':
       push(TOK_SUB);
       continue;
-    case ('*'):
+    case '*':
       push(TOK_MUL);
       continue;
-    case ('/'):
+    case '/':
       push(TOK_DIV);
       continue;
-    case ('%'):
+    case '%':
       push(TOK_MOD);
       continue;
-    case ('\n'):
+    case '\n':
     {
       assert(s >= new_line_);
       lines_.push_back(std::string(new_line_, s - new_line_));
@@ -152,7 +162,7 @@ bool lexer_t::lex(const char *s) {
     }
       push(TOK_EOL);
       continue;
-    case ('='):
+    case '=':
       if (s[1] == '=') {
         push(TOK_EQ);
         ++s;
@@ -162,7 +172,7 @@ bool lexer_t::lex(const char *s) {
         continue;
       }
       break;
-    case ('<'):
+    case '<':
       if (s[1] == '=') {
         push(TOK_LEQ);
         ++s;
@@ -172,7 +182,7 @@ bool lexer_t::lex(const char *s) {
         continue;
       }
       break;
-    case ('>'):
+    case '>':
       if (s[1] == '=') {
         push(TOK_GEQ);
         ++s;

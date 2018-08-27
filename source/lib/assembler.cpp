@@ -13,10 +13,12 @@ const char *gMnemonic[] = {
     "INS_AND", "INS_OR",    "INS_NOT",    "INS_LT",   "INS_GT",
     "INS_LEQ", "INS_GEQ",   "INS_EQ",     "INS_JMP",  "INS_CALL",
     "INS_RET", "INS_POP",   "INS_CONST",  "INS_GETV", "INS_SETV",
-    "INS_NOP", "INS_SCALL", "INS_LOCALS", "INS_GETG", "INS_SETG"};
+    "INS_NOP", "INS_SCALL", "INS_LOCALS", "INS_GETG", "INS_SETG",
+    "INS_GETI", "INS_SETI"};
 
 // make sure this is kept up to date with the opcode table 'instruction_e'
-static_assert(sizeof(gMnemonic) / sizeof(const char*) == __INS_COUNT__, "");
+static_assert(sizeof(gMnemonic) / sizeof(const char *) == __INS_COUNT__,
+              "gMnemonic table should match instruction_e enum layout");
 };
 
 assembler_t::assembler_t(ccml_t &c)
@@ -82,6 +84,8 @@ int32_t *assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   case INS_LOCALS:
   case INS_GETG:
   case INS_SETG:
+  case INS_GETI:
+  case INS_SETI:
     write8(ins);
     write32(v);
     break;
@@ -157,6 +161,8 @@ int32_t assembler_t::disasm(const uint8_t *ptr) const {
   case INS_LOCALS:
   case INS_GETG:
   case INS_SETG:
+  case INS_GETI:
+  case INS_SETI:
     printf("%-12s %d\n", gMnemonic[op], val);
     return i;
   }

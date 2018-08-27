@@ -148,6 +148,16 @@ int32_t vm_t::execute(int32_t tgt_pc, int32_t argc, const int32_t *argv, bool tr
     case (INS_SETV):
       t.setv(val, t.pop());
       continue;
+
+    case (INS_GETI):
+      t.push(t.getv(val + t.pop()));
+      continue;
+    case (INS_SETI): {
+      const int32_t value = t.pop();
+      t.setv(val + t.pop(), value);
+    }
+      continue;
+
     case (INS_LOCALS):
       // reserve this many values on the stack
       for (int i = 0; i < val; ++i) {

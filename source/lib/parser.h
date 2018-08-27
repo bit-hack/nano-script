@@ -7,8 +7,28 @@
 
 
 struct identifier_t {
+
+  identifier_t()
+    : offset(0)
+    , count(0)
+    , token(nullptr)
+  {
+  }
+
+  identifier_t(const token_t *t, int32_t o, int32_t c=1)
+    : offset(o)
+    , count(c)
+    , token(t) {
+  }
+
+  bool is_array() const {
+    return count > 1;
+  }
+
   // offset from frame pointer
   int32_t offset;
+  // number of items (> 1 == array)
+  int32_t count;
   // identifier token
   const token_t *token;
 };
@@ -28,20 +48,25 @@ struct scope_list_t {
     var_head_.pop_back();
   }
 
-  void var_add(const token_t *tok) {
+  void var_add(const token_t &tok, uint32_t count) {
     assert(head() < int32_t(vars_.size()));
     const int32_t offset = head();
-    vars_[head()++] = identifier_t {offset, tok};
+    vars_[head()++] = identifier_t(&tok, offset, count);
     // update max depth
-    max_depth_ = std::max(max_depth_, head());
+    max_depth_ = std::max(max_depth_, var_count());
   }
 
+  // return space used for variables in stack frame
   int32_t var_count() const {
-    return head();
+    int32_t count = 0;
+    for (int i = 0; i < head(); ++i) {
+      count += vars_[i].count;
+    }
+    return count;
   }
 
   void arg_add(const token_t *tok) {
-    identifier_t ident{0, tok};
+    identifier_t ident(tok, 0);
     args_[arg_head_++] = ident;
   }
 
@@ -111,12 +136,23 @@ struct function_t {
   ccml_syscall_t sys_;
   std::string name_;
   int32_t pos_;
+  std::vector<int32_t*> ret_fixup_;
 
   function_t(const std::string &name, ccml_syscall_t sys)
       : sys_(sys), name_(name), pos_(-1) {}
 
   function_t(const std::string &name, int32_t pos)
       : sys_(nullptr), name_(name), pos_(pos) {}
+
+  void add_return_fixup(int32_t *r) {
+    ret_fixup_.push_back(r);
+  }
+
+  void fix_return_operands(const int32_t count) {
+    for (int32_t *r : ret_fixup_) {
+      *r = count;
+    }
+  }
 };
 
 struct global_t {
@@ -162,13 +198,16 @@ protected:
   scope_list_t scope_;
 
   // parse specific language constructs
+  void parse_array_get(const token_t &name);
+  void parse_array_set(const token_t &name);
   void parse_function();
   void parse_stmt();
   void parse_return();
   void parse_while();
   void parse_if();
-  void parse_call(const token_t *name);
-  void parse_assign(const token_t *name);
+  void parse_call(const token_t &name);
+  void parse_assign(const token_t &name);
+  void parse_decl_array(const token_t &name);
   void parse_decl();
   void parse_expr();
   void parse_expr_ex(uint32_t tide);
@@ -176,17 +215,18 @@ protected:
   void parse_global();
 
   // return true if next token is an operator
-  bool is_operator();
+  bool is_operator() const;
 
   // get the precedence of this operator
-  int32_t op_type(token_e type);
+  int32_t op_type(token_e type) const;
 
-  // load from a given identifier (local/global)
-  void load_ident(const token_t &name);
+  // load/save a given identifier (local/global)
+  void ident_load(const token_t &name);
+  void ident_save(const token_t &name);
 
   // push an operator on the stack
   void op_push(token_e op, uint32_t tide);
 
   // pop all operators off the stack
-  void op_popall(uint32_t tide);
+  void op_pop_all(uint32_t tide);
 };
