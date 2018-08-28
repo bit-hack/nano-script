@@ -337,12 +337,14 @@ void parser_t::parse_if() {
   // IF condition
   stream_.pop(TOK_LPAREN);
   parse_expr();
-  stream_.pop(TOK_RPAREN);
-  stream_.pop(TOK_EOL);
 
   // this jump skips the body of the if, hence not
   asm_.emit(INS_NOT);
   int32_t *l1 = asm_.emit(INS_JMP, 0);
+
+  // note: moved below not and jmp to keep linetable correct
+  stream_.pop(TOK_RPAREN);
+  stream_.pop(TOK_EOL);
 
   // IF body
   {
@@ -392,16 +394,19 @@ void parser_t::parse_while() {
   //    end '\n'
 
   // top of loop
-  int32_t l1 = asm_.pos();
+  const int32_t l1 = asm_.pos();
   // WHILE condition
   stream_.pop(TOK_LPAREN);
   parse_expr();
-  stream_.pop(TOK_RPAREN);
-  stream_.pop(TOK_EOL);
 
   // GOTO end if false
   asm_.emit(INS_NOT);
   int32_t *l2 = asm_.emit(INS_JMP, 0);
+
+  // note: moved below not and jump to keep linetable correct
+  stream_.pop(TOK_RPAREN);
+  stream_.pop(TOK_EOL);
+
   // WHILE body
   {
     scope_.enter();
