@@ -71,7 +71,7 @@ struct error_manager_t {
   }
 
   virtual void array_size_must_be_greater_than(const token_t &t) {
-    on_error_(t.line_no_, "size of array '%s' must be >= 1", t.str_.c_str());
+    on_error_(t.line_no_, "size of array '%s' must be >= 2", t.str_.c_str());
   }
 
   virtual void variable_is_not_array(const token_t &t) {
@@ -80,6 +80,17 @@ struct error_manager_t {
 
   virtual void ident_is_array_not_var(const token_t &t) {
     on_error_(t.line_no_, "identifier '%s' an array type not variable", t.str_.c_str());
+  }
+
+  virtual void wrong_number_of_args(const token_t &t, int32_t takes,
+                                    int32_t given) {
+    on_error_(t.line_no_, "function '%s' takes %d arguments, %d given",
+              t.str_.c_str(), takes, given);
+  }
+
+  virtual void assign_to_array_missing_bracket(const token_t &t) {
+    on_error_(t.line_no_, "assignment to array '%s' missing brackets, try '%s[...] = ...'",
+              t.str_.c_str(), t.str_.c_str());
   }
 
   // token

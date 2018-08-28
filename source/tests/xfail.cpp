@@ -390,13 +390,19 @@ function f()
 end
 )",
   R"(
+function f()
+  # one element doesnt make much sense
+  var my_array[1]
+end
+)",
+  R"(
 function f(size)
   var my_array[size]
 end
 )",
   R"(
 function f(size)
-  var my_array[1]
+  var my_array[2]
   my_array = 3
 end
 )",
@@ -445,6 +451,7 @@ bool test_xfails() {
     }
     if (!failed) {
       printf("  ! xfail test %d failed\n", i);
+      printf("%s\n", source);
       ++fails;
     }
   }

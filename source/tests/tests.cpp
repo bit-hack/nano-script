@@ -533,7 +533,6 @@ end
   if (!ccml.build(prog)) {
     return false;
   }
-  ccml.assembler().disasm();
   const int32_t func = ccml.parser().find_function("main")->pos_;
   const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
   return res == 0;
@@ -552,7 +551,6 @@ end
   if (!ccml.build(prog)) {
     return false;
   }
-  ccml.assembler().disasm();
   const int32_t func = ccml.parser().find_function("main")->pos_;
   const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
   return res == 1234;
@@ -575,10 +573,48 @@ end
   if (!ccml.build(prog)) {
     return false;
   }
-  ccml.assembler().disasm();
   const int32_t func = ccml.parser().find_function("main")->pos_;
   const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
   return res == 8;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_ret_operand() {
+  // return operand should match INS_LOCALS operand
+  static const char *prog = R"(
+function main(a, b)
+  var my_array[10]
+  var i = 1
+  if (i == 2)
+    if (i == 1)
+      var thingy[2]
+      return 1
+    else
+      var x
+    end
+    var y
+    return a
+  end
+  return my_array[8]
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  // note:
+  //    INS_LOCALS shoud == 13
+  //    INS_RET should == 15
+  ccml.assembler().disasm();
+
+  const int32_t func = ccml.parser().find_function("main")->pos_;
+
+  int32_t inputs[] = {1, 2};
+
+  const int32_t res = ccml.vm().execute(func, 2, inputs, false);
+
+  // TODO: check the generated ASM
+  return true;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -589,6 +625,7 @@ struct test_pair_t {
 };
 
 bool test_xfails();
+bool test_sort_1();
 
 #define TEST(X) (#X), X
 static const test_pair_t tests[] = {
@@ -619,6 +656,8 @@ static const test_pair_t tests[] = {
   TEST(test_array_1),
   TEST(test_array_2),
   TEST(test_array_3),
+  TEST(test_ret_operand),
+  TEST(test_sort_1),
   // sentinel
   nullptr, nullptr
 };

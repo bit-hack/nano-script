@@ -50,7 +50,7 @@ struct scope_list_t {
 
   void var_add(const token_t &tok, uint32_t count) {
     assert(head() < int32_t(vars_.size()));
-    const int32_t offset = head();
+    const int32_t offset = var_count();
     vars_[head()++] = identifier_t(&tok, offset, count);
     // update max depth
     max_depth_ = std::max(max_depth_, var_count());
@@ -137,12 +137,13 @@ struct function_t {
   std::string name_;
   int32_t pos_;
   std::vector<int32_t*> ret_fixup_;
+  uint32_t num_args_;
 
-  function_t(const std::string &name, ccml_syscall_t sys)
-      : sys_(sys), name_(name), pos_(-1) {}
+  function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args)
+      : sys_(sys), name_(name), pos_(-1), num_args_(num_args) {}
 
-  function_t(const std::string &name, int32_t pos)
-      : sys_(nullptr), name_(name), pos_(pos) {}
+  function_t(const std::string &name, int32_t pos, int32_t num_args)
+      : sys_(nullptr), name_(name), pos_(pos), num_args_(num_args) {}
 
   void add_return_fixup(int32_t *r) {
     ret_fixup_.push_back(r);
@@ -173,7 +174,7 @@ struct parser_t {
   void reset();
 
   // add a syscall function
-  void add_function(const std::string &name, ccml_syscall_t func);
+  void add_function(const std::string &name, ccml_syscall_t func, uint32_t num_args);
 
   // find a function by name
   // if `can_fail == false` it will report an error

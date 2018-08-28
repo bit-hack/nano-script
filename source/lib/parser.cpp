@@ -217,7 +217,7 @@ void parser_t::parse_decl_array(const token_t &name) {
   //    var <TOK_IDENT> '['   <TOK_VAR> ']'
 
   const token_t *size = stream_.pop(TOK_VAL);
-  if (size->val_ <= 0) {
+  if (size->val_ <= 1) {
     ccml_.errors().array_size_must_be_greater_than(name);
   }
 
@@ -275,6 +275,12 @@ void parser_t::parse_assign(const token_t &name) {
   //                  V
   //    <TOK_IDENT> =   <expr>
 
+  // check its not an array type
+  const identifier_t *ident = scope_.find_ident(name);
+  if (ident && ident->is_array()) {
+    ccml_.errors().assign_to_array_missing_bracket(name);
+  }
+
   // parse assignment expression
   parse_expr();
   // generate assignment instruction
@@ -289,16 +295,25 @@ void parser_t::parse_call(const token_t &name) {
   //                  V
   //    <TOK_IDENT> (   <expr> [ , <expr> ]* )
 
+  // parse argument
+  int32_t arg_count = 0;
   if (!stream_.found(TOK_RPAREN)) {
     do {
       parse_expr();
+      ++arg_count;
     } while (stream_.found(TOK_COMMA));
     stream_.pop(TOK_RPAREN);
   }
+
   const function_t *func = find_function(&name, true);
   if (!func) {
     ccml_.errors().unknown_function(name);
   }
+  // check number of arguments
+  if (arg_count != func->num_args_) {
+    ccml_.errors().wrong_number_of_args(name, func->num_args_, arg_count);
+  }
+
   if (func->sys_) {
     asm_.emit(func->sys_, &name);
   } else {
@@ -487,9 +502,6 @@ void parser_t::parse_function() {
     ccml_.errors().function_already_exists(*name);
   }
 
-  // new function container
-  funcs_.emplace_back(name->str_, asm_.pos());
-
   // reset the scope
   scope_.reset();
 
@@ -504,6 +516,9 @@ void parser_t::parse_function() {
     scope_.arg_calc_offsets();
   }
   stream_.pop(TOK_EOL);
+
+  // new function container
+  funcs_.emplace_back(name->str_, asm_.pos(), scope_.arg_count());
 
   // emit dummy prologue
   asm_.emit(INS_LOCALS, 0, name);
@@ -652,8 +667,9 @@ void parser_t::op_pop_all(uint32_t tide) {
   }
 }
 
-void parser_t::add_function(const std::string &name, ccml_syscall_t func) {
-  funcs_.emplace_back(name, func);
+void parser_t::add_function(const std::string &name, ccml_syscall_t func,
+                            uint32_t num_args) {
+  funcs_.emplace_back(name, func, num_args);
 }
 
 void parser_t::reset() {

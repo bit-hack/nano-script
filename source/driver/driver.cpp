@@ -51,8 +51,8 @@ void vm_putc(thread_t &t) {
 int main(int argc, char **argv) {
 
   ccml_t ccml;
-  ccml.parser().add_function("putc", vm_putc);
-  ccml.parser().add_function("getc", vm_getc);
+  ccml.parser().add_function("putc", vm_putc, 1);
+  ccml.parser().add_function("getc", vm_getc, 0);
 
   try {
     if (argc <= 1)

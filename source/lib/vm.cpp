@@ -7,6 +7,8 @@ int32_t vm_t::execute(int32_t tgt_pc, int32_t argc, const int32_t *argv, bool tr
 
   thread_t t;
 
+  // TODO: check tgt_pc takes argc inputs
+
   // push globals
   for (const auto global : ccml_.parser().globals()) {
     t.g_.push_back(global.value_);
