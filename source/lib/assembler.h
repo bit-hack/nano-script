@@ -24,10 +24,22 @@ enum instruction_e {
   INS_GEQ,
   INS_EQ,
 
-  INS_JMP,      // unconditional jump
-  INS_CJMP,     // conditional jump to code offset
-  INS_CALL,     // call a function
-  INS_RET,      // return to previous frame {popping locals and args}
+  // unconditional jump
+  //    pc = operand
+  INS_JMP,
+
+  // conditional jump to code offset
+  //    if (pop() != 0)
+  //      pc = operand
+  // note: this would be more efficient in the general case to branch when the
+  //       condition == 0.  we can avoid a INS_NOT instruction.
+  INS_CJMP,
+
+  // call a function
+  INS_CALL,
+
+  // return to previous frame {popping locals and args}
+  INS_RET,
 
   // system call
   INS_SCALL,

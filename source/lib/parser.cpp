@@ -590,7 +590,7 @@ void parser_t::parse_array_get(const token_t &name) {
 
     // if array is global we are relative to bottom of stack
     if (ident->is_global) {
-      __debugbreak();
+      asm_.emit(INS_GETGI, ident->offset, &name);
     }
     // if array is local we are frame relative
     else {
@@ -630,7 +630,7 @@ void parser_t::parse_array_set(const token_t &name) {
 
     // if array is global we are relative to bottom of stack
     if (ident->is_global) {
-      __debugbreak();
+      asm_.emit(INS_SETGI, ident->offset, &name);
     }
     // if array is local we are frame relative
     else {
@@ -672,8 +672,6 @@ void parser_t::parse_global() {
     global_t global = {name, 0, 0, size->val_};
     // add to global list
     global_.push_back(global);
-    // XXX: not supported yet, we need to update how global sizes are handled
-    __debugbreak();
   }
   // parse generic global variable
   else {

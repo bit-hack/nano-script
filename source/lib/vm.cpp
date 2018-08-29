@@ -150,6 +150,12 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     case INS_CONST:
       push(val);
       continue;
+    case INS_LOCALS:
+      // reserve this many values on the stack
+      if (val) {
+        s_.resize(s_.size() + val, 0);
+      }
+      continue;
     case INS_GETV:
       push(getv(val));
       continue;
@@ -159,11 +165,8 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     case INS_GETVI:
       push(getv(val + pop()));
       continue;
-    case INS_LOCALS:
-      // reserve this many values on the stack
-      if (val) {
-        s_.resize(s_.size() + val, 0);
-      }
+    case INS_GETGI:
+      push(s_[val + pop()]);
       continue;
     case INS_GETG:
       push(s_[val]);
@@ -177,6 +180,11 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     if (op == INS_SETVI) {
       const int32_t value = pop();
       setv(val + pop(), value);
+      continue;
+    }
+    if (op == INS_SETGI) {
+      const int32_t value = pop();
+      s_[val + pop()] = value;
       continue;
     }
 

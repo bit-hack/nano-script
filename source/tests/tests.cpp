@@ -652,6 +652,70 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_array_4() {
+  static const char *prog = R"(
+var array[8]
+
+function foo()
+  array[1] = 4
+  array[4] = 9
+end
+
+function main()
+  foo()
+  return array[1] + array[4]
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  ccml.assembler().disasm();
+  const function_t *func = ccml.parser().find_function("main");
+  int32_t res = 0;
+  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+    return false;
+  }
+  return res == 13;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_array_5() {
+  static const char *prog = R"(
+var array[8]
+
+function foo()
+  var i = 0
+  while (i < 8)
+    array[i] = i * i
+    i = i + 1
+  end
+end
+
+function main()
+  foo()
+  var sum = 0
+  var i = 0
+  while (i < 8)
+    sum = sum + array[i]
+    i = i + 1
+  end
+  return sum
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const function_t *func = ccml.parser().find_function("main");
+  int32_t res = 0;
+  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+    return false;
+  }
+  return res == 140;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 static bool test_ret_operand() {
   // return operand should match INS_LOCALS operand
   static const char *prog = R"(
@@ -731,6 +795,8 @@ static const test_pair_t tests[] = {
     TEST(test_array_1),
     TEST(test_array_2),
     TEST(test_array_3),
+    TEST(test_array_4),
+    TEST(test_array_5),
     TEST(test_ret_operand),
     TEST(test_sort_1),
     // sentinel

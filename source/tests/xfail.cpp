@@ -422,7 +422,35 @@ end
 )",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- global arrays
   R"(
+var my_global[12] = 1
+)",
+  R"(
+var my_global[0] = 1
+)",
+  R"(
+var my_global[]
+)",
+  R"(
+var my_global
+function foo()
+  my_global[1] = 123
+end
+)",
+  R"(
+var my_global
+function foo()
+  var x = my_global[1]
+end
+)",
+  R"(
 var my_global[12]
+var x = my_global[1]
+)",
+  R"(
+var my_global[4]
+function foo()
+  my_global = 1
+end
 )",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
   nullptr
