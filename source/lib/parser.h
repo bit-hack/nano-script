@@ -136,14 +136,16 @@ struct function_t {
   ccml_syscall_t sys_;
   std::string name_;
   int32_t pos_;
-  std::vector<int32_t*> ret_fixup_;
   uint32_t num_args_;
+  uint32_t id_;
+  std::vector<int32_t*> ret_fixup_;
 
-  function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args)
-      : sys_(sys), name_(name), pos_(-1), num_args_(num_args) {}
+  function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args,
+             int32_t id)
+      : sys_(sys), name_(name), pos_(-1), num_args_(num_args), id_(id) {}
 
-  function_t(const std::string &name, int32_t pos, int32_t num_args)
-      : sys_(nullptr), name_(name), pos_(pos), num_args_(num_args) {}
+  function_t(const std::string &name, int32_t pos, int32_t num_args, int32_t id)
+      : sys_(nullptr), name_(name), pos_(pos), num_args_(num_args), id_(id) {}
 
   void add_return_fixup(int32_t *r) {
     ret_fixup_.push_back(r);
@@ -178,8 +180,9 @@ struct parser_t {
 
   // find a function by name
   // if `can_fail == false` it will report an error
-  const function_t *find_function(const token_t *name, bool can_fail=false);
-  const function_t *find_function(const std::string &name);
+  const function_t *find_function(const token_t *name, bool can_fail=false) const;
+  const function_t *find_function(const std::string &name) const;
+  const function_t *find_function(uint32_t id) const;
 
   // return a list of globals
   const std::vector<global_t> globals() const {

@@ -86,6 +86,7 @@ int32_t *assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   case INS_SETG:
   case INS_GETI:
   case INS_SETI:
+  case INS_SCALL:
     write8(ins);
     write32(v);
     break;
@@ -94,15 +95,6 @@ int32_t *assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   }
   // return the operand
   return (int32_t *)(code_.data() + (head_ - 4));
-}
-
-void assembler_t::emit(ccml_syscall_t sys, const token_t *t) {
-  add_to_linetable(t);
-  // encode this instruction
-  write8(INS_SCALL);
-  // encode instruction operand
-  memcpy(code_.data() + head_, &sys, sizeof(ccml_syscall_t));
-  head_ += sizeof(ccml_syscall_t);
 }
 
 int32_t assembler_t::pos() const {

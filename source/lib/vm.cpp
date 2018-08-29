@@ -83,58 +83,58 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     }
 #undef OPERATOR
 
-    // dispatch system call
-    if (op == INS_SCALL) {
-      // TODO: use system call table to support x64
-      ccml_syscall_t func = nullptr;
-      memcpy(&func, c + pc_, sizeof(void *));
-      pc_ += sizeof(void *);
-      func(*this);
-      continue;
-    }
-
     // get operand
     const int32_t val = *(int32_t *)(c + pc_);
     pc_ += 4;
 
     switch (op) {
-    case (INS_JMP):
+    case INS_SCALL: {
+      const function_t *func = ccml_.parser().find_function(val);
+      if (!func) {
+        finished_ = true;
+        error_ = "Unknown system call ID";
+        return true;
+        return_code_ = 0;
+      }
+      func->sys_(*this);
+    } break;
+    case INS_JMP:
       if (pop()) {
         pc_ = val;
       }
       continue;
-    case (INS_CALL):
+    case INS_CALL:
       new_frame(pc_);
       pc_ = val;
       continue;
-    case (INS_RET):
+    case INS_RET:
       pc_ = ret(val);
       continue;
-    case (INS_POP):
+    case INS_POP:
       for (int i = 0; i < val; ++i) {
         pop();
       };
       continue;
-    case (INS_CONST):
+    case INS_CONST:
       push(val);
       continue;
-    case (INS_GETV):
+    case INS_GETV:
       push(getv(val));
       continue;
-    case (INS_SETV):
+    case INS_SETV:
       setv(val, pop());
       continue;
 
-    case (INS_GETI):
+    case INS_GETI:
       push(getv(val + pop()));
       continue;
-    case (INS_SETI): {
+    case INS_SETI: {
       const int32_t value = pop();
       setv(val + pop(), value);
     }
       continue;
 
-    case (INS_LOCALS):
+    case INS_LOCALS:
       // reserve this many values on the stack
       if (val) {
         s_.resize(s_.size() + val, 0);

@@ -57,7 +57,6 @@ struct assembler_t {
   void     emit(token_e                     , const token_t *t = nullptr);
   void     emit(instruction_e ins           , const token_t *t = nullptr);
   int32_t *emit(instruction_e ins, int32_t v, const token_t *t = nullptr);
-  void     emit(ccml_syscall_t sys          , const token_t *t = nullptr);
 
   // return the current output head
   int32_t pos() const;

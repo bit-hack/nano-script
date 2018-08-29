@@ -34,7 +34,7 @@ bool parser_t::parse() {
   return true;
 }
 
-const function_t *parser_t::find_function(const token_t *name, bool can_fail) {
+const function_t *parser_t::find_function(const token_t *name, bool can_fail) const {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   for (const function_t &func : funcs_) {
@@ -49,12 +49,19 @@ const function_t *parser_t::find_function(const token_t *name, bool can_fail) {
   return nullptr;
 }
 
-const function_t *parser_t::find_function(const std::string &name) {
+const function_t *parser_t::find_function(const std::string &name) const {
   token_stream_t &stream_ = ccml_.lexer().stream_;
   for (const function_t &func : funcs_) {
     if (func.name_ == name) {
       return &func;
     }
+  }
+  return nullptr;
+}
+
+const function_t *parser_t::find_function(uint32_t id) const {
+  if (funcs_.size() > id) {
+    return &funcs_[id];
   }
   return nullptr;
 }
@@ -315,7 +322,7 @@ void parser_t::parse_call(const token_t &name) {
   }
 
   if (func->sys_) {
-    asm_.emit(func->sys_, &name);
+    asm_.emit(INS_SCALL, func->id_, &name);
   } else {
     asm_.emit(INS_CALL, func->pos_, &name);
   }
@@ -523,7 +530,11 @@ void parser_t::parse_function() {
   stream_.pop(TOK_EOL);
 
   // new function container
-  funcs_.emplace_back(name->str_, asm_.pos(), scope_.arg_count());
+  funcs_.emplace_back(
+    name->str_,
+    asm_.pos(),
+    scope_.arg_count(),
+    funcs_.size());
 
   // emit dummy prologue
   asm_.emit(INS_LOCALS, 0, name);
@@ -674,7 +685,7 @@ void parser_t::op_pop_all(uint32_t tide) {
 
 void parser_t::add_function(const std::string &name, ccml_syscall_t func,
                             uint32_t num_args) {
-  funcs_.emplace_back(name, func, num_args);
+  funcs_.emplace_back(name, func, num_args, funcs_.size());
 }
 
 void parser_t::reset() {
