@@ -28,24 +28,60 @@ enum instruction_e {
   INS_CJMP,     // conditional jump to code offset
   INS_CALL,     // call a function
   INS_RET,      // return to previous frame {popping locals and args}
-  INS_POP,      // pop constant from stack
-  INS_CONST,    // push constant
 
-  INS_GETV,     // get local
-  INS_SETV,     // set local
+  // system call
+  INS_SCALL,
 
-  INS_NOP,      // no operation
+  // pop constant:
+  //    pop()
+  INS_POP,
 
-  INS_SCALL,    // system call
-                // TODO: dont encode a pointer in the operand!
+  // push constant:
+  //    push( operand )
+  INS_CONST,
 
-  INS_LOCALS,   // number of locals to reserve on the stack
+  // reserve locals in stack frame
+  INS_LOCALS,
 
-  INS_GETG,     // get global
-  INS_SETG,     // set global
+  // get local:
+  //    push( stack[ fp + operand ] )
+  INS_GETV,
 
-  INS_GETI,     // get local indexed { stack[fp + operand + stack[0]] }
-  INS_SETI,     // set local indexed { stack[fp + operand + stack[-1]] = stack[0] }
+  // set local:
+  //    v = pop()
+  //    stack[ fp + operand ] = v
+  INS_SETV,
+
+  // get local indexed:
+  //    i = pop()
+  //    push( stack[ fp + operand + i ] )
+  INS_GETVI,
+
+  // set local indexed
+  //    v = pop()
+  //    i = pop()
+  //    stack[ fp + operand + i ] = v
+  INS_SETVI,
+
+  // get global
+  //    push( stack[ operand ] )
+  INS_GETG,
+
+  // set local:
+  //    v = pop()
+  //    stack[ operand ] = v
+  INS_SETG,
+
+  // get global indexed:
+  //    i = pop()
+  //    push( stack[ operand + i ] )
+  INS_GETGI,
+
+  // set global indexed:
+  //    v = pop()
+  //    i = pop()
+  //    stack[ operand + i ] = v
+  INS_SETGI,
 
   __INS_COUNT__,  // number of instructions
 };

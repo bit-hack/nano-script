@@ -594,7 +594,7 @@ void parser_t::parse_array_get(const token_t &name) {
     }
     // if array is local we are frame relative
     else {
-      asm_.emit(INS_GETI, ident->offset, &name);
+      asm_.emit(INS_GETVI, ident->offset, &name);
     }
     // expect a closing bracket
     stream_.pop(TOK_RBRACKET);
@@ -634,7 +634,7 @@ void parser_t::parse_array_set(const token_t &name) {
     }
     // if array is local we are frame relative
     else {
-      asm_.emit(INS_SETI, ident->offset, &name);
+      asm_.emit(INS_SETVI, ident->offset, &name);
     }
   }
   else {

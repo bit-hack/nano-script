@@ -9,11 +9,17 @@
 namespace {
 
 const char *gMnemonic[] = {
-    "INS_ADD",   "INS_SUB",  "INS_MUL",  "INS_DIV",  "INS_MOD",   "INS_AND",
-    "INS_OR",    "INS_NOT",  "INS_LT",   "INS_GT",   "INS_LEQ",   "INS_GEQ",
-    "INS_EQ",    "INS_JMP",  "INS_CJMP", "INS_CALL", "INS_RET",   "INS_POP",
-    "INS_CONST", "INS_GETV", "INS_SETV", "INS_NOP",  "INS_SCALL", "INS_LOCALS",
-    "INS_GETG",  "INS_SETG", "INS_GETI", "INS_SETI"};
+    // operators
+    "INS_ADD", "INS_SUB", "INS_MUL", "INS_DIV", "INS_MOD", "INS_AND", "INS_OR",
+    "INS_NOT", "INS_LT", "INS_GT", "INS_LEQ", "INS_GEQ", "INS_EQ",
+    // branching
+    "INS_JMP", "INS_CJMP", "INS_CALL", "INS_RET", "INS_SCALL",
+    // stack
+    "INS_POP", "INS_CONST", "INS_LOCALS",
+    // local variables
+    "INS_GETV", "INS_SETV", "INS_GETVI", "INS_SETVI",
+    // global variables
+    "INS_GETG", "INS_SETG", "INS_GETGI", "INS_SETGI"};
 
 // make sure this is kept up to date with the opcode table 'instruction_e'
 static_assert(sizeof(gMnemonic) / sizeof(const char *) == __INS_COUNT__,
@@ -61,7 +67,6 @@ void assembler_t::emit(instruction_e ins, const token_t *t) {
   case INS_LEQ:
   case INS_GEQ:
   case INS_EQ:
-  case INS_NOP:
     write8(ins);
     break;
   default:
@@ -77,16 +82,18 @@ int32_t *assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   case INS_CJMP:
   case INS_CALL:
   case INS_RET:
+  case INS_SCALL:
   case INS_POP:
   case INS_CONST:
+  case INS_LOCALS:
   case INS_GETV:
   case INS_SETV:
-  case INS_LOCALS:
+  case INS_GETVI:
+  case INS_SETVI:
   case INS_GETG:
   case INS_SETG:
-  case INS_GETI:
-  case INS_SETI:
-  case INS_SCALL:
+  case INS_GETGI:
+  case INS_SETGI:
     write8(ins);
     write32(v);
     break;
@@ -124,7 +131,6 @@ int32_t assembler_t::disasm(const uint8_t *ptr) const {
   case INS_LEQ:
   case INS_GEQ:
   case INS_EQ:
-  case INS_NOP:
     printf("%s\n", gMnemonic[op]);
     return i;
   }
@@ -154,8 +160,10 @@ int32_t assembler_t::disasm(const uint8_t *ptr) const {
   case INS_LOCALS:
   case INS_GETG:
   case INS_SETG:
-  case INS_GETI:
-  case INS_SETI:
+  case INS_GETGI:
+  case INS_SETGI:
+  case INS_GETVI:
+  case INS_SETVI:
     printf("%-12s %d\n", gMnemonic[op], val);
     return i;
   }

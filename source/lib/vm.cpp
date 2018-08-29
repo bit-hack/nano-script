@@ -105,7 +105,6 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     case (INS_GEQ): OPERATOR(>=); continue;
     case (INS_EQ):  OPERATOR(==); continue;
     case (INS_NOT): push(!pop()); continue;
-    case (INS_NOP):
       continue;
     }
 #undef OPERATOR
@@ -157,7 +156,7 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     case INS_SETV:
       setv(val, pop());
       continue;
-    case INS_GETI:
+    case INS_GETVI:
       push(getv(val + pop()));
       continue;
     case INS_LOCALS:
@@ -175,7 +174,7 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     }
 
     // dispatch instructions that require more operands
-    if (op == INS_SETI) {
+    if (op == INS_SETVI) {
       const int32_t value = pop();
       setv(val + pop(), value);
       continue;
