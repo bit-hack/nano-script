@@ -13,6 +13,9 @@ bool parser_t::parse() {
   //    var <TOK_IDENT> [ = <TOK_VAL> ]
   //    function <TOK_IDENT> ( [ <TOK_IDENT> [ , <TOK_IDENT> ]+ ] )
 
+  // enter global scope
+  scope_.enter();
+
   while (!stream_.found(TOK_EOF)) {
     if (stream_.found(TOK_EOL)) {
       // consume any blank lines
@@ -31,6 +34,9 @@ bool parser_t::parse() {
     assert(tok);
     ccml_.errors().unexpected_token(*tok);
   }
+
+  scope_.leave();
+
   return true;
 }
 
@@ -107,8 +113,15 @@ void parser_t::ident_load(const token_t &t) {
     if (ident->is_array()) {
       ccml_.errors().ident_is_array_not_var(t);
     }
-    asm_.emit(INS_GETV, ident->offset, &t);
-    return;
+    else if (ident->is_global) {
+      // TODO: check ident->offset and change way GETG works
+      asm_.emit(INS_GETG, ident->offset, &t);
+      return;
+    }
+    else {
+      asm_.emit(INS_GETV, ident->offset, &t);
+      return;
+    }
   }
   // try to load from global variable
   for (uint32_t i = 0; i < global_.size(); ++i) {
@@ -347,7 +360,7 @@ void parser_t::parse_if() {
 
   // this jump skips the body of the if, hence not
   asm_.emit(INS_NOT);
-  int32_t *l1 = asm_.emit(INS_JMP, 0);
+  int32_t *l1 = asm_.emit(INS_CJMP, 0);
 
   // note: moved below not and jmp to keep linetable correct
   stream_.pop(TOK_RPAREN);
@@ -370,7 +383,6 @@ void parser_t::parse_if() {
   int32_t *l2 = nullptr;
   if (has_else) {
     // skip over ELSE body
-    asm_.emit(INS_CONST, 1);
     l2 = asm_.emit(INS_JMP, 0);
   }
   *l1 = asm_.pos();
@@ -408,7 +420,7 @@ void parser_t::parse_while() {
 
   // GOTO end if false
   asm_.emit(INS_NOT);
-  int32_t *l2 = asm_.emit(INS_JMP, 0);
+  int32_t *l2 = asm_.emit(INS_CJMP, 0);
 
   // note: moved below not and jump to keep linetable correct
   stream_.pop(TOK_RPAREN);
@@ -425,7 +437,6 @@ void parser_t::parse_while() {
   // note: no need to pop newline as parse_stmt() handles that
 
   // unconditional jump to top
-  asm_.emit(INS_CONST, 1);
   asm_.emit(INS_JMP, l1);
   // WHILE end
   *l2 = asm_.pos();
@@ -514,9 +525,6 @@ void parser_t::parse_function() {
     ccml_.errors().function_already_exists(*name);
   }
 
-  // reset the scope
-  scope_.reset();
-
   // argument list
   stream_.pop(TOK_LPAREN);
   if (!stream_.found(TOK_RPAREN)) {
@@ -566,6 +574,9 @@ void parser_t::parse_function() {
 
   // fix all of the return operands to match INS_LOCALS size
   funcs_.back().fix_return_operands(ret_size);
+
+  // return the max scope depth
+  scope_.leave_function();
 }
 
 void parser_t::parse_array_get(const token_t &name) {
@@ -643,6 +654,9 @@ void parser_t::parse_global() {
       ccml_.errors().global_already_exists(*name);
     }
   }
+
+  // add to the globals list
+  scope_.var_add(*name, 1);
 
   if (stream_.found(TOK_ASSIGN)) {
     const token_t *value = stream_.pop(TOK_VAL);

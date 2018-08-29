@@ -89,8 +89,13 @@ struct sort_test_t {
     if (!thread.finished()) {
       return false;
     }
+
+    // currently                  99338
+    // with INS_JMP:              95114
+    const uint32_t cycle_count = thread.cycle_count();
+
     const int32_t res = thread.return_code();
-    return test_passing;
+    return test_passing && !thread.has_error();
   }
 };
 

@@ -12,13 +12,16 @@ struct identifier_t {
     : offset(0)
     , count(0)
     , token(nullptr)
+    , is_global(false)
   {
   }
 
-  identifier_t(const token_t *t, int32_t o, int32_t c=1)
+  identifier_t(const token_t *t, int32_t o, bool is_glob, int32_t c=1)
     : offset(o)
     , count(c)
-    , token(t) {
+    , token(t)
+    , is_global(is_glob)
+  {
   }
 
   bool is_array() const {
@@ -31,45 +34,73 @@ struct identifier_t {
   int32_t count;
   // identifier token
   const token_t *token;
+  // if this is a global variable
+  bool is_global;
 };
 
 struct scope_list_t {
 
-  scope_list_t() : max_depth_(0) {
+  scope_list_t()
+    : max_depth_(0) {
     reset();
   }
 
   void enter() {
-    const int32_t back = head();
-    var_head_.emplace_back(back);
+    if (var_head_.empty()) {
+      var_head_.emplace_back(0);
+    }
+    else {
+      const int32_t back = head();
+      var_head_.emplace_back(back);
+    }
   }
 
   void leave() {
+    assert(!var_head_.empty());
     var_head_.pop_back();
   }
 
+  // add a variable to this scope
   void var_add(const token_t &tok, uint32_t count) {
     assert(head() < int32_t(vars_.size()));
-    const int32_t offset = var_count();
-    vars_[head()++] = identifier_t(&tok, offset, count);
+    // check if we are in global scope or not
+    const bool is_global = var_head_.size() <= 1;
+    // return global offset or frame offset
+    const int32_t offset = is_global ? global_count() : var_count();
+    // push back this identifier
+    vars_[head()++] = identifier_t(&tok, offset, is_global, count);
     // update max depth
     max_depth_ = std::max(max_depth_, var_count());
   }
 
-  // return space used for variables in stack frame
-  int32_t var_count() const {
+  // return the current size of the globals
+  int32_t global_count() const {
+    assert(var_head_.size() > 0);
     int32_t count = 0;
-    for (int i = 0; i < head(); ++i) {
+    for (int32_t i = 0; i < var_head_[0]; ++i) {
       count += vars_[i].count;
     }
     return count;
   }
 
+  // return space used for variables in stack frame
+  int32_t var_count() const {
+    assert(var_head_.size() > 0);
+    int32_t count = 0;
+    // note: start from scope level 1 so that we dont collect global variables
+    for (int i = var_head_[0]; i < head(); ++i) {
+      count += vars_[i].count;
+    }
+    return count;
+  }
+
+  // add an argument to this function
   void arg_add(const token_t *tok) {
-    identifier_t ident(tok, 0);
+    identifier_t ident(tok, 0, false, 1);
     args_[arg_head_++] = ident;
   }
 
+  // get the current number of arguments
   int32_t arg_count() const {
     return arg_head_;
   }
@@ -87,7 +118,12 @@ struct scope_list_t {
     // note: back to front search could enable shadowing
     // search for locals
     for (int32_t i = head()-1; i >= 0; --i) {
-      if (vars_[i].token->str_ == name.str_) {
+      const auto &ident = vars_[i];
+      if (ident.is_global) {
+        // TODO: remove this to fall back to stack globals
+        continue;
+      }
+      if (ident.token->str_ == name.str_) {
         return &vars_[i];
       }
     }
@@ -105,8 +141,12 @@ struct scope_list_t {
     // reset vars
     max_depth_ = 0;
     var_head_.clear();
-    var_head_.emplace_back(0);
     // reset args
+    arg_head_ = 0;
+  }
+
+  void leave_function() {
+    max_depth_ = 0;
     arg_head_ = 0;
   }
 

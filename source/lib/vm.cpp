@@ -8,6 +8,7 @@
 bool thread_t::prepare(const function_t &func, int32_t argc, const int32_t *argv) {
 
   finished_ = true;
+  cycles_ = 0;
 
   // push globals
   globals_.clear();
@@ -48,6 +49,9 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
 
   // while we haven't returned from frame 0
   while (--cycles && f_.size()) {
+
+    // increment the cycle count
+    ++cycles_;
 
     if (trace) {
       // print an instruction trace
@@ -97,8 +101,11 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
         return_code_ = 0;
       }
       func->sys_(*this);
-    } break;
+    } continue;
     case INS_JMP:
+      pc_ = val;
+      continue;
+    case INS_CJMP:
       if (pop()) {
         pc_ = val;
       }
@@ -184,4 +191,22 @@ bool vm_t::execute(const function_t &func, int32_t argc, const int32_t *argv, in
 
 void vm_t::reset() {
   // nothing to do
+}
+
+int32_t thread_t::getv(int32_t offs) {
+  const int32_t index = f_.back().sp_ + offs;
+  if (index < 0 || index >= int32_t(s_.size())) {
+    ccml_.assembler().disasm();
+    __debugbreak();
+  }
+  return s_[index];
+}
+
+void thread_t::setv(int32_t offs, int32_t val) {
+  const int32_t index = f_.back().sp_ + offs;
+  if (index < 0 || index >= int32_t(s_.size())) {
+    ccml_.assembler().disasm();
+    __debugbreak();
+  }
+  s_[index] = val;
 }

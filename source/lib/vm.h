@@ -6,7 +6,8 @@
 
 struct thread_t {
 
-  thread_t(ccml_t &ccml) : ccml_(ccml), return_code_(0), finished_(true) {}
+  thread_t(ccml_t &ccml)
+      : ccml_(ccml), return_code_(0), finished_(true), cycles_(0) {}
 
   int32_t pop() {
     const int32_t v = s_.back();
@@ -30,6 +31,14 @@ struct thread_t {
     return return_code_;
   }
 
+  uint32_t cycle_count() const {
+    return cycles_;
+  }
+
+  bool has_error() const {
+    return !error_.empty();
+  }
+
 protected:
   friend struct vm_t;
 
@@ -37,6 +46,7 @@ protected:
   int32_t return_code_;
   bool finished_;
   std::string error_;
+  uint32_t cycles_;
 
   struct frame_t {
     int32_t sp_;
@@ -53,17 +63,9 @@ protected:
     f_.push_back(f);
   }
 
-  int32_t getv(int32_t offs) {
-    const int32_t index = f_.back().sp_ + offs;
-    assert(index >= 0);
-    return s_[index];
-  }
+  int32_t getv(int32_t offs);
 
-  void setv(int32_t offs, int32_t val) {
-    const int32_t index = f_.back().sp_ + offs;
-    assert(index >= 0);
-    s_[index] = val;
-  }
+  void setv(int32_t offs, int32_t val);
 
   int32_t ret(int32_t val) {
     const int32_t sval = pop();

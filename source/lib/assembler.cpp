@@ -9,12 +9,11 @@
 namespace {
 
 const char *gMnemonic[] = {
-    "INS_ADD", "INS_SUB",   "INS_MUL",    "INS_DIV",  "INS_MOD",
-    "INS_AND", "INS_OR",    "INS_NOT",    "INS_LT",   "INS_GT",
-    "INS_LEQ", "INS_GEQ",   "INS_EQ",     "INS_JMP",  "INS_CALL",
-    "INS_RET", "INS_POP",   "INS_CONST",  "INS_GETV", "INS_SETV",
-    "INS_NOP", "INS_SCALL", "INS_LOCALS", "INS_GETG", "INS_SETG",
-    "INS_GETI", "INS_SETI"};
+    "INS_ADD",   "INS_SUB",  "INS_MUL",  "INS_DIV",  "INS_MOD",   "INS_AND",
+    "INS_OR",    "INS_NOT",  "INS_LT",   "INS_GT",   "INS_LEQ",   "INS_GEQ",
+    "INS_EQ",    "INS_JMP",  "INS_CJMP", "INS_CALL", "INS_RET",   "INS_POP",
+    "INS_CONST", "INS_GETV", "INS_SETV", "INS_NOP",  "INS_SCALL", "INS_LOCALS",
+    "INS_GETG",  "INS_SETG", "INS_GETI", "INS_SETI"};
 
 // make sure this is kept up to date with the opcode table 'instruction_e'
 static_assert(sizeof(gMnemonic) / sizeof(const char *) == __INS_COUNT__,
@@ -75,6 +74,7 @@ int32_t *assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   // encode this instruction
   switch (ins) {
   case INS_JMP:
+  case INS_CJMP:
   case INS_CALL:
   case INS_RET:
   case INS_POP:
@@ -144,6 +144,7 @@ int32_t assembler_t::disasm(const uint8_t *ptr) const {
 
   switch (op) {
   case INS_JMP:
+  case INS_CJMP:
   case INS_CALL:
   case INS_RET:
   case INS_POP:

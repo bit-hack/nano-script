@@ -24,7 +24,8 @@ enum instruction_e {
   INS_GEQ,
   INS_EQ,
 
-  INS_JMP,      // conditional jump to code offset
+  INS_JMP,      // unconditional jump
+  INS_CJMP,     // conditional jump to code offset
   INS_CALL,     // call a function
   INS_RET,      // return to previous frame {popping locals and args}
   INS_POP,      // pop constant from stack

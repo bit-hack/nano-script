@@ -139,7 +139,13 @@ bool lexer_t::lex(const char *s) {
       push(TOK_COMMA);
       continue;
     case '+':
-      push(TOK_ADD);
+      if (s[1] == '=') {
+        push(TOK_INC);
+        ++s;
+      }
+      else {
+        push(TOK_ADD);
+      }
       continue;
     case '-':
       push(TOK_SUB);
@@ -166,32 +172,26 @@ bool lexer_t::lex(const char *s) {
       if (s[1] == '=') {
         push(TOK_EQ);
         ++s;
-        continue;
       } else {
         push(TOK_ASSIGN);
-        continue;
       }
-      break;
+      continue;
     case '<':
       if (s[1] == '=') {
         push(TOK_LEQ);
         ++s;
-        continue;
       } else {
         push(TOK_LT);
-        continue;
       }
-      break;
+      continue;
     case '>':
       if (s[1] == '=') {
         push(TOK_GEQ);
         ++s;
-        continue;
       } else {
         push(TOK_GT);
-        continue;
       }
-      break;
+      continue;
     } // switch
 
     // try to parse number
