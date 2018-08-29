@@ -75,10 +75,11 @@ struct scope_list_t {
 
   // return the current size of the globals
   int32_t global_count() const {
-    assert(var_head_.size() > 0);
     int32_t count = 0;
-    for (int32_t i = 0; i < var_head_[0]; ++i) {
-      count += vars_[i].count;
+    if (var_head_.size() > 0) {
+      for (int32_t i = 0; i < var_head_[0]; ++i) {
+        count += vars_[i].count;
+      }
     }
     return count;
   }
@@ -119,10 +120,6 @@ struct scope_list_t {
     // search for locals
     for (int32_t i = head()-1; i >= 0; --i) {
       const auto &ident = vars_[i];
-      if (ident.is_global) {
-        // TODO: remove this to fall back to stack globals
-        continue;
-      }
       if (ident.token->str_ == name.str_) {
         return &vars_[i];
       }
@@ -200,7 +197,9 @@ struct function_t {
 
 struct global_t {
   const token_t *token_;
+  int32_t offset_;
   int32_t value_;
+  int32_t size_;
 };
 
 struct parser_t {
@@ -223,6 +222,15 @@ struct parser_t {
   const function_t *find_function(const token_t *name, bool can_fail=false) const;
   const function_t *find_function(const std::string &name) const;
   const function_t *find_function(uint32_t id) const;
+
+  // return the number of globals
+  int32_t global_size() const {
+    int32_t count = 0;
+    for (const auto &g : globals()) {
+      count += g.size_;
+    }
+    return count;
+  }
 
   // return a list of globals
   const std::vector<global_t> globals() const {

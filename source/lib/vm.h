@@ -56,7 +56,6 @@ protected:
   int32_t pc_;                    // program counter
   std::vector<int32_t> s_;        // value stack
   std::vector<frame_t> f_;        // frames
-  std::vector<int32_t> globals_;  // globals
 
   void new_frame(int32_t pc) {
     frame_t f = {int32_t(s_.size()), pc};

@@ -1,9 +1,29 @@
+#include <cstring>
+
 #include "vm.h"
 #include "assembler.h"
 #include "parser.h"
 
-#include <cstring>
-
+/*
+ *   s_     STACK LAYOUT
+ *        .  .  .  .  .  .
+ *        |              |
+ *   n    |var 0         |  <-- Frame 0 Pointer
+ *   n-1  |arg 0         |
+ *   n-2  |var 1         |
+ *   n-3  |var 0         |  <-- Frame 1 Pointer
+ *   n-4  |arg 1         |
+ *   n-5  |arg 0         |
+ *   n-6  |var 2         |
+ *   n-7  |var 1         |
+ *   n-8  |var 0         |  <-- Frame 2 Pointer
+ *        |              |
+ *        |....          |  ...
+ *        |              |
+ *   1    |global 1      |
+ *   0    |global 0      |
+ *        '--------------'
+ */
 
 bool thread_t::prepare(const function_t &func, int32_t argc, const int32_t *argv) {
 
@@ -11,9 +31,11 @@ bool thread_t::prepare(const function_t &func, int32_t argc, const int32_t *argv
   cycles_ = 0;
 
   // push globals
-  globals_.clear();
-  for (const auto &g : ccml_.parser().globals()) {
-    globals_.push_back(g.value_);
+  if (const int32_t size = ccml_.parser().global_size()) {
+    s_.resize(size);
+    for (const auto &g : ccml_.parser().globals()) {
+      s_[g.offset_] = g.value_;
+    }
   }
 
   // save the target pc (entry point)
@@ -63,6 +85,7 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     const uint8_t op = c[pc_];
     pc_ += 1;
 
+    // dispatch instructions that don't require an operand
 #define OPERATOR(OP)                                                           \
   {                                                                            \
     const int32_t r = pop(), l = pop();                                        \
@@ -91,17 +114,20 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     const int32_t val = *(int32_t *)(c + pc_);
     pc_ += 4;
 
+    // dispatch instructions that require one operand
     switch (op) {
-    case INS_SCALL: {
-      const function_t *func = ccml_.parser().find_function(val);
-      if (!func) {
-        finished_ = true;
-        error_ = "Unknown system call ID";
-        return true;
-        return_code_ = 0;
+    case INS_SCALL:
+      if (const function_t *func = ccml_.parser().find_function(val)) {
+        func->sys_(*this);
+        continue;
       }
-      func->sys_(*this);
-    } continue;
+      // exception
+      {
+        finished_ = true;
+        error_ = "Unknown system call";
+        return_code_ = -1;
+        return false;
+      }
     case INS_JMP:
       pc_ = val;
       continue;
@@ -118,7 +144,7 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
       pc_ = ret(val);
       continue;
     case INS_POP:
-      for (int i = 0; i < val; ++i) {
+      for (int32_t i = 0; i < val; ++i) {
         pop();
       };
       continue;
@@ -131,16 +157,9 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     case INS_SETV:
       setv(val, pop());
       continue;
-
     case INS_GETI:
       push(getv(val + pop()));
       continue;
-    case INS_SETI: {
-      const int32_t value = pop();
-      setv(val + pop(), value);
-    }
-      continue;
-
     case INS_LOCALS:
       // reserve this many values on the stack
       if (val) {
@@ -148,21 +167,30 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
       }
       continue;
     case INS_GETG:
-      push(globals_[val]);
+      push(s_[val]);
       continue;
     case INS_SETG:
-      globals_[val] = pop();
+      s_[val] = pop();
       continue;
     }
-    // an exception has occurred
+
+    // dispatch instructions that require more operands
+    if (op == INS_SETI) {
+      const int32_t value = pop();
+      setv(val + pop(), value);
+      continue;
+    }
+
+    // exception
     {
       finished_ = true;
       error_ = "unknown instruction opcode";
-      return_code_ = 0;
-      return true;
+      return_code_ = -1;
+      return false;
     }
   } // while
 
+  // check for program termination
   if (!finished_ && f_.empty()) {
     assert(s_.size() > 0);
     return_code_ = s_.back();

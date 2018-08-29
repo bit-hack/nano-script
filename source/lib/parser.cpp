@@ -109,24 +109,16 @@ void parser_t::ident_load(const token_t &t) {
 
   // try to load from local variable
   if (const identifier_t *ident = scope_.find_ident(t)) {
-    // check this is not an array type
     if (ident->is_array()) {
+      // array load requires subscript operator
       ccml_.errors().ident_is_array_not_var(t);
     }
-    else if (ident->is_global) {
-      // TODO: check ident->offset and change way GETG works
+    if (ident->is_global) {
       asm_.emit(INS_GETG, ident->offset, &t);
       return;
     }
-    else {
+    { /* local variable */
       asm_.emit(INS_GETV, ident->offset, &t);
-      return;
-    }
-  }
-  // try to load from global variable
-  for (uint32_t i = 0; i < global_.size(); ++i) {
-    if (global_[i].token_->str_ == t.str_) {
-      asm_.emit(INS_GETG, i, &t);
       return;
     }
   }
@@ -139,17 +131,16 @@ void parser_t::ident_save(const token_t &t) {
 
   // assign to local variable
   if (const identifier_t *ident = scope_.find_ident(t)) {
-    // check this is not an array type
     if (ident->is_array()) {
+      // array store requires subscript operator
       ccml_.errors().ident_is_array_not_var(t);
     }
-    asm_.emit(INS_SETV, ident->offset, &t);
-    return;
-  }
-  // assign to global variable
-  for (uint32_t i = 0; i < global_.size(); ++i) {
-    if (global_[i].token_->str_ == t.str_) {
-      asm_.emit(INS_SETG, i, &t);
+    if (ident->is_global) {
+      asm_.emit(INS_SETG, ident->offset, &t);
+      return;
+    }
+    { /* load variable */
+      asm_.emit(INS_SETV, ident->offset, &t);
       return;
     }
   }
@@ -596,8 +587,15 @@ void parser_t::parse_array_get(const token_t &name) {
 
     // this expression is the index subscript
     parse_expr();
-    // emit an array index
-    asm_.emit(INS_GETI, ident->offset, &name);
+
+    // if array is global we are relative to bottom of stack
+    if (ident->is_global) {
+      __debugbreak();
+    }
+    // if array is local we are frame relative
+    else {
+      asm_.emit(INS_GETI, ident->offset, &name);
+    }
     // expect a closing bracket
     stream_.pop(TOK_RBRACKET);
   }
@@ -630,7 +628,14 @@ void parser_t::parse_array_set(const token_t &name) {
       ccml_.errors().variable_is_not_array(name);
     }
 
-    asm_.emit(INS_SETI, ident->offset, &name);
+    // if array is global we are relative to bottom of stack
+    if (ident->is_global) {
+      __debugbreak();
+    }
+    // if array is local we are frame relative
+    else {
+      asm_.emit(INS_SETI, ident->offset, &name);
+    }
   }
   else {
     ccml_.errors().assign_to_unknown_array(name);
@@ -644,9 +649,9 @@ void parser_t::parse_global() {
   // format:
   //        V
   //    var   <TOK_IDENT> = <TOK_VAL>
+  //    var   <TOK_IDENT> [ <TOK_VAL> ]
 
   const token_t *name = stream_.pop(TOK_IDENT);
-  global_t global = {name, 0};
 
   // check for duplicate globals
   for (const auto &g : global_) {
@@ -655,15 +660,34 @@ void parser_t::parse_global() {
     }
   }
 
-  // add to the globals list
-  scope_.var_add(*name, 1);
-
-  if (stream_.found(TOK_ASSIGN)) {
-    const token_t *value = stream_.pop(TOK_VAL);
-    global.value_ = value->val_;
+  // parse global array decl
+  if (stream_.found(TOK_LBRACKET)) {
+    const token_t *size = stream_.pop(TOK_VAL);
+    stream_.pop(TOK_RBRACKET);
+    // validate array size
+    if (size->val_ <= 1) {
+      ccml_.errors().array_size_must_be_greater_than(*name);
+    }
+    scope_.var_add(*name, size->val_);
+    global_t global = {name, 0, 0, size->val_};
+    // add to global list
+    global_.push_back(global);
+    // XXX: not supported yet, we need to update how global sizes are handled
+    __debugbreak();
   }
-
-  global_.push_back(global);
+  // parse generic global variable
+  else {
+    // add to the globals list
+    scope_.var_add(*name, 1);
+    global_t global = {name, 0, 0, 1};
+    // assign a default value
+    if (stream_.found(TOK_ASSIGN)) {
+      const token_t *value = stream_.pop(TOK_VAL);
+      global.value_ = value->val_;
+    }
+    // add to global list
+    global_.push_back(global);
+  }
 }
 
 void parser_t::op_push(token_e op, uint32_t tide) {
