@@ -70,10 +70,14 @@ int main(int argc, char **argv) {
       return -2;
     ccml.assembler().disasm();
 
-    const int32_t func = ccml.parser().find_function("main")->pos_;
-    printf("entry point: %d\n", func);
+    const function_t *func = ccml.parser().find_function("main");
+    printf("entry point: %d\n", func->pos_);
 
-    int32_t res = ccml.vm().execute(func, 0, nullptr, true);
+    int32_t res = 0;
+    if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+      fprintf(stderr, "max cycle count reached\n");
+      exit(1);
+    }
     fflush(stdout);
 
     printf("exit: %d\n", res);

@@ -76,18 +76,26 @@ struct sort_test_t {
     if (!ccml.build(sort_prog)) {
       return false;
     }
-    ccml.assembler().disasm();
     // run it
-    const int32_t func = ccml.parser().find_function("main")->pos_;
-    const int32_t res = ccml.vm().execute(func, 0, nullptr, false);
-    return res == 0;
-  }
+    const function_t* func = ccml.parser().find_function("main");
 
+    thread_t thread{ccml};
+    if (!thread.prepare(*func, 0, nullptr)) {
+      return false;
+    }
+    if (!thread.resume(1024 * 1024, false)) {
+      return false;
+    }
+    if (!thread.finished()) {
+      return false;
+    }
+    const int32_t res = thread.return_code();
+    return test_passing;
+  }
 };
 
 bool sort_test_t::test_passing = true;
 
 bool test_sort_1() {
-  sort_test_t test;
-  return test.run();
+  return sort_test_t::run();
 }

@@ -1,184 +1,185 @@
 #include "vm.h"
 #include "assembler.h"
 #include "parser.h"
+
 #include <cstring>
 
-int32_t vm_t::execute(int32_t tgt_pc, int32_t argc, const int32_t *argv, bool trace) {
 
-  thread_t t;
+bool thread_t::prepare(const function_t &func, int32_t argc, const int32_t *argv) {
 
-  // TODO: check tgt_pc takes argc inputs
+  finished_ = true;
 
   // push globals
-  for (const auto global : ccml_.parser().globals()) {
-    t.g_.push_back(global.value_);
+  globals_.clear();
+  for (const auto &g : ccml_.parser().globals()) {
+    globals_.push_back(g.value_);
   }
 
   // save the target pc (entry point)
-  t.pc_ = tgt_pc;
-  int32_t &pc = t.pc_;
+  pc_ = func.pos_;
+  if (func.num_args_ != argc) {
+    return_code_ = -1;
+    error_ = "incorrect number of arguments";
+    return false;
+  }
+
+  // push any arguments
+  for (int32_t i = 0; i < argc; ++i) {
+    push(argv[i]);
+  }
+
+  // push the initial frame
+  new_frame(pc_);
+
+  // good to go
+  error_.clear();
+  finished_ = false;
+  return true;
+}
+
+bool thread_t::resume(uint32_t cycles, bool trace) {
+
+  if (finished_) {
+    return false;
+  }
 
   // get the instruction stream
   const uint8_t *c = ccml_.assembler().get_code();
 
-  // push any arguments
-  for (int32_t i = 0; i < argc; ++i) {
-    t.push(argv[i]);
-  }
-
-  // push the initial frame
-  t.new_frame(pc);
-
   // while we haven't returned from frame 0
-  while (t.f_.size() > 0) {
+  while (--cycles && f_.size()) {
 
     if (trace) {
       // print an instruction trace
       printf(" > ");
-      ccml_.assembler().disasm(c + pc);
+      ccml_.assembler().disasm(c + pc_);
     }
 
     // get opcode
-    const uint8_t op = c[pc];
-    pc += 1;
+    const uint8_t op = c[pc_];
+    pc_ += 1;
 
+#define OPERATOR(OP)                                                           \
+  {                                                                            \
+    const int32_t r = pop(), l = pop();                                        \
+    push(l OP r);                                                              \
+  }
     switch (op) {
-    case (INS_ADD): {
-      const int32_t r = t.pop(), l = t.pop();
-      t.push(l + r);
-    }
-      continue;
-    case (INS_SUB): {
-      const int32_t r = t.pop(), l = t.pop();
-      t.push(l - r);
-    }
-      continue;
-    case (INS_MUL): {
-      const int32_t r = t.pop(), l = t.pop();
-      t.push(l * r);
-    }
-      continue;
-    case (INS_DIV): {
-      const int32_t r = t.pop(), l = t.pop();
-      t.push(l / r);
-    }
-      continue;
-    case (INS_MOD): {
-      const int32_t r = t.pop(), l = t.pop();
-      t.push(l % r);
-    }
-      continue;
-    case (INS_AND): {
-      const int32_t r = t.pop(), l = t.pop();
-      t.push(l && r);
-    }
-      continue;
-    case (INS_OR): {
-      const int32_t r = t.pop(), l = t.pop();
-      t.push(l || r);
-    }
-      continue;
-    case (INS_LT): {
-      const int32_t r = t.pop(), l = t.pop();
-      t.push(l < r);
-    }
-      continue;
-    case (INS_GT): {
-      const int32_t r = t.pop(), l = t.pop();
-      t.push(l > r);
-    }
-      continue;
-    case (INS_LEQ): {
-      const int32_t r = t.pop(), l = t.pop();
-      t.push(l <= r);
-    }
-      continue;
-    case (INS_GEQ): {
-      const int32_t r = t.pop(), l = t.pop();
-      t.push(l >= r);
-    }
-      continue;
-    case (INS_EQ): {
-      const int32_t r = t.pop(), l = t.pop();
-      t.push(l == r);
-    }
-      continue;
-    case (INS_NOT):
-      t.push(!t.pop());
-      continue;
+    case (INS_ADD): OPERATOR(+ ); continue;
+    case (INS_SUB): OPERATOR(- ); continue;
+    case (INS_MUL): OPERATOR(* ); continue;
+    case (INS_DIV): OPERATOR(/ ); continue;
+    case (INS_MOD): OPERATOR(% ); continue;
+    case (INS_AND): OPERATOR(&&); continue;
+    case (INS_OR):  OPERATOR(||); continue;
+    case (INS_LT):  OPERATOR(< ); continue;
+    case (INS_GT):  OPERATOR(> ); continue;
+    case (INS_LEQ): OPERATOR(<=); continue;
+    case (INS_GEQ): OPERATOR(>=); continue;
+    case (INS_EQ):  OPERATOR(==); continue;
+    case (INS_NOT): push(!pop()); continue;
     case (INS_NOP):
       continue;
     }
+#undef OPERATOR
 
     // dispatch system call
     if (op == INS_SCALL) {
       // TODO: use system call table to support x64
       ccml_syscall_t func = nullptr;
-      memcpy(&func, c + pc, sizeof(void *));
-      pc += sizeof(void *);
-      func(t);
+      memcpy(&func, c + pc_, sizeof(void *));
+      pc_ += sizeof(void *);
+      func(*this);
       continue;
     }
 
     // get operand
-    const int32_t val = *(int32_t *)(c + pc);
-    pc += 4;
+    const int32_t val = *(int32_t *)(c + pc_);
+    pc_ += 4;
 
     switch (op) {
     case (INS_JMP):
-      if (t.pop())
-        pc = val;
+      if (pop()) {
+        pc_ = val;
+      }
       continue;
     case (INS_CALL):
-      t.new_frame(pc);
-      pc = val;
+      new_frame(pc_);
+      pc_ = val;
       continue;
     case (INS_RET):
-      pc = t.ret(val);
+      pc_ = ret(val);
       continue;
     case (INS_POP):
       for (int i = 0; i < val; ++i) {
-        t.pop();
+        pop();
       };
       continue;
     case (INS_CONST):
-      t.push(val);
+      push(val);
       continue;
     case (INS_GETV):
-      t.push(t.getv(val));
+      push(getv(val));
       continue;
     case (INS_SETV):
-      t.setv(val, t.pop());
+      setv(val, pop());
       continue;
 
     case (INS_GETI):
-      t.push(t.getv(val + t.pop()));
+      push(getv(val + pop()));
       continue;
     case (INS_SETI): {
-      const int32_t value = t.pop();
-      t.setv(val + t.pop(), value);
+      const int32_t value = pop();
+      setv(val + pop(), value);
     }
       continue;
 
     case (INS_LOCALS):
       // reserve this many values on the stack
-      for (int i = 0; i < val; ++i) {
-        t.push(0);
+      if (val) {
+        s_.resize(s_.size() + val, 0);
       }
       continue;
     case INS_GETG:
-      t.push(t.g_[val]);
+      push(globals_[val]);
       continue;
     case INS_SETG:
-      t.g_[val] = t.pop();
+      globals_[val] = pop();
       continue;
     }
-
-    assert(!"unknown instruction opcode");
+    // an exception has occurred
+    {
+      finished_ = true;
+      error_ = "unknown instruction opcode";
+      return_code_ = 0;
+      return true;
+    }
   } // while
 
-  assert(t.s_.size() > 0);
-  return t.s_.back();
+  if (!finished_ && f_.empty()) {
+    assert(s_.size() > 0);
+    return_code_ = s_.back();
+    finished_ = true;
+  }
+
+  return true;
+}
+
+bool vm_t::execute(const function_t &func, int32_t argc, const int32_t *argv, int32_t *ret, bool trace) {
+  thread_t t{ccml_};
+  if (!t.prepare(func, argc, argv)) {
+    return false;
+  }
+  if (!t.resume(-1, trace)) {
+    return false;
+  }
+  if (!t.finished()) {
+    return false;
+  }
+  if (ret) {
+    *ret = t.return_code();
+  }
+  return true;
 }
 
 void vm_t::reset() {

@@ -5,14 +5,20 @@
 #include <vector>
 
 
-struct lexer_t;
-struct parser_t;
-struct assembler_t;
-struct vm_t;
-struct token_t;
-struct token_stream_t;
 struct error_manager_t;
 struct error_t;
+
+struct lexer_t;
+struct token_t;
+struct token_stream_t;
+
+struct parser_t;
+struct function_t;
+
+struct assembler_t;
+
+struct thread_t;
+struct vm_t;
 
 
 struct ccml_t {
