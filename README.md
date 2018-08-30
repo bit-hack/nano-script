@@ -13,15 +13,24 @@ and virtual machine for a very simple language.  A secondary goal was to keep
 the language as simple as I possibly could, to see how useful such a basic
 language could be.
 
+Now that the basic implementation is up and running, i'm adding new features and
+extending the language, while keeping things simple but no simpler.
+
 Language/implementation features:
 - Hand crafted recursive decent parser
 - Variables can only be of signed integer type
 - There are two control flow constructs; `if` and `while`
 - Variables can be `global` or `local`
-- Functions with arguments and return values
+- Supports global and local array types
+- Functions take arguments and return values
+- Compiler and virtual machine are embeddable
 - External functions can be implemented in C++
-- Very simple byte code (25 instructions currently)
+- Stack based virtual machine
+- Very simple byte code (~27 instructions currently)
+- Support for multitasking and multiple threads
 - No external dependencies
+- Robust testing
+- Extensively commented source code
 
 What does CCML look like?  Check out the follow example:
 ```

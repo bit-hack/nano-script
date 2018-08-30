@@ -313,6 +313,29 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_global_4() {
+  static const char *prog = R"(
+var size = 4096
+var data[4096]
+
+function driver()
+  var i = size
+  return i
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const function_t *func = ccml.parser().find_function("driver");
+  int32_t res = 0;
+  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+    return false;
+  }
+  return res == 4096;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 static bool test_scope() {
   static const char *prog = R"(
 function scope(flag)
@@ -670,7 +693,6 @@ end
   if (!ccml.build(prog)) {
     return false;
   }
-  ccml.assembler().disasm();
   const function_t *func = ccml.parser().find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
@@ -713,6 +735,53 @@ end
     return false;
   }
   return res == 140;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_array_6() {
+  static const char *prog = R"(
+var array[8]
+
+function foo()
+  array[0] = 6
+  array[1] = 1
+  array[2] = 4
+  array[3] = 3
+  array[4] = 7
+  array[5] = 0
+  array[6] = 5
+  array[7] = 2
+end
+
+function main()
+  foo()
+  var t[8]
+
+  var i = 0
+  while (i < 8)
+    t[i] = i
+    i = i + 1
+  end
+
+  var sum = 0
+  i = 0
+  while (i < 8)
+    sum = sum + t[ array[i] ]
+    i = i + 1
+  end
+  return sum
+end
+)";
+  ccml_t ccml;
+  if (!ccml.build(prog)) {
+    return false;
+  }
+  const function_t *func = ccml.parser().find_function("main");
+  int32_t res = 0;
+  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+    return false;
+  }
+  return res == 28;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -765,6 +834,7 @@ struct test_pair_t {
 
 bool test_xfails();
 bool test_sort_1();
+bool test_prime_1();
 
 #define TEST(X) (#X), X
 static const test_pair_t tests[] = {
@@ -782,6 +852,7 @@ static const test_pair_t tests[] = {
     TEST(test_global_1),
     TEST(test_global_2),
     TEST(test_global_3),
+    TEST(test_global_4),
     TEST(test_scope),
     TEST(test_sqrt),
     TEST(test_is_prime),
@@ -797,8 +868,10 @@ static const test_pair_t tests[] = {
     TEST(test_array_3),
     TEST(test_array_4),
     TEST(test_array_5),
+    TEST(test_array_6),
     TEST(test_ret_operand),
     TEST(test_sort_1),
+    TEST(test_prime_1),
     // sentinel
     nullptr, nullptr};
 

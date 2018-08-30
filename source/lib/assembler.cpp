@@ -10,8 +10,8 @@ namespace {
 
 const char *gMnemonic[] = {
     // operators
-    "INS_ADD", "INS_SUB", "INS_MUL", "INS_DIV", "INS_MOD", "INS_AND", "INS_OR",
-    "INS_NOT", "INS_LT", "INS_GT", "INS_LEQ", "INS_GEQ", "INS_EQ",
+    "INS_ADD", "INS_INC", "INS_SUB", "INS_MUL", "INS_DIV", "INS_MOD", "INS_AND",
+    "INS_OR", "INS_NOT", "INS_LT", "INS_GT", "INS_LEQ", "INS_GEQ", "INS_EQ",
     // branching
     "INS_JMP", "INS_CJMP", "INS_CALL", "INS_RET", "INS_SCALL",
     // stack

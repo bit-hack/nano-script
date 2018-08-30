@@ -34,7 +34,9 @@ bool thread_t::prepare(const function_t &func, int32_t argc, const int32_t *argv
   if (const int32_t size = ccml_.parser().global_size()) {
     s_.resize(size);
     for (const auto &g : ccml_.parser().globals()) {
-      s_[g.offset_] = g.value_;
+      if (g.size_ == 1) {
+        s_[g.offset_] = g.value_;
+      }
     }
   }
 

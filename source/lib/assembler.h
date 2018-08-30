@@ -10,6 +10,7 @@
 
 enum instruction_e {
   INS_ADD,
+  INS_INC,
   INS_SUB,
   INS_MUL,
   INS_DIV,
@@ -18,7 +19,11 @@ enum instruction_e {
   INS_OR,
   INS_NOT,
 
+  // compare less than
+  //    push( pop() < pop() )
   INS_LT,
+
+  // compare greater then
   INS_GT,
   INS_LEQ,
   INS_GEQ,

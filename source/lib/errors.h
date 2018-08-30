@@ -31,9 +31,16 @@ struct error_manager_t {
   }
 
   virtual void expecting_lit_or_ident(const token_t &t) {
+    std::string v = t.str_;
+    if (t.type_ == TOK_EOL) {
+      v = "end of line";
+    }
+    if (t.type_ == TOK_EOF) {
+      v = "end of file";
+    }
     on_error_(line_number_(),
               "expecting literal or identifier, found '%s' instead",
-              t.str_.c_str());
+              v.c_str());
   }
 
   virtual void cant_assign_unknown_var(const token_t &t) {
