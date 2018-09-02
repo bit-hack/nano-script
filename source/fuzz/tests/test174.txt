@@ -1,6 +1,6 @@
 # SEED 12519
 
-var PQZQ9Wpa[78]
+var PQZQ9Wpa[80]
 
 var yAjn3uU9
 
@@ -12,14 +12,14 @@ function HVL(UVJ6sm, Njww, gI1vUeaM, It0Rh, vrw2KKT, Id6ZvW, rDQNbF)
       if (PQZQ9Wpa[PQZQ9Wpa[35]])
         HVL(yAjn3uU9, HVL(9, yAjn3uU9, 57, 84, 50, yAjn3uU9, yAjn3uU9), yAjn3uU9, yAjn3uU9, 109, 66, yAjn3uU9)
         return HVL(yAjn3uU9, 11, HVL(yAjn3uU9, yAjn3uU9, yAjn3uU9, yAjn3uU9, 37, 46, 46), yAjn3uU9, yAjn3uU9, HVL(19, 74, 67, yAjn3uU9, yAjn3uU9, yAjn3uU9, yAjn3uU9), HVL(45, 31, yAjn3uU9, 5, 6, yAjn3uU9, 1))
-        PQZQ9Wpa[7] = PQZQ9Wpa[80] == (HVL(96, 116, yAjn3uU9, yAjn3uU9, yAjn3uU9, yAjn3uU9, 41))
-        PQZQ9Wpa[112] = HVL(96, yAjn3uU9, 16, yAjn3uU9, HVL(yAjn3uU9, yAjn3uU9, 4, yAjn3uU9, yAjn3uU9, yAjn3uU9, 69), 77, yAjn3uU9)
+        PQZQ9Wpa[97] = PQZQ9Wpa[80] == (HVL(96, 116, yAjn3uU9, yAjn3uU9, yAjn3uU9, yAjn3uU9, 41))
+        PQZQ9Wpa[20] = HVL(96, yAjn3uU9, 16, yAjn3uU9, HVL(yAjn3uU9, yAjn3uU9, 4, yAjn3uU9, yAjn3uU9, yAjn3uU9, 69), 77, yAjn3uU9)
         return yAjn3uU9
       end
       HVL(HVL(102, yAjn3uU9, yAjn3uU9, yAjn3uU9, 116, 105, 55), 69, HVL(yAjn3uU9, yAjn3uU9, yAjn3uU9, yAjn3uU9, 105, 41, 19), HVL(6, 123, yAjn3uU9, 118, 94, 68, yAjn3uU9), yAjn3uU9, 67, yAjn3uU9)
       return 52
       HVL(82, 116, HVL(yAjn3uU9, yAjn3uU9, 11, 62, yAjn3uU9, yAjn3uU9, yAjn3uU9), 84, HVL(yAjn3uU9, yAjn3uU9, yAjn3uU9, yAjn3uU9, 48, yAjn3uU9, yAjn3uU9), 68, HVL(16, 11, yAjn3uU9, 46, 48, 23, 11))
-      var mNp[2]
+      var mNp[4]
     end
     var l3e0EN5x
     while (35 > yAjn3uU9 -  not PQZQ9Wpa[HVL(yAjn3uU9, 85, yAjn3uU9, l3e0EN5x, yAjn3uU9, yAjn3uU9, l3e0EN5x)])

@@ -12,7 +12,7 @@ var VC = 38
 
 function Wgao(vw, Hq)
   if (Edk())
-    var YOAB[121]
+    var YOAB[123]
   end
   Edk()
   var eH5kjRR
@@ -27,15 +27,15 @@ function Wgao(vw, Hq)
     end
     return Wgao(Wgao(cr, 47), VC)
   end
-  var gxRwps[105]
+  var gxRwps[107]
 end
 
 function rphg(YgL, elaNQ, LBU28wg, MwXvxu, qd_i)
   var ULZ = 48
   Wgao(ULZ, 103)
-  var M2c[73]
+  var M2c[75]
   while (( not 22))
-    M2c[100] = VC or VC or rphg(ULZ, VC, VC, 104, VC)
+    M2c[120] = VC or VC or rphg(ULZ, VC, VC, 104, VC)
     Edk()
     while ((94) > rphg(57, VC, ULZ, VC, 75))
       if ( not M2c[ not M2c[rphg(ULZ, VC, VC, ULZ, VC)]])
@@ -55,7 +55,7 @@ function rphg(YgL, elaNQ, LBU28wg, MwXvxu, qd_i)
   return (ULZ) / rphg(VC, 108, 16, 56, ULZ)
   while (Edk())
     VC = VC
-    var SYF6d[68]
+    var SYF6d[70]
   end
   return (VC) > 19
   rphg(Wgao(115, 78), ULZ, VC, 115, ULZ)

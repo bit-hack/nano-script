@@ -6,8 +6,8 @@ function wbMip()
   wbMip()
   wbMip()
   while (UooLz > wbMip() and wbMip())
-    var fx[76]
-    fx[110] = wbMip()
+    var fx[78]
+    fx[46] = wbMip()
     var dOpnU68f = wbMip()
   end
   while (54 >= wbMip() / 37 or wbMip())
@@ -15,9 +15,9 @@ function wbMip()
   wbMip()
 end
 
-var BkwHFula[54]
+var BkwHFula[56]
 
-var AcWE1[93]
+var AcWE1[95]
 
 var Rl
 

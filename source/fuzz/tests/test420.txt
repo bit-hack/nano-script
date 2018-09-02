@@ -1,4 +1,4 @@
 # SEED 12765
 
-var Znuq[48]
+var Znuq[50]
 

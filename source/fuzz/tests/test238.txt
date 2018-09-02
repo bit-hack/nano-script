@@ -1,6 +1,6 @@
 # SEED 12583
 
-var p0KCPg[66]
+var p0KCPg[68]
 
 function kA(R7, PVOXEHc)
   if (kA(21, 117) - 74 < kA(57, 87) + kA(7, 44))
@@ -8,23 +8,23 @@ function kA(R7, PVOXEHc)
       while (kA(kA(74, 11), 74))
       end
     end
-    var CtM35[54]
+    var CtM35[56]
     while ( not (kA(17, 79)))
-      var nWB[13]
-      var hCq[15]
+      var nWB[15]
+      var hCq[17]
       if (kA(75, 56) or kA(91, 83) == 13 <= kA(42, 26))
-        var PEaQYJtk[53]
+        var PEaQYJtk[55]
       end
-      hCq[18] = CtM35[65 < kA(90, 13)]
+      hCq[120] = CtM35[65 < kA(90, 13)]
     end
   end
   while (109)
     var MJollNVz = kA(31, kA(77, 67))
   end
   kA(kA(100, 101), kA(14, 4))
-  p0KCPg[16] =  not p0KCPg[kA(43, 53)] - 44 * 53
+  p0KCPg[26] =  not p0KCPg[kA(43, 53)] - 44 * 53
   var dd
-  var zUa[66]
+  var zUa[68]
   if (zUa[101])
   end
   kA(dd, dd)
@@ -32,5 +32,5 @@ end
 
 var VlX4bX
 
-var W8oE[29]
+var W8oE[31]
 

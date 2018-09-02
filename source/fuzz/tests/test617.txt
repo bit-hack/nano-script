@@ -11,11 +11,11 @@ function p8(aA, nI, kvTTeUsq, QgYF, TQmAn, i3pK5XcV)
     while (Ycavn)
       return 115 < Ycavn
       p8(p8(ZO5sYgR, 1, ZO5sYgR, 110, ZO5sYgR, Ycavn), p8(115, 109, ZO5sYgR, Ycavn, 27, Ycavn), p8(Ycavn, Ycavn, ZO5sYgR, 99, Ycavn, ZO5sYgR), Ycavn, 19, Ycavn)
-      var pxVdw[86]
+      var pxVdw[88]
     end
     p8(ZO5sYgR, ZO5sYgR, p8(ZO5sYgR, ZO5sYgR, 97, 41, 95, 4), p8(107, 26, Ycavn, 22, Ycavn, ZO5sYgR), Ycavn, Ycavn)
-    var I6EOE8z[6]
-    I6EOE8z[34] = p8(ZO5sYgR, 20, Ycavn, ZO5sYgR, 28, 72) / ZO5sYgR - (37)
+    var I6EOE8z[8]
+    I6EOE8z[50] = p8(ZO5sYgR, 20, Ycavn, ZO5sYgR, 28, 72) / ZO5sYgR - (37)
     if (80 / 32 <= p8(75, Ycavn, 94, 10, 36, 75))
       i3pK5XcV =  not  not  not  not ( not Ycavn and 70)
     end

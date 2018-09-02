@@ -7,7 +7,7 @@ var uB = 62
 var zRzWD = 59
 
 function j71l(rT5OIy8w, jasMK, Q0lAmb)
-  var xjC[81]
+  var xjC[83]
   j71l(j71l(4, Zdm, 86), Zdm, 69)
   return 42
   Q0lAmb = (118 > j71l(zRzWD, 53, 109))
@@ -19,8 +19,8 @@ function j71l(rT5OIy8w, jasMK, Q0lAmb)
     zRzWD = (j71l(fBHJl, ty, 25))
     jasMK = xjC[ not 19 <= 55]
   end
-  var eQ[99]
-  xjC[106] = 12
+  var eQ[101]
+  xjC[60] = 12
 end
 
 var sbAit = 89
@@ -41,7 +41,7 @@ function fkb(Gcx, bEBSS)
     return zRzWD / fkb(zRzWD, uB)
     while (125)
       fkb(116, j71l(zRzWD, Zdm, 19))
-      var KbyoRwl[61]
+      var KbyoRwl[63]
       if (( not 42 >= 116))
       end
       fkb(Zdm, 123)

@@ -4,7 +4,7 @@ function UjjP(CN0H, PBgW)
   return UjjP(35, 90) - 30 / UjjP(19, 117)
   if ((33 / UjjP(65, 94)))
     var afiP =  not (UjjP(87, 18))
-    var HhB[54]
+    var HhB[56]
     if (HhB[UjjP(116, 52)] - 72)
       PBgW = afiP == afiP
       CN0H = afiP + HhB[afiP]
@@ -13,7 +13,7 @@ function UjjP(CN0H, PBgW)
   end
   return ( not 86)
   return  not UjjP(90, 81) / UjjP(36, 76) - UjjP(87, 30)
-  var U7GQIq[65]
-  U7GQIq[37] = 75
+  var U7GQIq[67]
+  U7GQIq[7] = 75
 end
 

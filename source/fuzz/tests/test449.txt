@@ -1,8 +1,8 @@
 # SEED 12794
 
-var Oo1b43[41]
+var Oo1b43[43]
 
 var DNIHCKDR = 62
 
-var QtS1wA[76]
+var QtS1wA[78]
 

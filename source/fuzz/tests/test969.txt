@@ -1,6 +1,6 @@
 # SEED 13314
 
-var Pz8nb1v3[40]
+var Pz8nb1v3[42]
 
 function spTrj2Ef(e6O, YPsmZ7kx, rUJoJ2, vECklbQ, Z7Xd0g)
   if ((spTrj2Ef(81, 11, 68, 25, 12) - spTrj2Ef(50, 20, 48, 18, 7)))
@@ -13,9 +13,9 @@ function spTrj2Ef(e6O, YPsmZ7kx, rUJoJ2, vECklbQ, Z7Xd0g)
   return 125
   var N3YxkP
   if (Pz8nb1v3[23 * N3YxkP])
-    var yz[114]
-    var WFrrZ[60]
-    WFrrZ[19] = N3YxkP
+    var yz[116]
+    var WFrrZ[62]
+    WFrrZ[73] = N3YxkP
     rUJoJ2 = spTrj2Ef(N3YxkP, N3YxkP, spTrj2Ef(114, 115, N3YxkP, N3YxkP, N3YxkP), spTrj2Ef(64, 70, 37, 106, 62), 45)
     return WFrrZ[N3YxkP] > N3YxkP and 73
   end

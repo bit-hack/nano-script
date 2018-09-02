@@ -24,7 +24,7 @@ function xZn(Kwp9C, a9lk)
   mR6TAn = xZn(55, aitld4C5) / 94
   return 33 - mR6TAn > 62
   while ( not xZn(81, aitld4C5) == jHYGlLp(123, Pq6NJDN, 84, aitld4C5, 60, 14, 10) == mR6TAn + xZn(aitld4C5, Pq6NJDN))
-    var hstPQ_[9]
+    var hstPQ_[11]
     xZn(24, aitld4C5)
   end
   if (mR6TAn + 23)
@@ -38,5 +38,5 @@ var poBzq
 
 var ZTBd8 = 88
 
-var of[41]
+var of[43]
 

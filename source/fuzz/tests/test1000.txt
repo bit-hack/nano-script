@@ -14,5 +14,5 @@ function DP(IHWp, R0rN, FrF, HKn)
   var RTzI
 end
 
-var cbEeNr[10]
+var cbEeNr[12]
 

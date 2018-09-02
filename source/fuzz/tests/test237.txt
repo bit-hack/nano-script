@@ -1,10 +1,10 @@
 # SEED 12582
 
-var iiW[34]
+var iiW[36]
 
 var WL = 119
 
-var RTu[3]
+var RTu[5]
 
 var blG = 70
 

@@ -14,6 +14,8 @@
 std::array<char, 1024 * 64> program;
 
 
+extern void print_history();
+
 int main() {
 
   uint32_t tests = 0;
@@ -49,6 +51,8 @@ int main() {
     catch (const ccml_error_t &error) {
       (void)error;
       fails.push_back(fname);
+      printf("%s\n", error.error.c_str());
+      printf("%d:  %s\n", error.line, ccml.lexer().get_line(error.line).c_str());
       continue;
     }
 
@@ -65,7 +69,7 @@ int main() {
       if (!thread.prepare(func, func.num_args_, args.data())) {
         continue;
       }
-      if (!thread.resume(1024, true)) {
+      if (!thread.resume(1024 * 8, false)) {
         continue;
       }
       if (!thread.finished()) {
@@ -86,6 +90,8 @@ int main() {
   if (!fails.empty()) {
     getchar();
   }
+
+  print_history();
 
   return fails.empty() ? 0 : 1;
 }

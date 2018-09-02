@@ -1,32 +1,32 @@
 # SEED 12550
 
-var FMJ[43]
+var FMJ[45]
 
 function MIwBohj9(_cZdYN, UvN, I3zq)
-  FMJ[66] = MIwBohj9(6, 87, 56)
+  FMJ[36] = MIwBohj9(6, 87, 56)
   MIwBohj9(63, MIwBohj9(111, 107, 110), MIwBohj9(111, 34, 108))
-  var Y4s[46]
+  var Y4s[48]
   if (MIwBohj9(17, 32, 63) / (88))
     return 127 - MIwBohj9(49, 44, 95) - MIwBohj9(103, 77, 8) - 49
   end
   if ((MIwBohj9(3, 113, 53) or 32))
     return MIwBohj9(25, 114, 42) >  not MIwBohj9(70, 106, 107) < 38
-    var o0Le9xK[44]
+    var o0Le9xK[46]
   end
   while (FMJ[Y4s[MIwBohj9(105, 93, 123)]])
-    FMJ[119] = 23 and MIwBohj9(75, 17, 37) < 45
+    FMJ[23] = 23 and MIwBohj9(75, 17, 37) < 45
     if (114 > 44 > (54))
     end
   end
   var EUYgXlyX
   while (MIwBohj9(EUYgXlyX, 60, 33) * EUYgXlyX and  not EUYgXlyX)
-    var HBA[32]
+    var HBA[34]
     if (MIwBohj9(EUYgXlyX, EUYgXlyX, EUYgXlyX) < (MIwBohj9(EUYgXlyX, 126, 94)))
-      var sYr[64]
+      var sYr[66]
       MIwBohj9(EUYgXlyX, EUYgXlyX, 67)
     end
     MIwBohj9(EUYgXlyX, 95, EUYgXlyX)
-    var zb[36]
+    var zb[38]
   end
 end
 

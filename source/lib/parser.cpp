@@ -185,16 +185,25 @@ void parser_t::parse_lhs() {
 
 void parser_t::parse_expr_ex(uint32_t tide) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
+  assembler_t &asm_ = ccml_.assembler();
 
   // format:
   //    <lhs>
   //    <lhs> <op> <expr_ex>
+  //    'not' <lhs> <op> <expr_ex>
+  //    'not' <lhs>
 
-  parse_lhs();
-  if (is_operator()) {
-    const token_t *op = stream_.pop();
-    op_push(op->type_, tide);
+  if (const token_t *not = stream_.found(TOK_NOT)) {
     parse_expr_ex(tide);
+    asm_.emit(INS_NOT, not);
+  }
+  else {
+    parse_lhs();
+    if (is_operator()) {
+      const token_t *op = stream_.pop();
+      op_push(op->type_, tide);
+      parse_expr_ex(tide);
+    }
   }
 }
 
@@ -203,18 +212,11 @@ void parser_t::parse_expr() {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   // format:
-  //    not <expr_ex>
   //    <expr_ex>
 
-  const token_t *not = stream_.found(TOK_NOT);
-
-  uint32_t tide = op_stack_.size();
+  const uint32_t tide = op_stack_.size();
   parse_expr_ex(tide);
   op_pop_all(tide);
-
-  if (not) {
-    asm_.emit(INS_NOT, not);
-  }
 }
 
 void parser_t::parse_decl_array(const token_t &name) {

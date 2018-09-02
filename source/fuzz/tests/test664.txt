@@ -1,21 +1,21 @@
 # SEED 13009
 
-var Tf[6]
+var Tf[8]
 
 var Xc = 124
 
 var chcE4w9
 
-var PIS1Px[70]
+var PIS1Px[72]
 
-var a7Lz[6]
+var a7Lz[8]
 
 function ph(Hh, w7RHQ, fO_Gj, VUQ6)
-  var Nx_[60]
+  var Nx_[62]
   return Xc <= 70 < Xc
   if (chcE4w9 ==  not Xc)
     chcE4w9 = ph(Xc, 46, 126, 81) - chcE4w9 <= (Xc)
-    Tf[101] = (111 > chcE4w9)
+    Tf[49] = (111 > chcE4w9)
   end
   if ( not ph(Xc, chcE4w9, chcE4w9, chcE4w9) and chcE4w9 - (ph(Xc, 91, Xc, chcE4w9)))
     return ph(ph(111, 42, 114, 18), Xc, Xc, 47)
@@ -30,13 +30,13 @@ function ph(Hh, w7RHQ, fO_Gj, VUQ6)
       var EjSAa
       while (EjSAa <= Xc * 94)
         if (ph(17, chcE4w9, ph(16, Xc, chcE4w9, 85), 102))
-          Nx_[126] = ph(32, chcE4w9, 54, Xc)
+          Nx_[14] = ph(32, chcE4w9, 54, Xc)
           while (chcE4w9)
             return 114
           end
         end
         ph(18, 49, ph(EjSAa, 92, EjSAa, 93), ph(EjSAa, 7, 15, 61))
-        a7Lz[41] = 70 * (chcE4w9)
+        a7Lz[53] = 70 * (chcE4w9)
       end
       var A4
       return  not 114 / Xc >= chcE4w9 > ph(87, A4, A4, chcE4w9)

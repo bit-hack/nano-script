@@ -1,4 +1,4 @@
 # SEED 12370
 
-var M7U2Y[46]
+var M7U2Y[48]
 

@@ -20,9 +20,9 @@ function f6O3o(ZtM, BwYa, by2vH)
   end
   if (89 * f6O3o(12, 91, 28) + 42)
     if (61)
-      var pVYE2G[117]
-      pVYE2G[123] =  not 14 and f6O3o(126, 104, 50) == pVYE2G[f6O3o(117, 45, 84)]
-      pVYE2G[107] = f6O3o(f6O3o(81, 53, 14), f6O3o(10, 126, 54), 57)
+      var pVYE2G[119]
+      pVYE2G[95] =  not 14 and f6O3o(126, 104, 50) == pVYE2G[f6O3o(117, 45, 84)]
+      pVYE2G[17] = f6O3o(f6O3o(81, 53, 14), f6O3o(10, 126, 54), 57)
     end
   end
   if (( not f6O3o(92, 94, 49)))

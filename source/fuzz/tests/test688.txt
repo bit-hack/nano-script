@@ -18,7 +18,7 @@ end
 
 var T3AZ
 
-var SWPvoVeK[40]
+var SWPvoVeK[42]
 
-var LTE2y[46]
+var LTE2y[48]
 

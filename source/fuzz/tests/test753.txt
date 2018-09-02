@@ -13,7 +13,7 @@ function yJk8(xaabh, ml9hgOwu)
   Te1E = yJk8(yJk8(120, 11), 4)
   yJk8(Te1E, Te1E)
   return yJk8(60, Te1E) / Te1E and yJk8(76, 92)
-  var kx[100]
-  kx[0] = yJk8(Te1E, Te1E) and kx[yJk8(72, 92)]
+  var kx[102]
+  kx[10] = yJk8(Te1E, Te1E) and kx[yJk8(72, 92)]
 end
 

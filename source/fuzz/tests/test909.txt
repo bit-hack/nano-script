@@ -4,7 +4,7 @@ var IdnSuW21
 
 var DN = 67
 
-var uuggnL[10]
+var uuggnL[12]
 
-var aix9[101]
+var aix9[103]
 

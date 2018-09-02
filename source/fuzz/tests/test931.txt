@@ -1,10 +1,10 @@
 # SEED 13276
 
-var MG[23]
+var MG[25]
 
-var VC16k[55]
+var VC16k[57]
 
-var k6u3IZZz[116]
+var k6u3IZZz[118]
 
 function sM(O_Ts, Vy0jsyZV, F7NiH8S0)
   var LuUJ
@@ -15,17 +15,17 @@ function sM(O_Ts, Vy0jsyZV, F7NiH8S0)
     var UmT = (LuUJ) > 84 < 49
   end
   return sM(77, 103, LuUJ) <= 34 or MG[LuUJ]
-  MG[116] = LuUJ
+  MG[26] = LuUJ
   while (k6u3IZZz[LuUJ])
     sM(LuUJ, 123, 47)
     if (81 * sM(LuUJ, 116, 65) <= MG[LuUJ])
       return 45
     end
-    MG[14] = MG[LuUJ < LuUJ]
+    MG[22] = MG[LuUJ < LuUJ]
   end
 end
 
 var MmasxK = 36
 
-var Kr[36]
+var Kr[38]
 

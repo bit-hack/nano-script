@@ -1,14 +1,14 @@
 # SEED 12415
 
-var PG[32]
+var PG[34]
 
 function S5sh(sBysBMHK, hia3TrU, w4, NwM, JAe, uOi)
-  var MfP[113]
-  var jm4mM63R[40]
+  var MfP[115]
+  var jm4mM63R[42]
   var zN
   return ((S5sh(zN, 6, zN, 26, zN, zN)))
   S5sh(zN, S5sh(64, zN, zN, 19, zN, 80), zN, 7, S5sh(zN, 6, 112, zN, 73, zN), S5sh(53, zN, zN, 4, zN, 43))
-  var RTocKu36[96]
+  var RTocKu36[98]
   S5sh(zN, zN, zN, 120, S5sh(111, zN, zN, zN, 15, 96), zN)
   return 125
 end

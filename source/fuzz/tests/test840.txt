@@ -1,6 +1,6 @@
 # SEED 13185
 
-var nkT[85]
+var nkT[87]
 
 var ljA
 

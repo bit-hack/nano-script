@@ -1,6 +1,6 @@
 # SEED 12493
 
-var OmVNT[121]
+var OmVNT[123]
 
 var PFMN
 

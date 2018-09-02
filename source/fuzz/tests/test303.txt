@@ -1,6 +1,6 @@
 # SEED 12648
 
-var sOkP[80]
+var sOkP[82]
 
 function qcoNQ()
   var ZMjaQZMr
@@ -9,22 +9,22 @@ function qcoNQ()
     if (25 - 83 > 7)
     end
   end
-  var JViRyp6z[50]
-  var sz[126]
+  var JViRyp6z[52]
+  var sz[128]
 end
 
 var miqn
 
 function QUX(rEoiR, vUaPyQU, QkUlA3k, sreZbbU, mHSN0)
-  sOkP[92] = (sOkP[miqn])
-  sOkP[44] = qcoNQ()
-  sOkP[95] = 43
+  sOkP[78] = (sOkP[miqn])
+  sOkP[64] = qcoNQ()
+  sOkP[43] = 43
   if (miqn)
     var WfXcrVt
     while (WfXcrVt)
       while (WfXcrVt - WfXcrVt and (13))
         while (miqn >= WfXcrVt or 3)
-          var rJfV[91]
+          var rJfV[93]
         end
         return  not 90
       end
@@ -32,15 +32,15 @@ function QUX(rEoiR, vUaPyQU, QkUlA3k, sreZbbU, mHSN0)
       return QUX(51, WfXcrVt, WfXcrVt, miqn, miqn) or 27 > (miqn)
     end
   end
-  sOkP[36] = QUX(83, 47, 38, 45, miqn)
+  sOkP[6] = QUX(83, 47, 38, 45, miqn)
   QUX(107, miqn, 37, 15, miqn)
   qcoNQ()
-  sOkP[33] = (sOkP[miqn])
+  sOkP[5] = (sOkP[miqn])
 end
 
-var scxvmz[84]
+var scxvmz[86]
 
-var KUt[40]
+var KUt[42]
 
 var iy
 

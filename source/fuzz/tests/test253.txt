@@ -1,15 +1,15 @@
 # SEED 12598
 
-var JC2MI[98]
+var JC2MI[100]
 
 function tI_(DT24N)
   var AS
-  JC2MI[13] = 94 or 87 + (77)
+  JC2MI[21] = 94 or 87 + (77)
   while (AS)
     return JC2MI[59]
     DT24N = tI_(tI_(80))
   end
-  JC2MI[62] = 121
+  JC2MI[110] = 121
   if (tI_(tI_(101)))
     if (tI_(tI_(46)))
       var a2P = tI_(106)
@@ -24,26 +24,26 @@ function tI_(DT24N)
     end
     return AS
     var XELzS0q6
-    var nNsaRf[100]
+    var nNsaRf[102]
   end
   DT24N =  not AS - JC2MI[AS]
-  JC2MI[22] = JC2MI[(tI_(51))]
+  JC2MI[72] = JC2MI[(tI_(51))]
   while (3)
     while ((AS))
-      var F1x[120]
+      var F1x[122]
     end
     tI_(AS)
   end
 end
 
-var OUHHasX[101]
+var OUHHasX[103]
 
 function kak(E6j6)
   return  not OUHHasX[ not 67 <= 90]
-  OUHHasX[113] = (48 < tI_(55))
+  OUHHasX[127] = (48 < tI_(55))
   var ld
   JC2MI[41] = OUHHasX[ld]
-  JC2MI[123] = OUHHasX[ not tI_(ld)]
+  JC2MI[85] = OUHHasX[ not tI_(ld)]
   E6j6 = ld
   if (12)
   end

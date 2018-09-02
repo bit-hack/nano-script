@@ -1,10 +1,10 @@
 # SEED 12482
 
-var FQDT[89]
+var FQDT[91]
 
-var O40CMSo[41]
+var O40CMSo[43]
 
-var kxUAg9U[60]
+var kxUAg9U[62]
 
 var vkHbvgX = 116
 
@@ -15,10 +15,10 @@ function Xhjg6zoi(xRaAvC, c_ptF)
   while (vkHbvgX)
   end
   if (vkHbvgX <= 74 / 36 < Xhjg6zoi(vkHbvgX, 126))
-    FQDT[25] = Xhjg6zoi(3, vkHbvgX) or vkHbvgX * (vkHbvgX)
+    FQDT[51] = Xhjg6zoi(3, vkHbvgX) or vkHbvgX * (vkHbvgX)
     var LpYkjV
-    FQDT[128] = 22 < vkHbvgX * FQDT[Xhjg6zoi(61, LpYkjV)]
-    var MO3uF4[36]
+    FQDT[24] = 22 < vkHbvgX * FQDT[Xhjg6zoi(61, LpYkjV)]
+    var MO3uF4[38]
   end
   c_ptF = vkHbvgX /  not 89
   return vkHbvgX < vkHbvgX >=  not  not Xhjg6zoi(2, vkHbvgX) <= 93

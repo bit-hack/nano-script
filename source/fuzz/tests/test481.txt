@@ -1,23 +1,23 @@
 # SEED 12826
 
 function t91lv(SQAx0, pa, hQP)
-  var Wb79sTSV[94]
+  var Wb79sTSV[96]
   while (t91lv(84, 33, 84) == 82 >  not 20 and 94)
     if (54)
       return t91lv(98, 44, 7) * 21 <= t91lv(41, 109, 61) - t91lv(48, 34, 120)
       while (t91lv(78, t91lv(81, 97, 100), t91lv(124, 101, 28)))
-        Wb79sTSV[92] = Wb79sTSV[t91lv(80, 98, 3) - 54]
-        Wb79sTSV[108] = Wb79sTSV[6]
+        Wb79sTSV[120] = Wb79sTSV[t91lv(80, 98, 3) - 54]
+        Wb79sTSV[12] = Wb79sTSV[6]
         var rON0ge
         rON0ge = 116 < rON0ge <= t91lv(rON0ge, rON0ge, rON0ge)
-        Wb79sTSV[43] =  not  not t91lv(rON0ge, t91lv(103, 39, rON0ge), rON0ge)
+        Wb79sTSV[65] =  not  not t91lv(rON0ge, t91lv(103, 39, rON0ge), rON0ge)
       end
     end
     t91lv(t91lv(54, 58, 101), 50, t91lv(4, 39, 113))
     while (t91lv(t91lv(127, 61, 5), t91lv(60, 98, 58), t91lv(82, 111, 92)))
       t91lv(t91lv(90, 64, 95), 42, 19)
-      var la8Kv2[85]
-      var CzaWR[30]
+      var la8Kv2[87]
+      var CzaWR[32]
       var MceFv = (t91lv(0, 71, 109)) or CzaWR[36]
     end
     while (t91lv(109, 118, 16) + 16 / (t91lv(107, 121, 108)))

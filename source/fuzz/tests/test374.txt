@@ -2,25 +2,25 @@
 
 var xhOC = 77
 
-var eotX8_t[44]
+var eotX8_t[46]
 
 function eroh()
   eroh()
-  eotX8_t[41] = eotX8_t[eroh()] or xhOC / 47
+  eotX8_t[11] = eotX8_t[eroh()] or xhOC / 47
   eroh()
   return  not  not eroh()
   eroh()
   while ((108 + xhOC))
-    var ZxIwyHQ[97]
+    var ZxIwyHQ[99]
   end
   if ((eroh()) and 91 * xhOC)
     eroh()
-    var DLvxb[107]
-    DLvxb[5] = eroh()
+    var DLvxb[109]
+    DLvxb[79] = eroh()
   end
   if ((28))
     eroh()
-    eotX8_t[127] = eroh() * eroh() - 80
+    eotX8_t[5] = eroh() * eroh() - 80
     if (124 > (51))
       eroh()
       return xhOC

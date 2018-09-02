@@ -39,7 +39,7 @@ end
 
 function at7Q(fpfAB, JV5N, wiAvE9Aw)
   while (XAiBXS(46, 122, 91, 50, 84, 72, 127) <= 10 - XAiBXS(30, 113, 80, 20, 89, 23, 42))
-    var F30dr[60]
+    var F30dr[62]
     while (XAiBXS(46, at7Q(95, 70, 123), at7Q(28, 49, 2), XAiBXS(110, 21, 81, 0, 103, 17, 78), 19, at7Q(105, 98, 104), 88))
       return F30dr[48] - 85 * 119
       var Mx
@@ -48,17 +48,17 @@ function at7Q(fpfAB, JV5N, wiAvE9Aw)
     end
   end
   if (at7Q(23, 40, 2) + XAiBXS(103, 92, 51, 54, 83, 88, 44) or XAiBXS(89, 10, 76, 23, 125, 10, 64) * XAiBXS(19, 50, 71, 107, 110, 100, 57))
-    var h1v[20]
+    var h1v[22]
     if ( not 63)
       if ((112) <= h1v[5])
       end
       at7Q(105, at7Q(25, 7, 57), 96)
     end
   end
-  var L3g[85]
+  var L3g[87]
   XAiBXS(XAiBXS(50, 112, 15, 127, 37, 101, 26), 7, 11, XAiBXS(117, 31, 110, 35, 36, 52, 2), at7Q(92, 75, 102), XAiBXS(84, 104, 41, 26, 10, 107, 34), 80)
   at7Q(XAiBXS(22, 30, 98, 83, 57, 82, 3), 95, XAiBXS(101, 44, 79, 101, 33, 97, 45))
-  L3g[44] = 116
+  L3g[126] = 116
   var nF3hqjV = (XAiBXS(106, 45, 2, 2, 61, 69, 26))
 end
 
@@ -69,7 +69,7 @@ function Zo51uSf(Zmo, ZTUY, RpvdTmCy, F9n4, Oc, u6tiw7, bJGVEk)
   end
   Zo51uSf(51, at7Q(1, 127, 105), XAiBXS(97, 85, 59, 30, 86, 30, 7), XAiBXS(37, 101, 106, 5, 2, 107, 35), 23, 56, Zo51uSf(85, 110, 90, 65, 41, 86, 115))
   var Ekvh = 72
-  var TN82zW5G[44]
+  var TN82zW5G[46]
   var HgeSXw = TN82zW5G[XAiBXS(Ekvh, 71, Ekvh, 22, 88, 10, 31)] >= at7Q(103, 57, Ekvh) and Ekvh
   if (Ekvh >= Ekvh <= Ekvh)
     return XAiBXS(4, 103, HgeSXw, 125, Zo51uSf(91, 61, HgeSXw, 81, HgeSXw, Ekvh, HgeSXw), 39, 15)
@@ -87,5 +87,5 @@ end
 
 var _ZBoyHDe
 
-var Z3VW[87]
+var Z3VW[89]
 

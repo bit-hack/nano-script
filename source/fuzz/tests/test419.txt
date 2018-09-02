@@ -2,9 +2,9 @@
 
 var SkiDYngF
 
-var Ws[20]
+var Ws[22]
 
-var DmDDdlTH[48]
+var DmDDdlTH[50]
 
 var NNOx7 = 87
 

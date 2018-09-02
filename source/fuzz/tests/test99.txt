@@ -6,7 +6,7 @@ function Lrlp(gJX0, DTGw1)
   if (116)
     Lrlp(8, Lrlp(24, 32))
   end
-  var vHL3b[75]
+  var vHL3b[77]
   if (Lrlp(55, 124) >= Lrlp(93, 127) <= 8)
   end
   Lrlp(Lrlp(37, 96), Lrlp(29, 8))
@@ -31,7 +31,7 @@ function Lrlp(gJX0, DTGw1)
           end
         end
         var WY1x
-        var TVCjNuOU[41]
+        var TVCjNuOU[43]
       end
       if (TnDGA)
         return  not 26
@@ -42,12 +42,12 @@ end
 
 function e894YIXv(PT)
   if ( not 120 > Lrlp(5, 63) > 52 * 40)
-    var MsMBp2hj[83]
+    var MsMBp2hj[85]
   end
   return 78
   if (e894YIXv(17) > e894YIXv(114) <  not e894YIXv(32) or Lrlp(24, 38))
   end
-  var c23ek[2]
+  var c23ek[4]
   e894YIXv(e894YIXv(26))
 end
 

@@ -1,21 +1,21 @@
 # SEED 13159
 
-var vrAr[40]
+var vrAr[42]
 
-var ZqWH[122]
+var ZqWH[124]
 
 var ru7lK
 
 var owb = 78
 
 function ow4ObjK8(lkC8l, Upq06rt, tv, Ctabv4)
-  var aB[122]
+  var aB[124]
   owb = 103
   var BxZjrc
-  var KfK[85]
+  var KfK[87]
   while ((58))
     var bSd8 = (ow4ObjK8(BxZjrc, 50, 83, 7)) <= (ow4ObjK8(owb, 82, ru7lK, 10))
-    vrAr[84] =  not vrAr[122]
+    vrAr[122] =  not vrAr[122]
   end
   while ((ow4ObjK8(8, 108, 53, 106)))
   end

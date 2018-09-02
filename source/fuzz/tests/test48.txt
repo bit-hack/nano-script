@@ -2,7 +2,7 @@
 
 var kudJsOg
 
-var gC2lhC[60]
+var gC2lhC[62]
 
 function b3B(K9NByo, dPax, P_mzEp, Dadod9Tu, e5AEWuM)
   while ( not ( not b3B(kudJsOg, 61, 86, kudJsOg, 58)))
@@ -17,12 +17,12 @@ function b3B(K9NByo, dPax, P_mzEp, Dadod9Tu, e5AEWuM)
     var a63i
     if (81 ==  not 30 + a63i)
     end
-    gC2lhC[126] = b3B(68, 125, VmBRP, kudJsOg, a63i) >= 100 / kudJsOg
+    gC2lhC[20] = b3B(68, 125, VmBRP, kudJsOg, a63i) >= 100 / kudJsOg
     a63i = (kudJsOg) / 33
   end
-  var ShiOt[3]
-  var w42n9k[52]
-  var _UD[80]
+  var ShiOt[5]
+  var w42n9k[54]
+  var _UD[82]
 end
 
 var dUTn_OMG = 59

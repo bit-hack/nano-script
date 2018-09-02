@@ -11,7 +11,7 @@ function qSpk(OoFnu, enS, Afv4, zfKtW6xd, p5ctZrb, Ew, eUp)
     if ( not 1)
       OoFnu = jBQjzMoq <=  not qSpk(49, jBQjzMoq, 28, 35, 26, km_ZPMx, jBQjzMoq) > 26
       return 21 * jBQjzMoq or qSpk(jBQjzMoq, km_ZPMx, byfPvANX, 47, jBQjzMoq, 39, 23)
-      var XCTdW76[102]
+      var XCTdW76[104]
       var grhyL = qSpk(4, 119, 21, 57, km_ZPMx, 96, 102) + qSpk(byfPvANX, jBQjzMoq, km_ZPMx, 62, byfPvANX, 42, 49)
     end
     qSpk(km_ZPMx, jBQjzMoq, jBQjzMoq, km_ZPMx, km_ZPMx, 114, km_ZPMx)
@@ -19,7 +19,7 @@ function qSpk(OoFnu, enS, Afv4, zfKtW6xd, p5ctZrb, Ew, eUp)
   end
   if (jBQjzMoq - qSpk(81, 31, byfPvANX, 2, km_ZPMx, jBQjzMoq, 8) + 41)
   end
-  var kO[3]
+  var kO[5]
   while ( not  not 89)
     var Z_cHy
     var zMk9w4w = (byfPvANX) /  not (km_ZPMx)

@@ -1,7 +1,7 @@
 # SEED 12903
 
 function YgpgAbG()
-  var ka2AO[57]
+  var ka2AO[59]
   var ukM
   return  not ukM
   if (YgpgAbG() or 80)
@@ -16,7 +16,7 @@ function YgpgAbG()
   var Bi
   var z6ukpJ = 63
   while (ka2AO[YgpgAbG() >= YgpgAbG()])
-    ka2AO[125] = YgpgAbG()
+    ka2AO[61] = YgpgAbG()
   end
 end
 

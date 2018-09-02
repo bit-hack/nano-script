@@ -16,11 +16,11 @@ function uMmovcFG(io4bIE)
     uMmovcFG(Aq)
     uMmovcFG(28)
     var UyNQO5LJ = uMmovcFG(Aq)
-    var c4XhqQ[0]
+    var c4XhqQ[2]
   end
 end
 
-var Rt[7]
+var Rt[9]
 
-var gt8Z7z[79]
+var gt8Z7z[81]
 

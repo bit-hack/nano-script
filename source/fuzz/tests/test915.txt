@@ -7,12 +7,12 @@ function spXSm2(G0, Ewkj1GHW, I7HhpCO5, kB)
   end
   Tdyv2r3 = 49 >= 117 / spXSm2(96, Tdyv2r3, Tdyv2r3, 32)
   return spXSm2(59, 98, 30, Tdyv2r3) > spXSm2(Tdyv2r3, 46, Tdyv2r3, 71) <  not (Tdyv2r3)
-  var prNbYn[40]
+  var prNbYn[42]
   while ( not 71 and spXSm2(40, Tdyv2r3, Tdyv2r3, Tdyv2r3) * 37)
     if ( not (Tdyv2r3))
       var KHQ
     end
-    var Yifyg[8]
+    var Yifyg[10]
   end
   spXSm2(Tdyv2r3, spXSm2(Tdyv2r3, Tdyv2r3, 78, Tdyv2r3), 73, spXSm2(32, 45, Tdyv2r3, Tdyv2r3))
   if (Tdyv2r3)
@@ -20,14 +20,14 @@ function spXSm2(G0, Ewkj1GHW, I7HhpCO5, kB)
   end
 end
 
-var ka[77]
+var ka[79]
 
 function J2(tsqxBbcV, IhH_pq)
   return (ka[J2(Tdyv2r3, 22)])
   return 16 and J2(Tdyv2r3, 1)
-  ka[39] = 101
+  ka[83] = 101
   spXSm2(Tdyv2r3, Tdyv2r3, 15, Tdyv2r3)
-  ka[113] = J2(J2(Tdyv2r3, Tdyv2r3), J2(Tdyv2r3, 42))
+  ka[27] = J2(J2(Tdyv2r3, Tdyv2r3), J2(Tdyv2r3, 42))
   if ( not Tdyv2r3 and spXSm2(99, 120, Tdyv2r3, 95))
   end
   return  not J2(127, 44)

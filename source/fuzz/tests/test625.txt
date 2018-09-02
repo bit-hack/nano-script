@@ -1,10 +1,10 @@
 # SEED 12970
 
-var hYLy7[76]
+var hYLy7[78]
 
 var pt = 5
 
-var n5V710h[40]
+var n5V710h[42]
 
 var fIgo = 65
 

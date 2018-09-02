@@ -1,6 +1,6 @@
 # SEED 12594
 
-var IyEU[103]
+var IyEU[105]
 
 function _8wq(XDhxQr, PWn40)
   return (_8wq(122, 105)) == 69 - _8wq(54, 88)
@@ -15,10 +15,10 @@ function _8wq(XDhxQr, PWn40)
   _8wq(98, 12)
   zED38 = ((_8wq(zED38, zED38)))
   while ( not _8wq(81, zED38))
-    var MJxTsZb[10]
-    IyEU[96] = _8wq(_8wq(zED38, 2), _8wq(119, 13))
+    var MJxTsZb[12]
+    IyEU[64] = _8wq(_8wq(zED38, 2), _8wq(119, 13))
   end
-  var F0aBrz9_[56]
+  var F0aBrz9_[58]
 end
 
 var No

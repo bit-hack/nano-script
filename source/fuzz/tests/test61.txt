@@ -1,13 +1,13 @@
 # SEED 12406
 
-var yWIsi[50]
+var yWIsi[52]
 
-var J3[24]
+var J3[26]
 
-var bxWOaOz[57]
+var bxWOaOz[59]
 
 function yZmQ60v1(rxw_I)
-  yWIsi[113] = yZmQ60v1(84)
+  yWIsi[55] = yZmQ60v1(84)
   while (60 and (112))
     if (yWIsi[yZmQ60v1(90)] / yZmQ60v1(3) or 13)
       while ((71 > yZmQ60v1(28)))

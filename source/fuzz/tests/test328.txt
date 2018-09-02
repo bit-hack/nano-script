@@ -15,7 +15,7 @@ end
 
 var bv
 
-var WATgyu5[60]
+var WATgyu5[62]
 
 var j0wbx = 42
 
@@ -28,11 +28,11 @@ function EOB(q9_q, VjvA, uB0Cxq)
       return bv
       bv =  not sZ
       return WATgyu5[j0wbx]
-      WATgyu5[58] = sZ <=  not EOB(j0wbx, j0wbx, sZ) >= EOB(5, 53, bv)
+      WATgyu5[18] = sZ <=  not EOB(j0wbx, j0wbx, sZ) >= EOB(5, 53, bv)
     end
   end
   clY(25, j0wbx, clY(85, 83, bv, 8, 104, 116, 49), clY(11, bv, sZ, 44, bv, 63, 108), 46, j0wbx, sZ)
-  var NxGJm77s[58]
+  var NxGJm77s[60]
   return EOB(EOB(j0wbx, bv, 65), 15, 24)
   clY(23, 53, EOB(j0wbx, j0wbx, j0wbx), sZ, 47, clY(88, j0wbx, 118, 103, j0wbx, sZ, sZ), sZ)
   if (j0wbx)
@@ -47,10 +47,10 @@ function EOB(q9_q, VjvA, uB0Cxq)
     j0wbx = (74) >=  not 78 - bv
     if (WATgyu5[8 and 94])
       return (j0wbx) * bv
-      WATgyu5[21] = clY(clY(123, j0wbx, j0wbx, 96, sZ, sZ, sZ), EOB(bv, j0wbx, bv), clY(sZ, 50, 115, j0wbx, bv, 91, 2), 64, bv, 33, bv)
+      WATgyu5[93] = clY(clY(123, j0wbx, j0wbx, 96, sZ, sZ, sZ), EOB(bv, j0wbx, bv), clY(sZ, 50, 115, j0wbx, bv, 91, 2), 64, bv, 33, bv)
     end
-    WATgyu5[87] = EOB(53, 29, j0wbx) > sZ > j0wbx
-    NxGJm77s[26] = WATgyu5[j0wbx / clY(93, bv, j0wbx, sZ, 109, 117, 77)]
+    WATgyu5[29] = EOB(53, 29, j0wbx) > sZ > j0wbx
+    NxGJm77s[78] = WATgyu5[j0wbx / clY(93, bv, j0wbx, sZ, 109, 117, 77)]
   end
   var ISaAUP6J = bv
 end

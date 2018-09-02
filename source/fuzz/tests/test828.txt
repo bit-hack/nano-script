@@ -1,8 +1,8 @@
 # SEED 13173
 
-var nCnr[126]
+var nCnr[128]
 
-var SOOY[49]
+var SOOY[51]
 
-var NP1CYQ[110]
+var NP1CYQ[112]
 

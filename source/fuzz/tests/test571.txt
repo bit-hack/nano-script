@@ -1,4 +1,4 @@
 # SEED 12916
 
-var KKALz[37]
+var KKALz[39]
 

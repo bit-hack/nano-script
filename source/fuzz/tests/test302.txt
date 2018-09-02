@@ -19,12 +19,12 @@ function JlTYzIYR()
     JlTYzIYR()
     while (d5A > A6e == 24)
     end
-    var u3q[124]
+    var u3q[126]
   end
   return w9L0(125, A6e, d5A, 125, d5A, 125, 16) < 23 / A6e
-  var iq[87]
-  iq[10] = ( not w9L0(A6e, A6e, 116, 109, A6e, A6e, 49) / w9L0(d5A, d5A, 103, d5A, d5A, 48, d5A))
-  iq[61] =  not JlTYzIYR() - JlTYzIYR() and JlTYzIYR()
+  var iq[89]
+  iq[0] = ( not w9L0(A6e, A6e, 116, 109, A6e, A6e, 49) / w9L0(d5A, d5A, 103, d5A, d5A, 48, d5A))
+  iq[105] =  not JlTYzIYR() - JlTYzIYR() and JlTYzIYR()
   return JlTYzIYR()
   var tKGgLf
 end
@@ -36,7 +36,7 @@ function SRkenc_(rd, Wp, aqYMxlx, Ka2D, mmCt, JdC9Bwqd)
   end
   mmCt = A6e
   var RfaYGZG = ( not 124 < SRkenc_(122, A6e, A6e, d5A, 42, d5A))
-  var g_[37]
-  var sOLWgjLf[43]
+  var g_[39]
+  var sOLWgjLf[45]
 end
 

@@ -1,24 +1,24 @@
 # SEED 12961
 
 function jv()
-  var bUAlpnx[45]
+  var bUAlpnx[47]
   while (jv() - jv() <= jv() == 2)
-    bUAlpnx[114] = (jv() - 6)
+    bUAlpnx[106] = (jv() - 6)
     if (jv() / jv() or 63 + jv())
       while (jv())
       end
       var EXH
-      var rsJ3[11]
+      var rsJ3[13]
       var OFcSr8Sy = EXH
     end
-    bUAlpnx[102] = bUAlpnx[(jv())]
+    bUAlpnx[80] = bUAlpnx[(jv())]
     var opG
     var yi1w
   end
   return 74 < jv() == jv()
   var Z0s7jN = jv()
   return (jv())
-  var Rk0[103]
+  var Rk0[105]
   while (bUAlpnx[jv()] == jv() > 0)
     var UUW4uKw
     return jv()
@@ -55,7 +55,7 @@ function TZcTeK0y(faTsuWYY, Uiqsmj)
       while (117)
         VV7YwAsC = VV7YwAsC - 116 - (VV7YwAsC)
         TZcTeK0y(125, TZcTeK0y(26, 3))
-        var F31[74]
+        var F31[76]
       end
     end
   end
@@ -67,26 +67,26 @@ end
 function ihoeo()
   if ((TZcTeK0y(14, 107)) <= ihoeo() < 40)
     while ((10))
-      var _765[119]
-      var GiZf[11]
+      var _765[121]
+      var GiZf[13]
     end
     return (38) /  not ihoeo()
     while (((94)))
     end
     var sCLH
   end
-  var lt6PaO5[11]
+  var lt6PaO5[13]
   while ( not TZcTeK0y(93, 120) < ihoeo() * jv())
-    lt6PaO5[93] =  not 9 or 7 == 61 > jv()
+    lt6PaO5[29] =  not 9 or 7 == 61 > jv()
     var FEpcgp = TZcTeK0y(57, 17) == (14)
-    var pv[15]
+    var pv[17]
   end
-  var ss[5]
+  var ss[7]
   TZcTeK0y(TZcTeK0y(15, 74), 7)
   TZcTeK0y(TZcTeK0y(105, 116), 114)
   while (ss[59 <= ihoeo()])
-    var gjx[55]
-    gjx[13] = 5
+    var gjx[57]
+    gjx[53] = 5
     var ET
     var vhe
   end
@@ -94,20 +94,20 @@ end
 
 var tFL_gXJN = 34
 
-var DbEfi7Y[31]
+var DbEfi7Y[33]
 
 function TwoJC(uR, HJi2lef, OlHzD_y, Nn1, hA3vG)
-  DbEfi7Y[110] = 21
-  DbEfi7Y[24] = DbEfi7Y[62]
+  DbEfi7Y[30] = 21
+  DbEfi7Y[72] = DbEfi7Y[62]
   if ((tFL_gXJN))
     var E6U0LU
-    DbEfi7Y[105] =  not 84
+    DbEfi7Y[9] =  not 84
   end
-  DbEfi7Y[94] = tFL_gXJN * DbEfi7Y[38]
+  DbEfi7Y[14] = tFL_gXJN * DbEfi7Y[38]
   HJi2lef = 76 * tFL_gXJN <= 8
   TwoJC(3, jv(), 124, 53, ihoeo())
   var zwcT
-  var VC[35]
+  var VC[37]
 end
 
 var Cwy
@@ -119,11 +119,11 @@ function l5gSkr(MxB)
   var zUUDFq_O = l5gSkr(52) + CuLskx > ihoeo()
   if (TZcTeK0y(Cwy, ihoeo()))
     MxB = TwoJC(zUUDFq_O, 19, zUUDFq_O, 91, CuLskx) <= l5gSkr(51)
-    DbEfi7Y[41] = v7C
+    DbEfi7Y[97] = v7C
     MxB =  not (jv())
   end
-  var Z_xIf0RV[125]
-  Z_xIf0RV[61] = 69 *  not jv()
+  var Z_xIf0RV[127]
+  Z_xIf0RV[121] = 69 *  not jv()
   return l5gSkr(TwoJC(CuLskx, 66, tFL_gXJN, 27, zUUDFq_O))
 end
 

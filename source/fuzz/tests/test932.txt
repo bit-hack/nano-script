@@ -11,11 +11,11 @@ function UJQNH(TWNjHHK0, J4Vgrd9, BOC, yr, sYw08)
     yr = 27
   end
   var mh = 117 <= UJQNH(14, 25, 52, 12, 113) *  not  not 124 == UJQNH(35, 99, 58, 27, 125)
-  var Qj[42]
-  Qj[55] = mh
+  var Qj[44]
+  Qj[103] = mh
 end
 
 var kl = 35
 
-var Iw2SeSb[91]
+var Iw2SeSb[93]
 

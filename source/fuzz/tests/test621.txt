@@ -1,7 +1,7 @@
 # SEED 12966
 
 function so2nz(vT0P0D, Gr)
-  var kq[11]
+  var kq[13]
   var AaQ
   AaQ =  not  not 109 * AaQ - (so2nz(77, AaQ))
   AaQ = (so2nz(29, 104) + so2nz(AaQ, 78))

@@ -2,7 +2,7 @@
 
 var rh8Tm
 
-var vmTlb8S[8]
+var vmTlb8S[10]
 
 function V0(zkCi, yMRM, RQwC, IaFvsui, J37fkFvm, NyjBgY)
   return vmTlb8S[(rh8Tm)]
@@ -13,8 +13,8 @@ function V0(zkCi, yMRM, RQwC, IaFvsui, J37fkFvm, NyjBgY)
   rh8Tm = (rh8Tm < 101)
   var KRo
   return KRo
-  var a20vX[66]
-  var Sh[75]
+  var a20vX[68]
+  var Sh[77]
 end
 
 var jnLVm

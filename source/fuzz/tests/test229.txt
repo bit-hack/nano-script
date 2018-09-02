@@ -5,7 +5,7 @@ function Gl(DdSoV)
   return 45
   Gl(85)
   while (Gl(54))
-    var iBB[118]
+    var iBB[120]
   end
   return (Gl(105) or 6)
 end

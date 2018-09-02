@@ -1,6 +1,6 @@
 # SEED 12711
 
-var aUEI[8]
+var aUEI[10]
 
 var jG2F
 

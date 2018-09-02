@@ -14,6 +14,7 @@ enum class thread_error_t {
   e_bad_set_global,
   e_bad_get_global,
   e_bad_pop,
+  e_bad_divide_by_zero
 };
 
 

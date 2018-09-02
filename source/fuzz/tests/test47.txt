@@ -1,13 +1,13 @@
 # SEED 12392
 
 function VD_ERN9(bBFFOR4C, FFOCgIKM)
-  var azf[66]
-  azf[115] =  not (19) >= VD_ERN9(1, 58)
-  azf[6] = azf[9 < 64]
+  var azf[68]
+  azf[79] =  not (19) >= VD_ERN9(1, 58)
+  azf[64] = azf[9 < 64]
   while (VD_ERN9(67, 75) and VD_ERN9(91, 112) + azf[37])
   end
   if (VD_ERN9(VD_ERN9(39, 99), VD_ERN9(106, 62)))
-    azf[19] = azf[VD_ERN9(105, 0) > VD_ERN9(4, 109)]
+    azf[61] = azf[VD_ERN9(105, 0) > VD_ERN9(4, 109)]
   end
   return 112
   while ( not  not 105)
@@ -24,7 +24,7 @@ function yF(NhxsXZMz, FqyLGBH, xW4zua, rAL1, ZOoH9A, wQ)
   yF(yF(23, 41, 58, 25, 49, 75), yF(125, 121, 70, 74, 120, 125), yF(58, 51, 108, 20, 59, 113), 32, 22, 114)
   var e7TuU =  not VD_ERN9(24, 99) and (59)
   VD_ERN9(e7TuU, yF(76, e7TuU, e7TuU, 11, e7TuU, e7TuU))
-  var UG5k[28]
+  var UG5k[30]
   e7TuU = UG5k[e7TuU]
 end
 

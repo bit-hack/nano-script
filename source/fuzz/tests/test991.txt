@@ -8,7 +8,7 @@ function uBIhu(KyU8xpvf)
   while (98 <= FmSDiFg)
     var how
     uBIhu(uBIhu(0))
-    var NTFkY[63]
+    var NTFkY[65]
   end
 end
 

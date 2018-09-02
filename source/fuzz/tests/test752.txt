@@ -7,10 +7,10 @@ function B3ZNXCh(F7Z, Ewritxm)
     return PFFac
   end
   var jWP38Yd = 61
-  var nlKQ[86]
+  var nlKQ[88]
   Ewritxm = PFFac
-  var itsy[113]
-  var uIG[45]
+  var itsy[115]
+  var uIG[47]
   B3ZNXCh(B3ZNXCh(15, 30), jWP38Yd)
   while ( not B3ZNXCh(jWP38Yd, B3ZNXCh(110, 23)))
   end

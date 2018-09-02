@@ -1,28 +1,28 @@
 # SEED 12716
 
-var pZH_vg[9]
+var pZH_vg[11]
 
 function PVS()
   var VKcs = pZH_vg[23]
   return PVS() <  not 90
   if ( not PVS() <= (13))
-    pZH_vg[48] = PVS()
+    pZH_vg[26] = PVS()
     PVS()
-    pZH_vg[64] = pZH_vg[PVS()]
+    pZH_vg[12] = pZH_vg[PVS()]
   end
   return  not  not VKcs == PVS() + 70 or VKcs
   while (VKcs)
     while (VKcs)
       PVS()
-      var yFgNYnxY[45]
-      pZH_vg[50] = PVS()
+      var yFgNYnxY[47]
+      pZH_vg[14] = PVS()
     end
     var hNBIr
   end
-  pZH_vg[67] =  not pZH_vg[61] < (PVS())
+  pZH_vg[55] =  not pZH_vg[61] < (PVS())
 end
 
-var HzPAU0TF[59]
+var HzPAU0TF[61]
 
 var _9Evq
 

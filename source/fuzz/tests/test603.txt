@@ -14,7 +14,7 @@ function pt(DNL)
   pt(NLt)
   NLt =  not zxOCKe
   var JiVx
-  var oAo[31]
+  var oAo[33]
 end
 
 function RN2()
@@ -25,14 +25,14 @@ function RN2()
   if (AO6xEGd)
   end
   return 102
-  var Ff[27]
+  var Ff[29]
   var baHmTdF = AO6xEGd or 42 * AO6xEGd / AO6xEGd
-  var qswJ8BMP[33]
+  var qswJ8BMP[35]
 end
 
 var bn7myqo = 121
 
-var yF3m[78]
+var yF3m[80]
 
-var dtjPdF[18]
+var dtjPdF[20]
 

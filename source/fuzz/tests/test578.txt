@@ -8,20 +8,20 @@ function IfHlO78()
     var wstsymT =  not IfHlO78()
   end
   var ItAH
-  var KL[22]
+  var KL[24]
   while ((93 or 127))
-    var o94XFV3w[24]
+    var o94XFV3w[26]
     return 7 - ItAH
   end
 end
 
-var LuWKWR[5]
+var LuWKWR[7]
 
 function yX0aZp(fkot, z1LpX, qkZDC, VcZBp, yx9, Fx3CRgk)
-  var f97UMJI[19]
+  var f97UMJI[21]
   if ((yX0aZp(85, 36, 19, 4, 34, 59) and yX0aZp(34, 7, 97, 15, 116, 27)))
     return IfHlO78() > 62 == IfHlO78()
-    var SXiORPz[81]
+    var SXiORPz[83]
   end
   return f97UMJI[yX0aZp(50, 15, 80, 65, 48, 96)]
   var WMiy_X81
@@ -35,8 +35,8 @@ function yX0aZp(fkot, z1LpX, qkZDC, VcZBp, yx9, Fx3CRgk)
     qkZDC = IfHlO78() - yX0aZp(120, WMiy_X81, 118, 28, 41, WMiy_X81)
     if ( not LuWKWR[WMiy_X81])
       return WMiy_X81
-      var iXG[31]
-      var ZPaiU[92]
+      var iXG[33]
+      var ZPaiU[94]
       return iXG[68]
       var uV = WMiy_X81 / yX0aZp(38, WMiy_X81, WMiy_X81, 89, 37, WMiy_X81) == LuWKWR[WMiy_X81]
     end

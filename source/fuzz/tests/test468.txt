@@ -1,12 +1,12 @@
 # SEED 12813
 
-var shpjzgj[101]
+var shpjzgj[103]
 
 var rJSuex8 = 20
 
 function P_(jasdton)
   P_(P_(114))
-  shpjzgj[35] =  not P_(rJSuex8) >=  not 117
+  shpjzgj[3] =  not P_(rJSuex8) >=  not 117
   var SwX_f1gk
   P_(rJSuex8)
   while (shpjzgj[P_(111)])
@@ -14,14 +14,14 @@ function P_(jasdton)
   P_(SwX_f1gk)
   while (80 <= rJSuex8 < rJSuex8)
     if (98)
-      shpjzgj[102] = (P_(SwX_f1gk) - SwX_f1gk)
-      shpjzgj[118] = P_(rJSuex8)
+      shpjzgj[20] = (P_(SwX_f1gk) - SwX_f1gk)
+      shpjzgj[86] = P_(rJSuex8)
       P_(P_(62))
     end
-    shpjzgj[76] = P_(20)
+    shpjzgj[88] = P_(20)
     var NmoPZAS5
   end
-  var hqIAzEZ[97]
+  var hqIAzEZ[99]
 end
 
 var afJ5H = 24

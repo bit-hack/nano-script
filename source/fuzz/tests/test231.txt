@@ -8,7 +8,7 @@ function Uf(as, tapiVnyR, zpt, UL4Q, UbPjk, ONGTQzh)
       return (102 - w8aA0TaL)
       return  not  not Uf(w8aA0TaL, 125, 51, w8aA0TaL, w8aA0TaL, w8aA0TaL) and Uf(63, 121, w8aA0TaL, 125, w8aA0TaL, w8aA0TaL) - Uf(w8aA0TaL, w8aA0TaL, w8aA0TaL, 64, w8aA0TaL, 122)
       while ( not (w8aA0TaL) >=  not  not Uf(41, w8aA0TaL, w8aA0TaL, 51, 38, 13))
-        var SD[10]
+        var SD[12]
         while ((Uf(92, w8aA0TaL, w8aA0TaL, w8aA0TaL, w8aA0TaL, w8aA0TaL)) <= (w8aA0TaL))
           Uf(57, Uf(w8aA0TaL, 67, 14, 55, w8aA0TaL, 73), w8aA0TaL, Uf(w8aA0TaL, w8aA0TaL, w8aA0TaL, 108, 127, w8aA0TaL), 43, 103)
           if (SD[115] <= w8aA0TaL / w8aA0TaL)
@@ -16,7 +16,7 @@ function Uf(as, tapiVnyR, zpt, UL4Q, UbPjk, ONGTQzh)
               var gvERC = 27
               if (SD[gvERC])
                 gvERC = SD[gvERC] / SD[gvERC]
-                SD[87] = (gvERC)
+                SD[125] = (gvERC)
                 w8aA0TaL = Uf(72, 64, 70, gvERC, 31, w8aA0TaL) / (16)
                 Uf(gvERC, gvERC, Uf(gvERC, w8aA0TaL, 40, w8aA0TaL, 103, w8aA0TaL), w8aA0TaL, Uf(40, 90, w8aA0TaL, 20, 45, w8aA0TaL), 20)
               end
@@ -32,9 +32,9 @@ function Uf(as, tapiVnyR, zpt, UL4Q, UbPjk, ONGTQzh)
       end
     end
     if ( not Uf(103, 88, Uf(98, 66, 89, 127, 75, 46), Uf(72, 111, 34, 35, 33, 123), Uf(2, 74, 73, 3, 56, 78), Uf(106, 17, 104, 79, 32, 1)))
-      var hE[15]
+      var hE[17]
       Uf(0, 51, Uf(75, 95, 81, 95, 84, 105), Uf(122, 106, 16, 6, 56, 24), Uf(113, 73, 38, 104, 106, 108), Uf(78, 80, 48, 24, 70, 31))
-      var jg4N[107]
+      var jg4N[109]
       if (98)
       end
     end

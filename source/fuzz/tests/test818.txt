@@ -1,10 +1,10 @@
 # SEED 13163
 
-var xFzmra[21]
+var xFzmra[23]
 
 var f4C2
 
-var tgxjVz[103]
+var tgxjVz[105]
 
 var uVSEqX = 18
 

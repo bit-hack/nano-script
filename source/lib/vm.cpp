@@ -25,6 +25,15 @@
  *        '--------------'
  */
 
+static int32_t history[__INS_COUNT__];
+
+void print_history() {
+  printf("histogram:");
+  for (int32_t i = 0; i < __INS_COUNT__; ++i) {
+    printf("  %d %d\n", i, history[i]);
+  }
+}
+
 bool thread_t::prepare(const function_t &func, int32_t argc, const int32_t *argv) {
 
   finished_ = true;
@@ -87,6 +96,9 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     const uint8_t op = c[pc_];
     pc_ += 1;
 
+    // add to opcode histogram
+    ++history[op];
+
     // dispatch instructions that don't require an operand
 #define OPERATOR(OP)                                                           \
   {                                                                            \
@@ -97,7 +109,6 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     case (INS_ADD): OPERATOR(+ ); continue;
     case (INS_SUB): OPERATOR(- ); continue;
     case (INS_MUL): OPERATOR(* ); continue;
-    case (INS_DIV): OPERATOR(/ ); continue;
     case (INS_MOD): OPERATOR(% ); continue;
     case (INS_AND): OPERATOR(&&); continue;
     case (INS_OR):  OPERATOR(||); continue;
@@ -106,7 +117,17 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     case (INS_LEQ): OPERATOR(<=); continue;
     case (INS_GEQ): OPERATOR(>=); continue;
     case (INS_EQ):  OPERATOR(==); continue;
-    case (INS_NOT): push(!pop()); continue;
+    case (INS_DIV): {
+      const int32_t r = pop(), l = pop();
+      if (r == 0) {
+        set_error(thread_error_t::e_bad_divide_by_zero);
+        return false;
+      }
+      push(l / r);
+    }
+    case (INS_NOT):
+      push(!pop());
+      continue;
       continue;
     }
 #undef OPERATOR

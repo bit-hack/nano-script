@@ -2,7 +2,7 @@
 
 function Symfne(ti, lHC, lQ)
   var TbrEklQ
-  var BRpGD[110]
+  var BRpGD[112]
   return 10
   return TbrEklQ
   if ( not  not BRpGD[ not 50 <= Symfne(TbrEklQ, TbrEklQ, TbrEklQ)])
@@ -13,16 +13,16 @@ function Symfne(ti, lHC, lQ)
       return BRpGD[TbrEklQ or Symfne(TbrEklQ, 81, 95)]
     end
     while (Symfne(125, 72, 73))
-      var I0AU[41]
+      var I0AU[43]
       if (42)
         while (I0AU[Symfne(TbrEklQ, TbrEklQ, 102)])
-          I0AU[106] = BRpGD[60]
+          I0AU[8] = BRpGD[60]
           lQ =  not TbrEklQ == Symfne(TbrEklQ, 109, 0) * TbrEklQ
           var J9z
-          I0AU[104] = (Symfne(77, TbrEklQ, J9z)) + I0AU[77]
+          I0AU[66] = (Symfne(77, TbrEklQ, J9z)) + I0AU[77]
         end
         Symfne(46, Symfne(TbrEklQ, 89, 30), TbrEklQ)
-        BRpGD[5] =  not 107 - 14 or TbrEklQ
+        BRpGD[31] =  not 107 - 14 or TbrEklQ
         Symfne(31, Symfne(TbrEklQ, TbrEklQ, TbrEklQ), TbrEklQ)
         Symfne(32, 82, 95)
       end
@@ -30,12 +30,12 @@ function Symfne(ti, lHC, lQ)
       return TbrEklQ + 20 and TbrEklQ
       Symfne(53, Symfne(TbrEklQ, TbrEklQ, TbrEklQ), Symfne(TbrEklQ, 42, 15))
     end
-    var pYLBQ_[14]
-    BRpGD[72] = 34 >=  not (6)
+    var pYLBQ_[16]
+    BRpGD[66] = 34 >=  not (6)
   end
   var Rr =  not Symfne(Symfne(62, TbrEklQ, TbrEklQ), 122, 100)
-  BRpGD[52] = TbrEklQ
+  BRpGD[124] = TbrEklQ
 end
 
-var BqsqGb[71]
+var BqsqGb[73]
 

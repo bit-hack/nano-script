@@ -1,38 +1,38 @@
 # SEED 12502
 
-var iFB[118]
+var iFB[120]
 
 function wUN4Ln()
   if ((57) < wUN4Ln() == wUN4Ln())
-    var odmBpyk[99]
-    var mU1Y5o[71]
+    var odmBpyk[101]
+    var mU1Y5o[73]
     if (95 + wUN4Ln() or 121)
       while (70 > 24)
       end
       var CzQa0
     end
     while (odmBpyk[57])
-      iFB[126] = 19 < 14 * 74
-      var nkQyN2[76]
-      var dw20Jls[76]
+      iFB[6] = 19 < 14 * 74
+      var nkQyN2[78]
+      var dw20Jls[78]
       while (99)
       end
     end
   end
   while (wUN4Ln() * 29 + 119)
-    iFB[73] =  not  not  not wUN4Ln() > (47)
+    iFB[109] =  not  not  not wUN4Ln() > (47)
     return wUN4Ln() / wUN4Ln() - 38 / wUN4Ln()
     if (61)
       wUN4Ln()
     end
-    var bw3POv[109]
+    var bw3POv[111]
   end
-  var vTyUz[96]
+  var vTyUz[98]
   wUN4Ln()
   return (wUN4Ln())
 end
 
-var qkI2TJ[13]
+var qkI2TJ[15]
 
 var Akpa = 13
 

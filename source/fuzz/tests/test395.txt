@@ -1,21 +1,21 @@
 # SEED 12740
 
-var TDvKmObG[35]
+var TDvKmObG[37]
 
 function BJk3YUc(JB3u8C, oBKyxiN, jky)
-  TDvKmObG[38] = TDvKmObG[17] + 65 * BJk3YUc(84, 127, 50)
+  TDvKmObG[96] = TDvKmObG[17] + 65 * BJk3YUc(84, 127, 50)
   while (BJk3YUc(10, 81, 74))
     return 91
   end
   while ( not BJk3YUc(84, 100, 75) or BJk3YUc(115, 31, 57) <= BJk3YUc(90, 100, 49))
     var BtK2goA =  not BJk3YUc(68, 2, 62) > 91 < BJk3YUc(74, 118, 92) - BJk3YUc(45, 49, 111)
-    TDvKmObG[64] =  not BJk3YUc(18, 94, 106) < (45)
+    TDvKmObG[30] =  not BJk3YUc(18, 94, 106) < (45)
   end
   if (TDvKmObG[BJk3YUc(29, 1, 54) <= BJk3YUc(71, 82, 63)])
     return  not BJk3YUc(112, 38, 75) <= BJk3YUc(81, 56, 55)
     BJk3YUc(23, BJk3YUc(21, 100, 9), BJk3YUc(91, 59, 124))
     while (119 > BJk3YUc(21, 48, 110) - 101 - BJk3YUc(99, 2, 34))
-      TDvKmObG[9] = 51 == 28 > BJk3YUc(32, 62, 57) < 19
+      TDvKmObG[5] = 51 == 28 > BJk3YUc(32, 62, 57) < 19
     end
     var O4WGpf = ( not  not BJk3YUc(71, 81, 69) - 106)
   end
@@ -25,33 +25,33 @@ function BJk3YUc(JB3u8C, oBKyxiN, jky)
     return BJk3YUc(81, BJk3YUc(80, 97, 92), BJk3YUc(19, 100, 125))
     if ((BJk3YUc(51, 80, 3) <= 96))
       BJk3YUc(113, 70, 17)
-      TDvKmObG[70] = (116)
+      TDvKmObG[112] = (116)
     end
     var uD
   end
-  TDvKmObG[126] = TDvKmObG[(8)]
+  TDvKmObG[38] = TDvKmObG[(8)]
   return (BJk3YUc(109, 44, 20)) / 11
 end
 
-var HiiuJ[66]
+var HiiuJ[68]
 
 function KNKY7(xxVEsQv, bH2)
   return ( not BJk3YUc(48, 96, 119) + KNKY7(25, 123))
   return (BJk3YUc(26, 49, 100))
-  var AqCn7o[52]
+  var AqCn7o[54]
   return  not  not (BJk3YUc(1, 118, 6) / KNKY7(102, 21))
   while (67)
     if ( not BJk3YUc(56, 104, 17) + KNKY7(72, 2) * 106 * KNKY7(101, 20))
       if ( not BJk3YUc(54, 118, 4) * KNKY7(84, 127) -  not 21 > 70)
       end
-      var B92OGl[54]
+      var B92OGl[56]
       return B92OGl[72 or 44]
     end
     return TDvKmObG[20 > BJk3YUc(90, 15, 58)]
     BJk3YUc(BJk3YUc(21, 8, 110), BJk3YUc(24, 66, 22), 17)
   end
   while ((BJk3YUc(109, 43, 91)) > (KNKY7(7, 101)))
-    HiiuJ[16] = AqCn7o[ not  not AqCn7o[BJk3YUc(109, 72, 41)]]
+    HiiuJ[90] = AqCn7o[ not  not AqCn7o[BJk3YUc(109, 72, 41)]]
     var vMU4B6t = KNKY7(77, 64) < 2 and  not TDvKmObG[BJk3YUc(90, 33, 112)]
     vMU4B6t = vMU4B6t <= vMU4B6t > vMU4B6t
   end

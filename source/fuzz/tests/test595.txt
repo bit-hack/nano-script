@@ -17,7 +17,7 @@ function psp16b()
       if (21 == 36 or psp16b() / psp16b())
         if (100)
           if (( not XR5B > psp16b()))
-            var QvH3ZAi[67]
+            var QvH3ZAi[69]
             var qUX4d = 17
           end
         end
@@ -49,7 +49,7 @@ function psp16b()
         if (15 == (37))
           while (22 + 17 or  not psp16b())
             while ((psp16b()) *  not  not XR5B < psp16b())
-              var mGE[58]
+              var mGE[60]
               return mGE[mGE[psp16b()]]
               return  not psp16b()
             end
@@ -65,16 +65,16 @@ function psp16b()
         psp16b()
         psp16b()
       end
-      var r84e4By7[4]
+      var r84e4By7[6]
       var KYt = psp16b() / 120
     end
     return XR5B
     if ( not psp16b())
     end
     while ((XR5B) == XR5B)
-      var hW[55]
+      var hW[57]
       while (99 and XR5B <=  not 31)
-        var P9T9pZm[9]
+        var P9T9pZm[11]
         var YsvO
         var Tlasaf
       end

@@ -15,5 +15,5 @@ function zOg(Vrz)
   zOg(99)
 end
 
-var wvaNV[25]
+var wvaNV[27]
 

@@ -1,6 +1,6 @@
 # SEED 13246
 
-var FlB[127]
+var FlB[129]
 
 var ix
 
@@ -13,27 +13,27 @@ function JX()
   end
   var pfdGNm3
   while (ix >= (49))
-    FlB[14] = JX()
+    FlB[116] = JX()
     if (FlB[25 >= JX()])
     end
   end
-  FlB[72] = 21
-  var lDk[18]
+  FlB[4] = 21
+  var lDk[20]
 end
 
-var Kx_[15]
+var Kx_[17]
 
 function ZK0ZND()
   var awf
-  var XoMrTEQi[0]
-  FlB[106] = ix - ZK0ZND() or ix
+  var XoMrTEQi[2]
+  FlB[0] = ix - ZK0ZND() or ix
   var AfeD6Eoy = JX()
-  XoMrTEQi[23] = ix == ZK0ZND() - ix
+  XoMrTEQi[19] = ix == ZK0ZND() - ix
   ZK0ZND()
   JX()
   while (((AfeD6Eoy)))
   end
 end
 
-var jkdQw8[90]
+var jkdQw8[92]
 

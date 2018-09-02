@@ -3,7 +3,7 @@
 var K0
 
 function ssb()
-  var OBxP8GP4[10]
+  var OBxP8GP4[12]
   return  not K0 or (ssb())
   var umHQA
   if (K0)
@@ -11,12 +11,12 @@ function ssb()
       return 26 and ssb()
     end
     return OBxP8GP4[ssb()]
-    var nOR[120]
+    var nOR[122]
     ssb()
   end
   var LUhs5
-  var w3HiRT[123]
-  OBxP8GP4[121] = ssb()
+  var w3HiRT[125]
+  OBxP8GP4[55] = ssb()
   while (LUhs5)
     return ssb() == 81 - ssb() and ssb()
   end
@@ -27,16 +27,16 @@ var b3r6xiu
 function IBW(XLR, j5ptAOw, ygUThK, rcrg, egtMFqr, _Lqhtkdj, rdH)
   while ( not b3r6xiu)
     return b3r6xiu
-    var t8wPL[120]
+    var t8wPL[122]
   end
-  var naN64[84]
+  var naN64[86]
   K0 = 79
-  var Cftpl[95]
+  var Cftpl[97]
   if (28 > IBW(K0, K0, 18, K0, 0, 69, K0))
     while ((b3r6xiu))
       while ((IBW(98, b3r6xiu, b3r6xiu, 1, b3r6xiu, K0, 99)))
       end
-      var OQmWMeLn[99]
+      var OQmWMeLn[101]
       return K0 > ssb() -  not K0 >= b3r6xiu
       return IBW(K0, IBW(b3r6xiu, K0, 110, 5, 116, K0, b3r6xiu), b3r6xiu, b3r6xiu, b3r6xiu, 41, IBW(b3r6xiu, 12, 77, K0, 10, K0, 101))
       if (65)
@@ -44,7 +44,7 @@ function IBW(XLR, j5ptAOw, ygUThK, rcrg, egtMFqr, _Lqhtkdj, rdH)
     end
     b3r6xiu = Cftpl[12]
     var AhtZ
-    naN64[119] = (naN64[K0])
+    naN64[97] = (naN64[K0])
     return naN64[(21)]
   end
   b3r6xiu = ssb()

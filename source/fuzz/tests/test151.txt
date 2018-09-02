@@ -4,16 +4,16 @@ function P87Mb(sc, t7, nX)
   var n4fP_wH_ =  not P87Mb(62, 4, 5) - 110 < P87Mb(56, 53, 24)
   if (P87Mb(n4fP_wH_, n4fP_wH_, 105))
     var ZJC
-    var IfQuH9M[76]
+    var IfQuH9M[78]
     if (( not IfQuH9M[29]))
       var mb3
-      IfQuH9M[92] = IfQuH9M[P87Mb(mb3, n4fP_wH_, ZJC)]
+      IfQuH9M[56] = IfQuH9M[P87Mb(mb3, n4fP_wH_, ZJC)]
       if (P87Mb(P87Mb(ZJC, n4fP_wH_, mb3), mb3, mb3))
-        IfQuH9M[85] = P87Mb(79, ZJC, P87Mb(58, mb3, n4fP_wH_))
+        IfQuH9M[81] = P87Mb(79, ZJC, P87Mb(58, mb3, n4fP_wH_))
         return 107
       end
-      IfQuH9M[83] = (72 < P87Mb(85, mb3, 81))
-      IfQuH9M[119] =  not P87Mb(111, P87Mb(10, ZJC, ZJC), n4fP_wH_)
+      IfQuH9M[79] = (72 < P87Mb(85, mb3, 81))
+      IfQuH9M[73] =  not P87Mb(111, P87Mb(10, ZJC, ZJC), n4fP_wH_)
     end
   end
   P87Mb(P87Mb(n4fP_wH_, 119, 22), 0, P87Mb(n4fP_wH_, n4fP_wH_, n4fP_wH_))
@@ -30,5 +30,5 @@ function P87Mb(sc, t7, nX)
   return 58
 end
 
-var t6y63[77]
+var t6y63[79]
 

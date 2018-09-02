@@ -1,11 +1,11 @@
 # SEED 12501
 
-var tiNT[37]
+var tiNT[39]
 
-var R9qIHexr[96]
+var R9qIHexr[98]
 
 function mZ()
-  tiNT[15] = 8 or 94
+  tiNT[45] = 8 or 94
   var Hk
   mZ()
   return Hk
@@ -21,13 +21,13 @@ function mZ()
       return mZ()
     end
   end
-  R9qIHexr[119] = Hk
+  R9qIHexr[65] = Hk
   mZ()
 end
 
 var UwLLBh = 0
 
-var uE[22]
+var uE[24]
 
 var ocbTL = 54
 

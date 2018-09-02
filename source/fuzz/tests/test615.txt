@@ -1,12 +1,12 @@
 # SEED 12960
 
-var clBp[25]
+var clBp[27]
 
 function CqF(RDXq)
   while ((18) >= CqF(50))
   end
   return 112
-  clBp[74] =  not  not 126 < CqF(99) - CqF(41) <= 6
+  clBp[18] =  not  not 126 < CqF(99) - CqF(41) <= 6
   while ((54))
     return CqF(60) - 29 * 76 <= CqF(23)
   end
@@ -24,7 +24,7 @@ function CqF(RDXq)
   end
 end
 
-var N96Dx[103]
+var N96Dx[105]
 
 function QtrMiL(U37xf57, Pz4, f1, J7n)
   if (clBp[CqF(62) or CqF(95)])
@@ -38,14 +38,14 @@ function QtrMiL(U37xf57, Pz4, f1, J7n)
   end
   QtrMiL(52, QtrMiL(117, 46, 10, 32), QtrMiL(79, 88, 1, 55), 91)
   return N96Dx[ not 86]
-  var EYOz_Vn[127]
+  var EYOz_Vn[129]
   return 86 >  not  not 96 + 116
-  var n5P0[49]
+  var n5P0[51]
   if (CqF(QtrMiL(19, 83, 29, 0)))
     QtrMiL(QtrMiL(107, 40, 30, 102), 46, 30, CqF(24))
-    n5P0[70] = 121
+    n5P0[106] = 121
   end
-  n5P0[83] = n5P0[(0)]
+  n5P0[13] = n5P0[(0)]
 end
 
 var Tib2Tl = 107

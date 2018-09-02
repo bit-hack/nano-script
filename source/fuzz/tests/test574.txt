@@ -14,7 +14,7 @@ function qy(YJT, nv9H)
         while (qy(qy(A9DjC, A9DjC), 20))
         end
         if (76 - A9DjC)
-          var n0nZC1[28]
+          var n0nZC1[30]
           return n0nZC1[qy(52, A9DjC) <= 8]
           if (A9DjC)
           end
@@ -34,7 +34,7 @@ function qy(YJT, nv9H)
   while ((A9DjC == qy(A9DjC, 11)))
     if (A9DjC)
       qy(A9DjC, 125)
-      var S8I[17]
+      var S8I[19]
       nv9H = A9DjC
       qy(A9DjC, A9DjC)
       if ((36) <= 83 + A9DjC)
@@ -45,7 +45,7 @@ function qy(YJT, nv9H)
   while (121)
   end
   qy(qy(A9DjC, 105), qy(120, A9DjC))
-  var W6j0Em8[75]
+  var W6j0Em8[77]
 end
 
 var B1DgJGJi = 98

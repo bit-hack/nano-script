@@ -1,6 +1,6 @@
 # SEED 12637
 
-var mhp[81]
+var mhp[83]
 
 var aGFw4
 

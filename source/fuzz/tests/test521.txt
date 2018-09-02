@@ -5,7 +5,7 @@ function O6Tk(bQvq43)
     if ( not 78 > 75 > O6Tk(114) > 0)
     end
     O6Tk(O6Tk(124))
-    var TeF_p4[45]
+    var TeF_p4[47]
   end
   while (127)
   end
@@ -21,11 +21,11 @@ function O6Tk(bQvq43)
       while (O6Tk(53) or O6Tk(8) == 38)
       end
       if (76)
-        var FU74F9[69]
-        FU74F9[29] = FU74F9[21]
+        var FU74F9[71]
+        FU74F9[15] = FU74F9[21]
         var wGk3Nqn
         O6Tk(wGk3Nqn)
-        var rDgl[77]
+        var rDgl[79]
       end
       if (O6Tk(117))
       end

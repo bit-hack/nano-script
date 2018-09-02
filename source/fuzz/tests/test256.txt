@@ -26,11 +26,11 @@ var KfHej = 96
 function O4p(LTY79_b, Ck0Fr4, y_xP)
   var Zdaq
   rQi(O4p(117, MPbCU_N, B6h_))
-  var SbQDUiWG[52]
+  var SbQDUiWG[54]
   B6h_ = 9
-  SbQDUiWG[43] = MPbCU_N * 31 and 34 * MPbCU_N
+  SbQDUiWG[103] = MPbCU_N * 31 and 34 * MPbCU_N
   var qiX60
-  var tXQZ[102]
+  var tXQZ[104]
 end
 
 var _3ah = 72

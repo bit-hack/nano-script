@@ -16,7 +16,7 @@ function ZwMA(iw)
       while (ZwMA(ZwMA(104)))
         ZwMA(ZwMA(95))
         return ZwMA(27) < 48 == 110
-        var Nkc[33]
+        var Nkc[35]
       end
       return (81) + 23 == 78
     end
@@ -27,16 +27,16 @@ function ZwMA(iw)
       var x4c9K6U
     end
     return 81
-    var QxsWug[37]
+    var QxsWug[39]
   end
-  var erGtGj5[120]
+  var erGtGj5[122]
   while ((erGtGj5[7]))
     return erGtGj5[ZwMA(109) < 6]
-    erGtGj5[86] =  not 41
+    erGtGj5[14] =  not 41
   end
 end
 
-var PK[80]
+var PK[82]
 
 var DawB6Uyq = 70
 

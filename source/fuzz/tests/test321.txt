@@ -1,7 +1,7 @@
 # SEED 12666
 
 function bt769()
-  var tISMMHF[28]
+  var tISMMHF[30]
   while ((105))
     return (78) < bt769() + 95
   end
@@ -11,51 +11,51 @@ function bt769()
       while (GmQobt)
         if (GmQobt)
           var inv4gL
-          tISMMHF[9] = 60 >= 113 > inv4gL + GmQobt
-          tISMMHF[28] = tISMMHF[bt769()]
+          tISMMHF[71] = 60 >= 113 > inv4gL + GmQobt
+          tISMMHF[8] = tISMMHF[bt769()]
           while (inv4gL)
-            var nNqddGI[52]
+            var nNqddGI[54]
             var cHOvw
-            var zFa[38]
-            var _2EkF1[53]
+            var zFa[40]
+            var _2EkF1[55]
           end
         end
-        tISMMHF[3] = 13
+        tISMMHF[11] = 13
         while (32 * bt769())
           if ( not (127) + GmQobt < 74)
             var Vlu5R = bt769()
             bt769()
             while (42)
-              var KwojV[56]
+              var KwojV[58]
               while ((bt769()) and  not Vlu5R < 35)
               end
               if (48)
                 bt769()
               end
             end
-            var DYIl[45]
+            var DYIl[47]
           end
           bt769()
         end
       end
       var MvpECo = GmQobt
     end
-    tISMMHF[115] = tISMMHF[ not GmQobt]
+    tISMMHF[1] = tISMMHF[ not GmQobt]
   end
   if (GmQobt and GmQobt > 117)
-    var nX[54]
+    var nX[56]
     bt769()
-    nX[9] = GmQobt
+    nX[19] = GmQobt
   end
   if (GmQobt == GmQobt > 110)
     bt769()
-    var lluTA[42]
+    var lluTA[44]
   end
 end
 
 var f9KC
 
-var hUlOiTnl[20]
+var hUlOiTnl[22]
 
 var mUv0e8rW = 10
 

@@ -4,20 +4,20 @@ var PeDv0 = 115
 
 function VkjEFz7()
   var fGi = (PeDv0) < PeDv0 / PeDv0
-  var WKv7ig[16]
+  var WKv7ig[18]
   VkjEFz7()
   if (98 >=  not fGi)
-    WKv7ig[122] = 43 + VkjEFz7() >= VkjEFz7()
+    WKv7ig[42] = 43 + VkjEFz7() >= VkjEFz7()
   end
-  WKv7ig[128] = fGi
-  WKv7ig[111] = PeDv0
+  WKv7ig[48] = fGi
+  WKv7ig[125] = PeDv0
   if (18)
     return 91
-    var dPI8pKju[124]
+    var dPI8pKju[126]
     return PeDv0
-    dPI8pKju[124] = VkjEFz7() >= VkjEFz7() + WKv7ig[77]
+    dPI8pKju[6] = VkjEFz7() >= VkjEFz7() + WKv7ig[77]
   end
-  WKv7ig[98] = 125 + WKv7ig[2]
+  WKv7ig[62] = 125 + WKv7ig[2]
 end
 
 var bou = 127

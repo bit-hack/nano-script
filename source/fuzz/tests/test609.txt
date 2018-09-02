@@ -1,20 +1,20 @@
 # SEED 12954
 
-var fd6[108]
+var fd6[110]
 
-var MYWvD[122]
+var MYWvD[124]
 
 function ft()
   while (ft())
     var Ns7cdyO
-    fd6[33] = ( not Ns7cdyO)
+    fd6[25] = ( not Ns7cdyO)
     ft()
     while (MYWvD[(ft())])
       return (Ns7cdyO) +  not ft() > ft()
     end
   end
   var uiDLmMj = ft() < ft() *  not 30
-  var GQKcX_y[19]
+  var GQKcX_y[21]
   var OS6 = ft()
   return 47
   while (120 + ft() < ft() < 27)
@@ -37,17 +37,17 @@ function ax()
   while (fd6[ft()])
   end
   return  not dmeArNH
-  var Bw[106]
+  var Bw[108]
 end
 
-var GSE5[85]
+var GSE5[87]
 
 function r_(ShYZ08, OTQ, Zmucl, twXk, zk, dOE4wU, J1xu)
   ax()
   while ((ft()))
     ft()
   end
-  var dhrUQjNm[78]
+  var dhrUQjNm[80]
   var JdgOoL
   if (ax() - r_(JdgOoL, 57, JdgOoL, 119, 111, 59, JdgOoL) >  not r_(JdgOoL, JdgOoL, JdgOoL, 38, JdgOoL, 88, JdgOoL) < 17)
     var hApv = JdgOoL + JdgOoL * ft()
@@ -55,8 +55,8 @@ function r_(ShYZ08, OTQ, Zmucl, twXk, zk, dOE4wU, J1xu)
     r_(JdgOoL, 83, ft(), 42, 84, ft(), 127)
   end
   if ( not ax() + 63 >= 121 and JdgOoL)
-    fd6[5] = JdgOoL + dhrUQjNm[JdgOoL]
-    fd6[27] = MYWvD[JdgOoL]
+    fd6[75] = JdgOoL + dhrUQjNm[JdgOoL]
+    fd6[63] = MYWvD[JdgOoL]
     J1xu = fd6[JdgOoL and 26]
     while (ax() * JdgOoL > ax() - 68)
     end
@@ -67,19 +67,19 @@ end
 
 function tVJ21V(mDlx1Z_)
   var skF
-  GSE5[116] = ((101))
+  GSE5[22] = ((101))
   ax()
   return GSE5[ax()]
-  fd6[47] = r_(126, skF, skF, 4, 93, 17, 4) < skF or  not GSE5[ax()]
+  fd6[53] = r_(126, skF, skF, 4, 93, 17, 4) < skF or  not GSE5[ax()]
   ft()
-  GSE5[116] =  not 46
+  GSE5[0] =  not 46
   ft()
 end
 
 function rMISj0(TC, JaXurdq, mw8d8z, sjam, W68VVj, AQze3u)
   if (16 + ax() or 16 < tVJ21V(35))
     while (tVJ21V(26))
-      var Aq[110]
+      var Aq[112]
       var RLy90YtJ = GSE5[91] > 55 >= rMISj0(73, 25, 78, 14, 21, 4)
       tVJ21V(RLy90YtJ)
     end

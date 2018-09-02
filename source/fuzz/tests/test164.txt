@@ -9,9 +9,9 @@ function Bcjfa7a(UMaa)
   var HB5C3Bs = (Bcjfa7a(58) >= Bcjfa7a(TQsbdVY))
   Bcjfa7a(59)
   var ieWx
-  var f4[34]
+  var f4[36]
   TQsbdVY = Bcjfa7a(99)
-  var xU[74]
+  var xU[76]
 end
 
 var tY7 = 57

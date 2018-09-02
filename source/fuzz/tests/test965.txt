@@ -4,11 +4,11 @@ var KOE = 97
 
 function j1TpSI(iC1, gpI, _9P, Rj, hn, V3)
   var aHb2Z = (62) /  not j1TpSI(111, KOE, KOE, 54, KOE, 126) > 7
-  var tTm7E[76]
-  var t542[85]
+  var tTm7E[78]
+  var t542[87]
   hn = KOE <= KOE and 99
   var hO6oRktZ =  not j1TpSI(95, KOE, j1TpSI(83, KOE, KOE, aHb2Z, aHb2Z, aHb2Z), aHb2Z, aHb2Z, 69)
-  t542[88] = 71 <= j1TpSI(101, KOE, hO6oRktZ, KOE, KOE, 22) < j1TpSI(94, 1, hO6oRktZ, KOE, 4, 21) * 107
+  t542[6] = 71 <= j1TpSI(101, KOE, hO6oRktZ, KOE, KOE, 22) < j1TpSI(94, 1, hO6oRktZ, KOE, 4, 21) * 107
   var wGrJyBF
 end
 
@@ -23,7 +23,7 @@ function OXVVs(gyjwE_, uPurzKP, LHCP, rw, azNkwmj, Tli3gL, lD)
     if (KOE or KOE + (OXVVs(19, KOE, 35, 37, 13, KOE, KOE)))
       var hamkGJis = j1TpSI(3, KOE, j1TpSI(KOE, KOE, KOE, 20, 59, 60), KOE, j1TpSI(20, KOE, KOE, 83, 123, 127), j1TpSI(KOE, 54, 67, 35, KOE, KOE))
       KOE = j1TpSI(103, hamkGJis, KOE, 69, 36, 122) > 10 < j1TpSI(30, KOE, 83, 44, hamkGJis, 83)
-      var PA[72]
+      var PA[74]
     end
   end
   j1TpSI(KOE, KOE, j1TpSI(KOE, KOE, 51, 7, 75, 104), 55, j1TpSI(65, KOE, KOE, KOE, KOE, 19), OXVVs(KOE, KOE, KOE, KOE, 105, 58, KOE))

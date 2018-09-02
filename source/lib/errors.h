@@ -32,11 +32,8 @@ struct error_manager_t {
 
   virtual void expecting_lit_or_ident(const token_t &t) {
     std::string v = t.str_;
-    if (t.type_ == TOK_EOL) {
-      v = "end of line";
-    }
-    if (t.type_ == TOK_EOF) {
-      v = "end of file";
+    if (v.empty()) {
+      v = token_t::token_name(t.type_);
     }
     on_error_(line_number_(),
               "expecting literal or identifier, found '%s' instead",
@@ -103,9 +100,13 @@ struct error_manager_t {
   // token
 
   virtual void unexpected_token(const token_t &t, token_e e) {
+    std::string v = t.str_.c_str();
+    if (v.empty()) {
+      v = token_t::token_name(t.type_);
+    }
     static const char *expected = token_t::token_name(e);
-    on_error_(t.line_no_, "unexpected token '%s' expecting '%s'",
-              t.str_.c_str(), expected);
+    on_error_(t.line_no_, "unexpected token '%s' expecting '%s'", v.c_str(),
+              expected);
   }
 
   // assembler

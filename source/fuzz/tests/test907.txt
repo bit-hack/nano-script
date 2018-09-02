@@ -1,10 +1,10 @@
 # SEED 13252
 
 function OZ(j_x2m, AY5G, ify, On, jQt, lgX6, VE8wEGU)
-  var jE4MAc[54]
+  var jE4MAc[56]
   OZ(OZ(116, 35, 20, 94, 98, 27, 70), OZ(83, 107, 45, 22, 116, 125, 56), OZ(43, 20, 71, 104, 99, 46, 54), OZ(52, 44, 15, 78, 66, 2, 70), OZ(7, 97, 67, 79, 32, 64, 48), 51, OZ(108, 70, 26, 16, 32, 95, 107))
   var TcoSB = 33
-  jE4MAc[27] = TcoSB - 76 >= 120
+  jE4MAc[101] = TcoSB - 76 >= 120
   TcoSB = (TcoSB)
   return TcoSB
   AY5G = 15 > OZ(TcoSB, TcoSB, 52, TcoSB, TcoSB, TcoSB, 78) - OZ(TcoSB, TcoSB, 61, 87, TcoSB, 80, TcoSB) >= 81

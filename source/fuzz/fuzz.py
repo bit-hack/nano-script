@@ -33,10 +33,13 @@ def rand_range(lo, hi):
 
 def rname():
     alpha_num = '_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLNMOPQRSTUVWXYZ0123456789'
-    size = rand_range(1, 8)
-    out = alpha_num[random(26 * 2 + 1)]
-    for i in range(0, size):
-        out += alpha_num[random(len(alpha_num))]
+    while True:
+        size = rand_range(1, 8)
+        out = alpha_num[random(26 * 2 + 1)]
+        for i in range(0, size):
+            out += alpha_num[random(len(alpha_num))]
+        if out.lower() not in ['if', 'or', 'and', 'not', 'end', 'function', 'var']:
+            break
     return out
 
 
@@ -156,7 +159,7 @@ class Generator(object):
 
     # number ::= '-'? [0-9]+
     def do_number(self, scope, base=0):
-        return str(random(base + 128))
+        return str(base + random(128))
 
     # expression ::= identifier
     #              | number
@@ -221,7 +224,7 @@ class Generator(object):
     # array_decl ::= 'var' identifier '[' number ']'
     def do_array_decl(self, scope):
         name = scope.arrays.new_name()
-        out = self.indent() + 'var ' + name + '[' + self.do_number(scope) + ']'
+        out = self.indent() + 'var ' + name + '[' + self.do_number(scope, 2) + ']'
         scope.arrays.add(name)
         return out
 
@@ -316,7 +319,7 @@ class Generator(object):
     # assign_array_statement ::= identifier '[' expression ']' '=' expression '\n'
     def do_assign_array_statement(self, scope):
         try:
-            return self.indent() + scope.arrays.find() + '[' + self.do_number(scope, 2) + ']' + ' = ' +\
+            return self.indent() + scope.arrays.find() + '[' + self.do_number(scope) + ']' + ' = ' +\
                    self.do_expression(scope) + '\n'
         except BacktrackError:
             return ''

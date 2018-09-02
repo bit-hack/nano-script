@@ -1,8 +1,8 @@
 # SEED 12809
 
-var Wz[98]
+var Wz[100]
 
 var CMDq = 110
 
-var Sa[1]
+var Sa[3]
 

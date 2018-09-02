@@ -14,10 +14,10 @@ end
 var PKTSSAf5
 
 function j256xZW(l9hQib, hkFrBfX, oyZ, yKpt, aj3pUD, Rx8hO)
-  var Sv2[96]
+  var Sv2[98]
   var q3bCKZw
   q3bCKZw = j256xZW(28, q3bCKZw, PKTSSAf5, 30, 67, 80) > Bm(73, PKTSSAf5, q3bCKZw, 34, q3bCKZw) ==  not (j256xZW(75, q3bCKZw, q3bCKZw, PKTSSAf5, 118, PKTSSAf5))
-  Sv2[28] = 21
+  Sv2[10] = 21
   j256xZW(q3bCKZw, 18, j256xZW(PKTSSAf5, 96, 125, 70, q3bCKZw, 22), PKTSSAf5, q3bCKZw, PKTSSAf5)
   return Sv2[ not Bm(PKTSSAf5, 118, 119, q3bCKZw, PKTSSAf5) <= q3bCKZw]
   Bm(PKTSSAf5, 82, PKTSSAf5, q3bCKZw, 57)

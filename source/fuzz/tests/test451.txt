@@ -5,12 +5,12 @@ var ek
 function UBd(XKMd_, PEUetd, Ry, auvU, _MJpr)
   return ek
   UBd(UBd(ek, 47, ek, 125, 34), 114, 81, 109, UBd(ek, 105, 93, ek, ek))
-  var DcOerFh[45]
+  var DcOerFh[47]
   var vMyY = 14
   UBd(vMyY, UBd(108, ek, vMyY, 57, ek), vMyY, vMyY, UBd(ek, vMyY, 54, 118, vMyY))
   UBd(9, vMyY, 120, 116, UBd(113, vMyY, vMyY, 91, 25))
   while (DcOerFh[UBd(65, 76, 25, 44, vMyY)] * ek <= UBd(vMyY, ek, 106, 74, vMyY))
-    DcOerFh[38] = (ek)
+    DcOerFh[110] = (ek)
     Ry =  not DcOerFh[110] / UBd(81, ek, vMyY, vMyY, 70)
   end
 end
@@ -26,20 +26,20 @@ function yi()
   yi()
   while (yi() <= 49)
     if (UBd(ek, yi(), 105, 4, yi()))
-      var Cp[60]
+      var Cp[62]
     end
     yi()
     return UBd(ek, 125, ek, 127, ek) or yi() + 89 * ek
     return 57 + 83
   end
-  var jX9[107]
+  var jX9[109]
 end
 
 var QLx4N = 53
 
 var uckuMiV
 
-var b48Ntm2[1]
+var b48Ntm2[3]
 
 var q7l = 29
 
