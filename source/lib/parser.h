@@ -223,6 +223,11 @@ struct parser_t {
   const function_t *find_function(const std::string &name) const;
   const function_t *find_function(uint32_t id) const;
 
+  // return a list of functions
+  const std::vector<function_t> &functions() const {
+    return funcs_;
+  }
+
   // return the number of globals
   int32_t global_size() const {
     int32_t count = 0;

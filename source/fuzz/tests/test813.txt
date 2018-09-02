@@ -1,0 +1,33 @@
+# SEED 13158
+
+var hCCW
+
+function yDdzxVf(MPD, EKWw, P7iE, POOr0g, hTpe9_s6, _vZI7hi, ixbWkSGl)
+  yDdzxVf(yDdzxVf(hCCW, hCCW, hCCW, hCCW, hCCW, hCCW, 118), 59, yDdzxVf(92, hCCW, 41, 63, 11, hCCW, 98), 65, yDdzxVf(34, 73, 83, hCCW, 25, 106, hCCW), yDdzxVf(hCCW, hCCW, hCCW, hCCW, hCCW, 71, 53), 49)
+  var Oo[20]
+  var wwcm = yDdzxVf(hCCW, 49, 30, hCCW, hCCW, hCCW, 64) > yDdzxVf(125, hCCW, hCCW, 43, hCCW, hCCW, hCCW)
+  yDdzxVf(69, yDdzxVf(15, wwcm, 58, hCCW, 39, hCCW, 127), hCCW, wwcm, 21, yDdzxVf(wwcm, wwcm, 69, hCCW, 59, wwcm, 100), 11)
+  while (wwcm)
+    yDdzxVf(40, yDdzxVf(58, hCCW, 35, hCCW, hCCW, hCCW, wwcm), 126, 0, 117, yDdzxVf(wwcm, 68, hCCW, 99, wwcm, hCCW, wwcm), 25)
+    var m9XPd28x[76]
+    if (72)
+      var Gu5[107]
+    end
+    hCCW = 96
+    if ( not  not 55 + hCCW)
+    end
+  end
+  while ( not  not (yDdzxVf(38, 22, hCCW, hCCW, wwcm, wwcm, wwcm) - yDdzxVf(120, hCCW, 101, wwcm, 7, hCCW, hCCW)))
+    _vZI7hi = 66
+    wwcm = yDdzxVf(27, 99, wwcm, hCCW, 40, 27, 46) + Oo[5]
+    var BG[34]
+    if (((yDdzxVf(wwcm, 60, wwcm, wwcm, hCCW, 19, 25))))
+      return  not ( not 3)
+      Oo[56] = 68 - 16 or  not (yDdzxVf(wwcm, hCCW, hCCW, 62, 37, 15, wwcm))
+      var ZAt9Q
+    end
+  end
+  var BS6aq4bE[57]
+  return (wwcm / hCCW)
+end
+

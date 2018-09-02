@@ -1,0 +1,81 @@
+# SEED 13303
+
+var KeJA[88]
+
+function WvEeZUZ9()
+  if ( not KeJA[32 and WvEeZUZ9()])
+    var oLkZaS
+    WvEeZUZ9()
+    WvEeZUZ9()
+    return 64
+  end
+  return KeJA[ not KeJA[WvEeZUZ9()]]
+  KeJA[66] = (KeJA[WvEeZUZ9()])
+  while (KeJA[77 - WvEeZUZ9()])
+    var LNjeMS[59]
+    return  not ((4))
+  end
+  var FL5GcZv
+  KeJA[94] = FL5GcZv or 10
+  KeJA[127] = 50
+end
+
+function cMEm7q(Ha, tqdS, z_W, xxCFJ)
+  KeJA[38] = (cMEm7q(30, 78, 84, 14))
+  return cMEm7q(cMEm7q(74, 85, 99, 2), 89, 93, 109)
+  KeJA[52] = cMEm7q(21, 75, 106, 43) < 13 + WvEeZUZ9() - cMEm7q(100, 65, 30, 100)
+  KeJA[43] =  not KeJA[WvEeZUZ9() - cMEm7q(125, 49, 40, 42)]
+  KeJA[37] = WvEeZUZ9()
+  var gh_DRq
+  return cMEm7q(gh_DRq, 22, gh_DRq, 21) == gh_DRq / 47
+  WvEeZUZ9()
+end
+
+function mEX4()
+  return (KeJA[108])
+  var WIk[41]
+  KeJA[34] = mEX4()
+  while (cMEm7q(18, 58, 115, 26) - (mEX4()))
+    mEX4()
+    var gg[114]
+    var io6
+  end
+  var LdQA6U
+  WIk[75] = 90 <= cMEm7q(LdQA6U, LdQA6U, 92, LdQA6U) + (cMEm7q(86, 75, LdQA6U, LdQA6U))
+end
+
+var FL_c3L8
+
+function uuaVPekt()
+  KeJA[53] = FL_c3L8 < WvEeZUZ9() or cMEm7q(FL_c3L8, 28, 121, 26) / 32
+  var K_EYNed[24]
+  K_EYNed[95] = 106
+  KeJA[87] = 49
+  return  not FL_c3L8 >= FL_c3L8 or uuaVPekt()
+end
+
+function O90M(YTMFzO, uOs, za694x, tE71Mk)
+  var nKk[97]
+  mEX4()
+  uuaVPekt()
+  while (FL_c3L8)
+  end
+  if (FL_c3L8)
+    uuaVPekt()
+  end
+  if (uuaVPekt() - 100 ==  not FL_c3L8)
+    while (FL_c3L8)
+      uuaVPekt()
+      mEX4()
+    end
+    KeJA[119] = 82
+  end
+  WvEeZUZ9()
+  while (FL_c3L8)
+    var Gyu5YTC = 47
+    KeJA[58] = uuaVPekt()
+    var ANEOlx0
+    O90M(WvEeZUZ9(), mEX4(), Gyu5YTC, WvEeZUZ9())
+  end
+end
+

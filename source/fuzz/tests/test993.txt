@@ -1,0 +1,29 @@
+# SEED 13338
+
+var oumHRO = 42
+
+function al(oKtb, RCc, WIxsuO, xgjV3uj, oYmfr6)
+  var oX7aI7X = oumHRO
+  return  not 11 / al(oX7aI7X, oumHRO, oumHRO, 1, oumHRO) + al(123, 36, 41, 90, 36)
+  if ( not (al(36, oX7aI7X, oX7aI7X, 18, 74)))
+    while (oumHRO > 71)
+      if ( not 18 or 107 <= oumHRO >= 66)
+      end
+      while (al(57, 85, oX7aI7X, al(oumHRO, oumHRO, oumHRO, oumHRO, oumHRO), oumHRO))
+      end
+    end
+    al(oX7aI7X, 0, al(oX7aI7X, oX7aI7X, 69, oX7aI7X, 76), al(oumHRO, 93, 120, 116, 32), 77)
+  end
+  var TcyVQN = oX7aI7X + oumHRO + oumHRO
+  if (39 -  not (TcyVQN))
+    al(al(109, oX7aI7X, oX7aI7X, TcyVQN, 9), al(oumHRO, oumHRO, TcyVQN, 48, oX7aI7X), 54, 33, al(40, oX7aI7X, 65, 53, 5))
+    var QA5nnyc7[51]
+    return  not al(TcyVQN, oX7aI7X, 36, 67, 34)
+  end
+  var U6OF = al(oumHRO, 44, al(oX7aI7X, oumHRO, 106, 66, oumHRO), oumHRO, 61)
+  var oCMmP6Ry[65]
+  var otfiO2f = ((U6OF))
+end
+
+var x4v = 22
+

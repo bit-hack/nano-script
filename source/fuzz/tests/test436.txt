@@ -1,0 +1,6 @@
+# SEED 12781
+
+var Kx[45]
+
+var hcy[88]
+

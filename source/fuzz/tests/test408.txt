@@ -1,0 +1,69 @@
+# SEED 12753
+
+function v56ZS(fB8vM72t, oYKUni, PQEmk, SJWAoTx, S7mqV, apWGwF, IDZv9slJ)
+  var Ck0mZkVx[4]
+  Ck0mZkVx[1] = (98 or 80)
+  v56ZS(124, 39, 53, 45, 4, 19, v56ZS(96, 26, 107, 109, 41, 127, 60))
+  if (70)
+    while (v56ZS(125, 96, v56ZS(36, 77, 89, 109, 42, 46, 78), 63, 126, v56ZS(106, 52, 67, 83, 127, 111, 72), 54))
+      var We67I = v56ZS(v56ZS(7, 95, 32, 34, 39, 52, 53), 55, v56ZS(120, 76, 9, 23, 13, 113, 116), v56ZS(70, 17, 126, 32, 34, 63, 21), 73, v56ZS(120, 68, 84, 43, 71, 83, 108), v56ZS(102, 78, 10, 83, 74, 13, 22))
+    end
+    while (124)
+      var fM
+    end
+    return (v56ZS(3, 15, 83, 67, 37, 12, 104) / 57)
+    var jMn4Zyo[89]
+  end
+  v56ZS(v56ZS(16, 112, 95, 13, 81, 90, 57), 70, v56ZS(64, 4, 105, 94, 103, 46, 48), 123, v56ZS(6, 69, 41, 64, 17, 45, 36), v56ZS(100, 49, 80, 93, 43, 107, 94), v56ZS(73, 35, 48, 89, 127, 94, 29))
+  var IqWmh
+  while ( not v56ZS(IqWmh, 84, 99, 96, 21, IqWmh, v56ZS(IqWmh, IqWmh, 95, 45, IqWmh, 2, 32)))
+    var uOyt[63]
+    uOyt[46] = 96
+    while (uOyt[ not (65)])
+      v56ZS(IqWmh, v56ZS(IqWmh, IqWmh, 60, IqWmh, IqWmh, 17, 38), IqWmh, IqWmh, v56ZS(113, 65, IqWmh, IqWmh, 59, 69, IqWmh), v56ZS(111, 106, 32, 86, IqWmh, 51, IqWmh), IqWmh)
+      return uOyt[71 / IqWmh]
+      IqWmh = uOyt[Ck0mZkVx[v56ZS(IqWmh, 38, IqWmh, IqWmh, IqWmh, IqWmh, 91)]]
+      if (IqWmh == v56ZS(5, IqWmh, IqWmh, 97, IqWmh, IqWmh, IqWmh) <=  not 63 - 2)
+        while (v56ZS(98, IqWmh, IqWmh, 38, IqWmh, 50, 11) or 46 < 123)
+          if (67)
+            Ck0mZkVx[10] = v56ZS(IqWmh, 8, 71, IqWmh, IqWmh, IqWmh, 57) and (IqWmh)
+            while (88 + 46 >= 126)
+              if (IqWmh)
+                while ((v56ZS(40, 2, IqWmh, IqWmh, 65, IqWmh, 109)) >= 63)
+                  var MN
+                end
+              end
+              var v4M7jZS[77]
+              v56ZS(11, 38, 103, 93, IqWmh, 99, IqWmh)
+            end
+          end
+          IqWmh = IqWmh
+          while (IqWmh / 46 == v56ZS(IqWmh, 81, 75, 113, 13, IqWmh, 83))
+            Ck0mZkVx[107] = IqWmh
+            v56ZS(IqWmh, IqWmh, IqWmh, 31, 12, 65, 103)
+            while (v56ZS(5, IqWmh, IqWmh, 69, 120, IqWmh, IqWmh) or (v56ZS(IqWmh, IqWmh, 33, IqWmh, IqWmh, IqWmh, 99)))
+            end
+            IqWmh = (uOyt[v56ZS(IqWmh, IqWmh, 43, 5, IqWmh, 37, IqWmh)])
+            while ( not 30 > v56ZS(IqWmh, IqWmh, 29, 10, 126, 70, IqWmh) > IqWmh)
+              v56ZS(v56ZS(IqWmh, 49, IqWmh, IqWmh, IqWmh, IqWmh, 121), 70, 106, v56ZS(IqWmh, IqWmh, IqWmh, IqWmh, 53, IqWmh, 57), 16, 114, 63)
+              var ojmzZ54H[122]
+              ojmzZ54H[77] = uOyt[v56ZS(19, 90, IqWmh, IqWmh, IqWmh, 13, 12)] <= (60)
+              IqWmh = v56ZS(57, 95, v56ZS(37, IqWmh, IqWmh, IqWmh, IqWmh, 88, IqWmh), 62, v56ZS(18, 44, 125, 2, IqWmh, IqWmh, 51), 74, v56ZS(IqWmh, IqWmh, IqWmh, 104, IqWmh, 118, IqWmh))
+              v56ZS(v56ZS(IqWmh, 78, IqWmh, 70, 81, IqWmh, IqWmh), v56ZS(IqWmh, 69, IqWmh, IqWmh, 71, IqWmh, 76), IqWmh, 92, 97, IqWmh, IqWmh)
+            end
+          end
+          uOyt[13] = ( not (IqWmh))
+          if (v56ZS(76, IqWmh, IqWmh, 4, IqWmh, IqWmh, 2) == 79 == 0)
+            var h4FS8Bfk[91]
+            var nFu = 114
+          end
+        end
+      end
+      return 113 - v56ZS(43, IqWmh, IqWmh, IqWmh, IqWmh, 29, 87) and v56ZS(IqWmh, 60, IqWmh, 9, IqWmh, IqWmh, 44)
+    end
+  end
+  v56ZS(IqWmh, 10, 30, 85, 127, IqWmh, 34)
+end
+
+var MIj5x = 30
+

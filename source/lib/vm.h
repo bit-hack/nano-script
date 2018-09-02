@@ -4,12 +4,29 @@
 #include "ccml.h"
 
 
+enum class thread_error_t {
+  e_success = 0,
+  e_bad_getv,
+  e_bad_setv,
+  e_bad_num_args,
+  e_bad_syscall,
+  e_bad_opcode,
+  e_bad_set_global,
+  e_bad_get_global,
+  e_bad_pop,
+};
+
+
 struct thread_t {
 
   thread_t(ccml_t &ccml)
       : ccml_(ccml), return_code_(0), finished_(true), cycles_(0) {}
 
   int32_t pop() {
+    if (s_.empty()) {
+      set_error(thread_error_t::e_bad_pop);
+      return 0;
+    }
     const int32_t v = s_.back();
     s_.pop_back();
     return v;
@@ -36,7 +53,7 @@ struct thread_t {
   }
 
   bool has_error() const {
-    return !error_.empty();
+    return error_ == thread_error_t::e_success;
   }
 
 protected:
@@ -45,7 +62,7 @@ protected:
   ccml_t &ccml_;
   int32_t return_code_;
   bool finished_;
-  std::string error_;
+  thread_error_t error_;
   uint32_t cycles_;
 
   struct frame_t {
@@ -56,6 +73,12 @@ protected:
   int32_t pc_;                    // program counter
   std::vector<int32_t> s_;        // value stack
   std::vector<frame_t> f_;        // frames
+
+  void set_error(thread_error_t error) {
+      finished_ = true;
+      error_ = error;
+      return_code_ = -1;
+  }
 
   void new_frame(int32_t pc) {
     frame_t f = {int32_t(s_.size()), pc};

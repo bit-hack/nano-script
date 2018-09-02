@@ -1,0 +1,58 @@
+# SEED 13296
+
+function axj95J()
+  var n2
+  var oYAP[104]
+  oYAP[36] = (n2) < 4
+  var fvhstNhC[24]
+  if (n2 > n2 > oYAP[n2])
+    while (n2)
+    end
+  end
+  return n2 -  not (axj95J())
+  var dviss1S =  not axj95J()
+  return axj95J() < dviss1S + (n2)
+end
+
+var oC3R7mKv
+
+var mOJgoY
+
+var nem
+
+function e5qlU(lOQ, ytnGD, RwARKcry, pis4, PRAVa, QweMfNTN)
+  axj95J()
+  if (oC3R7mKv and oC3R7mKv + axj95J())
+    ytnGD = e5qlU(oC3R7mKv, 54, e5qlU(62, 116, nem, 54, oC3R7mKv, nem), 43, mOJgoY, 125)
+  end
+  var xLQ9m1w[65]
+  while (nem)
+    xLQ9m1w[113] =  not e5qlU(115, 120, 67, nem, mOJgoY, 35) and e5qlU(oC3R7mKv, 25, 126, nem, 39, 38) <= e5qlU(oC3R7mKv, mOJgoY, 43, 5, oC3R7mKv, nem)
+  end
+  if (xLQ9m1w[axj95J()] > 83)
+    while (nem)
+      if (axj95J())
+        axj95J()
+        xLQ9m1w[41] = e5qlU(mOJgoY, oC3R7mKv, 14, nem, 103, mOJgoY) or 12 * e5qlU(78, 83, nem, nem, nem, 119)
+        var tfJr[59]
+        var YjtFOpn[119]
+      end
+    end
+  end
+  if ( not xLQ9m1w[54] + axj95J())
+  end
+  xLQ9m1w[87] = e5qlU(oC3R7mKv, nem, 30, 127, oC3R7mKv, mOJgoY) / 119
+  return 98
+end
+
+function FuSJUj(ciY0, H2RTu7Wt, TKc, TDQk_XS)
+  var EQjA[58]
+  return EQjA[axj95J()]
+  var bdvzKyP[122]
+  bdvzKyP[32] = 81
+  return mOJgoY
+  return e5qlU(mOJgoY, 61, oC3R7mKv, 124, 96, 56) / e5qlU(112, mOJgoY, 57, 1, 86, nem)
+  FuSJUj(FuSJUj(127, mOJgoY, oC3R7mKv, 61), oC3R7mKv, oC3R7mKv, 76)
+  oC3R7mKv = (e5qlU(nem, oC3R7mKv, 54, 75, mOJgoY, 117))
+end
+

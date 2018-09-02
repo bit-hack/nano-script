@@ -1,0 +1,15 @@
+# SEED 12526
+
+function DYB1vDM(zV7b)
+  var dY4[5]
+  var VNMZ6
+  dY4[67] =  not VNMZ6
+  return  not dY4[DYB1vDM(VNMZ6) * DYB1vDM(VNMZ6)]
+  var DYMXsP = DYB1vDM(7)
+  var kXi5S
+  dY4[7] = DYB1vDM(75) >= DYMXsP and dY4[127]
+  var HIuX[55]
+end
+
+var _W8LFr[7]
+

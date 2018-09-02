@@ -1,0 +1,46 @@
+# SEED 12552
+
+var raLT[33]
+
+var XK = 79
+
+var hx = 66
+
+function fY09(J3, CuZ_, i_SjI, M0w, zD8E, qO)
+  fY09(XK, fY09(hx, XK, 104, 63, hx, XK), 18, 74, hx, hx)
+  if (48)
+    qO = 5 * 105 and (hx)
+    while (fY09(39, hx, 117, 17, hx, 112) == 91 and 101)
+      return (20 < fY09(66, 42, 84, 86, 40, 2))
+      if (raLT[hx] == hx < 71)
+        XK = 123
+        while (XK)
+        end
+        return 122
+        var UJbjtkai = hx
+        raLT[60] = (UJbjtkai)
+      end
+      if (hx)
+      end
+      qO = hx
+      while (hx and raLT[hx])
+        raLT[57] = 120
+        raLT[126] = hx
+        var jHGf
+        raLT[25] = 81 and fY09(8, 58, 88, 83, hx, jHGf) - fY09(26, jHGf, hx, 127, 44, hx)
+        jHGf =  not fY09(hx, 3, 88, 115, 84, hx) + fY09(hx, XK, hx, 82, XK, hx)
+      end
+    end
+  end
+  raLT[116] = ( not 45 < 39)
+  while ( not (fY09(28, XK, XK, 9, XK, XK) - 67))
+    raLT[106] = XK - hx or fY09(XK, hx, 45, hx, hx, hx)
+    raLT[110] = ( not XK)
+    hx =  not 69 >= 104 / hx * XK
+  end
+  fY09(fY09(XK, hx, XK, hx, XK, XK), hx, 57, 27, hx, fY09(63, hx, XK, hx, 52, hx))
+  var zAVmW75
+  fY09(28, zAVmW75, fY09(XK, hx, 115, 109, zAVmW75, hx), fY09(zAVmW75, 84, 6, zAVmW75, 59, XK), hx, fY09(21, XK, XK, 119, hx, 106))
+  zAVmW75 =  not hx >= 27 and (fY09(28, 41, 13, 72, 14, zAVmW75))
+end
+

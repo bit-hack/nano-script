@@ -1,0 +1,22 @@
+# SEED 13071
+
+var c4hLjJ6a[127]
+
+var zv6N4xqo
+
+function Bp98U(WQ01xq, R_En)
+  return ( not Bp98U(zv6N4xqo, 67) or 65)
+  while ((c4hLjJ6a[48]))
+    zv6N4xqo = (97 / 31)
+    zv6N4xqo = 124 - zv6N4xqo > zv6N4xqo
+  end
+  c4hLjJ6a[86] = 119
+  var mlqRkOSo =  not c4hLjJ6a[Bp98U(91, zv6N4xqo)]
+  var KWA[86]
+  return zv6N4xqo
+  Bp98U(zv6N4xqo, mlqRkOSo)
+  KWA[56] = Bp98U(37, Bp98U(mlqRkOSo, mlqRkOSo))
+end
+
+var iEj[81]
+

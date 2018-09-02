@@ -1,0 +1,33 @@
+# SEED 12501
+
+var tiNT[37]
+
+var R9qIHexr[96]
+
+function mZ()
+  tiNT[15] = 8 or 94
+  var Hk
+  mZ()
+  return Hk
+  if (Hk <= tiNT[114])
+    return mZ()
+    while (R9qIHexr[(77)])
+    end
+  end
+  while (mZ())
+    var tTRK8Vwp
+    while (mZ())
+      return Hk - mZ() < mZ()
+      return mZ()
+    end
+  end
+  R9qIHexr[119] = Hk
+  mZ()
+end
+
+var UwLLBh = 0
+
+var uE[22]
+
+var ocbTL = 54
+

@@ -1,0 +1,6 @@
+# SEED 12389
+
+var wxa = 104
+
+var vnI[111]
+

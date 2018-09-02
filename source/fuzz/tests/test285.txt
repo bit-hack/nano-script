@@ -1,0 +1,62 @@
+# SEED 12630
+
+var VLH7Hu = 0
+
+var mtys32y1 = 87
+
+function Do2DmFMn()
+  if (Do2DmFMn())
+    return VLH7Hu and 38
+    var FsRuPpE[86]
+    while ((Do2DmFMn() > VLH7Hu))
+    end
+    FsRuPpE[19] = 41
+    return Do2DmFMn() < VLH7Hu / 50
+  end
+  var pVg6[57]
+  return Do2DmFMn()
+  pVg6[112] = 50
+  if ( not (pVg6[mtys32y1]))
+    while ( not 94 >= mtys32y1 - Do2DmFMn() - mtys32y1)
+    end
+    pVg6[18] = pVg6[VLH7Hu] * 98 / Do2DmFMn()
+    pVg6[119] =  not mtys32y1
+    var Na8 =  not 72
+  end
+end
+
+function qDi6VN(gwDk1, jzY1k1L, ljW6V)
+  jzY1k1L =  not VLH7Hu
+  gwDk1 = qDi6VN(VLH7Hu, VLH7Hu, 47)
+  var Au3[16]
+  VLH7Hu = qDi6VN(VLH7Hu, Do2DmFMn(), VLH7Hu)
+  var rRC = Au3[VLH7Hu] > qDi6VN(2, mtys32y1, mtys32y1)
+  return  not VLH7Hu <= Do2DmFMn() and (122)
+  while (37 > Do2DmFMn() == VLH7Hu)
+    Do2DmFMn()
+    while (Do2DmFMn() * rRC * Do2DmFMn())
+    end
+    var SKpVSuLr[32]
+    if (Do2DmFMn() > VLH7Hu <= mtys32y1 < mtys32y1)
+      while (qDi6VN(qDi6VN(rRC, 23, mtys32y1), VLH7Hu, 95))
+        return 23
+        Au3[25] = rRC * rRC + 52 or VLH7Hu
+        var Ut6Kl3C[19]
+        var uKwTG_X
+        return Au3[17 > rRC]
+      end
+      Au3[15] = (Do2DmFMn() + 90)
+    end
+  end
+end
+
+function s2tgzj(EJ8, KTf3yKoi, LO532fMN, qkO, lyW, K4, Dm0O98L)
+  Do2DmFMn()
+  var vu =  not 49 * VLH7Hu
+  Do2DmFMn()
+  lyW =  not  not (98) <= vu * mtys32y1
+  var PO =  not 75 < qDi6VN(VLH7Hu, VLH7Hu, 23) > qDi6VN(vu, vu, 39)
+  return (86 > Do2DmFMn())
+  qDi6VN(119, qDi6VN(41, VLH7Hu, 16), 28)
+end
+

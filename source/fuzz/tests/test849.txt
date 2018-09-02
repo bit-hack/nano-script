@@ -1,0 +1,48 @@
+# SEED 13194
+
+function XPG(oQv, dODPF3VH, oYjOv, UeCkq79)
+  var xFqkj[17]
+  var sm[43]
+  var Huv7_pM[92]
+  var x5SY
+  if (x5SY)
+    x5SY = 102 + x5SY > XPG(37, 55, 4, x5SY)
+    if ( not XPG(45, 56, x5SY, 18) / x5SY)
+    end
+    while (x5SY)
+      if (XPG(x5SY, 86, 108, 53) <= XPG(77, x5SY, 74, 105) <= 13 <= x5SY)
+        XPG(x5SY, x5SY, 104, XPG(11, 117, x5SY, x5SY))
+        var sZj23 =  not ((x5SY))
+      end
+      x5SY = (x5SY) / 36
+    end
+    Huv7_pM[107] =  not (110) >= (XPG(x5SY, 68, 31, x5SY))
+    return XPG(48, XPG(122, x5SY, 124, x5SY), XPG(x5SY, 109, 77, x5SY), x5SY)
+  end
+  XPG(XPG(46, 27, 38, 46), 121, XPG(x5SY, x5SY, 112, x5SY), 46)
+  var A3RWdHZ
+end
+
+var aO59HS[20]
+
+var thuD
+
+var vU1UKia_ = 127
+
+var MtLVnOE
+
+function hYC(qX, Fv)
+  var YIAtujAj[63]
+  return thuD
+  while (13)
+    var nLr3F2ET
+    var q3EH6RX
+    return (hYC(thuD, vU1UKia_) + MtLVnOE)
+  end
+  YIAtujAj[116] = (51) == 75
+  XPG(hYC(7, vU1UKia_), hYC(107, 123), 84, 30)
+  aO59HS[25] = MtLVnOE
+  hYC(hYC(vU1UKia_, 118), vU1UKia_)
+  XPG(hYC(15, vU1UKia_), MtLVnOE, vU1UKia_, hYC(vU1UKia_, MtLVnOE))
+end
+

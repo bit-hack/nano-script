@@ -1,0 +1,77 @@
+# SEED 12952
+
+var kks[68]
+
+function PJ(R6_4, b3es6, _3, a35, kls, XEi1vHTo)
+  if (PJ(64, 92, 79, 79, 67, 58) + PJ(104, 24, 69, 65, 52, 12) - PJ(19, 60, 118, 40, 49, 95) < PJ(30, 118, 118, 31, 32, 6))
+    kks[49] = 81
+    if (PJ(104, 110, 58, 115, 84, 68) * 104 or PJ(122, 67, 121, 69, 69, 24) and PJ(23, 100, 4, 65, 56, 21))
+      PJ(PJ(56, 86, 36, 119, 16, 83), PJ(115, 124, 2, 107, 69, 6), 62, PJ(108, 20, 101, 124, 58, 83), PJ(42, 20, 87, 8, 40, 85), PJ(24, 17, 33, 32, 22, 31))
+      kks[27] = kks[PJ(57, 30, 19, 44, 77, 9) and 98]
+    end
+    PJ(18, PJ(23, 85, 32, 92, 111, 102), 92, 102, PJ(83, 98, 102, 126, 124, 9), 126)
+  end
+  if (PJ(74, 118, 11, 38, 77, 127) + 114 / kks[PJ(7, 79, 103, 33, 111, 7)])
+    kks[64] =  not 71 < PJ(106, 106, 73, 53, 6, 23)
+    var ouCGo82t = kks[ not (PJ(50, 94, 10, 116, 86, 105))]
+    while ( not (ouCGo82t) == kks[ouCGo82t])
+      PJ(ouCGo82t, 101, PJ(120, 114, ouCGo82t, 104, ouCGo82t, ouCGo82t), 24, ouCGo82t, 116)
+      if ( not PJ(93, 59, 57, 103, PJ(59, 8, 116, 66, ouCGo82t, 105), PJ(ouCGo82t, ouCGo82t, ouCGo82t, 5, 103, ouCGo82t)))
+        var qT8CAlN = ouCGo82t
+        PJ(qT8CAlN, qT8CAlN, ouCGo82t, 51, 73, 55)
+        var WGAOkI
+        return 56 * PJ(WGAOkI, 73, ouCGo82t, WGAOkI, 81, qT8CAlN) >= qT8CAlN
+      end
+      b3es6 =  not PJ(ouCGo82t, ouCGo82t, 35, 11, ouCGo82t, 97) * ouCGo82t - (122)
+    end
+  end
+  if (16 + 119 / PJ(41, 79, 43, 88, 63, 117))
+    if ( not kks[PJ(100, 104, 49, 89, 42, 0) or 119])
+      kks[92] = 110 / 65 >= PJ(43, 96, 40, 106, 106, 83) and PJ(7, 79, 17, 75, 54, 23)
+      while ((110))
+        return 85 == 7 * 118
+        while (PJ(116, PJ(22, 18, 103, 103, 98, 4), PJ(114, 19, 10, 26, 83, 84), 124, PJ(70, 56, 76, 19, 37, 43), PJ(4, 22, 124, 39, 122, 11)))
+        end
+        PJ(13, PJ(120, 15, 107, 94, 83, 54), 101, PJ(107, 78, 34, 109, 95, 111), PJ(63, 37, 87, 66, 10, 20), PJ(90, 116, 117, 28, 62, 37))
+        kks[103] = 44
+      end
+      while (15)
+        if (PJ(38, PJ(21, 120, 20, 36, 116, 25), 117, 13, 4, 107))
+          kks[80] =  not ( not  not 102)
+          return 47 or 40
+          if ((40) - PJ(35, 52, 100, 80, 14, 62))
+          end
+          kks[100] = 11 == 26 and PJ(82, 14, 46, 105, 108, 22) <= 59
+        end
+        PJ(PJ(47, 25, 77, 91, 83, 56), PJ(115, 2, 13, 103, 24, 5), PJ(127, 96, 100, 18, 82, 61), PJ(58, 88, 36, 112, 114, 88), 38, 42)
+        kks[44] = (PJ(20, 122, 111, 10, 58, 11) > PJ(9, 73, 25, 32, 57, 90))
+        var zh[79]
+      end
+      PJ(14, PJ(98, 68, 11, 62, 42, 90), 100, PJ(94, 9, 85, 35, 25, 113), 51, PJ(39, 43, 27, 106, 109, 122))
+      kks[96] = PJ(15, 115, PJ(104, 115, 38, 93, 18, 122), 74, 20, 0)
+    end
+    kks[85] = PJ(122, PJ(111, 10, 11, 74, 20, 107), 4, 0, PJ(106, 25, 66, 56, 68, 101), 81)
+    kks[120] = PJ(104, 69, 55, 100, 6, 91) / 82 - 55
+  end
+  var uxv7Gi[71]
+  PJ(88, 99, 117, 24, 30, PJ(24, 7, 95, 35, 112, 57))
+  var jxM2ezL6 = kks[55 < 127]
+  uxv7Gi[61] = 11 == 63 - PJ(jxM2ezL6, 0, jxM2ezL6, 78, 123, 117) > PJ(63, jxM2ezL6, jxM2ezL6, 81, jxM2ezL6, jxM2ezL6)
+  var LoDCSO = PJ(PJ(jxM2ezL6, 65, 66, 19, 100, 3), PJ(109, 22, jxM2ezL6, 103, 25, 94), jxM2ezL6, jxM2ezL6, jxM2ezL6, PJ(jxM2ezL6, 21, jxM2ezL6, 120, jxM2ezL6, jxM2ezL6))
+end
+
+var LyvbIU2 = 26
+
+function Qe53m(Xd3JXM)
+  Xd3JXM = LyvbIU2 and  not LyvbIU2 / 112
+  var tqfZ9P[74]
+  var j8gRM = 92
+  var JBTbfe = (LyvbIU2)
+  kks[53] =  not JBTbfe
+  LyvbIU2 = Qe53m(JBTbfe)
+  Qe53m(Qe53m(JBTbfe))
+  Xd3JXM = JBTbfe
+end
+
+var yBuf4_E[120]
+

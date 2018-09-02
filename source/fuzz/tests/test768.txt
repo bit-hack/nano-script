@@ -1,0 +1,4 @@
+# SEED 13113
+
+var wrDvm[70]
+

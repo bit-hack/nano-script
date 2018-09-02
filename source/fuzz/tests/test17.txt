@@ -1,0 +1,61 @@
+# SEED 12362
+
+function A4o(BzZXlC, Cix4p)
+  return  not A4o(39, A4o(79, 125))
+  return  not  not  not  not 8 - A4o(33, 61) * (A4o(29, 122))
+  A4o(A4o(108, 60), A4o(118, 52))
+  if (A4o(4, 59) >= A4o(33, 80) /  not A4o(122, 73))
+    while (88)
+      A4o(A4o(70, 44), A4o(123, 20))
+      if (79)
+        var leraD[48]
+      end
+    end
+    if ( not (18) - (A4o(41, 121)))
+      if (48 and 105 >= A4o(78, 25))
+        A4o(71, 34)
+      end
+    end
+    if ((43) and 45)
+    end
+  end
+  var MleL6vj
+  var sQLMk =  not 113
+  Cix4p = A4o(A4o(14, 126), A4o(sQLMk, 6))
+  return (A4o(96, 72)) < MleL6vj
+end
+
+function Zhu96()
+  return (Zhu96() and Zhu96())
+  var UcCTSg = (10 - 7)
+  if (Zhu96())
+    var cICxQ[55]
+    Zhu96()
+    var yddIr29B[51]
+    while ( not 114 - UcCTSg == 49)
+      var NLk7gT[105]
+    end
+  end
+  if (A4o(101, 60))
+    var Z8
+    A4o(A4o(UcCTSg, Z8), Zhu96())
+    if ( not (Z8 + A4o(UcCTSg, 0)))
+      while (A4o(Z8, A4o(83, Z8)))
+      end
+      var W_62h6LD
+      if (A4o(UcCTSg, W_62h6LD) > (123))
+        var Nd2
+        var Ne12G
+      end
+      return  not (44 * W_62h6LD)
+    end
+  end
+  return  not Zhu96()
+  A4o(UcCTSg, 8)
+  if ( not (0) or 106 or Zhu96())
+    return  not A4o(40, 63) <=  not UcCTSg < 27
+    var YezYpzc7[29]
+  end
+  return UcCTSg
+end
+

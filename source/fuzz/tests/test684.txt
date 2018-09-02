@@ -1,0 +1,20 @@
+# SEED 13029
+
+var dOqHKj[0]
+
+function i83Z(Cxl9)
+  return dOqHKj[i83Z(104) and i83Z(18)]
+  var Ek
+  dOqHKj[19] =  not Ek
+  dOqHKj[89] = (dOqHKj[15])
+  while (i83Z(Ek) >= i83Z(Ek) or 78)
+    dOqHKj[97] = 83
+    i83Z(68)
+    dOqHKj[2] = ((14))
+    dOqHKj[13] = 36
+  end
+  dOqHKj[49] = i83Z(i83Z(79))
+  return 86
+  var hKLr[97]
+end
+

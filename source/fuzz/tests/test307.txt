@@ -1,0 +1,30 @@
+# SEED 12652
+
+var Jsh_h_zR = 62
+
+var CmR[4]
+
+var II_Q[60]
+
+var FgL = 123
+
+function VkpyC(gpWnDodg)
+  if (VkpyC(FgL) or FgL)
+    VkpyC(VkpyC(0))
+  end
+  var DjlW6K
+  var o7JK[55]
+  gpWnDodg = VkpyC(VkpyC(40))
+  VkpyC(VkpyC(23))
+  II_Q[42] = CmR[96] /  not o7JK[55]
+  if (((85)))
+    CmR[110] =  not  not 30 >= DjlW6K / 101
+    var sT[80]
+  end
+  II_Q[4] = 111 < 47 > FgL
+end
+
+var eWlcyz5h = 90
+
+var f_ldCUJ[76]
+

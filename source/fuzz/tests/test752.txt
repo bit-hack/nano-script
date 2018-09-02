@@ -1,0 +1,20 @@
+# SEED 13097
+
+var PFFac
+
+function B3ZNXCh(F7Z, Ewritxm)
+  while ((PFFac) -  not  not 72)
+    return PFFac
+  end
+  var jWP38Yd = 61
+  var nlKQ[86]
+  Ewritxm = PFFac
+  var itsy[113]
+  var uIG[45]
+  B3ZNXCh(B3ZNXCh(15, 30), jWP38Yd)
+  while ( not B3ZNXCh(jWP38Yd, B3ZNXCh(110, 23)))
+  end
+end
+
+var pAUZKz = 111
+

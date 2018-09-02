@@ -1,0 +1,19 @@
+# SEED 13227
+
+var OZ8O[103]
+
+var GV
+
+function tWSaQH(zs4)
+  OZ8O[30] = 98 / GV
+  tWSaQH(GV)
+  var gVO
+  var bgbgr[95]
+  OZ8O[87] = 85
+  zs4 =  not  not  not OZ8O[(gVO)]
+  var kwEu[102]
+  return  not 23 + gVO > 64
+end
+
+var oBjSk8PQ[7]
+

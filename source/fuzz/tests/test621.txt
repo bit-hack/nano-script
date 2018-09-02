@@ -1,0 +1,14 @@
+# SEED 12966
+
+function so2nz(vT0P0D, Gr)
+  var kq[11]
+  var AaQ
+  AaQ =  not  not 109 * AaQ - (so2nz(77, AaQ))
+  AaQ = (so2nz(29, 104) + so2nz(AaQ, 78))
+  var Z67 = ((AaQ))
+  vT0P0D =  not kq[so2nz(AaQ, 53)] /  not Z67
+  var mq9le
+end
+
+var WgDMb
+

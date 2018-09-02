@@ -1,0 +1,17 @@
+# SEED 12748
+
+function YSc_G6(Vq, zB)
+  var RM9OElX
+  YSc_G6(YSc_G6(RM9OElX, 37), 112)
+  var U6n3j
+  var wCcCY = 91 == U6n3j >=  not (RM9OElX)
+  return wCcCY >= YSc_G6(104, 59) <= U6n3j
+  if (U6n3j)
+    var sC
+    return YSc_G6(101, U6n3j) == U6n3j <= U6n3j
+    return YSc_G6(93, RM9OElX) + YSc_G6(U6n3j, sC) /  not  not YSc_G6(90, wCcCY)
+  end
+end
+
+var NXlus = 22
+

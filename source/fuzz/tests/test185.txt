@@ -1,0 +1,62 @@
+# SEED 12530
+
+var HTyF9vw = 10
+
+function laC()
+  while ( not  not HTyF9vw > laC() + HTyF9vw)
+    if (laC())
+      laC()
+      laC()
+    end
+    return ( not 93 - laC())
+  end
+  var yzopzt[65]
+  if (HTyF9vw)
+    var WJJs4[36]
+    WJJs4[11] = laC()
+    WJJs4[109] = laC()
+    while ((HTyF9vw) < yzopzt[79])
+    end
+    laC()
+  end
+  return laC()
+  laC()
+  var sZzoC[59]
+  yzopzt[32] = yzopzt[yzopzt[8]]
+end
+
+function IAWMgXkJ(em8, jeeAX, j1XeMC, FjKyT, gyuW58c, H2zhf)
+  laC()
+  IAWMgXkJ(123, HTyF9vw, 118, IAWMgXkJ(16, 74, 17, HTyF9vw, 33, HTyF9vw), IAWMgXkJ(HTyF9vw, HTyF9vw, 111, HTyF9vw, 20, 32), laC())
+  var sECO
+  while (HTyF9vw)
+    var TliUOF3
+    var ZknXeq[126]
+  end
+  if ( not 37)
+    IAWMgXkJ(IAWMgXkJ(88, sECO, sECO, 11, HTyF9vw, 9), 109, sECO, sECO, IAWMgXkJ(68, sECO, HTyF9vw, sECO, 108, 18), 94)
+    var t6O2[68]
+  end
+  return IAWMgXkJ(HTyF9vw, HTyF9vw, 54, HTyF9vw, 51, 75) == 82 < sECO
+  IAWMgXkJ(IAWMgXkJ(97, HTyF9vw, sECO, HTyF9vw, 87, HTyF9vw), 27, sECO, HTyF9vw, 10, sECO)
+end
+
+function z9oVjc(KQ, LO, pz3U)
+  var wgieJ1d[111]
+  HTyF9vw = wgieJ1d[IAWMgXkJ(122, 65, HTyF9vw, 42, HTyF9vw, 55)]
+  var kO
+  if (65)
+  end
+  if (wgieJ1d[laC()])
+  end
+  if (HTyF9vw * z9oVjc(94, HTyF9vw, HTyF9vw) <= kO)
+    HTyF9vw = 92 / HTyF9vw + laC() / laC()
+  end
+  while (laC())
+    var S2Tz17oK = kO
+    var U0J9
+    return IAWMgXkJ(HTyF9vw, 47, laC(), z9oVjc(U0J9, 14, U0J9), laC(), 96)
+  end
+  HTyF9vw = HTyF9vw == laC() < 109 >= z9oVjc(kO, kO, HTyF9vw)
+end
+

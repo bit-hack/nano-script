@@ -1,0 +1,58 @@
+# SEED 12870
+
+function zX(uGNL_S, uwC, I8r, obh, Dn0, Cr3, qDoRM8)
+  var kiufLyIH
+  zX(kiufLyIH, 117, 12, 114, zX(112, kiufLyIH, kiufLyIH, 37, kiufLyIH, 31, 31), 48, kiufLyIH)
+  zX(zX(kiufLyIH, 43, kiufLyIH, kiufLyIH, kiufLyIH, 36, kiufLyIH), kiufLyIH, kiufLyIH, zX(kiufLyIH, 73, kiufLyIH, 56, 82, 5, 84), 89, kiufLyIH, zX(14, kiufLyIH, kiufLyIH, kiufLyIH, 113, kiufLyIH, kiufLyIH))
+  var ux[63]
+  ux[47] = 18
+  var SXDnd1 = 70 > kiufLyIH and (zX(24, kiufLyIH, 41, kiufLyIH, 124, kiufLyIH, 59))
+  var qPd7[71]
+  if ( not kiufLyIH / zX(105, kiufLyIH, kiufLyIH, kiufLyIH, kiufLyIH, 114, kiufLyIH) >= (65))
+    var u6
+    while ( not (103 / u6))
+    end
+    zX(zX(kiufLyIH, kiufLyIH, SXDnd1, kiufLyIH, kiufLyIH, u6, kiufLyIH), SXDnd1, u6, kiufLyIH, 84, kiufLyIH, zX(SXDnd1, u6, 30, 107, 76, u6, 31))
+    qPd7[71] = (93) >= zX(78, 87, 75, kiufLyIH, SXDnd1, 71, kiufLyIH) and zX(55, 116, 65, SXDnd1, 126, 14, kiufLyIH)
+    ux[32] = SXDnd1
+  end
+end
+
+var nUBF
+
+function Wtb(PK6I, r7aLl, TpqlYZ, Jvk)
+  Jvk = (28 < 90)
+  return 31 + Wtb(24, 21, 30, 125)
+  nUBF = nUBF
+  nUBF =  not  not  not  not 77 == 59
+  zX(nUBF, 21, zX(95, 37, 91, 107, nUBF, nUBF, nUBF), 38, 59, 84, 124)
+  return 7
+  while ((nUBF) + nUBF - 87)
+    var pl6
+    while (zX(2, nUBF, pl6, nUBF, Wtb(pl6, pl6, pl6, 85), 94, pl6))
+      var v4z[120]
+      return v4z[ not (Wtb(64, pl6, 45, nUBF))]
+      return zX(nUBF, 68, zX(26, nUBF, nUBF, pl6, pl6, pl6, pl6), zX(87, nUBF, nUBF, pl6, nUBF, 63, 124), zX(pl6, 97, nUBF, pl6, nUBF, 57, 2), nUBF, pl6)
+    end
+  end
+  Wtb(Wtb(nUBF, 19, 27, 20), 124, zX(42, nUBF, nUBF, 82, nUBF, nUBF, 30), 10)
+end
+
+var LSC[63]
+
+var KQExUkr[28]
+
+function TV()
+  return 66
+  zX(zX(nUBF, nUBF, 92, nUBF, nUBF, nUBF, 12), 79, TV(), 124, zX(33, nUBF, 73, 31, nUBF, 26, 17), 16, zX(58, nUBF, 127, nUBF, nUBF, 99, 14))
+  var F6[120]
+  return  not nUBF >= zX(nUBF, 31, 70, nUBF, nUBF, 89, 25) > Wtb(106, 46, nUBF, 121)
+  var F41[32]
+  var jfJe = F41[nUBF < TV()]
+  var VkHe9pWe[93]
+end
+
+var fLxX = 64
+
+var DkBWP
+

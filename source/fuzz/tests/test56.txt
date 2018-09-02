@@ -1,0 +1,18 @@
+# SEED 12401
+
+var duOdswm[104]
+
+var ut2YgyTY[64]
+
+function P9EEy(K5Cje, yy67hc)
+  P9EEy(18, 59)
+  ut2YgyTY[24] = duOdswm[60]
+  var RoAz =  not 124
+  return duOdswm[P9EEy(33, 3) > P9EEy(RoAz, 30)]
+  if (12 or RoAz >= 109 or RoAz)
+  end
+  RoAz = (RoAz) + 32 / RoAz
+  yy67hc = 73
+  RoAz = P9EEy(P9EEy(RoAz, 30), P9EEy(43, RoAz))
+end
+

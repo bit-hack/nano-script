@@ -1,0 +1,10 @@
+# SEED 13254
+
+var IdnSuW21
+
+var DN = 67
+
+var uuggnL[10]
+
+var aix9[101]
+

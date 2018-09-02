@@ -1,0 +1,51 @@
+# SEED 12712
+
+var wCZPS[11]
+
+var TNxP8OQ = 10
+
+function OlMQIp9(vA_qiw, Bttm6Kn, ZayE0)
+  while (( not OlMQIp9(TNxP8OQ, 7, 84)))
+    TNxP8OQ = OlMQIp9(TNxP8OQ, TNxP8OQ, TNxP8OQ) and OlMQIp9(TNxP8OQ, 98, 127) / 45
+    while (OlMQIp9(TNxP8OQ, 95, TNxP8OQ) - 54 + OlMQIp9(TNxP8OQ, 96, 32))
+      while (84)
+        return TNxP8OQ
+        var o0syV[91]
+        o0syV[68] = TNxP8OQ
+        while (OlMQIp9(69, 7, 111))
+          TNxP8OQ = 113
+          o0syV[45] = OlMQIp9(TNxP8OQ, TNxP8OQ, TNxP8OQ)
+        end
+      end
+      wCZPS[101] = TNxP8OQ
+      var BNA_n
+      var GWi[79]
+      return  not 85
+    end
+    TNxP8OQ = OlMQIp9(TNxP8OQ, 121, TNxP8OQ)
+  end
+  OlMQIp9(118, 37, 90)
+  var HRigN[22]
+  TNxP8OQ = 100 <= 50 / 40 <= 87
+  vA_qiw = 33 + TNxP8OQ * 87
+  return 100 and OlMQIp9(16, TNxP8OQ, TNxP8OQ) + TNxP8OQ
+  HRigN[100] = OlMQIp9(OlMQIp9(TNxP8OQ, 49, TNxP8OQ), OlMQIp9(49, TNxP8OQ, 14), OlMQIp9(TNxP8OQ, TNxP8OQ, TNxP8OQ))
+  OlMQIp9(TNxP8OQ, TNxP8OQ, 93)
+end
+
+var TgeHBKb[24]
+
+function zAu4(OqCRLbY, rS41TvJC, VXkEECCc)
+  TNxP8OQ = 47
+  TgeHBKb[101] = zAu4(45, 119, TNxP8OQ) or OlMQIp9(95, 88, TNxP8OQ) > zAu4(94, 48, TNxP8OQ)
+  TgeHBKb[52] = TNxP8OQ or 109
+  wCZPS[69] = TNxP8OQ == TgeHBKb[zAu4(TNxP8OQ, TNxP8OQ, TNxP8OQ)]
+  OlMQIp9(TNxP8OQ, 30, TNxP8OQ)
+  if ( not TNxP8OQ == 42 / 81 / TNxP8OQ)
+    OqCRLbY = TgeHBKb[(OlMQIp9(51, 44, TNxP8OQ))]
+    TgeHBKb[39] =  not TNxP8OQ
+  end
+  OlMQIp9(90, TNxP8OQ, 29)
+  TNxP8OQ = 118
+end
+

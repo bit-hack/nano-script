@@ -1,0 +1,4 @@
+# SEED 13202
+
+var O_ONqXlZ = 70
+

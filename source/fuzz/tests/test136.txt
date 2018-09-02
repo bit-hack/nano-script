@@ -1,0 +1,6 @@
+# SEED 12481
+
+var owJ[74]
+
+var HdDP[48]
+

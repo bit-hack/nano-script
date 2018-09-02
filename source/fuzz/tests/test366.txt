@@ -1,0 +1,6 @@
+# SEED 12711
+
+var aUEI[8]
+
+var jG2F
+

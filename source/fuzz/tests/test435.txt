@@ -1,0 +1,12 @@
+# SEED 12780
+
+var un = 7
+
+var gLe
+
+var RrLt[109]
+
+var y4W[45]
+
+var TaFFDOvG[76]
+

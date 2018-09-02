@@ -1,0 +1,8 @@
+# SEED 12493
+
+var OmVNT[121]
+
+var PFMN
+
+var ALWrJ = 3
+

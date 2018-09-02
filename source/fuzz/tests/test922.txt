@@ -1,0 +1,6 @@
+# SEED 13267
+
+var angEM9Nk[65]
+
+var oFP0MNrh = 126
+

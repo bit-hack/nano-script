@@ -1,0 +1,8 @@
+# SEED 12809
+
+var Wz[98]
+
+var CMDq = 110
+
+var Sa[1]
+

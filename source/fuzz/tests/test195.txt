@@ -1,0 +1,13 @@
+# SEED 12540
+
+var H_AVT[54]
+
+function cf(K3ZB9tJ)
+  H_AVT[26] = H_AVT[H_AVT[110]]
+  var weg[19]
+  while (cf(34) or weg[37])
+    var m_hSdA2X
+  end
+  var XWw[24]
+end
+

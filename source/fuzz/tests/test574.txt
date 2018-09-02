@@ -1,0 +1,52 @@
+# SEED 12919
+
+var A9DjC
+
+function qy(YJT, nv9H)
+  while (( not qy(A9DjC, A9DjC) <= 41))
+    if ( not qy(126, 94) - A9DjC + A9DjC > qy(105, A9DjC))
+      A9DjC =  not 105
+      YJT = A9DjC
+      var dhOmOXFP = qy(112, 20) / qy(28, 104)
+    end
+    if ( not ((qy(73, 109))))
+      while (19)
+        while (qy(qy(A9DjC, A9DjC), 20))
+        end
+        if (76 - A9DjC)
+          var n0nZC1[28]
+          return n0nZC1[qy(52, A9DjC) <= 8]
+          if (A9DjC)
+          end
+        end
+        if (qy(A9DjC, A9DjC))
+        end
+      end
+    end
+  end
+  nv9H = ((qy(52, 113)))
+  if ( not qy(52, 4) - (qy(112, 52)))
+    return (A9DjC) >  not qy(126, A9DjC) and 14
+    var Y0r66M = (113 >= qy(A9DjC, A9DjC))
+    while ( not qy(31, 63) - qy(101, 52) <= Y0r66M)
+    end
+  end
+  while ((A9DjC == qy(A9DjC, 11)))
+    if (A9DjC)
+      qy(A9DjC, 125)
+      var S8I[17]
+      nv9H = A9DjC
+      qy(A9DjC, A9DjC)
+      if ((36) <= 83 + A9DjC)
+      end
+    end
+  end
+  return qy(41, A9DjC)
+  while (121)
+  end
+  qy(qy(A9DjC, 105), qy(120, A9DjC))
+  var W6j0Em8[75]
+end
+
+var B1DgJGJi = 98
+

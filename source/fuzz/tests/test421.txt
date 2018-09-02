@@ -1,0 +1,56 @@
+# SEED 12766
+
+var QM9[20]
+
+var GR8b
+
+var diI56t[70]
+
+function iL(SwO7lW, tkm, qmr9rOCS, nH1U7ms, zTZ, lzjvR2)
+  if (QM9[GR8b])
+    var s_Q5h
+    while (QM9[64 <= 62])
+      if (65 < GR8b or iL(s_Q5h, 104, 122, 62, s_Q5h, 117) and GR8b)
+        var YNvSjJBq = iL(GR8b, 40, 55, 94, s_Q5h, 1) or (GR8b)
+      end
+      if (s_Q5h >= iL(s_Q5h, s_Q5h, 99, s_Q5h, 70, s_Q5h))
+        var lhuoGAT = GR8b
+      end
+      var iN =  not GR8b > 34
+      var H9[58]
+    end
+    iL(GR8b, s_Q5h, 111, 123, 8, 2)
+    GR8b =  not 34 or 102 + 28
+  end
+  var UUPGMHv[14]
+  GR8b = 64
+  while (UUPGMHv[iL(GR8b, GR8b, GR8b, 25, GR8b, 43)] * diI56t[iL(112, GR8b, GR8b, 80, 82, GR8b)])
+  end
+  iL(GR8b, 108, GR8b, 87, iL(GR8b, 71, 116, 105, GR8b, 105), GR8b)
+  return diI56t[GR8b] + iL(33, GR8b, 89, GR8b, GR8b, 19) <= 22
+  if (iL(GR8b, iL(48, GR8b, GR8b, 15, GR8b, GR8b), GR8b, iL(GR8b, 103, 96, GR8b, GR8b, 42), GR8b, iL(93, 19, GR8b, GR8b, GR8b, 44)))
+    while (iL(GR8b, GR8b, 1, 118, GR8b, GR8b) or 39)
+    end
+  end
+  QM9[13] = iL(84, 73, 36, GR8b, 85, 54) == iL(GR8b, GR8b, GR8b, GR8b, 77, GR8b) * 112
+end
+
+var N068O2v4[112]
+
+function JWfPfFl(OX00TU, gHD0a)
+  return GR8b - 109 < GR8b
+  var x0k3RLt = GR8b + iL(GR8b, 54, GR8b, 33, GR8b, 81) - iL(54, 42, GR8b, GR8b, GR8b, 50) <= JWfPfFl(7, GR8b)
+  var _o3WOHvc = (12)
+  var K0QYg = N068O2v4[46 / 49]
+  diI56t[34] = QM9[JWfPfFl(88, 17)]
+  while (19)
+    N068O2v4[26] = GR8b < iL(GR8b, GR8b, 29, 30, 85, 89)
+    var qVKF[55]
+    var uhW
+    var OIb6QW
+  end
+  var WRwfw4Np[26]
+  while (JWfPfFl(GR8b, K0QYg) + JWfPfFl(95, 42))
+  end
+end
+

@@ -1,0 +1,4 @@
+# SEED 12768
+
+var zenFrdMF[86]
+

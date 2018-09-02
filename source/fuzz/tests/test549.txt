@@ -1,0 +1,22 @@
+# SEED 12894
+
+var BTeqC = 109
+
+var Bw[65]
+
+var rZlmy9nl[58]
+
+var QIN5[43]
+
+function GiBC(LIoxTSYd, T7ZbrJ, l_, faQ, kX7Lj9G)
+  BTeqC = BTeqC > 115 * BTeqC
+  var Nj_Cw_c[63]
+  return 1
+  var qgs[4]
+  GiBC(44, BTeqC, 6, GiBC(BTeqC, BTeqC, BTeqC, 15, 17), GiBC(BTeqC, BTeqC, 77, BTeqC, BTeqC))
+  kX7Lj9G = BTeqC
+  return GiBC(43, 78, BTeqC, 57, 72) <= BTeqC or  not GiBC(BTeqC, 64, BTeqC, 6, BTeqC)
+  if (Bw[GiBC(13, BTeqC, 12, BTeqC, 0) or BTeqC])
+  end
+end
+

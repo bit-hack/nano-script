@@ -1,0 +1,6 @@
+# SEED 12895
+
+var IotdGWDk[64]
+
+var JtQN8[114]
+

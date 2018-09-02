@@ -1,0 +1,39 @@
+# SEED 12546
+
+var w3B[42]
+
+function mw(ibTmVMv8)
+  var wj[18]
+  mw(48)
+  var MtncScv[9]
+  var LOPFj2Q = mw(102) == mw(105) /  not MtncScv[23]
+  var Gk
+  MtncScv[116] = MtncScv[(LOPFj2Q)]
+  var Vj7
+  while (44 * Gk and Vj7)
+    while ( not (0) and LOPFj2Q)
+    end
+    Gk = Vj7
+  end
+end
+
+function jo()
+  w3B[126] = (jo() + 0)
+  var tVk_eQQZ[61]
+  if (w3B[84])
+    tVk_eQQZ[76] = 99
+    return mw(mw(83))
+    jo()
+  end
+  while (mw(75) and 122 >= 104 / jo())
+    while (121)
+      w3B[103] = tVk_eQQZ[jo() and 103]
+      jo()
+    end
+    mw(105)
+    var nVbwr1
+  end
+  var vht = jo()
+  return ( not  not jo() <= 93)
+end
+

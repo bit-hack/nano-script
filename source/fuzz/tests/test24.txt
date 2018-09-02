@@ -1,0 +1,23 @@
+# SEED 12369
+
+var lPQIM2N[114]
+
+var IHQXcMfS = 58
+
+var nrAoh4ZR = 89
+
+var IgQy[97]
+
+var _R49Fqr[117]
+
+function ITf3m(zEzfVhIf, _JxvfQ)
+  var gI[24]
+  IgQy[126] = nrAoh4ZR
+  var sSWb08[63]
+  nrAoh4ZR = IHQXcMfS >= 40 >  not 11 > 101
+  zEzfVhIf = ITf3m(nrAoh4ZR, nrAoh4ZR) <= 100
+  return (nrAoh4ZR or nrAoh4ZR)
+  ITf3m(ITf3m(IHQXcMfS, 110), 23)
+  return nrAoh4ZR >= nrAoh4ZR + nrAoh4ZR
+end
+

@@ -1,0 +1,31 @@
+# SEED 12482
+
+var FQDT[89]
+
+var O40CMSo[41]
+
+var kxUAg9U[60]
+
+var vkHbvgX = 116
+
+function Xhjg6zoi(xRaAvC, c_ptF)
+  xRaAvC = Xhjg6zoi(96, 19)
+  while (kxUAg9U[Xhjg6zoi(25, vkHbvgX)])
+  end
+  while (vkHbvgX)
+  end
+  if (vkHbvgX <= 74 / 36 < Xhjg6zoi(vkHbvgX, 126))
+    FQDT[25] = Xhjg6zoi(3, vkHbvgX) or vkHbvgX * (vkHbvgX)
+    var LpYkjV
+    FQDT[128] = 22 < vkHbvgX * FQDT[Xhjg6zoi(61, LpYkjV)]
+    var MO3uF4[36]
+  end
+  c_ptF = vkHbvgX /  not 89
+  return vkHbvgX < vkHbvgX >=  not  not Xhjg6zoi(2, vkHbvgX) <= 93
+  if ( not 88)
+    return 123
+  end
+  if (O40CMSo[68] == 75)
+  end
+end
+

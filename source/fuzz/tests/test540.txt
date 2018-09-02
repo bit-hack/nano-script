@@ -1,0 +1,31 @@
+# SEED 12885
+
+function Dy2(fbPoR98F)
+  return  not Dy2(Dy2(79))
+  if (Dy2(Dy2(95)))
+  end
+  while (10 > Dy2(10) or 73)
+  end
+  if (22)
+    if (Dy2(27) and Dy2(106) <  not (Dy2(39)))
+      var gBL = Dy2(97) >= 109 * 108 and Dy2(114)
+      Dy2(gBL)
+      if (Dy2(gBL))
+        if (gBL)
+          var NG4Svv[113]
+          var LXpIEpl[16]
+          fbPoR98F = gBL
+          var _j0Q
+        end
+        return  not 79
+      end
+    end
+    var _v
+    var n87[22]
+    _v = 58
+  end
+  return (90 and 56)
+  while (42 and (Dy2(55)))
+  end
+end
+

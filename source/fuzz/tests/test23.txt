@@ -1,0 +1,32 @@
+# SEED 12368
+
+var d22H
+
+var G8mo[23]
+
+function wVuk()
+  return 12
+  var xg[23]
+  var zXTBot[44]
+  var eJ3gw = wVuk() >  not wVuk()
+  while (wVuk())
+  end
+  while (wVuk())
+    return (wVuk()) > 16 or 81
+    var kmaLxxO[19]
+    while (G8mo[(wVuk())])
+      var w14vM7Fu
+      wVuk()
+      var ixqm = wVuk()
+      while (kmaLxxO[d22H >= eJ3gw])
+      end
+      zXTBot[99] = wVuk() >= 63 <= w14vM7Fu <= 59
+    end
+    var rbS2QxI[98]
+  end
+  wVuk()
+  return zXTBot[G8mo[eJ3gw]]
+end
+
+var kIPCh6d
+

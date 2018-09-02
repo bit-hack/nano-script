@@ -1,0 +1,8 @@
+# SEED 13173
+
+var nCnr[126]
+
+var SOOY[49]
+
+var NP1CYQ[110]
+

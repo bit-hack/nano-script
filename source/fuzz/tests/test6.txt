@@ -1,0 +1,20 @@
+# SEED 12351
+
+function R5In(d6jl, GYMF)
+  var ErGRH1d
+  var FKQ7[63]
+  var hgN
+  var HtB[50]
+  var pGfVH_D3[89]
+  return pGfVH_D3[FKQ7[41]]
+  FKQ7[57] = 112 and 103 / 25
+end
+
+var TJOB
+
+var PvLf[96]
+
+var aiEo4f = 64
+
+var Rj[46]
+

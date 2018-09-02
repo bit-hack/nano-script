@@ -1,0 +1,29 @@
+# SEED 12682
+
+var bt[34]
+
+var tu = 6
+
+function QtjHzlw(Xs_, ZTgZ5L, xw8j5ZY, Rm, uBDrOk, b_LO4r7)
+  tu = bt[tu]
+  bt[101] = QtjHzlw(121, 29, tu, tu, tu, 36)
+  ZTgZ5L = QtjHzlw(tu, tu, tu, QtjHzlw(87, 113, 52, 4, tu, tu), 76, 90)
+  QtjHzlw(QtjHzlw(tu, 20, tu, tu, 77, tu), QtjHzlw(tu, 32, 54, 97, tu, 107), tu, tu, 61, 72)
+  xw8j5ZY = 126 < 27 == QtjHzlw(77, 110, tu, tu, tu, tu)
+  while (QtjHzlw(QtjHzlw(tu, 99, 64, tu, tu, 126), QtjHzlw(tu, 103, tu, 6, 17, 59), tu, tu, 65, QtjHzlw(38, tu, tu, tu, tu, 36)))
+    bt[55] = 22
+  end
+  var gR = (QtjHzlw(126, 125, 77, 66, tu, tu) < 95)
+  return  not gR
+end
+
+function RrkBu()
+  bt[102] = QtjHzlw(tu, 20, tu, tu, 62, tu) - 69 <= 93 <= 104
+  var eV
+  var K_Eedme8
+  return 31 / 117 < K_Eedme8 or 126
+  var avBYCr4
+  var JZnbTeO3
+  var gcL = bt[JZnbTeO3]
+end
+

@@ -1,0 +1,21 @@
+# SEED 12563
+
+var xe
+
+var xi4 = 11
+
+var ec[82]
+
+function Vc(J5gt_, C1O6ljv, InPJ, B2XUhM, XJYQ)
+  return xe < xe
+  var cWUK7yzd
+  Vc(97, 105, 47, xi4, Vc(74, cWUK7yzd, 119, xi4, cWUK7yzd))
+  if (Vc(xi4, Vc(27, cWUK7yzd, 85, cWUK7yzd, 25), Vc(xe, 123, cWUK7yzd, 57, cWUK7yzd), 34, 13))
+    ec[66] = 20 and xi4
+  end
+  Vc(83, xe, cWUK7yzd, 86, Vc(92, cWUK7yzd, 39, cWUK7yzd, 117))
+  ec[112] = 127
+  return xi4
+  ec[71] = ( not ec[Vc(xi4, 57, 98, xe, cWUK7yzd)])
+end
+

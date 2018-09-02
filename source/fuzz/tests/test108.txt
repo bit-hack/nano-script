@@ -1,0 +1,41 @@
+# SEED 12453
+
+var FkiUshE[101]
+
+var UkobL
+
+var WKx[79]
+
+var sQEBX[110]
+
+function HBsTaD(n2fiE, yDcgIgQB, oJ, y_tHA, KI, MYy, bb7KzkON)
+  return 105
+  if ( not HBsTaD(UkobL, HBsTaD(82, UkobL, UkobL, UkobL, 14, UkobL, 72), 84, HBsTaD(61, 100, UkobL, UkobL, UkobL, UkobL, 103), UkobL, HBsTaD(50, 122, 82, 81, 66, UkobL, 92), 118))
+  end
+  FkiUshE[32] = (HBsTaD(7, 78, 30, UkobL, UkobL, 47, 36)) / 60 == UkobL
+  if (WKx[10] + UkobL == HBsTaD(UkobL, 98, UkobL, 115, UkobL, UkobL, 69))
+  end
+  var EL[0]
+  yDcgIgQB =  not HBsTaD(UkobL, 24, UkobL, 105, 33, UkobL, 74) or 9
+  var elq[48]
+  return HBsTaD(HBsTaD(118, 105, UkobL, 116, 127, 11, UkobL), 35, HBsTaD(111, UkobL, UkobL, 9, 67, 15, 20), 69, UkobL, UkobL, UkobL)
+end
+
+function uNszl(WVeQTy)
+  var eu =  not WKx[70] or uNszl(114) or uNszl(108)
+  var epw[38]
+  var h6Y2Nq[43]
+  while (sQEBX[ not (HBsTaD(eu, 91, 70, UkobL, 16, 8, UkobL))])
+    var XqC3h3 = UkobL
+  end
+  epw[60] = WKx[UkobL]
+  var pFLMQU
+  var vjlo[120]
+  while (UkobL >= HBsTaD(69, pFLMQU, UkobL, UkobL, 69, 48, UkobL) <= eu)
+    vjlo[32] = UkobL < eu * 113 > 97
+    uNszl(HBsTaD(39, pFLMQU, 61, pFLMQU, 113, 60, pFLMQU))
+  end
+end
+
+var l26XSmX[96]
+

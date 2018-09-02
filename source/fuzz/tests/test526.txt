@@ -1,0 +1,29 @@
+# SEED 12871
+
+var PidZFch
+
+var tbQa
+
+var TE[68]
+
+function fxaEJ()
+  return TE[TE[56]]
+  if (30)
+    var cUpVAxsU = ((61))
+    if ( not cUpVAxsU)
+      var QTEfDh[14]
+      fxaEJ()
+      return  not cUpVAxsU or tbQa > fxaEJ() > fxaEJ()
+    end
+    fxaEJ()
+  end
+  fxaEJ()
+  return fxaEJ()
+  while (((tbQa)))
+  end
+  if (TE[48 or 120])
+  end
+end
+
+var c_ON
+

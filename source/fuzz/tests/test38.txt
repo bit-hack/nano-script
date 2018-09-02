@@ -1,0 +1,82 @@
+# SEED 12383
+
+var M38SkAh = 6
+
+var O8uq = 56
+
+var kH_qdX1[119]
+
+function Cxh(yM, AH, xvrmMz63)
+  return  not ( not Cxh(M38SkAh, O8uq, M38SkAh) == 110)
+  kH_qdX1[91] = M38SkAh
+  Cxh(6, Cxh(0, O8uq, 53), 13)
+  while ( not O8uq <=  not 126 >= 35)
+  end
+  xvrmMz63 = 62 * 17 == kH_qdX1[73]
+  AH = Cxh(M38SkAh, Cxh(87, 31, M38SkAh), M38SkAh)
+  var kL42[17]
+  Cxh(98, M38SkAh, O8uq)
+end
+
+function _uYrJXFp(mCnbI, zQjq5, hCFzGc, mh0GVA, S5W, Igv, vHzg)
+  _uYrJXFp(_uYrJXFp(92, O8uq, O8uq, 31, O8uq, 31, O8uq), _uYrJXFp(41, O8uq, M38SkAh, O8uq, M38SkAh, 93, 10), _uYrJXFp(M38SkAh, M38SkAh, M38SkAh, 56, O8uq, 15, O8uq), M38SkAh, Cxh(O8uq, O8uq, M38SkAh), O8uq, 121)
+  hCFzGc = 93 - O8uq or Cxh(O8uq, 59, 82)
+  kH_qdX1[83] = kH_qdX1[(Cxh(O8uq, M38SkAh, 114))]
+  kH_qdX1[115] =  not 10
+  kH_qdX1[65] = ( not kH_qdX1[86])
+  if (Cxh(16, _uYrJXFp(34, 58, 80, 50, 94, 2, O8uq), 86))
+    return O8uq
+  end
+  O8uq = 67
+  M38SkAh = 41 * O8uq and  not O8uq <= O8uq
+end
+
+var cuJZ[63]
+
+function ZpRQVK1x(w76, RAPy1)
+  M38SkAh = _uYrJXFp(M38SkAh, O8uq, O8uq, M38SkAh, 125, 23, O8uq) *  not Cxh(O8uq, 13, O8uq)
+  cuJZ[7] = (ZpRQVK1x(92, 77) <= M38SkAh)
+  w76 = 60
+  cuJZ[66] = Cxh(M38SkAh, 98, O8uq) - M38SkAh == (_uYrJXFp(O8uq, 23, 52, 72, 57, O8uq, M38SkAh))
+  var MQCG
+  var f3ZxUNi4
+  return MQCG
+  var MboA7ob[6]
+end
+
+function L52_K()
+  var _d0o3[104]
+  var tWF[98]
+  var xIUFn[85]
+  return (O8uq < L52_K())
+  if ( not (M38SkAh) + M38SkAh)
+    var aw2t9Zb = _d0o3[99] and L52_K() == M38SkAh
+    if (kH_qdX1[Cxh(M38SkAh, M38SkAh, O8uq)])
+      if ( not _d0o3[ not  not (_uYrJXFp(aw2t9Zb, 116, 19, O8uq, 34, O8uq, 10))])
+        if (52)
+        end
+        var VCcm6XN
+        var AG6[81]
+      end
+      var atMNGn =  not  not 118
+      return ((ZpRQVK1x(57, 75)))
+      Cxh(_uYrJXFp(atMNGn, 98, M38SkAh, 47, atMNGn, atMNGn, 76), atMNGn, 44)
+      var gk3sRHIS[36]
+    end
+  end
+  if (27 > 67 - ZpRQVK1x(93, O8uq))
+    while (_uYrJXFp(104, 36, M38SkAh, O8uq, 30, M38SkAh, 126) * O8uq == M38SkAh * ZpRQVK1x(M38SkAh, 24))
+      var TBwcGIh[123]
+      while ((O8uq) >= M38SkAh - 10)
+        return  not ZpRQVK1x(113, M38SkAh) and O8uq > 54
+        xIUFn[50] = (105) * 115 and Cxh(O8uq, 111, M38SkAh)
+        var fEcJ[118]
+      end
+    end
+  end
+  if (kH_qdX1[101 >= Cxh(75, 49, M38SkAh)])
+    var qTeV = O8uq
+  end
+  _uYrJXFp(70, 90, M38SkAh, Cxh(49, 104, O8uq), Cxh(O8uq, O8uq, O8uq), ZpRQVK1x(15, M38SkAh), Cxh(M38SkAh, 77, M38SkAh))
+end
+

@@ -1,0 +1,6 @@
+# SEED 12452
+
+var yt
+
+var niY[77]
+

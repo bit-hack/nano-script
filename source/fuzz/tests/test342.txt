@@ -1,0 +1,18 @@
+# SEED 12687
+
+function UO2v4()
+  while (UO2v4())
+    var DF = (82 and 84)
+  end
+  UO2v4()
+  UO2v4()
+  var NzJ[35]
+  if (109 < UO2v4() or UO2v4())
+    if (NzJ[UO2v4() <= 54])
+    end
+  end
+  var jhwXAGm
+  var fhE3
+  NzJ[32] =  not UO2v4() or UO2v4()
+end
+

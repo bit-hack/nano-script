@@ -1,0 +1,55 @@
+# SEED 12805
+
+var Zsn
+
+function qACmOkzv(X7H9t6, vKjIBe, vu4NHi, YuuXysv5, NZc6grlp, MG1, L6Tb7Su0)
+  while ( not Zsn < (qACmOkzv(Zsn, 120, Zsn, Zsn, 15, Zsn, Zsn)))
+    var rO
+  end
+  var IOEGhw[91]
+  var uo48Kir[38]
+  uo48Kir[112] = (31 < Zsn)
+  if ( not (Zsn))
+    return IOEGhw[ not Zsn]
+  end
+  qACmOkzv(Zsn, 43, Zsn, qACmOkzv(Zsn, Zsn, 32, Zsn, Zsn, 98, 112), qACmOkzv(Zsn, Zsn, 40, 76, 92, Zsn, 126), Zsn, qACmOkzv(Zsn, Zsn, 69, 103, Zsn, 124, 10))
+  var xPRQ = 36
+  var OWPwqi
+end
+
+var LmQ[44]
+
+var PiT = 78
+
+function URBk(G33b)
+  return PiT
+  while (qACmOkzv(70, 127, qACmOkzv(Zsn, PiT, PiT, 78, PiT, 10, 52), Zsn, qACmOkzv(PiT, PiT, 0, 99, 99, 33, 33), PiT, Zsn))
+    LmQ[75] = PiT
+    var SKuT[16]
+    qACmOkzv(27, URBk(Zsn), URBk(Zsn), Zsn, URBk(123), Zsn, qACmOkzv(Zsn, Zsn, 79, Zsn, Zsn, Zsn, Zsn))
+    var zlvw9[62]
+    var I11[112]
+  end
+  while ( not PiT)
+    return (49 == PiT)
+    G33b = qACmOkzv(81, qACmOkzv(PiT, 74, PiT, 36, 41, Zsn, 24), 53, URBk(PiT), 96, 28, qACmOkzv(Zsn, PiT, PiT, Zsn, 114, Zsn, Zsn))
+  end
+  return 65
+  var f_2[84]
+  var Ruc1K = PiT
+  G33b = 67 or Ruc1K > PiT <= 103
+  PiT = 8
+end
+
+function GfS88(gTdnJzN)
+  URBk(37)
+  var DV5_D_A[117]
+  var Oc = DV5_D_A[120]
+  var QQfO[82]
+  while (LmQ[(81)])
+  end
+  return 103
+  GfS88(PiT)
+  return  not QQfO[(PiT)]
+end
+

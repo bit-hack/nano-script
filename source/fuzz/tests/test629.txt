@@ -1,0 +1,45 @@
+# SEED 12974
+
+var NkKTe[13]
+
+function nPDJh_bq(u4RMl, oe06StzT, inU)
+  if ((80))
+    NkKTe[56] = 118 * nPDJh_bq(124, 66, 68) / nPDJh_bq(3, 64, 56)
+    NkKTe[128] =  not (124) - nPDJh_bq(113, 77, 55) <= 27
+    var LW3yP9bk
+    nPDJh_bq(15, LW3yP9bk, LW3yP9bk)
+  end
+  while (NkKTe[nPDJh_bq(82, 108, 57) > 24])
+    var hIl8
+    nPDJh_bq(hIl8, nPDJh_bq(118, 120, hIl8), nPDJh_bq(23, hIl8, hIl8))
+    if (nPDJh_bq(115, hIl8, 113) >= nPDJh_bq(hIl8, 34, 93) >= hIl8 * nPDJh_bq(10, hIl8, hIl8))
+      return  not (hIl8) <=  not 89
+      NkKTe[53] = 90 <= 125
+      while (NkKTe[hIl8 >= hIl8])
+        if (NkKTe[ not nPDJh_bq(hIl8, hIl8, 121)])
+          var oOIjx = nPDJh_bq(hIl8, 28, 35) >= hIl8
+          while (NkKTe[NkKTe[nPDJh_bq(oOIjx, 53, oOIjx)]])
+            if (9 - 86 - oOIjx)
+            end
+          end
+          while ((NkKTe[27]))
+            NkKTe[82] = (NkKTe[oOIjx])
+            return  not nPDJh_bq(hIl8, 67, 17)
+            nPDJh_bq(73, hIl8, nPDJh_bq(oOIjx, 120, hIl8))
+          end
+        end
+        var Ip[4]
+        var vy
+        if ( not hIl8 and NkKTe[nPDJh_bq(44, vy, vy)])
+        end
+      end
+    end
+  end
+  return  not  not nPDJh_bq(105, 117, 53) * 83 >= nPDJh_bq(7, 121, 74)
+  return  not (nPDJh_bq(75, 86, 19)) - 9 < nPDJh_bq(81, 48, 7)
+  var J7d9z = nPDJh_bq(nPDJh_bq(77, 104, 52), nPDJh_bq(104, 44, 110), 115)
+  NkKTe[43] = NkKTe[nPDJh_bq(J7d9z, 92, J7d9z)]
+end
+
+var wiAc = 86
+

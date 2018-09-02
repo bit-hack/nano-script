@@ -16,3 +16,8 @@ FILE(GLOB FILE_TESTS_CPP "source/tests/*.cpp")
 FILE(GLOB FILE_TESTS_H "source/tests/*.h")
 add_executable(ccml_tests  ${FILE_TESTS_CPP} ${FILE_TESTS_H})
 target_link_libraries(ccml_tests ccml_lib)
+
+FILE(GLOB FILE_FUZZ_CPP "source/fuzz/*.cpp")
+FILE(GLOB FILE_FUZZ_H "source/fuzz/*.h")
+add_executable(ccml_fuzz  ${FILE_FUZZ_CPP} ${FILE_FUZZ_H})
+target_link_libraries(ccml_fuzz ccml_lib)

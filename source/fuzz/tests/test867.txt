@@ -1,0 +1,12 @@
+# SEED 13212
+
+function dY(Su, WtwXtp, xxuRZ, _uG, P1tP)
+  while (75 and 45 <= 12 or 52)
+    var kfJz9jno[68]
+  end
+  return 119
+  var KidhzI[34]
+  return  not dY(10, 43, 42, 123, 17) == dY(96, 99, 38, 124, 124) / 28
+  dY(dY(12, 116, 18, 27, 32), dY(6, 87, 31, 102, 0), 16, dY(66, 101, 23, 34, 53), dY(104, 31, 110, 11, 26))
+end
+

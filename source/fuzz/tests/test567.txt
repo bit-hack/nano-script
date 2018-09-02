@@ -1,0 +1,6 @@
+# SEED 12912
+
+var SreT0ES[115]
+
+var Wy[33]
+

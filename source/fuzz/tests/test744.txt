@@ -1,0 +1,27 @@
+# SEED 13089
+
+var VNYby3ZG[26]
+
+var M1XwL
+
+var AgB[21]
+
+function Hk(QmPTQfk, j4, EfONY49)
+  M1XwL = VNYby3ZG[M1XwL]
+  AgB[64] = 25 - M1XwL
+  VNYby3ZG[63] = AgB[69 + 121]
+  var lRMijw
+  while (M1XwL < lRMijw < 41 >= 32)
+    var wHvwJZ
+    var m2Ks9Ho9[123]
+    Hk(wHvwJZ, 94, Hk(102, lRMijw, 43))
+  end
+  var fRLfy[124]
+  var tLP[5]
+  lRMijw = Hk(M1XwL, 75, 14) * 97 and 78
+end
+
+var OsbszXFo[24]
+
+var X6g = 69
+

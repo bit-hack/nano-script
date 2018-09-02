@@ -1,0 +1,25 @@
+# SEED 12414
+
+var GncO = 121
+
+var gsZq7cNc[72]
+
+var cY7N
+
+function bvTXS(nqHn3f, EmAnNg8c, kzAheQ, iGb3D)
+  bvTXS(57, 103, bvTXS(10, GncO, cY7N, 29), cY7N)
+  return gsZq7cNc[cY7N < 86]
+  cY7N = cY7N <= bvTXS(cY7N, 7, 47, GncO)
+  iGb3D = cY7N
+  gsZq7cNc[35] = (bvTXS(65, cY7N, cY7N, GncO))
+  kzAheQ = 127 < cY7N + gsZq7cNc[59]
+  nqHn3f = 108 or gsZq7cNc[cY7N]
+  if (114 - cY7N <= 22)
+    gsZq7cNc[98] =  not GncO
+  end
+end
+
+var r3[70]
+
+var Gjrme[126]
+

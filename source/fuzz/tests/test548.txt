@@ -1,0 +1,81 @@
+# SEED 12893
+
+var KsAwCnB
+
+var lCCFJx4M[77]
+
+var M3Z[98]
+
+var iXmC[35]
+
+var b3
+
+var HSj5InK[116]
+
+function I6akNKd()
+  var zuPmRKs[40]
+  var sqAFgb60[53]
+  while (HSj5InK[(103)])
+    if (I6akNKd())
+      if (47)
+        var cgIDElo[30]
+      end
+      while ((I6akNKd() and I6akNKd()))
+      end
+      if (KsAwCnB)
+      end
+      return  not (KsAwCnB) or (I6akNKd())
+    end
+    if (KsAwCnB)
+      var amc7[36]
+      if (KsAwCnB == b3 > KsAwCnB)
+        amc7[75] = 3 < I6akNKd() - I6akNKd() <= I6akNKd()
+      end
+      while ( not 127)
+        var dl2s4[6]
+      end
+      iXmC[81] = 88
+      if (I6akNKd() - I6akNKd() or b3)
+        var uYM4y
+        while (122)
+          HSj5InK[84] =  not sqAFgb60[I6akNKd()]
+          var HD[38]
+        end
+        return M3Z[67] and I6akNKd()
+      end
+    end
+  end
+  I6akNKd()
+  sqAFgb60[42] = 103 * 39 / 101 / 112
+  return I6akNKd()
+  M3Z[99] = (94) * KsAwCnB
+  var CXe[20]
+end
+
+function sur()
+  HSj5InK[129] = (81) - iXmC[64]
+  while ((sur()) <  not 90)
+    return b3
+  end
+  while (lCCFJx4M[I6akNKd()])
+    iXmC[47] = b3
+    if (111)
+      I6akNKd()
+      while (KsAwCnB)
+      end
+      if (sur() >= (sur()))
+        var rG = M3Z[KsAwCnB <= 35]
+        sur()
+      end
+    end
+  end
+  sur()
+  I6akNKd()
+  var IeUz
+  if ((sur()) / b3 or I6akNKd())
+    var FTDPWi_ = b3 == I6akNKd() == b3
+    I6akNKd()
+  end
+  return sur()
+end
+

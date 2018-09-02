@@ -1,0 +1,55 @@
+# SEED 12490
+
+var l_un1[74]
+
+function vfwX(TZvVX, ItUS, XfTMdir, knt, VxNZLi, M_WIZspk, h_s)
+  l_un1[90] = vfwX(62, 83, 2, 37, 30, 24, 82) and vfwX(15, 112, 93, 63, 93, 11, 103) + (vfwX(125, 22, 34, 1, 121, 80, 69))
+  return  not vfwX(26, 18, 76, 91, 45, 30, 14) - (15)
+  while (vfwX(vfwX(110, 32, 69, 97, 96, 37, 38), 63, vfwX(121, 119, 48, 108, 75, 100, 66), vfwX(48, 110, 24, 32, 84, 119, 54), 113, 66, 104))
+  end
+  var p74v6BI[109]
+  return vfwX(vfwX(115, 127, 125, 32, 47, 118, 106), vfwX(59, 33, 112, 81, 75, 42, 113), 5, 44, 8, 90, 87)
+  p74v6BI[24] =  not vfwX(73, 76, 20, 68, 23, 64, 79) - vfwX(56, 120, 83, 12, 88, 38, 106) or 48 / 84
+  vfwX(17, 11, vfwX(3, 0, 31, 40, 63, 95, 67), vfwX(100, 91, 115, 27, 60, 55, 94), vfwX(60, 87, 2, 17, 66, 110, 110), 26, vfwX(7, 52, 115, 92, 81, 98, 115))
+  return l_un1[ not 83 + vfwX(75, 100, 103, 67, 124, 40, 74)]
+end
+
+var NgUH[67]
+
+function twA(JZ, srk, iDSFAaU, x9txzRu4)
+  return  not twA(12, vfwX(72, 122, 108, 84, 92, 26, 30), vfwX(17, 92, 97, 78, 109, 100, 41), 93)
+  if (twA(vfwX(54, 87, 105, 19, 15, 37, 20), twA(39, 37, 103, 92), 78, twA(55, 15, 30, 13)))
+  end
+  var ADi6
+  while (l_un1[ADi6] or ADi6 <= 53)
+    if ((l_un1[121]))
+      var OkHw =  not ADi6 or ADi6 < 58
+      var UCd
+      var j6
+      return l_un1[UCd] < NgUH[88]
+      var V2[55]
+    end
+    if ((vfwX(8, 47, ADi6, ADi6, ADi6, ADi6, 73) and 66))
+      var GUQ77[10]
+      ADi6 =  not NgUH[87 / 37]
+      var YKD8e6G = vfwX(93, 2, 51, 121, ADi6, ADi6, 56) > vfwX(57, 52, 98, ADi6, ADi6, 48, ADi6) >= ADi6
+      twA(ADi6, vfwX(82, 108, 6, 118, 54, 84, 102), twA(23, ADi6, YKD8e6G, 45), 75)
+    end
+    var yeevH7J = l_un1[ADi6] <= (83)
+    NgUH[106] = vfwX(73, yeevH7J, 82, 15, yeevH7J, ADi6, ADi6) < (twA(ADi6, 70, 79, 108))
+    while (twA(yeevH7J, vfwX(yeevH7J, 102, ADi6, 71, yeevH7J, ADi6, 4), 81, twA(19, yeevH7J, 73, ADi6)))
+    end
+  end
+  var VEaa_v[85]
+  return ADi6 * ADi6 + ADi6
+  return vfwX(ADi6, 12, vfwX(ADi6, ADi6, ADi6, 75, ADi6, 92, ADi6), twA(ADi6, ADi6, 106, ADi6), 69, 112, 89)
+end
+
+var bWEaGJYI
+
+var gBN1ub[59]
+
+var Eq[121]
+
+var SmKq = 116
+

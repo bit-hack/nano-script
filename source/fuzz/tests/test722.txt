@@ -1,0 +1,8 @@
+# SEED 13067
+
+var r5F8[30]
+
+var kRMD4x = 110
+
+var FGCa
+

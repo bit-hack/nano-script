@@ -1,0 +1,80 @@
+# SEED 13197
+
+var By = 99
+
+var LlPjq08[117]
+
+var EWHv[1]
+
+var FP4qIiKu = 6
+
+var jRNW71[42]
+
+var bfzU7IhT[113]
+
+function J3(Ewq68n, Oz, YQE)
+  while (J3(By, J3(By, 54, By), J3(83, By, FP4qIiKu)))
+    if ( not J3(By, J3(FP4qIiKu, 83, FP4qIiKu), 46))
+      if (By)
+        Oz = LlPjq08[J3(FP4qIiKu, 77, 84) <= J3(65, FP4qIiKu, FP4qIiKu)]
+        FP4qIiKu = 6
+        var tz = bfzU7IhT[127 < 117]
+      end
+      while (LlPjq08[79])
+        var kMbuSVc[37]
+        var kuF5YUg
+        LlPjq08[108] =  not FP4qIiKu * 125 -  not (22)
+      end
+      var mtwzM[73]
+    end
+    if (LlPjq08[FP4qIiKu])
+      J3(J3(By, 45, 64), FP4qIiKu, FP4qIiKu)
+      if (By)
+        while ( not 59 + J3(By, 52, 126) or J3(14, By, FP4qIiKu) + J3(70, 38, 81))
+        end
+        J3(J3(109, By, By), By, 102)
+      end
+      var OPS5tUq0[125]
+    end
+    while ((By or J3(By, 87, 124)))
+      LlPjq08[13] = 29 > J3(78, 31, 92) +  not (J3(FP4qIiKu, By, 118))
+      if (FP4qIiKu * 117 > jRNW71[FP4qIiKu])
+        var AzKzkP[46]
+        if (FP4qIiKu)
+          var r7LHY[59]
+        end
+        var zoH = bfzU7IhT[FP4qIiKu]
+        if (J3(By, By, 111) <= 122 < bfzU7IhT[50])
+          By = LlPjq08[22]
+        end
+      end
+      if (J3(77, 86, 1))
+      end
+      var tGrmGOTx[86]
+      var ZDkyMy = By - 19 / J3(70, FP4qIiKu, FP4qIiKu)
+    end
+  end
+  if (By)
+  end
+  while (39)
+    J3(FP4qIiKu, J3(32, By, 27), J3(By, 124, 14))
+    J3(J3(FP4qIiKu, 53, 89), 126, 5)
+    return LlPjq08[FP4qIiKu] >= FP4qIiKu
+  end
+  return J3(25, FP4qIiKu, By) and By < J3(By, FP4qIiKu, By)
+  var rIDUoo[0]
+  while (By <= 10 or  not  not  not J3(By, FP4qIiKu, By))
+    var Rc[92]
+  end
+  if (LlPjq08[(62)])
+    var Wd3MI = (By)
+    var XMbGP3[91]
+    var dkFlVrr[5]
+    return 34
+    XMbGP3[82] = J3(65, FP4qIiKu, 20) / 22 >= Wd3MI
+  end
+  EWHv[60] = (31)
+end
+
+var RN
+

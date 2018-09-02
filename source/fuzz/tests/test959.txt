@@ -1,0 +1,6 @@
+# SEED 13304
+
+var Lt[93]
+
+var hpZ5K[100]
+

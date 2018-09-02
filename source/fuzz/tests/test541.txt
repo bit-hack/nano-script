@@ -1,0 +1,18 @@
+# SEED 12886
+
+function sWS(WBl3j)
+  if ( not ( not sWS(46)))
+    sWS(4)
+    var T83[17]
+    var Sq4AdSa0[32]
+  end
+  sWS(sWS(2))
+  if ( not 80 < sWS(18) <= sWS(95) >= sWS(93))
+  end
+  var xZFL_fSc
+  var c_
+  return c_
+end
+
+var lKliVe
+

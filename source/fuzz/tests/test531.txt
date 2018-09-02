@@ -1,0 +1,78 @@
+# SEED 12876
+
+function JYhqXlYx(j_G, zN, FUUr2r, xLAqRy6, x2kwI07s, e0ls9A)
+  if ( not JYhqXlYx(15, JYhqXlYx(59, 27, 85, 0, 25, 121), JYhqXlYx(25, 112, 39, 63, 66, 19), 40, JYhqXlYx(71, 73, 62, 9, 36, 117), 113))
+    var BrJl3q_
+    JYhqXlYx(29, 96, JYhqXlYx(BrJl3q_, 105, BrJl3q_, BrJl3q_, BrJl3q_, BrJl3q_), BrJl3q_, 112, 125)
+    var ybHgq
+    while (JYhqXlYx(ybHgq, ybHgq, BrJl3q_, ybHgq, BrJl3q_, JYhqXlYx(ybHgq, 90, 21, 43, 48, 93)))
+      if (BrJl3q_ < JYhqXlYx(ybHgq, 56, BrJl3q_, BrJl3q_, 118, ybHgq) / (112))
+      end
+      var DA4CNE[104]
+      while ( not  not DA4CNE[BrJl3q_])
+      end
+      while (JYhqXlYx(ybHgq, 2, JYhqXlYx(45, 54, ybHgq, 106, ybHgq, ybHgq), BrJl3q_, 89, JYhqXlYx(93, 91, BrJl3q_, 75, 12, 124)))
+        DA4CNE[15] = DA4CNE[JYhqXlYx(76, ybHgq, 114, BrJl3q_, 123, BrJl3q_)] / (JYhqXlYx(BrJl3q_, BrJl3q_, BrJl3q_, BrJl3q_, 43, 16))
+        if ((ybHgq == JYhqXlYx(64, ybHgq, BrJl3q_, BrJl3q_, BrJl3q_, ybHgq)))
+          var hQiTq = (30 <= JYhqXlYx(44, BrJl3q_, ybHgq, BrJl3q_, 95, 75))
+        end
+      end
+      if (BrJl3q_)
+        while ( not (ybHgq))
+          return DA4CNE[ybHgq] ==  not ybHgq / 87
+          if ((JYhqXlYx(BrJl3q_, 69, 5, BrJl3q_, ybHgq, 127)) /  not 1)
+            var FOgZpsE[12]
+            FOgZpsE[116] = JYhqXlYx(19, 126, 55, 122, 118, ybHgq) and JYhqXlYx(77, ybHgq, BrJl3q_, 49, ybHgq, ybHgq) <  not 55 > BrJl3q_
+            if (BrJl3q_)
+              var I6vAT8[57]
+              var IeiV2
+              FOgZpsE[0] = DA4CNE[JYhqXlYx(IeiV2, BrJl3q_, BrJl3q_, 61, 16, BrJl3q_) <= 83]
+            end
+            var qxd[70]
+            if ( not (ybHgq) == 60)
+            end
+          end
+        end
+      end
+    end
+  end
+  if (43)
+  end
+  if (84)
+    return  not JYhqXlYx(124, 67, 22, 95, 49, 101) <= JYhqXlYx(67, 20, 42, 52, 119, 85) <=  not 11 or 39
+    if (126)
+      if ( not  not 126)
+        return 23 + 21 / 107
+      end
+    end
+    JYhqXlYx(28, JYhqXlYx(5, 60, 25, 51, 34, 66), 53, 13, 94, JYhqXlYx(82, 117, 82, 14, 4, 37))
+  end
+  var GEP
+  while (GEP == 87 >= 8)
+    while (GEP)
+      var O9O3_xtO
+      var ISik[42]
+    end
+  end
+  return (28)
+  while (( not (10)))
+    while (JYhqXlYx(69, GEP, 33, GEP, 7, 35))
+    end
+    while ( not  not 16)
+      while (JYhqXlYx(GEP, 72, 108, GEP, GEP, 83) >= GEP or JYhqXlYx(GEP, GEP, GEP, GEP, GEP, GEP))
+        var TuI4EV[70]
+        var Hu = TuI4EV[JYhqXlYx(27, 103, 108, 23, GEP, 80)]
+        JYhqXlYx(GEP, JYhqXlYx(3, GEP, 66, GEP, GEP, GEP), 57, 81, JYhqXlYx(Hu, 76, 14, 113, 28, 49), JYhqXlYx(Hu, 43, Hu, 15, GEP, Hu))
+      end
+      GEP = GEP
+      return JYhqXlYx(109, 81, 15, GEP, GEP, 38) <= GEP > 67 / 96
+      return 105
+      if (GEP * 37 and 24 < JYhqXlYx(GEP, 77, GEP, 34, GEP, 66))
+      end
+    end
+    GEP =  not  not (GEP)
+    var FHCeKb = GEP
+    return JYhqXlYx(FHCeKb, GEP, FHCeKb, 126, FHCeKb, 17) / 6 * (36)
+  end
+end
+

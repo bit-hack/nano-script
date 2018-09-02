@@ -144,5 +144,5 @@ protected:
 
   ccml_t &ccml_;
   uint32_t head_;
-  std::array<uint8_t, 1024> code_;
+  std::array<uint8_t, 1024 * 8> code_;
 };

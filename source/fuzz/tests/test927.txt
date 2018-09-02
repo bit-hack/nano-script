@@ -1,0 +1,94 @@
+# SEED 13272
+
+var TwK5 = 92
+
+var WLbMX
+
+var jEE
+
+function rdq()
+  if ((jEE))
+    rdq()
+  end
+  while ( not (rdq()) + rdq())
+    while (TwK5 > rdq() >= rdq())
+    end
+    while (TwK5)
+      return rdq()
+      rdq()
+    end
+    while ((WLbMX) ==  not (jEE))
+      while (82)
+        while (rdq())
+          rdq()
+        end
+        while (rdq())
+        end
+        return  not  not 9 / 38 > 106
+        var ij0obU
+      end
+    end
+  end
+  rdq()
+  if ( not jEE or WLbMX)
+    if (rdq() > 122)
+      return rdq() - WLbMX and rdq()
+      while (rdq())
+        rdq()
+        return rdq() == rdq()
+        var KoQpysL[17]
+      end
+    end
+    var ZnV
+    var hu
+    while ( not rdq() * rdq() * jEE)
+      if (TwK5)
+      end
+    end
+  end
+  if (12 and 72 + 119 < rdq())
+    var uL
+  end
+  return 96
+  while ((64 - rdq()))
+    rdq()
+  end
+end
+
+var drnmAn30 = 106
+
+function Otym6(praBzWFa, nbElq_ZR)
+  var D8I_c
+  nbElq_ZR = Otym6(96, TwK5) and 100 and Otym6(42, jEE)
+  nbElq_ZR =  not  not jEE >= rdq() or 109 + 11
+  return (Otym6(TwK5, 10)) and 99
+  nbElq_ZR =  not Otym6(50, 77)
+  var J6wxjF[96]
+end
+
+function Uu(RQv4jcP, cU, ldxc, LqBoQ7N, W310Bsa9, MJZ0G, DNi0Dp)
+  ldxc = Otym6(WLbMX, jEE) <= rdq() or 30 >= jEE
+  var bC =  not 21 >= rdq() and Otym6(WLbMX, TwK5)
+  if ( not  not  not WLbMX)
+    Uu(bC, 121, 59, 121, Otym6(WLbMX, 59), jEE, 85)
+    cU = WLbMX
+  end
+  var mtF3zR
+  var BAeKwBy[89]
+  while (jEE)
+    if ( not drnmAn30 > TwK5 + jEE)
+      BAeKwBy[51] = rdq() or 6 / Uu(WLbMX, 80, 41, 0, 125, TwK5, 19) or 96
+      if ( not rdq() or Uu(127, 108, WLbMX, 30, bC, drnmAn30, 68) * rdq())
+        return BAeKwBy[23] <= BAeKwBy[Otym6(41, mtF3zR)]
+        jEE = Uu(98, jEE, Uu(drnmAn30, 19, 54, drnmAn30, 101, 57, 83), mtF3zR, Uu(56, 84, jEE, WLbMX, drnmAn30, 111, 113), WLbMX, 51)
+      end
+      var i2
+      Otym6(rdq(), mtF3zR)
+    end
+    BAeKwBy[85] = BAeKwBy[TwK5]
+    var MZ[36]
+  end
+end
+
+var n5T[33]
+

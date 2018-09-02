@@ -1,0 +1,33 @@
+# SEED 12349
+
+var WafGVc[49]
+
+var ifHasFF7[57]
+
+function HKzn4()
+  if ( not 97 <= HKzn4() > HKzn4())
+    var pUVPj7 = HKzn4()
+    ifHasFF7[57] = HKzn4()
+    var UgLMS[4]
+    if (HKzn4())
+    end
+  end
+  var lw32ev7
+  HKzn4()
+  while (HKzn4() + HKzn4() and HKzn4())
+    while ((ifHasFF7[lw32ev7]))
+      return  not lw32ev7 / HKzn4() / 121
+      while ((85 + lw32ev7))
+        var pdNI = lw32ev7 == 104 * HKzn4() >= 111
+      end
+    end
+  end
+  var J7_[90]
+  var RVXM2[54]
+  while (118)
+    return RVXM2[(lw32ev7)]
+    HKzn4()
+  end
+  return  not 15 * lw32ev7 < 114 / HKzn4()
+end
+

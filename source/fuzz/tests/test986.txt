@@ -1,0 +1,19 @@
+# SEED 13331
+
+var QLP4OZP = 99
+
+var X8[57]
+
+function jVJkh(d0, ZWxkCSQ, UxUlfKLy, qOjI5fum, Tx, hf)
+  if ( not X8[127] + X8[72])
+  end
+  var tQMEjG
+  X8[113] =  not tQMEjG < 53 * jVJkh(tQMEjG, 25, 119, QLP4OZP, QLP4OZP, 45)
+  X8[60] = (63 == QLP4OZP)
+  while (30 >= tQMEjG and (tQMEjG))
+  end
+  tQMEjG = tQMEjG
+  var JKACeLyW[36]
+  tQMEjG = jVJkh(QLP4OZP, 26, QLP4OZP, tQMEjG, tQMEjG, 2) <= jVJkh(47, 67, QLP4OZP, 107, 73, 123)
+end
+

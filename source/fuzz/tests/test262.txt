@@ -1,0 +1,11 @@
+# SEED 12607
+
+var ofTyn2Fg[65]
+
+function d9YQuFpQ(USbo, Z9zV1h)
+  var BNe[56]
+  d9YQuFpQ(d9YQuFpQ(74, 118), 30)
+  var qNNl2gG
+  var L48tPz = d9YQuFpQ(55, 123) and qNNl2gG and ofTyn2Fg[qNNl2gG]
+end
+

@@ -1,0 +1,8 @@
+# SEED 12499
+
+var IRK[83]
+
+var ROg[123]
+
+var vitgfVLI = 36
+

@@ -1,0 +1,47 @@
+# SEED 12807
+
+var lsPG5wk[90]
+
+var Jtg4A[87]
+
+function gmXIJj(M44, Ys, Zhi5ZEX, glfri, f2x)
+  while (lsPG5wk[gmXIJj(26, 116, 31, 10, 74)] < 74)
+    gmXIJj(127, 110, gmXIJj(79, 92, 92, 34, 90), 126, gmXIJj(38, 71, 102, 89, 68))
+    while ((gmXIJj(35, 49, 104, 4, 33)))
+      var h9od650 = 2 > (gmXIJj(24, 87, 97, 51, 124))
+      var Scm0mo = h9od650
+      if ((gmXIJj(Scm0mo, 3, 97, h9od650, Scm0mo)))
+      end
+    end
+    if (46)
+      var gHTWKD6E[116]
+      var uoOOjQ[28]
+      var GpSBqHX[28]
+      var NjqrlT1
+    end
+  end
+  var C1Cl
+  Jtg4A[86] = lsPG5wk[gmXIJj(41, C1Cl, 2, C1Cl, C1Cl)]
+  if (16 + 92 <= gmXIJj(36, C1Cl, C1Cl, 100, C1Cl))
+    gmXIJj(gmXIJj(C1Cl, C1Cl, 81, C1Cl, C1Cl), C1Cl, 32, gmXIJj(C1Cl, 10, 101, C1Cl, 9), gmXIJj(C1Cl, 95, C1Cl, C1Cl, 66))
+    Jtg4A[9] = gmXIJj(38, 25, C1Cl, C1Cl, C1Cl) / C1Cl < gmXIJj(43, C1Cl, 74, C1Cl, C1Cl)
+    if (C1Cl / C1Cl * C1Cl)
+      while (lsPG5wk[11] < 61)
+        var n4bpCaSD = 126
+        return  not gmXIJj(C1Cl, n4bpCaSD, 76, C1Cl, 32) <= gmXIJj(C1Cl, n4bpCaSD, 24, C1Cl, 23) > gmXIJj(C1Cl, 75, n4bpCaSD, C1Cl, 6)
+      end
+      C1Cl = C1Cl
+    end
+    var gC_ = 0
+    if (120)
+      gmXIJj(9, C1Cl, 120, 107, 68)
+      return (74) <=  not 91 > C1Cl
+      lsPG5wk[23] = 59 and 14 <  not 109 / 1
+    end
+  end
+  return 80
+  glfri = C1Cl == 56
+end
+
+var Y3PE[11]
+

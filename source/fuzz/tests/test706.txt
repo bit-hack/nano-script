@@ -1,0 +1,8 @@
+# SEED 13051
+
+var ua[4]
+
+var q2 = 77
+
+var l7k[71]
+

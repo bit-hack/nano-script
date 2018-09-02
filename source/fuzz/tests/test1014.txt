@@ -1,0 +1,63 @@
+# SEED 13359
+
+var dTp[97]
+
+var Pkt1V = 89
+
+function LeviS(Y4697W, gn, LpV6G9J, iKWOP, KEY, jfqy)
+  LeviS(35, 31, Pkt1V, 44, 110, LeviS(Pkt1V, Pkt1V, Pkt1V, 73, Pkt1V, Pkt1V))
+  dTp[114] = ( not Pkt1V or 114)
+  return (dTp[Pkt1V])
+  if (LeviS(Pkt1V, 68, Pkt1V, 74, Pkt1V, Pkt1V) ==  not LeviS(Pkt1V, 79, Pkt1V, 39, 118, 110))
+    return 80 and 74 + Pkt1V
+    var sBQ[73]
+  end
+  return  not  not dTp[dTp[Pkt1V]]
+  while (LeviS(Pkt1V, Pkt1V, 102, Pkt1V, 2, 122) -  not 37)
+    Pkt1V = Pkt1V and LeviS(60, Pkt1V, Pkt1V, Pkt1V, 107, 87) >= LeviS(97, Pkt1V, 33, 84, Pkt1V, Pkt1V)
+    if (Pkt1V)
+      var azF3[56]
+      Pkt1V = (Pkt1V / 125)
+      var c0qMBnV5
+    end
+    return Pkt1V <= LeviS(Pkt1V, Pkt1V, 32, 101, Pkt1V, 3) + dTp[LeviS(Pkt1V, 52, 115, Pkt1V, Pkt1V, 118)]
+    while (dTp[116 > LeviS(1, 70, Pkt1V, 103, Pkt1V, Pkt1V)])
+      KEY = LeviS(89, Pkt1V, Pkt1V, Pkt1V, LeviS(Pkt1V, 5, 84, Pkt1V, 53, 103), Pkt1V)
+    end
+    iKWOP =  not  not Pkt1V + LeviS(Pkt1V, 7, Pkt1V, Pkt1V, Pkt1V, Pkt1V) + (Pkt1V)
+  end
+  while (LeviS(Pkt1V, LeviS(100, 29, 114, 96, 13, Pkt1V), Pkt1V, Pkt1V, Pkt1V, 65))
+    Pkt1V = 46
+    Pkt1V = dTp[LeviS(35, 94, Pkt1V, Pkt1V, 60, 42)] <= (120)
+  end
+  if ( not dTp[54] - LeviS(89, 90, 122, Pkt1V, 80, 72) or Pkt1V)
+    if (116)
+      LeviS(57, 50, LeviS(Pkt1V, 50, 86, 5, Pkt1V, Pkt1V), Pkt1V, Pkt1V, 40)
+      while (Pkt1V <=  not LeviS(48, 34, 49, 54, Pkt1V, 50) < Pkt1V)
+        while ( not 87 and LeviS(8, Pkt1V, Pkt1V, Pkt1V, 125, 103) <= LeviS(26, Pkt1V, Pkt1V, 81, Pkt1V, Pkt1V) > 63)
+          if (dTp[dTp[124]])
+          end
+          LeviS(LeviS(113, 122, 125, Pkt1V, 65, 96), LeviS(Pkt1V, 33, Pkt1V, 125, 86, Pkt1V), Pkt1V, LeviS(Pkt1V, Pkt1V, Pkt1V, 32, Pkt1V, Pkt1V), 10, LeviS(Pkt1V, 99, Pkt1V, Pkt1V, 63, 18))
+          dTp[52] = 7
+          var rLe
+          var I6XUNjQ3[67]
+        end
+        Pkt1V = Pkt1V or Pkt1V + LeviS(Pkt1V, Pkt1V, 3, 77, 29, 117)
+      end
+      iKWOP = Pkt1V
+    end
+  end
+end
+
+function Qfj0FCdS(zV71QH)
+  Pkt1V = dTp[(Qfj0FCdS(Pkt1V))]
+  dTp[66] = LeviS(Pkt1V, Pkt1V, Pkt1V, Qfj0FCdS(Pkt1V), 122, Pkt1V)
+  dTp[15] =  not Pkt1V and Qfj0FCdS(95) <  not 35 * Pkt1V
+  if (LeviS(44, Pkt1V, Pkt1V, Pkt1V, Pkt1V, 44) <= Pkt1V)
+  end
+  Qfj0FCdS(LeviS(Pkt1V, Pkt1V, Pkt1V, Pkt1V, 80, Pkt1V))
+  var Xs4
+  Qfj0FCdS(LeviS(104, 89, 111, Xs4, Xs4, 31))
+  return Pkt1V
+end
+

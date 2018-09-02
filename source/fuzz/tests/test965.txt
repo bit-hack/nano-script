@@ -1,0 +1,32 @@
+# SEED 13310
+
+var KOE = 97
+
+function j1TpSI(iC1, gpI, _9P, Rj, hn, V3)
+  var aHb2Z = (62) /  not j1TpSI(111, KOE, KOE, 54, KOE, 126) > 7
+  var tTm7E[76]
+  var t542[85]
+  hn = KOE <= KOE and 99
+  var hO6oRktZ =  not j1TpSI(95, KOE, j1TpSI(83, KOE, KOE, aHb2Z, aHb2Z, aHb2Z), aHb2Z, aHb2Z, 69)
+  t542[88] = 71 <= j1TpSI(101, KOE, hO6oRktZ, KOE, KOE, 22) < j1TpSI(94, 1, hO6oRktZ, KOE, 4, 21) * 107
+  var wGrJyBF
+end
+
+function OXVVs(gyjwE_, uPurzKP, LHCP, rw, azNkwmj, Tli3gL, lD)
+  return 108 or (KOE)
+  return (OXVVs(KOE, 124, KOE, 88, 113, 36, KOE) / KOE)
+  OXVVs(KOE, KOE, KOE, 69, KOE, KOE, OXVVs(15, KOE, KOE, 10, KOE, 40, 72))
+  while (j1TpSI(KOE, KOE, KOE, 65, KOE, KOE) and KOE / KOE)
+    if (OXVVs(KOE, 57, KOE, 30, 58, 124, KOE) - OXVVs(KOE, 99, 122, 30, 13, KOE, KOE) < OXVVs(8, 72, 53, 105, 3, KOE, KOE) * 37)
+      var K5F = KOE
+    end
+    if (KOE or KOE + (OXVVs(19, KOE, 35, 37, 13, KOE, KOE)))
+      var hamkGJis = j1TpSI(3, KOE, j1TpSI(KOE, KOE, KOE, 20, 59, 60), KOE, j1TpSI(20, KOE, KOE, 83, 123, 127), j1TpSI(KOE, 54, 67, 35, KOE, KOE))
+      KOE = j1TpSI(103, hamkGJis, KOE, 69, 36, 122) > 10 < j1TpSI(30, KOE, 83, 44, hamkGJis, 83)
+      var PA[72]
+    end
+  end
+  j1TpSI(KOE, KOE, j1TpSI(KOE, KOE, 51, 7, 75, 104), 55, j1TpSI(65, KOE, KOE, KOE, KOE, 19), OXVVs(KOE, KOE, KOE, KOE, 105, 58, KOE))
+  return j1TpSI(75, 112, j1TpSI(KOE, 57, 84, 15, 52, KOE), KOE, OXVVs(127, 2, KOE, KOE, KOE, KOE, 26), 54)
+end
+

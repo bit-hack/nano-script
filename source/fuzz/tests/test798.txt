@@ -1,0 +1,31 @@
+# SEED 13143
+
+var Z49 = 115
+
+function NySzHz(ijY)
+  return Z49
+  var DACD3[88]
+  NySzHz(NySzHz(Z49))
+  var _rKF7Nw
+  if ( not  not  not 21)
+    NySzHz(NySzHz(64))
+  end
+  return  not 78
+  var Pj[26]
+  if (NySzHz(127))
+  end
+end
+
+var oD5ra[63]
+
+function qK4(LLfNHx)
+  oD5ra[102] = oD5ra[oD5ra[qK4(Z49)]]
+  LLfNHx =  not Z49
+  LLfNHx = NySzHz(Z49)
+  oD5ra[7] =  not Z49
+  NySzHz(Z49)
+  qK4(Z49)
+  Z49 = Z49
+  return (Z49 < Z49)
+end
+

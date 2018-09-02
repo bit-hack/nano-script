@@ -1,0 +1,69 @@
+# SEED 12803
+
+var c0p385G[62]
+
+var jaD
+
+function bPz(Lbe, mEVtky1_)
+  var uaC = ((86))
+  while (c0p385G[jaD + 106])
+    return jaD
+    while (c0p385G[jaD])
+      return (bPz(20, jaD)) and bPz(92, jaD)
+      bPz(uaC, bPz(28, uaC))
+      while (jaD and (60))
+        if (bPz(46, bPz(uaC, uaC)))
+        end
+      end
+    end
+    var uyW8Tw = bPz(bPz(uaC, uaC), bPz(64, uaC))
+    return uaC / bPz(105, 23)
+    var tUg4S[114]
+  end
+  while (bPz(jaD, 10))
+    return c0p385G[bPz(49, 35)]
+    if (uaC)
+      return jaD - 99 > jaD
+      return bPz(118, 34)
+      var qFK6rnBj = uaC
+      if ((qFK6rnBj))
+        var Motfc[54]
+        c0p385G[88] = uaC
+        uaC = c0p385G[uaC]
+      end
+      return 70 * bPz(46, uaC) > (uaC)
+    end
+    c0p385G[69] =  not bPz(94, jaD) / bPz(58, jaD) < uaC
+    jaD =  not c0p385G[bPz(98, jaD)]
+    while ((bPz(jaD, jaD)) >= bPz(23, uaC) and 16)
+      if ((jaD))
+        var Tp = uaC < bPz(78, uaC)
+        while (bPz(126, 17) and uaC <= jaD)
+          c0p385G[39] = (bPz(82, uaC))
+          var gRTxP[85]
+          mEVtky1_ = c0p385G[uaC]
+          c0p385G[67] = 74
+        end
+        var Os56pE[97]
+        uaC = uaC + jaD -  not bPz(uaC, 49)
+        uaC =  not bPz(74, uaC) * 111 > jaD <= 60
+      end
+      bPz(bPz(uaC, jaD), jaD)
+      bPz(112, 9)
+      Lbe = bPz(7, 101) - jaD or 96
+    end
+  end
+  while (c0p385G[uaC <= bPz(uaC, uaC)])
+    var cy6vyG9[107]
+    var tIyx[70]
+    while (jaD)
+      cy6vyG9[72] = uaC
+      var _qk
+    end
+  end
+  return  not (bPz(jaD, 117)) * 20
+  c0p385G[42] = uaC
+  bPz(jaD, uaC)
+  var X2
+end
+

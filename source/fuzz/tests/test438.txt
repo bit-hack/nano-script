@@ -1,0 +1,29 @@
+# SEED 12783
+
+function qxv6D()
+  var oJd6h1
+  qxv6D()
+  qxv6D()
+  if ( not oJd6h1 == 54 / 92 / qxv6D())
+    qxv6D()
+    return oJd6h1
+    return qxv6D() or qxv6D()
+  end
+  return 84 / 77 + qxv6D()
+  qxv6D()
+end
+
+var V2mp2[12]
+
+var mg4i
+
+function rF2G()
+  var c5M3v5j
+  qxv6D()
+  return 77
+  V2mp2[109] = V2mp2[rF2G()]
+  var DZ[48]
+  var Gps2jV[82]
+  return rF2G() * 76 + 105
+end
+

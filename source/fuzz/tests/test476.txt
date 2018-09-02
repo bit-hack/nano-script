@@ -1,0 +1,120 @@
+# SEED 12821
+
+var TJ
+
+var EefSTe[109]
+
+function qebbgL(MfJsU)
+  return  not TJ
+  qebbgL(qebbgL(TJ))
+  var PZTxQdk[113]
+  while (qebbgL(qebbgL(125)))
+  end
+  return  not TJ == 101
+  var RkA1[81]
+  MfJsU = 37 >= TJ and EefSTe[TJ]
+  while (qebbgL(18) >= TJ)
+    if (TJ)
+      if (5)
+        qebbgL(qebbgL(49))
+        if (39)
+          var IeZ3 = TJ
+        end
+        if (39)
+          while (79)
+            RkA1[60] = (TJ or TJ)
+            var CNmc26d[112]
+          end
+          EefSTe[46] = 101 >= 37
+        end
+        MfJsU = 113 and TJ
+      end
+      var Q0vl1Pdz[50]
+      var SRzgDl
+      var PmdIlzn[2]
+      if (( not 59 == TJ))
+        if (112)
+          if (qebbgL(qebbgL(11)))
+            var QiMotlw[113]
+            if (qebbgL(SRzgDl))
+              var mLZ
+              MfJsU = 87 >=  not TJ - 84
+              PmdIlzn[107] =  not qebbgL(mLZ) +  not SRzgDl > qebbgL(82)
+              if (qebbgL(TJ))
+                if ( not  not (mLZ) < (SRzgDl))
+                end
+                while (qebbgL(qebbgL(TJ)))
+                  return QiMotlw[qebbgL(67)] == SRzgDl <= SRzgDl
+                  Q0vl1Pdz[77] =  not 18 * SRzgDl and qebbgL(mLZ)
+                  qebbgL(qebbgL(90))
+                end
+                while (67)
+                  qebbgL(50)
+                  return (91 < 14)
+                end
+              end
+            end
+            if (RkA1[31 > qebbgL(93)])
+              var uL
+              return 34 > 15
+              while (98 / qebbgL(37) <=  not uL or 122)
+              end
+            end
+            var MPdhPJoK =  not  not TJ and qebbgL(SRzgDl) and 49
+          end
+          if (TJ)
+            MfJsU = qebbgL(SRzgDl)
+            var Hfr[52]
+            MfJsU = qebbgL(48)
+            var zJ
+            zJ = 6
+          end
+        end
+        qebbgL(qebbgL(SRzgDl))
+        TJ = qebbgL(25)
+        if (PmdIlzn[34] >= SRzgDl <= qebbgL(30))
+          var zj
+          while ( not 46 and qebbgL(33))
+            while (98)
+              qebbgL(qebbgL(SRzgDl))
+              return 62 + TJ
+              qebbgL(31)
+            end
+            while (TJ /  not qebbgL(SRzgDl) < SRzgDl)
+              var VD[15]
+              var C4b1pkj
+              MfJsU = 43 <= TJ / qebbgL(88)
+              qebbgL(qebbgL(0))
+            end
+            var iI = 100
+            qebbgL(iI)
+          end
+        end
+      end
+    end
+    qebbgL(TJ)
+    while (TJ < TJ >= qebbgL(TJ))
+      return qebbgL(52)
+      MfJsU = qebbgL(115) > qebbgL(49) < 109
+      var DK[104]
+      DK[40] = DK[qebbgL(22) == qebbgL(95)]
+    end
+  end
+end
+
+function Htnn_(CuEIUR, UELessyZ, GazY, Ozt_)
+  qebbgL(17)
+  if ( not EefSTe[ not 101])
+  end
+  EefSTe[45] = 61 - EefSTe[Htnn_(TJ, TJ, TJ, 43)]
+  Htnn_(TJ, TJ, qebbgL(TJ), Htnn_(102, 13, 33, 121))
+  var tz4L8eD = qebbgL(TJ)
+  var KQ5mzIMP =  not EefSTe[6] - 39 + tz4L8eD
+  while ((qebbgL(TJ)))
+    EefSTe[4] = (tz4L8eD)
+    var KI_B3hx
+    EefSTe[49] = qebbgL(Htnn_(17, KI_B3hx, tz4L8eD, 93))
+  end
+  return TJ
+end
+

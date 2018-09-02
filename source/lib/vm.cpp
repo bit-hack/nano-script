@@ -44,7 +44,7 @@ bool thread_t::prepare(const function_t &func, int32_t argc, const int32_t *argv
   pc_ = func.pos_;
   if (func.num_args_ != argc) {
     return_code_ = -1;
-    error_ = "incorrect number of arguments";
+    error_ = thread_error_t::e_bad_num_args;
     return false;
   }
 
@@ -57,7 +57,7 @@ bool thread_t::prepare(const function_t &func, int32_t argc, const int32_t *argv
   new_frame(pc_);
 
   // good to go
-  error_.clear();
+  error_ = thread_error_t::e_success;
   finished_ = false;
   return true;
 }
@@ -72,7 +72,7 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
   const uint8_t *c = ccml_.assembler().get_code();
 
   // while we haven't returned from frame 0
-  while (--cycles && f_.size()) {
+  while (--cycles && f_.size() && error_ == thread_error_t::e_success) {
 
     // increment the cycle count
     ++cycles_;
@@ -124,9 +124,7 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
       }
       // exception
       {
-        finished_ = true;
-        error_ = "Unknown system call";
-        return_code_ = -1;
+        set_error(thread_error_t::e_bad_syscall);
         return false;
       }
     case INS_JMP:
@@ -168,7 +166,14 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
       push(getv(val + pop()));
       continue;
     case INS_GETGI:
-      push(s_[val + pop()]);
+    {
+      const int32_t index = val + pop();
+      if (index < 0 || index >= s_.size()) {
+        set_error(thread_error_t::e_bad_get_global);
+        return false;
+      }
+      push(s_[index]);
+    }
       continue;
     case INS_GETG:
       push(s_[val]);
@@ -186,15 +191,18 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
     }
     if (op == INS_SETGI) {
       const int32_t value = pop();
-      s_[val + pop()] = value;
+      const int32_t index = val + pop();
+      if (index < 0 || index >= s_.size()) {
+        set_error(thread_error_t::e_bad_set_global);
+        return false;
+      }
+      s_[index] = value;
       continue;
     }
 
     // exception
     {
-      finished_ = true;
-      error_ = "unknown instruction opcode";
-      return_code_ = -1;
+      set_error(thread_error_t::e_bad_opcode);
       return false;
     }
   } // while
@@ -233,8 +241,8 @@ void vm_t::reset() {
 int32_t thread_t::getv(int32_t offs) {
   const int32_t index = f_.back().sp_ + offs;
   if (index < 0 || index >= int32_t(s_.size())) {
-    ccml_.assembler().disasm();
-    __debugbreak();
+    set_error(thread_error_t::e_bad_getv);
+    return 0;
   }
   return s_[index];
 }
@@ -242,8 +250,8 @@ int32_t thread_t::getv(int32_t offs) {
 void thread_t::setv(int32_t offs, int32_t val) {
   const int32_t index = f_.back().sp_ + offs;
   if (index < 0 || index >= int32_t(s_.size())) {
-    ccml_.assembler().disasm();
-    __debugbreak();
+    set_error(thread_error_t::e_bad_setv);
+    return;
   }
   s_[index] = val;
 }

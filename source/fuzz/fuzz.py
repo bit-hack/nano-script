@@ -155,8 +155,8 @@ class Generator(object):
         return arg or var
 
     # number ::= '-'? [0-9]+
-    def do_number(self, scope):
-        return str(random(128))
+    def do_number(self, scope, base=0):
+        return str(random(base + 128))
 
     # expression ::= identifier
     #              | number
@@ -257,6 +257,9 @@ class Generator(object):
 
     # function_decl ::= 'function' identifier '(' arg_decl_list? ')' '\n' ( statement )* 'end'
     def do_function_decl(self, scope):
+
+        scope.args.clear()
+
         name = scope.functions.new_name()
         num_args = random(8)
         scope.add_func_sig(name, num_args)
@@ -313,7 +316,7 @@ class Generator(object):
     # assign_array_statement ::= identifier '[' expression ']' '=' expression '\n'
     def do_assign_array_statement(self, scope):
         try:
-            return self.indent() + scope.arrays.find() + '[' + self.do_number(scope) + ']' + ' = ' +\
+            return self.indent() + scope.arrays.find() + '[' + self.do_number(scope, 2) + ']' + ' = ' +\
                    self.do_expression(scope) + '\n'
         except BacktrackError:
             return ''
@@ -360,12 +363,14 @@ class Generator(object):
 
 def main():
     global _seed
-    for i in range(0, 256):
+    for i in range(0, 1024):
         _seed = 12345 + i
-        print '-' * 20 + ' seed: ' + str(_seed) + '\n'
         gen = Generator()
-        prog = gen.do_program()
-        print prog
+        out = '# SEED {0}\n\n'.format(_seed)
+        out += gen.do_program()
+
+        with open('tests/test{0}.txt'.format(i), 'w') as fd:
+            fd.write(out)
 
 
 main()

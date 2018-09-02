@@ -1,0 +1,37 @@
+# SEED 12440
+
+var pZ
+
+var gGnWhl[58]
+
+function ZF(BKf2H3, mJ, p0)
+  if (pZ + pZ * ZF(pZ, 68, pZ))
+    ZF(pZ, pZ, 91)
+    var MGpP[21]
+    pZ = ZF(pZ, pZ, pZ)
+    var ijaZ = (pZ)
+    pZ = ZF(118, pZ, ZF(52, ijaZ, 14))
+  end
+  while (11)
+    ZF(ZF(pZ, 83, 52), pZ, ZF(43, pZ, pZ))
+    pZ = 73 - 116
+    ZF(ZF(82, 10, pZ), ZF(6, pZ, 72), 108)
+  end
+  var Dw[26]
+  if (gGnWhl[86])
+    return  not pZ / ZF(pZ, 83, 107)
+  end
+  ZF(pZ, 100, ZF(82, pZ, pZ))
+  gGnWhl[66] =  not 36 and ZF(122, pZ, 62) > 100
+  BKf2H3 = gGnWhl[103 == 125]
+  if (ZF(pZ, 25, pZ))
+    while ((90 < 76))
+      ZF(ZF(pZ, 109, pZ), pZ, 70)
+      var ydT2[47]
+    end
+    var vv9
+    var i0
+    var ndVDA = (81 == 20)
+  end
+end
+

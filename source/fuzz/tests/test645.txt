@@ -1,0 +1,14 @@
+# SEED 12990
+
+function haqK8c(_G6dNI0i, Hewb, PkAfG, Mv, Sx)
+  haqK8c(haqK8c(20, 101, 21, 54, 63), 103, 87, haqK8c(119, 90, 110, 79, 49), haqK8c(88, 6, 74, 46, 26))
+  if (haqK8c(15, 36, 115, 5, 57) and haqK8c(35, 74, 96, 5, 63) == haqK8c(86, 65, 55, 49, 0) + haqK8c(68, 2, 24, 87, 95))
+    haqK8c(26, haqK8c(63, 26, 24, 126, 64), 104, 98, haqK8c(78, 79, 74, 5, 91))
+    var Niq = (65 <= haqK8c(124, 30, 13, 25, 120))
+    var Ty9Y0G = Niq
+  end
+  var qxCg = haqK8c(40, 93, 42, 64, 101) or haqK8c(91, 99, 40, 54, 40) and  not haqK8c(65, 28, 76, 103, 107)
+  var tRG82g
+  var Zm5T
+end
+

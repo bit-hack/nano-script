@@ -1,0 +1,19 @@
+# SEED 12640
+
+function MksLw8H(EvPYt0ag, c0o3, qNT)
+  var ft7WBpt
+  if (10)
+    return  not MksLw8H(103, ft7WBpt, MksLw8H(109, 4, 42))
+    return (MksLw8H(117, ft7WBpt, 54)) == 24
+  end
+  return  not MksLw8H(48, ft7WBpt, ft7WBpt) > (MksLw8H(ft7WBpt, 41, 118))
+  if (ft7WBpt <= 55 > MksLw8H(ft7WBpt, ft7WBpt, 90))
+    if ( not ((33)))
+      MksLw8H(17, MksLw8H(19, 124, 83), 19)
+      ft7WBpt = 99 == ft7WBpt / (98)
+    end
+  end
+end
+
+var GOCaiUUK = 47
+

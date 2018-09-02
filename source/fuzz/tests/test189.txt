@@ -1,0 +1,17 @@
+# SEED 12534
+
+var kQCydHT = 27
+
+var L7YC1J
+
+function nel9U(y5AWjGlD, lC)
+  var gx0_lE0s[27]
+  return gx0_lE0s[(nel9U(kQCydHT, 93))]
+  var Zn
+  y5AWjGlD = 115
+  nel9U(nel9U(Zn, kQCydHT), 12)
+  return nel9U(kQCydHT, Zn)
+  lC = 123 < 5 and  not 42
+  gx0_lE0s[86] = L7YC1J < gx0_lE0s[nel9U(L7YC1J, 117)]
+end
+

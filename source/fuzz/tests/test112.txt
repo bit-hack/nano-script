@@ -1,0 +1,36 @@
+# SEED 12457
+
+var h34JLH = 47
+
+var q_[48]
+
+function UaHFnh(cRR7, DY, tZUsj2, iwfVs)
+  DY = 51
+  while (109)
+    h34JLH =  not h34JLH
+    if ( not  not (24) <= 103)
+      while ( not UaHFnh(42, h34JLH, h34JLH, h34JLH) * h34JLH)
+        q_[57] =  not UaHFnh(20, 28, 69, h34JLH)
+        while (q_[123] < UaHFnh(h34JLH, 74, 22, 63) * UaHFnh(h34JLH, h34JLH, 43, 106))
+        end
+        h34JLH = q_[UaHFnh(h34JLH, h34JLH, h34JLH, h34JLH) or UaHFnh(h34JLH, h34JLH, 66, 10)]
+      end
+      DY = h34JLH - 97 / UaHFnh(13, h34JLH, 18, h34JLH)
+      var zf32QH93[105]
+      var n9Di = (92 or 97)
+    end
+    cRR7 = (26 == 52)
+    q_[58] = h34JLH
+  end
+  if (16 * UaHFnh(h34JLH, 54, 109, h34JLH) < (h34JLH))
+    var uT_RC
+    UaHFnh(119, 51, h34JLH, UaHFnh(uT_RC, h34JLH, 21, h34JLH))
+  end
+  q_[107] = h34JLH
+  var HjJu
+  return q_[88 and 94]
+  return  not UaHFnh(44, 114, 49, HjJu) < 20 - 66
+  while ((UaHFnh(56, HjJu, HjJu, 75)))
+  end
+end
+

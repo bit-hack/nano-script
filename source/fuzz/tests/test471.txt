@@ -1,0 +1,88 @@
+# SEED 12816
+
+var KoX = 86
+
+function MJhlq(nV_h)
+  while (127)
+    MJhlq(MJhlq(KoX))
+  end
+  return MJhlq(0) and KoX * 58
+  var pIUeTO
+  while (MJhlq(117))
+  end
+  while (KoX >= MJhlq(KoX) / MJhlq(33))
+    while (MJhlq(34))
+      while (pIUeTO)
+        while ((29 <= 33))
+          nV_h =  not (MJhlq(KoX) == MJhlq(KoX))
+          var fZ0
+          MJhlq(MJhlq(75))
+          MJhlq(fZ0)
+        end
+      end
+      if (MJhlq(KoX))
+        var mc8Of[104]
+        while ((MJhlq(4)) <= 53)
+        end
+        if (KoX)
+          mc8Of[27] = (mc8Of[MJhlq(KoX)])
+          if (100 == pIUeTO or mc8Of[MJhlq(pIUeTO)])
+            var CQ4dIoW[67]
+            MJhlq(MJhlq(KoX))
+            var jEjQ6[108]
+          end
+          nV_h = MJhlq(pIUeTO)
+          mc8Of[72] = 112
+          MJhlq(MJhlq(KoX))
+        end
+      end
+      MJhlq(KoX)
+      var zEUAwGF
+    end
+    KoX = pIUeTO
+  end
+  return KoX
+  MJhlq(KoX)
+end
+
+var JhCkOA[7]
+
+var A6df[112]
+
+var VEWlOHh[23]
+
+var HqsoTRWW[10]
+
+function Gd9w(ZS04IrX, WvwBamN, VXj, ymrO7IDI, rbM, oq6)
+  while (15)
+    while (KoX >= Gd9w(80, 23, KoX, KoX, KoX, KoX))
+      VEWlOHh[91] = KoX
+      ymrO7IDI = HqsoTRWW[MJhlq(KoX)] * 69 and KoX
+      while ((40 == MJhlq(KoX)))
+        while (Gd9w(28, KoX, 84, 46, 87, KoX) - KoX >= 35)
+          return 51
+          if (KoX)
+            VEWlOHh[31] = KoX
+            return  not  not  not VEWlOHh[Gd9w(KoX, 98, KoX, KoX, KoX, 23)] >= 79 < Gd9w(KoX, KoX, KoX, KoX, KoX, KoX)
+            KoX = (KoX)
+            return Gd9w(114, 110, 98, MJhlq(16), KoX, KoX)
+          end
+          return  not 105 >= KoX / KoX
+        end
+      end
+      HqsoTRWW[20] = (KoX)
+    end
+    return 50
+  end
+  var X6[25]
+  KoX =  not Gd9w(11, 103, 3, 40, 33, KoX) / MJhlq(93) >= Gd9w(KoX, 83, KoX, 108, KoX, 62)
+  X6[69] = X6[110] <= KoX
+  Gd9w(81, MJhlq(KoX), MJhlq(KoX), Gd9w(11, KoX, KoX, 46, KoX, KoX), KoX, 48)
+  return VEWlOHh[KoX <= Gd9w(KoX, 42, KoX, KoX, KoX, 56)]
+  Gd9w(KoX, 127, 10, MJhlq(KoX), 61, KoX)
+  if ((75) >= 78 > KoX)
+  end
+end
+
+var MJ = 83
+

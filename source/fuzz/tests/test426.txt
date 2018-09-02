@@ -1,0 +1,6 @@
+# SEED 12771
+
+var HOz = 86
+
+var Dfrk = 124
+

@@ -1,0 +1,39 @@
+# SEED 12856
+
+function JzBf8(nkwp4, x6QMN)
+  return JzBf8(JzBf8(94, 90), JzBf8(42, 70))
+  while (JzBf8(39, 55) - JzBf8(28, 110) -  not  not 40 == JzBf8(98, 88))
+    var uUVmHiS[113]
+    var AYIO1[80]
+    JzBf8(113, JzBf8(90, 127))
+    var vw[109]
+  end
+  var ExfUvZ
+  var kLVMB2j[65]
+  if (kLVMB2j[(2)])
+    JzBf8(JzBf8(ExfUvZ, 44), ExfUvZ)
+    while (118)
+      if ( not JzBf8(ExfUvZ, ExfUvZ) or JzBf8(61, 76) >  not ExfUvZ / 62)
+        while (kLVMB2j[ not ExfUvZ * ExfUvZ])
+          nkwp4 = ExfUvZ
+          if (19)
+            return JzBf8(JzBf8(61, ExfUvZ), 50)
+          end
+          ExfUvZ =  not ExfUvZ or 119
+        end
+      end
+      return ExfUvZ / kLVMB2j[ExfUvZ]
+      while (7)
+        ExfUvZ = JzBf8(100, 78) == ExfUvZ + 35
+        JzBf8(JzBf8(ExfUvZ, ExfUvZ), 125)
+        kLVMB2j[73] =  not 30
+        JzBf8(JzBf8(ExfUvZ, 50), 107)
+      end
+    end
+    return 74
+    return  not (59)
+  end
+end
+
+var In[21]
+

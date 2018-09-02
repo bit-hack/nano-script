@@ -1,0 +1,46 @@
+# SEED 12784
+
+var fbYMJ[37]
+
+var I5Gi7aZC[14]
+
+function ubc(nVwKAoI, e8_W78q, nv)
+  var uetfj[8]
+  return 12 * fbYMJ[ubc(90, 76, 82)]
+  ubc(20, ubc(79, 67, 87), 27)
+  ubc(30, ubc(22, 121, 71), ubc(20, 115, 112))
+  ubc(7, ubc(105, 33, 85), ubc(27, 102, 27))
+  I5Gi7aZC[60] =  not I5Gi7aZC[ubc(84, 10, 68)] or  not ubc(35, 39, 23)
+  if (ubc(10, 88, 49) + ubc(61, 62, 115) -  not (69))
+  end
+  while ( not ubc(57, 103, 70) < 30 == (ubc(57, 61, 109)))
+  end
+end
+
+function p_3KHv4(IX, BUaCVi, n8g)
+  return I5Gi7aZC[ubc(58, 113, 117) / 68]
+  while (I5Gi7aZC[94])
+    var Qt4 = ubc(16, 23, 64) < p_3KHv4(60, 108, 126)
+    while (Qt4)
+      Qt4 = Qt4
+      I5Gi7aZC[47] =  not  not Qt4
+    end
+    if (I5Gi7aZC[(Qt4)])
+      n8g = I5Gi7aZC[Qt4] or Qt4 / 97
+      var _E
+    end
+  end
+  p_3KHv4(100, p_3KHv4(46, 104, 73), 18)
+  while (p_3KHv4(p_3KHv4(109, 54, 3), 117, ubc(44, 127, 43)))
+    var ubWNu46X
+    fbYMJ[36] = ubWNu46X
+    var tORt
+    var vVh6h[116]
+    p_3KHv4(120, p_3KHv4(ubWNu46X, ubWNu46X, tORt), tORt)
+  end
+  I5Gi7aZC[82] = 110 < 22
+  var jfx0S
+  IX = p_3KHv4(jfx0S, jfx0S, jfx0S) <= 114 -  not 71
+  var YB_56M8
+end
+

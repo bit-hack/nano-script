@@ -1,0 +1,46 @@
+# SEED 13086
+
+var BHU = 83
+
+function LgPPzr(eZUyW04)
+  if (82 * 112 + 31)
+    eZUyW04 = BHU
+  end
+  if (BHU * (BHU))
+    BHU = 11 and 108 + BHU
+    while (BHU)
+      eZUyW04 = LgPPzr(BHU) - (BHU)
+      eZUyW04 = ( not BHU <= BHU)
+      var GqkU = ( not 64 or 30)
+      if ( not 102)
+      end
+    end
+    var gAWm4ob[89]
+    var EtfUP[79]
+    EtfUP[13] = LgPPzr(LgPPzr(BHU))
+  end
+  return BHU
+  LgPPzr(24)
+  LgPPzr(18)
+  if (49)
+  end
+  if (BHU)
+    var UtNXcaYT
+    if (39)
+      LgPPzr(UtNXcaYT)
+      while ( not  not LgPPzr(19) - 43 > 0 >= 71)
+        LgPPzr(LgPPzr(68))
+      end
+      LgPPzr(BHU)
+      var GzzU[30]
+      return UtNXcaYT
+    end
+    LgPPzr(LgPPzr(UtNXcaYT))
+  end
+  var ui1nw[30]
+end
+
+var Qs[14]
+
+var _B_MP[72]
+

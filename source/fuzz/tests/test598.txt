@@ -1,0 +1,44 @@
+# SEED 12943
+
+var rZ[11]
+
+var sQ5F7q0
+
+var mhl8[92]
+
+var P_T[112]
+
+function E2K(w_Bz4yiC, GpE, cd2, lp, XUz96y)
+  var bja = (mhl8[E2K(sQ5F7q0, sQ5F7q0, sQ5F7q0, 49, sQ5F7q0)])
+  var pPd2Ff = mhl8[114] + 6 > 38
+  return pPd2Ff
+  var zx59
+  rZ[63] =  not rZ[E2K(38, pPd2Ff, 57, 26, pPd2Ff)]
+  mhl8[92] = sQ5F7q0 > E2K(39, sQ5F7q0, 19, 59, zx59) / 84
+  if ( not (119))
+    var zipbdMh = bja
+    if (pPd2Ff)
+      return E2K(87, E2K(zipbdMh, 117, 92, 43, pPd2Ff), 64, 41, 114)
+      var wjyk[25]
+    end
+    return  not (pPd2Ff)
+  end
+  var es4[59]
+end
+
+function qYn(r2jcba, O6VQNy8l, cT2J2Tm, Y7, OLl2)
+  var YeXAJ
+  var lg3X[17]
+  return (YeXAJ) >= E2K(124, YeXAJ, 40, sQ5F7q0, sQ5F7q0)
+  qYn(E2K(103, sQ5F7q0, YeXAJ, 92, 21), sQ5F7q0, sQ5F7q0, 68, sQ5F7q0)
+  if (103)
+  end
+  if ( not mhl8[116 / E2K(sQ5F7q0, 78, YeXAJ, 11, 14)])
+  end
+  sQ5F7q0 =  not  not E2K(44, YeXAJ, 104, sQ5F7q0, sQ5F7q0) + YeXAJ
+  if (YeXAJ == YeXAJ == lg3X[58])
+    rZ[121] = E2K(qYn(sQ5F7q0, 82, 71, YeXAJ, 95), 11, YeXAJ, YeXAJ, 111)
+    P_T[4] = (sQ5F7q0 or sQ5F7q0)
+  end
+end
+

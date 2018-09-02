@@ -1,0 +1,26 @@
+# SEED 13133
+
+function uMmovcFG(io4bIE)
+  uMmovcFG(123)
+  return (93)
+  uMmovcFG(19)
+  var Aq =  not uMmovcFG(78) == uMmovcFG(21) ==  not uMmovcFG(37)
+  uMmovcFG(23)
+  return  not  not  not uMmovcFG(117) > 99 > 67 + Aq
+  if (Aq)
+    uMmovcFG(uMmovcFG(92))
+    uMmovcFG(Aq)
+    var AH7
+  end
+  if (Aq)
+    uMmovcFG(Aq)
+    uMmovcFG(28)
+    var UyNQO5LJ = uMmovcFG(Aq)
+    var c4XhqQ[0]
+  end
+end
+
+var Rt[7]
+
+var gt8Z7z[79]
+

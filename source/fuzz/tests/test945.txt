@@ -1,0 +1,51 @@
+# SEED 13290
+
+function UTscSS7(yAZO6, wF, MX9s, w9pgrgIJ, s_t_nk62)
+  return ((UTscSS7(75, 34, 47, 7, 51)))
+  while (UTscSS7(101, 96, 103, 101, 40) > UTscSS7(78, 54, 1, 17, 80) / UTscSS7(88, 102, 117, 109, 73) or UTscSS7(37, 10, 17, 71, 90))
+    var ZwKcz6R[68]
+    UTscSS7(UTscSS7(91, 84, 100, 119, 54), UTscSS7(34, 20, 117, 125, 66), 84, UTscSS7(76, 29, 40, 10, 123), 2)
+    return 1 * UTscSS7(106, 35, 37, 73, 113) >= 1
+  end
+  if (20)
+    var DiJ0Xq_3 = 35 <= 116 * UTscSS7(59, 32, 92, 40, 71) < UTscSS7(34, 39, 109, 80, 109)
+    return 48
+    UTscSS7(UTscSS7(121, DiJ0Xq_3, DiJ0Xq_3, 31, DiJ0Xq_3), DiJ0Xq_3, 100, 63, UTscSS7(104, DiJ0Xq_3, 14, 29, DiJ0Xq_3))
+  end
+  var yaA1fwN[8]
+  yaA1fwN[80] =  not yaA1fwN[ not (UTscSS7(48, 77, 52, 39, 59))]
+  if ((yaA1fwN[16]))
+    UTscSS7(64, 80, 23, 80, 94)
+    yaA1fwN[107] = UTscSS7(100, 29, UTscSS7(92, 126, 74, 38, 111), UTscSS7(56, 77, 30, 67, 24), UTscSS7(122, 93, 116, 48, 55))
+    while (yaA1fwN[UTscSS7(23, 38, 31, 9, 46)] >= 19)
+      yaA1fwN[110] = (30) - 4 == UTscSS7(80, 27, 17, 73, 92)
+    end
+  end
+  if (UTscSS7(UTscSS7(42, 63, 28, 19, 120), UTscSS7(3, 117, 87, 6, 27), 42, UTscSS7(46, 85, 39, 126, 9), UTscSS7(44, 83, 43, 67, 8)))
+    return yaA1fwN[yaA1fwN[6]]
+    return UTscSS7(70, 93, 32, 46, 113) / yaA1fwN[126]
+    while (UTscSS7(124, 74, 94, 0, 40) and UTscSS7(2, 31, 100, 11, 81) + UTscSS7(37, 72, 31, 71, 65))
+    end
+    if ( not  not UTscSS7(UTscSS7(94, 98, 0, 8, 16), 11, UTscSS7(20, 50, 39, 92, 1), UTscSS7(39, 107, 48, 61, 3), UTscSS7(18, 69, 14, 47, 34)))
+      if ( not 31 <= UTscSS7(101, 55, 23, 55, 31) and 29)
+        if (yaA1fwN[119 * UTscSS7(2, 92, 45, 1, 0)])
+          return UTscSS7(109, 127, 74, 82, 11) - 44 * (17)
+          UTscSS7(UTscSS7(48, 38, 32, 15, 51), 23, UTscSS7(25, 12, 91, 18, 100), UTscSS7(119, 123, 34, 34, 48), UTscSS7(115, 74, 57, 20, 68))
+        end
+        var knTm4c[61]
+        if (UTscSS7(31, 42, 124, 52, 116) and 10 == (UTscSS7(8, 43, 89, 102, 49)))
+          UTscSS7(UTscSS7(31, 125, 29, 33, 46), 57, 65, UTscSS7(76, 124, 28, 31, 52), UTscSS7(5, 109, 41, 32, 14))
+        end
+      end
+      yaA1fwN[48] =  not UTscSS7(57, 96, 58, 12, 9) <= UTscSS7(123, 123, 125, 24, 58) >= UTscSS7(30, 109, 15, 127, 85) >= 97
+      return  not 39 or 111 <= 85
+      if (52 <= UTscSS7(26, 37, 88, 36, 49) or  not UTscSS7(48, 25, 64, 21, 94) >= UTscSS7(57, 24, 109, 101, 125))
+        return yaA1fwN[51 + UTscSS7(96, 26, 40, 117, 35)]
+      end
+      UTscSS7(34, UTscSS7(103, 57, 116, 5, 31), UTscSS7(35, 63, 51, 34, 10), UTscSS7(68, 81, 41, 16, 52), 8)
+    end
+  end
+end
+
+var S4fB = 10
+

@@ -1,0 +1,57 @@
+# SEED 12673
+
+var sZ
+
+function clY(bXZE56Y, tmXIS3b, Ido1, dlz, UbgFBnHR, zOp8, LJMZOFJ)
+  clY(31, clY(65, sZ, sZ, 100, 83, sZ, sZ), clY(sZ, sZ, sZ, 60, sZ, 51, 46), sZ, clY(43, sZ, 56, 113, sZ, sZ, 40), sZ, sZ)
+  return (sZ) == 51
+  clY(sZ, 123, 23, 53, 121, sZ, clY(115, 88, sZ, sZ, sZ, sZ, sZ))
+  var C4
+  C4 =  not (C4 <= C4)
+  while ( not clY(sZ, sZ, 60, 84, C4, 1, 81) * 113 >=  not (51))
+    clY(C4, 127, C4, sZ, clY(107, C4, sZ, 22, sZ, 59, 47), clY(C4, C4, C4, C4, 102, 49, C4), 13)
+  end
+end
+
+var bv
+
+var WATgyu5[60]
+
+var j0wbx = 42
+
+function EOB(q9_q, VjvA, uB0Cxq)
+  if (bv)
+    while (WATgyu5[87 or EOB(sZ, 3, 110)])
+      if (clY(EOB(bv, sZ, 84), clY(57, bv, bv, bv, 34, bv, 34), sZ, EOB(5, 19, j0wbx), sZ, bv, sZ))
+        uB0Cxq = bv
+      end
+      return bv
+      bv =  not sZ
+      return WATgyu5[j0wbx]
+      WATgyu5[58] = sZ <=  not EOB(j0wbx, j0wbx, sZ) >= EOB(5, 53, bv)
+    end
+  end
+  clY(25, j0wbx, clY(85, 83, bv, 8, 104, 116, 49), clY(11, bv, sZ, 44, bv, 63, 108), 46, j0wbx, sZ)
+  var NxGJm77s[58]
+  return EOB(EOB(j0wbx, bv, 65), 15, 24)
+  clY(23, 53, EOB(j0wbx, j0wbx, j0wbx), sZ, 47, clY(88, j0wbx, 118, 103, j0wbx, sZ, sZ), sZ)
+  if (j0wbx)
+    while (NxGJm77s[59])
+      return (NxGJm77s[j0wbx])
+    end
+    var Vqi
+    if ((NxGJm77s[sZ]))
+    end
+  end
+  while (NxGJm77s[(110)])
+    j0wbx = (74) >=  not 78 - bv
+    if (WATgyu5[8 and 94])
+      return (j0wbx) * bv
+      WATgyu5[21] = clY(clY(123, j0wbx, j0wbx, 96, sZ, sZ, sZ), EOB(bv, j0wbx, bv), clY(sZ, 50, 115, j0wbx, bv, 91, 2), 64, bv, 33, bv)
+    end
+    WATgyu5[87] = EOB(53, 29, j0wbx) > sZ > j0wbx
+    NxGJm77s[26] = WATgyu5[j0wbx / clY(93, bv, j0wbx, sZ, 109, 117, 77)]
+  end
+  var ISaAUP6J = bv
+end
+

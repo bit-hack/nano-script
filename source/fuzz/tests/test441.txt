@@ -1,0 +1,13 @@
+# SEED 12786
+
+function e4JQ(iPbZzTl)
+  var xh6wIy = 113 <= (e4JQ(85))
+  e4JQ(68)
+  xh6wIy = xh6wIy
+  var VkOHH = 26
+  var gcil[120]
+  return gcil[xh6wIy * xh6wIy]
+  var hRP7HM9[57]
+  return gcil[e4JQ(VkOHH)]
+end
+

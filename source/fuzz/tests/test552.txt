@@ -1,0 +1,19 @@
+# SEED 12897
+
+function zOg(Vrz)
+  while ((5 >= 42))
+    return zOg(114) / (zOg(18))
+  end
+  while ((113 > zOg(20)))
+    while ((26 > 127))
+    end
+    zOg(5)
+  end
+  var FlS
+  var pwu
+  return 127 < zOg(FlS) > zOg(FlS)
+  zOg(99)
+end
+
+var wvaNV[25]
+

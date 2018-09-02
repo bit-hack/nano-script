@@ -1,0 +1,49 @@
+# SEED 13159
+
+var vrAr[40]
+
+var ZqWH[122]
+
+var ru7lK
+
+var owb = 78
+
+function ow4ObjK8(lkC8l, Upq06rt, tv, Ctabv4)
+  var aB[122]
+  owb = 103
+  var BxZjrc
+  var KfK[85]
+  while ((58))
+    var bSd8 = (ow4ObjK8(BxZjrc, 50, 83, 7)) <= (ow4ObjK8(owb, 82, ru7lK, 10))
+    vrAr[84] =  not vrAr[122]
+  end
+  while ((ow4ObjK8(8, 108, 53, 106)))
+  end
+  while ( not ru7lK < 84)
+    ru7lK = ru7lK == 115 > 83
+    if (45)
+      var WoNa4
+      while ((ZqWH[20]))
+        var cpANxn
+        if (cpANxn)
+          ow4ObjK8(73, ru7lK, ow4ObjK8(ru7lK, BxZjrc, BxZjrc, BxZjrc), WoNa4)
+        end
+      end
+    end
+    while (BxZjrc)
+      while (owb)
+        while (ow4ObjK8(10, 39, BxZjrc, owb) / BxZjrc < ow4ObjK8(owb, ru7lK, owb, 101) / 37)
+          return (owb) or  not ow4ObjK8(113, 22, ru7lK, 35)
+          Upq06rt =  not  not ow4ObjK8(ow4ObjK8(51, 48, owb, ru7lK), 55, ow4ObjK8(ru7lK, 125, 93, 105), ow4ObjK8(23, ru7lK, BxZjrc, 36))
+        end
+      end
+      ow4ObjK8(106, ow4ObjK8(103, 97, 109, owb), owb, 35)
+    end
+  end
+  return ow4ObjK8(14, ow4ObjK8(102, BxZjrc, 40, 108), 7, ow4ObjK8(91, 109, 85, 119))
+end
+
+var CdDA
+
+var BR
+

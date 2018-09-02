@@ -1,0 +1,30 @@
+# SEED 13314
+
+var Pz8nb1v3[40]
+
+function spTrj2Ef(e6O, YPsmZ7kx, rUJoJ2, vECklbQ, Z7Xd0g)
+  if ((spTrj2Ef(81, 11, 68, 25, 12) - spTrj2Ef(50, 20, 48, 18, 7)))
+    var VdcXV0TP
+  end
+  while ((46) <= spTrj2Ef(103, 97, 73, 50, 42) / spTrj2Ef(85, 24, 122, 49, 16))
+    var KG0BE
+    var jIY
+  end
+  return 125
+  var N3YxkP
+  if (Pz8nb1v3[23 * N3YxkP])
+    var yz[114]
+    var WFrrZ[60]
+    WFrrZ[19] = N3YxkP
+    rUJoJ2 = spTrj2Ef(N3YxkP, N3YxkP, spTrj2Ef(114, 115, N3YxkP, N3YxkP, N3YxkP), spTrj2Ef(64, 70, 37, 106, 62), 45)
+    return WFrrZ[N3YxkP] > N3YxkP and 73
+  end
+  while (N3YxkP or 81 + N3YxkP)
+    spTrj2Ef(51, N3YxkP, N3YxkP, 8, 96)
+  end
+  if (N3YxkP)
+    spTrj2Ef(N3YxkP, N3YxkP, N3YxkP, spTrj2Ef(86, 58, N3YxkP, N3YxkP, N3YxkP), 36)
+  end
+  var JNV3ep = 9 >= N3YxkP >= spTrj2Ef(87, N3YxkP, N3YxkP, 80, 64)
+end
+

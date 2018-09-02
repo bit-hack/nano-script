@@ -1,0 +1,30 @@
+# SEED 12791
+
+var PTn = 30
+
+var a_iTDyD[72]
+
+var rTr3GRE[18]
+
+var GwcxpZD[66]
+
+function lx4RbGs(reIaRTMp, yyk, NF4Rg, jjF, xG, nqv818j)
+  var kYTrwd00[109]
+  return ((PTn))
+  PTn = PTn
+  return lx4RbGs(80, PTn, lx4RbGs(PTn, PTn, 70, PTn, PTn, PTn), PTn, PTn, PTn)
+  if (lx4RbGs(78, 15, PTn, lx4RbGs(121, PTn, 101, PTn, PTn, PTn), lx4RbGs(58, 86, 107, PTn, 113, 59), lx4RbGs(9, 78, 40, PTn, PTn, 54)))
+    var yFvXKz = 83
+  end
+  reIaRTMp = PTn
+  if (lx4RbGs(lx4RbGs(9, 34, PTn, PTn, 98, 123), PTn, lx4RbGs(PTn, 64, PTn, 118, PTn, PTn), PTn, lx4RbGs(31, PTn, PTn, PTn, PTn, PTn), PTn))
+    var ocH
+    kYTrwd00[43] = 59
+    nqv818j = (ocH)
+    return PTn * 84
+    while (rTr3GRE[46 <= lx4RbGs(ocH, PTn, 117, PTn, 43, 2)])
+    end
+  end
+  kYTrwd00[83] = (31)
+end
+

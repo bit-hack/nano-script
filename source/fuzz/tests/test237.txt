@@ -1,0 +1,14 @@
+# SEED 12582
+
+var iiW[34]
+
+var WL = 119
+
+var RTu[3]
+
+var blG = 70
+
+var q5LGaoC5
+
+var nGK
+

@@ -1,0 +1,30 @@
+# SEED 13221
+
+var YRPqZ[64]
+
+var xJcRVIh7[50]
+
+var M4H2hSma[1]
+
+function hbU()
+  hbU()
+  YRPqZ[110] = 103 / hbU() / (hbU())
+  if (hbU() + hbU() / 29)
+    while (4)
+    end
+    hbU()
+  end
+  hbU()
+  if ((91) or hbU())
+  end
+  var gUaAil = (15 > 107)
+  hbU()
+  while (YRPqZ[gUaAil] <= hbU())
+    var va9N8OOr
+  end
+end
+
+var wM29L[36]
+
+var l5WZ5[97]
+

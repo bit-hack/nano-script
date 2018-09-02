@@ -1,0 +1,29 @@
+# SEED 12436
+
+var u8lPAqpg[109]
+
+var m0yS[57]
+
+function foT8ij4(Tpy_, qQ, aAQGOV, _q)
+  while (u8lPAqpg[81])
+    return 117 - 19 * 89
+    foT8ij4(42, 85, 80, foT8ij4(78, 84, 12, 101))
+  end
+  foT8ij4(75, foT8ij4(17, 32, 38, 55), foT8ij4(0, 1, 54, 29), 80)
+  var ttVk0p2L
+  while ((foT8ij4(19, ttVk0p2L, ttVk0p2L, ttVk0p2L)))
+    var hB
+    while (107 + hB <= u8lPAqpg[0])
+      return hB
+      return ttVk0p2L / u8lPAqpg[ttVk0p2L]
+      _q = hB
+      foT8ij4(62, foT8ij4(hB, hB, 90, hB), 44, foT8ij4(82, 23, 56, ttVk0p2L))
+    end
+    u8lPAqpg[25] = foT8ij4(54, 93, ttVk0p2L, 72) >=  not foT8ij4(ttVk0p2L, 83, ttVk0p2L, 53)
+  end
+  foT8ij4(ttVk0p2L, ttVk0p2L, ttVk0p2L, foT8ij4(80, 84, 57, 12))
+  ttVk0p2L = ttVk0p2L
+  foT8ij4(foT8ij4(ttVk0p2L, ttVk0p2L, ttVk0p2L, 116), foT8ij4(43, ttVk0p2L, 74, 23), foT8ij4(ttVk0p2L, 12, 127, ttVk0p2L), ttVk0p2L)
+  var IyXuSv1u[69]
+end
+

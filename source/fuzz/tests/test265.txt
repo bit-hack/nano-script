@@ -1,0 +1,27 @@
+# SEED 12610
+
+var qVI_L_Z
+
+function oS9FesnD(qwp0aK, FBY)
+  oS9FesnD(58, 41)
+  while (17 or qVI_L_Z - oS9FesnD(qVI_L_Z, qVI_L_Z))
+  end
+  oS9FesnD(22, qVI_L_Z)
+  var nIdW0LdB[46]
+  while ( not qVI_L_Z + 82 >= 16)
+    return oS9FesnD(9, oS9FesnD(85, qVI_L_Z))
+    FBY = oS9FesnD(qVI_L_Z, oS9FesnD(qVI_L_Z, qVI_L_Z))
+    nIdW0LdB[77] = nIdW0LdB[qVI_L_Z == oS9FesnD(72, qVI_L_Z)]
+  end
+  return oS9FesnD(qVI_L_Z, 71) / qVI_L_Z < qVI_L_Z * qVI_L_Z
+  if ( not 31 - 124 > 49)
+    nIdW0LdB[90] =  not oS9FesnD(125, 63) / 111 <  not  not 46 - qVI_L_Z
+    while ( not nIdW0LdB[nIdW0LdB[oS9FesnD(69, 85)]])
+    end
+  end
+end
+
+var cRm8k37P[66]
+
+var El[28]
+
