@@ -79,19 +79,21 @@ int32_t parser_t::op_type(token_e type) const {
   case TOK_AND:
   case TOK_OR:
     return 1;
+  case TOK_NOT:
+    return 2;
   case TOK_LT:
   case TOK_GT:
   case TOK_LEQ:
   case TOK_GEQ:
   case TOK_EQ:
-    return 2;
+    return 3;
   case TOK_ADD:
   case TOK_SUB:
-    return 3;
+    return 4;
   case TOK_MUL:
   case TOK_DIV:
   case TOK_MOD:
-    return 4;
+    return 5;
   default:
     // this is not an operator
     return 0;
@@ -195,7 +197,7 @@ void parser_t::parse_expr_ex(uint32_t tide) {
 
   if (const token_t *not = stream_.found(TOK_NOT)) {
     parse_expr_ex(tide);
-    asm_.emit(INS_NOT, not);
+    op_push(TOK_NOT, tide);
   }
   else {
     parse_lhs();

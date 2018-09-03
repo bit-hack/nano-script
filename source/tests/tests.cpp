@@ -391,6 +391,7 @@ end
   if (!ccml.build(prog)) {
     return false;
   }
+  ccml.assembler().disasm();
   const function_t *func = ccml.parser().find_function("sqrt");
   int32_t input[] = {1234};
   int32_t res = 0;
@@ -419,17 +420,30 @@ end
   if (!ccml.build(prog)) {
     return false;
   }
+
   const function_t *func = ccml.parser().find_function("is_prime");
-  const int32_t inputs[] = {9973,  // prime
-                            9977}; // nonprime
-  int32_t res1, res2;
-  if (!ccml.vm().execute(*func, 1, inputs + 0, &res1)) {
-    return false;
+  const int32_t     primes[] = {13, 17, 19, 23, 29, 9973, 0}; // prime
+  const int32_t non_primes[] = {12, 15, 9, 21, 33, 9977, 0}; // nonprime
+
+  for (int i = 0; primes[i]; ++i) {
+    int32_t res = 0;
+    if (!ccml.vm().execute(*func, 1, primes + i, &res)) {
+      return false;
+    }
+    if (res != 1) {
+      return false;
+    }
   }
-  if (!ccml.vm().execute(*func, 1, inputs + 1, &res2)) {
-    return false;
+  for (int i = 0; non_primes[i]; ++i) {
+    int32_t res = 1;
+    if (!ccml.vm().execute(*func, 1, non_primes + 1, &res)) {
+      return false;
+    }
+    if (res != 0) {
+      return false;
+    }
   }
-  return res1 == 1 && res2 == 0;
+  return true;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

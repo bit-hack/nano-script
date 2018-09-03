@@ -18,6 +18,9 @@ enum class thread_error_t {
 };
 
 
+using value_t = int32_t;
+
+
 struct thread_t {
 
   thread_t(ccml_t &ccml)
@@ -37,7 +40,7 @@ struct thread_t {
     s_.push_back(v);
   }
 
-  bool prepare(const function_t &func, int32_t argc, const int32_t *argv);
+  bool prepare(const function_t &func, int32_t argc, const value_t *argv);
 
   bool resume(uint32_t cycles, bool trace);
 
@@ -54,7 +57,7 @@ struct thread_t {
   }
 
   bool has_error() const {
-    return error_ == thread_error_t::e_success;
+    return error_ != thread_error_t::e_success;
   }
 
 protected:
@@ -72,7 +75,7 @@ protected:
   };
 
   int32_t pc_;                    // program counter
-  std::vector<int32_t> s_;        // value stack
+  std::vector<value_t> s_;        // value stack
   std::vector<frame_t> f_;        // frames
 
   void set_error(thread_error_t error) {
@@ -86,9 +89,9 @@ protected:
     f_.push_back(f);
   }
 
-  int32_t getv(int32_t offs);
+  value_t getv(int32_t offs);
 
-  void setv(int32_t offs, int32_t val);
+  void setv(int32_t offs, value_t val);
 
   int32_t ret(int32_t val) {
     const int32_t sval = pop();
@@ -101,6 +104,40 @@ protected:
     f_.pop_back();
     return pc;
   }
+
+  int32_t _read_operand();
+  uint8_t _read_opcode();
+
+  void _do_INS_ADD();
+  void _do_INS_INC();
+  void _do_INS_SUB();
+  void _do_INS_MUL();
+  void _do_INS_DIV();
+  void _do_INS_MOD();
+  void _do_INS_AND();
+  void _do_INS_OR();
+  void _do_INS_NOT();
+  void _do_INS_LT();
+  void _do_INS_GT();
+  void _do_INS_LEQ();
+  void _do_INS_GEQ();
+  void _do_INS_EQ();
+  void _do_INS_JMP();
+  void _do_INS_CJMP();
+  void _do_INS_CALL();
+  void _do_INS_RET();
+  void _do_INS_SCALL();
+  void _do_INS_POP();
+  void _do_INS_CONST();
+  void _do_INS_LOCALS();
+  void _do_INS_GETV();
+  void _do_INS_SETV();
+  void _do_INS_GETVI();
+  void _do_INS_SETVI();
+  void _do_INS_GETG();
+  void _do_INS_SETG();
+  void _do_INS_GETGI();
+  void _do_INS_SETGI();
 };
 
 struct vm_t {
@@ -109,7 +146,8 @@ struct vm_t {
     : ccml_(c) {
   }
 
-  bool execute(const function_t &func, int32_t argc, const int32_t *argv, int32_t *ret=nullptr, bool trace=false);
+  bool execute(const function_t &func, int32_t argc, const value_t *argv,
+               int32_t *ret = nullptr, bool trace = false);
 
   // reset any stored state
   void reset();

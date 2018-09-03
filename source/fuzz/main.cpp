@@ -16,6 +16,17 @@ std::array<char, 1024 * 64> program;
 
 extern void print_history();
 
+
+static uint32_t _seed = 12345;
+uint32_t random(uint32_t max) {
+    uint32_t &x = _seed;
+    x ^= x >> 12;
+    x ^= x << 25;
+    x ^= x >> 27;
+    return ((x * 0x4F6CDD1D) >> 8) % (max ? max : 1);
+}
+
+
 int main() {
 
   uint32_t tests = 0;
@@ -37,6 +48,9 @@ int main() {
     }
     program[read] = '\0';
     program[program.size() - 1] = '\0';
+
+    // insert an error
+    program[random(read)] = random(256);
 
     ++tests;
 

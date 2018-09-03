@@ -72,6 +72,11 @@ struct token_t {
   // convert a token_e to a token string
   static const char *token_t::token_name(token_e e);
 
+  // stringify this token
+  const char *string() const {
+    return str_.empty() ? token_name(type_) : str_.c_str();
+  }
+
   token_e type_;
   std::string str_;
   int32_t val_;

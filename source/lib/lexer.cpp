@@ -221,9 +221,12 @@ bool lexer_t::lex(const char *s) {
     }
 
     // raise an error
+    lines_.push_back(std::string(new_line_, (s+1) - new_line_));
     ccml_.errors().unexpected_character(line_no_, *s);
 
   } // while
+
+  lines_.push_back(std::string(new_line_, (s - new_line_)));
   stream_.push(token_t{TOK_EOF, line_no_});
   return true;
 }
