@@ -3,10 +3,10 @@
 
 #include "../lib/assembler.h"
 #include "../lib/ccml.h"
+#include "../lib/errors.h"
 #include "../lib/lexer.h"
 #include "../lib/parser.h"
 #include "../lib/vm.h"
-#include "../lib/errors.h"
 
 namespace {
 
@@ -46,6 +46,12 @@ void vm_putc(thread_t &t) {
   t.push(0);
 }
 
+void on_error(const ccml_error_t &error) {
+  fprintf(stderr, "line:%d - %s\n", error.line, error.error.c_str());
+  fflush(stderr);
+  exit(1);
+}
+
 }; // namespace
 
 int main(int argc, char **argv) {
@@ -54,40 +60,36 @@ int main(int argc, char **argv) {
   ccml.parser().add_function("putc", vm_putc, 1);
   ccml.parser().add_function("getc", vm_getc, 0);
 
-  try {
-    if (argc <= 1)
-      return -1;
-    const char *source = load_file(argv[1]);
-    if (!source) {
-      printf("unable to load input");
-      return -1;
-    }
-    if (!ccml.lexer().lex(source))
-      return -1;
-    delete[] source;
+  if (argc <= 1)
+    return -1;
+  const char *source = load_file(argv[1]);
+  if (!source) {
+    printf("unable to load input");
+    return -1;
+  }
+  if (!ccml.lexer().lex(source))
+    return -1;
+  delete[] source;
 
-    if (!ccml.parser().parse())
-      return -2;
-    ccml.assembler().disasm();
+  ccml_error_t error;
+  if (!ccml.parser().parse(error)) {
+    on_error(error);
+    return -2;
+  }
+  ccml.assembler().disasm();
 
-    const function_t *func = ccml.parser().find_function("main");
-    printf("entry point: %d\n", func->pos_);
+  const function_t *func = ccml.parser().find_function("main");
+  printf("entry point: %d\n", func->pos_);
 
-    int32_t res = 0;
-    if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
-      fprintf(stderr, "max cycle count reached\n");
-      exit(1);
-    }
-    fflush(stdout);
-
-    printf("exit: %d\n", res);
-    getchar();
-
-  } catch (const ccml_error_t &msg) {
-    fprintf(stderr, "line:%d - %s\n", msg.line, msg.error.c_str());
-    fflush(stderr);
+  int32_t res = 0;
+  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+    fprintf(stderr, "max cycle count reached\n");
     exit(1);
   }
+  fflush(stdout);
+
+  printf("exit: %d\n", res);
+  getchar();
 
   return 0;
 }

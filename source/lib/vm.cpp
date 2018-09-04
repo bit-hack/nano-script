@@ -140,7 +140,9 @@ void thread_t::_do_INS_CJMP() {
 
 void thread_t::_do_INS_CALL() {
   const int32_t operand = _read_operand();
-  new_frame(pc_);
+  // new frame
+  const frame_t f = {int32_t(s_.size()), pc_};
+  f_.push_back(f);
   pc_ = operand;
 }
 
@@ -268,7 +270,8 @@ bool thread_t::prepare(const function_t &func, int32_t argc, const value_t *argv
   }
 
   // push the initial frame
-  new_frame(pc_);
+  const frame_t f = {int32_t(s_.size()), pc_};
+  f_.push_back(f);
 
   // good to go
   error_ = thread_error_t::e_success;
@@ -276,7 +279,6 @@ bool thread_t::prepare(const function_t &func, int32_t argc, const value_t *argv
   return true;
 }
 
-#if 1
 bool thread_t::resume(uint32_t cycles, bool trace) {
   if (finished_) {
     return false;
@@ -343,174 +345,6 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
   cycles_ += (start_cycles - cycles);
   return !has_error();
 }
-#else
-bool thread_t::resume(uint32_t cycles, bool trace) {
-
-  if (finished_) {
-    return false;
-  }
-
-  // get the instruction stream
-  const uint8_t *c = ccml_.assembler().get_code();
-
-  // while we haven't returned from frame 0
-  while (--cycles && f_.size() && error_ == thread_error_t::e_success) {
-
-    // increment the cycle count
-    ++cycles_;
-
-    if (trace) {
-      // print an instruction trace
-      printf(" > ");
-      ccml_.assembler().disasm(c + pc_);
-    }
-
-    // get opcode
-    const uint8_t op = c[pc_];
-    pc_ += 1;
-
-    // add to opcode histogram
-    ++history[op];
-
-    // dispatch instructions that don't require an operand
-#define OPERATOR(OP)                                                           \
-  {                                                                            \
-    const value_t r = pop(), l = pop();                                        \
-    push(l OP r);                                                              \
-  }
-    switch (op) {
-    case (INS_ADD): OPERATOR(+ ); continue;
-    case (INS_SUB): OPERATOR(- ); continue;
-    case (INS_MUL): OPERATOR(* ); continue;
-    case (INS_MOD): OPERATOR(% ); continue;
-    case (INS_AND): OPERATOR(&&); continue;
-    case (INS_OR):  OPERATOR(||); continue;
-    case (INS_LT):  OPERATOR(< ); continue;
-    case (INS_GT):  OPERATOR(> ); continue;
-    case (INS_LEQ): OPERATOR(<=); continue;
-    case (INS_GEQ): OPERATOR(>=); continue;
-    case (INS_EQ):  OPERATOR(==); continue;
-    case (INS_DIV): {
-      const value_t r = pop(), l = pop();
-      if (r == 0) {
-        set_error(thread_error_t::e_bad_divide_by_zero);
-        return false;
-      }
-      push(l / r);
-    }
-    case (INS_NOT):
-      push(!pop());
-      continue;
-    }
-#undef OPERATOR
-
-    // get operand
-    // XXX: may be an offset or a value
-    const int32_t val = *(int32_t *)(c + pc_);
-    pc_ += 4;
-
-    // dispatch instructions that require one operand
-    switch (op) {
-    case INS_SCALL:
-      if (const function_t *func = ccml_.parser().find_function(val)) {
-        func->sys_(*this);
-        continue;
-      }
-      // exception
-      {
-        set_error(thread_error_t::e_bad_syscall);
-        return false;
-      }
-    case INS_JMP:
-      pc_ = val;
-      continue;
-    case INS_CJMP:
-      if (pop()) {
-        pc_ = val;
-      }
-      continue;
-    case INS_CALL:
-      new_frame(pc_);
-      pc_ = val;
-      continue;
-    case INS_RET:
-      pc_ = ret(val);
-      continue;
-    case INS_POP:
-      for (int32_t i = 0; i < val; ++i) {
-        pop();
-      };
-      continue;
-    case INS_CONST:
-      push(val);
-      continue;
-    case INS_LOCALS:
-      // reserve this many values on the stack
-      if (val) {
-        s_.resize(s_.size() + val, 0);
-      }
-      continue;
-    case INS_GETV:
-      push(getv(val));
-      continue;
-    case INS_SETV:
-      setv(val, pop());
-      continue;
-    case INS_GETVI:
-      push(getv(val + pop()));
-      continue;
-    case INS_GETGI:
-    {
-      const int32_t index = val + pop();
-      if (index < 0 || index >= int32_t(s_.size())) {
-        set_error(thread_error_t::e_bad_get_global);
-        return false;
-      }
-      push(s_[index]);
-    }
-      continue;
-    case INS_GETG:
-      push(s_[val]);
-      continue;
-    case INS_SETG:
-      s_[val] = pop();
-      continue;
-    }
-
-    // dispatch instructions that require more operands
-    if (op == INS_SETVI) {
-      const int32_t value = pop();
-      setv(val + pop(), value);
-      continue;
-    }
-    if (op == INS_SETGI) {
-      const value_t value = pop();
-      const int32_t index = val + pop();
-      if (index < 0 || index >= int32_t(s_.size())) {
-        set_error(thread_error_t::e_bad_set_global);
-        return false;
-      }
-      s_[index] = value;
-      continue;
-    }
-
-    // exception
-    {
-      set_error(thread_error_t::e_bad_opcode);
-      return false;
-    }
-  } // while
-
-  // check for program termination
-  if (!finished_ && f_.empty()) {
-    assert(s_.size() > 0);
-    return_code_ = s_.back();
-    finished_ = true;
-  }
-
-  return true;
-}
-#endif
 
 bool vm_t::execute(const function_t &func, int32_t argc, const int32_t *argv,
                    int32_t *ret, bool trace) {

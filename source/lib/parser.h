@@ -209,7 +209,7 @@ struct parser_t {
   }
 
   // parse all tokens stored in the lexer
-  bool parse();
+  bool parse(struct ccml_error_t &error);
 
   // reset any stored state
   void reset();

@@ -17,9 +17,7 @@ enum class thread_error_t {
   e_bad_divide_by_zero
 };
 
-
 using value_t = int32_t;
-
 
 struct thread_t {
 
@@ -84,26 +82,8 @@ protected:
       return_code_ = -1;
   }
 
-  void new_frame(int32_t pc) {
-    frame_t f = {int32_t(s_.size()), pc};
-    f_.push_back(f);
-  }
-
   value_t getv(int32_t offs);
-
   void setv(int32_t offs, value_t val);
-
-  int32_t ret(int32_t val) {
-    const int32_t sval = pop();
-    while (val > 0) {
-      pop();
-      --val;
-    }
-    push(sval);
-    const int32_t pc = f_.back().pc_;
-    f_.pop_back();
-    return pc;
-  }
 
   int32_t _read_operand();
   uint8_t _read_opcode();

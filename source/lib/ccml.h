@@ -6,6 +6,7 @@
 
 
 struct error_manager_t;
+struct ccml_error_t;
 struct error_t;
 
 struct lexer_t;
@@ -44,7 +45,7 @@ struct ccml_t {
 
   vm_t &vm() { return *vm_; }
 
-  bool build(const char *source);
+  bool build(const char *source, ccml_error_t &error);
 
   void reset();
 

@@ -4,6 +4,7 @@
 #include "../lib/vm.h"
 #include "../lib/parser.h"
 #include "../lib/assembler.h"
+#include "../lib/errors.h"
 
 static const char *prime_prog = R"(
 # via sieve of eratosthenes
@@ -100,7 +101,8 @@ struct test_prime_t {
     ccml.parser().add_function("validate", sys_check, 1);
     ccml.parser().add_function("is_marking", is_marking, 1);
     // compile the program
-    if (!ccml.build(prime_prog)) {
+    ccml_error_t error;
+    if (!ccml.build(prime_prog, error)) {
       return false;
     }
     ccml.assembler().disasm();

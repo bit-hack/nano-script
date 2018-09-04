@@ -471,14 +471,9 @@ bool test_xfails() {
     }
 
     bool failed = false;
-    try {
-      ccml_t ccml;
-      if (!ccml.build(xfails[i])) {
-        return false;
-      }
-    }
-    catch (const ccml_error_t &error) {
-      (void)error;
+    ccml_t ccml;
+    ccml_error_t error;
+    if (!ccml.build(source, error)) {
       failed = true;
     }
     if (!failed) {

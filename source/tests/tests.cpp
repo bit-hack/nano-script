@@ -21,7 +21,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -41,7 +42,8 @@ function func_name()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("func_name");
@@ -60,7 +62,8 @@ function test_arg_return(x)
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("test_arg_return");
@@ -85,7 +88,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -104,7 +108,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -123,7 +128,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -142,7 +148,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -161,7 +168,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -180,7 +188,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -202,7 +211,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -224,7 +234,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -245,7 +256,8 @@ function func_b()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("func_b");
@@ -271,7 +283,8 @@ function func_b()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("func_b");
@@ -301,7 +314,8 @@ function driver()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("driver");
@@ -324,7 +338,8 @@ function driver()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("driver");
@@ -346,12 +361,8 @@ function scope(flag)
 end
 )";
   ccml_t ccml;
-  try {
-    if (!ccml.build(prog)) {
-      return true;
-    }
-  } catch (const ccml_error_t &error) {
-    (void)error;
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     // XXX: make warning "variable cant be accessed from this scope"
     return true;
   }
@@ -388,10 +399,10 @@ function sqrt(number)
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
-  ccml.assembler().disasm();
   const function_t *func = ccml.parser().find_function("sqrt");
   int32_t input[] = {1234};
   int32_t res = 0;
@@ -417,7 +428,8 @@ function is_prime(x)
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
 
@@ -465,7 +477,8 @@ function hcf(a, b)
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("hcf");
@@ -502,7 +515,8 @@ function fib(count)
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("fib");
@@ -530,7 +544,8 @@ function main(a, b)
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -562,7 +577,8 @@ function main(a)
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -595,7 +611,8 @@ function weekday(day, month, year)
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("weekday");
@@ -631,7 +648,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -652,7 +670,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -677,7 +696,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -704,7 +724,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -740,7 +761,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -787,7 +809,8 @@ function main()
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.parser().find_function("main");
@@ -819,7 +842,8 @@ function main(a, b)
 end
 )";
   ccml_t ccml;
-  if (!ccml.build(prog)) {
+  ccml_error_t error;
+  if (!ccml.build(prog, error)) {
     return false;
   }
   // note:

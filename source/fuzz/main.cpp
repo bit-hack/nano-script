@@ -56,14 +56,8 @@ int main() {
 
     ccml_t ccml;
     // compile the program
-    try {
-      if (!ccml.build(program.data())) {
-        fails.push_back(fname);
-        continue;
-      }
-    }
-    catch (const ccml_error_t &error) {
-      (void)error;
+    ccml_error_t error;
+    if (!ccml.build(program.data(), error)) {
       fails.push_back(fname);
       printf("%s\n", error.error.c_str());
       printf("%d:  %s\n", error.line, ccml.lexer().get_line(error.line).c_str());

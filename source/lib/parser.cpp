@@ -5,7 +5,7 @@
 #include "errors.h"
 
 
-bool parser_t::parse() {
+bool parser_t::parse(ccml_error_t &error) {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -13,29 +13,35 @@ bool parser_t::parse() {
   //    var <TOK_IDENT> [ = <TOK_VAL> ]
   //    function <TOK_IDENT> ( [ <TOK_IDENT> [ , <TOK_IDENT> ]+ ] )
 
-  // enter global scope
-  scope_.enter();
+  try {
+    // enter global scope
+    scope_.enter();
 
-  while (!stream_.found(TOK_EOF)) {
-    if (stream_.found(TOK_EOL)) {
-      // consume any blank lines
-      continue;
-    }
-    if (stream_.found(TOK_VAR)) {
-      parse_global();
-      continue;
-    }
-    if (stream_.found(TOK_FUNC)) {
-      parse_function();
-      continue;
+    while (!stream_.found(TOK_EOF)) {
+      if (stream_.found(TOK_EOL)) {
+        // consume any blank lines
+        continue;
+      }
+      if (stream_.found(TOK_VAR)) {
+        parse_global();
+        continue;
+      }
+      if (stream_.found(TOK_FUNC)) {
+        parse_function();
+        continue;
+      }
+
+      const token_t *tok = stream_.pop();
+      assert(tok);
+      ccml_.errors().unexpected_token(*tok);
     }
 
-    const token_t *tok = stream_.pop();
-    assert(tok);
-    ccml_.errors().unexpected_token(*tok);
+    scope_.leave();
   }
-
-  scope_.leave();
+  catch (const ccml_error_t &e) {
+    error = e;
+    return false;
+  }
 
   return true;
 }

@@ -21,11 +21,11 @@ ccml_t::ccml_t()
 ccml_t::~ccml_t() {
 }
 
-bool ccml_t::build(const char *source) {
+bool ccml_t::build(const char *source, ccml_error_t &error) {
   if (!lexer_->lex(source)) {
     return false;
   }
-  if (!parser_->parse()) {
+  if (!parser_->parse(error)) {
     return false;
   }
   return true;

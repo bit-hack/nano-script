@@ -4,6 +4,7 @@
 #include "../lib/vm.h"
 #include "../lib/parser.h"
 #include "../lib/assembler.h"
+#include "../lib/errors.h"
 
 static const char *sort_prog = R"(
 function main()
@@ -73,7 +74,8 @@ struct sort_test_t {
     ccml.parser().add_function("random", sys_random, 0);
     ccml.parser().add_function("check", sys_check, 1);
     // compile the program
-    if (!ccml.build(sort_prog)) {
+    ccml_error_t error;
+    if (!ccml.build(sort_prog, error)) {
       return false;
     }
     // run it
