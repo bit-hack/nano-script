@@ -13,6 +13,8 @@ int __stdcall IsDebuggerPresent(void);
 }
 #endif
 
+using namespace ccml;
+
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 static bool return_value() {
   static const char *prog = R"(
@@ -21,7 +23,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -42,7 +44,7 @@ function func_name()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -62,7 +64,7 @@ function test_arg_return(x)
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -88,7 +90,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -108,7 +110,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -128,7 +130,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -148,7 +150,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -168,7 +170,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -188,7 +190,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -211,7 +213,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -234,7 +236,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -256,7 +258,7 @@ function func_b()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -283,7 +285,7 @@ function func_b()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -314,7 +316,7 @@ function driver()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -338,7 +340,7 @@ function driver()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -361,7 +363,7 @@ function scope(flag)
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     // XXX: make warning "variable cant be accessed from this scope"
     return true;
@@ -399,7 +401,7 @@ function sqrt(number)
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -428,7 +430,7 @@ function is_prime(x)
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -477,7 +479,7 @@ function hcf(a, b)
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -515,7 +517,7 @@ function fib(count)
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -544,7 +546,7 @@ function main(a, b)
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -577,7 +579,7 @@ function main(a)
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -611,7 +613,7 @@ function weekday(day, month, year)
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -648,7 +650,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -670,7 +672,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -696,7 +698,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -724,7 +726,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -761,7 +763,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -809,7 +811,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -842,7 +844,7 @@ function main(a, b)
 end
 )";
   ccml_t ccml;
-  ccml_error_t error;
+  error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -938,7 +940,7 @@ int main(const int argc, const char **args) {
     bool result = false;
     try {
       result = pair->func();
-    } catch (const ccml_error_t &error) {
+    } catch (const error_t &error) {
       (void)error;
       result = false;
     }

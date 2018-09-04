@@ -4,6 +4,8 @@
 #include "ccml.h"
 
 
+namespace ccml {
+
 enum class thread_error_t {
   e_success = 0,
   e_bad_getv,
@@ -22,7 +24,7 @@ using value_t = int32_t;
 struct thread_t {
 
   thread_t(ccml_t &ccml)
-      : ccml_(ccml), return_code_(0), finished_(true), cycles_(0) {}
+    : ccml_(ccml), return_code_(0), finished_(true), cycles_(0) {}
 
   int32_t pop() {
     if (s_.empty()) {
@@ -61,6 +63,7 @@ struct thread_t {
 protected:
   friend struct vm_t;
 
+  // XXX: add a halted flag?
   ccml_t &ccml_;
   int32_t return_code_;
   bool finished_;
@@ -77,9 +80,9 @@ protected:
   std::vector<frame_t> f_;        // frames
 
   void set_error(thread_error_t error) {
-      finished_ = true;
-      error_ = error;
-      return_code_ = -1;
+    finished_ = true;
+    error_ = error;
+    return_code_ = -1;
   }
 
   value_t getv(int32_t offs);
@@ -123,8 +126,7 @@ protected:
 struct vm_t {
 
   vm_t(ccml_t &c)
-    : ccml_(c) {
-  }
+    : ccml_(c) {}
 
   bool execute(const function_t &func, int32_t argc, const value_t *argv,
                int32_t *ret = nullptr, bool trace = false);
@@ -135,3 +137,5 @@ struct vm_t {
 protected:
   ccml_t &ccml_;
 };
+
+} // namespace ccml

@@ -29,6 +29,8 @@ uint32_t random(uint32_t max) {
 
 int main() {
 
+  using namespace ccml;
+
   uint32_t tests = 0;
   std::vector<std::string> fails;
 
@@ -50,13 +52,15 @@ int main() {
     program[program.size() - 1] = '\0';
 
     // insert an error
+#if 0
     program[random(read)] = random(256);
+#endif
 
     ++tests;
 
     ccml_t ccml;
     // compile the program
-    ccml_error_t error;
+    error_t error;
     if (!ccml.build(program.data(), error)) {
       fails.push_back(fname);
       printf("%s\n", error.error.c_str());

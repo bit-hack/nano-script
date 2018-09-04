@@ -6,6 +6,8 @@
 #include "ccml.h"
 
 
+namespace ccml {
+
 enum token_e {
   TOK_FUNC,
   TOK_END,
@@ -46,28 +48,24 @@ struct token_t {
     : type_(t)
     , str_()
     , val_(0)
-    , line_no_(line)
-  {}
+    , line_no_(line) {}
 
   token_t(const char *s, uint32_t line)
     : type_(TOK_IDENT)
     , str_(s)
     , val_(0)
-    , line_no_(line)
-  {}
+    , line_no_(line) {}
 
   token_t(const std::string &s, uint32_t line)
     : type_(TOK_IDENT)
     , str_(s)
     , val_(0)
-    , line_no_(line)
-  {}
+    , line_no_(line) {}
 
   token_t(int32_t v, uint32_t line)
     : type_(TOK_VAL)
     , val_(v)
-    , line_no_(line)
-  {}
+    , line_no_(line) {}
 
   // convert a token_e to a token string
   static const char *token_t::token_name(token_e e);
@@ -117,3 +115,5 @@ protected:
   uint32_t line_no_;
   std::vector<token_t> stream_;
 };
+
+} // namespace ccml

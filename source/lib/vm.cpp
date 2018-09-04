@@ -4,6 +4,9 @@
 #include "assembler.h"
 #include "parser.h"
 
+
+using namespace ccml;
+
 /*
  *   s_     STACK LAYOUT
  *        .  .  .  .  .  .
@@ -28,9 +31,10 @@
 static int32_t history[__INS_COUNT__];
 
 void print_history() {
-  printf("histogram:");
+  printf("histogram:\n");
   for (int32_t i = 0; i < __INS_COUNT__; ++i) {
-    printf("  %d %d\n", i, history[i]);
+    const char *name = assembler_t::get_mnemonic((instruction_e)i);
+    printf("  %12s %d\n", name, history[i]);
   }
 }
 
@@ -49,7 +53,6 @@ uint8_t thread_t::_read_opcode() {
   pc_ += sizeof(uint8_t);
   return val;
 }
-
 
 void thread_t::_do_INS_ADD() {
   const value_t r = pop(), l = pop();
@@ -133,7 +136,7 @@ void thread_t::_do_INS_JMP() {
 
 void thread_t::_do_INS_CJMP() {
   const int32_t operand = _read_operand();
-  if (pop()) {
+  if (!pop()) {
     pc_ = operand;
   }
 }
@@ -237,8 +240,9 @@ void thread_t::_do_INS_SETGI() {
   const int32_t index = operand + pop();
   if (index < 0 || index >= int32_t(s_.size())) {
     set_error(thread_error_t::e_bad_set_global);
+  } else {
+    s_[index] = value;
   }
-  s_[index] = value;
 }
 
 bool thread_t::prepare(const function_t &func, int32_t argc, const value_t *argv) {

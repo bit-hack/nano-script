@@ -5,7 +5,9 @@
 #include "errors.h"
 
 
-bool parser_t::parse(ccml_error_t &error) {
+using namespace ccml;
+
+bool parser_t::parse(error_t &error) {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -38,7 +40,7 @@ bool parser_t::parse(ccml_error_t &error) {
 
     scope_.leave();
   }
-  catch (const ccml_error_t &e) {
+  catch (const error_t &e) {
     error = e;
     return false;
   }
@@ -48,13 +50,11 @@ bool parser_t::parse(ccml_error_t &error) {
 
 const function_t *parser_t::find_function(const token_t *name, bool can_fail) const {
   token_stream_t &stream_ = ccml_.lexer().stream_;
-
   for (const function_t &func : funcs_) {
     if (func.name_ == name->str_) {
       return &func;
     }
   }
-
   if (!can_fail) {
     ccml_.errors().unknown_function(*name);
   }
@@ -360,7 +360,6 @@ void parser_t::parse_if() {
   parse_expr();
 
   // this jump skips the body of the if, hence not
-  asm_.emit(INS_NOT);
   int32_t *l1 = asm_.emit(INS_CJMP, 0);
 
   // note: moved below not and jmp to keep linetable correct
@@ -413,6 +412,10 @@ void parser_t::parse_while() {
   //      <statments>
   //    end '\n'
 
+  // XXX: consider moving the expression to the bottom of the loop, and having
+  //      one initial jump to the end of the loop.  this way we can save one
+  //      INS_JMP every iteration of the loop.
+
   // top of loop
   const int32_t l1 = asm_.pos();
   // WHILE condition
@@ -420,10 +423,9 @@ void parser_t::parse_while() {
   parse_expr();
 
   // GOTO end if false
-  asm_.emit(INS_NOT);
   int32_t *l2 = asm_.emit(INS_CJMP, 0);
 
-  // note: moved below not and jump to keep linetable correct
+  // note: moved below not and jump to keep line table correct
   stream_.pop(TOK_RPAREN);
   stream_.pop(TOK_EOL);
 

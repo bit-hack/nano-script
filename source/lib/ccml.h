@@ -5,8 +5,9 @@
 #include <vector>
 
 
+namespace ccml {
+
 struct error_manager_t;
-struct ccml_error_t;
 struct error_t;
 
 struct lexer_t;
@@ -43,9 +44,11 @@ struct ccml_t {
     return *errors_;
   }
 
-  vm_t &vm() { return *vm_; }
+  vm_t &vm() {
+    return *vm_;
+  }
 
-  bool build(const char *source, ccml_error_t &error);
+  bool build(const char *source, error_t &error);
 
   void reset();
 
@@ -64,4 +67,6 @@ private:
   std::unique_ptr<error_manager_t> errors_;
 };
 
-typedef void (*ccml_syscall_t)(struct thread_t &thread);
+typedef void(*ccml_syscall_t)(struct thread_t &thread);
+
+} // namespace ccml

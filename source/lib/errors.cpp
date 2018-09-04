@@ -3,6 +3,9 @@
 
 #include "errors.h"
 
+
+using namespace ccml;
+
 void error_manager_t::on_error_(uint32_t line, const char *fmt, ...) {
   // generate the error message
   char buffer[1024] = {'\0'};
@@ -12,6 +15,6 @@ void error_manager_t::on_error_(uint32_t line, const char *fmt, ...) {
   buffer[sizeof(buffer) - 1] = '\0';
   va_end(va);
   // throw an error
-  ccml_error_t error{buffer, line};
+  error_t error{buffer, line};
   throw error;
 }

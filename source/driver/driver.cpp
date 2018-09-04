@@ -35,18 +35,18 @@ const char *load_file(const char *path) {
   return source;
 }
 
-void vm_getc(thread_t &t) {
+void vm_getc(ccml::thread_t &t) {
   const int32_t ch = getchar();
   t.push(ch);
 }
 
-void vm_putc(thread_t &t) {
+void vm_putc(ccml::thread_t &t) {
   const int32_t v = t.pop();
   putchar(v);
   t.push(0);
 }
 
-void on_error(const ccml_error_t &error) {
+void on_error(const ccml::error_t &error) {
   fprintf(stderr, "line:%d - %s\n", error.line, error.error.c_str());
   fflush(stderr);
   exit(1);
@@ -55,6 +55,8 @@ void on_error(const ccml_error_t &error) {
 }; // namespace
 
 int main(int argc, char **argv) {
+
+  using namespace ccml;
 
   ccml_t ccml;
   ccml.parser().add_function("putc", vm_putc, 1);
@@ -71,7 +73,7 @@ int main(int argc, char **argv) {
     return -1;
   delete[] source;
 
-  ccml_error_t error;
+  error_t error;
   if (!ccml.parser().parse(error)) {
     on_error(error);
     return -2;

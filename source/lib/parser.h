@@ -6,23 +6,21 @@
 #include "token.h"
 
 
+namespace ccml {
+
 struct identifier_t {
 
   identifier_t()
     : offset(0)
     , count(0)
     , token(nullptr)
-    , is_global(false)
-  {
-  }
+    , is_global(false) {}
 
-  identifier_t(const token_t *t, int32_t o, bool is_glob, int32_t c=1)
+  identifier_t(const token_t *t, int32_t o, bool is_glob, int32_t c = 1)
     : offset(o)
     , count(c)
     , token(t)
-    , is_global(is_glob)
-  {
-  }
+    , is_global(is_glob) {}
 
   bool is_array() const {
     return count > 1;
@@ -48,8 +46,7 @@ struct scope_list_t {
   void enter() {
     if (var_head_.empty()) {
       var_head_.emplace_back(0);
-    }
-    else {
+    } else {
       const int32_t back = head();
       var_head_.emplace_back(back);
     }
@@ -118,7 +115,7 @@ struct scope_list_t {
   const identifier_t *find_ident(const token_t &name) const {
     // note: back to front search could enable shadowing
     // search for locals
-    for (int32_t i = head()-1; i >= 0; --i) {
+    for (int32_t i = head() - 1; i >= 0; --i) {
       const auto &ident = vars_[i];
       if (ident.token->str_ == name.str_) {
         return &vars_[i];
@@ -179,10 +176,10 @@ struct function_t {
 
   function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args,
              int32_t id)
-      : sys_(sys), name_(name), pos_(-1), num_args_(num_args), id_(id) {}
+    : sys_(sys), name_(name), pos_(-1), num_args_(num_args), id_(id) {}
 
   function_t(const std::string &name, int32_t pos, int32_t num_args, int32_t id)
-      : sys_(nullptr), name_(name), pos_(pos), num_args_(num_args), id_(id) {}
+    : sys_(nullptr), name_(name), pos_(pos), num_args_(num_args), id_(id) {}
 
   void add_return_fixup(int32_t *r) {
     ret_fixup_.push_back(r);
@@ -205,11 +202,10 @@ struct global_t {
 struct parser_t {
 
   parser_t(ccml_t &c)
-    : ccml_(c) {
-  }
+    : ccml_(c) {}
 
   // parse all tokens stored in the lexer
-  bool parse(struct ccml_error_t &error);
+  bool parse(struct error_t &error);
 
   // reset any stored state
   void reset();
@@ -219,7 +215,7 @@ struct parser_t {
 
   // find a function by name
   // if `can_fail == false` it will report an error
-  const function_t *find_function(const token_t *name, bool can_fail=false) const;
+  const function_t *find_function(const token_t *name, bool can_fail = false) const;
   const function_t *find_function(const std::string &name) const;
   const function_t *find_function(uint32_t id) const;
 
@@ -287,3 +283,5 @@ protected:
   // pop all operators off the stack
   void op_pop_all(uint32_t tide);
 };
+
+} // namespace ccml

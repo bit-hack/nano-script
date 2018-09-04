@@ -8,6 +8,8 @@
 #include "token.h"
 
 
+namespace ccml {
+
 enum instruction_e {
   INS_ADD,
   INS_INC,
@@ -108,8 +110,8 @@ struct assembler_t {
   assembler_t(ccml_t &c);
 
   // emit into the code stream
-  void     emit(token_e                     , const token_t *t = nullptr);
-  void     emit(instruction_e ins           , const token_t *t = nullptr);
+  void     emit(token_e, const token_t *t = nullptr);
+  void     emit(instruction_e ins, const token_t *t = nullptr);
   int32_t *emit(instruction_e ins, int32_t v, const token_t *t = nullptr);
 
   // return the current output head
@@ -129,6 +131,9 @@ struct assembler_t {
   // reset any stored state
   void reset();
 
+  // get instruction mnemonic
+  static const char *get_mnemonic(instruction_e e);
+
 protected:
   // write 8bits to the code stream
   void write8(uint8_t v);
@@ -146,3 +151,5 @@ protected:
   uint32_t head_;
   std::array<uint8_t, 1024 * 8> code_;
 };
+
+} // namespace ccml

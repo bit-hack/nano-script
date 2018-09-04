@@ -79,7 +79,7 @@ struct test_prime_t {
   static int32_t checks_done;
 
   // check that the output is in an ascending order
-  static void sys_check(struct thread_t &thread) {
+  static void sys_check(struct ccml::thread_t &thread) {
     ++checks_done;
     // pop prime number off stack
     const int32_t value = thread.pop();
@@ -90,18 +90,21 @@ struct test_prime_t {
     thread.push(0);
   }
 
-  static void is_marking(struct thread_t &thread) {
+  static void is_marking(struct ccml::thread_t &thread) {
     const int32_t value = thread.pop();
     thread.push(0);
   }
 
   static bool run() {
+
+    using namespace ccml;
+
     ccml_t ccml;
     // register syscalls
     ccml.parser().add_function("validate", sys_check, 1);
     ccml.parser().add_function("is_marking", is_marking, 1);
     // compile the program
-    ccml_error_t error;
+    error_t error;
     if (!ccml.build(prime_prog, error)) {
       return false;
     }

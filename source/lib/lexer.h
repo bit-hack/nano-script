@@ -3,13 +3,14 @@
 #include "token.h"
 
 
+namespace ccml {
+
 struct lexer_t {
 
   lexer_t(ccml_t &c)
     : ccml_(c)
     , stream_(c)
-    , line_no_(0) {
-  }
+    , line_no_(0) {}
 
   bool lex(const char *source);
 
@@ -32,3 +33,5 @@ protected:
   void push_ident(const char *start, const char *end);
   void push_val(const char *start, const char *end);
 };
+
+} // namespace ccml

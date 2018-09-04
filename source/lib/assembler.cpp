@@ -6,6 +6,8 @@
 #include "errors.h"
 
 
+using namespace ccml;
+
 namespace {
 
 const char *gMnemonic[] = {
@@ -26,6 +28,10 @@ static_assert(sizeof(gMnemonic) / sizeof(const char *) == __INS_COUNT__,
               "gMnemonic table should match instruction_e enum layout");
 };
 
+const char *assembler_t::get_mnemonic(const instruction_e e) {
+  return gMnemonic[e];
+}
+
 assembler_t::assembler_t(ccml_t &c)
   : ccml_(c)
   , head_(0)
@@ -36,8 +42,10 @@ void assembler_t::write8(uint8_t v) {
   if (head_ + 1 >= code_.size()) {
     ccml_.errors().program_too_large();
   }
-  // write int8_t to code stream
-  code_[head_++] = v;
+  else {
+    // write int8_t to code stream
+    code_[head_++] = v;
+  }
 }
 
 void assembler_t::write32(int32_t v) {
@@ -45,9 +53,11 @@ void assembler_t::write32(int32_t v) {
   if (head_ + 4 >= code_.size()) {
     ccml_.errors().program_too_large();
   }
-  // write int32_t to code stream
-  memcpy(code_.data() + head_, &v, sizeof(v));
-  head_ += 4;
+  else {
+    // write int32_t to code stream
+    memcpy(code_.data() + head_, &v, sizeof(v));
+    head_ += 4;
+  }
 }
 
 void assembler_t::emit(instruction_e ins, const token_t *t) {

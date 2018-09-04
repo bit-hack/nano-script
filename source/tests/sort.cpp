@@ -48,7 +48,7 @@ struct sort_test_t {
   static bool test_passing;
 
   // return random number between [0 -> 255]
-  static void sys_random(struct thread_t &thread) {
+  static void sys_random(struct ccml::thread_t &thread) {
     static uint32_t x = 0x12345;
     x ^= x << 13;
     x ^= x >> 17;
@@ -57,7 +57,7 @@ struct sort_test_t {
   }
 
   // check that the output is in an ascending order
-  static void sys_check(struct thread_t &thread) {
+  static void sys_check(struct ccml::thread_t &thread) {
     static int32_t last = -1;
     const int32_t current = thread.pop();
     if (current < last) {
@@ -69,12 +69,13 @@ struct sort_test_t {
   }
 
   static bool run() {
+    using namespace ccml;
     ccml_t ccml;
     // register syscalls
     ccml.parser().add_function("random", sys_random, 0);
     ccml.parser().add_function("check", sys_check, 1);
     // compile the program
-    ccml_error_t error;
+    error_t error;
     if (!ccml.build(sort_prog, error)) {
       return false;
     }
@@ -94,6 +95,7 @@ struct sort_test_t {
 
     // currently                  99338
     // with INS_JMP:              95114
+    // with !CJMP:                86792
     const uint32_t cycle_count = thread.cycle_count();
 
     const int32_t res = thread.return_code();

@@ -7,14 +7,22 @@
 #include "token.h"
 
 
-struct ccml_error_t {
+namespace ccml {
+
+struct error_t {
+
+  void clear() {
+    error.clear();
+    line = 0;
+  }
+
   std::string error;
   uint32_t line;
 };
 
 struct error_manager_t {
 
-  error_manager_t(ccml_t &ccml) : ccml_(ccml) {}
+  error_manager_t(ccml_t &ccml): ccml_(ccml) {}
 
   // parser
 
@@ -121,3 +129,5 @@ protected:
 
   ccml_t &ccml_;
 };
+
+} // namespace ccml

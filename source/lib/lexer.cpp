@@ -2,6 +2,8 @@
 #include "errors.h"
 
 
+using namespace ccml;
+
 namespace {
 
 bool is_alpha_numeric(const char t) {

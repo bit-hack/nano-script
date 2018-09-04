@@ -9,6 +9,8 @@
 #include "errors.h"
 
 
+using namespace ccml;
+
 ccml_t::ccml_t()
     : lexer_(new lexer_t(*this))
     , parser_(new parser_t(*this))
@@ -21,13 +23,18 @@ ccml_t::ccml_t()
 ccml_t::~ccml_t() {
 }
 
-bool ccml_t::build(const char *source, ccml_error_t &error) {
+bool ccml_t::build(const char *source, error_t &error) {
+  // clear the error
+  error.clear();
+  // lex into tokens
   if (!lexer_->lex(source)) {
     return false;
   }
+  // parse into instructions
   if (!parser_->parse(error)) {
     return false;
   }
+  // success
   return true;
 }
 

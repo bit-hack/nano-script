@@ -3,6 +3,8 @@
 #include "errors.h"
 
 
+using namespace ccml;
+
 token_stream_t::token_stream_t(ccml_t &ccml)
   : ccml_(ccml)
   , index_(0)
@@ -28,7 +30,7 @@ const token_t *token_stream_t::pop(token_e type) {
 }
 
 const token_t *token_stream_t::pop() {
-  // update the current line numbmer
+  // update the current line number
   line_no_ = stream_[index_].line_no_;
   // return the popped token
   assert(index_ < stream_.size());

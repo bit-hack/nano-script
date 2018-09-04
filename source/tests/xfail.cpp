@@ -471,8 +471,8 @@ bool test_xfails() {
     }
 
     bool failed = false;
-    ccml_t ccml;
-    ccml_error_t error;
+    ccml::ccml_t ccml;
+    ccml::error_t error;
     if (!ccml.build(source, error)) {
       failed = true;
     }
