@@ -102,7 +102,53 @@ enum instruction_e {
   //    stack[ operand + i ] = v
   INS_SETGI,
 
-  __INS_COUNT__,  // number of instructions
+  // number of instructions
+  __INS_COUNT__,
+};
+
+struct asm_stream_t {
+
+  asm_stream_t(uint8_t *base, size_t size)
+    : end(base + size)
+    , start(base)
+    , ptr(base)
+  {
+  }
+
+  bool write1(const uint8_t data) {
+    if (end - ptr > 1) {
+      *ptr = data;
+      ptr += 1;
+      return true;
+    }
+    return false;
+  }
+
+  bool write4(const uint32_t data) {
+    if (end - ptr > 4) {
+      memcpy(ptr, &data, 4);
+      ptr += 4;
+      return true;
+    }
+    return false;
+  }
+
+  size_t written() const {
+    return ptr - start;
+  }
+
+  const uint8_t *data() const {
+    return start;
+  }
+
+  size_t size() const {
+    return end - start;
+  }
+
+protected:
+  const uint8_t *end;
+  uint8_t *start;
+  uint8_t *ptr;
 };
 
 struct assembler_t {
@@ -134,12 +180,17 @@ struct assembler_t {
   // get instruction mnemonic
   static const char *get_mnemonic(instruction_e e);
 
+  // set the assembler output stream
+  void set_stream(asm_stream_t *asm_stream) {
+    stream_ = asm_stream;
+  }
+
 protected:
   // write 8bits to the code stream
-  void write8(uint8_t v);
+  void write8(const uint8_t v);
 
   // write 32bits to the code stream
-  void write32(int32_t v);
+  void write32(const int32_t v);
 
   // add the current code position to the line table usign the line from the
   // given token 't' or the current stream stored line.
@@ -148,7 +199,11 @@ protected:
   std::map<const uint8_t *, uint32_t> line_table_;
 
   ccml_t &ccml_;
-  uint32_t head_;
+
+  asm_stream_t *stream_;
+
+  asm_stream_t code_stream_;
+  uint32_t code_head_;
   std::array<uint8_t, 1024 * 8> code_;
 };
 

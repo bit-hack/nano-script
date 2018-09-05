@@ -27,11 +27,17 @@ bool ccml_t::build(const char *source, error_t &error) {
   // clear the error
   error.clear();
   // lex into tokens
-  if (!lexer_->lex(source)) {
-    return false;
+  try {
+    if (!lexer_->lex(source)) {
+      return false;
+    }
+    // parse into instructions
+    if (!parser_->parse(error)) {
+      return false;
+    }
   }
-  // parse into instructions
-  if (!parser_->parse(error)) {
+  catch (const error_t &e) {
+    error = e;
     return false;
   }
   // success

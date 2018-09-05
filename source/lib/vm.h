@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <array>
 
 #include "ccml.h"
 
@@ -16,33 +17,32 @@ enum class thread_error_t {
   e_bad_set_global,
   e_bad_get_global,
   e_bad_pop,
-  e_bad_divide_by_zero
+  e_bad_divide_by_zero,
+  e_stack_overflow,
+  e_stack_underflow,
+  e_bad_globals_size,
 };
 
 using value_t = int32_t;
 
 struct thread_t {
 
-  thread_t(ccml_t &ccml)
-    : ccml_(ccml), return_code_(0), finished_(true), cycles_(0) {}
+  // XXXX: as it stands globals are not shared among threads
 
-  int32_t pop() {
-    if (s_.empty()) {
-      set_error(thread_error_t::e_bad_pop);
-      return 0;
-    }
-    const int32_t v = s_.back();
-    s_.pop_back();
-    return v;
+  thread_t(ccml_t &ccml)
+    : ccml_(ccml), return_code_(0), finished_(true), cycles_(0), s_head_(0), f_head_(0) {}
+
+  value_t pop() {
+    return pop_();
   }
 
   void push(int32_t v) {
-    s_.push_back(v);
+    push_(v);
   }
 
   bool prepare(const function_t &func, int32_t argc, const value_t *argv);
 
-  bool resume(uint32_t cycles, bool trace);
+  bool resume(int32_t cycles, bool trace);
 
   bool finished() const {
     return finished_;
@@ -76,8 +76,56 @@ protected:
   };
 
   int32_t pc_;                    // program counter
-  std::vector<value_t> s_;        // value stack
-  std::vector<frame_t> f_;        // frames
+  std::array<value_t, 1024> s_;   // value stack
+  std::array<frame_t, 64> f_;     // frame stack
+  uint32_t s_head_;
+  uint32_t f_head_;
+
+  void enter_(uint32_t sp, uint32_t pc) {
+    if (f_head_ >= f_.size()) {
+      set_error(thread_error_t::e_stack_overflow);
+    }
+    else {
+      ++f_head_;
+      frame_().sp_ = sp;
+      frame_().pc_ = pc;
+    }
+  }
+
+  // return - old PC as return value
+  uint32_t leave_() {
+    if (f_head_ <= 0) {
+      set_error(thread_error_t::e_stack_underflow);
+      return 0;
+    }
+    else {
+      const uint32_t ret_pc = frame_().pc_;
+      --f_head_;
+      return ret_pc;
+    }
+  }
+
+  frame_t &frame_() {
+    assert(f_head_);
+    return f_[f_head_-1];
+  }
+
+  void push_(value_t v) {
+    if (s_head_ >= s_.size()) {
+      set_error(thread_error_t::e_stack_overflow);
+    } else {
+      s_[s_head_++] = v;
+    }
+  }
+
+  value_t pop_() {
+    if (s_head_ <= 0) {
+      set_error(thread_error_t::e_stack_underflow);
+      return 0;
+    } else {
+      return s_[--s_head_];
+    }
+  }
 
   void set_error(thread_error_t error) {
     finished_ = true;

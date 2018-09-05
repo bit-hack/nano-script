@@ -331,8 +331,8 @@ end
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 static bool test_global_4() {
   static const char *prog = R"(
-var size = 4096
-var data[4096]
+var size = 128
+var data[128]
 
 function driver()
   var i = size
@@ -349,7 +349,7 @@ end
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 4096;
+  return res == 128;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

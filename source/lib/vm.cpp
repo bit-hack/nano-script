@@ -144,22 +144,25 @@ void thread_t::_do_INS_CJMP() {
 void thread_t::_do_INS_CALL() {
   const int32_t operand = _read_operand();
   // new frame
-  const frame_t f = {int32_t(s_.size()), pc_};
-  f_.push_back(f);
+  enter_(s_head_, pc_);
   pc_ = operand;
 }
 
 void thread_t::_do_INS_RET() {
-  int32_t operand = _read_operand();
+  const int32_t operand = _read_operand();
+  // pop return value
   const int32_t sval = pop();
-  while (operand > 0) {
-    pop();
-    --operand;
+  // remove arguments and local vars
+  if (s_head_ - operand < 0) {
+    set_error(thread_error_t::e_stack_underflow);
   }
-  push(sval);
-  const int32_t pc = f_.back().pc_;
-  f_.pop_back();
-  pc_ = pc;
+  else {
+    s_head_ -= operand;
+    // push return value
+    push(sval);
+    // return to previous frame
+    pc_ = leave_();
+  }
 }
 
 void thread_t::_do_INS_SCALL() {
@@ -189,7 +192,14 @@ void thread_t::_do_INS_LOCALS() {
   const int32_t operand = _read_operand();
   // reserve this many values on the stack
   if (operand) {
-    s_.resize(s_.size() + operand, 0);
+    if (s_head_ + operand >= s_.size()) {
+      set_error(thread_error_t::e_stack_overflow);
+      return;
+    }
+    for (int i = 0; i < operand; ++i) {
+      s_[s_head_ + i] = 0;
+    }
+    s_head_ += operand;
   }
 }
 
@@ -216,12 +226,22 @@ void thread_t::_do_INS_SETVI() {
 
 void thread_t::_do_INS_GETG() {
   const int32_t operand = _read_operand();
-  push(s_[operand]);
+  if (operand < 0 || operand >= int32_t(s_.size())) {
+    set_error(thread_error_t::e_bad_get_global);
+  }
+  else {
+    push(s_[operand]);
+  }
 }
 
 void thread_t::_do_INS_SETG() {
   const int32_t operand = _read_operand();
-  s_[operand] = pop();
+  if (operand < 0 || operand >= int32_t(s_.size())) {
+    set_error(thread_error_t::e_bad_set_global);
+  }
+  else {
+    s_[operand] = pop();
+  }
 }
 
 void thread_t::_do_INS_GETGI() {
@@ -247,12 +267,18 @@ void thread_t::_do_INS_SETGI() {
 
 bool thread_t::prepare(const function_t &func, int32_t argc, const value_t *argv) {
 
+  error_ = thread_error_t::e_success;
   finished_ = true;
   cycles_ = 0;
 
   // push globals
   if (const int32_t size = ccml_.parser().global_size()) {
-    s_.resize(size);
+    if (size < 0 || size >= int32_t(s_.size())) {
+      set_error(thread_error_t::e_bad_globals_size);
+      return false;
+    }
+    // reserve this much space for globals
+    s_head_ += size;
     for (const auto &g : ccml_.parser().globals()) {
       if (g.size_ == 1) {
         s_[g.offset_] = g.value_;
@@ -274,22 +300,25 @@ bool thread_t::prepare(const function_t &func, int32_t argc, const value_t *argv
   }
 
   // push the initial frame
-  const frame_t f = {int32_t(s_.size()), pc_};
-  f_.push_back(f);
+  enter_(s_head_, pc_);
+
+  // catch any misc errors
+  if (error_ != thread_error_t::e_success) {
+    return false;
+  }
 
   // good to go
-  error_ = thread_error_t::e_success;
   finished_ = false;
   return true;
 }
 
-bool thread_t::resume(uint32_t cycles, bool trace) {
+bool thread_t::resume(int32_t cycles, bool trace) {
   if (finished_) {
     return false;
   }
   const uint32_t start_cycles = cycles;
   // while we should keep processing instructions
-  while (--cycles && !f_.empty()) {
+  while (cycles > 0 && f_head_) {
     // fetch opcode
     const uint8_t opcode = _read_opcode();
     ++history[opcode];
@@ -335,14 +364,15 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
       set_error(thread_error_t::e_bad_opcode);
       break;
     }
+    --cycles;
     if (has_error() || finished_) {
       break;
     }
   }
   // check for program termination
-  if (!finished_ && f_.empty()) {
-    assert(s_.size() > 0);
-    return_code_ = s_.back();
+  if (!finished_ && !f_head_) {
+    assert(s_head_ > 0);
+    return_code_ = pop_();
     finished_ = true;
   }
   // increment the cycle count
@@ -350,13 +380,13 @@ bool thread_t::resume(uint32_t cycles, bool trace) {
   return !has_error();
 }
 
-bool vm_t::execute(const function_t &func, int32_t argc, const int32_t *argv,
+bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
                    int32_t *ret, bool trace) {
   thread_t t{ccml_};
   if (!t.prepare(func, argc, argv)) {
     return false;
   }
-  if (!t.resume(-1, trace)) {
+  if (!t.resume(INT_MAX, trace)) {
     return false;
   }
   if (!t.finished()) {
@@ -373,8 +403,8 @@ void vm_t::reset() {
 }
 
 value_t thread_t::getv(int32_t offs) {
-  const int32_t index = f_.back().sp_ + offs;
-  if (index < 0 || index >= int32_t(s_.size())) {
+  const int32_t index = frame_().sp_ + offs;
+  if (index < 0 || index >= int32_t(s_head_)) {
     set_error(thread_error_t::e_bad_getv);
     return 0;
   }
@@ -382,8 +412,8 @@ value_t thread_t::getv(int32_t offs) {
 }
 
 void thread_t::setv(int32_t offs, value_t val) {
-  const int32_t index = f_.back().sp_ + offs;
-  if (index < 0 || index >= int32_t(s_.size())) {
+  const int32_t index = frame_().sp_ + offs;
+  if (index < 0 || index >= int32_t(s_head_)) {
     set_error(thread_error_t::e_bad_setv);
   }
   else {

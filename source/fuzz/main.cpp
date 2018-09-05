@@ -73,8 +73,8 @@ int main() {
 
       std::array<int32_t, 16> args;
       assert(func.num_args_ < args.size());
-      for (uint32_t i = 0; i < func.num_args_; ++i) {
-        args[i] = rand() & 0xff;
+      for (uint32_t j = 0; j < func.num_args_; ++j) {
+        args[j] = rand() & 0xff;
       }
 
       thread_t thread{ccml};
@@ -103,7 +103,9 @@ int main() {
     getchar();
   }
 
+#if 1
   print_history();
+#endif
 
   return fails.empty() ? 0 : 1;
 }

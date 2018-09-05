@@ -34,29 +34,33 @@ const char *assembler_t::get_mnemonic(const instruction_e e) {
 
 assembler_t::assembler_t(ccml_t &c)
   : ccml_(c)
-  , head_(0)
-{}
+  , code_head_(0)
+  , stream_(&code_stream_)
+  , code_stream_(code_.data(), code_.size())
+{
+}
 
-void assembler_t::write8(uint8_t v) {
+void assembler_t::write8(const uint8_t v) {
   // check for code space overflow
-  if (head_ + 1 >= code_.size()) {
+  if (code_head_ + 1 >= code_.size()) {
     ccml_.errors().program_too_large();
   }
   else {
     // write int8_t to code stream
-    code_[head_++] = v;
+    code_[code_head_++] = v;
   }
 }
 
-void assembler_t::write32(int32_t v) {
+void assembler_t::write32(const int32_t v) {
+  const uint32_t size = sizeof(v);
   // check for code space overflow
-  if (head_ + 4 >= code_.size()) {
+  if (code_head_ + size >= code_.size()) {
     ccml_.errors().program_too_large();
   }
   else {
     // write int32_t to code stream
-    memcpy(code_.data() + head_, &v, sizeof(v));
-    head_ += 4;
+    memcpy(code_.data() + code_head_, &v, size);
+    code_head_ += size;
   }
 }
 
@@ -111,11 +115,11 @@ int32_t *assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
     assert(!"unknown instruction");
   }
   // return the operand
-  return (int32_t *)(code_.data() + (head_ - 4));
+  return (int32_t *)(code_.data() + (code_head_ - 4));
 }
 
 int32_t assembler_t::pos() const {
-  return head_;
+  return code_head_;
 }
 
 // return number of bytes disassembled or <= 0 on error
@@ -184,7 +188,7 @@ int32_t assembler_t::disasm(const uint8_t *ptr) const {
 int32_t assembler_t::disasm() {
   uint32_t count = 0;
   uint32_t line_no = -1;
-  for (uint32_t i = 0; i < head_; ++count) {
+  for (uint32_t i = 0; i < code_head_; ++count) {
 
     const uint8_t *ptr = code_.data() + i;
     bool print_line = false;
@@ -235,13 +239,14 @@ void assembler_t::emit(token_e tok, const token_t *t) {
 
 int32_t &assembler_t::get_fixup() {
   // warning: if code_ can grow this will error
-  assert(head_ >= sizeof(int32_t));
-  return *reinterpret_cast<int32_t*>(code_.data() + (head_ - sizeof(int32_t)));
+  assert(code_head_ >= sizeof(int32_t));
+  uint8_t *ptr = code_.data() + (code_head_ - sizeof(int32_t));
+  return *reinterpret_cast<int32_t *>(ptr);
 }
 
 void assembler_t::add_to_linetable(const token_t *t) {
   // insert into the line table
-  const uint8_t *ptr = code_.data() + head_;
+  const uint8_t *ptr = code_.data() + code_head_;
   if (t) {
     line_table_[ptr] = t->line_no_;
   }
@@ -252,6 +257,6 @@ void assembler_t::add_to_linetable(const token_t *t) {
 
 void assembler_t::reset() {
   code_.fill(0);
-  head_ = 0;
+  code_head_ = 0;
   line_table_.clear();
 }

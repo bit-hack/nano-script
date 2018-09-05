@@ -9,8 +9,8 @@
 static const char *prime_prog = R"(
 # via sieve of eratosthenes
 
-var size = 4096
-var data[4096]
+var size = 512
+var data[512]
 
 function fill()
   var i = size
