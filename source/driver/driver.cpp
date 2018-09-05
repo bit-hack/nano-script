@@ -2,6 +2,7 @@
 #include <cstdio>
 
 #include "../lib/assembler.h"
+#include "../lib/disassembler.h"
 #include "../lib/ccml.h"
 #include "../lib/errors.h"
 #include "../lib/lexer.h"
@@ -78,7 +79,7 @@ int main(int argc, char **argv) {
     on_error(error);
     return -2;
   }
-  ccml.assembler().disasm();
+  ccml.disassembler().disasm();
 
   const function_t *func = ccml.parser().find_function("main");
   printf("entry point: %d\n", func->pos_);

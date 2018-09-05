@@ -3,6 +3,7 @@
 #include "vm.h"
 #include "assembler.h"
 #include "parser.h"
+#include "disassembler.h"
 
 
 using namespace ccml;
@@ -33,13 +34,13 @@ static int32_t history[__INS_COUNT__];
 void print_history() {
   printf("histogram:\n");
   for (int32_t i = 0; i < __INS_COUNT__; ++i) {
-    const char *name = assembler_t::get_mnemonic((instruction_e)i);
+    const char *name = disassembler_t::get_mnemonic((instruction_e)i);
     printf("  %12s %d\n", name, history[i]);
   }
 }
 
 int32_t thread_t::_read_operand() {
-  const uint8_t *c = ccml_.assembler().get_code();
+  const uint8_t *c = ccml_.code();
   // XXX: range check for c
   const int32_t val = *(int32_t *)(c + pc_);
   pc_ += sizeof(int32_t);
@@ -47,7 +48,7 @@ int32_t thread_t::_read_operand() {
 }
 
 uint8_t thread_t::_read_opcode() {
-  const uint8_t *c = ccml_.assembler().get_code();
+  const uint8_t *c = ccml_.code();
   // XXX: range check for c
   const int32_t val = *(uint8_t *)(c + pc_);
   pc_ += sizeof(uint8_t);
@@ -324,9 +325,9 @@ bool thread_t::resume(int32_t cycles, bool trace) {
     ++history[opcode];
     // print an instruction trace
     if (trace) {
-      const uint8_t *c = ccml_.assembler().get_code();
+      const uint8_t *c = ccml_.code();
       printf(" > ");
-      ccml_.assembler().disasm(c + pc_);
+      ccml_.disassembler().disasm(c + pc_);
     }
     // dispatch
     switch (opcode) {

@@ -52,8 +52,10 @@ int main() {
     program[program.size() - 1] = '\0';
 
     // insert an error
-#if 0
-    program[random(read)] = random(256);
+#if 1
+    while (random(2) == 1) {
+      program[random(read)] = random(256);
+    }
 #endif
 
     ++tests;

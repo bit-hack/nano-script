@@ -4,6 +4,7 @@
 #include "../lib/vm.h"
 #include "../lib/parser.h"
 #include "../lib/assembler.h"
+#include "../lib/disassembler.h"
 #include "../lib/errors.h"
 
 static const char *prime_prog = R"(
@@ -108,7 +109,7 @@ struct test_prime_t {
     if (!ccml.build(prime_prog, error)) {
       return false;
     }
-    ccml.assembler().disasm();
+    ccml.disassembler().disasm();
     // run it
     const function_t* func = ccml.parser().find_function("main");
 

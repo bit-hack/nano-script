@@ -5,6 +5,7 @@
 #include "lexer.h"
 #include "parser.h"
 #include "assembler.h"
+#include "disassembler.h"
 #include "vm.h"
 #include "errors.h"
 
@@ -12,11 +13,13 @@
 using namespace ccml;
 
 ccml_t::ccml_t()
-    : lexer_(new lexer_t(*this))
-    , parser_(new parser_t(*this))
-    , assembler_(new assembler_t(*this))
-    , vm_(new vm_t(*this))
-    , errors_(new error_manager_t(*this))
+  : code_stream_(new asm_stream_t(code_.data(), code_.size()))
+  , lexer_(new lexer_t(*this))
+  , parser_(new parser_t(*this))
+  , assembler_(new assembler_t(*this, *code_stream_.get()))
+  , disassembler_(new disassembler_t(*this))
+  , vm_(new vm_t(*this))
+  , errors_(new error_manager_t(*this))
 {
 }
 
