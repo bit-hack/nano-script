@@ -11,6 +11,7 @@
 
 namespace ccml {
 
+// the asm stream bridges the assembler and the code store
 struct asm_stream_t {
 
   asm_stream_t(uint8_t *base, size_t size)
@@ -20,7 +21,7 @@ struct asm_stream_t {
   {
   }
 
-  bool write1(const uint8_t data) {
+  bool write8(const uint8_t data) {
     if (end - ptr > 1) {
       *ptr = data;
       ptr += 1;
@@ -29,7 +30,7 @@ struct asm_stream_t {
     return false;
   }
 
-  bool write4(const uint32_t data) {
+  bool write32(const uint32_t data) {
     if (end - ptr > 4) {
       memcpy(ptr, &data, 4);
       ptr += 4;

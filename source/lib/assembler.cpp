@@ -35,13 +35,13 @@ assembler_t::assembler_t(ccml_t &c, asm_stream_t &stream)
 }
 
 void assembler_t::write8(const uint8_t v) {
-  if (!stream.write1(v)) {
+  if (!stream.write8(v)) {
     ccml_.errors().program_too_large();
   }
 }
 
 void assembler_t::write32(const int32_t v) {
-  if (!stream.write4(v)) {
+  if (!stream.write32(v)) {
     ccml_.errors().program_too_large();
   }
 }

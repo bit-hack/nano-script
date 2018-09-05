@@ -33,29 +33,13 @@ struct ccml_t {
   ccml_t();
   ~ccml_t();
 
-  lexer_t &lexer() {
-    return *lexer_;
-  }
-
-  parser_t &parser() {
-    return *parser_;
-  }
-
-  assembler_t &assembler() {
-    return *assembler_;
-  }
-
-  disassembler_t &disassembler() {
-    return *disassembler_;
-  }
-
-  error_manager_t &errors() {
-    return *errors_;
-  }
-
-  vm_t &vm() {
-    return *vm_;
-  }
+  // accessors
+  vm_t            &vm()           { return *vm_; }
+  lexer_t         &lexer()        { return *lexer_; }
+  parser_t        &parser()       { return *parser_; }
+  assembler_t     &assembler()    { return *assembler_; }
+  disassembler_t  &disassembler() { return *disassembler_; }
+  error_manager_t &errors()       { return *errors_; }
 
   bool build(const char *source, error_t &error);
 
@@ -78,11 +62,11 @@ private:
   std::array<uint8_t, 1024 * 8> code_;
   std::unique_ptr<asm_stream_t> code_stream_;
 
+  std::unique_ptr<vm_t> vm_;
   std::unique_ptr<lexer_t> lexer_;
   std::unique_ptr<parser_t> parser_;
   std::unique_ptr<assembler_t> assembler_;
   std::unique_ptr<disassembler_t> disassembler_;
-  std::unique_ptr<vm_t> vm_;
   std::unique_ptr<error_manager_t> errors_;
 };
 
