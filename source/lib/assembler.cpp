@@ -34,33 +34,22 @@ const char *assembler_t::get_mnemonic(const instruction_e e) {
 
 assembler_t::assembler_t(ccml_t &c)
   : ccml_(c)
-  , code_head_(0)
   , stream_(&code_stream_)
   , code_stream_(code_.data(), code_.size())
 {
 }
 
 void assembler_t::write8(const uint8_t v) {
-  // check for code space overflow
-  if (code_head_ + 1 >= code_.size()) {
+  assert(stream_);
+  if (!stream_->write1(v)) {
     ccml_.errors().program_too_large();
-  }
-  else {
-    // write int8_t to code stream
-    code_[code_head_++] = v;
   }
 }
 
 void assembler_t::write32(const int32_t v) {
-  const uint32_t size = sizeof(v);
-  // check for code space overflow
-  if (code_head_ + size >= code_.size()) {
+  assert(stream_);
+  if (!stream_->write4(v)) {
     ccml_.errors().program_too_large();
-  }
-  else {
-    // write int32_t to code stream
-    memcpy(code_.data() + code_head_, &v, size);
-    code_head_ += size;
   }
 }
 
@@ -115,11 +104,33 @@ int32_t *assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
     assert(!"unknown instruction");
   }
   // return the operand
-  return (int32_t *)(code_.data() + (code_head_ - 4));
+  assert(stream_);
+  return (int32_t*)(stream_->head(-4));
+}
+
+void assembler_t::emit(token_e tok, const token_t *t) {
+  switch (tok) {
+  case TOK_ADD: emit(INS_ADD, t); break;
+  case TOK_SUB: emit(INS_SUB, t); break;
+  case TOK_MUL: emit(INS_MUL, t); break;
+  case TOK_DIV: emit(INS_DIV, t); break;
+  case TOK_MOD: emit(INS_MOD, t); break;
+  case TOK_AND: emit(INS_AND, t); break;
+  case TOK_OR:  emit(INS_OR , t); break;
+  case TOK_NOT: emit(INS_NOT, t); break;
+  case TOK_EQ:  emit(INS_EQ , t); break;
+  case TOK_LT:  emit(INS_LT , t); break;
+  case TOK_GT:  emit(INS_GT , t); break;
+  case TOK_LEQ: emit(INS_LEQ, t); break;
+  case TOK_GEQ: emit(INS_GEQ, t); break;
+  default:
+    assert(!"cant emit token type");
+  }
 }
 
 int32_t assembler_t::pos() const {
-  return code_head_;
+  assert(stream_);
+  return stream_->pos();
 }
 
 // return number of bytes disassembled or <= 0 on error
@@ -188,9 +199,15 @@ int32_t assembler_t::disasm(const uint8_t *ptr) const {
 int32_t assembler_t::disasm() {
   uint32_t count = 0;
   uint32_t line_no = -1;
-  for (uint32_t i = 0; i < code_head_; ++count) {
 
-    const uint8_t *ptr = code_.data() + i;
+  assert(stream_);
+  const uint8_t *start = stream_->data();
+  const uint8_t *p = stream_->data();
+  const uint8_t *end = stream_->head(0);
+
+  for (; p < end; ++count) {
+
+    const uint8_t *ptr = p;
     bool print_line = false;
 
     // dump line table mapping
@@ -207,46 +224,24 @@ int32_t assembler_t::disasm() {
       printf("  %02d -- %s\n", line_no, line.c_str());
     }
 
-    printf("%04d ", i);
-    const int32_t nb = disasm(code_.data() + i);
+    printf("%04d ", int32_t(p - start));
+    const int32_t nb = disasm(p);
     if (nb <= 0) {
       assert(!"unknown opcode");
     }
-    i += nb;
+    p += nb;
   }
   return count;
 }
 
-void assembler_t::emit(token_e tok, const token_t *t) {
-  switch (tok) {
-  case TOK_ADD: emit(INS_ADD, t); break;
-  case TOK_SUB: emit(INS_SUB, t); break;
-  case TOK_MUL: emit(INS_MUL, t); break;
-  case TOK_DIV: emit(INS_DIV, t); break;
-  case TOK_MOD: emit(INS_MOD, t); break;
-  case TOK_AND: emit(INS_AND, t); break;
-  case TOK_OR:  emit(INS_OR , t); break;
-  case TOK_NOT: emit(INS_NOT, t); break;
-  case TOK_EQ:  emit(INS_EQ , t); break;
-  case TOK_LT:  emit(INS_LT , t); break;
-  case TOK_GT:  emit(INS_GT , t); break;
-  case TOK_LEQ: emit(INS_LEQ, t); break;
-  case TOK_GEQ: emit(INS_GEQ, t); break;
-  default:
-    assert(!"cant emit token type");
-  }
-}
-
 int32_t &assembler_t::get_fixup() {
-  // warning: if code_ can grow this will error
-  assert(code_head_ >= sizeof(int32_t));
-  uint8_t *ptr = code_.data() + (code_head_ - sizeof(int32_t));
-  return *reinterpret_cast<int32_t *>(ptr);
+  return *reinterpret_cast<int32_t*>(stream_->head(-4));
 }
 
 void assembler_t::add_to_linetable(const token_t *t) {
   // insert into the line table
-  const uint8_t *ptr = code_.data() + code_head_;
+  // WARNING: this will mess up when we use temporary buffers
+  const uint8_t *ptr = stream_->head(0);
   if (t) {
     line_table_[ptr] = t->line_no_;
   }
@@ -257,6 +252,7 @@ void assembler_t::add_to_linetable(const token_t *t) {
 
 void assembler_t::reset() {
   code_.fill(0);
-  code_head_ = 0;
   line_table_.clear();
+  code_stream_ = asm_stream_t{code_.data(), code_.size()};
+  stream_ = &code_stream_;
 }

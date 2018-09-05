@@ -133,6 +133,10 @@ struct asm_stream_t {
     return false;
   }
 
+  const uint8_t *tail() const {
+    return end;
+  }
+
   size_t written() const {
     return ptr - start;
   }
@@ -143,6 +147,16 @@ struct asm_stream_t {
 
   size_t size() const {
     return end - start;
+  }
+
+  uint32_t pos() const {
+    return ptr - start;
+  }
+
+  uint8_t *head(int32_t adjust) const {
+    uint8_t *p = ptr + adjust;
+    assert(p < end && p >= start);
+    return p;
   }
 
 protected:
@@ -181,6 +195,7 @@ struct assembler_t {
   static const char *get_mnemonic(instruction_e e);
 
   // set the assembler output stream
+  // XXX: note, changing output streams will also mess up the line table :(
   void set_stream(asm_stream_t *asm_stream) {
     stream_ = asm_stream;
   }
@@ -200,10 +215,11 @@ protected:
 
   ccml_t &ccml_;
 
+  // the currently bound code stream
   asm_stream_t *stream_;
 
+  // the default code stream
   asm_stream_t code_stream_;
-  uint32_t code_head_;
   std::array<uint8_t, 1024 * 8> code_;
 };
 
