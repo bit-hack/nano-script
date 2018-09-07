@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <array>
+#include <map>
 
 
 namespace ccml {
@@ -28,6 +29,42 @@ struct thread_t;
 struct vm_t;
 
 
+struct code_store_t {
+
+  code_store_t();
+
+  const uint8_t *data() const {
+    return code_.data();
+  }
+
+  asm_stream_t &stream() const {
+    return *stream_;
+  }
+
+protected:
+  std::array<uint8_t, 1024 * 8> code_;
+  std::unique_ptr<asm_stream_t> stream_;
+
+  // line table [PC -> Line]
+  std::map<uint32_t, uint32_t> line_table_;
+
+  struct scope_t {
+
+    struct entry_t {
+      token_t *ident;
+      int32_t offset;
+      bool absolute;
+    };
+
+    int32_t start, end;
+    std::vector<entry_t> entries;
+  };
+
+  // scope list
+  std::vector<scope_t> scope_;
+};
+
+
 struct ccml_t {
 
   ccml_t();
@@ -46,7 +83,7 @@ struct ccml_t {
   void reset();
 
   const uint8_t *code() const {
-    return code_.data();
+    return store_.data();
   }
 
 private:
@@ -59,8 +96,12 @@ private:
   friend struct error_manager_t;
 
   // the default code stream
+#if 0
   std::array<uint8_t, 1024 * 8> code_;
   std::unique_ptr<asm_stream_t> code_stream_;
+#else
+  code_store_t store_;
+#endif
 
   std::unique_ptr<vm_t> vm_;
   std::unique_ptr<lexer_t> lexer_;

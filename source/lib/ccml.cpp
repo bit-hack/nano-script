@@ -13,10 +13,10 @@
 using namespace ccml;
 
 ccml_t::ccml_t()
-  : code_stream_(new asm_stream_t(code_.data(), code_.size()))
+  : store_()
   , lexer_(new lexer_t(*this))
   , parser_(new parser_t(*this))
-  , assembler_(new assembler_t(*this, *code_stream_.get()))
+  , assembler_(new assembler_t(*this, store_.stream()))
   , disassembler_(new disassembler_t(*this))
   , vm_(new vm_t(*this))
   , errors_(new error_manager_t(*this))
@@ -52,4 +52,8 @@ void ccml_t::reset() {
   parser_->reset();
   assembler_->reset();
   vm_->reset();
+}
+
+code_store_t::code_store_t()
+  : stream_(new asm_stream_t{code_.data(), code_.size()}) {
 }

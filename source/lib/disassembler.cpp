@@ -98,7 +98,8 @@ int32_t disassembler_t::disasm() {
   uint32_t count = 0;
   int32_t line_no = -1, old_line = -1;
 
-  asm_stream_t &stream = *ccml_.code_stream_;
+  // get the code stream
+  asm_stream_t &stream = ccml_.store_.stream();
 
   const uint8_t *start = stream.data();
   const uint8_t *p = stream.data();
