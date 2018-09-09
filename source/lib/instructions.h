@@ -8,7 +8,6 @@ enum instruction_e {
   //          2nd      1st
   //    push( pop() OP pop() )
   INS_ADD,
-  INS_INC,
   INS_SUB,
   INS_MUL,
   INS_DIV,
@@ -64,6 +63,10 @@ enum instruction_e {
 
   // reserve locals in stack frame
   INS_LOCALS,
+
+  // accumulate local:
+  //    stack[ fp + operand ] += v
+  INS_ACCV,
 
   // get local:
   //    push( stack[ fp + operand ] )

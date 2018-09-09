@@ -87,6 +87,7 @@ int32_t *assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   case INS_POP:
   case INS_CONST:
   case INS_LOCALS:
+  case INS_ACCV:
   case INS_GETV:
   case INS_SETV:
   case INS_GETVI:

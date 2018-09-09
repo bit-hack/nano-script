@@ -330,6 +330,33 @@ void parser_t::parse_assign(const token_t &name) {
   ident_save(name);
 }
 
+void parser_t::parse_accumulate(const token_t &name) {
+  assembler_t &asm_ = ccml_.assembler();
+
+  // format:
+  //                   V
+  //    <TOK_IDENT> +=   <expr>
+
+  // check its not an array type
+  const identifier_t *ident = scope_.find_ident(name);
+  if (ident && ident->is_array()) {
+    ccml_.errors().assign_to_array_missing_bracket(name);
+  }
+
+  // parse increment expression
+  parse_expr();
+
+  if (ident->is_array() || ident->is_global) {
+    // load, accumulate, save
+    ident_load(name);
+    asm_.emit(INS_ADD, &name);
+    ident_save(name);
+  }
+  else {
+    asm_.emit(INS_ACCV, ident->offset, &name);
+  }
+}
+
 void parser_t::parse_call(const token_t &name) {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
@@ -507,6 +534,9 @@ void parser_t::parse_stmt() {
     if (stream_.found(TOK_ASSIGN)) {
       // x = ...
       parse_assign(*var);
+    } else if (stream_.found(TOK_ACC)) {
+      // x += ...
+      parse_accumulate(*var);
     } else if (stream_.found(TOK_LPAREN)) {
       // x(
       parse_call(*var);

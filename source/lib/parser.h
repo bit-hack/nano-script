@@ -262,6 +262,7 @@ protected:
   void parse_if();
   void parse_call(const token_t &name);
   void parse_assign(const token_t &name);
+  void parse_accumulate(const token_t &name);
   void parse_decl_array(const token_t &name);
   void parse_decl();
   void parse_expr();

@@ -363,56 +363,56 @@ function f()
   var my_array[
 end
 )",
-  R"(
+R"(
 function f()
   var my_array]
 end
 )",
-  R"(
+R"(
 function f()
   var my_array[]
 end
 )",
-  R"(
+R"(
 function f()
   var my_array[-1]
 end
 )",
-  R"(
+R"(
 function f()
   var my_array[0]
 end
 )",
-  R"(
+R"(
 function f()
   var size = 10
   var my_array[size]
 end
 )",
-  R"(
+R"(
 function f()
   # one element doesnt make much sense
   var my_array[1]
 end
 )",
-  R"(
+R"(
 function f(size)
   var my_array[size]
 end
 )",
-  R"(
+R"(
 function f(size)
   var my_array[2]
   my_array = 3
 end
 )",
-  R"(
+R"(
 function f(size)
   var x = 10
   x[0] = 10
 end
 )",
-  R"(
+R"(
 function f(x)
 end
 function g()
@@ -421,35 +421,52 @@ function g()
 end
 )",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- global arrays
-  R"(
+R"(
 var my_global[12] = 1
 )",
-  R"(
+R"(
 var my_global[0] = 1
 )",
-  R"(
+R"(
 var my_global[]
 )",
-  R"(
+R"(
 var my_global
 function foo()
   my_global[1] = 123
 end
 )",
-  R"(
+R"(
 var my_global
 function foo()
   var x = my_global[1]
 end
 )",
-  R"(
+R"(
 var my_global[12]
 var x = my_global[1]
 )",
-  R"(
+R"(
 var my_global[4]
 function foo()
   my_global = 1
+end
+)",
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- array passing
+R"(
+function x(input)
+end
+function main()
+  var y[12]
+  x(y)
+end
+)",
+R"(
+var y[12]
+function x(input)
+end
+function main()
+  x(y)
 end
 )",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

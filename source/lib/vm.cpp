@@ -67,13 +67,6 @@ void thread_t::_do_INS_ADD() {
   push(l + r);
 }
 
-void thread_t::_do_INS_INC() {
-  __debugbreak();
-  const value_t v = pop();
-  const int32_t operand = _read_operand();
-  push(v + operand);
-}
-
 void thread_t::_do_INS_SUB() {
   const value_t r = pop(), l = pop();
   push(l - r);
@@ -215,6 +208,12 @@ void thread_t::_do_INS_LOCALS() {
   }
 }
 
+void thread_t::_do_INS_ACCV() {
+  const int32_t operand = _read_operand();
+  const value_t val = pop();
+  setv(operand, getv(operand) + val);
+}
+
 void thread_t::_do_INS_GETV() {
   const int32_t operand = _read_operand();
   push(getv(operand));
@@ -330,7 +329,6 @@ void thread_t::step_imp_() {
   // dispatch
   switch (opcode) {
   case INS_ADD:    _do_INS_ADD();    break;
-  case INS_INC:    _do_INS_INC();    break;
   case INS_SUB:    _do_INS_SUB();    break;
   case INS_MUL:    _do_INS_MUL();    break;
   case INS_DIV:    _do_INS_DIV();    break;
@@ -352,6 +350,9 @@ void thread_t::step_imp_() {
   case INS_POP:    _do_INS_POP();    break;
   case INS_CONST:  _do_INS_CONST();  break;
   case INS_LOCALS: _do_INS_LOCALS(); break;
+
+  case INS_ACCV:   _do_INS_ACCV();   break;
+
   case INS_GETV:   _do_INS_GETV();   break;
   case INS_SETV:   _do_INS_SETV();   break;
   case INS_GETVI:  _do_INS_GETVI();  break;
@@ -490,7 +491,7 @@ bool thread_t::peek(int32_t offset, bool absolute, value_t &out) const {
   if (!absolute) {
     offset += frame_().sp_;
   }
-  if (offset >= 0 && offset < s_.size()) {
+  if (offset >= 0 && offset < int32_t(s_.size())) {
     out = s_[offset];
     return true;
   }

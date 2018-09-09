@@ -142,7 +142,7 @@ bool lexer_t::lex(const char *s) {
       continue;
     case '+':
       if (s[1] == '=') {
-        push(TOK_INC);
+        push(TOK_ACC);
         ++s;
       }
       else {

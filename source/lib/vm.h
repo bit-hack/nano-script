@@ -173,7 +173,6 @@ protected:
   uint8_t _peek_opcode();
 
   void _do_INS_ADD();
-  void _do_INS_INC();
   void _do_INS_SUB();
   void _do_INS_MUL();
   void _do_INS_DIV();
@@ -195,6 +194,7 @@ protected:
   void _do_INS_POP();
   void _do_INS_CONST();
   void _do_INS_LOCALS();
+  void _do_INS_ACCV();
   void _do_INS_GETV();
   void _do_INS_SETV();
   void _do_INS_GETVI();

@@ -8,8 +8,7 @@ namespace {
 
 const char *gMnemonic[] = {
     // operators
-    "INS_ADD", "INS_INC", "INS_SUB", "INS_MUL", "INS_DIV", "INS_MOD", "INS_AND",
-    "INS_OR",
+    "INS_ADD", "INS_SUB", "INS_MUL", "INS_DIV", "INS_MOD", "INS_AND", "INS_OR",
     // unary operators
     "INS_NOT", "INS_NEG",
     // comparators
@@ -19,7 +18,7 @@ const char *gMnemonic[] = {
     // stack
     "INS_POP", "INS_CONST", "INS_LOCALS",
     // local variables
-    "INS_GETV", "INS_SETV", "INS_GETVI", "INS_SETVI",
+    "INS_ACCV", "INS_GETV", "INS_SETV", "INS_GETVI", "INS_SETVI",
     // global variables
     "INS_GETG", "INS_SETG", "INS_GETGI", "INS_SETGI"};
 
@@ -83,6 +82,7 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
   case INS_RET:
   case INS_POP:
   case INS_CONST:
+  case INS_ACCV:
   case INS_GETV:
   case INS_SETV:
   case INS_LOCALS:

@@ -79,7 +79,7 @@ const char *token_t::token_name(token_e e) {
   case TOK_GEQ:      return ">=";
   case TOK_RETURN:   return "return";
   case TOK_EOF:      return "end of file";
-  case TOK_INC:      return "+=";
+  case TOK_ACC:      return "+=";
   case TOK_LBRACKET: return "[";
   case TOK_RBRACKET: return "]";
   default:

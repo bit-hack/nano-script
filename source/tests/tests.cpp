@@ -1,6 +1,7 @@
 #include <cassert>
 
 #include "../lib/assembler.h"
+#include "../lib/disassembler.h"
 #include "../lib/ccml.h"
 #include "../lib/errors.h"
 #include "../lib/lexer.h"
@@ -952,6 +953,29 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_acc_1() {
+  static const char *prog = R"(
+function main()
+  var x = 1
+  x += 2
+  return x
+end
+)";
+  ccml_t ccml;
+  error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+  ccml.disassembler().disasm();
+  const function_t *func = ccml.parser().find_function("main");
+  int32_t res = 0;
+  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+    return false;
+  }
+  return res == 3;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 typedef bool (*test_t)();
 struct test_pair_t {
   const char *name;
@@ -1004,6 +1028,7 @@ static const test_pair_t tests[] = {
     TEST(test_neg_2),
     TEST(test_neg_3),
     TEST(test_neg_4),
+    TEST(test_acc_1),
     // sentinel
     nullptr, nullptr};
 
