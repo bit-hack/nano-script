@@ -14,10 +14,11 @@ namespace ccml {
 // the asm stream bridges the assembler and the code store
 struct asm_stream_t {
 
-  asm_stream_t(uint8_t *base, size_t size)
-    : end(base + size)
-    , start(base)
-    , ptr(base)
+  asm_stream_t(code_store_t &store)
+    : store_(store)
+    , end(store.end())
+    , start(store.data())
+    , ptr(store.data())
   {
   }
 
@@ -65,12 +66,14 @@ struct asm_stream_t {
     return p;
   }
 
+  // set the line number for the current pc
   // if line is nullptr then current lexer line is used
   void set_line(lexer_t &lexer, const token_t *line);
 
-  int32_t get_line(const uint8_t *p) const;
+  void add_ident(const identifier_t &ident);
 
 protected:
+  code_store_t &store_;
   std::map<const uint8_t *, uint32_t> line_table_;
 
   const uint8_t *end;
@@ -87,6 +90,9 @@ struct assembler_t {
   void     emit(instruction_e ins, const token_t *t = nullptr);
   int32_t *emit(instruction_e ins, int32_t v, const token_t *t = nullptr);
 
+  // add an identifier for debug purposes
+  void add_ident(const struct identifier_t &ident);
+
   // return the current output head
   int32_t pos() const;
 
@@ -100,6 +106,8 @@ struct assembler_t {
   asm_stream_t &stream;
 
 protected:
+  std::vector<uint32_t> scope_pc_;
+
   // write 8bits to the code stream
   void write8(const uint8_t v);
 

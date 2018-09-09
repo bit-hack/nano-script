@@ -4,42 +4,17 @@
 
 #include "ccml.h"
 #include "token.h"
+#include "assembler.h"
 
 
 namespace ccml {
 
-struct identifier_t {
-
-  identifier_t()
-    : offset(0)
-    , count(0)
-    , token(nullptr)
-    , is_global(false) {}
-
-  identifier_t(const token_t *t, int32_t o, bool is_glob, int32_t c = 1)
-    : offset(o)
-    , count(c)
-    , token(t)
-    , is_global(is_glob) {}
-
-  bool is_array() const {
-    return count > 1;
-  }
-
-  // offset from frame pointer
-  int32_t offset;
-  // number of items (> 1 == array)
-  int32_t count;
-  // identifier token
-  const token_t *token;
-  // if this is a global variable
-  bool is_global;
-};
-
 struct scope_list_t {
 
-  scope_list_t()
-    : max_depth_(0) {
+  scope_list_t(ccml_t &ccml)
+    : max_depth_(0)
+    , ccml_(ccml)
+  {
     reset();
   }
 
@@ -54,7 +29,20 @@ struct scope_list_t {
 
   void leave() {
     assert(!var_head_.empty());
+    // current code position
+    const uint32_t pos = ccml_.assembler().pos();
+    // end of this scope
+    const int32_t end = head();
+    // step back one scope
     var_head_.pop_back();
+    // find start of this stack frame
+    const int32_t start = var_head_.empty() ? 0 : head();
+    // for all variables that are discarded, add their debug info
+    for (int32_t i = start; i < end; ++i) {
+      // code location where we exit
+      vars_[i].end = pos;
+      ccml_.assembler().add_ident(vars_[i]);
+    }
   }
 
   // add a variable to this scope
@@ -65,7 +53,9 @@ struct scope_list_t {
     // return global offset or frame offset
     const int32_t offset = is_global ? global_count() : var_count();
     // push back this identifier
-    vars_[head()++] = identifier_t(&tok, offset, is_global, count);
+    auto ident = identifier_t(&tok, offset, is_global, count);
+    ident.start = ccml_.assembler().pos();
+    vars_[head()++] = ident;
     // update max depth
     max_depth_ = std::max(max_depth_, var_count());
   }
@@ -95,6 +85,7 @@ struct scope_list_t {
   // add an argument to this function
   void arg_add(const token_t *tok) {
     identifier_t ident(tok, 0, false, 1);
+    ident.start = ccml_.assembler().pos();
     args_[arg_head_++] = ident;
   }
 
@@ -140,8 +131,13 @@ struct scope_list_t {
   }
 
   void leave_function() {
-    max_depth_ = 0;
+    const int32_t pos = ccml_.assembler().pos();
+    for (int32_t i = 0; i < arg_head_; ++i) {
+      args_[i].end = pos;
+      ccml_.assembler().add_ident(args_[i]);
+    }
     arg_head_ = 0;
+    max_depth_ = 0;
   }
 
   // return the max stack depth size encountered
@@ -155,8 +151,11 @@ protected:
   }
 
   int32_t & head() {
+    assert(!var_head_.empty());
     return var_head_.back();
   }
+
+  ccml_t &ccml_;
 
   std::array<identifier_t, 64> vars_;
   std::vector<int32_t> var_head_;
@@ -202,7 +201,10 @@ struct global_t {
 struct parser_t {
 
   parser_t(ccml_t &c)
-    : ccml_(c) {}
+    : ccml_(c)
+    , scope_(c)
+  {
+  }
 
   // parse all tokens stored in the lexer
   bool parse(struct error_t &error);

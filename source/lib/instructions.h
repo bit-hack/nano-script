@@ -20,6 +20,10 @@ enum instruction_e {
   //    push( !pop() )
   INS_NOT,
 
+  // unary minus operator
+  //    push( -pop() )
+  INS_NEG,
+
   // compare less than
   //    push( pop() < pop() )
   INS_LT,

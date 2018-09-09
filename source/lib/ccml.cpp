@@ -52,8 +52,26 @@ void ccml_t::reset() {
   parser_->reset();
   assembler_->reset();
   vm_->reset();
+  store_.reset();
 }
 
 code_store_t::code_store_t()
-  : stream_(new asm_stream_t{code_.data(), code_.size()}) {
+  : stream_(new asm_stream_t{*this}) {
+}
+
+void code_store_t::reset() {
+  identifiers_.clear();
+  line_table_.clear();
+  stream_.reset(new asm_stream_t(*this));
+}
+
+bool code_store_t::active_vars(const uint32_t pc,
+                               std::vector<const identifier_t *> &out) const {
+  // collect all active identifiers
+  for (const auto &ident : identifiers_) {
+    if (pc >= ident.start && pc < ident.end) {
+      out.push_back(&ident);
+    }
+  }
+  return true;
 }

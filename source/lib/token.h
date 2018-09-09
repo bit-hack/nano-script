@@ -40,6 +40,9 @@ enum token_e {
   TOK_RETURN,
   TOK_EOF,
   TOK_INC,
+
+  // artificial token generated during expression parser
+  TOK_NEG,
 };
 
 struct token_t {

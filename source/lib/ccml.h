@@ -20,6 +20,7 @@ struct token_stream_t;
 
 struct parser_t;
 struct function_t;
+struct identifier_t;
 
 struct asm_stream_t;
 struct assembler_t;
@@ -28,7 +29,39 @@ struct disassembler_t;
 struct thread_t;
 struct vm_t;
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+struct identifier_t {
 
+  identifier_t()
+    : offset(0)
+    , count(0)
+    , token(nullptr)
+    , is_global(false) {}
+
+  identifier_t(const token_t *t, int32_t o, bool is_glob, int32_t c = 1)
+    : offset(o)
+    , count(c)
+    , token(t)
+    , is_global(is_glob) {}
+
+  bool is_array() const {
+    return count > 1;
+  }
+
+  // start and end valiity range
+  uint32_t start, end;
+
+  // offset from frame pointer
+  int32_t offset;
+  // number of items (> 1 == array)
+  int32_t count;
+  // identifier token
+  const token_t *token;
+  // if this is a global variable
+  bool is_global;
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct code_store_t {
 
   code_store_t();
@@ -37,34 +70,56 @@ struct code_store_t {
     return code_.data();
   }
 
+  const uint8_t *end() const {
+    return code_.data() + code_.size();
+  }
+
   asm_stream_t &stream() const {
     return *stream_;
   }
 
+  const std::map<uint32_t, uint32_t> &line_table() const {
+    return line_table_;
+  }
+
+  const std::vector<identifier_t> &identifiers() const {
+    return identifiers_;
+  }
+
+  int32_t get_line(uint32_t pc) const {
+    auto itt = line_table_.find(pc);
+    if (itt != line_table_.end()) {
+      return itt->second;
+    }
+    return -1;
+  }
+
+  void reset();
+
+  bool active_vars(const uint32_t pc,
+                   std::vector<const identifier_t *> &out) const;
+
 protected:
+  friend struct asm_stream_t;
+
+  uint8_t *data() {
+    return code_.data();
+  }
+
+  void add_line(uint32_t pc, uint32_t line) {
+    line_table_[pc] = line;
+  }
+
   std::array<uint8_t, 1024 * 8> code_;
   std::unique_ptr<asm_stream_t> stream_;
 
   // line table [PC -> Line]
   std::map<uint32_t, uint32_t> line_table_;
 
-  struct scope_t {
-
-    struct entry_t {
-      token_t *ident;
-      int32_t offset;
-      bool absolute;
-    };
-
-    int32_t start, end;
-    std::vector<entry_t> entries;
-  };
-
-  // scope list
-  std::vector<scope_t> scope_;
+  std::vector<identifier_t> identifiers_;
 };
 
-
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct ccml_t {
 
   ccml_t();
@@ -73,6 +128,7 @@ struct ccml_t {
   // accessors
   vm_t            &vm()           { return *vm_; }
   lexer_t         &lexer()        { return *lexer_; }
+  code_store_t    &store()        { return store_; }
   parser_t        &parser()       { return *parser_; }
   assembler_t     &assembler()    { return *assembler_; }
   disassembler_t  &disassembler() { return *disassembler_; }
@@ -96,12 +152,7 @@ private:
   friend struct error_manager_t;
 
   // the default code stream
-#if 0
-  std::array<uint8_t, 1024 * 8> code_;
-  std::unique_ptr<asm_stream_t> code_stream_;
-#else
   code_store_t store_;
-#endif
 
   std::unique_ptr<vm_t> vm_;
   std::unique_ptr<lexer_t> lexer_;

@@ -7,6 +7,7 @@
 
 namespace ccml {
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 enum class thread_error_t {
   e_success = 0,
   e_bad_getv,
@@ -25,33 +26,50 @@ enum class thread_error_t {
 
 using value_t = int32_t;
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct thread_t {
 
   // XXXX: as it stands globals are not shared among threads
 
   thread_t(ccml_t &ccml)
-    : ccml_(ccml), return_code_(0), finished_(true), cycles_(0), s_head_(0), f_head_(0) {}
+      : ccml_(ccml), return_code_(0), finished_(true), cycles_(0), s_head_(0),
+        f_head_(0) {}
 
+  // peek a stack value
+  bool peek(int32_t offset, bool absolute, value_t &out) const;
+
+  // pop from the value stack
   value_t pop() {
     return pop_();
   }
 
-  void push(int32_t v) {
+  // push onto the value stack
+  void push(value_t v) {
     push_(v);
   }
 
+  // prepare to execute a function
   bool prepare(const function_t &func, int32_t argc, const value_t *argv);
 
+  // run for a number of clock cycles
   bool resume(int32_t cycles, bool trace);
+
+  // step a single instruction
+  bool step_inst();
+
+  // step a source line
+  bool step_line();
 
   bool finished() const {
     return finished_;
   }
 
+  // return the current error code
   int32_t return_code() const {
-    return return_code_;
+    return finished_ ? return_code_ : 0;
   }
 
+  // return the total cycle count
   uint32_t cycle_count() const {
     return cycles_;
   }
@@ -60,8 +78,17 @@ struct thread_t {
     return error_ != thread_error_t::e_success;
   }
 
+  // return the current source line number
+  int32_t source_line() const;
+
+  // collect all currently active variables
+  bool active_vars(std::vector<const identifier_t *> &out) const;
+
 protected:
   friend struct vm_t;
+
+  // step a single instruction (internal)
+  void step_imp_();
 
   // XXX: add a halted flag?
   ccml_t &ccml_;
@@ -105,6 +132,11 @@ protected:
     }
   }
 
+  const frame_t &frame_() const {
+    assert(f_head_);
+    return f_[f_head_-1];
+  }
+
   frame_t &frame_() {
     assert(f_head_);
     return f_[f_head_-1];
@@ -138,6 +170,7 @@ protected:
 
   int32_t _read_operand();
   uint8_t _read_opcode();
+  uint8_t _peek_opcode();
 
   void _do_INS_ADD();
   void _do_INS_INC();
@@ -148,6 +181,7 @@ protected:
   void _do_INS_AND();
   void _do_INS_OR();
   void _do_INS_NOT();
+  void _do_INS_NEG();
   void _do_INS_LT();
   void _do_INS_GT();
   void _do_INS_LEQ();
@@ -171,6 +205,7 @@ protected:
   void _do_INS_SETGI();
 };
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct vm_t {
 
   vm_t(ccml_t &c)

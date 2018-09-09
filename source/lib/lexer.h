@@ -20,8 +20,12 @@ struct lexer_t {
   ccml_t &ccml_;
   token_stream_t stream_;
 
-  const std::string &get_line(uint32_t no) const {
-    return lines_.at(no);
+  const std::string &get_line(int32_t no) const {
+    static const std::string empty;
+    if (no >= 0 && no < int32_t(lines_.size())) {
+      return lines_.at(no);
+    }
+    return empty;
   }
 
 protected:

@@ -866,6 +866,92 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_neg_1() {
+  static const char *prog = R"(
+function main()
+  return -1
+end
+)";
+  ccml_t ccml;
+  error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+  const function_t *func = ccml.parser().find_function("main");
+  int32_t res = 0;
+  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+    return false;
+  }
+  return res == -1;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_neg_2() {
+  static const char *prog = R"(
+function main()
+  return -3 - -5
+end
+)";
+  ccml_t ccml;
+  error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+  const function_t *func = ccml.parser().find_function("main");
+  int32_t res = 0;
+  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+    return false;
+  }
+  return res == 2;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_neg_3() {
+  static const char *prog = R"(
+function x()
+  return 3
+end
+function main()
+  return -x() - 2
+end
+)";
+  ccml_t ccml;
+  error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+  const function_t *func = ccml.parser().find_function("main");
+  int32_t res = 0;
+  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+    return false;
+  }
+  return res == -5;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_neg_4() {
+  static const char *prog = R"(
+function x()
+  return 3
+end
+function main()
+  return - ( 3 + 4 )
+end
+)";
+  ccml_t ccml;
+  error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+  const function_t *func = ccml.parser().find_function("main");
+  int32_t res = 0;
+  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+    return false;
+  }
+  return res == -7;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 typedef bool (*test_t)();
 struct test_pair_t {
   const char *name;
@@ -875,6 +961,7 @@ struct test_pair_t {
 bool test_xfails();
 bool test_sort_1();
 bool test_prime_1();
+bool test_debug_1();
 
 #define TEST(X) (#X), X
 static const test_pair_t tests[] = {
@@ -912,6 +999,11 @@ static const test_pair_t tests[] = {
     TEST(test_ret_operand),
     TEST(test_sort_1),
     TEST(test_prime_1),
+    TEST(test_debug_1),
+    TEST(test_neg_1),
+    TEST(test_neg_2),
+    TEST(test_neg_3),
+    TEST(test_neg_4),
     // sentinel
     nullptr, nullptr};
 

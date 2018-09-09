@@ -161,34 +161,56 @@ void parser_t::parse_lhs() {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   // format:
-  //    ( <expr> )
-  //    <TOK_IDENT>
-  //    <TOK_IDENT> ( ... )
-  //    <TOK_VAL>
+  //    [-] ( <expr> )
+  //    [-] <TOK_IDENT>
+  //    [-] <TOK_IDENT> ( ... )
+  //    [-] <TOK_IDENT> [ ... ]
+  //    [-] <TOK_VAL>
 
-  if (stream_.found(TOK_LPAREN)) {
-    parse_expr();
-    stream_.found(TOK_RPAREN);
-    return;
-  }
-  if (const token_t *t = stream_.found(TOK_IDENT)) {
+  const token_t *neg = stream_.found(TOK_SUB);
+  do {
+
+    // ( <expr> )
     if (stream_.found(TOK_LPAREN)) {
-      // call function
-      parse_call(*t);
-    } else if (stream_.found(TOK_LBRACKET)) {
-      // array access
-      parse_array_get(*t);
-    } else {
-      // load a local/global
-      ident_load(*t);
+      parse_expr();
+      stream_.found(TOK_RPAREN);
+      break;
     }
-    return;
+
+    if (const token_t *t = stream_.found(TOK_IDENT)) {
+
+      // <TOK_IDENT> ( ... )
+      if (stream_.found(TOK_LPAREN)) {
+        // call function
+        parse_call(*t);
+
+      // <TOK_IDENT> [ ... ]
+      } else if (stream_.found(TOK_LBRACKET)) {
+        // array access
+        parse_array_get(*t);
+
+      // <TOK_IDENT>
+      } else {
+        // load a local/global
+        ident_load(*t);
+      }
+      break;
+    }
+
+    // <TOK_VAL>
+    if (const token_t *t = stream_.found(TOK_VAL)) {
+      asm_.emit(INS_CONST, t->val_, t);
+      break;
+    }
+
+    ccml_.errors().expecting_lit_or_ident(*stream_.pop());
+
+  } while (false);
+
+  // insert unary minus operator
+  if (neg) {
+    asm_.emit(INS_NEG, neg);
   }
-  if (const token_t *t = stream_.found(TOK_VAL)) {
-    asm_.emit(INS_CONST, t->val_, t);
-    return;
-  }
-  ccml_.errors().expecting_lit_or_ident(*stream_.pop());
 }
 
 void parser_t::parse_expr_ex(uint32_t tide) {

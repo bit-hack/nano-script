@@ -9,7 +9,11 @@ namespace {
 const char *gMnemonic[] = {
     // operators
     "INS_ADD", "INS_INC", "INS_SUB", "INS_MUL", "INS_DIV", "INS_MOD", "INS_AND",
-    "INS_OR", "INS_NOT", "INS_LT", "INS_GT", "INS_LEQ", "INS_GEQ", "INS_EQ",
+    "INS_OR",
+    // unary operators
+    "INS_NOT", "INS_NEG",
+    // comparators
+    "INS_LT", "INS_GT", "INS_LEQ", "INS_GEQ", "INS_EQ",
     // branching
     "INS_JMP", "INS_CJMP", "INS_CALL", "INS_RET", "INS_SCALL",
     // stack
@@ -49,6 +53,7 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
   case INS_AND:
   case INS_OR:
   case INS_NOT:
+  case INS_NEG:
   case INS_LT:
   case INS_GT:
   case INS_LEQ:
@@ -111,7 +116,7 @@ int32_t disassembler_t::disasm() {
     bool print_line = false;
 
     // dump line table mapping
-    line_no = stream.get_line(p);
+    line_no = ccml_.store_.get_line(p - start);
 
     if (line_no >= 0 && line_no != old_line) {
       const std::string &line = ccml_.lexer().get_line(line_no);

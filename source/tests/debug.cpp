@@ -25,7 +25,7 @@ function mark(step)
   is_marking(step)
   var i = step + step
   while (i < size)
-    data[i] = - 1
+    data[i] = 0 - 1
     i = i + step
   end
 end
@@ -74,7 +74,7 @@ static bool is_prime(int32_t n) {
   return true;
 }
 
-struct test_prime_t {
+struct test_debug_t {
 
   static bool test_passing;
   static int32_t checks_done;
@@ -109,7 +109,6 @@ struct test_prime_t {
     if (!ccml.build(prime_prog, error)) {
       return false;
     }
-    ccml.disassembler().disasm();
     // run it
     const function_t* func = ccml.parser().find_function("main");
 
@@ -117,9 +116,38 @@ struct test_prime_t {
     if (!thread.prepare(*func, 0, nullptr)) {
       return false;
     }
-    if (!thread.resume(1024 * 1024 * 1024, false)) {
-      return false;
+
+    while (!thread.finished()) {
+      const int32_t line = thread.source_line();
+      if (line < 0) {
+        break;
+      }
+      for (int32_t i = -2; i < 2; ++i) {
+        const std::string &src = ccml.lexer().get_line(line + i);
+        printf("%03d  %s %s\n", line + i, (i == 0 ? "->" : " ."), src.c_str());
+      }
+      std::vector<const identifier_t*> vars;
+      if (!thread.active_vars(vars)) {
+        break;
+      }
+      for (const auto &v : vars) {
+        value_t out = 0;
+        if (v->is_array()) {
+          printf(" : %s  []\n", v->token->string());
+          continue;
+        }
+        if (thread.peek(v->offset, v->is_global, out)) {
+          printf(" : %s  %d\n", v->token->string(), out);
+          continue;
+        }
+        printf(" : %s\n", v->token->string());
+      }
+      if (!thread.step_line()) {
+        break;
+      }
+//      getchar();
     }
+
     if (!thread.finished()) {
       return false;
     }
@@ -131,9 +159,9 @@ struct test_prime_t {
   }
 };
 
-bool test_prime_t::test_passing = true;
-int32_t test_prime_t::checks_done = 0;
+bool test_debug_t::test_passing = true;
+int32_t test_debug_t::checks_done = 0;
 
-bool test_prime_1() {
-  return test_prime_t::run();
+bool test_debug_1() {
+  return test_debug_t::run();
 }

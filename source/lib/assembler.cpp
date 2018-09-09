@@ -5,27 +5,31 @@
 #include "ccml.h"
 #include "errors.h"
 #include "instructions.h"
+#include "parser.h"
 
 
 using namespace ccml;
 
 void asm_stream_t::set_line(lexer_t &lexer, const token_t *t) {
-  // insert into the line table
-  const uint8_t *ptr = head(0);
-  if (t) {
-    line_table_[ptr] = t->line_no_;
-  }
-  else {
-    line_table_[ptr] = lexer.stream_.line_number();
-  }
+  const uint32_t pc = pos();
+  const uint32_t line = t ? t->line_no_ : lexer.stream_.line_number();
+  store_.add_line(pc, line);
 }
 
-int32_t asm_stream_t::get_line(const uint8_t *p) const {
-  auto itt = line_table_.find(p);
-  if (itt != line_table_.end()) {
-    return itt->second;
+void assembler_t::add_ident(const identifier_t &ident) {
+//  printf("%03d -> %03d  %s\n", ident.start, ident.end, ident.token->string());
+  stream.add_ident(ident);
+}
+
+void asm_stream_t::add_ident(const identifier_t &ident) {
+  for (auto &i : store_.identifiers_) {
+    if (i.token == ident.token) {
+      i.start = std::min(ident.start, i.start);
+      i.end   = std::max(ident.end,   i.end);
+      return;
+    }
   }
-  return -1;
+  store_.identifiers_.push_back(ident);
 }
 
 assembler_t::assembler_t(ccml_t &c, asm_stream_t &stream)
@@ -63,6 +67,7 @@ void assembler_t::emit(instruction_e ins, const token_t *t) {
   case INS_LEQ:
   case INS_GEQ:
   case INS_EQ:
+  case INS_NEG:
     write8(ins);
     break;
   default:
@@ -110,6 +115,7 @@ void assembler_t::emit(token_e tok, const token_t *t) {
   case TOK_AND: emit(INS_AND, t); break;
   case TOK_OR:  emit(INS_OR , t); break;
   case TOK_NOT: emit(INS_NOT, t); break;
+  case TOK_NEG: emit(INS_NEG, t); break;
   case TOK_EQ:  emit(INS_EQ , t); break;
   case TOK_LT:  emit(INS_LT , t); break;
   case TOK_GT:  emit(INS_GT , t); break;

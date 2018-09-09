@@ -47,6 +47,13 @@ int32_t thread_t::_read_operand() {
   return val;
 }
 
+uint8_t thread_t::_peek_opcode() {
+  const uint8_t *c = ccml_.code();
+  // XXX: range check for c
+  const int32_t val = *(uint8_t *)(c + pc_);
+  return val;
+}
+
 uint8_t thread_t::_read_opcode() {
   const uint8_t *c = ccml_.code();
   // XXX: range check for c
@@ -104,6 +111,10 @@ void thread_t::_do_INS_OR() {
 
 void thread_t::_do_INS_NOT() {
   push(!pop());
+}
+
+void thread_t::_do_INS_NEG() {
+  push(-pop());
 }
 
 void thread_t::_do_INS_LT() {
@@ -313,6 +324,87 @@ bool thread_t::prepare(const function_t &func, int32_t argc, const value_t *argv
   return true;
 }
 
+void thread_t::step_imp_() {
+  // fetch opcode
+  const uint8_t opcode = _read_opcode();
+  // dispatch
+  switch (opcode) {
+  case INS_ADD:    _do_INS_ADD();    break;
+  case INS_INC:    _do_INS_INC();    break;
+  case INS_SUB:    _do_INS_SUB();    break;
+  case INS_MUL:    _do_INS_MUL();    break;
+  case INS_DIV:    _do_INS_DIV();    break;
+  case INS_MOD:    _do_INS_MOD();    break;
+  case INS_AND:    _do_INS_AND();    break;
+  case INS_OR:     _do_INS_OR();     break;
+  case INS_NOT:    _do_INS_NOT();    break;
+  case INS_NEG:    _do_INS_NEG();    break;
+  case INS_LT:     _do_INS_LT();     break;
+  case INS_GT:     _do_INS_GT();     break;
+  case INS_LEQ:    _do_INS_LEQ();    break;
+  case INS_GEQ:    _do_INS_GEQ();    break;
+  case INS_EQ:     _do_INS_EQ();     break;
+  case INS_JMP:    _do_INS_JMP();    break;
+  case INS_CJMP:   _do_INS_CJMP();   break;
+  case INS_CALL:   _do_INS_CALL();   break;
+  case INS_RET:    _do_INS_RET();    break;
+  case INS_SCALL:  _do_INS_SCALL();  break;
+  case INS_POP:    _do_INS_POP();    break;
+  case INS_CONST:  _do_INS_CONST();  break;
+  case INS_LOCALS: _do_INS_LOCALS(); break;
+  case INS_GETV:   _do_INS_GETV();   break;
+  case INS_SETV:   _do_INS_SETV();   break;
+  case INS_GETVI:  _do_INS_GETVI();  break;
+  case INS_SETVI:  _do_INS_SETVI();  break;
+  case INS_GETG:   _do_INS_GETG();   break;
+  case INS_SETG:   _do_INS_SETG();   break;
+  case INS_GETGI:  _do_INS_GETGI();  break;
+  case INS_SETGI:  _do_INS_SETGI();  break;
+  default:
+    set_error(thread_error_t::e_bad_opcode);
+  }
+}
+
+bool thread_t::step_inst() {
+  if (finished_) {
+    return false;
+  }
+  step_imp_();
+  // check for program termination
+  if (!finished_ && !f_head_) {
+    assert(s_head_ > 0);
+    return_code_ = pop_();
+    finished_ = true;
+  }
+  return !has_error();
+}
+
+bool thread_t::step_line() {
+  if (finished_) {
+    return false;
+  }
+  // get the current source line
+  const uint32_t line = source_line();
+  // step until the source line changes
+  do {
+    step_imp_();
+    if (finished_ || !f_head_ || has_error()) {
+      break;
+    }
+  } while (line == source_line());
+  // check for program termination
+  if (!finished_ && !f_head_) {
+    assert(s_head_ > 0);
+    return_code_ = pop_();
+    finished_ = true;
+  }
+  return !has_error();
+}
+
+int32_t thread_t::source_line() const {
+  return ccml_.store().get_line(pc_);
+}
+
 bool thread_t::resume(int32_t cycles, bool trace) {
   if (finished_) {
     return false;
@@ -320,8 +412,9 @@ bool thread_t::resume(int32_t cycles, bool trace) {
   const uint32_t start_cycles = cycles;
   // while we should keep processing instructions
   while (cycles > 0 && f_head_) {
+    --cycles;
     // fetch opcode
-    const uint8_t opcode = _read_opcode();
+    const uint8_t opcode = _peek_opcode();
     ++history[opcode];
     // print an instruction trace
     if (trace) {
@@ -330,42 +423,7 @@ bool thread_t::resume(int32_t cycles, bool trace) {
       ccml_.disassembler().disasm(c + pc_);
     }
     // dispatch
-    switch (opcode) {
-    case INS_ADD:    _do_INS_ADD();    break;
-    case INS_INC:    _do_INS_INC();    break;
-    case INS_SUB:    _do_INS_SUB();    break;
-    case INS_MUL:    _do_INS_MUL();    break;
-    case INS_DIV:    _do_INS_DIV();    break;
-    case INS_MOD:    _do_INS_MOD();    break;
-    case INS_AND:    _do_INS_AND();    break;
-    case INS_OR:     _do_INS_OR();     break;
-    case INS_NOT:    _do_INS_NOT();    break;
-    case INS_LT:     _do_INS_LT();     break;
-    case INS_GT:     _do_INS_GT();     break;
-    case INS_LEQ:    _do_INS_LEQ();    break;
-    case INS_GEQ:    _do_INS_GEQ();    break;
-    case INS_EQ:     _do_INS_EQ();     break;
-    case INS_JMP:    _do_INS_JMP();    break;
-    case INS_CJMP:   _do_INS_CJMP();   break;
-    case INS_CALL:   _do_INS_CALL();   break;
-    case INS_RET:    _do_INS_RET();    break;
-    case INS_SCALL:  _do_INS_SCALL();  break;
-    case INS_POP:    _do_INS_POP();    break;
-    case INS_CONST:  _do_INS_CONST();  break;
-    case INS_LOCALS: _do_INS_LOCALS(); break;
-    case INS_GETV:   _do_INS_GETV();   break;
-    case INS_SETV:   _do_INS_SETV();   break;
-    case INS_GETVI:  _do_INS_GETVI();  break;
-    case INS_SETVI:  _do_INS_SETVI();  break;
-    case INS_GETG:   _do_INS_GETG();   break;
-    case INS_SETG:   _do_INS_SETG();   break;
-    case INS_GETGI:  _do_INS_GETGI();  break;
-    case INS_SETGI:  _do_INS_SETGI();  break;
-    default:
-      set_error(thread_error_t::e_bad_opcode);
-      break;
-    }
-    --cycles;
+    step_imp_();
     if (has_error() || finished_) {
       break;
     }
@@ -379,6 +437,10 @@ bool thread_t::resume(int32_t cycles, bool trace) {
   // increment the cycle count
   cycles_ += (start_cycles - cycles);
   return !has_error();
+}
+
+bool thread_t::active_vars(std::vector<const identifier_t *> &out) const {
+  return ccml_.store().active_vars(pc_, out);
 }
 
 bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
@@ -420,4 +482,17 @@ void thread_t::setv(int32_t offs, value_t val) {
   else {
     s_[index] = val;
   }
+}
+
+
+// peek a stack value
+bool thread_t::peek(int32_t offset, bool absolute, value_t &out) const {
+  if (!absolute) {
+    offset += frame_().sp_;
+  }
+  if (offset >= 0 && offset < s_.size()) {
+    out = s_[offset];
+    return true;
+  }
+  return false;
 }
