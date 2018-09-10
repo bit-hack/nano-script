@@ -182,23 +182,24 @@ class Generator(object):
     def do_expression(self, scope, complexity=3):
         while True:
             try:
-                i = random(9)
+                umin = '-' if chance(10) else ''
+                i = random(10)
                 if i == 0:
-                    return scope.vars.find()
+                    return umin + scope.vars.find()
                 if i == 1:
-                    return self.do_number(scope)
+                    return umin + self.do_number(scope)
                 if complexity <= 0:
                     raise BacktrackError()
                 if i == 2:
-                    return self.do_function_call(scope, complexity-1)
+                    return umin + self.do_function_call(scope, complexity-1)
                 if complexity == 1:
                     raise BacktrackError()
                 if i == 3:
                     return ' not ' + self.do_expression(scope, complexity)
                 if i == 4:
-                    return '(' + self.do_expression(scope, complexity-1) + ')'
+                    return umin + '(' + self.do_expression(scope, complexity-1) + ')'
                 if i == 5:
-                    return scope.arrays.find() + '[' + self.do_expression(scope, complexity-1) + ']'
+                    return umin + scope.arrays.find() + '[' + self.do_expression(scope, complexity-1) + ']'
                 if i >= 6:
                     return self.do_expression(scope, complexity-1) + ' ' +\
                            choose('+', '-', '*', '/', 'and', 'or', '>', '>=', '<', '<=', '==') + ' ' +\
@@ -316,6 +317,13 @@ class Generator(object):
         except BacktrackError:
             return ''
 
+    # accumulate_statement ::= identifier '+=' expression '\n'
+    def do_accum_statement(self, scope):
+        try:
+            return self.indent() + self.do_identifier(scope) + ' += ' + self.do_expression(scope) + '\n'
+        except BacktrackError:
+            return ''
+
     # assign_array_statement ::= identifier '[' expression ']' '=' expression '\n'
     def do_assign_array_statement(self, scope):
         try:
@@ -335,13 +343,14 @@ class Generator(object):
     #             | while_statement
     #             | function_call
     #             | assign_statement
+    #             | accumulate_statement
     #             | assign_array_statement
     #             | var_decl
     #             | array_decl
     def do_statement(self, scope):
         while True:
             try:
-                i = random(8)
+                i = random(9)
                 if i == 0:
                     return self.do_return_statement(scope)
                 if i == 1:
@@ -353,12 +362,14 @@ class Generator(object):
                 if i == 4:
                     return self.do_assign_statement(scope)
                 if i == 5:
-                    return self.do_assign_array_statement(scope)
+                    return self.do_accum_statement(scope)
                 if i == 6:
-                    return self.do_var_decl(scope, True) + '\n'
+                    return self.do_assign_array_statement(scope)
                 if i == 7:
+                    return self.do_var_decl(scope, True) + '\n'
+                if i == 8:
                     return self.do_array_decl(scope) + '\n'
-                if i >= 7:
+                if i >= 9:
                     assert (not "unreachable")
             except BacktrackError:
                 pass
