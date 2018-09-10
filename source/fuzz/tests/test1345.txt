@@ -1,0 +1,31 @@
+# SEED 12666
+
+function bt769()
+  var pSMMHFJ[116]
+  if (bt769() <= 104 / 117 + 10)
+    bt769()
+  end
+  while (122 == 126 - bt769() or bt769())
+    var FqCesJl[31]
+    if (FqCesJl[(56)])
+      return bt769() < 44 or 107
+      bt769()
+    end
+    return FqCesJl[61] < FqCesJl[bt769()]
+  end
+  pSMMHFJ[119] =  not 17 / 44 - pSMMHFJ[bt769()]
+  bt769()
+  while (bt769())
+    return bt769() + bt769() <= 88 or 97
+    var M7Bh[112]
+    var gU[81]
+    M7Bh[41] = M7Bh[pSMMHFJ[24]]
+  end
+end
+
+var saCXWjd[65]
+
+var SaKc7A
+
+var sRcG_ZY
+

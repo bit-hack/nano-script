@@ -1,0 +1,31 @@
+# SEED 12910
+
+var Mp3sW5[95]
+
+var JbxCAQ[78]
+
+var ITD
+
+function jml5od(IlEO4G)
+  ITD = jml5od(125)
+  while (ITD)
+    while (ITD or jml5od(ITD) < -jml5od(ITD))
+      ITD = Mp3sW5[-jml5od(ITD) - jml5od(ITD)]
+    end
+    var YgU = jml5od(55) - ITD and 102
+    ITD = 86
+    return  not 58
+    IlEO4G = -jml5od(YgU) - ITD < Mp3sW5[jml5od(89)]
+  end
+  jml5od(2)
+  ITD += 28
+  var jZT
+  var BdLSKoSm[80]
+  var Yjzf0[51]
+  IlEO4G += -JbxCAQ[jml5od(74)] and  not ITD > jml5od(100)
+end
+
+var be1N[63]
+
+var kfveZXG = 33
+

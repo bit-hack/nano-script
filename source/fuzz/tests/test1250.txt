@@ -1,0 +1,75 @@
+# SEED 12571
+
+var jV[72]
+
+function APtG(r7dnD6nN, W3, ScMRcaC, _o)
+  return APtG(83, 62, 1, 53) / APtG(87, 106, 65, 5)
+  APtG(APtG(-62, 13, 12, 102), APtG(115, 121, 94, 40), 113, APtG(121, -78, 86, 105))
+  if (jV[11] / 5)
+    jV[119] = 2
+  end
+  while (78 and APtG(-47, 107, -95, 44) - jV[APtG(118, 112, 38, 31)])
+    return ((APtG(25, 111, -76, 75)))
+    jV[6] =  not (93)
+  end
+end
+
+var M7dMjB[117]
+
+var NV4zv[86]
+
+function zoedhL5(EX)
+  M7dMjB[30] = APtG(-85, 33, 93, -107) > APtG(65, 22, 23, 44) or zoedhL5(17) <= 61
+  return APtG(117, 62, 106, 101) >= zoedhL5(102) + zoedhL5(98)
+  return  not (107) <= 86
+  return 102
+  return  not ( not -93)
+end
+
+var WU_gBOPG
+
+function qme(Y54XdF, dk)
+  jV[5] =  not -NV4zv[WU_gBOPG] or NV4zv[80]
+  WU_gBOPG = APtG(91, 79, 86, WU_gBOPG) * 21
+  while (qme(WU_gBOPG, WU_gBOPG) - zoedhL5(-18) / NV4zv[WU_gBOPG])
+    WU_gBOPG = WU_gBOPG
+    var av = jV[WU_gBOPG]
+    av = ((WU_gBOPG))
+    while (-102)
+      var Nkw2V[42]
+      while (APtG(87, APtG(87, av, av, 110), zoedhL5(av), 101))
+        WU_gBOPG += APtG(av, 91, -16, 117) + av
+        av = (zoedhL5(111) < 45)
+      end
+      APtG(APtG(av, av, av, 52), 5, APtG(79, av, 42, av), APtG(WU_gBOPG, WU_gBOPG, WU_gBOPG, 51))
+    end
+    var I63Yzi[7]
+  end
+  M7dMjB[91] = WU_gBOPG
+  var TZ
+  while ( not -(TZ) / TZ)
+    if (101)
+      TZ = jV[APtG(32, 73, TZ, 59)]
+      dk += qme(TZ, 22) < TZ == zoedhL5(73)
+      zoedhL5(qme(WU_gBOPG, 29))
+      if ( not APtG(105, 41, 106, 65))
+        zoedhL5(TZ)
+        APtG(TZ, APtG(118, -WU_gBOPG, 105, 6), -21, qme(WU_gBOPG, 8))
+      end
+      dk = zoedhL5(zoedhL5(TZ))
+    end
+    TZ += (-66) > zoedhL5(WU_gBOPG) <= qme(11, TZ)
+    dk += (90) + jV[TZ]
+    while (jV[TZ] or WU_gBOPG == APtG(5, 95, 72, TZ))
+      zoedhL5(zoedhL5(48))
+      dk = 55
+      var OIgcnhj[44]
+      var fg[79]
+      return (WU_gBOPG) + APtG(TZ, WU_gBOPG, TZ, WU_gBOPG) > 61
+    end
+  end
+  while ( not  not TZ == -(WU_gBOPG))
+  end
+  Y54XdF += TZ - TZ >= 76 == qme(-11, 98)
+end
+

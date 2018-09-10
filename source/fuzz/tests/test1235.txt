@@ -1,0 +1,23 @@
+# SEED 12556
+
+var OB[30]
+
+var w8dmjL0 = 58
+
+function hBZqV(EiMTx, Sk2, LEco, XpTso, PAkt)
+  return w8dmjL0 <= hBZqV(-77, 6, w8dmjL0, 44, -w8dmjL0) * hBZqV(w8dmjL0, w8dmjL0, 12, -w8dmjL0, w8dmjL0) >= 99
+  w8dmjL0 += w8dmjL0 and hBZqV(w8dmjL0, 23, w8dmjL0, w8dmjL0, w8dmjL0) >= OB[hBZqV(w8dmjL0, 2, w8dmjL0, 32, w8dmjL0)]
+  while (hBZqV(-91, 95, 109, hBZqV(80, w8dmjL0, -121, -w8dmjL0, 13), 56))
+    while ((hBZqV(w8dmjL0, 93, w8dmjL0, -w8dmjL0, 105)))
+      hBZqV(98, -108, hBZqV(w8dmjL0, w8dmjL0, w8dmjL0, 24, w8dmjL0), 112, 3)
+      var f9EoJ[90]
+    end
+    return -25 <= 26 -  not OB[24]
+  end
+  OB[36] = hBZqV(hBZqV(w8dmjL0, 40, 103, 119, w8dmjL0), 113, 93, 32, w8dmjL0)
+  var CtYc = (116 + w8dmjL0)
+  var ms
+  XpTso += CtYc >= -ms >= OB[hBZqV(w8dmjL0, CtYc, ms, 43, ms)]
+  var bVECm
+end
+

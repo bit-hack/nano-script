@@ -1,0 +1,20 @@
+# SEED 12716
+
+var pZH_vg[11]
+
+function PVS()
+  while (((PVS())))
+    PVS()
+    return PVS() < -98 or  not (15)
+  end
+  while ( not  not -pZH_vg[PVS()] + 84 <= -22)
+  end
+  var E8iE[75]
+  var XQ[24]
+  return  not  not XQ[E8iE[PVS()]]
+end
+
+var u9kBwV = 120
+
+var sdTMGl
+

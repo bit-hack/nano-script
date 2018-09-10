@@ -1,0 +1,55 @@
+# SEED 12928
+
+var Hu8ca[85]
+
+var pTf[113]
+
+function i4KFQx()
+  Hu8ca[89] = i4KFQx() - 55
+  var EKSoFGh9
+  pTf[15] = EKSoFGh9
+  i4KFQx()
+  return Hu8ca[(-69)]
+  return -28 / i4KFQx() < i4KFQx()
+  pTf[10] = (EKSoFGh9 * i4KFQx())
+end
+
+var L1xoUjT
+
+function GgeV(p3Z, nqTT, tC_FrEdR, ca, bMEQ3, k0Gj438, RS)
+  while (pTf[L1xoUjT >= L1xoUjT])
+    Hu8ca[48] = 95
+    L1xoUjT += GgeV(1, -L1xoUjT, L1xoUjT, 16, L1xoUjT, 122, 126) and Hu8ca[9]
+  end
+  L1xoUjT += (GgeV(L1xoUjT, 0, L1xoUjT, L1xoUjT, L1xoUjT, L1xoUjT, 29))
+  L1xoUjT += GgeV(L1xoUjT, 77, L1xoUjT, L1xoUjT, 33, 68, L1xoUjT) or L1xoUjT
+  var EBc[39]
+  EBc[53] = Hu8ca[pTf[76]]
+  if ( not GgeV(L1xoUjT, L1xoUjT, L1xoUjT, L1xoUjT, 66, 53, L1xoUjT) == -120)
+    var JUCyr[65]
+    if ((L1xoUjT))
+    end
+    GgeV(L1xoUjT, 15, GgeV(35, L1xoUjT, -53, 83, 59, L1xoUjT, L1xoUjT), i4KFQx(), i4KFQx(), L1xoUjT, GgeV(26, L1xoUjT, 14, 68, L1xoUjT, -L1xoUjT, 60))
+  end
+  if (Hu8ca[GgeV(-L1xoUjT, 108, L1xoUjT, 15, L1xoUjT, 88, -31)] and (41))
+    var bS_oM = 6
+    while (39)
+      pTf[92] = GgeV(L1xoUjT, L1xoUjT, 68, L1xoUjT, 41, 55, -100) > 125 or bS_oM
+      pTf[15] = i4KFQx()
+      while (i4KFQx())
+        L1xoUjT += (bS_oM) >= -GgeV(L1xoUjT, -127, bS_oM, bS_oM, L1xoUjT, bS_oM, 1) == i4KFQx()
+      end
+    end
+    var gMiWo
+    GgeV(1, i4KFQx(), i4KFQx(), -bS_oM, GgeV(gMiWo, -gMiWo, 54, L1xoUjT, bS_oM, L1xoUjT, 73), GgeV(20, gMiWo, 61, gMiWo, L1xoUjT, 94, 85), GgeV(-76, bS_oM, bS_oM, 28, 22, 30, gMiWo))
+    GgeV(96, GgeV(bS_oM, 77, 98, L1xoUjT, L1xoUjT, 90, 84), 99, bS_oM, 28, i4KFQx(), 96)
+  end
+  i4KFQx()
+end
+
+var iIVOY7gq = 112
+
+var IH[45]
+
+var xpB[111]
+

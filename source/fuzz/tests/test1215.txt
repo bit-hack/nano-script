@@ -1,0 +1,16 @@
+# SEED 12536
+
+var sXP2[56]
+
+var Ayd8FC[64]
+
+function QjfIj()
+  if (-66 < QjfIj() < -Ayd8FC[63])
+    var iF2V6fI[125]
+  end
+  var ji[10]
+  sXP2[68] = QjfIj() >= 10 == -QjfIj()
+  return  not 81 or ji[36]
+  var wh0j[105]
+end
+

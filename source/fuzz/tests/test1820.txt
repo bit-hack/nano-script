@@ -1,0 +1,40 @@
+# SEED 13141
+
+var aJckEKm[76]
+
+function ciQ9TaH6(o8, nPkJ, ZXu, oWuq3JSP, KNd16, PQ)
+  while (124 == ciQ9TaH6(32, 40, 108, 7, 108, 127) + aJckEKm[50])
+  end
+  ciQ9TaH6(20, -94, 34, 9, -ciQ9TaH6(3, 109, 96, 48, 80, 86), ciQ9TaH6(67, 61, 90, 124, 55, 77))
+  var Xds = aJckEKm[106] <= (ciQ9TaH6(84, 94, 90, 37, 126, 43))
+  var FC8nWo5[87]
+  while (FC8nWo5[ not Xds <= Xds])
+  end
+  if (aJckEKm[ciQ9TaH6(94, -Xds, 31, 90, 59, Xds)])
+    while (28 >= Xds)
+    end
+    KNd16 += Xds
+    var Wc0iVSb3 = (5)
+    return (ciQ9TaH6(Xds, Wc0iVSb3, -Wc0iVSb3, 93, Xds, 93) == Wc0iVSb3)
+  end
+end
+
+var lEKQfL = 10
+
+function Usr(VVgx, cyMjqaH, biQXS, KSdTTxH, NPU4b)
+  var Ya8BTwJ[109]
+  lEKQfL =  not (Ya8BTwJ[ciQ9TaH6(110, 71, 4, 41, 63, lEKQfL)])
+  Ya8BTwJ[22] = (119 < lEKQfL)
+  ciQ9TaH6(lEKQfL, lEKQfL, 119, 114, 20, ciQ9TaH6(54, 75, lEKQfL, lEKQfL, lEKQfL, lEKQfL))
+  Ya8BTwJ[115] = Usr(lEKQfL, 8, 48, lEKQfL, 33) - 0 or Ya8BTwJ[108]
+  while (Ya8BTwJ[lEKQfL] == (Usr(lEKQfL, 106, -6, -lEKQfL, lEKQfL)))
+    var bNJYTQop = Ya8BTwJ[aJckEKm[Usr(-103, lEKQfL, lEKQfL, lEKQfL, 57)]]
+  end
+  VVgx = 40
+  Usr(94, lEKQfL, ciQ9TaH6(lEKQfL, lEKQfL, 87, 88, 37, lEKQfL), ciQ9TaH6(lEKQfL, lEKQfL, 125, 117, lEKQfL, lEKQfL), Usr(83, 119, lEKQfL, 69, 92))
+end
+
+var bxEJmpt[24]
+
+var N9VSWW
+

@@ -1,0 +1,84 @@
+# SEED 12855
+
+var uojspq[114]
+
+var QG[104]
+
+var hH
+
+var Cp[79]
+
+function kOTquO(e_A2bRef, TvQIhEU, BIGDNpB)
+  hH += 38
+  var o9a2EH[98]
+  if (( not kOTquO(41, 126, 96) <= kOTquO(32, 8, 120)))
+    if (kOTquO(33, 30, hH) * kOTquO(85, 109, hH) == kOTquO(26, 80, 118))
+      return (hH) > -hH + -hH
+      if (hH)
+        uojspq[51] = kOTquO(hH, kOTquO(38, hH, hH), hH)
+        hH =  not o9a2EH[uojspq[30]]
+      end
+      var g0P[118]
+      while (10 + kOTquO(hH, 56, hH) or kOTquO(-hH, 74, hH))
+        var vqmnp[5]
+        return (hH)
+        if ( not  not hH)
+          var t1[22]
+          hH = hH - hH > hH - kOTquO(57, hH, 84)
+          while (kOTquO(-hH, 4, hH) - -19 <= 33 and 46)
+            var LD8cJ[128]
+            if (Cp[kOTquO(hH, 6, 66)])
+              hH = Cp[(44)]
+              return -LD8cJ[hH]
+              if (-43)
+              end
+              kOTquO(63, kOTquO(hH, 119, hH), 44)
+            end
+          end
+          while (kOTquO(hH, kOTquO(hH, 83, 90), kOTquO(38, 42, hH)))
+          end
+        end
+        if (72)
+          TvQIhEU += kOTquO(39, 99, 106) > kOTquO(13, 9, 86) < vqmnp[hH]
+          BIGDNpB += 127
+        end
+      end
+    end
+    if (kOTquO(40, 8, 27))
+      return ((-kOTquO(116, hH, 16)))
+    end
+    while ((uojspq[hH]))
+      QG[0] = 116 < kOTquO(hH, hH, hH) > kOTquO(hH, -18, hH) and hH
+      Cp[90] = (kOTquO(hH, hH, hH) - -82)
+      var EOJN = kOTquO(kOTquO(39, hH, hH), 48, hH)
+      kOTquO(EOJN, kOTquO(EOJN, hH, 87), hH)
+    end
+    kOTquO(hH, 56, hH)
+    var FxLjyC[69]
+  end
+  kOTquO(77, hH, 78)
+  hH += uojspq[kOTquO(23, 66, 50) * 99]
+  while ((o9a2EH[hH]))
+    var Gb
+  end
+  if (kOTquO(kOTquO(11, hH, hH), -kOTquO(hH, hH, hH), -hH))
+    hH += hH * hH and kOTquO(56, hH, hH)
+    while (kOTquO(hH, hH, -51) <= kOTquO(-hH, 42, 83) > -kOTquO(57, hH, 82) == -15)
+    end
+    if (hH - 17 == kOTquO(hH, hH, 30) - kOTquO(hH, hH, 120))
+      if (2 * 112 >= hH)
+        var PJqQMWxr[109]
+        hH = -47
+        var dBlve0xf[109]
+        o9a2EH[32] = -99
+        kOTquO(-53, 106, 23)
+      end
+    end
+    uojspq[102] = QG[ not kOTquO(hH, -44, hH) / 43]
+    e_A2bRef +=  not ((113))
+  end
+  uojspq[15] = 122
+end
+
+var kLO[85]
+

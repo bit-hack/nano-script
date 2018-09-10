@@ -1,0 +1,46 @@
+# SEED 12812
+
+var lNZw5H = 126
+
+var Qa
+
+var fbN_B6
+
+var sY4I88v[9]
+
+function hnz_vA4D(mLvEkbDL, _UJ0ph, be, Mf5hGj, aI6kkKK, YNQ, aGAaEOp1)
+  sY4I88v[60] =  not (hnz_vA4D(67, 73, -lNZw5H, Qa, fbN_B6, 90, 112))
+  if (Qa > 58 / -sY4I88v[Qa])
+    Qa += (106 == 56)
+    hnz_vA4D(86, hnz_vA4D(127, 99, 95, 64, 64, lNZw5H, 40), hnz_vA4D(lNZw5H, fbN_B6, fbN_B6, fbN_B6, 54, 63, lNZw5H), hnz_vA4D(121, lNZw5H, lNZw5H, 116, 62, lNZw5H, fbN_B6), 99, hnz_vA4D(fbN_B6, 47, Qa, 29, fbN_B6, 7, lNZw5H), 27)
+    while ( not (hnz_vA4D(-100, Qa, 70, -lNZw5H, Qa, 65, 124)) or -(hnz_vA4D(93, fbN_B6, 21, -lNZw5H, lNZw5H, 88, 45)))
+    end
+    return lNZw5H
+  end
+  return lNZw5H
+  hnz_vA4D(49, 71, Qa, Qa, 114, lNZw5H, 7)
+  sY4I88v[111] = hnz_vA4D(13, 24, fbN_B6, Qa, fbN_B6, lNZw5H, 19) and fbN_B6 > 11
+  Qa = hnz_vA4D(119, 121, 89, 35, 75, lNZw5H, lNZw5H) > sY4I88v[hnz_vA4D(fbN_B6, 77, lNZw5H, fbN_B6, fbN_B6, 63, -fbN_B6)]
+  if (sY4I88v[hnz_vA4D(lNZw5H, lNZw5H, Qa, Qa, 5, 16, -fbN_B6) * hnz_vA4D(85, 24, 35, 10, Qa, -Qa, Qa)])
+    hnz_vA4D(hnz_vA4D(8, -Qa, lNZw5H, 84, 78, lNZw5H, -82), lNZw5H, hnz_vA4D(lNZw5H, 86, 94, -Qa, Qa, 70, 101), -7, -Qa, hnz_vA4D(91, lNZw5H, lNZw5H, lNZw5H, 22, fbN_B6, -lNZw5H), fbN_B6)
+  end
+  hnz_vA4D(lNZw5H, 123, fbN_B6, hnz_vA4D(109, 106, 125, -fbN_B6, fbN_B6, 125, -fbN_B6), 8, 6, hnz_vA4D(fbN_B6, -Qa, Qa, lNZw5H, 105, 69, 65))
+end
+
+function JQW8(nV)
+  nV += 120 or 19 < JQW8(92)
+  sY4I88v[27] = (67) + 74 / -67
+  if (lNZw5H)
+  end
+  hnz_vA4D(fbN_B6, hnz_vA4D(122, 114, 33, Qa, Qa, Qa, 107), -fbN_B6, hnz_vA4D(fbN_B6, 1, 45, 57, -115, 110, lNZw5H), -68, JQW8(36), 87)
+  while ((JQW8(lNZw5H) * lNZw5H))
+  end
+  var MYDW[100]
+  JQW8(fbN_B6)
+  hnz_vA4D(10, hnz_vA4D(Qa, 32, Qa, 75, fbN_B6, 86, -fbN_B6), fbN_B6, lNZw5H, Qa, -JQW8(fbN_B6), hnz_vA4D(fbN_B6, fbN_B6, 17, -Qa, 3, Qa, Qa))
+end
+
+var CHs[89]
+
+var zs = 45
+

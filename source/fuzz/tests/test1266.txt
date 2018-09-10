@@ -1,0 +1,57 @@
+# SEED 12587
+
+var gIRne
+
+function dO3R6GC(TGb, WO8L, D2YOs, no9sCH, wy7w, S0KPb, aXJu)
+  if ((gIRne >= dO3R6GC(gIRne, gIRne, gIRne, 43, 12, 106, gIRne)))
+    D2YOs += dO3R6GC(dO3R6GC(-80, gIRne, 105, gIRne, gIRne, 94, gIRne), 12, 0, 23, gIRne, 84, 3)
+    if (gIRne)
+      var JhYR4[55]
+      dO3R6GC(gIRne, dO3R6GC(44, 109, gIRne, gIRne, 48, gIRne, 84), dO3R6GC(123, gIRne, gIRne, -47, 82, gIRne, gIRne), 35, dO3R6GC(gIRne, 22, gIRne, gIRne, gIRne, 112, 43), 47, 34)
+    end
+    var ECECVm
+    return  not dO3R6GC(41, 35, 10, 45, gIRne, gIRne, -6) or ECECVm or  not 23 > 84
+  end
+  while ( not dO3R6GC(62, gIRne, gIRne, gIRne, 122, gIRne, gIRne) <= dO3R6GC(60, 89, 75, 80, 44, gIRne, gIRne) == gIRne >= -dO3R6GC(gIRne, 120, gIRne, gIRne, gIRne, 85, gIRne))
+    dO3R6GC(gIRne, 19, dO3R6GC(gIRne, -gIRne, -gIRne, 122, 22, 85, 51), dO3R6GC(44, 32, 64, 69, 113, gIRne, 91), 69, -11, gIRne)
+    var A93q[62]
+    var sIIh
+    if (sIIh)
+      var zYl[120]
+      var Yu5D[97]
+      if (-Yu5D[dO3R6GC(104, 84, 116, 22, sIIh, 102, sIIh) == dO3R6GC(118, 87, -22, gIRne, 75, sIIh, sIIh)])
+        while (114)
+          A93q[41] = dO3R6GC(gIRne, sIIh, sIIh, 44, gIRne, sIIh, sIIh) * dO3R6GC(66, sIIh, 64, 101, sIIh, 51, 66)
+          if ((dO3R6GC(-110, -sIIh, 68, 20, 83, 7, 99)))
+            dO3R6GC(47, 2, gIRne, gIRne, -4, dO3R6GC(gIRne, 12, 13, gIRne, sIIh, gIRne, sIIh), -dO3R6GC(122, sIIh, 62, 119, gIRne, 9, -gIRne))
+            S0KPb = (zYl[87])
+          end
+          var VEzpX[96]
+          return  not 101 / dO3R6GC(106, 20, -55, 14, -sIIh, gIRne, 34) == -94 < 57
+          dO3R6GC(sIIh, dO3R6GC(22, sIIh, sIIh, -56, 72, gIRne, 61), -sIIh, dO3R6GC(gIRne, 42, sIIh, gIRne, 22, 86, sIIh), sIIh, sIIh, dO3R6GC(90, gIRne, 111, 24, sIIh, 83, sIIh))
+        end
+        return gIRne or dO3R6GC(gIRne, gIRne, gIRne, 82, sIIh, sIIh, -gIRne) + -sIIh <= sIIh
+        wy7w = gIRne + dO3R6GC(65, sIIh, sIIh, 71, gIRne, 49, 29) or dO3R6GC(gIRne, sIIh, sIIh, sIIh, 19, 19, -122)
+        while (dO3R6GC(sIIh, 9, gIRne, 117, -57, 36, -gIRne) or gIRne >= sIIh or sIIh)
+          var VTM5CXN =  not A93q[dO3R6GC(gIRne, 21, 45, 43, 13, -sIIh, sIIh)]
+          if ( not  not  not sIIh < 64)
+            dO3R6GC(-74, 53, 104, 41, 32, 35, dO3R6GC(sIIh, sIIh, 39, VTM5CXN, -99, gIRne, 6))
+          end
+          return dO3R6GC(sIIh, dO3R6GC(94, 66, sIIh, gIRne, gIRne, -8, 10), gIRne, VTM5CXN, 82, VTM5CXN, 37)
+          var DhT[49]
+          return 31 - 122
+        end
+      end
+      var m_yyLy[65]
+      var hkAFOEy[45]
+    end
+  end
+  return dO3R6GC(16, gIRne, dO3R6GC(75, -gIRne, 110, 26, 94, gIRne, gIRne), dO3R6GC(gIRne, 96, gIRne, 59, 22, gIRne, gIRne), gIRne, 79, gIRne)
+  return gIRne + dO3R6GC(71, gIRne, 31, -gIRne, 97, 93, 35) < 51
+  var IUQ = gIRne
+  dO3R6GC(70, gIRne, dO3R6GC(gIRne, 10, 6, 117, gIRne, -IUQ, 16), -57, 99, dO3R6GC(IUQ, IUQ, IUQ, gIRne, IUQ, IUQ, IUQ), 49)
+  dO3R6GC(dO3R6GC(97, 43, IUQ, IUQ, IUQ, 115, -22), IUQ, 24, IUQ, 46, 28, IUQ)
+end
+
+var kBeiris = 63
+

@@ -1,0 +1,43 @@
+# SEED 13145
+
+function oNUB3a()
+  return oNUB3a() <= 11
+  var Zi
+  return (oNUB3a()) + oNUB3a() / -oNUB3a()
+  if (Zi)
+    return 77 >= Zi > 22
+    oNUB3a()
+    while (Zi and Zi * 118 and Zi)
+      oNUB3a()
+    end
+  end
+  oNUB3a()
+end
+
+var iM3UKEuS = 72
+
+var JC
+
+function ld9NU(DHgf_OgF, kHYrl)
+  if (iM3UKEuS)
+    return ld9NU(iM3UKEuS, iM3UKEuS)
+    DHgf_OgF += oNUB3a() or 82
+    var lgfYz8x
+  end
+  oNUB3a()
+  while ((-ld9NU(JC, 110) - 96))
+    JC = (ld9NU(74, 96))
+    iM3UKEuS = ld9NU(91, 71)
+    while ((JC) * 27)
+      return 71 + oNUB3a() > 24
+      ld9NU(JC, 68)
+    end
+    return ld9NU(iM3UKEuS, iM3UKEuS) <  not JC and 1
+    DHgf_OgF += iM3UKEuS
+  end
+  JC +=  not 54 > oNUB3a() ==  not oNUB3a() < 112
+  return ld9NU(oNUB3a(), -JC)
+  return (oNUB3a())
+  var IX[74]
+end
+

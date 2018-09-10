@@ -1,0 +1,20 @@
+# SEED 13314
+
+var Pz8nb1v3[42]
+
+function spTrj2Ef(e6O, YPsmZ7kx, rUJoJ2, vECklbQ, Z7Xd0g)
+  Pz8nb1v3[91] = spTrj2Ef(10, 34, -25, 19, 119) == spTrj2Ef(73, 50, 84, 81, -109) /  not 20 == 42
+  Pz8nb1v3[62] =  not (spTrj2Ef(-103, 11, 37, 25, 64)) / spTrj2Ef(90, 127, 92, 9, 4) > 107
+  spTrj2Ef(54, spTrj2Ef(125, 7, 36, 64, 76), spTrj2Ef(96, 22, 44, 94, 125), spTrj2Ef(41, -13, 28, 28, 48), 17)
+  while (spTrj2Ef(spTrj2Ef(100, 50, 95, 45, 127), spTrj2Ef(125, 62, 23, 72, 22), 115, spTrj2Ef(-50, 86, 36, -27, -117), spTrj2Ef(77, 125, 72, 75, 59)))
+    var VBcIM = Pz8nb1v3[107] >  not spTrj2Ef(36, 3, -41, 89, 110) > spTrj2Ef(84, 37, 111, 61, 57)
+    spTrj2Ef(-59, -spTrj2Ef(39, 28, 127, VBcIM, VBcIM), VBcIM, VBcIM, -spTrj2Ef(77, VBcIM, VBcIM, VBcIM, 60))
+  end
+  if (Pz8nb1v3[spTrj2Ef(67, -95, 24, 115, 33)])
+    var J6
+    var s48[113]
+  end
+  var wO[76]
+  Pz8nb1v3[57] = 112
+end
+

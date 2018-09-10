@@ -1,0 +1,8 @@
+# SEED 12864
+
+var igTyFzI[30]
+
+var GuF = 43
+
+var wr = 90
+

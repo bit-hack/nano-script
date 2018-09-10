@@ -1,0 +1,32 @@
+# SEED 12965
+
+function AGEfOD0K(PGKx7W, mD6T, I7Hb)
+  var vTG[23]
+  return AGEfOD0K(106, AGEfOD0K(61, 106, 111), AGEfOD0K(78, 27, 11))
+  while ( not AGEfOD0K(48, 31, 118) / AGEfOD0K(8, 49, 18) / 41)
+  end
+  var Q8qpo_
+  if ((75) / Q8qpo_)
+    var SrEeXh
+    SrEeXh +=  not Q8qpo_ > AGEfOD0K(Q8qpo_, SrEeXh, 46) or AGEfOD0K(-41, SrEeXh, SrEeXh)
+    var NGlOtSkt = vTG[72 <= AGEfOD0K(SrEeXh, Q8qpo_, Q8qpo_)]
+    while (88)
+      vTG[59] =  not AGEfOD0K(Q8qpo_, 63, Q8qpo_) == 105
+      if (-123 * AGEfOD0K(110, -68, NGlOtSkt) <= 45)
+      end
+      return (SrEeXh) or  not (SrEeXh)
+    end
+    SrEeXh = vTG[12]
+  end
+  if (vTG[AGEfOD0K(108, 40, Q8qpo_) / AGEfOD0K(Q8qpo_, -Q8qpo_, 5)])
+    Q8qpo_ = 79 <= AGEfOD0K(88, 5, 106) / Q8qpo_
+  end
+  if (Q8qpo_)
+    vTG[23] =  not AGEfOD0K(AGEfOD0K(Q8qpo_, Q8qpo_, Q8qpo_), AGEfOD0K(-51, Q8qpo_, 2), -97)
+    Q8qpo_ +=  not AGEfOD0K(43, Q8qpo_, 117)
+    var R4[87]
+    AGEfOD0K(123, 1, 79)
+  end
+  return 20 / Q8qpo_ and 55 and 17
+end
+

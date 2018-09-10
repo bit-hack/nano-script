@@ -1,0 +1,41 @@
+# SEED 12516
+
+function VQ_Q(TQn, INB, bgNfgj, L2SRB335, N7IJZ, jXtL4, PAJNzXTA)
+  VQ_Q(VQ_Q(94, 114, 110, 106, 115, 102, 87), VQ_Q(62, 43, 100, 117, 30, 46, 105), 65, VQ_Q(77, 106, 102, 4, 85, 38, 48), VQ_Q(53, 117, 81, 82, -28, 100, 57), 107, 4)
+  return  not -VQ_Q(33, 2, 62, 6, 90, 51, 40) <= VQ_Q(53, -51, -69, 30, 101, 112, 77) and 64 >= 0
+  if (73)
+    if (VQ_Q(VQ_Q(127, 55, 43, 92, 77, -80, 20), 37, VQ_Q(102, 107, 79, 104, 114, 9, -79), 89, 22, VQ_Q(82, 111, -43, 32, 64, 90, 120), VQ_Q(-108, 90, 15, 102, 56, 68, 13)))
+    end
+    var aLw4 = (23 / 29)
+  end
+  var nsi[10]
+  nsi[38] = VQ_Q(105, -VQ_Q(91, 12, 85, 104, 24, 126, 18), 106, VQ_Q(14, 16, -84, 48, 18, 91, 7), 55, VQ_Q(54, 106, 89, 47, 68, 38, 107), VQ_Q(87, 19, 109, 69, 25, 102, 101))
+  var ptdp54d = (VQ_Q(-89, 107, 37, 17, 57, 98, 125))
+end
+
+function BlYt(IQOU, D01f, f_Cs, c3Ri)
+  var bsgNAk[115]
+  if ( not 67)
+    BlYt(BlYt(101, 126, 116, 47), BlYt(71, 99, 101, 100), VQ_Q(47, 44, 56, 91, 48, 72, 75), 101)
+    if (bsgNAk[43 and BlYt(13, 30, -73, 120)])
+    end
+    if (VQ_Q(BlYt(125, 57, 53, 53), 87, 89, 119, VQ_Q(4, 125, 81, 113, 54, 103, 102), 39, BlYt(45, 120, 98, 125)))
+      var v0l
+      v0l = ((v0l))
+      var oDVPE
+    end
+  end
+  var kUfB = (bsgNAk[12])
+  return  not bsgNAk[25 - kUfB]
+  if (89)
+    while ((-kUfB) / 116 / BlYt(-43, 108, kUfB, kUfB))
+    end
+    var pv7 = kUfB
+  end
+  var bv[10]
+  return bv[ not 21]
+  BlYt(kUfB, 15, 45, 72)
+end
+
+var V3[27]
+

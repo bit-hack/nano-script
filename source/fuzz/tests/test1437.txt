@@ -1,0 +1,17 @@
+# SEED 12758
+
+var GQNcBov
+
+function Yysm97D(OAT, VXyr, itQoE6U, Vav8jO, QOox, PJvyR4)
+  var c9fz = (Yysm97D(GQNcBov, GQNcBov, 56, GQNcBov, GQNcBov, 43))
+  var OVaav[121]
+  return (-c9fz - Yysm97D(GQNcBov, c9fz, GQNcBov, 36, GQNcBov, -48))
+  c9fz = OVaav[c9fz] > -13
+  OVaav[21] = ((-Yysm97D(c9fz, GQNcBov, 10, 19, GQNcBov, 107)))
+  c9fz = c9fz
+  OVaav[59] = OVaav[c9fz or 99]
+  Yysm97D(GQNcBov, Yysm97D(96, c9fz, GQNcBov, c9fz, 110, c9fz), Yysm97D(GQNcBov, GQNcBov, 27, GQNcBov, GQNcBov, GQNcBov), Yysm97D(c9fz, GQNcBov, -111, c9fz, GQNcBov, -GQNcBov), Yysm97D(GQNcBov, 93, 91, c9fz, 123, GQNcBov), -c9fz)
+end
+
+var ISP_ = 68
+

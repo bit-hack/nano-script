@@ -1,0 +1,38 @@
+# SEED 12523
+
+var R4
+
+function Q_r(YaAhEI, N6St86Fn, _r3ZkAe, c9a0GU, SpTjL, y9j)
+  y9j += (R4 > Q_r(-R4, -R4, R4, 117, 37, 14))
+  while (R4)
+  end
+  while (13 < R4)
+    while ((Q_r(94, R4, 45, 40, R4, -R4)) - 92)
+      R4 += Q_r(76, 51, 86, 8, Q_r(36, 105, R4, 99, R4, R4), R4)
+      if ((Q_r(67, 123, -118, 40, R4, -R4)) * 88 <= 32)
+        Q_r(R4, 26, R4, -110, Q_r(R4, -R4, -R4, 92, 87, 82), Q_r(-104, R4, R4, 106, R4, -R4))
+      end
+    end
+    Q_r(124, 114, 47, Q_r(R4, R4, 79, 61, R4, R4), 57, -56)
+    var m9g = 5 - 54 or  not R4 > 71
+    while (Q_r(m9g, 106, m9g, Q_r(m9g, R4, -39, 6, m9g, 8), 99, R4))
+      var ReY
+      while (Q_r(Q_r(29, m9g, 41, 0, 28, 58), Q_r(36, -53, ReY, ReY, R4, m9g), ReY, Q_r(R4, 53, R4, 93, ReY, 42), Q_r(m9g, ReY, ReY, -102, R4, 122), R4))
+        var ABGxC[10]
+      end
+    end
+  end
+  var ZE7HT3[51]
+  ZE7HT3[117] = R4 > R4 <= (-122)
+  Q_r(R4, Q_r(-R4, 75, R4, 101, 26, R4), 75, R4, 20, Q_r(-R4, 49, R4, 100, R4, R4))
+  var wbgHvte
+end
+
+var HC[28]
+
+var jYBlKe3T = 45
+
+var x39[26]
+
+var l8wJjep6
+

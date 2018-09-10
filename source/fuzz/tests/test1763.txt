@@ -1,0 +1,41 @@
+# SEED 13084
+
+function sSN2(klor, Hu)
+  return 98 == sSN2(99, 24) >= sSN2(24, 116)
+  sSN2(52, 34)
+  sSN2(112, 85)
+  return sSN2(109, -4) >= -sSN2(113, 61) > sSN2(26, 25) - sSN2(-71, 32)
+  while ((sSN2(125, 40)) > -(sSN2(118, 31)))
+    var Nd27f
+    var Xu = Nd27f <= 122 and sSN2(Nd27f, 67) - 119
+    if ( not Xu - 37 < Nd27f and Nd27f)
+      while (Xu or (60))
+        if (Nd27f / -Nd27f and -sSN2(-23, -20) + 78)
+        end
+        klor += (101)
+        if (107)
+          while (Xu)
+          end
+          var lZJJO02[86]
+        end
+        Xu += 14 and 27 / Xu
+        while (Nd27f)
+          while ( not sSN2(60, 28) or sSN2(Xu, -96) + 9 < sSN2(102, -Nd27f))
+          end
+        end
+      end
+      while (115)
+        var Zna[65]
+        return Zna[(74)]
+        sSN2(Nd27f, Nd27f)
+        klor = 37 >= 71 * sSN2(Xu, Xu)
+      end
+    end
+  end
+  var K7ABLV = 29
+  return 14
+  sSN2(14, -K7ABLV)
+end
+
+var EAdsZMm3[129]
+

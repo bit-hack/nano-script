@@ -1,0 +1,43 @@
+# SEED 12404
+
+var Poep
+
+var aFI440tD = 59
+
+var UBdlT = 6
+
+function q1T_Kr(D7JCi)
+  return q1T_Kr(UBdlT)
+  while (94)
+    var yto0
+    if (-Poep)
+      Poep = 24
+      UBdlT += q1T_Kr(q1T_Kr(Poep))
+      var Ro5 = q1T_Kr(47) and q1T_Kr(UBdlT)
+      UBdlT += (q1T_Kr(10) and 122)
+    end
+    q1T_Kr(-q1T_Kr(Poep))
+    q1T_Kr(-56)
+  end
+  q1T_Kr(103)
+  q1T_Kr(105)
+  return Poep or 80 - 87
+  while (123 * 72 <= 6)
+    var xR = (aFI440tD <= Poep)
+    while (71)
+      UBdlT += q1T_Kr(UBdlT) == 111 <= 125
+      while (Poep * q1T_Kr(xR))
+        xR += Poep - UBdlT
+        var dOZxddh
+      end
+    end
+  end
+  D7JCi = q1T_Kr(72)
+end
+
+var E41i[49]
+
+var zp4ft_ = 42
+
+var IHAHhcYZ = 13
+

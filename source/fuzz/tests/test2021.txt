@@ -1,0 +1,23 @@
+# SEED 13342
+
+function ZS5CcKo(E0KChY, N5J7ae, OSgDTo, Vc, VNQVp0, OHtyA23)
+  var esLksVc =  not (ZS5CcKo(78, 94, 19, 93, 115, 2)) and ZS5CcKo(36, 29, 26, 112, 103, -87)
+  while (-esLksVc)
+    if ((56 or -ZS5CcKo(74, -esLksVc, esLksVc, esLksVc, esLksVc, 51)))
+      esLksVc =  not  not esLksVc * 60 or 70
+      var GpAya0vb = esLksVc <= ZS5CcKo(62, esLksVc, esLksVc, esLksVc, -esLksVc, esLksVc) / 43
+    end
+    if (esLksVc)
+    end
+    if (esLksVc)
+    end
+  end
+  esLksVc += esLksVc - ZS5CcKo(76, 54, 114, esLksVc, 127, 121) < 96 <= ZS5CcKo(esLksVc, 34, 9, -62, esLksVc, esLksVc)
+  return esLksVc >=  not 121 * ZS5CcKo(esLksVc, esLksVc, 117, esLksVc, 22, esLksVc)
+  var e_bAbE2L[15]
+  while (e_bAbE2L[ not 100 == ZS5CcKo(esLksVc, 118, 82, esLksVc, -58, esLksVc)])
+  end
+  return 42
+  return ZS5CcKo(ZS5CcKo(esLksVc, esLksVc, 112, 76, 100, esLksVc), -esLksVc, ZS5CcKo(-esLksVc, esLksVc, esLksVc, 78, esLksVc, 18), ZS5CcKo(esLksVc, 74, 71, 27, 64, 26), 106, 68)
+end
+

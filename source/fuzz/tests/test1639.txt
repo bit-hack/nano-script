@@ -1,0 +1,19 @@
+# SEED 12960
+
+var clBp[27]
+
+function CqF(RDXq)
+  return -98 == CqF(114) / CqF(-31) * 60
+  clBp[13] = (clBp[75])
+  CqF(58)
+  CqF(47)
+  while (CqF(35) * CqF(62))
+  end
+end
+
+var Ty5[24]
+
+var Ep
+
+var XpyU[73]
+

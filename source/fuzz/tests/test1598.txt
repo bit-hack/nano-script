@@ -1,0 +1,57 @@
+# SEED 12919
+
+var A9DjC
+
+function qy(YJT, nv9H)
+  var gVf[117]
+  var lhMF[42]
+  while ( not (41))
+    qy(41, qy(4, 74))
+    while (gVf[A9DjC] - (-qy(A9DjC, A9DjC)))
+      var dhOmOXFP[92]
+      var poGj7Ka = A9DjC
+    end
+    var yFe[65]
+  end
+  A9DjC += qy(A9DjC, 112) < A9DjC and  not 15 < A9DjC
+  YJT = lhMF[A9DjC and qy(14, A9DjC)]
+  return A9DjC - qy(A9DjC, 61) +  not 8 == A9DjC
+  if (lhMF[qy(A9DjC, 84)])
+  end
+  YJT =  not  not 88
+end
+
+function ZdS8C6(wz, bA, Y0r66M, igTL, xetmeulX, ekJOIlp)
+  while (22)
+    var jUzyK[65]
+    if (106)
+      var YmuajA[65]
+      ekJOIlp = A9DjC
+      return A9DjC == 11 < 125 - A9DjC
+      qy(A9DjC, qy(A9DjC, A9DjC))
+    end
+    while (A9DjC and ZdS8C6(41, A9DjC, 120, 44, 88, A9DjC) >= ZdS8C6(42, 45, A9DjC, A9DjC, A9DjC, 95) and qy(A9DjC, 110))
+      var rN2s
+      ekJOIlp += ZdS8C6(4, qy(119, 87), 62, -qy(A9DjC, 114), 101, 66)
+      var OglVXdf = 6
+      var BJD[6]
+      return -A9DjC
+    end
+    ZdS8C6(A9DjC, qy(A9DjC, A9DjC), A9DjC, ZdS8C6(A9DjC, A9DjC, 26, A9DjC, 79, 17), -A9DjC, ZdS8C6(64, A9DjC, 68, -A9DjC, 42, A9DjC))
+  end
+  A9DjC +=  not 17 > ZdS8C6(A9DjC, A9DjC, A9DjC, A9DjC, A9DjC, A9DjC) * A9DjC
+  if (A9DjC < ZdS8C6(A9DjC, A9DjC, A9DjC, -108, A9DjC, 23) >= 79)
+    var f3ZVpz
+    var Q3v4
+  end
+  if ( not  not qy(83, 4) == 118 >= 88 and 34)
+    var WNSO
+    qy(66, A9DjC)
+  end
+  if (7)
+  end
+  return ZdS8C6(A9DjC, -A9DjC, A9DjC, A9DjC, 126, 35) <= 17 == qy(-78, A9DjC) <= 4
+  var qpy_yQ[77]
+  A9DjC = qpy_yQ[qy(A9DjC, -32)] * -qpy_yQ[A9DjC]
+end
+

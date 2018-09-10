@@ -1,0 +1,66 @@
+# SEED 13004
+
+var v3n[124]
+
+function Kr(Ve, SbRYjZ, s8, v9QvwLD, Bw7erDU)
+  Kr(-Kr(22, -58, 65, -60, -36), -Kr(42, 46, 117, -98, -34), Kr(75, -88, 4, 105, 126), Kr(75, 71, 22, 6, 106), 16)
+  Kr(Kr(38, 49, 92, 71, 18), 94, 127, 115, 111)
+  var LV
+  Kr(LV, -Kr(-LV, 122, 7, LV, -LV), Kr(LV, -122, LV, 26, LV), 28, LV)
+  s8 = 76 * -Kr(119, 67, 32, LV, 41) or LV >= 55
+  while ((60 <= 8))
+    var roK[115]
+    var hAzvSp[74]
+    var qQQp3[10]
+    Kr(39, LV, 36, LV, Kr(37, LV, 68, LV, 16))
+    LV +=  not Kr(-LV, 26, 87, LV, 20) == (LV)
+  end
+  if (Kr(-32, 101, LV, 24, LV) > -Kr(LV, LV, 98, 31, 2) > 22)
+    v3n[117] = LV or 93 * Kr(5, 113, 111, LV, LV) or -Kr(LV, LV, 94, LV, LV)
+    LV += LV + Kr(115, 81, 108, 10, 50) * v3n[112]
+    return Kr(Kr(126, LV, LV, 53, 125), Kr(LV, 29, 38, LV, 122), -Kr(109, 32, LV, LV, 32), Kr(52, 22, 101, 51, LV), LV)
+    LV = 33
+    while (LV)
+      s8 += LV
+      v3n[51] = LV / v3n[109]
+    end
+  end
+end
+
+var GzqX1gjr
+
+function cyHUn(Fwsu, HfaYa)
+  var go8MJwD[117]
+  go8MJwD[101] =  not  not Kr(114, GzqX1gjr, GzqX1gjr, GzqX1gjr, GzqX1gjr) == GzqX1gjr == go8MJwD[0]
+  while (-(109) <= -(GzqX1gjr))
+    GzqX1gjr = go8MJwD[Kr(121, 72, -34, GzqX1gjr, GzqX1gjr)] <= Kr(GzqX1gjr, 53, GzqX1gjr, GzqX1gjr, GzqX1gjr)
+    GzqX1gjr = 23
+  end
+  var x_[128]
+  HfaYa = (GzqX1gjr or cyHUn(GzqX1gjr, 86))
+  var TmJeJ[77]
+  if (98)
+    HfaYa = go8MJwD[GzqX1gjr]
+    var IvRx[30]
+  end
+  var d6weDbA[121]
+end
+
+var EtrU[96]
+
+function WcX18(yY_9PdZ)
+  return GzqX1gjr
+  while (GzqX1gjr)
+    var S2i[43]
+    cyHUn(GzqX1gjr, 10)
+  end
+  Kr(Kr(4, GzqX1gjr, GzqX1gjr, GzqX1gjr, GzqX1gjr), GzqX1gjr, Kr(7, 96, GzqX1gjr, 87, 80), 126, GzqX1gjr)
+  return -GzqX1gjr and v3n[WcX18(GzqX1gjr)]
+  yY_9PdZ = (Kr(GzqX1gjr, GzqX1gjr, 112, GzqX1gjr, GzqX1gjr))
+  yY_9PdZ = GzqX1gjr
+  GzqX1gjr +=  not GzqX1gjr
+  return 106 / Kr(18, GzqX1gjr, GzqX1gjr, 54, 124) - 90
+end
+
+var _XqNxG = 76
+

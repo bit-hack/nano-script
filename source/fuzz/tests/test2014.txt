@@ -1,0 +1,28 @@
+# SEED 13335
+
+var Yas_gM
+
+var bOfkbiwq
+
+function _DBBsoeN(xbLYGy)
+  while (-118)
+    bOfkbiwq = _DBBsoeN(Yas_gM)
+  end
+  xbLYGy += _DBBsoeN(-_DBBsoeN(bOfkbiwq))
+  bOfkbiwq = (Yas_gM)
+  while (57 * _DBBsoeN(-Yas_gM) + 81)
+    return 104 * _DBBsoeN(bOfkbiwq) < (4)
+  end
+  xbLYGy =  not -(28 > Yas_gM)
+  _DBBsoeN(-0)
+  while (Yas_gM)
+    if (_DBBsoeN(_DBBsoeN(Yas_gM)))
+      xbLYGy = bOfkbiwq
+      while (-_DBBsoeN(85))
+        bOfkbiwq = (bOfkbiwq <= Yas_gM)
+        var Us8Z
+      end
+    end
+  end
+end
+

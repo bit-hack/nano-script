@@ -1,0 +1,36 @@
+# SEED 13161
+
+var D1KfZ = 124
+
+var Bz
+
+var Z9qqt[125]
+
+function rYcFi85(wl, Ei_GT6aW, WHKVKF, E6KB, _s1j1A, N9)
+  while (D1KfZ)
+    WHKVKF = Z9qqt[D1KfZ] - (rYcFi85(Bz, 112, D1KfZ, 116, 122, Bz))
+    Z9qqt[86] = rYcFi85(D1KfZ, Bz, D1KfZ, -93, D1KfZ, Bz) and 16 > D1KfZ
+    var g1pk1 =  not rYcFi85(Bz, Bz, 74, D1KfZ, rYcFi85(95, 119, 67, 107, D1KfZ, 37), Bz)
+    WHKVKF += (rYcFi85(46, D1KfZ, 67, 16, g1pk1, 42)) +  not (rYcFi85(D1KfZ, D1KfZ, g1pk1, 74, Bz, Bz))
+  end
+  rYcFi85(114, rYcFi85(25, D1KfZ, Bz, Bz, Bz, 38), 3, 87, 11, D1KfZ)
+  rYcFi85(108, 120, 15, 85, -Bz, 88)
+  Bz +=  not Bz
+  Z9qqt[68] = Bz
+  while (Bz or rYcFi85(-106, -D1KfZ, D1KfZ, 67, 28, D1KfZ))
+    var lLVjyrW6
+    var u5[121]
+    if ( not 30 / rYcFi85(35, 46, D1KfZ, 51, 93, 26) and D1KfZ and rYcFi85(D1KfZ, 49, lLVjyrW6, 59, lLVjyrW6, D1KfZ))
+      return rYcFi85(91, 37, 68, lLVjyrW6, 111, Bz) < Bz - D1KfZ < -7
+    end
+    var C0RX[89]
+  end
+  var R1Ow5
+  if (Z9qqt[rYcFi85(39, Bz, 100, 116, 33, Bz)] or rYcFi85(-Bz, 14, Bz, Bz, 72, 126))
+    rYcFi85(-R1Ow5, 92, R1Ow5, -rYcFi85(-D1KfZ, D1KfZ, 104, -29, 26, D1KfZ), rYcFi85(69, D1KfZ, Bz, 17, D1KfZ, 6), 21)
+    Z9qqt[119] =  not 5 or rYcFi85(Bz, Bz, Bz, 28, -Bz, R1Ow5) and -D1KfZ or Bz
+    D1KfZ = Z9qqt[rYcFi85(R1Ow5, D1KfZ, D1KfZ, R1Ow5, R1Ow5, 109) > 33]
+    return (D1KfZ > rYcFi85(R1Ow5, 123, 113, Bz, R1Ow5, Bz))
+  end
+end
+

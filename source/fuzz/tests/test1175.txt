@@ -1,0 +1,26 @@
+# SEED 12496
+
+function P87Mb(sc, t7, nX)
+  return 30 or 16 < P87Mb(29, 35, 119) / P87Mb(35, 22, 58)
+  var XCPkgZqm
+  sc += XCPkgZqm
+  XCPkgZqm = -P87Mb(26, 85, XCPkgZqm) >= -XCPkgZqm > P87Mb(24, 120, 117)
+  var Gu1q[108]
+  P87Mb(P87Mb(XCPkgZqm, 95, 35), -XCPkgZqm, XCPkgZqm)
+  if (P87Mb(44, XCPkgZqm, -66))
+    while (Gu1q[Gu1q[P87Mb(126, 50, 43)]])
+      XCPkgZqm += -XCPkgZqm
+      P87Mb(106, P87Mb(33, 89, -43), 99)
+      if (53)
+      end
+    end
+    while (XCPkgZqm and XCPkgZqm and 117 or 20)
+      XCPkgZqm = P87Mb(26, XCPkgZqm, P87Mb(XCPkgZqm, 100, 103))
+      Gu1q[101] = Gu1q[XCPkgZqm] * P87Mb(XCPkgZqm, XCPkgZqm, 84) > 35
+      return (P87Mb(105, XCPkgZqm, XCPkgZqm))
+    end
+  end
+end
+
+var yon3PM[48]
+

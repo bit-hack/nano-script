@@ -1,0 +1,6 @@
+# SEED 12664
+
+var dc68_E
+
+var ec = 8
+

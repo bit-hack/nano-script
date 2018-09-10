@@ -1,0 +1,32 @@
+# SEED 12600
+
+var loq5XyA2 = 9
+
+function mzVFCB(p3RrW, wu8V_1I2, mG5IT, EK, RjLSM, uJ0Wl, EJ2e8)
+  var V6wwr9[56]
+  while ((-loq5XyA2) >= V6wwr9[loq5XyA2])
+  end
+  mzVFCB(loq5XyA2, loq5XyA2, 115, loq5XyA2, 50, mzVFCB(loq5XyA2, loq5XyA2, 69, loq5XyA2, loq5XyA2, 84, loq5XyA2), loq5XyA2)
+  mzVFCB(56, mzVFCB(59, 84, loq5XyA2, -32, 40, loq5XyA2, 103), -mzVFCB(loq5XyA2, loq5XyA2, 111, 118, 62, loq5XyA2, 102), 49, loq5XyA2, mzVFCB(loq5XyA2, loq5XyA2, 87, -loq5XyA2, 78, 15, loq5XyA2), 100)
+  mzVFCB(loq5XyA2, loq5XyA2, loq5XyA2, loq5XyA2, 27, loq5XyA2, loq5XyA2)
+  V6wwr9[79] =  not (mzVFCB(73, -loq5XyA2, 83, loq5XyA2, loq5XyA2, loq5XyA2, -loq5XyA2) + 65)
+  var ey[54]
+  ey[111] = loq5XyA2 > -loq5XyA2 + loq5XyA2
+end
+
+var gzj
+
+function j3B0()
+  if ( not 10 and 14 == mzVFCB(loq5XyA2, gzj, 60, 0, gzj, gzj, 29))
+    var U6xOnz_ = (loq5XyA2 > j3B0())
+    return j3B0() and j3B0() and mzVFCB(57, loq5XyA2, -122, 97, 54, 70, -69) < U6xOnz_
+  end
+  var owXTR = loq5XyA2
+  var ZULc7C[62]
+  var KioNj[56]
+  var Dxtuuj[9]
+  var OAa = -49 / j3B0() - 80 >= -16
+end
+
+var rnYVU
+

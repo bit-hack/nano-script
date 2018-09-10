@@ -1,0 +1,67 @@
+# SEED 13037
+
+var hIJ_s3 = 73
+
+var N1RY_o = 81
+
+function WcW(s1DUZ, E2rmJ1Lz, lRsHmuX, Lz_Q, fjC, KL2jeB, Qmp)
+  WcW(39, N1RY_o, WcW(N1RY_o, 48, hIJ_s3, 116, 67, hIJ_s3, hIJ_s3), N1RY_o, N1RY_o, 110, 91)
+  if ( not (WcW(63, hIJ_s3, 31, -42, 84, 70, 100) and hIJ_s3))
+    var kJ6e7np
+    var YRmATvPj[71]
+    return YRmATvPj[N1RY_o]
+  end
+  WcW(2, hIJ_s3, 109, 114, 88, 87, 103)
+  var H5voW[4]
+  lRsHmuX = WcW(92, N1RY_o, N1RY_o, N1RY_o, WcW(38, 115, hIJ_s3, 13, 7, 15, 106), WcW(32, 76, N1RY_o, 56, 27, 116, N1RY_o), hIJ_s3)
+  var KFO
+  WcW(KFO, 3, 64, KFO, KFO, KFO, 22)
+end
+
+function DEduFWkg(tin2, hfLR, RUetYAj, xO, NoVO2, b6bm, u_R)
+  if (hIJ_s3)
+  end
+  if ((WcW(hIJ_s3, hIJ_s3, hIJ_s3, N1RY_o, 116, 24, 85)))
+    var CuS[47]
+    while (CuS[CuS[WcW(N1RY_o, -N1RY_o, hIJ_s3, N1RY_o, N1RY_o, N1RY_o, 124)]])
+    end
+  end
+  RUetYAj = N1RY_o
+  NoVO2 = N1RY_o
+  RUetYAj = N1RY_o
+  while (-N1RY_o)
+  end
+  var QG
+end
+
+var zDdLX = 101
+
+function Pq()
+  var Da
+  if (Da)
+    var muSXxvS[11]
+    DEduFWkg(zDdLX, DEduFWkg(118, hIJ_s3, N1RY_o, zDdLX, Da, Da, hIJ_s3), 21, 77, Da, 84, WcW(1, 67, N1RY_o, Da, -zDdLX, zDdLX, hIJ_s3))
+    var zc[104]
+    zc[30] =  not hIJ_s3 and hIJ_s3 * 12 + DEduFWkg(zDdLX, 32, hIJ_s3, Da, -hIJ_s3, 6, hIJ_s3)
+  end
+  Pq()
+  Pq()
+  var KRWkzg[45]
+end
+
+function UL(PUi, Ag5, Td, Y_r, do)
+  DEduFWkg(-N1RY_o, 11, 46, UL(72, zDdLX, hIJ_s3, hIJ_s3, zDdLX), zDdLX, 25, Pq())
+  while (107 - hIJ_s3 <  not Pq())
+    var dk = WcW(hIJ_s3, 25, 48, -hIJ_s3, N1RY_o, 42, 121) * 4 > zDdLX
+  end
+  while ( not 105 <= DEduFWkg(92, 42, zDdLX, 98, 45, zDdLX, 20) <= UL(29, hIJ_s3, zDdLX, 124, 22) and hIJ_s3)
+  end
+  DEduFWkg(88, UL(N1RY_o, 2, 85, 56, hIJ_s3), WcW(84, -31, 66, 72, zDdLX, hIJ_s3, N1RY_o), 9, zDdLX, 62, DEduFWkg(54, 29, N1RY_o, 55, 113, zDdLX, N1RY_o))
+  PUi +=  not 46 or DEduFWkg(122, 47, 20, N1RY_o, N1RY_o, 6, zDdLX) < Pq() < zDdLX
+  zDdLX += 123
+  if (21 or N1RY_o < (N1RY_o))
+    N1RY_o = 63
+  end
+  Pq()
+end
+

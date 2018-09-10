@@ -1,0 +1,24 @@
+# SEED 12624
+
+function BccSsYAQ(DcMA3, IvjkV, zNfr)
+  while ( not BccSsYAQ(76, 76, BccSsYAQ(68, 88, 127)))
+    return (88) / 66 and BccSsYAQ(99, 81, 26)
+  end
+  var Zhh = 58 + 66 * BccSsYAQ(125, 78, 54) < BccSsYAQ(34, 29, 105)
+  if (82 * -116 == (Zhh))
+    var zLitrK8[61]
+  end
+  BccSsYAQ(BccSsYAQ(63, 6, Zhh), Zhh, BccSsYAQ(Zhh, Zhh, Zhh))
+  if ( not -BccSsYAQ(84, 114, 8) or  not -(27))
+    var CD[29]
+  end
+  BccSsYAQ(BccSsYAQ(Zhh, Zhh, 97), Zhh, BccSsYAQ(Zhh, Zhh, 73))
+  while (Zhh + 59 + Zhh)
+    var zxYqZW
+    var K4E[90]
+    K4E[34] = K4E[BccSsYAQ(53, 73, Zhh) >= 123]
+    Zhh +=  not -21 == 104 + Zhh
+  end
+  var mkte
+end
+

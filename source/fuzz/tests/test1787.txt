@@ -1,0 +1,27 @@
+# SEED 13108
+
+var Jr[81]
+
+var tUW = 106
+
+function Fto(MbqFyF, Pne6Ok28, IOcjyq, j4q, JraE_6NV, c4)
+  tUW += 40
+  Fto(Fto(22, tUW, 75, 3, 71, tUW), Fto(tUW, -26, tUW, 40, 36, tUW), Fto(78, -tUW, tUW, -98, tUW, tUW), Fto(-103, 104, tUW, 109, tUW, 47), 47, -Fto(99, -tUW, 2, 31, tUW, 80))
+  return  not 42 or Fto(16, tUW, tUW, 63, tUW, 42) >= Fto(tUW, tUW, 85, 45, tUW, tUW) <= Fto(tUW, tUW, 84, tUW, tUW, tUW)
+  c4 += Jr[106 <= Fto(tUW, tUW, tUW, 14, tUW, tUW)]
+  Jr[36] = Jr[Fto(15, 53, tUW, 9, tUW, 108) - Fto(53, 80, 123, tUW, tUW, 118)]
+  var s9ye[36]
+  Fto(tUW, 20, 49, 64, tUW, Fto(tUW, tUW, 102, 85, 93, 47))
+  s9ye[84] = (Fto(tUW, tUW, tUW, 104, tUW, tUW) > -Fto(109, tUW, tUW, 25, 60, tUW))
+end
+
+var Al1XSw = 46
+
+var DyiawKGB[25]
+
+var jA3 = 30
+
+var hx5T[49]
+
+var qrxD57IU[60]
+

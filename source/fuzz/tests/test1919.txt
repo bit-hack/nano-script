@@ -1,0 +1,21 @@
+# SEED 13240
+
+var TFHkn0R
+
+var Dj
+
+var P4Sq8zth[32]
+
+var cLn
+
+function Jsi1Xv(HX, gmK, v4l20, kB5ZZ)
+  var F8T1mNN[65]
+  var pE[91]
+  var VHc
+  F8T1mNN[4] =  not Jsi1Xv(cLn, VHc, 101, 88) < cLn / 30
+  return 37 or (17)
+  var X1QxtQM = (Jsi1Xv(Dj, TFHkn0R, Dj, 107) <= Dj)
+  var kZot6k
+  var LSDjn[101]
+end
+

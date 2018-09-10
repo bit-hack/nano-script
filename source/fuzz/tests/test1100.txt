@@ -1,0 +1,47 @@
+# SEED 12421
+
+var Pb7vD0P[93]
+
+var G4[5]
+
+function m6QqTdQl(sslZF, mDwr, SP4dG7be, EgIWQ)
+  return G4[(14)]
+  while ( not  not 110 / G4[m6QqTdQl(8, 123, 88, 49)])
+    m6QqTdQl(m6QqTdQl(7, 117, 93, 95), m6QqTdQl(37, 73, 64, 74), m6QqTdQl(89, 1, 22, 20), m6QqTdQl(101, 10, -57, 95))
+  end
+  G4[125] = 51
+  while (118 <= (58))
+    if (m6QqTdQl(91, 10, 113, 14) >= m6QqTdQl(4, 71, 110, 28) or (m6QqTdQl(49, 6, 70, 36)))
+      var _0WqufS = m6QqTdQl(105, 20, 126, m6QqTdQl(74, 115, 1, 0))
+    end
+    m6QqTdQl(m6QqTdQl(30, 70, 26, 82), m6QqTdQl(96, 74, 3, 76), m6QqTdQl(6, 87, 109, 65), m6QqTdQl(30, 22, 45, 127))
+  end
+  if ( not 71 - 54 * (m6QqTdQl(112, -25, 0, 113)))
+    return m6QqTdQl(m6QqTdQl(49, -76, 22, 125), m6QqTdQl(66, 8, 42, 33), -48, m6QqTdQl(40, 0, 66, 41))
+    while (m6QqTdQl(m6QqTdQl(105, 11, -9, 6), m6QqTdQl(94, 38, 63, 102), 125, m6QqTdQl(83, 80, 101, 92)))
+      if (52)
+        while ( not m6QqTdQl(47, 127, 41, 105) / 26 / m6QqTdQl(64, 96, 12, 64) == m6QqTdQl(56, 113, 104, 56))
+          Pb7vD0P[101] = Pb7vD0P[m6QqTdQl(-41, 109, 58, 10) - 17]
+          m6QqTdQl(m6QqTdQl(14, 90, 10, 38), 13, m6QqTdQl(99, 63, -48, 32), -85)
+        end
+        if ( not 119 == 65 and 58 and 113)
+          m6QqTdQl(20, m6QqTdQl(33, 9, 29, 127), m6QqTdQl(125, 99, 43, 127), m6QqTdQl(106, 61, 99, 43))
+          while (96)
+            G4[107] = Pb7vD0P[m6QqTdQl(5, 80, 63, 113)]
+            if ((G4[67]))
+              m6QqTdQl(m6QqTdQl(25, 26, 71, 79), 16, m6QqTdQl(87, 14, 109, 92), 0)
+              G4[86] = Pb7vD0P[-112]
+              m6QqTdQl(m6QqTdQl(61, -86, 87, 61), m6QqTdQl(102, -64, 126, 96), m6QqTdQl(78, 57, 98, 3), 4)
+            end
+            return -Pb7vD0P[119 / m6QqTdQl(81, 42, 0, 55)]
+            Pb7vD0P[57] = m6QqTdQl(113, 19, 85, 66) > m6QqTdQl(78, 40, 95, 51)
+            var OeHLP = G4[-35]
+          end
+        end
+      end
+      var sCryS[113]
+    end
+  end
+  var PCrIdMc
+end
+

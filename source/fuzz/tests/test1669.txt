@@ -1,0 +1,16 @@
+# SEED 12990
+
+function haqK8c(_G6dNI0i, Hewb, PkAfG, Mv, Sx)
+  return haqK8c(haqK8c(118, 55, 78, 88, 100), 119, haqK8c(127, 29, 3, 26, 108), 2, haqK8c(54, 45, 54, 82, 95))
+  haqK8c(-haqK8c(108, 104, -24, 5, 7), 98, 113, -21, 67)
+  var bjA0JOb[37]
+  haqK8c(30, haqK8c(25, 70, 60, 125, 63), 98, 79, haqK8c(-119, 112, 124, 74, 124))
+  while (127)
+    var _RF5F6
+  end
+  while ((haqK8c(16, 32, 24, 88, 106)) or haqK8c(2, 30, 23, 16, 75))
+    bjA0JOb[97] = haqK8c(50, 122, 105, 115, 29) and 0 > 3 - haqK8c(87, 75, 91, 86, 61)
+  end
+  haqK8c(haqK8c(127, 30, 91, 86, 12), haqK8c(14, 100, 19, 78, 83), haqK8c(24, 23, -118, -85, 4), haqK8c(104, 101, 3, 11, 99), 31)
+end
+

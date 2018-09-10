@@ -1,0 +1,55 @@
+# SEED 12414
+
+var GncO = 121
+
+var gsZq7cNc[74]
+
+var cY7N
+
+function bvTXS(nqHn3f, EmAnNg8c, kzAheQ, iGb3D)
+  while (bvTXS(cY7N, 108, 88, cY7N) < 34 or bvTXS(GncO, 18, 78, GncO))
+    nqHn3f = GncO
+    bvTXS(64, cY7N, GncO, GncO)
+    var zeeUnE
+    var tBt_HMP[102]
+  end
+  return  not bvTXS(90, GncO, 88, GncO) + gsZq7cNc[13]
+  while (gsZq7cNc[GncO] + -GncO >= GncO)
+  end
+  var VuuXE90w = cY7N
+  gsZq7cNc[122] = gsZq7cNc[bvTXS(51, 17, GncO, VuuXE90w)] == VuuXE90w + GncO
+  return cY7N
+  cY7N += 74
+  return gsZq7cNc[17 / -cY7N]
+end
+
+var Nr[39]
+
+function QcE(YW, El, rfUtQK8, yqjD, l4pdI, k4ta)
+  if (Nr[76])
+    GncO += Nr[QcE(123, 112, 40, 113, GncO, GncO)]
+    Nr[89] = -21 or QcE(64, 42, 116, GncO, cY7N, GncO) / 95 < 75
+    gsZq7cNc[28] = 18
+    var Qem93 = 111
+  end
+  if (29 >= GncO - -gsZq7cNc[bvTXS(105, 121, cY7N, GncO)])
+  end
+  while (Nr[(-43)])
+  end
+  bvTXS(cY7N, bvTXS(103, cY7N, cY7N, cY7N), cY7N, QcE(GncO, 32, GncO, 85, GncO, GncO))
+  while (115)
+    return (bvTXS(20, 46, 114, -cY7N))
+    var BJUXBKX[59]
+    if (bvTXS(bvTXS(cY7N, GncO, cY7N, -122), 65, 34, 97))
+      BJUXBKX[42] =  not  not  not 10 ==  not gsZq7cNc[bvTXS(GncO, GncO, GncO, cY7N)]
+      El += 11
+      l4pdI +=  not bvTXS(-6, cY7N, 84, GncO)
+      return  not GncO < bvTXS(-cY7N, 106, 67, -cY7N)
+      BJUXBKX[52] = GncO
+    end
+  end
+  return cY7N / 14
+  yqjD += cY7N / GncO + QcE(-123, cY7N, GncO, 126, cY7N, -cY7N)
+  var D26wrzt[45]
+end
+

@@ -1,0 +1,34 @@
+# SEED 13259
+
+var S_UwJp7Y = 125
+
+function I8(tuIzAJ, _DV9v)
+  I8(-I8(10, 74), 111)
+  if (S_UwJp7Y)
+    tuIzAJ += S_UwJp7Y + S_UwJp7Y >= S_UwJp7Y
+    S_UwJp7Y = (122) <= 81
+    _DV9v = 68 < S_UwJp7Y + (S_UwJp7Y)
+    if (I8(66, I8(S_UwJp7Y, S_UwJp7Y)))
+      var J2YIVdi = I8(37, S_UwJp7Y) <= I8(80, S_UwJp7Y) >= (I8(117, S_UwJp7Y))
+      var qW16xBmh[81]
+    end
+  end
+  if (S_UwJp7Y >= 68 * (I8(45, 14)))
+    I8(I8(60, 62), I8(112, S_UwJp7Y))
+    var dX
+    dX +=  not dX
+  end
+  _DV9v += S_UwJp7Y < 41 and S_UwJp7Y
+  _DV9v =  not  not (101) * -49
+  S_UwJp7Y = I8(3, 108) <= I8(91, S_UwJp7Y) * 76 + -66
+  S_UwJp7Y = I8(S_UwJp7Y, 45) and 25 > 20
+  if (119 +  not S_UwJp7Y - 28)
+    var Pz
+    while (I8(I8(S_UwJp7Y, 1), I8(Pz, 91)))
+      var dBP4
+    end
+    return 78 * 10 +  not 55 >= 27
+    var hdt
+  end
+end
+

@@ -1,0 +1,12 @@
+# SEED 13350
+
+var BPsDPU3h[13]
+
+var y4p1 = 10
+
+var Ecoq[80]
+
+var _hcH = 110
+
+var R2Qc[66]
+

@@ -1,0 +1,37 @@
+# SEED 12471
+
+function lYS2(VPPhf, Domf)
+  return lYS2(31, 82)
+  if (lYS2(13, 116) + (37))
+    var baYrO[8]
+    if (93 - lYS2(52, 35) >= lYS2(4, 119))
+    end
+    while ( not  not 97 and -49 < 95)
+      var xey[5]
+    end
+    if (29 + lYS2(-67, 76) + 78 >= lYS2(101, 35))
+      while (lYS2(82, 37) - baYrO[lYS2(26, 40)])
+        var vWGOseWA
+        var aZJji[23]
+      end
+      baYrO[8] = baYrO[lYS2(81, 86)] - baYrO[121]
+    end
+  end
+  lYS2(lYS2(41, 117), lYS2(38, 42))
+  var VF
+  while ((VF) or VF + VF)
+    VF += VF
+    return lYS2(lYS2(13, VF), VF)
+  end
+  while (lYS2(VF, VF))
+    while (95 == VF)
+      var XaGZtj[92]
+      lYS2(VF, VF)
+    end
+    var Wt = -8 + lYS2(VF, VF) / -VF
+  end
+  var KDBZwpbL
+end
+
+var dj = 22
+

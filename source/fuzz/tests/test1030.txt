@@ -1,0 +1,52 @@
+# SEED 12351
+
+function R5In(d6jl, GYMF)
+  if (R5In(-60, 64) + R5In(88, 7) / R5In(11, 71) < R5In(98, 107))
+    var CdI = 39 >= R5In(64, 2) /  not 56
+  end
+  R5In(R5In(-127, 77), 35)
+  while ( not (73) and  not 4 <= 34)
+    if (90)
+      if (66 + 37 <= R5In(-104, 37))
+        return  not 127 and R5In(-112, 40) or 40 - R5In(112, 120)
+        if (R5In(46, 101) - R5In(120, 0) >= 121 and R5In(120, 94))
+          return  not (24) + (R5In(51, 47))
+        end
+        var KIy[89]
+      end
+    end
+    while (R5In(R5In(58, -49), 38))
+      R5In(-3, 10)
+      if (13)
+        var xog_tV[46]
+      end
+    end
+  end
+  R5In(R5In(109, 69), R5In(61, 94))
+  return 65 >= R5In(120, 87) or 35
+  var LRm =  not R5In(126, R5In(60, 42))
+end
+
+var KTJY[56]
+
+function W1a()
+  return KTJY[R5In(108, 90)]
+  while (W1a())
+    return KTJY[116] + 116 <= R5In(37, 42)
+    R5In(121, 0)
+    return KTJY[90] and 69 and 46
+  end
+  var X8s = KTJY[56 == R5In(57, 121)]
+  return W1a()
+  KTJY[73] = 38 < W1a() - X8s
+  if (X8s)
+    while (99 >= 55 <  not KTJY[X8s])
+      KTJY[119] = KTJY[X8s * R5In(29, -113)]
+    end
+  end
+end
+
+var S8ioN[68]
+
+var mWRLRw
+

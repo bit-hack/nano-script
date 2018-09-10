@@ -1,0 +1,69 @@
+# SEED 12581
+
+var qBz0x[122]
+
+var RiXBEg[81]
+
+function cx0MfN()
+  if (cx0MfN() < 110 < cx0MfN() > 119)
+  end
+  if ( not cx0MfN() / 20 - cx0MfN() >= cx0MfN())
+    var XsVjRVa
+  end
+  var k8_aFJTu = cx0MfN() - 112 + qBz0x[cx0MfN()]
+  if (k8_aFJTu)
+    while ((k8_aFJTu * cx0MfN()))
+    end
+    return -k8_aFJTu
+    return 115
+    cx0MfN()
+  end
+  var MTHLqW6[99]
+  var wLr2
+end
+
+function TkS(dI)
+  while (95 / 73 > 45 - cx0MfN())
+    while (60)
+      var NN6L
+      cx0MfN()
+      NN6L += 110
+      var em9sQ6oF
+    end
+    while (RiXBEg[RiXBEg[7]])
+      TkS(TkS(57))
+      while ( not cx0MfN() + 33 + cx0MfN() >= 95)
+        return qBz0x[37]
+      end
+      if (TkS(8) and 112 * cx0MfN() >= 91)
+      end
+      var dYdEnKbV = RiXBEg[ not 9 > 73]
+      var kcZ0SA[68]
+    end
+    if ( not 65)
+      TkS(106)
+      cx0MfN()
+      RiXBEg[120] = TkS(98)
+      qBz0x[122] = RiXBEg[ not qBz0x[63]]
+    end
+  end
+  var ZNpWfK = 5
+  ZNpWfK += ZNpWfK /  not  not TkS(10) > 85
+  dI += (-104)
+  var cFB8m = RiXBEg[ZNpWfK] + cx0MfN() < TkS(ZNpWfK)
+  var YyOxbWt = 9 <= cx0MfN() or TkS(ZNpWfK)
+  TkS(20)
+  while (RiXBEg[-TkS(13) or 112])
+    if (cx0MfN() * 112 < TkS(cFB8m))
+      ZNpWfK +=  not 122 * 123
+    end
+    dI = cFB8m or cx0MfN() * YyOxbWt + TkS(-126)
+    return cFB8m >= (YyOxbWt)
+    var tcFFt = (YyOxbWt)
+  end
+end
+
+var M3eO
+
+var qsotmT
+

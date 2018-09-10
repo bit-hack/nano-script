@@ -1,0 +1,20 @@
+# SEED 12440
+
+var pZ
+
+var gGnWhl[60]
+
+function ZF(BKf2H3, mJ, p0)
+  gGnWhl[109] = (pZ <= pZ)
+  pZ += 115
+  return pZ
+  var LT[93]
+  pZ += 107 * -pZ /  not 15
+  return ZF(pZ, 91, 30) == ZF(pZ, pZ, 30) <= 107
+  if (ZF(39, pZ, ZF(42, pZ, 82)))
+    gGnWhl[109] = -pZ
+    LT[87] = ((-ZF(25, pZ, 85)))
+  end
+  return (gGnWhl[97])
+end
+

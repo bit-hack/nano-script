@@ -1,0 +1,52 @@
+# SEED 12653
+
+var ZDE4mXiE[75]
+
+var TLS
+
+function LWDt8RlW(CDJoI, A7)
+  LWDt8RlW(103, 33)
+  ZDE4mXiE[122] = 39
+  return -TLS
+  TLS += 70
+  TLS =  not 34
+  while (TLS)
+    TLS += TLS
+    CDJoI = LWDt8RlW(TLS, LWDt8RlW(20, 51))
+    LWDt8RlW(105, LWDt8RlW(80, TLS))
+    var vFTZ6t[43]
+  end
+  var Jv
+  while (87 or LWDt8RlW(Jv, 46))
+    var naOinPs0
+    CDJoI += ZDE4mXiE[TLS]
+    var fP[5]
+    TLS = naOinPs0 > 60 or 54 - TLS
+    A7 += ZDE4mXiE[LWDt8RlW(Jv, TLS)] <= LWDt8RlW(113, Jv) < 68
+  end
+end
+
+function XNAU(VeH)
+  if (53 or XNAU(TLS) >= 11)
+    ZDE4mXiE[78] = -TLS > 78 < 97 == XNAU(TLS)
+    if ((LWDt8RlW(100, TLS)))
+      VeH += XNAU(TLS)
+      return 55
+      ZDE4mXiE[13] = 99
+    end
+    return ZDE4mXiE[85]
+    TLS = TLS
+  end
+  var ys8QA8 = -ZDE4mXiE[ZDE4mXiE[XNAU(113)]]
+  return ys8QA8
+  if (ZDE4mXiE[ not LWDt8RlW(TLS, -ys8QA8) * -91])
+    TLS +=  not 57 <= XNAU(TLS) * 106 or XNAU(53)
+    VeH = LWDt8RlW(LWDt8RlW(17, TLS), 30)
+  end
+  var LBv[14]
+  var Y5N = -LWDt8RlW(LWDt8RlW(ys8QA8, 95), XNAU(36))
+  while (4 >= XNAU(18) <= ys8QA8)
+  end
+  return XNAU(44) or LWDt8RlW(78, ys8QA8) > LWDt8RlW(113, 80)
+end
+

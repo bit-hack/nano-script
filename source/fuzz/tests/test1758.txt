@@ -1,0 +1,43 @@
+# SEED 13079
+
+var A0[98]
+
+var JKab4[70]
+
+var j8[57]
+
+var uRzs = 32
+
+function SBu3k1(pnEr2mq, HkHzMbhm, pLoLZF, Lj, oZ, Swp)
+  var MDu[113]
+  while (uRzs)
+    var B1 =  not 105 >= 119 < SBu3k1(uRzs, 84, -86, uRzs, uRzs, 57)
+    oZ =  not SBu3k1(SBu3k1(-94, 92, B1, 34, B1, 81), 96, 100, -uRzs, SBu3k1(-17, 109, uRzs, 18, 91, 69), 11)
+    oZ += 38
+    pnEr2mq = (SBu3k1(72, -3, 90, B1, 11, -75)) * uRzs + SBu3k1(B1, uRzs, B1, 78, B1, uRzs)
+    if (j8[81])
+      j8[8] = uRzs + uRzs and uRzs or SBu3k1(B1, 83, B1, uRzs, 37, -65)
+      oZ = A0[SBu3k1(B1, uRzs, 112, -uRzs, uRzs, 64)] + -47 + 69
+      SBu3k1(SBu3k1(B1, 63, uRzs, uRzs, B1, 78), SBu3k1(10, uRzs, uRzs, -92, uRzs, 125), B1, SBu3k1(-45, 96, 0, B1, uRzs, uRzs), SBu3k1(80, 112, 25, 92, 57, -46), SBu3k1(B1, uRzs, 37, 58, B1, uRzs))
+      uRzs += B1 + -(uRzs)
+      SBu3k1(-B1, -SBu3k1(uRzs, 116, 27, 73, uRzs, 10), uRzs, 93, 16, SBu3k1(89, B1, 68, 74, uRzs, 109))
+    end
+  end
+  var HFl14[94]
+  MDu[33] =  not A0[ not 88 >= uRzs]
+  if (27 >= 26)
+    var hRkNHKOd[104]
+    Lj = (98) > SBu3k1(uRzs, uRzs, 22, -uRzs, 31, uRzs) or uRzs
+    uRzs = A0[uRzs]
+    SBu3k1(SBu3k1(uRzs, 49, uRzs, uRzs, uRzs, 20), uRzs, uRzs, 52, 67, 2)
+  end
+  SBu3k1(97, uRzs, uRzs, uRzs, 4, SBu3k1(127, uRzs, uRzs, uRzs, 62, 127))
+  A0[15] = 14 < 10 or 80
+  while (uRzs + SBu3k1(98, -21, uRzs, -114, -uRzs, uRzs) - uRzs)
+    if (uRzs >= uRzs - SBu3k1(108, 115, uRzs, 23, uRzs, uRzs))
+    end
+  end
+end
+
+var hfMK
+

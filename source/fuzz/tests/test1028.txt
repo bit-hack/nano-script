@@ -1,0 +1,37 @@
+# SEED 12349
+
+var WafGVc[51]
+
+var ifHasFF7[59]
+
+function HKzn4()
+  WafGVc[127] = 23
+  return ifHasFF7[ifHasFF7[HKzn4()]]
+  while ( not HKzn4())
+    HKzn4()
+    if (HKzn4() > -(75))
+      if (25)
+        var XHgVC[106]
+        var u5vWw
+        return -(111) > 53
+      end
+      HKzn4()
+      while (32 or HKzn4() * (HKzn4()))
+        var PF[69]
+        return ifHasFF7[ not 100 and HKzn4()]
+        PF[51] = 40 <= 84 == HKzn4() == HKzn4()
+      end
+    end
+  end
+  var kMe1
+  if (kMe1)
+    while (ifHasFF7[HKzn4()] == 115 * HKzn4())
+      WafGVc[122] = (ifHasFF7[kMe1])
+      var mAFi5JFP = 66 - kMe1 / HKzn4()
+      var uih[19]
+      var hN_Q5hHD =  not kMe1 and kMe1
+      return -mAFi5JFP / 121 + 120
+    end
+  end
+end
+

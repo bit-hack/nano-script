@@ -1,0 +1,33 @@
+# SEED 12455
+
+function DJtxJae()
+  var r1[3]
+  var FFxSo[45]
+  FFxSo[94] = 91
+  return r1[-FFxSo[DJtxJae()]]
+  r1[73] = -DJtxJae() == -122 <= DJtxJae()
+end
+
+var gC6 = 99
+
+function BCoed(VGUbvdov, qlu, hygNWEi, gvzAH7)
+  if (DJtxJae() and gC6 == 66)
+    var WV
+  end
+  if (gC6)
+    return 83 == 0
+    var nCqTJru[11]
+    var V8EFQ1y[107]
+    V8EFQ1y[125] = gC6
+  end
+  gC6 += BCoed(gC6, 56, gC6, gC6) <= BCoed(91, gC6, 89, -gC6) < DJtxJae()
+  VGUbvdov = (127) or DJtxJae() <= 123
+  var pD = (4 >= gC6)
+  var GG2J4NS = gC6
+  var wx1IHT
+end
+
+var dD
+
+var CacB = 104
+

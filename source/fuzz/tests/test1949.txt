@@ -1,0 +1,21 @@
+# SEED 13270
+
+var Bb8yXKRq[2]
+
+var dOI = 94
+
+var XvWexFi[3]
+
+var dPbK0rfU[59]
+
+function OF_c(lT, K5RUcpb)
+  var jBVc8[62]
+  var Ew_R =  not OF_c(65, dOI) * 95 / dOI or OF_c(37, dOI)
+  OF_c(dOI, 36)
+  return Ew_R > Ew_R
+  var c24Kl[23]
+  OF_c(Ew_R, dOI)
+  var omt = c24Kl[ not -OF_c(-Ew_R, 38) == dOI]
+  XvWexFi[5] = 62
+end
+

@@ -1,0 +1,11 @@
+# SEED 13160
+
+function n_Gan(lyK8bb, pA9Fwb)
+  while ( not -50 == n_Gan(23, 29) <= -n_Gan(12, 108))
+    n_Gan(122, 69)
+  end
+  return  not n_Gan(52, 116) >= 116
+  return 119
+  n_Gan(n_Gan(79, 83), 125)
+end
+

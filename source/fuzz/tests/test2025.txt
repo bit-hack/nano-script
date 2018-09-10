@@ -1,0 +1,28 @@
+# SEED 13346
+
+var zzGi = 81
+
+var UA4[64]
+
+function Zk(zXwe)
+  zXwe += ( not zzGi)
+  while (UA4[Zk(zzGi)] - 57 or 29)
+    Zk(Zk(-122))
+    var a2Bx =  not  not  not UA4[27]
+  end
+  var tgfbRk[33]
+  while ((Zk(zzGi)) - (Zk(79)))
+    var kcotYZoM
+  end
+  tgfbRk[101] = zzGi
+  zzGi = Zk(-35) or 0 == 117
+  zzGi +=  not UA4[zzGi + zzGi]
+  tgfbRk[24] = zzGi
+end
+
+var F7tViE[12]
+
+var bAjtp[50]
+
+var MC1p = 81
+

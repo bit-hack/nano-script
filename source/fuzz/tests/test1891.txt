@@ -1,0 +1,18 @@
+# SEED 13212
+
+function dY(Su, WtwXtp, xxuRZ, _uG, P1tP)
+  return dY(68, 29, 41, 105, 12) or -dY(-72, 85, -25, 51, 83) -  not  not (dY(15, 51, 102, 97, 11))
+  while (3 - dY(23, 61, -20, 95, -7) <= dY(22, 35, 68, 116, 30))
+  end
+  if (dY(-64, 90, -69, 111, 25) > dY(103, 106, 84, 4, 93) / -88)
+    var PyqXcc
+    var uyGItRq[76]
+    PyqXcc += (PyqXcc) or uyGItRq[57]
+    return uyGItRq[dY(30, PyqXcc, -PyqXcc, 60, 112) <= PyqXcc]
+  end
+  var xj7Us9E[41]
+  return  not dY(67, 60, 16, 75, 60) >= dY(64, 108, 115, 88, 114) / 90
+  return 23 > 37 or 111 > 77
+  return  not  not xj7Us9E[93]
+end
+

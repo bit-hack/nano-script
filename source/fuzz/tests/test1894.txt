@@ -1,0 +1,33 @@
+# SEED 13215
+
+var Br4[92]
+
+var pLr4d
+
+var XVP5sH[109]
+
+var RAF6nyX[87]
+
+var RxE[41]
+
+var NYN
+
+var mTHM[10]
+
+function O5Ttg(wAJlGGw, Wos)
+  wAJlGGw +=  not (O5Ttg(pLr4d, 116))
+  var aLHYhfC
+  O5Ttg(pLr4d, 106)
+  pLr4d += -18
+  O5Ttg(pLr4d, O5Ttg(124, 28))
+  while ( not pLr4d)
+    pLr4d = ((NYN))
+    Br4[60] = (71 * NYN)
+    return  not (54)
+  end
+  XVP5sH[32] = 7
+  while ( not NYN)
+    Br4[41] = aLHYhfC and  not 64 / aLHYhfC
+  end
+end
+

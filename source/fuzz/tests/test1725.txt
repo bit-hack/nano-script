@@ -1,0 +1,26 @@
+# SEED 13046
+
+var fbYUz3eq[87]
+
+var GsjYm5C[103]
+
+function AHufM(QWhF)
+  if (AHufM(127))
+    AHufM(AHufM(74))
+    var VQfFMY8z[114]
+  end
+  var gQ52
+  var zS1X[76]
+  if (AHufM(gQ52) <= AHufM(-gQ52) or gQ52 >= gQ52)
+    QWhF += AHufM(gQ52)
+    var fJz
+  end
+  AHufM(4)
+  fbYUz3eq[106] = 6 >= AHufM(gQ52) == gQ52
+  GsjYm5C[15] = 71 > AHufM(gQ52) > gQ52 < AHufM(33)
+end
+
+var l7
+
+var qNaxY5 = 66
+

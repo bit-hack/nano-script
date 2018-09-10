@@ -1,0 +1,71 @@
+# SEED 13223
+
+function Wf04f(e2n1z, _naBb, lVX)
+  Wf04f(-Wf04f(105, 80, 117), Wf04f(99, 45, -13), 99)
+  var H_QNEuDR
+  _naBb += 3 + H_QNEuDR
+  H_QNEuDR = (H_QNEuDR)
+  var zb[21]
+  while (H_QNEuDR)
+  end
+  var n0tX_0[9]
+  zb[11] = H_QNEuDR and 17 or 76 <= -H_QNEuDR
+end
+
+function zVnxvSP(dNvhBb2, LN2TS7nx)
+  if (0 or zVnxvSP(-58, 20) /  not (93))
+    if ((Wf04f(86, 7, 7)) -  not 7 >= 77)
+      return  not (Wf04f(120, 94, 73)) + 121
+    end
+    Wf04f(41, 116, -35)
+  end
+  return zVnxvSP(76, 90)
+  var b5K8
+  if (Wf04f(b5K8, 15, 104) - zVnxvSP(-122, 48) / Wf04f(99, 16, b5K8))
+    b5K8 = 1
+  end
+  b5K8 += (b5K8 > zVnxvSP(83, 10))
+  return  not -zVnxvSP(b5K8, b5K8) > b5K8 / Wf04f(93, b5K8, b5K8) <= 58
+  zVnxvSP(53, Wf04f(b5K8, 94, 11))
+end
+
+var WbG[115]
+
+function UfoXN(Gea, hZizu5)
+  return zVnxvSP(121, 33) + 70 <= -Wf04f(124, 117, 22)
+  return 35
+  return Wf04f(17, Wf04f(52, 42, 10), Wf04f(-68, 77, 108))
+  if ((26) <=  not (UfoXN(50, 117)))
+    WbG[113] = (WbG[UfoXN(-27, 41)])
+  end
+  while (WbG[93])
+    return (Wf04f(93, 34, 9))
+    WbG[59] = Wf04f(7, 0, 113) / UfoXN(121, 96) and 44 < 44
+    if ((21 > 10))
+      while ( not WbG[Wf04f(108, 107, 97)])
+        UfoXN(38, -111)
+        Wf04f(1, 125, 99)
+        if ( not zVnxvSP(42, 67) / Wf04f(111, 34, 59) == (80))
+          zVnxvSP(Wf04f(72, 40, 9), 114)
+          WbG[100] = 6 <= 15 <= 78
+        end
+        while (Wf04f(Wf04f(127, 90, 31), 32, 37))
+          var Oq[103]
+          return Wf04f(60, 65, 105) > Oq[87]
+          return Oq[(zVnxvSP(110, 97))]
+          if (10)
+            return (Oq[75])
+          end
+          zVnxvSP(Wf04f(104, 119, 119), 41)
+        end
+        if (zVnxvSP(79, 109))
+        end
+      end
+      WbG[51] = WbG[53]
+      var ilv[44]
+      return -UfoXN(23, zVnxvSP(73, 74))
+    end
+    WbG[11] =  not UfoXN(93, 100) <= 91 +  not 85 >= Wf04f(-36, 81, 105)
+  end
+end
+

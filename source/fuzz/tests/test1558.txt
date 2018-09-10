@@ -1,0 +1,45 @@
+# SEED 12879
+
+var SAC4 = 65
+
+var AWZU9k = 74
+
+var QVotXqVU
+
+var zzT8HL6O[4]
+
+var vvMM6n[38]
+
+var GuaJh[48]
+
+var qYFiSRlK
+
+function ZUUW8Duk()
+  while (-ZUUW8Duk())
+    ZUUW8Duk()
+    ZUUW8Duk()
+    var q2Bh[86]
+  end
+  if ((ZUUW8Duk() + 31))
+    while (-59 - SAC4 or ZUUW8Duk() >= 107)
+      var A8uh9VY = ZUUW8Duk()
+      GuaJh[17] = ZUUW8Duk()
+    end
+    return (82 >= -ZUUW8Duk())
+  end
+  if (-117 and ZUUW8Duk() >= AWZU9k)
+    return SAC4 - 19 <= ZUUW8Duk() or ZUUW8Duk()
+    return 15 < ZUUW8Duk() or qYFiSRlK
+    ZUUW8Duk()
+    if (-GuaJh[114 < ZUUW8Duk()])
+      var KxlsCy[24]
+      while ((1 == ZUUW8Duk()))
+        var rP[117]
+      end
+    end
+  end
+  ZUUW8Duk()
+  ZUUW8Duk()
+  ZUUW8Duk()
+end
+

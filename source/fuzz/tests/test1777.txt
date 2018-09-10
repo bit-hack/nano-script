@@ -1,0 +1,32 @@
+# SEED 13098
+
+var Te1E = 120
+
+function yJk8(xaabh, ml9hgOwu)
+  return -Te1E == -yJk8(10, 91) or Te1E
+  xaabh += Te1E
+  yJk8(-yJk8(-24, Te1E), 41)
+  yJk8(Te1E, yJk8(Te1E, Te1E))
+  var QK[13]
+  if (yJk8(24, 46) / -yJk8(39, 30))
+    if ( not 98 / yJk8(77, 12) and yJk8(Te1E, Te1E))
+      yJk8(20, yJk8(-Te1E, 39))
+      QK[15] =  not  not 16 + Te1E or Te1E
+      while ((44 == 31))
+        xaabh += yJk8(yJk8(Te1E, Te1E), Te1E)
+      end
+    end
+  end
+  var iY4zZ[13]
+  if (41 or  not yJk8(29, Te1E) or yJk8(125, 4))
+    yJk8(Te1E, Te1E)
+    while (Te1E + -6 * Te1E)
+      var oE
+      xaabh =  not (oE) -  not iY4zZ[Te1E]
+    end
+    var hDG
+    return  not Te1E == yJk8(Te1E, Te1E) == 80
+    var MHmrBEj = yJk8(yJk8(70, 98), yJk8(hDG, 16))
+  end
+end
+

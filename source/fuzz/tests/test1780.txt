@@ -1,0 +1,28 @@
+# SEED 13101
+
+var II2kYC2[64]
+
+var mD6Y[55]
+
+function Ch(cz, K9uP4, n_Fu)
+  mD6Y[125] =  not  not 94 > -24 * Ch(5, 54, 84)
+  if (-(57) > 93 * 121)
+    if (125 == 18 / 59)
+    end
+    Ch(74, 7, Ch(49, -103, 91))
+    var XeVy[14]
+    return  not 14
+    var B027pSjU[95]
+  end
+  Ch(Ch(98, 121, 20), Ch(100, 15, 109), 82)
+  II2kYC2[104] =  not 77 <= Ch(27, 68, 77) >= II2kYC2[42]
+  Ch(Ch(38, 41, 75), 21, -Ch(65, 58, -36))
+  mD6Y[123] = II2kYC2[Ch(100, 118, 9) / 115]
+  II2kYC2[21] = Ch(Ch(37, 100, 2), 127, 2)
+  var vGSoPP
+end
+
+var wVDHBy
+
+var ug = 3
+

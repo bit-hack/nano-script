@@ -1,0 +1,21 @@
+# SEED 13316
+
+var LQr
+
+function SG(jJm7Jhlw, iHIJqgP, D2NJM9, ITwZ, o0yP, jGW, xeeYX)
+  while (3 / 106 / SG(LQr, LQr, -100, LQr, 117, 87, 18))
+  end
+  LQr += (LQr)
+  LQr += -SG(LQr, 83, 31, -52, -LQr, 62, 90) < SG(91, LQr, LQr, 111, -LQr, LQr, LQr) >= SG(LQr, LQr, LQr, -104, LQr, LQr, LQr)
+  var DEEd8qi[43]
+  var vbjVP7
+  DEEd8qi[95] = -SG(42, LQr, LQr, 82, 8, 114, 47) + LQr + LQr
+  var kOK8Mooz[48]
+  if (vbjVP7)
+    DEEd8qi[20] = SG(vbjVP7, 85, vbjVP7, -41, 123, 52, 35) + kOK8Mooz[125]
+    var lj7[44]
+  end
+end
+
+var lT
+

@@ -1,0 +1,23 @@
+# SEED 12583
+
+var p0KCPg[68]
+
+function kA(R7, PVOXEHc)
+  kA(-73, -78)
+  kA(56, kA(83, 105))
+  p0KCPg[122] = kA(-63, kA(62, 10))
+  var iC93YO6U
+  var h6zZ59[111]
+  return p0KCPg[kA(64, iC93YO6U)] + (kA(13, iC93YO6U))
+  if (iC93YO6U)
+    iC93YO6U = 58 + iC93YO6U < h6zZ59[69]
+    return -iC93YO6U == iC93YO6U
+    iC93YO6U += iC93YO6U / kA(22, iC93YO6U) and (-kA(127, 56))
+    var w9nX[123]
+  end
+end
+
+var oMeg = 12
+
+var ZRR7m[41]
+

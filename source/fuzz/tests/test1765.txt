@@ -1,0 +1,56 @@
+# SEED 13086
+
+var BHU = 83
+
+function LgPPzr(eZUyW04)
+  var J6sId652[114]
+  var VK[54]
+  J6sId652[82] = BHU
+  var dXXE = LgPPzr(LgPPzr(-BHU))
+  if (BHU)
+    J6sId652[60] =  not BHU == (dXXE)
+  end
+  eZUyW04 += LgPPzr(BHU) <= (BHU)
+  if (dXXE or LgPPzr(BHU) or LgPPzr(dXXE))
+    if ( not 42)
+      return (79) -  not LgPPzr(51) / 72
+      LgPPzr(77)
+      var BpZfm = LgPPzr(87) and LgPPzr(BHU) >= (-BHU)
+      var oXkYFa = 23
+      eZUyW04 =  not ((LgPPzr(oXkYFa)))
+    end
+    return VK[125] <= LgPPzr(BHU) - LgPPzr(dXXE)
+    LgPPzr(LgPPzr(78))
+    BHU += (dXXE <= BHU)
+  end
+  VK[86] = dXXE
+end
+
+var UF[71]
+
+function p1gqD(Y_3, f9epn0P, n_auEs, aGbZ, pna, gWuKsP)
+  if (BHU)
+    pna = BHU == -LgPPzr(BHU) == p1gqD(105, BHU, 114, BHU, 111, 111)
+    if (UF[ not 38])
+      return BHU - p1gqD(BHU, -BHU, 17, 59, 52, BHU) + LgPPzr(15) - 8
+    end
+    var cK[42]
+  end
+  LgPPzr(p1gqD(BHU, BHU, 84, BHU, -BHU, 56))
+  BHU += BHU
+  while (LgPPzr(109) or BHU - UF[90])
+    return  not -BHU >= p1gqD(BHU, 91, 109, 104, 116, 31) * LgPPzr(BHU)
+  end
+  UF[0] = UF[73]
+  while (25)
+  end
+  while (UF[43] <= 52)
+  end
+  if (p1gqD(BHU, 19, 74, BHU, 68, BHU) >= 84 / 107 or 98)
+    var NiT = BHU >= 61
+    var gBVe[86]
+    UF[10] = p1gqD(LgPPzr(97), 90, 44, -53, LgPPzr(14), 56)
+    f9epn0P = LgPPzr(96)
+  end
+end
+

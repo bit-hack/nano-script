@@ -1,0 +1,102 @@
+# SEED 12816
+
+var KoX = 86
+
+function MJhlq(nV_h)
+  if ( not KoX > -KoX >= MJhlq(KoX))
+    nV_h += 55 or (2)
+  end
+  var g03_[5]
+  if ((KoX) * 26 - 95)
+    var DeJU =  not  not 20
+    g03_[17] =  not DeJU
+    if (-g03_[-(MJhlq(KoX))])
+      g03_[26] = MJhlq(KoX)
+      var alH_U9K = DeJU - g03_[MJhlq(DeJU)]
+      if (g03_[51 >= MJhlq(KoX)])
+        var EQ6Yc
+      end
+      return 92 + -MJhlq(-DeJU) /  not 120 + MJhlq(-alH_U9K)
+    end
+    KoX = DeJU
+  end
+  nV_h = 113
+  while (18 * MJhlq(114) +  not MJhlq(KoX) <= 77)
+    nV_h += KoX or (KoX)
+    nV_h = g03_[MJhlq(KoX)] - 112
+    if (-KoX * KoX > 66)
+      var WXOFR = 81 ==  not MJhlq(KoX) - 67
+      var _mnX[90]
+      KoX =  not (-MJhlq(KoX)) / WXOFR >= MJhlq(113)
+    end
+    KoX += g03_[KoX < KoX]
+  end
+  var NW6YVTQF[114]
+  MJhlq(26)
+end
+
+var v0B[105]
+
+var pgu = 17
+
+var dGCVXz
+
+function uxfRXhM(rQv7TI, Q1U, tCxP, exwbKk)
+  var vC3BNMm[9]
+  var A8Q7mvw[58]
+  v0B[26] = 62 == KoX > uxfRXhM(102, 11, 103, KoX) and 113
+  MJhlq(-pgu)
+  while (-pgu or 109 <  not v0B[uxfRXhM(pgu, pgu, KoX, 82)])
+    if (MJhlq(107) + KoX / v0B[1])
+      return vC3BNMm[uxfRXhM(73, 19, 65, KoX)] or 27
+      if (uxfRXhM(88, uxfRXhM(dGCVXz, pgu, -pgu, pgu), uxfRXhM(pgu, 86, 120, 46), 3))
+        rQv7TI += KoX / dGCVXz /  not  not pgu
+      end
+      if (48 < A8Q7mvw[MJhlq(pgu)])
+        var L_vhKYX[2]
+        L_vhKYX[115] = ((dGCVXz))
+        var lful[94]
+        pgu +=  not L_vhKYX[-uxfRXhM(14, 63, dGCVXz, dGCVXz) or uxfRXhM(-pgu, pgu, 57, KoX)]
+        if ( not L_vhKYX[dGCVXz] <= 23 * 104)
+          MJhlq(69)
+          var PsmB = (93) - dGCVXz
+          while (dGCVXz)
+            while ( not pgu <=  not 124 or MJhlq(49))
+              v0B[20] = MJhlq(pgu)
+              MJhlq(108)
+              return  not -95 / PsmB >= MJhlq(36) == pgu
+              MJhlq(uxfRXhM(pgu, 39, dGCVXz, PsmB))
+              var gklXJi[19]
+            end
+            var Tle[95]
+          end
+        end
+      end
+      return vC3BNMm[MJhlq(40) or -MJhlq(pgu)]
+    end
+    var K6 = v0B[-92 * uxfRXhM(pgu, dGCVXz, 75, 34)]
+    var uQE[107]
+  end
+  var GThJe8M
+  vC3BNMm[29] = -(KoX) == MJhlq(87)
+  return  not  not 96 or 57 *  not dGCVXz * dGCVXz
+end
+
+function srwu(soq0XS3m, Nr, nMEm, wKIM, m21vQ)
+  if (v0B[pgu] <= srwu(dGCVXz, pgu, KoX, 75, 114))
+    v0B[7] = v0B[ not srwu(15, pgu, KoX, pgu, KoX) == 104]
+    m21vQ =  not (pgu)
+    srwu(32, 65, 12, dGCVXz, srwu(KoX, 97, dGCVXz, pgu, 41))
+    KoX += srwu(MJhlq(pgu), dGCVXz, pgu, 39, uxfRXhM(pgu, 89, -34, KoX))
+  end
+  soq0XS3m =  not uxfRXhM(125, 87, KoX, 9) + uxfRXhM(dGCVXz, dGCVXz, dGCVXz, 59) > srwu(92, 76, dGCVXz, 86, -KoX)
+  var GBk = KoX
+  pgu =  not -105
+  var IEGKA = 62 / (61)
+  return uxfRXhM(dGCVXz, GBk, pgu, pgu) <= GBk
+  var hM[34]
+  MJhlq(-srwu(10, IEGKA, IEGKA, -IEGKA, 92))
+end
+
+var VuvzSX[116]
+

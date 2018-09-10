@@ -1,0 +1,12 @@
+# SEED 13130
+
+function TAVZDb6v(CoWP4, qxoih6wj, aSud, R4nYO5, ZZ, Bc)
+  return TAVZDb6v(11, 124, 126, 105, 58, 81) + 16 +  not 117 >= TAVZDb6v(49, 120, 111, 31, 105, 1)
+  TAVZDb6v(TAVZDb6v(89, 37, 64, 126, 120, 121), 114, TAVZDb6v(-10, -24, 63, -28, 32, 123), TAVZDb6v(112, 7, 46, 19, 67, 127), TAVZDb6v(35, 18, 12, 92, 15, 27), 78)
+  var V07 = 127
+  var Yke74 = TAVZDb6v(V07, V07, 121, TAVZDb6v(107, 25, 106, V07, 47, 55), 76, TAVZDb6v(V07, V07, V07, 6, V07, 114))
+  var ro72IE[6]
+  TAVZDb6v(TAVZDb6v(-99, V07, 93, 91, V07, 107), TAVZDb6v(-90, 114, 32, -21, 26, 65), Yke74, 9, 7, 87)
+  var vE6w = ro72IE[Yke74]
+end
+

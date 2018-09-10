@@ -1,0 +1,42 @@
+# SEED 13150
+
+function Z4(hM, NyrHF)
+  Z4(Z4(54, 14), 28)
+  var v2l1KN[127]
+  var uj[103]
+  if (Z4(-83, 8))
+    Z4(101, Z4(50, 122))
+    var EEsQVh[92]
+    while (-v2l1KN[v2l1KN[Z4(31, 20)]])
+      while (Z4(127, 19) / -Z4(81, -87) > -71 * 69)
+        while (98)
+          Z4(Z4(15, 124), Z4(47, 3))
+          uj[26] = Z4(107, 21) * 45 + Z4(13, 58) or 11
+        end
+        Z4(66, -92)
+        var Qe =  not uj[v2l1KN[33]]
+      end
+    end
+    while (EEsQVh[Z4(-6, 122)])
+      while (Z4(108, 26) + 126 < EEsQVh[18])
+        EEsQVh[13] = Z4(124, 122) < 54 * 116 + 104
+        uj[3] = Z4(125, 124) == Z4(77, 77) > Z4(77, 91) or 59
+      end
+    end
+  end
+  return -(Z4(44, 55) - Z4(110, 40))
+  var wl[47]
+  var mw = uj[40] / 33
+end
+
+function _TC(qJ7, daCP, clAPoci)
+  return  not  not _TC(60, -9, 95) + 90 - (_TC(0, -56, 122))
+  var oe0QlCv0[21]
+  _TC(10, 8, 121)
+  return (Z4(54, 64) >= 126)
+  var Ku
+  if (-( not Z4(66, Ku) + 11))
+  end
+  _TC(Z4(47, 9), 96, _TC(Ku, Ku, 98))
+end
+

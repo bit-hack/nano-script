@@ -1,0 +1,93 @@
+# SEED 12502
+
+var iFB[120]
+
+function wUN4Ln()
+  while (iFB[-15 > 22])
+    var aX9DG1
+  end
+  if (( not wUN4Ln() <= wUN4Ln()))
+  end
+  if ( not wUN4Ln() + 49 * wUN4Ln())
+    iFB[90] = iFB[29] + 2
+    wUN4Ln()
+  end
+  return wUN4Ln() <= wUN4Ln() and 37
+  iFB[24] = -wUN4Ln()
+  while (83 >= wUN4Ln() <= wUN4Ln())
+    wUN4Ln()
+    var euoNVC5
+  end
+end
+
+function ZTLkI2TJ(Gykpazy, k29QNq, B9JtELY, SW, wu)
+  iFB[121] = 68
+  ZTLkI2TJ(wUN4Ln(), 44, ZTLkI2TJ(-91, 83, 122, 54, 30), 19, wUN4Ln())
+  if ((ZTLkI2TJ(-30, -119, 21, 118, 79)) > 44 <= wUN4Ln())
+  end
+  while ((3) < wUN4Ln() == 44)
+    if ( not 16 == -58 + iFB[ZTLkI2TJ(2, 66, 60, 68, 72)])
+    end
+  end
+  iFB[10] = 22
+end
+
+function uBsa(yVPCHNoY, Eh)
+  iFB[85] = iFB[-iFB[uBsa(123, 110)]]
+  var iI3XBj2
+  while (-wUN4Ln() < 80 <=  not  not 80 < 62)
+    var lnIZ3Yrh[128]
+    var y3[109]
+  end
+  var Xjj9B[52]
+  var msodUFR = (ZTLkI2TJ(iI3XBj2, iI3XBj2, iI3XBj2, 42, iI3XBj2)) or wUN4Ln() * 1
+  return uBsa(ZTLkI2TJ(iI3XBj2, iI3XBj2, 116, msodUFR, iI3XBj2), ZTLkI2TJ(59, 100, 30, iI3XBj2, 125))
+  var M9DRQ64l[100]
+end
+
+var stMEKTn = 86
+
+function DhHQ(ESqS, zAJysgn, pTAj8Gg)
+  ESqS = stMEKTn == 12 * 105 - 107
+  while (uBsa(stMEKTn, stMEKTn))
+    return (wUN4Ln()) / iFB[87]
+    wUN4Ln()
+    var we9N = iFB[stMEKTn]
+    while (104 <= 52 * we9N)
+      if (108 or -we9N > we9N == wUN4Ln())
+        var xUlzqRi0
+        if (23)
+        end
+        iFB[124] = xUlzqRi0 > stMEKTn * uBsa(-116, we9N)
+        var ii1
+      end
+      while (-stMEKTn)
+        while (we9N + -wUN4Ln() * iFB[wUN4Ln()])
+          iFB[59] = we9N
+          var F65c83
+        end
+        zAJysgn = (we9N) == wUN4Ln() == we9N
+        while (DhHQ(2, we9N, stMEKTn) - -we9N < ZTLkI2TJ(we9N, 70, stMEKTn, we9N, 29) or we9N)
+          return  not -iFB[36] == we9N == stMEKTn
+          stMEKTn += ((60))
+        end
+        var UHc6K
+        if (76)
+          ESqS += (DhHQ(UHc6K, 11, UHc6K))
+        end
+      end
+      if (iFB[stMEKTn] and 33 + ZTLkI2TJ(we9N, stMEKTn, we9N, we9N, -95))
+      end
+      iFB[98] = 15
+      return iFB[-53]
+    end
+  end
+  while (-DhHQ(41, stMEKTn, stMEKTn))
+  end
+  var NYF
+  ESqS += NYF and 19
+  uBsa(stMEKTn, stMEKTn)
+  stMEKTn = stMEKTn + 55 > 87
+  ZTLkI2TJ(-NYF, NYF, 112, 57, stMEKTn)
+end
+

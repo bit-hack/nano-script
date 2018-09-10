@@ -1,0 +1,51 @@
+# SEED 12468
+
+var cP[107]
+
+var otu[45]
+
+function FsSXxa(E374i, cOE, gB, zInLH8Ol, sPKD, C2xEktZ)
+  if (otu[-FsSXxa(120, 100, 97, 9, -38, -111) < FsSXxa(63, 58, 35, 115, 83, 74)])
+    FsSXxa(FsSXxa(68, 123, 16, 103, 57, 38), 116, 57, FsSXxa(-126, 116, 98, -32, -6, 76), FsSXxa(59, 52, 36, 48, 2, 58), FsSXxa(99, 7, 59, 84, 62, 87))
+    return (FsSXxa(-111, 0, -112, 76, 38, 9)) * 27 * 60
+  end
+  FsSXxa(108, FsSXxa(-100, 39, 81, 31, 66, 49), 56, 40, 49, FsSXxa(-110, -108, 114, 13, 106, 43))
+  while (3)
+    var EQVH0 = otu[FsSXxa(23, 75, 4, 40, 90, 73) >= 23]
+  end
+  if (115)
+    cP[93] = FsSXxa(FsSXxa(117, 119, 16, 82, 34, 96), 90, 114, FsSXxa(96, 17, 97, 17, 122, 80), FsSXxa(36, 46, 84, 116, 73, 69), FsSXxa(83, 70, 49, 10, 82, 82))
+    var QX_s[34]
+  end
+  var XTsUKQGr[114]
+  if (32 <= FsSXxa(96, 87, 124, -40, 110, 101) or 10)
+    if (otu[FsSXxa(100, 92, -58, -18, 115, 39)] or 75 < 108)
+      if ((10) - FsSXxa(77, 64, 90, 8, 67, 46) or -FsSXxa(31, 27, 1, 22, 72, 82))
+      end
+      return 13
+      var SqarUYC[120]
+    end
+    while (FsSXxa(91, 26, 79, 72, 9, 34) <= 61 < 107)
+    end
+    XTsUKQGr[58] =  not -26
+    var bDHg4[41]
+  end
+  var TiCRj[65]
+end
+
+var Nm5[9]
+
+function Cfwnq(Mlw, nLNHVW, WZbk2pO)
+  otu[23] = cP[FsSXxa(119, 113, 73, -7, 81, -57)] <=  not (108)
+  var ueULvA6w[39]
+  var DyA5Xw7k = 41 <= -FsSXxa(32, 93, 35, -97, -73, 16) + FsSXxa(9, 36, 19, 111, 73, -54)
+  DyA5Xw7k = 97
+  return 50 > 65 and Cfwnq(DyA5Xw7k, 44, -DyA5Xw7k) - FsSXxa(59, 52, DyA5Xw7k, 60, -37, DyA5Xw7k)
+end
+
+var SaSgBC[95]
+
+var NID[4]
+
+var S9Q8MF4
+

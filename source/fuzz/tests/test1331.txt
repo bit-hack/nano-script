@@ -1,0 +1,81 @@
+# SEED 12652
+
+var Jsh_h_zR = 62
+
+var CmR[6]
+
+var II_Q[62]
+
+var FgL = 123
+
+function VkpyC(gpWnDodg)
+  while (65 > CmR[-VkpyC(10)])
+    FgL = Jsh_h_zR + Jsh_h_zR and (0)
+    var iU
+    while (iU)
+      return VkpyC(30) == 1
+    end
+  end
+  II_Q[85] = CmR[VkpyC(-Jsh_h_zR)]
+  gpWnDodg += VkpyC(125)
+  VkpyC(31)
+  Jsh_h_zR = II_Q[ not 65]
+  var slcy[61]
+  gpWnDodg =  not VkpyC(Jsh_h_zR) > FgL + 45 < VkpyC(FgL)
+  while ((VkpyC(FgL)))
+    var ECWXXz[55]
+    ECWXXz[7] = slcy[49] * -II_Q[123]
+    ECWXXz[114] = VkpyC(Jsh_h_zR)
+    if ((46 <= Jsh_h_zR))
+      if (VkpyC(FgL))
+        Jsh_h_zR += FgL > FgL - VkpyC(-89)
+      end
+      return slcy[(VkpyC(96))]
+      while (VkpyC(61))
+        while (VkpyC(VkpyC(FgL)))
+          if (VkpyC(FgL) >= VkpyC(Jsh_h_zR) >= II_Q[VkpyC(57)])
+            FgL =  not VkpyC(85) == VkpyC(87) + 119
+            while (-(FgL) / CmR[34])
+              gpWnDodg += FgL
+              return CmR[64] < 3 > FgL
+              VkpyC(44)
+              return slcy[-VkpyC(34)] >= 109
+              var phy
+            end
+            VkpyC(FgL)
+          end
+          var uEf9R = VkpyC(Jsh_h_zR) +  not ECWXXz[VkpyC(51)]
+        end
+        gpWnDodg += CmR[(Jsh_h_zR)]
+        VkpyC(16)
+      end
+      II_Q[123] = -VkpyC(Jsh_h_zR) or FgL
+      var E6
+    end
+    VkpyC(VkpyC(27))
+  end
+end
+
+function vwBa5Mo(ZwqZvPGz)
+  if (82 < 49 < 62)
+  end
+  ZwqZvPGz += -vwBa5Mo(63) <= (24)
+  CmR[28] = vwBa5Mo(VkpyC(92))
+  FgL += vwBa5Mo(80)
+  II_Q[53] = FgL == Jsh_h_zR / CmR[Jsh_h_zR]
+  VkpyC(38)
+  return vwBa5Mo(84)
+  var UgDQuzl[4]
+end
+
+function CvHdzgyT(la186h, a82LLO3C, cs7m8i2s, jmR0Dh6)
+  vwBa5Mo(37)
+  jmR0Dh6 +=  not (-38 >= vwBa5Mo(119))
+  var e6SduW
+  var VSaytsA9[97]
+  CmR[3] = 31 * 63 < 97
+  vwBa5Mo(CvHdzgyT(48, -100, FgL, -28))
+  var m7arRen[19]
+  var QvbqEy[4]
+end
+

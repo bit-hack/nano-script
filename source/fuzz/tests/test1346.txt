@@ -1,0 +1,81 @@
+# SEED 12667
+
+var k5w = 100
+
+var Rz6[14]
+
+var tyy_gcY[84]
+
+var Rhn[56]
+
+function gD(tf8e, iwDH, CwAdKT3E)
+  CwAdKT3E += k5w
+  var RYTN[65]
+  if ( not (gD(k5w, 46, k5w)) - 74)
+    if (-116)
+      if (gD(66, -k5w, 64) < (34))
+        gD(gD(103, 112, -k5w), gD(31, 106, 65), gD(k5w, k5w, 126))
+        var N1xyfISQ[16]
+        if (k5w)
+          if ( not -55 / (k5w))
+            CwAdKT3E =  not gD(10, 118, -51) and -k5w > k5w == k5w
+            RYTN[95] = gD(gD(k5w, 44, k5w), gD(k5w, 5, k5w), gD(k5w, 53, k5w))
+            var R7Pi = gD(k5w, gD(73, 71, k5w), 111)
+            var b6Fr7_4[4]
+            var WJt = -gD(k5w, 48, -12) - 43 <= 120
+          end
+          var Zg7Il[104]
+          while (27)
+            k5w = gD(18, k5w, k5w)
+            if ( not N1xyfISQ[gD(k5w, 39, 41) >= gD(84, 110, k5w)])
+              var PMJh22Hn = 118 < 8 <= Rhn[k5w]
+              var AT4b9OY[44]
+              return (k5w - PMJh22Hn)
+              var F6YNHd[4]
+            end
+            gD(-gD(k5w, k5w, k5w), 89, k5w)
+          end
+          var nVc = k5w / k5w
+          while (Rhn[ not 127])
+          end
+        end
+        return 70
+        iwDH += -k5w > k5w or -1
+      end
+      k5w =  not 28 < gD(27, 21, 117)
+    end
+    if (k5w)
+      return  not k5w > k5w
+      if (17 and gD(k5w, 68, k5w) < gD(k5w, 47, 76))
+        var _4TAUf0s[90]
+      end
+      gD(k5w, k5w, 73)
+      if (93 > 44 > 28)
+        iwDH += 80
+        var ap[12]
+        CwAdKT3E += 19 - 23
+        var YfH78 = 104
+        tf8e += YfH78
+      end
+      var iKgP[82]
+    end
+    gD(27, k5w, 89)
+    return (Rhn[k5w])
+  end
+  var EkWRh
+  var UBkPY3jF
+  k5w = gD(gD(EkWRh, 24, 108), k5w, UBkPY3jF)
+  k5w += -gD(-gD(78, 107, UBkPY3jF), 30, EkWRh)
+  var Lm = (75)
+end
+
+var nm79Kjl0[106]
+
+function ayGru()
+  var L6voJ[46]
+  return (gD(k5w, k5w, 107) - ayGru())
+  Rz6[76] = tyy_gcY[ not nm79Kjl0[ayGru()]]
+  var Re_ = 108 + -ayGru() <= ayGru()
+  return Rz6[-k5w and ayGru()]
+end
+

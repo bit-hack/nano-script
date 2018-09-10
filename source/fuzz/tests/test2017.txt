@@ -1,0 +1,18 @@
+# SEED 13338
+
+var oumHRO = 42
+
+function al(oKtb, RCc, WIxsuO, xgjV3uj, oYmfr6)
+  oumHRO = oumHRO + 70 == oumHRO
+  while (96)
+  end
+  return oumHRO
+  xgjV3uj += -oumHRO /  not oumHRO * al(90, -oumHRO, oumHRO, oumHRO, 118)
+  var hbV = (al(8, oumHRO, -24, oumHRO, oumHRO))
+  var pQT2 = hbV - 45 or 114 - al(oumHRO, 45, hbV, hbV, 117)
+  al(86, hbV, hbV, 87, -37)
+  return pQT2
+end
+
+var _I
+

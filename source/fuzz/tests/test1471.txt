@@ -1,0 +1,27 @@
+# SEED 12792
+
+var Q80c5J4D = 123
+
+var tkp
+
+var bT
+
+var EN[113]
+
+function YG(EHFK, nKG5QHM, Ggf, jCrKJtd)
+  return YG(58, 9, YG(4, -Q80c5J4D, bT, tkp), tkp)
+  var iYpry9[88]
+  var EC2M1 = 115 and 91 - Q80c5J4D * Q80c5J4D
+  iYpry9[87] = 4 < 38 * bT <= tkp
+  var hsM62nB =  not Q80c5J4D - 12 + 109 == 15
+  iYpry9[30] = EN[75 and 44]
+  tkp = YG(23, EC2M1, hsM62nB, 123)
+  return EN[6] > iYpry9[103]
+end
+
+var pVVkcaqx[88]
+
+var rhMK
+
+var dAQoy
+

@@ -1,0 +1,43 @@
+# SEED 13217
+
+var HGTgD9[106]
+
+function SyI6(n9SRJm, ttbpqIE, KKYL_p, x9rQ_TGS, Gn, rRizOd, iz)
+  if (((SyI6(78, 121, 94, 98, 87, 78, 1))))
+    while (HGTgD9[23] or SyI6(38, 66, 32, 74, 87, 113, 78) == 10)
+      return SyI6(SyI6(26, -68, 127, 86, 81, 43, 13), 53, 121, -SyI6(73, 103, 12, 104, -57, 110, 27), 60, SyI6(20, 127, 117, 51, 30, 40, -14), -SyI6(10, 103, 83, 92, 3, 46, 89))
+    end
+    while (HGTgD9[63] > 92)
+      HGTgD9[91] = HGTgD9[29] + HGTgD9[84]
+      return (-(99))
+    end
+  end
+  SyI6(-123, 81, 78, 94, SyI6(68, 52, 54, 9, 126, 68, 72), 39, 63)
+  var Rqr1
+  SyI6(25, SyI6(105, Rqr1, Rqr1, Rqr1, Rqr1, 39, Rqr1), -12, 31, Rqr1, 46, SyI6(47, Rqr1, Rqr1, 42, 125, Rqr1, 76))
+  var CUHO[18]
+  var EQ3qz[118]
+  n9SRJm += -SyI6(120, SyI6(Rqr1, Rqr1, 11, Rqr1, 30, Rqr1, 117), 119, -Rqr1, -Rqr1, -SyI6(Rqr1, 71, Rqr1, 83, 124, Rqr1, 39), -SyI6(80, Rqr1, -0, Rqr1, 107, -56, Rqr1))
+end
+
+function y_(E93Zdb1G, OV2BnxD, HP, WZxUpU, yBoeZP0, Wh_i1J, uH)
+  return (113)
+  return -110
+  var BLucO2EC
+  BLucO2EC = SyI6(15, BLucO2EC, BLucO2EC, 42, 90, BLucO2EC, 3) <= -BLucO2EC <= -HGTgD9[-100]
+  var khLVR[69]
+  if (SyI6(BLucO2EC, 121, BLucO2EC, 107, -34, 71, 96) >= -83 >= BLucO2EC)
+    BLucO2EC =  not (SyI6(BLucO2EC, BLucO2EC, 23, 90, BLucO2EC, BLucO2EC, BLucO2EC) / -SyI6(BLucO2EC, 97, BLucO2EC, BLucO2EC, BLucO2EC, 46, -BLucO2EC))
+  end
+  while (BLucO2EC)
+    var RI
+    BLucO2EC = BLucO2EC
+    RI = y_(-44, 17, BLucO2EC, 36, 114, -47, BLucO2EC) + 122 > 64
+  end
+  var kcSYJu
+end
+
+var ZMv3q3[70]
+
+var xa = 11
+

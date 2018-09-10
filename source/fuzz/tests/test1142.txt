@@ -1,0 +1,44 @@
+# SEED 12463
+
+var _7Drojk[23]
+
+var tNXZip = 104
+
+var t7 = 86
+
+var s96lL[28]
+
+function Fj5()
+  var HX91
+  Fj5()
+  if (46 / 110 - Fj5() / tNXZip)
+    Fj5()
+    var LZYL7[56]
+    if ((Fj5()) / 104)
+      return HX91 / Fj5()
+      while (tNXZip)
+        var n2M9
+      end
+      while (LZYL7[LZYL7[121]])
+        var mdW4
+        while (s96lL[t7 == tNXZip])
+        end
+        var iSHd3i = t7
+      end
+    end
+    if ((107))
+      return (t7 + 59)
+    end
+  end
+  while ( not  not  not t7 > tNXZip - HX91 == Fj5())
+    var Vcg0G4 = 55
+    _7Drojk[4] = (Fj5())
+  end
+  while ( not 80 + Fj5() - Fj5() >= tNXZip)
+    Fj5()
+  end
+  Fj5()
+end
+
+var Ibs
+

@@ -1,0 +1,53 @@
+# SEED 13283
+
+var C_Vb[18]
+
+var yBMGp[56]
+
+function lg5u(MgoQcg, SZY2, oC6Zkh_r, gilnx)
+  var bbvNn = lg5u(-113, 41, 34, 117) == 120
+  return (bbvNn / 26)
+  if (-34)
+    return yBMGp[lg5u(bbvNn, 14, 11, 110) + lg5u(21, 120, 83, bbvNn)]
+    SZY2 = lg5u(bbvNn, 123, bbvNn, 24) == 85 == yBMGp[lg5u(111, 57, 34, bbvNn)]
+  end
+  lg5u(61, 96, 100, bbvNn)
+  gilnx += bbvNn
+  return C_Vb[lg5u(bbvNn, bbvNn, bbvNn, bbvNn)]
+  return (bbvNn) - lg5u(bbvNn, bbvNn, bbvNn, bbvNn) >= lg5u(98, bbvNn, 75, 56)
+  while ((lg5u(bbvNn, bbvNn, bbvNn, bbvNn)))
+    var Gq77c
+    var SJUki[50]
+  end
+end
+
+function FjKS(WiTJL, vBIQ4U, ldz, Coo, WkI)
+  C_Vb[62] =  not (FjKS(52, 114, 47, 95, 58))
+  if (lg5u(44, 35, -100, 34) - 118 == FjKS(59, 100, 71, 90, -95))
+    if (-(-FjKS(95, 36, 60, 106, 87) == 54))
+      while (lg5u(7, 24, -106, 117) or 110 > 43)
+        var hFTQwdNZ[89]
+        lg5u(80, -104, FjKS(97, 55, 90, 95, 47), FjKS(96, 95, -3, -73, 92))
+        hFTQwdNZ[121] =  not yBMGp[-126 <= 112]
+        var Uy8Rt2_n[81]
+      end
+      var K3n8rf = lg5u(116, 83, lg5u(87, 7, -73, 116), 36)
+      var RQ1IQ = 91
+    end
+  end
+  while (yBMGp[24])
+    while ( not 75 - FjKS(21, 27, 57, -68, 58) < FjKS(27, 110, 97, 107, 96) or 86)
+    end
+  end
+  return (68 > lg5u(35, 115, 123, 10))
+  return 6 * FjKS(38, 66, 34, 54, 33) < 95 - 124
+  if (C_Vb[115])
+    return FjKS(-FjKS(70, 99, 108, 44, 124), 59, 113, -45, FjKS(34, 40, 92, -110, 44))
+    while (-lg5u(FjKS(77, 84, 59, 78, 58), FjKS(53, 55, 122, 83, 23), FjKS(1, 98, 6, 71, 95), 113))
+      var GL4hB[73]
+      var hWnY_lDW
+    end
+  end
+  lg5u(124, 6, 0, lg5u(84, 74, 51, 60))
+end
+

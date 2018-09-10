@@ -1,0 +1,4 @@
+# SEED 12417
+
+var VOmSN[85]
+

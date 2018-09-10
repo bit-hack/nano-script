@@ -1,0 +1,18 @@
+# SEED 12884
+
+var u5hY56[122]
+
+var gG64e9jE[108]
+
+var Lpo[85]
+
+function CGYMz(d2KNZm, Ej6bMO, hrSdq0bT, HUP)
+  return gG64e9jE[CGYMz(81, 56, 87, 43)] * 26 < CGYMz(-117, 65, 64, 89)
+  CGYMz(CGYMz(53, 29, 70, 127), CGYMz(55, 72, 91, 71), CGYMz(-46, -14, 14, -21), 12)
+  var pcsD
+  var fDI[100]
+  Ej6bMO = CGYMz(pcsD, 46, 35, 125) - pcsD + (CGYMz(pcsD, -107, -pcsD, 5))
+  u5hY56[103] = -CGYMz(pcsD, CGYMz(pcsD, pcsD, pcsD, 37), pcsD, 125)
+  CGYMz(53, pcsD, 92, pcsD)
+end
+

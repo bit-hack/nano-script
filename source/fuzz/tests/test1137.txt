@@ -1,0 +1,17 @@
+# SEED 12458
+
+var mCpc = 18
+
+function u8THfdjJ(yEWVw, kmV, P9)
+  return 49 and mCpc <= mCpc and -101
+  while (u8THfdjJ(-85, 11, 123) < 125 + u8THfdjJ(mCpc, mCpc, 77))
+  end
+  P9 = u8THfdjJ(u8THfdjJ(mCpc, mCpc, -mCpc), u8THfdjJ(mCpc, -99, mCpc), 88)
+  if (u8THfdjJ(73, 31, mCpc) == u8THfdjJ(89, 38, mCpc))
+    var ha3[36]
+  end
+  mCpc += u8THfdjJ(u8THfdjJ(80, mCpc, 67), u8THfdjJ(72, mCpc, 86), u8THfdjJ(mCpc, 82, mCpc))
+  return  not 87
+  u8THfdjJ(u8THfdjJ(121, 49, -64), 56, mCpc)
+end
+

@@ -1,0 +1,31 @@
+# SEED 12710
+
+var VdRcotBG
+
+var SsZpg = 20
+
+var iYZd0j0F[15]
+
+function b_(joB, Zz, tgZatWLb, Jt, KGN7, dqOaS)
+  var hMYftxio = -(99)
+  while (b_(hMYftxio, 113, -115, 98, -VdRcotBG, 23) < 30 > VdRcotBG)
+    b_(-86, hMYftxio, b_(31, 6, -95, VdRcotBG, hMYftxio, VdRcotBG), -b_(59, SsZpg, SsZpg, 120, 109, 15), -87, b_(SsZpg, hMYftxio, VdRcotBG, VdRcotBG, VdRcotBG, VdRcotBG))
+  end
+  b_(hMYftxio, -77, SsZpg, b_(SsZpg, SsZpg, 100, 75, 109, 80), 88, -VdRcotBG)
+  while ( not 45 + VdRcotBG or  not 104 - 16)
+  end
+  b_(hMYftxio, b_(59, 21, VdRcotBG, 118, 107, VdRcotBG), b_(-2, -hMYftxio, 103, VdRcotBG, SsZpg, hMYftxio), 127, -60, b_(hMYftxio, VdRcotBG, 17, VdRcotBG, VdRcotBG, SsZpg))
+  iYZd0j0F[74] = hMYftxio
+  var FJHOKC[10]
+  if (4)
+    while (91 - hMYftxio and 44)
+      Jt = 32 > VdRcotBG and -46 or 10
+    end
+    b_(SsZpg, b_(hMYftxio, 114, SsZpg, 124, -hMYftxio, 74), -10, 5, 41, SsZpg)
+    b_(hMYftxio, SsZpg, 10, b_(hMYftxio, VdRcotBG, 26, 49, hMYftxio, VdRcotBG), 27, 13)
+    b_(VdRcotBG, 59, b_(15, VdRcotBG, -SsZpg, SsZpg, 16, hMYftxio), 38, 113, b_(54, 34, VdRcotBG, 4, SsZpg, SsZpg))
+  end
+end
+
+var vw = 29
+

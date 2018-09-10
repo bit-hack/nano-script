@@ -1,0 +1,42 @@
+# SEED 13275
+
+function KdzoVmu(O7dB8Qfk, jwfZG)
+  var q20HbF1[16]
+  var i0KTm
+  i0KTm += q20HbF1[(i0KTm)]
+  if ( not q20HbF1[ not -34 <= i0KTm])
+    O7dB8Qfk += 97 and i0KTm or KdzoVmu(88, i0KTm)
+    i0KTm = KdzoVmu(KdzoVmu(35, i0KTm), KdzoVmu(97, 52))
+  end
+  jwfZG += -KdzoVmu(120, i0KTm) * KdzoVmu(i0KTm, i0KTm) >  not i0KTm
+  var h3z0nf = KdzoVmu(i0KTm, 57)
+  O7dB8Qfk = i0KTm / 121 and -h3z0nf and h3z0nf
+end
+
+function TO(T5, ld)
+  if ( not (-TO(50, 8)))
+    return 38
+    return TO(5, KdzoVmu(3, 58))
+    return 38
+  end
+  while (KdzoVmu(44, KdzoVmu(66, 61)))
+    return (TO(65, 86)) < 45 or 85
+    while (( not 78 and KdzoVmu(107, 108)))
+      KdzoVmu(KdzoVmu(17, 106), 111)
+      return ((89))
+    end
+  end
+  TO(TO(2, 120), KdzoVmu(99, -52))
+  var eNKqu[75]
+  if (119 < 67 - 35 + KdzoVmu(34, 2))
+  end
+  var vYm = -TO(76, 85) == TO(108, 7) < 1 == 25
+  return vYm
+end
+
+var xJoIW__o[62]
+
+var s_eF[62]
+
+var HBXBi9
+

@@ -1,0 +1,38 @@
+# SEED 12745
+
+var r4skPsV7[23]
+
+function Pt()
+  r4skPsV7[115] =  not Pt() or Pt() > r4skPsV7[Pt()]
+  while ((68) and Pt() / 72)
+    Pt()
+    Pt()
+    Pt()
+  end
+  if (117 and -43 or 23 < 41)
+    if (Pt() == Pt() >= Pt() / -58)
+      r4skPsV7[33] = r4skPsV7[ not 9]
+      if (-Pt())
+        while (1 <= 82 ==  not (Pt()))
+        end
+        while (Pt())
+          Pt()
+        end
+        r4skPsV7[98] = r4skPsV7[ not Pt() >= 113]
+      end
+    end
+    r4skPsV7[48] = Pt()
+  end
+  var bEyH6F3n[118]
+  return 99
+  bEyH6F3n[35] = r4skPsV7[82 and 10]
+end
+
+var izCnRP[106]
+
+var EjNv1t5F = 5
+
+var epl = 64
+
+var b1oZ5Fm[13]
+

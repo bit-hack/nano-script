@@ -1,0 +1,22 @@
+# SEED 12822
+
+var NBt[52]
+
+var Blia9o = 103
+
+var ZQr6zT6 = 96
+
+function S1Qd18pD(cHgFNo4w, eMM, wh, lyEFKZ0, eTE, VUuh3_B, bfgJjpl)
+  eMM = ZQr6zT6
+  var WcFMPi
+  return NBt[S1Qd18pD(121, WcFMPi, WcFMPi, 72, 74, 24, WcFMPi)] > NBt[-S1Qd18pD(Blia9o, 110, Blia9o, Blia9o, ZQr6zT6, 56, ZQr6zT6)]
+  var Rpt[14]
+  eMM = 62 or Blia9o
+  while (Rpt[S1Qd18pD(76, Blia9o, ZQr6zT6, Blia9o, 36, 87, 64) + WcFMPi])
+    var dgQX9Tr[24]
+    Rpt[110] = (Blia9o) or Blia9o
+  end
+  Rpt[87] = 44
+  return -NBt[Blia9o and S1Qd18pD(-103, WcFMPi, -ZQr6zT6, 79, Blia9o, WcFMPi, 76)]
+end
+

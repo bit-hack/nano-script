@@ -1,0 +1,58 @@
+# SEED 12998
+
+var k3cH[12]
+
+function u4Mc(e5, exj6, fAUtU, omYba, wXT2ng, Yp_, UCC)
+  var G1w[14]
+  u4Mc(23, 0, -127, u4Mc(69, 96, 81, 82, 0, 101, 55), u4Mc(60, -12, -83, 14, 58, 60, 111), u4Mc(26, 13, 49, 58, 76, 105, 74), 66)
+  while ( not  not G1w[u4Mc(114, 35, 99, -48, 72, 95, 110)] or u4Mc(103, 60, 100, 74, -63, 17, 110) == u4Mc(115, 41, 120, -30, 63, 72, 91))
+    var rjth[78]
+    k3cH[124] = (u4Mc(11, 26, 100, 81, -85, 127, 19) < u4Mc(3, 75, 30, 2, 71, 63, 115))
+    var zFZRsNT
+  end
+  var adlRrc6[54]
+  var kquqsM0[8]
+  var GbP_[123]
+  var BlrEu8 = (92) > u4Mc(7, 4, 95, 27, 56, 112, 117) > 69
+end
+
+function cIdg_CQ(e8V, Cu1K1p, N_f, hfKR, iM4QVW, YB)
+  while (u4Mc(103, 61, 100, 101, 98, 51, 109) / 69 * cIdg_CQ(60, 23, 95, 78, 35, -84) / 15)
+    if (-(k3cH[cIdg_CQ(10, -26, -67, 100, 63, 108)]))
+      var dTx6CxE[9]
+      u4Mc(cIdg_CQ(47, 109, 39, 34, 86, 62), u4Mc(114, 114, -1, 124, -107, 42, 8), u4Mc(122, 26, 91, 35, 62, 115, 80), u4Mc(-43, 49, -126, 90, 18, 81, 71), 31, 48, -cIdg_CQ(33, 99, 96, 40, 69, 82))
+      while (dTx6CxE[(21)])
+        return 90 + u4Mc(6, 72, 102, 21, 9, 79, 83) - 113
+        while (10 + -48)
+          var mT1ih =  not 38 < 22 - -5
+          cIdg_CQ(cIdg_CQ(16, -mT1ih, mT1ih, mT1ih, mT1ih, 28), mT1ih, cIdg_CQ(0, -114, 119, -73, 52, 72), 118, 84, mT1ih)
+          if (16)
+            return dTx6CxE[u4Mc(5, mT1ih, 51, 115, 52, mT1ih, mT1ih) or -mT1ih]
+            if (-(cIdg_CQ(mT1ih, mT1ih, mT1ih, 79, mT1ih, mT1ih)) or mT1ih < mT1ih)
+              var zsihq
+            end
+            mT1ih = 92
+          end
+        end
+      end
+    end
+    var Ly
+  end
+  var YU9db0ax = k3cH[u4Mc(7, -118, 79, 125, 42, 36, 58)] * k3cH[10]
+  var doQg2k1[62]
+  if ((-YU9db0ax) -  not  not (YU9db0ax))
+    hfKR = -YU9db0ax - YU9db0ax + YU9db0ax
+  end
+  return ( not u4Mc(YU9db0ax, YU9db0ax, 99, YU9db0ax, -YU9db0ax, YU9db0ax, 112) == YU9db0ax)
+  u4Mc(119, u4Mc(66, YU9db0ax, 55, 47, 55, YU9db0ax, YU9db0ax), u4Mc(YU9db0ax, 10, YU9db0ax, 46, YU9db0ax, 42, YU9db0ax), cIdg_CQ(YU9db0ax, YU9db0ax, 71, YU9db0ax, 62, 16), YU9db0ax, YU9db0ax, 102)
+  u4Mc(u4Mc(61, YU9db0ax, YU9db0ax, YU9db0ax, -YU9db0ax, YU9db0ax, YU9db0ax), -44, cIdg_CQ(121, YU9db0ax, -YU9db0ax, YU9db0ax, YU9db0ax, -YU9db0ax), YU9db0ax, 42, YU9db0ax, 89)
+end
+
+var xwmi[34]
+
+var dfc[95]
+
+var mB3o[61]
+
+var k5vmJhIR[115]
+

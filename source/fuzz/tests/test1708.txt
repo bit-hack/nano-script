@@ -1,0 +1,14 @@
+# SEED 13029
+
+var dOqHKj[2]
+
+function i83Z(Cxl9)
+  while (i83Z(61))
+    var x_MZu[69]
+  end
+  var Earf[54]
+  dOqHKj[11] = ( not (i83Z(78)))
+  return -Earf[i83Z(20)] >= i83Z(-70)
+  var EYwv[32]
+end
+

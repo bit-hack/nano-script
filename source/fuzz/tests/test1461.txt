@@ -1,0 +1,46 @@
+# SEED 12782
+
+var a9Nb[106]
+
+function Zfs6(Ozl9ekDn, HY_g5Pj8, vegnyM, Ya5ICaVm, pEnfX, ExL1W, a9Y)
+  var l55C = a9Nb[Zfs6(79, 120, 28, 55, 98, 64, 98) <= -Zfs6(120, 76, 38, 42, 18, 30, 55)]
+  while (a9Nb[40 * Zfs6(12, l55C, l55C, -l55C, 82, 0, l55C)])
+    var eP = Zfs6(76, Zfs6(l55C, 56, l55C, 96, 34, l55C, 47), l55C, l55C, l55C, 29, l55C)
+    eP = Zfs6(-61, 25, 40, l55C, l55C, eP, l55C) == Zfs6(eP, l55C, l55C, l55C, l55C, 55, l55C)
+  end
+  a9Nb[10] = l55C == 123
+  vegnyM = 95 and Zfs6(59, 64, l55C, 88, l55C, 67, 70) - Zfs6(43, l55C, l55C, 7, 125, l55C, l55C)
+  HY_g5Pj8 += l55C * 64 - Zfs6(99, l55C, l55C, l55C, l55C, 64, l55C)
+  if ( not  not (66) > -Zfs6(45, l55C, 120, -l55C, l55C, 25, l55C))
+    var zq2DH
+    var d1Bc9l8U[45]
+    ExL1W += 107 <= l55C >= d1Bc9l8U[Zfs6(63, 12, 120, zq2DH, -16, zq2DH, zq2DH)]
+  end
+  var h90A4K[47]
+  var RgB7Kgnv = l55C and 78 > l55C
+end
+
+function Ltdp(qs7, fOha, Fmfytxs, WbiNXSF, EP85, ae)
+  if (48 == Zfs6(77, 48, 20, 9, 76, 49, 113) >= Zfs6(101, 90, 112, 61, 39, 76, 52))
+  end
+  while (Ltdp(Ltdp(53, -121, 5, 52, 106, 121), 0, 112, Ltdp(-100, 72, 98, 80, 29, 65), Ltdp(67, 113, 35, 122, 113, 71), Ltdp(8, 20, 15, 108, 85, 9)))
+    while (Zfs6(37, 97, 113, 69, 20, 108, 96) * -89 < -Ltdp(48, 47, 27, 91, 118, 94))
+    end
+    return Zfs6(56, -125, -33, 23, 102, 36, 21) or 44 >= Ltdp(107, 65, 125, 122, 79, 8)
+  end
+  var YmS =  not  not  not 71 - Ltdp(121, 92, 3, -28, 86, 105) or -(-72)
+  var niSpuA = YmS + 35 <= Ltdp(35, YmS, 17, 85, 20, YmS)
+  var Gph9se8E
+  a9Nb[77] = 16 >= Gph9se8E - Zfs6(27, 35, 62, Gph9se8E, 44, Gph9se8E, YmS)
+  Ltdp(Ltdp(91, 104, -niSpuA, 76, YmS, YmS), Gph9se8E, 69, YmS, 117, Zfs6(YmS, 91, 88, 87, 114, Gph9se8E, 8))
+  return (Zfs6(25, niSpuA, YmS, Gph9se8E, niSpuA, YmS, Gph9se8E)) or niSpuA
+end
+
+var uh4xzb[61]
+
+var R8JIP
+
+var YOoUY
+
+var Gdz0c = 100
+

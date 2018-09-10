@@ -1,0 +1,73 @@
+# SEED 13222
+
+var Qz[65]
+
+var SX24[36]
+
+function akL(R6BXjk, bFl17rQ, fOK, UXa, SP9, OwP, Cxo)
+  if (12)
+  end
+  akL(akL(69, -65, 102, 50, 33, 59, 4), akL(-108, 119, -36, 88, 106, 123, 107), 111, akL(122, 80, 56, 124, 60, 36, 36), 30, -akL(75, -103, 83, 30, 84, 34, 95), 87)
+  var QQv[113]
+  while (QQv[(98)])
+    if (SX24[23 - akL(87, 106, 124, 72, 46, 122, 112)])
+    end
+    var VXe
+    var FEk = VXe <= VXe == VXe
+    if (VXe or akL(97, 10, VXe, 28, 31, 94, FEk))
+      VXe += QQv[VXe > FEk]
+      return -akL(akL(VXe, VXe, 52, 116, 7, 99, 54), 58, 60, 54, akL(FEk, VXe, 100, 23, VXe, 50, -52), -71, -akL(FEk, FEk, FEk, 105, 48, 72, 112))
+    end
+  end
+  akL(akL(72, -18, 117, 63, 80, 122, 64), akL(110, 15, 122, 14, 125, 119, 78), akL(-55, -105, 82, 8, 78, 7, 100), akL(58, 122, 14, -25, 38, 52, 53), 30, akL(37, 66, 22, 51, 24, 29, 5), -akL(127, 13, 55, 29, 92, 46, 3))
+  var xtApTcDi[50]
+end
+
+var MwN[97]
+
+function xM2(Eps, O99ERv8J, Y2duZ0, ARY, mKmR, pAxR, RVLaS)
+  var eJsbjo[12]
+  return (xM2(59, 20, 1, 25, 123, 64, 19))
+  var IUGQFV
+  var SEEP[28]
+  var Mhb
+  return IUGQFV
+  var ImHWU[12]
+end
+
+function TTprH(ZQzD1Nz, btob9)
+  while (( not 47))
+    var Cm7[123]
+    Cm7[33] = Cm7[TTprH(-69, 113) and TTprH(-64, 31)]
+  end
+  while (103 <  not -akL(43, 125, 100, 78, 57, 34, 30) and xM2(26, 7, 13, -95, 7, 109, 112))
+    xM2(TTprH(104, 54), akL(4, 90, 120, -55, 24, -80, 33), 123, 98, 83, akL(44, 0, 7, 83, 99, 2, 57), 126)
+    var xz[100]
+    while (akL(79, 122, 91, 68, 13, 53, 65) / 29 == 74 + 82)
+      while ( not (65) / 62 - xM2(50, 72, 52, 97, 48, 126, 122))
+        if (( not xM2(11, 103, 49, 50, 50, 127, 31) - 100))
+        end
+        akL(xM2(35, 16, 45, 110, 11, 77, 109), 65, 99, TTprH(45, 86), TTprH(66, 69), xM2(29, 1, 62, 53, 117, 60, 61), TTprH(63, 19))
+        return  not 88
+      end
+      return 48 or xM2(10, 21, 53, 52, 110, 115, 79) > 87 or TTprH(-10, 116)
+      TTprH(62, 18)
+    end
+    Qz[119] =  not  not akL(13, 18, -52, 66, 41, 123, 14) - xM2(52, -32, 105, -66, 96, 105, -86) <= 64
+  end
+  akL(TTprH(113, 92), -akL(38, 71, 34, 11, 81, 96, 100), akL(109, 91, 69, 11, 38, -3, 90), -75, 88, TTprH(81, -79), TTprH(46, 89))
+  return MwN[ not  not -(5)]
+  if ( not (TTprH(88, 29)) >  not akL(18, 64, 14, 58, 78, 117, -45) >= 0)
+    var p0m = SX24[76]
+    var eY1S[65]
+    var KbQycmBn[59]
+    return akL(p0m, 80, akL(p0m, p0m, 25, 92, 57, -46, 110), p0m, akL(p0m, 58, p0m, p0m, -p0m, 114, 116), 27, TTprH(56, 73))
+    ZQzD1Nz = SX24[MwN[TTprH(p0m, p0m)]]
+  end
+  TTprH(10, 81)
+  return  not 16
+  var Ob2V1[78]
+end
+
+var kR = 110
+

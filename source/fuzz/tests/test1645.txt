@@ -1,0 +1,40 @@
+# SEED 12966
+
+function so2nz(vT0P0D, Gr)
+  var kq[13]
+  var aa[59]
+  if ((-19 == so2nz(59, 91)))
+    while (aa[so2nz(122, 124)] < (so2nz(53, 61)))
+      while (so2nz(29, 75) < so2nz(14, 55) or so2nz(58, 115) <= 43)
+        so2nz(so2nz(126, 18), so2nz(2, 74))
+        if (( not 7 < 101))
+          if (-58)
+          end
+          while ( not (so2nz(-25, 49)) > kq[66])
+            so2nz(77, 113)
+            if (so2nz(52, 37) == so2nz(15, 68))
+              var Bpl0o = so2nz(so2nz(-118, 33), 50)
+              var A3r[24]
+            end
+            aa[97] = 14 or -so2nz(45, -42) > (so2nz(-18, 5))
+          end
+          while (-51 + 28 > so2nz(22, 3))
+            so2nz(23, so2nz(107, 109))
+          end
+        end
+      end
+    end
+    so2nz(so2nz(37, 26), 26)
+  end
+  while (102 - so2nz(41, 118) <= kq[-98])
+    var VF[8]
+    var YNfM = so2nz(so2nz(11, 22), 109)
+    return YNfM
+  end
+  return ( not 109)
+  return (so2nz(98, 27) and so2nz(92, 78))
+  aa[24] = 18 * 109 or (so2nz(85, 72))
+end
+
+var Vd = 12
+

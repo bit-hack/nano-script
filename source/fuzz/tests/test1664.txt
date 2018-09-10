@@ -1,0 +1,15 @@
+# SEED 12985
+
+function Lamegg(ChS0e, HhP97zuL, C4lF0, k7S, yRx4B6iv)
+  var sWvRA = 43 - Lamegg(40, 56, 19, 19, 81) < Lamegg(48, 78, 60, 52, 85) or Lamegg(118, 120, 103, 48, 84)
+  Lamegg(Lamegg(sWvRA, 62, 82, 59, -12), 57, 56, 50, sWvRA)
+  while (-sWvRA * -Lamegg(sWvRA, -63, sWvRA, 19, sWvRA))
+  end
+  return Lamegg(Lamegg(38, 7, sWvRA, 96, 77), 119, 119, sWvRA, sWvRA)
+  var HF = 92 > sWvRA <= Lamegg(sWvRA, 26, sWvRA, sWvRA, 48)
+end
+
+var ATO4[114]
+
+var bogk[31]
+

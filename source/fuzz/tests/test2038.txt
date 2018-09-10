@@ -1,0 +1,19 @@
+# SEED 13359
+
+var dTp[99]
+
+var Pkt1V = 89
+
+function LeviS(Y4697W, gn, LpV6G9J, iKWOP, KEY, jfqy)
+  Pkt1V =  not 102
+  Pkt1V += dTp[94] and 121
+  var l3ZtLzn
+  iKWOP += 31
+  LeviS(Pkt1V, Pkt1V, 53, LeviS(52, l3ZtLzn, -Pkt1V, -l3ZtLzn, Pkt1V, Pkt1V), Pkt1V, Pkt1V)
+  KEY = LeviS(Pkt1V, 46, Pkt1V, 82, -l3ZtLzn, -40) or LeviS(29, 63, Pkt1V, 121, 20, 127) * 56 >= 101
+  dTp[125] = 125
+  var c0qMBnV5[56]
+end
+
+var Yfx1X[89]
+

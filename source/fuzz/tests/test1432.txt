@@ -1,0 +1,39 @@
+# SEED 12753
+
+function v56ZS(fB8vM72t, oYKUni, PQEmk, SJWAoTx, S7mqV, apWGwF, IDZv9slJ)
+  var gkVxZMAw[120]
+  var TOyfdFHj[100]
+  if (TOyfdFHj[32])
+  end
+  TOyfdFHj[104] = gkVxZMAw[v56ZS(33, 20, 24, 122, 22, 104, 117)]
+  v56ZS(42, v56ZS(109, 28, 27, 7, 52, 9, 49), v56ZS(120, 20, 126, 106, 126, 24, 56), 46, 58, v56ZS(60, 90, 2, 45, 102, 96, 83), v56ZS(73, 73, 36, 123, 52, 124, 121))
+  var I4ZyoRI[23]
+end
+
+function Wiy1bTfz(jUBiYO)
+  var pBP45D[107]
+  if (2)
+    while (pBP45D[Wiy1bTfz(59)] >  not 27 == 116)
+      var R85ZfMAr[25]
+      pBP45D[4] = 70 or Wiy1bTfz(89) - R85ZfMAr[Wiy1bTfz(16)]
+      var hh_[60]
+      var zm[63]
+    end
+    var LjaCdRFv[101]
+    while (124)
+      var cLv =  not  not (98 == 26)
+      while (v56ZS(cLv, cLv, 48, -cLv, cLv, cLv, 116) > 78 - Wiy1bTfz(cLv))
+        jUBiYO += 8 - 13 + v56ZS(cLv, -13, cLv, 76, cLv, cLv, -cLv)
+      end
+    end
+  end
+  Wiy1bTfz(Wiy1bTfz(-43))
+  var uAq = v56ZS(v56ZS(79, 18, 77, 70, 105, 110, 71), 50, 18, 17, -113, Wiy1bTfz(96), v56ZS(77, 15, 109, 10, 75, 36, 93))
+  if (( not pBP45D[uAq]))
+    Wiy1bTfz(v56ZS(70, 98, 101, uAq, uAq, 125, uAq))
+    return  not (uAq) == (23)
+    v56ZS(Wiy1bTfz(84), Wiy1bTfz(21), uAq, 5, uAq, v56ZS(7, uAq, -55, 65, 66, 15, uAq), 51)
+    pBP45D[84] =  not uAq
+  end
+end
+

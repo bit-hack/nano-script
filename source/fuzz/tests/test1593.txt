@@ -1,0 +1,77 @@
+# SEED 12914
+
+var QjZWAW[8]
+
+var yP_
+
+function jxaB(lG8CTKjy, DJ, pMXdRb4, eE_txbFt, _38PPRPJ, HpUN)
+  QjZWAW[32] = -jxaB(yP_, jxaB(31, yP_, 122, 106, 118, -94), yP_, 115, jxaB(84, yP_, yP_, 80, yP_, 88), 101)
+  while (jxaB(yP_, 33, 79, yP_, 8, jxaB(yP_, yP_, yP_, 54, 74, 2)))
+    yP_ = yP_
+  end
+  return yP_ == -QjZWAW[yP_]
+  return jxaB(99, 75, yP_, 121, -124, -96) > jxaB(yP_, 85, 95, yP_, yP_, yP_) - 58 + 49
+  var c8mUE = 63
+  DJ = (yP_) == jxaB(-66, 11, c8mUE, 59, c8mUE, yP_) and jxaB(77, -8, yP_, c8mUE, 42, 6)
+  HpUN = yP_ <= yP_ < 29 == -jxaB(44, 56, yP_, c8mUE, 78, yP_)
+  if (QjZWAW[jxaB(yP_, c8mUE, c8mUE, yP_, 8, -30) + 97])
+    var WAjHS4x[32]
+    var IDf
+    c8mUE += 117
+  end
+end
+
+var jBWC = 106
+
+function ktDNc(cHF980i)
+  QjZWAW[102] = QjZWAW[jxaB(jBWC, jBWC, yP_, jBWC, 37, 70)] <= -(-jBWC)
+  if (jBWC)
+    jxaB(-ktDNc(-yP_), 28, -jxaB(32, yP_, 127, 116, yP_, jBWC), 82, 112, jxaB(yP_, -yP_, jBWC, -0, -yP_, 57))
+    QjZWAW[17] = -35 <  not yP_ >= yP_
+    if (jBWC / jxaB(109, 31, yP_, jBWC, -jBWC, -89) <= 90 >= yP_)
+      var lG[73]
+    end
+    cHF980i = ktDNc(jBWC) < 100 * (-ktDNc(43))
+  end
+  return 47 == 126 > ktDNc(jBWC) >= 57
+  var zzx = QjZWAW[jxaB(yP_, jBWC, 77, yP_, yP_, jBWC) == yP_]
+  while (QjZWAW[-58])
+    jBWC += jxaB(98, jBWC, 127, ktDNc(120), jxaB(-jBWC, 48, jBWC, 84, zzx, yP_), -jxaB(yP_, 44, 118, -jBWC, -13, 11))
+    cHF980i = ktDNc(yP_)
+    while ((44 >= 31))
+      var dtn5G54 = 38 or zzx and QjZWAW[ktDNc(55)]
+      while (-dtn5G54 + -jBWC)
+      end
+      return 113
+      while ((zzx))
+        return -QjZWAW[zzx] < -8
+        var wZ[116]
+      end
+      jBWC =  not QjZWAW[jBWC or 87]
+    end
+  end
+  jBWC += 43 > yP_ or QjZWAW[zzx]
+  cHF980i += (zzx == 124)
+  zzx += (83) / QjZWAW[jxaB(121, 24, yP_, jBWC, yP_, jBWC)]
+end
+
+var cygPDJIC[70]
+
+function g41(UEhjIx_Q, BE, Fr, FP6Cyb, yI)
+  var xuRKgEN[48]
+  if (yP_)
+  end
+  return  not  not yP_
+  xuRKgEN[4] = ktDNc(jBWC)
+  BE += g41(jxaB(102, yP_, 106, 57, 48, 46), 59, ktDNc(47), 8, jxaB(35, 58, 78, 78, yP_, 106))
+  var RnFU[64]
+  while ( not -RnFU[5])
+    ktDNc(g41(102, yP_, jBWC, jBWC, yP_))
+    return yP_ < jBWC >= xuRKgEN[jBWC]
+    UEhjIx_Q += 2 - cygPDJIC[5]
+  end
+  var wU = yP_ >= 81 /  not g41(-yP_, -yP_, yP_, yP_, yP_)
+end
+
+var CI6xAD = 37
+

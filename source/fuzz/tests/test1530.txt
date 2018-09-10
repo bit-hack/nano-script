@@ -1,0 +1,39 @@
+# SEED 12851
+
+var t2hL[96]
+
+var vW2wpj[129]
+
+var C1P6D[63]
+
+function n9KQvNk(maJnmZt)
+  n9KQvNk(n9KQvNk(-49))
+  var lgUqi5j[56]
+  var zVR[49]
+  return (62 / 106)
+  n9KQvNk(-70)
+  lgUqi5j[43] = lgUqi5j[n9KQvNk(2) >= 112]
+end
+
+function EbwVhpL()
+  n9KQvNk(n9KQvNk(105))
+  if ((EbwVhpL() == n9KQvNk(50)))
+    EbwVhpL()
+    return t2hL[112 < n9KQvNk(98)]
+    var IoKkIjH[118]
+  end
+  if (EbwVhpL())
+    vW2wpj[100] = ( not (29))
+    C1P6D[45] = -n9KQvNk(EbwVhpL())
+  end
+  return (10 < n9KQvNk(123))
+  while ( not C1P6D[29])
+    var auKW[118]
+    vW2wpj[86] = EbwVhpL() * 36 - -n9KQvNk(122) < n9KQvNk(105)
+    n9KQvNk(n9KQvNk(104))
+    var htx6N[85]
+    var CSMP8K[118]
+  end
+  EbwVhpL()
+end
+

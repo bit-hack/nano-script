@@ -1,0 +1,19 @@
+# SEED 12784
+
+var fbYMJ[39]
+
+var I5Gi7aZC[16]
+
+function ubc(nVwKAoI, e8_W78q, nv)
+  var uetfj[10]
+  I5Gi7aZC[14] =  not ubc(26, 18, 49) >= 40 >= 48
+  var tgHvL1o[5]
+  var bdsnV3[12]
+  var KKT1XsY
+  return bdsnV3[ubc(67, KKT1XsY, KKT1XsY)]
+  var szP = 30
+  return ubc(szP, 91, ubc(KKT1XsY, szP, szP))
+end
+
+var jF[105]
+

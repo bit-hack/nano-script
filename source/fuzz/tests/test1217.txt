@@ -1,0 +1,44 @@
+# SEED 12538
+
+function qd(GS8jwrB, arzsG, AqBu, sQlp, f3)
+  var J2
+  if (-(25))
+    var e36A9 = -qd(J2, qd(J2, 20, 45, J2, 119), qd(J2, 0, J2, 95, J2), -15, qd(-17, 63, -18, J2, 107))
+  end
+  var ZDgDgRJ[108]
+  J2 += (105 < qd(J2, 4, J2, 112, 10))
+  if (29 > J2 <= -72)
+    var pyfu
+    ZDgDgRJ[29] = 77 > 79 >  not -qd(97, 35, pyfu, 44, 13) and 57
+    var Jj_BRA9 = (20) or pyfu <= 53
+    if ( not ZDgDgRJ[-J2])
+    end
+    qd(52, J2, qd(pyfu, 112, 92, J2, 33), J2, J2)
+  end
+  while (81)
+    f3 += ZDgDgRJ[J2]
+  end
+  J2 = 44 + 96 < J2
+  J2 += qd(25, 24, J2, 106, J2)
+end
+
+var eWcKeFqE = 94
+
+var eTUSkHR
+
+var s0SnS8 = 121
+
+var ikuP3x[46]
+
+function Bka(dy, s7pImp, UQicT0R, BYP8, AWy, tfg)
+  var LrW =  not  not Bka(27, 62, eTUSkHR, eTUSkHR, -Bka(120, s0SnS8, s0SnS8, 83, eWcKeFqE, 76), s0SnS8)
+  var dv5TQY1_
+  qd(-s0SnS8, qd(100, eTUSkHR, LrW, 29, eWcKeFqE), dv5TQY1_, eTUSkHR, 20)
+  return ikuP3x[Bka(LrW, dv5TQY1_, s0SnS8, eTUSkHR, eTUSkHR, 82) > 89]
+  var RuPuk[87]
+  while (-eWcKeFqE)
+  end
+  var vPcg9[120]
+  return (Bka(eWcKeFqE, eWcKeFqE, 123, s0SnS8, 16, 10))
+end
+

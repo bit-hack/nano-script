@@ -1,0 +1,32 @@
+# SEED 12837
+
+var ON
+
+var OV[48]
+
+function BNPrbQXL(sqX)
+  while (OV[ not ON > ON])
+    BNPrbQXL(ON)
+    BNPrbQXL(50)
+    return 68 >= BNPrbQXL(ON) >= ON
+    while (BNPrbQXL(-ON) + ON == 37 - ON)
+      if (45)
+        BNPrbQXL(ON)
+        var aXwU4vRy = 71
+        sqX += (BNPrbQXL(aXwU4vRy) <= BNPrbQXL(31))
+      end
+    end
+  end
+  var uyvVzRC
+  if (35 + -uyvVzRC == BNPrbQXL(38))
+    BNPrbQXL(uyvVzRC)
+    uyvVzRC += ((ON))
+    sqX = ((BNPrbQXL(ON)))
+  end
+  var W3ss3[45]
+  var bB1
+  sqX += ON
+  W3ss3[53] = uyvVzRC or BNPrbQXL(ON) + BNPrbQXL(bB1)
+  var w9Rms2r = (uyvVzRC) < BNPrbQXL(bB1)
+end
+

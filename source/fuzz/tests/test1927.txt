@@ -1,0 +1,103 @@
+# SEED 13248
+
+var rx9ELP
+
+var qjKK7Vt = 118
+
+function Dy(iwYfC, oKU, i2)
+  var QXxSMPj9 =  not 6
+  while ((Dy(rx9ELP, 106, qjKK7Vt) == QXxSMPj9))
+    if ( not -qjKK7Vt)
+    end
+  end
+  while (rx9ELP == 33)
+    QXxSMPj9 = 127
+    while ((55 or qjKK7Vt))
+      Dy(Dy(qjKK7Vt, 95, rx9ELP), rx9ELP, 68)
+      var X4sVs
+      var Yu2
+      if ((-101) < 50)
+        var neD8IA[49]
+      end
+      while (110)
+        var mBNBTFn[52]
+        mBNBTFn[62] = 39
+        if (Yu2 / Dy(-X4sVs, rx9ELP, -80) / Dy(QXxSMPj9, 67, 75))
+          mBNBTFn[67] = 89
+          QXxSMPj9 = Dy(-Dy(10, Yu2, QXxSMPj9), Dy(25, Yu2, QXxSMPj9), qjKK7Vt)
+          if (Dy(X4sVs, X4sVs, Yu2) or mBNBTFn[67])
+            var PsZ7_[38]
+          end
+        end
+        Dy(QXxSMPj9, rx9ELP, Yu2)
+      end
+    end
+    return Dy(qjKK7Vt, QXxSMPj9, 27)
+    while ((-Dy(-69, 23, -qjKK7Vt)) >= Dy(80, QXxSMPj9, rx9ELP) or Dy(QXxSMPj9, QXxSMPj9, qjKK7Vt))
+      var kYJx[72]
+      i2 = QXxSMPj9 or Dy(16, rx9ELP, rx9ELP) * 121
+      Dy(58, rx9ELP, 12)
+      while (kYJx[Dy(86, -qjKK7Vt, -QXxSMPj9) > Dy(qjKK7Vt, 11, rx9ELP)])
+        while (Dy(QXxSMPj9, rx9ELP, 96) +  not Dy(87, 15, 120))
+          rx9ELP += 73
+        end
+        if (Dy(-88, -qjKK7Vt, -QXxSMPj9) >= qjKK7Vt >= kYJx[QXxSMPj9])
+          oKU =  not  not 1 - rx9ELP / -kYJx[28]
+        end
+      end
+    end
+    var CTKCsD0[93]
+  end
+  oKU += (-28 > Dy(102, rx9ELP, qjKK7Vt))
+  Dy(32, -Dy(109, 93, 4), QXxSMPj9)
+  while (qjKK7Vt)
+    var dTYNN
+    while ( not (QXxSMPj9))
+      var Mz1Smg = Dy(87, qjKK7Vt, Dy(-21, 43, 8))
+      while (dTYNN >= Dy(10, dTYNN, Mz1Smg) >= 18)
+        if (Dy(Dy(rx9ELP, -58, QXxSMPj9), -Dy(QXxSMPj9, 46, 120), Mz1Smg))
+          iwYfC += Dy(120, -Mz1Smg, -Mz1Smg) > 119 / 14 * -85
+        end
+      end
+      Dy(rx9ELP, 89, rx9ELP)
+    end
+    Dy(Dy(73, 77, 17), Dy(73, 93, rx9ELP), Dy(QXxSMPj9, dTYNN, rx9ELP))
+    oKU += Dy(Dy(70, 18, rx9ELP), rx9ELP, rx9ELP)
+  end
+end
+
+function co(HFMeo)
+  Dy(rx9ELP, qjKK7Vt, 66)
+  var oZsp7P
+  var M1
+  return 112 < co(72)
+  Dy(qjKK7Vt, M1, 63)
+  var gqiI = Dy(114, Dy(65, 35, oZsp7P), M1)
+  var BqIXV[23]
+  if (rx9ELP or M1)
+    while (gqiI)
+    end
+    HFMeo += qjKK7Vt > (rx9ELP)
+    co(rx9ELP)
+    HFMeo +=  not oZsp7P and rx9ELP >= rx9ELP
+  end
+end
+
+var Zfx73hJ = 56
+
+function QII()
+  co(Dy(110, rx9ELP, 25))
+  if ( not 107 or (Zfx73hJ))
+    while (52)
+      while (co(qjKK7Vt) and Dy(69, 70, -19) > co(rx9ELP))
+        var xVQGm[127]
+        var v9 = co(114) + 75 - QII() * Dy(qjKK7Vt, 95, 73)
+        var TXP23r[78]
+      end
+    end
+  end
+  return -(rx9ELP or 40)
+  co(QII())
+  QII()
+end
+

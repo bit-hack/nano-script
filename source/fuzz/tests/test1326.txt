@@ -1,0 +1,46 @@
+# SEED 12647
+
+var A6e = 110
+
+var d5A = 64
+
+function w9L0(g3, VQZq, BZaIsQYo, yiKZgN, Zg45EK, bm3_x, APQ_I2)
+  while (-w9L0(68, 80, 28, d5A, 21, A6e, d5A))
+    var sZ_D
+    w9L0(-A6e, sZ_D, 35, w9L0(126, A6e, -A6e, 34, sZ_D, A6e, sZ_D), A6e, sZ_D, 23)
+    A6e += -w9L0(-71, 105, 25, -A6e, 38, 78, 103) >= w9L0(d5A, sZ_D, sZ_D, 69, A6e, A6e, d5A) - d5A < A6e
+    var g98 = 82
+  end
+  while (A6e and 64 <= w9L0(d5A, 77, 115, -64, 91, 31, 90) <= A6e)
+    if (107 * 72 and A6e - 70)
+      A6e = (106 - w9L0(56, A6e, 24, -127, A6e, d5A, A6e))
+    end
+    return d5A - 53 >= w9L0(A6e, A6e, 70, 74, A6e, 91, A6e)
+  end
+  var Nt6xwXDc[8]
+  while ( not 110 + 39 + (d5A))
+  end
+  return (w9L0(75, A6e, 52, d5A, A6e, 29, A6e))
+  A6e = 87 - 25 and A6e
+  if ( not A6e > 110 + w9L0(40, A6e, d5A, d5A, d5A, 19, A6e))
+    var coCL[65]
+  end
+  return 109 <= w9L0(92, 54, A6e, 48, d5A, 75, d5A) > d5A - 80
+end
+
+var HdQEz
+
+function HCx(hDfS0c9W, U2q, Q52n, SC7G7, agWBasQJ)
+  return 127 * HCx(98, A6e, 10, 71, 77) + d5A == 119
+  var y0NoCKkK
+  return w9L0(0, 17, y0NoCKkK, 109, HdQEz, A6e, y0NoCKkK) / w9L0(A6e, -95, y0NoCKkK, A6e, 122, y0NoCKkK, d5A) <= A6e == HCx(29, 68, HdQEz, -A6e, 33)
+  var wu6[37]
+  hDfS0c9W += y0NoCKkK * HdQEz
+  var pD0xyq[4]
+  while (HCx(98, 70, -d5A, 8, y0NoCKkK) == HdQEz or 76)
+    var LLdJ6Hn = w9L0(w9L0(122, 10, 41, 11, 117, HdQEz, HdQEz), w9L0(A6e, A6e, d5A, 84, y0NoCKkK, 73, y0NoCKkK), HdQEz, d5A, A6e, w9L0(-y0NoCKkK, 73, 11, 2, 44, d5A, -HdQEz), HCx(y0NoCKkK, -84, HdQEz, 24, 44))
+    var xdxAIw[17]
+  end
+  var GzqMP6ec[28]
+end
+

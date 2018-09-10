@@ -1,0 +1,15 @@
+# SEED 13062
+
+function A95F(I4, KKDFu, zJykz, vwcR8, DoVND)
+  A95F(A95F(67, -37, 25, 99, 0), 113, 100, 113, A95F(93, 14, 91, 47, 72))
+  var weQlwkC
+  return  not  not 90 - (A95F(weQlwkC, weQlwkC, -weQlwkC, -1, 10))
+  weQlwkC =  not A95F(41, weQlwkC, weQlwkC, 26, -weQlwkC) / weQlwkC >= -28 == weQlwkC
+end
+
+var Dfj[61]
+
+var ZFUdjxGS = 21
+
+var p5 = 60
+

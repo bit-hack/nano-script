@@ -1,0 +1,47 @@
+# SEED 12943
+
+var rZ[13]
+
+var sQ5F7q0
+
+var mhl8[94]
+
+var P_T[114]
+
+function E2K(w_Bz4yiC, GpE, cd2, lp, XUz96y)
+  GpE +=  not E2K(101, sQ5F7q0, sQ5F7q0, 62, sQ5F7q0) == -E2K(-sQ5F7q0, 84, sQ5F7q0, sQ5F7q0, sQ5F7q0) <= 108
+  cd2 = mhl8[39 + 121]
+  E2K(sQ5F7q0, -62, -sQ5F7q0, E2K(sQ5F7q0, sQ5F7q0, 28, 114, sQ5F7q0), E2K(94, sQ5F7q0, 80, sQ5F7q0, sQ5F7q0))
+  E2K(119, sQ5F7q0, sQ5F7q0, -sQ5F7q0, 58)
+  E2K(E2K(126, 112, sQ5F7q0, sQ5F7q0, 56), sQ5F7q0, 56, sQ5F7q0, 91)
+  GpE =  not E2K(35, -114, 82, sQ5F7q0, 33) - sQ5F7q0 or (116)
+  sQ5F7q0 = 48
+  return rZ[125]
+end
+
+function woU(JAq, hnEKOPG, xTT1T, jthMcBt)
+  sQ5F7q0 += -sQ5F7q0
+  if (67 or -woU(108, 34, 121, sQ5F7q0) < mhl8[sQ5F7q0])
+    mhl8[50] = 95
+    E2K(sQ5F7q0, sQ5F7q0, woU(sQ5F7q0, 60, sQ5F7q0, -sQ5F7q0), E2K(sQ5F7q0, sQ5F7q0, -sQ5F7q0, sQ5F7q0, 62), woU(sQ5F7q0, 41, 59, sQ5F7q0))
+    sQ5F7q0 += sQ5F7q0 <= -E2K(sQ5F7q0, 2, sQ5F7q0, 82, sQ5F7q0) <= E2K(sQ5F7q0, 52, sQ5F7q0, sQ5F7q0, sQ5F7q0)
+    jthMcBt = 8 and woU(sQ5F7q0, 67, sQ5F7q0, -19) == 66
+  end
+  var kJhP[125]
+  sQ5F7q0 = E2K(90, sQ5F7q0, sQ5F7q0, 30, 127) <  not sQ5F7q0
+  P_T[19] = ((111))
+  while ( not (101) * E2K(5, sQ5F7q0, 24, sQ5F7q0, 3))
+    JAq += sQ5F7q0 / (E2K(sQ5F7q0, 79, sQ5F7q0, 0, sQ5F7q0))
+    var YMK = 74
+  end
+  while (50)
+    sQ5F7q0 += (75) < mhl8[36]
+    var _aPJHp
+    return  not sQ5F7q0
+    if ( not woU(50, 112, 5, sQ5F7q0) + woU(38, 69, _aPJHp, _aPJHp) >= (83))
+    end
+    rZ[90] = 14
+  end
+  E2K(sQ5F7q0, sQ5F7q0, E2K(sQ5F7q0, 9, sQ5F7q0, 86, sQ5F7q0), 89, woU(sQ5F7q0, sQ5F7q0, sQ5F7q0, sQ5F7q0))
+end
+

@@ -1,0 +1,36 @@
+# SEED 12841
+
+var ruu029DX[43]
+
+var mNr7Sr8W = 14
+
+function l8imbmd(baTKhfb)
+  ruu029DX[65] =  not l8imbmd(-mNr7Sr8W) <= l8imbmd(mNr7Sr8W) < mNr7Sr8W
+  baTKhfb += mNr7Sr8W
+  var lwDBAs[103]
+  while (lwDBAs[l8imbmd(mNr7Sr8W)] * 72)
+    var awpJOz = lwDBAs[mNr7Sr8W] and -l8imbmd(mNr7Sr8W) == 4
+    mNr7Sr8W = ruu029DX[116]
+  end
+  l8imbmd(99)
+  while (lwDBAs[83] or 75)
+    mNr7Sr8W += -l8imbmd(-mNr7Sr8W) >= 85 or  not mNr7Sr8W > mNr7Sr8W
+    var Wno
+    var kY = 30
+    ruu029DX[23] = l8imbmd(Wno) * Wno - 91 <= -mNr7Sr8W
+    if (lwDBAs[l8imbmd(71)] and 58)
+      var _SlG[90]
+      var EG[100]
+      EG[68] = mNr7Sr8W
+    end
+  end
+  return -71
+  baTKhfb = (16) / -l8imbmd(mNr7Sr8W)
+end
+
+var WzZmFu6[89]
+
+var f5t[90]
+
+var epL9[60]
+

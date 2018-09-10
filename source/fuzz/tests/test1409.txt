@@ -1,0 +1,36 @@
+# SEED 12730
+
+var gP5G6
+
+var GU81vR[125]
+
+var tS[93]
+
+var MZsPrO2
+
+function RoaiL(p2O8, juv, L9G, BT)
+  if (RoaiL(-49, -RoaiL(MZsPrO2, MZsPrO2, -64, 23), RoaiL(MZsPrO2, MZsPrO2, MZsPrO2, -MZsPrO2), 38))
+    L9G += 43
+  end
+  if (92 / RoaiL(46, MZsPrO2, 99, 115))
+    var ZM
+    juv += gP5G6 or ZM == MZsPrO2
+    GU81vR[26] = 75
+    tS[1] = -ZM or GU81vR[11]
+  end
+  if ((gP5G6 > MZsPrO2))
+    GU81vR[99] = RoaiL(-gP5G6, RoaiL(gP5G6, MZsPrO2, gP5G6, 84), RoaiL(55, MZsPrO2, 1, MZsPrO2), 64)
+  end
+  return (tS[RoaiL(MZsPrO2, -61, -MZsPrO2, 97)])
+  var Ycm7PRR[43]
+  L9G = (46)
+  if (tS[RoaiL(91, gP5G6, 122, MZsPrO2) + RoaiL(MZsPrO2, gP5G6, gP5G6, MZsPrO2)])
+    RoaiL(18, -MZsPrO2, gP5G6, RoaiL(0, 50, MZsPrO2, MZsPrO2))
+    gP5G6 = 54 <= 17
+    var J6ovqO = Ycm7PRR[124] + RoaiL(gP5G6, MZsPrO2, MZsPrO2, 0) < 34
+    tS[88] = (4)
+    var XBbTyXNQ[27]
+  end
+  tS[66] = tS[ not 97 or RoaiL(-13, MZsPrO2, MZsPrO2, MZsPrO2)]
+end
+

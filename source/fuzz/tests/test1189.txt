@@ -1,0 +1,19 @@
+# SEED 12510
+
+function sCY_al(g1feB_8, RViH7, LAVBs, OWaL73_, xcbg)
+  var mHXQ
+  var xbh
+  var PB = sCY_al(mHXQ, xbh, 107, 35, 96) * xbh
+  sCY_al(34, -sCY_al(PB, 53, 39, 21, 80), sCY_al(-2, xbh, PB, 32, 81), -93, sCY_al(50, 24, 79, -56, xbh))
+  while (-29)
+    var p9nr4L4
+    PB += p9nr4L4 > mHXQ >= -55
+    var LquT_eX[125]
+    while ( not 29)
+      return  not -LquT_eX[PB] < 42 / p9nr4L4
+    end
+  end
+  sCY_al(-PB, sCY_al(mHXQ, 32, mHXQ, 98, PB), sCY_al(-PB, -xbh, 62, 81, 31), xbh, -xbh)
+  xbh += sCY_al(sCY_al(PB, 39, 3, 54, 24), sCY_al(PB, 107, PB, 46, -68), sCY_al(55, 96, 85, xbh, 32), sCY_al(115, PB, 89, 63, PB), sCY_al(-13, xbh, -96, 70, 66))
+end
+

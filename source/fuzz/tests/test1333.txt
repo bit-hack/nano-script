@@ -1,0 +1,17 @@
+# SEED 12654
+
+function pe(cU4)
+  var l1[127]
+  return l1[-pe(-45)] ==  not l1[87]
+  var cb1B = pe(33) or pe(16) and -pe(-29) / -50
+  return 104 - cb1B and cb1B
+  pe(cb1B)
+  while (cb1B)
+    l1[102] = l1[90] == cb1B
+    var ouj1Phx[129]
+    cb1B += ouj1Phx[pe(cb1B)] or cb1B / 75
+  end
+  var AcFL[37]
+  cb1B = (cb1B) <= AcFL[cb1B]
+end
+

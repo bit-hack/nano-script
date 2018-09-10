@@ -1,0 +1,56 @@
+# SEED 13330
+
+function AeT3wd(w44iw1JC, rat)
+  var fJUY[83]
+  return (57 > 32)
+  var _S[107]
+  var dofZ
+  return dofZ
+end
+
+var CSt6pVT[4]
+
+var rQNf = 46
+
+function gF(zC79, ZY)
+  CSt6pVT[125] =  not rQNf * AeT3wd(rQNf, rQNf) == 81
+  rQNf += rQNf
+  if ((76) or rQNf > AeT3wd(-54, 73))
+    if (34 >= AeT3wd(rQNf, rQNf) < 47 * AeT3wd(rQNf, 91))
+      rQNf = CSt6pVT[-86] > AeT3wd(rQNf, rQNf) == 40
+      rQNf = CSt6pVT[rQNf and 71]
+      zC79 = rQNf
+      zC79 += CSt6pVT[rQNf / rQNf]
+      rQNf += CSt6pVT[64] or (rQNf)
+    end
+    rQNf += CSt6pVT[122] -  not rQNf + rQNf
+    ZY += 113 <= 51 or (gF(rQNf, rQNf))
+    if (rQNf)
+      zC79 = rQNf
+    end
+  end
+  if (gF(-rQNf, AeT3wd(-96, rQNf)))
+  end
+  var sHQQ
+  sHQQ += AeT3wd(rQNf, sHQQ) + gF(121, 15) * -CSt6pVT[119]
+  var IRzl = sHQQ
+  zC79 += AeT3wd(11, -rQNf)
+end
+
+var mhygi = 62
+
+var TCdwZWW
+
+function FFs7Edu(HSrkmhqK)
+  mhygi += mhygi
+  CSt6pVT[44] = 48
+  HSrkmhqK = 100
+  gF(125, FFs7Edu(mhygi))
+  var EL = 71 and 1 or -FFs7Edu(TCdwZWW) + rQNf
+  mhygi = 113
+  return gF(EL, mhygi) >= 102 > FFs7Edu(84)
+  EL =  not FFs7Edu(EL) or EL >= (-TCdwZWW)
+end
+
+var Bn = 106
+

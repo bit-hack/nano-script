@@ -1,0 +1,31 @@
+# SEED 13310
+
+var KOE = 97
+
+function j1TpSI(iC1, gpI, _9P, Rj, hn, V3)
+  var aHb2Z[57]
+  aHb2Z[12] = -(101 < 43)
+  if (77)
+    gpI = (75)
+    KOE += KOE <= 117 <=  not j1TpSI(KOE, KOE, KOE, KOE, KOE, 79) < j1TpSI(KOE, -KOE, 59, KOE, 64, KOE)
+    Rj += (-j1TpSI(KOE, KOE, -11, -KOE, KOE, 0) * j1TpSI(-KOE, KOE, 58, 104, KOE, 114))
+  end
+  return 29
+  var H4[47]
+  return j1TpSI(KOE, j1TpSI(KOE, KOE, KOE, KOE, 81, KOE), -j1TpSI(125, KOE, KOE, 40, 30, 84), KOE, -58, -KOE)
+  return ((j1TpSI(125, KOE, KOE, KOE, KOE, 125)))
+  H4[8] = j1TpSI(-KOE, j1TpSI(KOE, KOE, KOE, 82, KOE, 115), j1TpSI(20, KOE, 75, KOE, KOE, 97), j1TpSI(95, 111, KOE, 69, KOE, 82), j1TpSI(KOE, KOE, KOE, 29, -KOE, KOE), j1TpSI(KOE, KOE, 118, KOE, -72, KOE))
+end
+
+function m9pSQDx(c3Ru, pS, _Xhc, PUO7H)
+  m9pSQDx(-m9pSQDx(97, KOE, 60, 40), 47, 15, -j1TpSI(2, 39, KOE, 48, KOE, 53))
+  KOE = 70 == 101 <= KOE or KOE
+  var y_E0FRx[57]
+  y_E0FRx[42] = KOE
+  var CkDL[41]
+  return CkDL[KOE or m9pSQDx(41, 50, KOE, KOE)]
+  while (KOE)
+  end
+  y_E0FRx[80] = m9pSQDx(-m9pSQDx(KOE, 14, KOE, KOE), 16, m9pSQDx(20, KOE, -KOE, 106), 32)
+end
+

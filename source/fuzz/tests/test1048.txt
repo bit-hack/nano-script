@@ -1,0 +1,42 @@
+# SEED 12369
+
+var lPQIM2N[116]
+
+var IHQXcMfS = 58
+
+var nrAoh4ZR = 89
+
+var IgQy[99]
+
+var _R49Fqr[119]
+
+function ITf3m(zEzfVhIf, _JxvfQ)
+  if (nrAoh4ZR)
+  end
+  var qrd8 = -nrAoh4ZR
+  while (IHQXcMfS)
+    _R49Fqr[73] = ITf3m(ITf3m(nrAoh4ZR, 8), -ITf3m(nrAoh4ZR, qrd8))
+    return qrd8 < ITf3m(qrd8, 32) or 19
+    var vEjfoZR =  not lPQIM2N[ITf3m(qrd8, 26) > ITf3m(113, nrAoh4ZR)]
+    ITf3m(ITf3m(IHQXcMfS, 94), 21)
+  end
+  lPQIM2N[113] = _R49Fqr[ITf3m(19, -IHQXcMfS) * nrAoh4ZR]
+  if (lPQIM2N[ITf3m(IHQXcMfS, IHQXcMfS)])
+    var PA
+    if (11)
+      _JxvfQ += (97) <  not PA * ITf3m(95, -78)
+    end
+  end
+  if ((5 / ITf3m(nrAoh4ZR, IHQXcMfS)))
+    lPQIM2N[98] = ITf3m(48, ITf3m(nrAoh4ZR, nrAoh4ZR))
+  end
+  while (IHQXcMfS)
+    return  not 26
+  end
+  while (ITf3m(IHQXcMfS, 57))
+    while ((ITf3m(IHQXcMfS, nrAoh4ZR)))
+    end
+    _JxvfQ = 76 * nrAoh4ZR
+  end
+end
+

@@ -1,0 +1,45 @@
+# SEED 13065
+
+var tKQRtl = 16
+
+var Hl[77]
+
+var n3Np0tL
+
+var Ww_k[16]
+
+function BA0k_H(zfWhA8i, BKd_91A, YwiU, uw5AX)
+  BKd_91A += Ww_k[27] / -BA0k_H(n3Np0tL, n3Np0tL, 104, 54) > BA0k_H(-n3Np0tL, 30, 61, tKQRtl)
+  while (BA0k_H(BA0k_H(102, n3Np0tL, tKQRtl, -92), 78, -55, n3Np0tL))
+    var bM[66]
+    BA0k_H(tKQRtl, 14, tKQRtl, n3Np0tL)
+    var vSVHi[47]
+  end
+  if (-tKQRtl)
+    var YeOuLS = (tKQRtl == n3Np0tL)
+  end
+  tKQRtl += (BA0k_H(85, -34, 52, 17)) - (BA0k_H(5, 97, tKQRtl, tKQRtl))
+  tKQRtl +=  not 11 > (-127)
+  var j0[52]
+  zfWhA8i += -BA0k_H(-104, 124, 19, -tKQRtl) >= BA0k_H(78, 122, tKQRtl, n3Np0tL) <= BA0k_H(82, tKQRtl, 62, 107) + n3Np0tL
+  if (BA0k_H(-64, -n3Np0tL, 77, -n3Np0tL) == BA0k_H(n3Np0tL, tKQRtl, 71, 126) or BA0k_H(tKQRtl, n3Np0tL, 9, -44))
+    BKd_91A += -BA0k_H(74, 47, 6, n3Np0tL)
+    BA0k_H(29, 79, BA0k_H(106, 69, 123, 109), BA0k_H(57, -tKQRtl, n3Np0tL, 111))
+    return -j0[112 or tKQRtl]
+    while (Hl[-BA0k_H(82, n3Np0tL, 35, 93)])
+      if (BA0k_H(BA0k_H(n3Np0tL, n3Np0tL, tKQRtl, -tKQRtl), tKQRtl, tKQRtl, -BA0k_H(tKQRtl, -n3Np0tL, 24, 5)))
+        var HM[112]
+        j0[102] = 101 <= BA0k_H(n3Np0tL, n3Np0tL, 92, 64) /  not 102 >= n3Np0tL
+        return (72) or BA0k_H(20, 61, 84, n3Np0tL)
+      end
+      BA0k_H(tKQRtl, BA0k_H(27, 90, -tKQRtl, n3Np0tL), BA0k_H(55, n3Np0tL, 29, -91), tKQRtl)
+    end
+  end
+end
+
+var XgiZ[41]
+
+var nx[29]
+
+var lHj = 40
+

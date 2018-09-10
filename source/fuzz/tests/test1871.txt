@@ -1,0 +1,40 @@
+# SEED 13192
+
+var YCcj[108]
+
+function f1T7(rOOj, NT, kA1V, A8DW, kYzA8, WJ_r, dp4)
+  YCcj[126] = f1T7(69, 7, 72, 26, 25, 17, 1) < f1T7(-75, 32, -48, 74, 103, 28, 57) * -f1T7(43, 3, 27, 42, 85, 76, 11)
+  while (f1T7(57, 89, 19, 45, 28, 33, 79) == -69 < 97)
+    YCcj[115] = -18
+    f1T7(119, 100, f1T7(70, 70, 85, 1, 51, 72, 124), -23, 109, 16, f1T7(78, 67, 125, 116, 40, 84, -113))
+    return YCcj[51] == f1T7(109, 23, 62, 4, 75, 63, 109)
+  end
+  while (42 >= 33)
+    var SVW[58]
+    if ( not -2 * -122)
+    end
+    if ( not 73 >= YCcj[34])
+      f1T7(102, 4, 18, f1T7(10, 7, 85, 3, 42, 25, 125), f1T7(60, 68, 40, 100, 54, 119, 46), 43, f1T7(99, 104, 48, 56, 15, 33, 42))
+    end
+  end
+  YCcj[41] = f1T7(15, 45, 62, 38, -105, 121, 92) >= f1T7(-45, 77, 97, 5, 30, 90, -53) -  not 118
+  var ruQ = 66 == f1T7(113, 41, 96, 43, 47, 114, -71) and YCcj[f1T7(113, -53, 108, 18, 125, 101, 3)]
+  kYzA8 = YCcj[f1T7(81, ruQ, ruQ, 37, -ruQ, ruQ, ruQ) - f1T7(84, 112, 116, 56, ruQ, -68, 53)]
+end
+
+function OMiep6(i5_EzX3a, bQ67432Y, tdTlr)
+  var TDIWbY[12]
+  TDIWbY[33] = YCcj[OMiep6(-10, 36, 7)]
+  var dHfL[115]
+  var rNj9Y[59]
+  return OMiep6(8, 84, -43) * 10 or (-OMiep6(123, 24, 17))
+end
+
+function Yy2j(Vcayhp_x, aHr, G7nn6qE, VLawS8zQ)
+  while (45 - OMiep6(-94, 126, 101) * -(55))
+  end
+  var AwC = 122 and f1T7(22, 79, 21, 32, -124, 93, 95) == 20
+  AwC = 97 * AwC and 70
+  Vcayhp_x += OMiep6(53, 95, 104) - OMiep6(28, AwC, AwC) <= 43 == f1T7(AwC, -83, 98, -115, AwC, 64, AwC)
+end
+

@@ -1,0 +1,23 @@
+# SEED 13209
+
+var W0lEn = 101
+
+function UcQmhgyb()
+  var gu1vb7ge
+  UcQmhgyb()
+  var IH
+  var bh[103]
+  bh[4] =  not 101 < UcQmhgyb() > UcQmhgyb() > gu1vb7ge
+  if (UcQmhgyb())
+    while (UcQmhgyb())
+    end
+    return UcQmhgyb() == W0lEn and 30 or -12
+  end
+end
+
+var Qcy
+
+var b3z7
+
+var h49sv6 = 87
+

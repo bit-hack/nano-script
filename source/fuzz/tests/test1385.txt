@@ -1,0 +1,35 @@
+# SEED 12706
+
+var SX5SG = 39
+
+var DCkII[91]
+
+var UGl = 119
+
+var vFbpcYPS = 44
+
+function pKB6fQ(WhM6, jw2i03i, H8KhZri, AzPxmFNq)
+  var uD3FCn
+  var g4[127]
+  if (DCkII[pKB6fQ(113, uD3FCn, 39, 86) * 86])
+    return pKB6fQ(SX5SG, 71, UGl, 13) == vFbpcYPS
+    var DAN3x = pKB6fQ(-pKB6fQ(12, 93, uD3FCn, 109), -uD3FCn, SX5SG, SX5SG)
+    return -pKB6fQ(-81, 90, -SX5SG, 17) < 117 and DCkII[uD3FCn]
+    vFbpcYPS = (UGl)
+    DCkII[66] = DCkII[UGl * -80]
+  end
+  pKB6fQ(pKB6fQ(vFbpcYPS, 121, 30, 78), vFbpcYPS, pKB6fQ(56, -UGl, uD3FCn, -59), SX5SG)
+  if ((pKB6fQ(-127, uD3FCn, -41, 4)))
+    pKB6fQ(pKB6fQ(-5, 5, 101, vFbpcYPS), uD3FCn, -103, pKB6fQ(48, 102, UGl, SX5SG))
+    pKB6fQ(pKB6fQ(9, uD3FCn, 69, -3), -pKB6fQ(46, 55, 46, 69), pKB6fQ(SX5SG, 39, 77, UGl), 50)
+  end
+  WhM6 += -80 > pKB6fQ(118, UGl, 46, vFbpcYPS) and pKB6fQ(9, uD3FCn, 58, 95)
+  var eKe = (g4[102])
+  while (60 < eKe <= g4[116])
+    while (pKB6fQ(vFbpcYPS, 120, -pKB6fQ(uD3FCn, eKe, uD3FCn, SX5SG), 56))
+    end
+  end
+end
+
+var Wt6FK = 106
+

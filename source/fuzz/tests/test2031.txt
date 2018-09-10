@@ -1,0 +1,53 @@
+# SEED 13352
+
+var ddBgj[115]
+
+function Yc_g(RLPQK, Spg, SK, Fn2A)
+  return ddBgj[Yc_g(-106, 45, 84, 57)] or (Yc_g(40, 107, -60, 14))
+  while (73)
+    if (Yc_g(26, -67, 71, 61) == 95 >= 55)
+      Yc_g(Yc_g(114, 16, 121, 20), Yc_g(-78, 118, 8, 51), Yc_g(-12, 49, 69, -63), 91)
+      var tWzA_i[6]
+      var jUI[48]
+      var BphMqJp[81]
+    end
+  end
+  while ((Yc_g(101, 81, 107, 58)))
+  end
+  var FDcnIP
+  var XAnSz[65]
+  var Ymfa = 68 < FDcnIP * -FDcnIP + Yc_g(FDcnIP, 102, -112, FDcnIP)
+  if ((36))
+    var bip[123]
+    RLPQK = (FDcnIP <= FDcnIP)
+  end
+  return FDcnIP
+end
+
+var MPlK[37]
+
+function UTLh()
+  while ((64 - 10))
+    var IlblM
+    Yc_g(17, Yc_g(IlblM, 93, IlblM, IlblM), IlblM, 2)
+    MPlK[38] = 18 * IlblM / 29
+    var WWFBpzpq
+  end
+  if ( not 36 >= (52))
+    var pYct6 = UTLh()
+    MPlK[110] = 84
+    ddBgj[30] = 27
+  end
+  MPlK[70] = 86
+  ddBgj[13] = UTLh() * (Yc_g(67, 42, 45, 58))
+  while (107 < MPlK[-UTLh()])
+  end
+end
+
+function AaaHR()
+  var s9BTSsPd = ddBgj[UTLh()] >=  not AaaHR() > Yc_g(4, -12, 47, 27)
+  ddBgj[101] = UTLh()
+  return Yc_g(Yc_g(80, 127, s9BTSsPd, 126), AaaHR(), -104, 68)
+  var sNvk_ = UTLh() > Yc_g(s9BTSsPd, s9BTSsPd, s9BTSsPd, s9BTSsPd) + 111 or 20
+end
+

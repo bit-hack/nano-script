@@ -1,0 +1,21 @@
+# SEED 12699
+
+var W0iIvAJ = 29
+
+var dc8tJb[40]
+
+var H8uBhINh
+
+function LiJpc4zR(_qHUS, lGf9iv, xdRN, iiTxi, yXaTn0X)
+  return ( not dc8tJb[H8uBhINh])
+  var bUTSkb = (dc8tJb[W0iIvAJ])
+  yXaTn0X += W0iIvAJ <= LiJpc4zR(10, 23, bUTSkb, 90, bUTSkb)
+  dc8tJb[117] = (LiJpc4zR(6, bUTSkb, 22, 75, H8uBhINh)) + LiJpc4zR(63, 69, W0iIvAJ, W0iIvAJ, H8uBhINh) >= bUTSkb
+  W0iIvAJ += 1
+  LiJpc4zR(LiJpc4zR(39, bUTSkb, 57, W0iIvAJ, H8uBhINh), LiJpc4zR(22, -bUTSkb, 19, 91, bUTSkb), H8uBhINh, H8uBhINh, -96)
+  var BWYhlAw[88]
+  LiJpc4zR(W0iIvAJ, 63, H8uBhINh, 42, LiJpc4zR(-W0iIvAJ, -W0iIvAJ, 27, 73, bUTSkb))
+end
+
+var Y8JvaHox[113]
+

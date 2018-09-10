@@ -1,0 +1,38 @@
+# SEED 12791
+
+var PTn = 30
+
+var a_iTDyD[74]
+
+var rTr3GRE[20]
+
+var GwcxpZD[68]
+
+function lx4RbGs(reIaRTMp, yyk, NF4Rg, jjF, xG, nqv818j)
+  NF4Rg = -lx4RbGs(lx4RbGs(PTn, PTn, 98, -PTn, PTn, PTn), lx4RbGs(11, PTn, 65, -PTn, PTn, 87), 90, 3, -78, 76)
+  if ((PTn > lx4RbGs(PTn, PTn, 119, PTn, 0, 97)))
+    var joh[18]
+    var zKZeE
+    return  not  not zKZeE <= lx4RbGs(22, zKZeE, PTn, 37, PTn, zKZeE) > -(lx4RbGs(77, -PTn, PTn, zKZeE, PTn, PTn))
+  end
+  if (lx4RbGs(-PTn, lx4RbGs(PTn, PTn, 23, 77, PTn, 18), lx4RbGs(18, PTn, 38, -119, 28, PTn), lx4RbGs(94, 109, PTn, PTn, -70, 83), lx4RbGs(-PTn, 61, PTn, 0, 114, PTn), lx4RbGs(124, PTn, PTn, 65, 36, -99)))
+    jjF = PTn
+    var R_2[101]
+    PTn +=  not PTn and 97 / lx4RbGs(PTn, PTn, 108, 6, PTn, PTn)
+  end
+  while (47)
+    if (82 > lx4RbGs(-PTn, 8, PTn, PTn, PTn, PTn) > lx4RbGs(-PTn, 26, PTn, 12, 27, PTn))
+      lx4RbGs(PTn, PTn, 49, PTn, 48, lx4RbGs(PTn, PTn, 3, 78, PTn, PTn))
+      yyk = PTn * 55 >= PTn
+    end
+    a_iTDyD[0] = (69) < lx4RbGs(PTn, 112, 60, 14, 121, PTn) < 103
+    var YfnL = PTn > lx4RbGs(PTn, PTn, 107, -99, PTn, -93) - 116 / lx4RbGs(PTn, 23, 14, -109, PTn, PTn)
+  end
+  rTr3GRE[72] = 125 < (PTn)
+  while (a_iTDyD[lx4RbGs(PTn, 3, PTn, PTn, PTn, 17) * PTn])
+    PTn += PTn and 89 * 3
+  end
+  GwcxpZD[109] = (PTn < 86)
+  jjF += -lx4RbGs(PTn, PTn, PTn, PTn, 51, 65) *  not 124
+end
+

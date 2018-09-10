@@ -1,0 +1,71 @@
+# SEED 12887
+
+var BTYt8x[129]
+
+var Bo[129]
+
+var oi9MSy1y
+
+var BsSi
+
+var v846oq[129]
+
+function yB(eB2T9K, JL, Hdj7a, pL9Su, We5xb9, ur)
+  yB(oi9MSy1y, BsSi, yB(oi9MSy1y, oi9MSy1y, 109, BsSi, 59, oi9MSy1y), 48, oi9MSy1y, yB(120, 104, 54, oi9MSy1y, oi9MSy1y, 112))
+  if (BTYt8x[95 / -BsSi])
+  end
+  if ((-oi9MSy1y + oi9MSy1y))
+    if ((yB(48, 92, oi9MSy1y, 109, oi9MSy1y, oi9MSy1y)) - BTYt8x[103])
+      yB(oi9MSy1y, yB(59, 85, 61, oi9MSy1y, -53, 77), yB(BsSi, 82, 29, oi9MSy1y, BsSi, -BsSi), 97, 40, oi9MSy1y)
+      while (66 / oi9MSy1y > (oi9MSy1y))
+        pL9Su = yB(oi9MSy1y, oi9MSy1y, BsSi, oi9MSy1y, oi9MSy1y, BsSi) <= yB(BsSi, 12, oi9MSy1y, oi9MSy1y, 122, oi9MSy1y) <= yB(oi9MSy1y, oi9MSy1y, 36, BsSi, -BsSi, 46) or -59
+        while ( not (-yB(BsSi, -38, oi9MSy1y, 94, oi9MSy1y, 40)) / -BsSi > yB(oi9MSy1y, oi9MSy1y, oi9MSy1y, 23, BsSi, 64))
+          oi9MSy1y += yB(oi9MSy1y, yB(oi9MSy1y, 65, -BsSi, 42, 86, -13), yB(BsSi, 87, -127, BsSi, 103, BsSi), 74, -yB(6, -oi9MSy1y, oi9MSy1y, BsSi, BsSi, oi9MSy1y), -oi9MSy1y)
+          if (yB(oi9MSy1y, 108, 34, 80, 37, BsSi) > yB(BsSi, 46, oi9MSy1y, -BsSi, BsSi, 95) and yB(BsSi, BsSi, BsSi, oi9MSy1y, BsSi, BsSi))
+            v846oq[25] = -BTYt8x[oi9MSy1y]
+            yB(yB(107, oi9MSy1y, BsSi, 20, oi9MSy1y, BsSi), yB(60, 53, 20, oi9MSy1y, 23, -57), oi9MSy1y, 124, oi9MSy1y, -55)
+          end
+          eB2T9K = yB(BsSi, BsSi, oi9MSy1y, oi9MSy1y, oi9MSy1y, BsSi) / yB(-BsSi, BsSi, 5, 96, 63, 99) - Bo[-BsSi]
+          while ((oi9MSy1y + yB(-BsSi, 94, oi9MSy1y, oi9MSy1y, BsSi, oi9MSy1y)))
+            Hdj7a += 56
+            var XE5l0O[38]
+            var JKzyrOS6[45]
+            var aCVUqCVo
+          end
+        end
+        var q1f[63]
+      end
+      while (Bo[BsSi])
+        var iX6XFK_
+      end
+      while (oi9MSy1y or yB(114, 34, -43, BsSi, -BsSi, 6) * 23)
+        var CMCDp
+        oi9MSy1y =  not yB(77, oi9MSy1y, 37, 96, 85, CMCDp) > yB(oi9MSy1y, CMCDp, 29, 99, CMCDp, 127) >= yB(-oi9MSy1y, CMCDp, oi9MSy1y, BsSi, oi9MSy1y, 53) > oi9MSy1y
+        eB2T9K += v846oq[88] < yB(117, oi9MSy1y, BsSi, 74, CMCDp, CMCDp) and CMCDp
+        yB(yB(oi9MSy1y, oi9MSy1y, 56, CMCDp, BsSi, oi9MSy1y), 121, BsSi, yB(8, BsSi, oi9MSy1y, 71, 99, 74), CMCDp, 117)
+      end
+      var qhTwOoD =  not BsSi
+    end
+  end
+  return BsSi * yB(114, oi9MSy1y, oi9MSy1y, 102, 52, 92) == -BsSi and yB(101, 47, -oi9MSy1y, BsSi, 43, 1)
+  return BTYt8x[yB(oi9MSy1y, BsSi, 3, 79, -50, oi9MSy1y) - yB(45, oi9MSy1y, 5, BsSi, 68, 68)]
+  var RzJWP[7]
+  Bo[29] =  not (102)
+  JL += 113 - 83 + (97)
+end
+
+function AC(VjRml4e, QfR7O, kMgqz, Oi1Nh_, N1n, cky, vHWMDL)
+  if (-19)
+    BsSi = (BsSi < AC(102, 123, 44, 8, BsSi, BsSi, BsSi))
+    v846oq[9] = AC(oi9MSy1y, 123, 91, -10, oi9MSy1y, 24, 74) and -oi9MSy1y + BsSi
+    var qGZN_[112]
+  end
+  return (yB(-oi9MSy1y, BsSi, 101, BsSi, BsSi, 113) == AC(109, 16, oi9MSy1y, oi9MSy1y, BsSi, 70, BsSi))
+  BTYt8x[83] = -AC(92, oi9MSy1y, -oi9MSy1y, 47, BsSi, oi9MSy1y, 50) ==  not yB(60, 83, BsSi, BsSi, 98, -2) < yB(-82, BsSi, 22, 123, BsSi, BsSi)
+  var Bjq[111]
+  VjRml4e += yB(AC(73, oi9MSy1y, oi9MSy1y, 15, oi9MSy1y, -BsSi, BsSi), 103, 25, 110, -AC(79, oi9MSy1y, 14, 4, BsSi, oi9MSy1y, BsSi), yB(BsSi, BsSi, oi9MSy1y, 75, 122, 88))
+  BsSi +=  not AC(101, 20, AC(oi9MSy1y, 81, 52, -117, 110, 6, 125), yB(oi9MSy1y, BsSi, 92, 112, 31, oi9MSy1y), BsSi, -16, 96)
+  return AC(38, 106, 16, oi9MSy1y, 110, 9, 13) <= 34 / 38 >= 72
+  var blv[43]
+end
+

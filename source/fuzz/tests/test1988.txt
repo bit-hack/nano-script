@@ -1,0 +1,39 @@
+# SEED 13309
+
+function iOblu(_0rZ)
+  iOblu(50)
+  var N19Ymp[26]
+  while (N19Ymp[18 == -58])
+    N19Ymp[111] = N19Ymp[19 > 25]
+  end
+  return N19Ymp[ not (iOblu(5))]
+  iOblu(103)
+  N19Ymp[34] = (56) and iOblu(3)
+end
+
+var e4vwYSMa
+
+var HqO0V[73]
+
+var BIVOcD[83]
+
+var juGpVJ[99]
+
+function sL(E0Xf, bv, GrAp4vf, bfw)
+  while (e4vwYSMa <= 73 / 31)
+    var gkfkl = -e4vwYSMa
+    var S91Scr[31]
+    E0Xf += iOblu(21)
+  end
+  e4vwYSMa += iOblu(e4vwYSMa)
+  BIVOcD[15] = (-sL(e4vwYSMa, e4vwYSMa, e4vwYSMa, 12)) + 2
+  return iOblu(e4vwYSMa)
+  return BIVOcD[sL(31, 126, -117, 33)]
+  return -e4vwYSMa
+  if (80 > e4vwYSMa <= e4vwYSMa)
+    var cRXzNPG[91]
+    var zv[63]
+  end
+  sL(66, iOblu(-e4vwYSMa), e4vwYSMa, iOblu(e4vwYSMa))
+end
+

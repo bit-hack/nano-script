@@ -1,0 +1,18 @@
+# SEED 13137
+
+var Elmej[41]
+
+var PyXdm
+
+var Vo0kD
+
+function JVOA()
+  return Elmej[56] == Elmej[Vo0kD]
+  JVOA()
+  var SNz[51]
+  var j6NrOeNb[103]
+  Elmej[31] = -( not Vo0kD)
+end
+
+var SKEiF = 98
+

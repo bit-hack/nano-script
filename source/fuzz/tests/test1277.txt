@@ -1,0 +1,19 @@
+# SEED 12598
+
+var JC2MI[100]
+
+function tI_(DT24N)
+  var AS[14]
+  tI_(87)
+  tI_(110)
+  JC2MI[75] = 34
+  return JC2MI[tI_(20) >= tI_(77)]
+  var CfMsspTr
+  CfMsspTr = 33 >= tI_(-CfMsspTr) < AS[tI_(CfMsspTr)]
+  var Ne[76]
+end
+
+var NNfVEA[97]
+
+var mFUc42F = 24
+

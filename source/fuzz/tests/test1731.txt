@@ -1,0 +1,30 @@
+# SEED 13052
+
+function CvWgeb()
+  while (CvWgeb() * 93 or 92 <= CvWgeb())
+    CvWgeb()
+  end
+  CvWgeb()
+  CvWgeb()
+  CvWgeb()
+  CvWgeb()
+  var ci[74]
+end
+
+var FdW[23]
+
+function ShSe(Dwz745m, w0mP, dg9bXMd, hb, Ww)
+  return -FdW[-ShSe(16, -57, 9, 125, 70) == 44]
+  var rJn[58]
+  return CvWgeb()
+  if (FdW[82 and -77])
+    CvWgeb()
+    var eW4Di[55]
+    var Z27HD
+    ShSe(CvWgeb(), Z27HD, Z27HD, -ShSe(70, Z27HD, Z27HD, 57, Z27HD), CvWgeb())
+  end
+  return CvWgeb() * ShSe(40, 30, 22, 67, 98) >= ShSe(27, 19, -32, 26, 99)
+end
+
+var l2Omp4
+

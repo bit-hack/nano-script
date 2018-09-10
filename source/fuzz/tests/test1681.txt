@@ -1,0 +1,19 @@
+# SEED 13002
+
+function gvQJmW(qBSiG, OkRgic, ofd9OBe9, IMiIJPG, j8k7En1, x4k)
+  var dH8
+  gvQJmW(101, dH8, -gvQJmW(dH8, 109, dH8, 105, 102, 102), gvQJmW(23, 52, 81, dH8, 60, 34), -dH8, dH8)
+  dH8 =  not 80 > dH8
+  var e8YC6
+  e8YC6 += gvQJmW(gvQJmW(55, -11, 92, 21, e8YC6, dH8), 112, gvQJmW(dH8, 69, e8YC6, dH8, 66, dH8), dH8, e8YC6, dH8)
+end
+
+function ZFk()
+  var kvrq[2]
+  while ( not 90 == 104 + 72 + 28)
+    var D2HZ = 89
+    return (ZFk()) * -D2HZ
+  end
+  return -((ZFk()))
+end
+

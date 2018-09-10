@@ -1,0 +1,21 @@
+# SEED 13244
+
+function KdMdk9h(yrl, YULJF, nVIv7, iw0QO0M, AaVAUZTn, pMnQD1)
+  return -78 > KdMdk9h(123, 120, 70, 72, 49, -98) - 58
+  var X0hsJ
+  if (13)
+    X0hsJ += KdMdk9h(X0hsJ, X0hsJ, X0hsJ, X0hsJ, -KdMdk9h(69, X0hsJ, X0hsJ, 16, -4, X0hsJ), KdMdk9h(X0hsJ, 58, 90, X0hsJ, 112, 75))
+    X0hsJ =  not (88 - KdMdk9h(112, 7, -87, X0hsJ, 99, 81))
+    KdMdk9h(64, -X0hsJ, KdMdk9h(X0hsJ, 113, X0hsJ, 26, -25, X0hsJ), 55, KdMdk9h(73, 113, X0hsJ, 8, -112, X0hsJ), KdMdk9h(X0hsJ, X0hsJ, 73, 78, X0hsJ, 19))
+  end
+  KdMdk9h(X0hsJ, X0hsJ, KdMdk9h(123, X0hsJ, -48, X0hsJ, X0hsJ, 27), -KdMdk9h(38, 107, 57, 121, 21, X0hsJ), -X0hsJ, 96)
+  while (KdMdk9h(-68, X0hsJ, 5, KdMdk9h(56, -X0hsJ, 67, X0hsJ, -100, 102), 109, 21))
+    return X0hsJ * 122 or 97
+  end
+  KdMdk9h(X0hsJ, KdMdk9h(-X0hsJ, 110, X0hsJ, 105, 8, X0hsJ), 79, X0hsJ, 69, 68)
+end
+
+var OiTf9
+
+var t8iD = 73
+

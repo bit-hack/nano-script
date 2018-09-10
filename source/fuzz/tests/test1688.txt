@@ -1,0 +1,38 @@
+# SEED 13009
+
+var Tf[8]
+
+var Xc = 124
+
+var chcE4w9
+
+var PIS1Px[72]
+
+var a7Lz[8]
+
+function ph(Hh, w7RHQ, fO_Gj, VUQ6)
+  PIS1Px[119] = ph(ph(Xc, 55, 116, 25), Xc, ph(55, 106, 101, -19), ph(102, 97, Xc, 112))
+  if (chcE4w9)
+    chcE4w9 = (Xc) == 118
+    if (-(ph(Xc, chcE4w9, -53, 49)) > (-102))
+      VUQ6 += ph(ph(15, chcE4w9, Xc, 80), -ph(84, 68, Xc, Xc), ph(101, 80, chcE4w9, -Xc), Xc)
+      Tf[17] =  not (ph(41, 53, Xc, Xc))
+      ph(92, ph(51, 104, 101, 122), 27, ph(22, -Xc, 105, 113))
+      var ViJnMFJ[45]
+    end
+    Tf[31] = -ph(57, 27, chcE4w9, chcE4w9) < 95 < 61
+  end
+  ph(chcE4w9, ph(4, Xc, Xc, chcE4w9), ph(25, 19, 3, -95), 65)
+  var XHq
+  ph(Xc, XHq, -33, chcE4w9)
+  var O6Z95y =  not (chcE4w9 >= 53)
+  var Tj8zIXN[43]
+  if (125)
+    ph(Xc, XHq, -63, chcE4w9)
+    Xc += chcE4w9
+    Hh = chcE4w9 >= chcE4w9 >= ph(94, 119, 78, 125)
+  end
+end
+
+var Q6 = 51
+

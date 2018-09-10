@@ -1,0 +1,20 @@
+# SEED 13336
+
+function uBIhu(KyU8xpvf)
+  if (0)
+    return 116
+  end
+  var Gc5N
+  while (22 == Gc5N / -82)
+    uBIhu(32)
+    KyU8xpvf += 50 and Gc5N or  not Gc5N
+    while ( not (uBIhu(65)) - uBIhu(-Gc5N))
+    end
+  end
+  var uEs[22]
+  uEs[93] = 26 / uBIhu(Gc5N) >= 83 / Gc5N
+  return uBIhu(Gc5N) <=  not Gc5N
+  uBIhu(46)
+  var J3T8LX[59]
+end
+

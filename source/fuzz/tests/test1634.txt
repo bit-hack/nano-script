@@ -1,0 +1,18 @@
+# SEED 12955
+
+function tatT(pJW_v, uiEUm, hEBiF, GTXsgH, itUAn, P2hu1BS)
+  var KtGfv[23]
+  if (tatT(46, 84, 127, 54, 40, 113) == tatT(30, 70, 106, 92, 98, 109) * 81 >= tatT(120, -73, 112, 17, 0, 116))
+    return 98
+  end
+  while ((37) / tatT(90, 10, 30, 52, 83, 82) > -63)
+    var EqQ[63]
+    tatT(tatT(80, 47, -54, 74, 49, 4), 106, tatT(44, 3, 47, 40, 75, 42), 25, 109, 91)
+    KtGfv[18] = -EqQ[tatT(54, 42, 10, -77, 80, 80)] or 80 > tatT(93, 120, 61, 117, 35, -88)
+  end
+  var fct7Azkn = 70 / tatT(55, 66, 103, 115, 74, 96) + -tatT(95, 106, 36, -120, 125, -83)
+  return 51 > 2 - KtGfv[2]
+end
+
+var SkY0eS = 125
+

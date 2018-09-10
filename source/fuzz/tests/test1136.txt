@@ -1,0 +1,45 @@
+# SEED 12457
+
+var h34JLH = 47
+
+var q_[50]
+
+function UaHFnh(cRR7, DY, tZUsj2, iwfVs)
+  UaHFnh(74, 2, UaHFnh(59, h34JLH, 19, -h34JLH), -UaHFnh(89, h34JLH, h34JLH, 103))
+  return  not h34JLH
+  while (h34JLH)
+    var vnQ2UPP = (123 * h34JLH)
+    while (h34JLH * 32)
+      tZUsj2 = UaHFnh(14, 100, vnQ2UPP, vnQ2UPP) == UaHFnh(57, vnQ2UPP, h34JLH, 13) + -UaHFnh(vnQ2UPP, 16, 0, 97) <= UaHFnh(49, 109, 84, h34JLH)
+      h34JLH = q_[61] and 69
+      vnQ2UPP =  not (UaHFnh(81, vnQ2UPP, h34JLH, 109)) == 94
+    end
+    var Ix7pdPW[107]
+    while ( not (118))
+      UaHFnh(55, h34JLH, 13, 1)
+    end
+    if (h34JLH or UaHFnh(85, 85, 78, h34JLH) - 89)
+    end
+  end
+  var UV2uC7
+  iwfVs =  not (-q_[UV2uC7])
+  if (q_[118])
+    var lb
+    var zv
+    q_[112] =  not UV2uC7 or 72 == UaHFnh(89, UV2uC7, 118, 106)
+    if (65)
+      var nM_u9q[54]
+    end
+    while ((-12 / 76))
+      return 25
+      return -1 <= UaHFnh(zv, UV2uC7, -h34JLH, UV2uC7) - 101
+      if (37 == UaHFnh(lb, lb, 14, h34JLH))
+      end
+      UaHFnh(UaHFnh(zv, lb, -lb, -87), lb, UV2uC7, 92)
+      q_[60] = q_[UaHFnh(44, 93, 46, UV2uC7)]
+    end
+  end
+  UV2uC7 = (95) or UV2uC7
+  return h34JLH + UaHFnh(47, h34JLH, 41, 121) > 49 / UV2uC7
+end
+

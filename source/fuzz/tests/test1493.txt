@@ -1,0 +1,6 @@
+# SEED 12814
+
+var yRK[75]
+
+var C0rcPq2 = 12
+

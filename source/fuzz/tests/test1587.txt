@@ -1,0 +1,18 @@
+# SEED 12908
+
+function gDsks(bjou)
+  if (63 >= 42 or gDsks(64) - -gDsks(14))
+  end
+  var Oj10u[116]
+  var tQs = 79 > gDsks(124) - (gDsks(32))
+  var gt2HjV
+  gt2HjV += 121
+  return  not gDsks(tQs) / 0 < tQs
+end
+
+var F587
+
+var UzHs4[77]
+
+var s8KZI5[38]
+

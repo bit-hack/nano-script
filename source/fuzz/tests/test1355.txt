@@ -1,0 +1,28 @@
+# SEED 12676
+
+var dp0
+
+function k5(C7Wv8, u6K, T7, PFooxpa, Bxmor6x, kyWcwZ4)
+  while (k5(dp0, dp0, dp0, 4, 125, 17) > dp0 - -117 < dp0)
+    dp0 += dp0 > -dp0 + dp0
+  end
+  C7Wv8 += k5(k5(59, dp0, dp0, -dp0, dp0, 18), dp0, dp0, 67, dp0, k5(63, 106, dp0, dp0, dp0, dp0))
+  var GWHzS[35]
+  var agFzDJ = ( not GWHzS[k5(dp0, -53, 21, 96, 54, dp0)])
+  GWHzS[67] =  not 103 > 85 <  not 101
+  dp0 = -k5(k5(agFzDJ, agFzDJ, dp0, -dp0, agFzDJ, agFzDJ), k5(13, 37, dp0, 117, 83, agFzDJ), -k5(dp0, 39, 26, 87, 115, agFzDJ), dp0, agFzDJ, 52)
+  while (k5(-86, agFzDJ, 32, k5(25, 53, -104, agFzDJ, agFzDJ, dp0), k5(dp0, 84, dp0, 93, agFzDJ, agFzDJ), agFzDJ))
+    var OczNxy_L[18]
+    return k5(84, dp0, k5(dp0, 10, agFzDJ, 120, 45, agFzDJ), 105, 96, 57)
+    if ( not dp0 * 110)
+      k5(87, 116, dp0, 91, dp0, 121)
+      var TsPEH
+      OczNxy_L[20] = 53
+    end
+    OczNxy_L[39] = (k5(17, 66, dp0, -75, 92, -67)) and dp0 > dp0
+  end
+  var e2t
+end
+
+var Fgdms[114]
+

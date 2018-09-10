@@ -1,0 +1,41 @@
+# SEED 12673
+
+var sZ
+
+function clY(bXZE56Y, tmXIS3b, Ido1, dlz, UbgFBnHR, zOp8, LJMZOFJ)
+  clY(sZ, sZ, 18, sZ, sZ, -sZ, sZ)
+  var hmJh
+  var zGK
+  tmXIS3b += hmJh < clY(45, hmJh, 38, 20, sZ, sZ, 29) <= (clY(sZ, 56, sZ, zGK, 92, zGK, sZ))
+  var OK = -120
+  UbgFBnHR = -clY(59, hmJh, hmJh, clY(OK, zGK, hmJh, sZ, OK, 31, -45), sZ, 21, clY(72, 31, 57, hmJh, hmJh, zGK, hmJh))
+  var gTrRIUO
+end
+
+var ONs7yu8[64]
+
+function X5(yyWKURPt, uMRJ, alR, GfEk9f, O60QYna, QVD)
+  var aksZfKQ[41]
+  var T5ReV = ONs7yu8[sZ]
+  var vgD
+  while (sZ)
+    return aksZfKQ[clY(sZ, 124, vgD, sZ, sZ, 39, 29)] < T5ReV + sZ
+    aksZfKQ[39] = 97 - X5(53, 123, 8, 116, sZ, vgD) or X5(27, 110, 56, sZ, T5ReV, -42) == 54
+    return clY(33, 98, 125, 68, sZ, vgD, vgD) + sZ > vgD
+    if (19)
+      sZ += ((112))
+      X5(clY(123, 44, vgD, T5ReV, T5ReV, 105, 78), 71, clY(vgD, 62, 11, T5ReV, sZ, sZ, sZ), X5(sZ, -42, T5ReV, 80, 28, sZ), vgD, 99)
+      return 121 * X5(109, 77, 104, 106, 48, T5ReV) < T5ReV
+      O60QYna = 106
+    end
+  end
+  X5(102, 113, sZ, 99, 115, 76)
+  var O54PrS
+  aksZfKQ[120] = ONs7yu8[-sZ] or T5ReV / O54PrS
+  return clY(121, clY(T5ReV, O54PrS, 125, sZ, T5ReV, O54PrS, 102), O54PrS, vgD, -91, 6, 64)
+end
+
+var TK7n4 = 127
+
+var I5 = 123
+

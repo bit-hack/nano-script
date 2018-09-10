@@ -1,0 +1,48 @@
+# SEED 12490
+
+var l_un1[76]
+
+function vfwX(TZvVX, ItUS, XfTMdir, knt, VxNZLi, M_WIZspk, h_s)
+  vfwX(vfwX(62, 39, -112, 115, 112, 122, 19), -vfwX(6, 24, 74, 30, 91, -10, 123), vfwX(13, 43, 44, 38, 56, 5, 35), -77, vfwX(101, 105, 104, 33, 23, 11, 101), vfwX(35, 42, 74, 115, 15, 68, 117), vfwX(23, 69, 28, 120, 26, 59, 30))
+  vfwX(44, vfwX(114, 123, 42, 99, -6, 16, 110), 1, 50, vfwX(81, -1, -24, 124, -98, -57, -72), vfwX(31, 46, 92, -110, 30, 29, 122), -vfwX(5, 112, 32, -109, 66, 62, 57))
+  vfwX(97, 9, vfwX(83, 61, 40, 93, 56, 94, 85), 63, vfwX(16, 5, 61, 20, 97, 81, 40), vfwX(9, 116, 25, 49, 18, 78, 88), 57)
+  var Y0iuC = vfwX(25, 53, 17, -vfwX(110, 56, 126, 76, 40, 37, 50), vfwX(119, 64, 21, 67, 38, 18, 86), 26, 51)
+  vfwX(88, vfwX(64, Y0iuC, Y0iuC, 109, Y0iuC, Y0iuC, Y0iuC), vfwX(5, Y0iuC, Y0iuC, Y0iuC, Y0iuC, 111, Y0iuC), 89, Y0iuC, -Y0iuC, Y0iuC)
+  XfTMdir = Y0iuC
+  var qU
+end
+
+function fVfhl36(v4E, PAP6j, YBucH)
+  vfwX(fVfhl36(103, 2, 11), fVfhl36(19, 41, 81), fVfhl36(-4, 58, 76), vfwX(44, 14, 117, 54, 127, 55, 5), 22, fVfhl36(77, 119, 22), vfwX(92, 88, 81, 9, 53, 5, 81))
+  while ( not fVfhl36(64, 62, 81) * vfwX(106, 63, 45, -83, 82, 94, -101) == 6)
+    while (l_un1[fVfhl36(84, 59, 69)])
+      while (-49)
+        var Ms[11]
+        fVfhl36(vfwX(18, 93, -24, 107, 100, 88, 52), -70, 119)
+      end
+    end
+    var ZKO[56]
+  end
+  var Gevw2HB[104]
+  if (Gevw2HB[(16)])
+    Gevw2HB[9] = (l_un1[95])
+    while ((fVfhl36(97, 98, 56) + 89))
+      Gevw2HB[122] = 38 - 98 or -17
+      return (68 <= vfwX(56, 55, -104, 114, -116, 32, 33))
+    end
+  end
+  var LlVY7[14]
+  while (37 + fVfhl36(105, 99, 109) + vfwX(60, -112, 37, 74, 40, 120, 115))
+  end
+end
+
+var wdJ = 120
+
+var dcNbpQ[57]
+
+var IfsxMHW8
+
+var LFb = 111
+
+var __VZAZ = 34
+

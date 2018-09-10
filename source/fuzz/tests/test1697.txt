@@ -1,0 +1,25 @@
+# SEED 13018
+
+function fPuByDkM(aBG, tlgd, W6r, KTR2vN, ht5U)
+  var U5
+  U5 += fPuByDkM(fPuByDkM(U5, U5, U5, 97, 101), 33, 44, U5, U5)
+  fPuByDkM(fPuByDkM(U5, U5, U5, U5, U5), fPuByDkM(-U5, U5, -U5, 113, 54), -U5, 91, fPuByDkM(16, 81, U5, -U5, U5))
+  while ((32 < U5))
+    fPuByDkM(fPuByDkM(U5, 17, -93, U5, U5), U5, U5, 69, 37)
+  end
+  var bKFcIl[69]
+end
+
+var dDsk9[5]
+
+function uQcqn(nq, kc3o, Q_iA2)
+  var kRcEoaY[49]
+  return (uQcqn(127, 64, 101))
+  dDsk9[39] = 39 > 89 + 55
+  dDsk9[24] = dDsk9[85 > fPuByDkM(52, 35, -34, 31, 75)]
+end
+
+var y_CFe[83]
+
+var cs[24]
+

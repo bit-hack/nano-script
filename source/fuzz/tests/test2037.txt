@@ -1,0 +1,40 @@
+# SEED 13358
+
+var VLa_uN9J = 92
+
+function RpDHgs(O4)
+  while (RpDHgs(-VLa_uN9J) / 110 <= 54)
+    O4 += 12
+  end
+  RpDHgs(RpDHgs(VLa_uN9J))
+  var L7GQHRsa[2]
+  var K6IJ2[108]
+  return L7GQHRsa[(26)]
+  VLa_uN9J += RpDHgs(85) + 86 * 54
+  O4 =  not VLa_uN9J
+  O4 = 14 and (42)
+end
+
+var PjNUIF[125]
+
+var gsrw4t[60]
+
+var Oi76[95]
+
+var Sb
+
+function nRb(VnjO, rDN6, Fe, Hk_lfRqa, XaQd4K, pb)
+  PjNUIF[67] = PjNUIF[nRb(VLa_uN9J, -Sb, 18, Sb, VLa_uN9J, Sb) and Sb]
+  Hk_lfRqa = gsrw4t[nRb(49, Sb, 24, 121, Sb, Sb)] - VLa_uN9J < RpDHgs(38)
+  Oi76[76] = -VLa_uN9J or VLa_uN9J < nRb(-Sb, VLa_uN9J, 78, 85, 47, Sb)
+  while (15)
+    var Y4s7qfW
+    Sb = Y4s7qfW
+    return 59
+  end
+  var KmbGynVk[101]
+  var OWJF9vr[128]
+  Fe = VLa_uN9J
+  RpDHgs(RpDHgs(9))
+end
+

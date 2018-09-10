@@ -1,0 +1,72 @@
+# SEED 13296
+
+function axj95J()
+  return axj95J() or -9 or 75
+  axj95J()
+  while (axj95J() or (114))
+    axj95J()
+  end
+  var y3xBV[10]
+  while (-y3xBV[y3xBV[9]])
+    y3xBV[88] = 8
+  end
+end
+
+var tRKc[39]
+
+var pis4[8]
+
+function nVa2()
+  tRKc[98] = 113 - axj95J() and (116)
+  if (74 - 116 == (nVa2()))
+  end
+  axj95J()
+  while ( not  not 67 / nVa2() and nVa2())
+  end
+end
+
+function _E(Do, gdee3sWf)
+  return  not tRKc[ not tRKc[66]]
+  if ( not _E(81, 64) - 78 - axj95J())
+    tRKc[53] = tRKc[26] +  not -100 and _E(33, 44)
+    while (nVa2() < _E(115, 102) or 100 / 43)
+    end
+    return axj95J() <= -axj95J() >= 27
+  end
+  if (_E(79, -4) * axj95J() - -96)
+    axj95J()
+    if (pis4[axj95J() / axj95J()])
+      if (52 and 81 and (87))
+        var XU8k9[43]
+        return (axj95J() and axj95J())
+        if ((75) == nVa2())
+          var _WvnMKY[115]
+          axj95J()
+          axj95J()
+          var WA7wWTq6[41]
+          while (122)
+            var sbQYNQOh[90]
+            var IPPpSj[7]
+          end
+        end
+      end
+      if (nVa2())
+        tRKc[102] = tRKc[axj95J()]
+        while (tRKc[53] * 107)
+          axj95J()
+        end
+        _E(28, axj95J())
+      end
+      axj95J()
+    end
+  end
+  if (0 >= nVa2() <= 34 / 74)
+    tRKc[31] =  not 9 and 45
+    var Hx2vWFV[106]
+    return nVa2()
+  end
+  return  not 95 and -54 >= pis4[108]
+end
+
+var baEnCSh[119]
+

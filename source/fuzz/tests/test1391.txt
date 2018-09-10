@@ -1,0 +1,52 @@
+# SEED 12712
+
+var wCZPS[13]
+
+var TNxP8OQ = 10
+
+function OlMQIp9(vA_qiw, Bttm6Kn, ZayE0)
+  if ((TNxP8OQ))
+    var tpkeR7 = wCZPS[TNxP8OQ] < -TNxP8OQ
+    return OlMQIp9(tpkeR7, TNxP8OQ, 4) == 44
+    if ( not 45)
+      var ReS[61]
+      if ( not wCZPS[ not wCZPS[tpkeR7]])
+        if ((OlMQIp9(TNxP8OQ, 111, 13) / tpkeR7))
+        end
+        return (tpkeR7 <= TNxP8OQ)
+      end
+      if (-97)
+        wCZPS[42] = 95
+      end
+      if (tpkeR7)
+        var Ci = ((OlMQIp9(tpkeR7, tpkeR7, 40)))
+        if (-Ci / OlMQIp9(90, -43, TNxP8OQ) - 16 <= -Ci)
+          while (wCZPS[ not 27 or Ci])
+          end
+          wCZPS[7] = OlMQIp9(OlMQIp9(Ci, 116, 76), TNxP8OQ, -8)
+          return wCZPS[OlMQIp9(Ci, -Ci, TNxP8OQ) - OlMQIp9(tpkeR7, 95, 88)]
+          wCZPS[103] = 5
+          while (TNxP8OQ and tpkeR7 < Ci)
+          end
+        end
+      end
+    end
+  end
+  if (TNxP8OQ)
+    var NN5W[42]
+    var fIBmlBAR
+    fIBmlBAR =  not OlMQIp9(TNxP8OQ, fIBmlBAR, fIBmlBAR) or fIBmlBAR or fIBmlBAR > 123
+    return OlMQIp9(fIBmlBAR, 26, -34)
+  end
+  OlMQIp9(TNxP8OQ, 23, TNxP8OQ)
+  wCZPS[116] = 73
+  var uui[33]
+  wCZPS[103] = ((94))
+  Bttm6Kn += 3
+  TNxP8OQ += wCZPS[OlMQIp9(18, 126, -64)]
+end
+
+var iz
+
+var a9IR1w = 112
+

@@ -1,0 +1,112 @@
+# SEED 12400
+
+var X6TxEi = 57
+
+var ac2VJx_o = 76
+
+var VLGPfE = 4
+
+function s25F(tQ0ea759, QdGS9, f7R, g_0, BkCXY, KKjReI4Q)
+  while ( not s25F(VLGPfE, X6TxEi, 92, 99, 9, X6TxEi) / 48 + s25F(X6TxEi, VLGPfE, 9, 81, X6TxEi, -ac2VJx_o) == s25F(65, 123, VLGPfE, 10, ac2VJx_o, 116))
+    s25F(VLGPfE, 94, 41, s25F(ac2VJx_o, -98, ac2VJx_o, 123, 6, 45), s25F(97, VLGPfE, ac2VJx_o, 7, 57, X6TxEi), ac2VJx_o)
+  end
+  s25F(ac2VJx_o, s25F(-86, 90, VLGPfE, 103, 122, 125), X6TxEi, s25F(7, 28, X6TxEi, 92, 86, ac2VJx_o), s25F(3, 70, -VLGPfE, 4, X6TxEi, 3), ac2VJx_o)
+  return  not ac2VJx_o < ac2VJx_o * ac2VJx_o
+  var RhJjb[12]
+  RhJjb[24] = RhJjb[ac2VJx_o < ac2VJx_o]
+  ac2VJx_o = X6TxEi -  not s25F(VLGPfE, 0, 45, -X6TxEi, 17, ac2VJx_o)
+  var HP = 81
+  while ( not s25F(-ac2VJx_o, HP, HP, 17, HP, ac2VJx_o) / s25F(97, ac2VJx_o, 22, ac2VJx_o, 122, 54) <=  not s25F(15, VLGPfE, -HP, HP, HP, -X6TxEi) <= s25F(0, 77, 42, 113, HP, ac2VJx_o))
+    if ((RhJjb[56]))
+      return  not -s25F(41, 49, ac2VJx_o, 22, 16, VLGPfE) * X6TxEi >= RhJjb[106]
+      tQ0ea759 += 64 / (VLGPfE)
+      VLGPfE = 26
+      while ( not 34 >= 20 + 40)
+        while (X6TxEi > VLGPfE <= 69 / s25F(HP, 94, VLGPfE, 6, -20, -41))
+          var Kfie
+        end
+      end
+      HP = (-VLGPfE)
+    end
+    s25F(104, s25F(ac2VJx_o, 29, ac2VJx_o, 41, 108, 54), 21, s25F(-VLGPfE, 10, 103, 123, 100, 89), s25F(117, VLGPfE, 28, HP, ac2VJx_o, 127), -83)
+    if (80 * 117 + 68 >= 106)
+      while (VLGPfE <= s25F(64, 22, 75, -6, -ac2VJx_o, 29) and VLGPfE and ac2VJx_o)
+        BkCXY = (-HP)
+        g_0 += s25F(s25F(ac2VJx_o, 51, HP, 88, ac2VJx_o, ac2VJx_o), s25F(VLGPfE, -111, VLGPfE, ac2VJx_o, 106, -6), 44, ac2VJx_o, 35, 25)
+        return VLGPfE
+        var FcoSJ4[114]
+        var hlmYPG[124]
+      end
+      s25F(43, 111, HP, s25F(-62, ac2VJx_o, X6TxEi, -96, HP, X6TxEi), 118, s25F(VLGPfE, HP, 12, 114, 27, 24))
+      KKjReI4Q = s25F(s25F(VLGPfE, 91, 82, VLGPfE, -93, ac2VJx_o), HP, 26, s25F(X6TxEi, 118, X6TxEi, HP, X6TxEi, ac2VJx_o), -s25F(8, 45, X6TxEi, VLGPfE, 44, X6TxEi), ac2VJx_o)
+    end
+    while (ac2VJx_o *  not (s25F(X6TxEi, -ac2VJx_o, ac2VJx_o, ac2VJx_o, -VLGPfE, -X6TxEi)))
+      g_0 = 126 < 110 or s25F(HP, 26, HP, -88, HP, -65)
+    end
+    while (RhJjb[s25F(71, 97, 21, 125, HP, VLGPfE) and X6TxEi])
+      return RhJjb[VLGPfE - 36]
+    end
+  end
+end
+
+function vUyt(gCG, c9w3syFR, G2uC, Igk607gn)
+  X6TxEi +=  not  not X6TxEi - X6TxEi > X6TxEi
+  var ORC[24]
+  X6TxEi += s25F(ac2VJx_o, 7, 50, ac2VJx_o, X6TxEi, -VLGPfE) / ORC[s25F(-12, 74, 20, X6TxEi, 74, 101)]
+  return 114
+  if (0)
+    c9w3syFR = ac2VJx_o
+    VLGPfE = ( not 70)
+    while (vUyt(vUyt(X6TxEi, 54, VLGPfE, X6TxEi), X6TxEi, X6TxEi, ac2VJx_o))
+      return -ac2VJx_o and vUyt(54, 86, X6TxEi, X6TxEi) >= 68 + vUyt(ac2VJx_o, X6TxEi, X6TxEi, 45)
+      ac2VJx_o = ac2VJx_o
+    end
+    if ((X6TxEi == 42))
+    end
+  end
+  VLGPfE = s25F(X6TxEi, VLGPfE, 65, X6TxEi, 57, X6TxEi) * ac2VJx_o
+  var zsDT5[44]
+  var uwDDku[33]
+end
+
+function Ik(AtMA3MT, ixFhXbMl, Axi, pii_lC)
+  var XxSnh = (vUyt(ac2VJx_o, X6TxEi, 66, 28)) * ac2VJx_o / ac2VJx_o
+  s25F(s25F(39, 0, ac2VJx_o, 109, -VLGPfE, 112), -s25F(13, -VLGPfE, -VLGPfE, 59, -ac2VJx_o, X6TxEi), 3, Ik(72, 85, ac2VJx_o, ac2VJx_o), -X6TxEi, 5)
+  if (16 * 66)
+    if (vUyt(XxSnh, 71, VLGPfE, ac2VJx_o))
+      if ( not  not Ik(123, s25F(113, -XxSnh, ac2VJx_o, ac2VJx_o, ac2VJx_o, 89), 11, ac2VJx_o))
+      end
+    end
+    if ( not ac2VJx_o)
+      VLGPfE =  not  not -VLGPfE and 30
+      while (6 and -vUyt(ac2VJx_o, ac2VJx_o, 59, XxSnh) >= ac2VJx_o >= 86)
+        AtMA3MT += ac2VJx_o < -VLGPfE == Ik(-ac2VJx_o, VLGPfE, XxSnh, ac2VJx_o) < 106
+        return Ik(-89, 9, s25F(X6TxEi, XxSnh, -X6TxEi, VLGPfE, 124, -88), ac2VJx_o)
+      end
+      if ( not  not  not 11 or 70 - vUyt(X6TxEi, -9, 107, -X6TxEi) <= X6TxEi)
+        var Ov = XxSnh / 108 >=  not vUyt(VLGPfE, X6TxEi, ac2VJx_o, ac2VJx_o) > s25F(23, 63, VLGPfE, 59, VLGPfE, 52)
+      end
+      while ( not 16 or ac2VJx_o < 26)
+        return -76
+        var odo[7]
+        pii_lC =  not odo[s25F(-72, XxSnh, 30, XxSnh, ac2VJx_o, 9)] - odo[ac2VJx_o]
+      end
+    end
+    s25F(17, XxSnh, XxSnh, 4, s25F(XxSnh, XxSnh, 110, 112, 1, -X6TxEi), -66)
+  end
+  if ((Ik(115, X6TxEi, X6TxEi, X6TxEi)))
+    while ((-ac2VJx_o == 68))
+      ac2VJx_o += 119 < X6TxEi
+      vUyt(123, XxSnh, 22, 94)
+      var yOt[5]
+    end
+    VLGPfE =  not 93 * X6TxEi
+    vUyt(49, 120, s25F(-10, 55, 24, -27, X6TxEi, XxSnh), vUyt(68, ac2VJx_o, XxSnh, 2))
+    return  not s25F(VLGPfE, XxSnh, X6TxEi, X6TxEi, X6TxEi, -VLGPfE) - Ik(X6TxEi, VLGPfE, 67, 124) or XxSnh
+  end
+end
+
+var zf[103]
+
+var _Z = 85
+

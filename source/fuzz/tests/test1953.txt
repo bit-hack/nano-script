@@ -1,0 +1,6 @@
+# SEED 13274
+
+var D0FNJ[119]
+
+var zlMN[37]
+

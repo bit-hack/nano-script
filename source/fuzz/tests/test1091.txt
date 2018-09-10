@@ -1,0 +1,25 @@
+# SEED 12412
+
+function WeGP(mY4_, jxXTv3, U_)
+  while ( not 127 + -WeGP(38, 71, 78) * WeGP(110, 110, -51) <= WeGP(111, 96, 27))
+  end
+  var BfV[97]
+  var ojuqfij8
+  ojuqfij8 += ojuqfij8 + -92 + ojuqfij8
+  if ( not BfV[ojuqfij8] - (63))
+    WeGP(WeGP(53, ojuqfij8, 3), WeGP(118, ojuqfij8, ojuqfij8), ojuqfij8)
+    WeGP(ojuqfij8, ojuqfij8, 55)
+    while (BfV[WeGP(ojuqfij8, -119, -114)] >= -43 > WeGP(-ojuqfij8, ojuqfij8, -61))
+      var yYw[88]
+      jxXTv3 += yYw[-(ojuqfij8)]
+      var oOBUknNG[124]
+      oOBUknNG[63] =  not  not  not ojuqfij8
+    end
+  end
+  WeGP(ojuqfij8, 66, ojuqfij8)
+end
+
+var fe = 17
+
+var jqGY2w[35]
+

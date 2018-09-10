@@ -1,0 +1,53 @@
+# SEED 13054
+
+var mDteIr[3]
+
+var IeH[9]
+
+function LrQNle(CYELW9, KcSbS)
+  mDteIr[123] = 108
+  var _BG[100]
+  var Fg[86]
+  while (LrQNle(LrQNle(115, 40), 49))
+    return Fg[LrQNle(108, 121) > 100]
+  end
+  while (LrQNle(87, 110) or LrQNle(102, 101))
+    return 54
+    LrQNle(74, LrQNle(91, 85))
+  end
+end
+
+var vMI[81]
+
+function jd6og()
+  while (IeH[jd6og()] < 126 + LrQNle(127, 22))
+    LrQNle(jd6og(), -LrQNle(111, 23))
+    var hpjhbo[56]
+    while ((89 * 90))
+    end
+  end
+  mDteIr[122] = (mDteIr[jd6og()])
+  while ( not jd6og() * jd6og() > LrQNle(49, -118) == LrQNle(62, 112))
+  end
+  var NF = 67
+  while (NF == vMI[44])
+    while ( not NF)
+      var J19Knji4
+      if (( not vMI[97]))
+        while (-J19Knji4)
+          return vMI[NF or 98]
+          jd6og()
+        end
+        LrQNle(102, -jd6og())
+        var LW = J19Knji4
+        while (LW)
+        end
+      end
+    end
+    return NF < NF >= LrQNle(98, NF) / -LrQNle(NF, NF)
+    return vMI[LrQNle(75, NF) - jd6og()]
+  end
+end
+
+var DNd[37]
+

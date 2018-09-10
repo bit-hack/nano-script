@@ -1,0 +1,22 @@
+# SEED 13036
+
+function Symfne(ti, lHC, lQ)
+  while (-(Symfne(116, 34, 58)) + Symfne(108, 29, 111) <= 15)
+    Symfne(Symfne(44, 109, 55), Symfne(22, 66, 51), 104)
+    var hdsD
+  end
+  var miLW[12]
+  if (77)
+    if (Symfne(-124, 106, 88) and  not Symfne(103, 32, 64))
+      Symfne(34, Symfne(95, 106, 65), Symfne(109, 83, 34))
+      var gmxE = (-53 * Symfne(58, 36, 69))
+    end
+    miLW[84] = miLW[120]
+    miLW[46] = -(103) / -79 - Symfne(72, 117, 67)
+    miLW[71] = -(109 <= -4)
+  end
+  var W31uhf
+end
+
+var hrO[46]
+

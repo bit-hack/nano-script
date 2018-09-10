@@ -1,0 +1,47 @@
+# SEED 13186
+
+var dt[111]
+
+function RqXNU(oOb4LoZ, GL, Ig, Gc, MR5, tJ, Yj)
+  while (dt[RqXNU(2, 31, -96, 121, 90, 0, 36)])
+    var grlqmL
+  end
+  dt[55] = dt[-dt[48]]
+  if ((67) *  not -RqXNU(93, 76, 95, 42, 100, 57, 37) and RqXNU(59, 95, 30, 82, 115, 77, 118))
+    var hXwJHFM[22]
+    if (RqXNU(73, -122, 122, 85, 102, -23, 100) and RqXNU(34, 38, 50, 124, 50, 30, 71) < RqXNU(11, 7, 100, -85, 44, 28, 83) or RqXNU(14, 17, 125, 91, 28, 59, 101))
+    end
+  end
+  return  not dt[46] <= RqXNU(99, 51, 78, 115, 39, 45, 26) and RqXNU(55, 49, 32, 109, 67, 95, 125)
+  if ( not dt[-83] >  not dt[RqXNU(67, 9, 86, 74, 125, 6, 4)])
+    RqXNU(RqXNU(106, 120, 21, 9, 110, 101, 15), 43, 97, 94, -RqXNU(74, 60, 84, 107, 37, 23, 95), RqXNU(64, 72, 117, 68, 47, -54, 53), RqXNU(72, 29, 104, 102, 57, 5, 79))
+    if (51)
+      var F2ljZ[15]
+      if (RqXNU(RqXNU(109, 2, 124, 120, 127, 78, 37), 59, 68, 70, RqXNU(-53, -124, 10, 88, 83, 78, 82), 126, RqXNU(53, -20, 82, 17, 102, -0, 44)))
+        dt[90] = 25 or 47 + 80 or 64
+        RqXNU(RqXNU(108, 11, 55, 63, 61, 53, 30), -RqXNU(40, 67, 35, -43, 75, 2, 120), 23, RqXNU(91, 115, 6, 47, 23, 44, 103), 106, 19, RqXNU(59, 22, 62, 90, 80, 73, 67))
+        return (RqXNU(30, 37, -108, 45, -93, 30, 117) * 7)
+      end
+    end
+    while ( not 97 + RqXNU(61, 86, 74, 11, 22, 119, 42) > dt[RqXNU(35, -103, 61, 49, 118, 114, 73)])
+      var lkDA[127]
+    end
+    while ( not RqXNU(122, 65, 101, 12, 88, 116, 126) or 30 <  not 18 <= -64)
+    end
+  end
+  if (dt[RqXNU(-92, 117, 44, -44, 100, 86, 76)] >= 125 or RqXNU(100, 99, 50, 96, 51, 120, 105))
+  end
+  var z2f = (-(RqXNU(-65, 8, 33, 123, 61, 44, 38)))
+end
+
+function N6U(Uyr, _nOj8GB, xcEDcB, DEqfUy, YnI0b1Ob)
+  return 93
+  while ( not N6U(104, 77, 28, 11, 83) * RqXNU(127, 36, 97, 115, 36, 4, 9) > dt[RqXNU(-113, 102, 12, 63, 32, 66, 28)])
+  end
+  return (39 * 113)
+  while (112 + 114 * 61)
+  end
+  var wgxlRm
+  N6U(wgxlRm, 92, RqXNU(-110, wgxlRm, wgxlRm, wgxlRm, -79, 30, 89), wgxlRm, N6U(48, 124, 90, 84, wgxlRm))
+end
+

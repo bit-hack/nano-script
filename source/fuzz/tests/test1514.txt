@@ -1,0 +1,43 @@
+# SEED 12835
+
+var LB6D_
+
+var N3NzA[19]
+
+var cK80Bkx = 33
+
+function jfT(JuZNHn, JG, KN8, GNqb, Ftv65)
+  if (cK80Bkx + 31 <= jfT(94, 26, LB6D_, cK80Bkx, 73) * jfT(72, LB6D_, LB6D_, 95, cK80Bkx))
+    LB6D_ = jfT(8, 88, cK80Bkx, -70, 4) >= jfT(27, 123, 20, cK80Bkx, 29)
+    while (jfT(LB6D_, cK80Bkx, cK80Bkx, cK80Bkx, 46) / jfT(10, 3, 49, LB6D_, 110))
+    end
+    JG = (11 and cK80Bkx)
+    if (jfT(cK80Bkx, cK80Bkx, 32, 48, LB6D_) <= 64 /  not jfT(50, LB6D_, 91, 115, 100))
+      N3NzA[1] = jfT(LB6D_, LB6D_, 46, cK80Bkx, LB6D_) and N3NzA[107]
+      jfT(23, 48, 71, 102, cK80Bkx)
+      GNqb = 95
+    end
+    LB6D_ += jfT(LB6D_, 105, LB6D_, LB6D_, cK80Bkx) < jfT(85, 37, LB6D_, -108, LB6D_) <= N3NzA[89]
+  end
+  var F_AH
+  var LW = -27
+  jfT(F_AH, cK80Bkx, LB6D_, -F_AH, 50)
+  N3NzA[113] = N3NzA[119]
+  if (jfT(cK80Bkx, jfT(F_AH, F_AH, 103, -cK80Bkx, F_AH), -119, 52, cK80Bkx))
+    LB6D_ = jfT(12, 110, jfT(120, LB6D_, LB6D_, LB6D_, -F_AH), 122, 117)
+    while (F_AH)
+      var GWgsR6[109]
+    end
+    var Nb
+    jfT(cK80Bkx, -Nb, jfT(F_AH, Nb, 119, 116, LB6D_), cK80Bkx, jfT(Nb, 98, Nb, 5, Nb))
+  end
+  var tXTH[36]
+  jfT(LB6D_, 72, 92, jfT(cK80Bkx, F_AH, LW, LW, 42), jfT(LW, 56, 86, LW, cK80Bkx))
+end
+
+var lGOAcHQ
+
+var np_ = 117
+
+var Rz1au
+

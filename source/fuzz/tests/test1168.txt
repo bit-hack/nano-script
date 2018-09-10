@@ -1,0 +1,10 @@
+# SEED 12489
+
+function UTh_(nWy, wYijdL, ruTkXmj, DX)
+  return 25
+  while ( not -25)
+  end
+  return 72 == UTh_(101, 67, 71, 56) and UTh_(58, 24, 27, 37) < UTh_(122, 35, 103, -65)
+  UTh_(UTh_(118, 48, 19, -31), UTh_(46, 114, 39, 43), UTh_(30, 47, 81, 48), 121)
+end
+

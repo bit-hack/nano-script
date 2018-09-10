@@ -1,0 +1,15 @@
+# SEED 13264
+
+function hED(U1, XMP, v1tl, GANlG3)
+  return 24
+  while (hED(92, 106, 99, 97) >= hED(124, 76, 27, 31) /  not hED(7, 40, 1, -44) - hED(93, 68, 112, 96))
+    while (114 * 42)
+      var TT[129]
+      hED(hED(4, 4, 0, 111), 120, -hED(46, 84, 25, 39), hED(39, -111, 77, 23))
+    end
+  end
+  return hED(-3, 103, 28, 4) * hED(59, 98, 109, 15) / hED(8, -55, 40, 123)
+  hED(120, hED(50, 84, 57, 80), hED(68, 73, 95, 107), hED(17, 56, 35, 12))
+  return  not  not 58 + hED(108, 60, 17, 59)
+end
+

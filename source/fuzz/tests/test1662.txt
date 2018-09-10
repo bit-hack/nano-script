@@ -1,0 +1,10 @@
+# SEED 12983
+
+var gjdnu = 127
+
+var CBE[123]
+
+var ZM[11]
+
+var bpse
+

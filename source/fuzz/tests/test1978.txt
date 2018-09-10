@@ -1,0 +1,44 @@
+# SEED 13299
+
+var fzl[112]
+
+var wpq094 = 125
+
+function LAVr(BCsFU6)
+  var H7o3p[70]
+  fzl[21] = 2
+  if (LAVr(89))
+    BCsFU6 = 54
+    wpq094 = H7o3p[fzl[LAVr(26)]]
+  end
+  var g3SD3JP
+  while ( not 68)
+    g3SD3JP += ((g3SD3JP))
+  end
+  BCsFU6 += g3SD3JP
+  BCsFU6 += -H7o3p[(wpq094)]
+  LAVr(LAVr(wpq094))
+end
+
+var yPCYfk7[24]
+
+var NMZg = 34
+
+function UstBCDD(cqmD9pXW, XH, n4c, WA_Xgm1, Jjph92, l2UNZh, HX)
+  var Sa_SGd = wpq094 - wpq094 >  not (43)
+  if (wpq094 * yPCYfk7[80])
+    var rNJ52GJ[77]
+    var Va[64]
+    return Va[Sa_SGd] +  not  not 96 - UstBCDD(75, 78, wpq094, 116, Sa_SGd, 38, -120)
+    var UqYcd[122]
+  end
+  var Wf
+  Sa_SGd = fzl[-125]
+  UstBCDD(NMZg, UstBCDD(-34, 6, Sa_SGd, Sa_SGd, Sa_SGd, Sa_SGd, 97), NMZg, LAVr(113), wpq094, Wf, LAVr(93))
+  while (Sa_SGd - LAVr(wpq094))
+    var K8ViB = -40 <= wpq094
+  end
+  yPCYfk7[125] = (51)
+  var w1EfA[124]
+end
+

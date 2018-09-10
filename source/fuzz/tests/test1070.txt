@@ -1,0 +1,22 @@
+# SEED 12391
+
+var cV4VeQ[19]
+
+var IaPGesY[118]
+
+var krSl0F
+
+var dO0x
+
+function kBB8zO6()
+  cV4VeQ[108] =  not kBB8zO6() / dO0x
+  var ti15p = kBB8zO6()
+  IaPGesY[86] = kBB8zO6()
+end
+
+var LkqdJdp
+
+var uISrUl[122]
+
+var UgApQ[78]
+

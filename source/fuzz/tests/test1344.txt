@@ -1,0 +1,50 @@
+# SEED 12665
+
+var m2scLq_[20]
+
+function D7V(ML, uswEC, Y6RshFIu)
+  var ou_Qam
+  D7V(ou_Qam, D7V(ou_Qam, 116, 80), D7V(102, ou_Qam, 99))
+  var MDjxO = 46
+  ML += D7V(MDjxO, 5, D7V(119, 1, -ou_Qam))
+  while (D7V(MDjxO, 39, 78) - D7V(MDjxO, MDjxO, MDjxO) <= D7V(31, -30, 70))
+    uswEC = D7V(D7V(MDjxO, ou_Qam, 4), MDjxO, D7V(MDjxO, MDjxO, ou_Qam))
+  end
+  while (m2scLq_[ou_Qam] + ou_Qam)
+    m2scLq_[115] = MDjxO - D7V(-ou_Qam, 127, -ou_Qam) < 124
+    MDjxO +=  not MDjxO + (D7V(98, MDjxO, 95))
+  end
+  var wC[128]
+end
+
+function zeA(dzp5tffr)
+  while (-(24) or -D7V(78, 94, 35))
+    var Rq48cFey[101]
+    var V1FdAtUs[125]
+    if (zeA(13))
+      return -D7V(16, 37, 9)
+      D7V(D7V(113, 60, 49), -49, zeA(97))
+      D7V(D7V(41, 65, 70), D7V(58, 28, -61), D7V(41, 29, -109))
+      D7V(90, D7V(52, 119, 110), zeA(-76))
+    end
+  end
+  zeA(D7V(76, 68, 77))
+  if ((D7V(27, 117, 112) and D7V(60, 17, 127)))
+    if ( not 96 <= 84 < D7V(-5, 87, 15) > 55)
+      return (zeA(47) and 23)
+      var uN0I_
+    end
+    if (8)
+      D7V(zeA(109), D7V(70, 21, 5), -69)
+    end
+  end
+  if ((69 and 21))
+    m2scLq_[50] = zeA(114) / -m2scLq_[zeA(127)]
+  end
+  return (116) - D7V(64, 110, 92) * zeA(122)
+end
+
+var o5hQV = 19
+
+var rNa9BEcq[100]
+

@@ -1,0 +1,63 @@
+# SEED 13213
+
+var rKTJKiUQ
+
+var _vsn6s[57]
+
+function UucDxSr(tB, o5E3oe)
+  var Jgbzw = -29
+  o5E3oe += UucDxSr(83, -UucDxSr(rKTJKiUQ, 40))
+  var ophCkF = 68
+  var jUxtZ8[51]
+  while (UucDxSr(Jgbzw, ophCkF) * UucDxSr(113, ophCkF) or Jgbzw < UucDxSr(rKTJKiUQ, rKTJKiUQ))
+    while (jUxtZ8[-39] or Jgbzw)
+      return 119
+    end
+  end
+  rKTJKiUQ = UucDxSr(UucDxSr(Jgbzw, 17), UucDxSr(ophCkF, 29))
+  jUxtZ8[33] = 38 / 53 or 3
+  ophCkF = jUxtZ8[Jgbzw]
+end
+
+var v0[111]
+
+function ATz19()
+  while ( not UucDxSr(38, rKTJKiUQ))
+    return ATz19() * 119 or (ATz19())
+    return _vsn6s[45]
+    return rKTJKiUQ *  not rKTJKiUQ == rKTJKiUQ
+    var qoQLO7y = (-ATz19())
+  end
+  var B3to0
+  ATz19()
+  UucDxSr(29, rKTJKiUQ)
+  return -rKTJKiUQ
+  if (B3to0)
+    ATz19()
+    var gpVI
+    v0[5] =  not rKTJKiUQ or rKTJKiUQ > gpVI or UucDxSr(72, 28)
+    var iJrrj
+    return 6 > ATz19() >= UucDxSr(-B3to0, 10) and ATz19()
+  end
+end
+
+function eAW(QVPuij, KLBIUZ6, zCI5Vn, yp, LSWs2ByS, yJpl, UAMVKC)
+  v0[12] = UucDxSr(rKTJKiUQ, rKTJKiUQ) >=  not UucDxSr(rKTJKiUQ, rKTJKiUQ)
+  return  not ATz19() -  not UucDxSr(126, rKTJKiUQ) < -UucDxSr(rKTJKiUQ, rKTJKiUQ)
+  while (rKTJKiUQ)
+    return rKTJKiUQ
+    if ( not rKTJKiUQ)
+      return rKTJKiUQ
+      var as9MPiYw
+    end
+  end
+  return ATz19()
+  while (-ATz19() * 61 >= 120)
+    var Ah[68]
+    var x1B2 = Ah[105 + ATz19()]
+  end
+  UAMVKC += -101 > 0 + 2
+  return _vsn6s[-61] > 57
+  var fHEYDLM = (v0[UucDxSr(118, rKTJKiUQ)])
+end
+

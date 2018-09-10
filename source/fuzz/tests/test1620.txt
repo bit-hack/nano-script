@@ -1,0 +1,18 @@
+# SEED 12941
+
+var dnuoF[26]
+
+var F9f[38]
+
+function Vs3Lwkh(hETf, nzjs5, xkGB, OQ0LR, YoJWx7I, aS)
+  return (67 / 84)
+  while (49 - -Vs3Lwkh(95, 97, 112, 116, 34, 78) or Vs3Lwkh(118, 62, 67, 16, -84, 19) - Vs3Lwkh(74, 10, 36, 91, 41, 33))
+    dnuoF[0] = F9f[Vs3Lwkh(-122, 80, 50, -45, 44, 96) > 77]
+    return dnuoF[Vs3Lwkh(116, 8, 22, 17, 67, 65) == 89]
+  end
+  var b2kUDFTG[56]
+  var abHp9
+  var iy
+  return  not (iy - iy)
+end
+

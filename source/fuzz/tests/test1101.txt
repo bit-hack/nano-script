@@ -1,0 +1,19 @@
+# SEED 12422
+
+function TIDd(brq, S2e, jb, iI9TG6)
+  return 115
+  TIDd(TIDd(119, 58, 31, -121), TIDd(40, 60, 82, 78), TIDd(68, 68, 77, 52), -TIDd(73, 83, -58, 119))
+  TIDd(20, TIDd(30, 116, 78, 10), TIDd(111, 29, 87, 115), 126)
+  var Wc_T[8]
+  while (22)
+    return Wc_T[89 >= TIDd(36, 7, 66, 57)]
+    var m2[63]
+  end
+  var OLNPUC[54]
+  return OLNPUC[OLNPUC[40]]
+end
+
+var yByJb[85]
+
+var oAx = 99
+

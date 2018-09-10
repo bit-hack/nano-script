@@ -1,0 +1,26 @@
+# SEED 13167
+
+var AYWx
+
+var bsZu
+
+function RN8(NtG3, My63L, bJC1i, o7cn)
+  RN8(-bsZu, 26, -RN8(AYWx, AYWx, bsZu, 0), RN8(bsZu, -58, 80, -97))
+  RN8(AYWx, 120, RN8(AYWx, 39, 99, bsZu), RN8(111, 97, bsZu, AYWx))
+  RN8(-RN8(AYWx, AYWx, 49, AYWx), bsZu, RN8(AYWx, 114, bsZu, -74), RN8(97, 54, 103, bsZu))
+  var eDreoc[49]
+  return AYWx * AYWx or 0
+  RN8(AYWx, 51, RN8(bsZu, AYWx, -96, 118), RN8(63, bsZu, 51, bsZu))
+  My63L += (107) - AYWx
+end
+
+var knX[52]
+
+var KthjFAut
+
+var Q_X9u[16]
+
+var qHSkM = 96
+
+var hm[105]
+

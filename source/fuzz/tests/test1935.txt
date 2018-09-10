@@ -1,0 +1,21 @@
+# SEED 13256
+
+var Zsf4FlF[75]
+
+var UcG = 37
+
+function CXS(rA, I6A)
+  var by
+  CXS(CXS(UcG, UcG), CXS(by, UcG))
+  return -by - CXS(-by, by) and 20
+  var qU[30]
+  var OIQ5ZS8S[11]
+  return Zsf4FlF[125 < CXS(101, 101)]
+  var XV =  not by
+  OIQ5ZS8S[3] = CXS(106, -UcG) >= UcG + CXS(-62, -XV)
+end
+
+var qQlGvN[125]
+
+var Fr3C[21]
+

@@ -1,0 +1,28 @@
+# SEED 12392
+
+function VD_ERN9(bBFFOR4C, FFOCgIKM)
+  var azf = -VD_ERN9(48, 64) == -VD_ERN9(122, 50) - 125
+  VD_ERN9(-VD_ERN9(azf, azf), -VD_ERN9(azf, azf))
+  if (azf)
+  end
+  VD_ERN9(99, VD_ERN9(azf, 47))
+  azf = VD_ERN9(azf, 109)
+  var V2[71]
+  while (VD_ERN9(-azf, azf) + azf * azf)
+    VD_ERN9(31, 19)
+  end
+  bBFFOR4C = 44 * VD_ERN9(34, azf) - 116
+end
+
+function qyQrjayw()
+  while (VD_ERN9(-49, 37) + 82 and qyQrjayw())
+  end
+  var rkcop9[101]
+  VD_ERN9(15, 60)
+  var uzrtlGF8[8]
+  if ( not 57 > VD_ERN9(59, 33))
+  end
+  return  not (7 < -21)
+  return 18
+end
+

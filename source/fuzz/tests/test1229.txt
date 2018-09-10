@@ -1,0 +1,20 @@
+# SEED 12550
+
+var FMJ[45]
+
+function MIwBohj9(_cZdYN, UvN, I3zq)
+  var sbBDaNh[127]
+  sbBDaNh[87] = 56
+  return  not  not FMJ[-110] or  not sbBDaNh[MIwBohj9(108, 114, 85)]
+  while (6)
+    return ((18))
+  end
+  while (-(90 < MIwBohj9(-46, 127, -105)))
+  end
+  if (FMJ[98 / -MIwBohj9(78, 44, -42)])
+    MIwBohj9(-92, 17, MIwBohj9(71, 44, 43))
+    if ((FMJ[MIwBohj9(56, 75, 106)]))
+    end
+  end
+end
+

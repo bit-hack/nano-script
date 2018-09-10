@@ -1,0 +1,22 @@
+# SEED 12904
+
+var QZv0c8uW = 29
+
+function y_cpYul(YC, y9k, WVBe, s9N, dqXiqY, gs38, wx_)
+  y_cpYul(-77, y_cpYul(QZv0c8uW, QZv0c8uW, QZv0c8uW, 74, QZv0c8uW, QZv0c8uW, QZv0c8uW), -115, 102, y_cpYul(124, 92, -QZv0c8uW, 31, 87, QZv0c8uW, 67), y_cpYul(QZv0c8uW, QZv0c8uW, 72, QZv0c8uW, QZv0c8uW, 123, QZv0c8uW), y_cpYul(QZv0c8uW, 17, -31, 113, 11, 46, 113))
+  s9N = QZv0c8uW
+  return QZv0c8uW
+  while ( not y_cpYul(QZv0c8uW, 72, 72, 107, -QZv0c8uW, 126, QZv0c8uW) < 97 >= -y_cpYul(QZv0c8uW, -QZv0c8uW, QZv0c8uW, QZv0c8uW, QZv0c8uW, QZv0c8uW, 94))
+    y_cpYul(116, QZv0c8uW, 66, -y_cpYul(-QZv0c8uW, QZv0c8uW, 2, 70, 28, 36, -QZv0c8uW), 64, 50, 58)
+  end
+  var BdEfPe9v
+  while (y_cpYul(QZv0c8uW, 21, -0, BdEfPe9v, BdEfPe9v, QZv0c8uW, QZv0c8uW) and y_cpYul(-88, 38, BdEfPe9v, BdEfPe9v, QZv0c8uW, 11, 73) >= (58))
+  end
+  YC = BdEfPe9v
+  return BdEfPe9v
+end
+
+var hJQ_nBG5[53]
+
+var MC[30]
+

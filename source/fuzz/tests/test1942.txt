@@ -1,0 +1,25 @@
+# SEED 13263
+
+function aQ(Ik, pC240, RZ_, kR, KJcw00, EysP_o)
+  if ((71 + 127))
+    if (60 or 56 >  not 124)
+      if (( not -40 / 7))
+        var hdA8L
+        RZ_ += aQ(-74, 95, aQ(40, -hdA8L, 89, hdA8L, hdA8L, hdA8L), hdA8L, hdA8L, hdA8L)
+      end
+    end
+  end
+  var cV
+  EysP_o += ( not 85)
+  var AF5BL[80]
+  cV +=  not -aQ(-11, 30, 116, cV, 3, 100) and -aQ(47, 99, 76, 77, 56, cV) < 5 and aQ(cV, 116, 41, 119, -83, 102)
+  return 6 >= cV - -111
+  aQ(cV, 27, aQ(cV, 11, cV, 14, 81, cV), 46, aQ(cV, 120, cV, 11, 17, 29), aQ(cV, cV, 48, 37, cV, cV))
+end
+
+var M_tuGK = 20
+
+var un[34]
+
+var bKTC6Q = 100
+

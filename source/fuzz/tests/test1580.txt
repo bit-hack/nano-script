@@ -1,0 +1,35 @@
+# SEED 12901
+
+var rTwN[36]
+
+function qJ4d(VvjC, Eq1Wu, nU8Tc, r85TTo6)
+  var yX = 51 + 44 or qJ4d(57, 20, 4, 68)
+  qJ4d(105, yX, yX, qJ4d(-98, yX, yX, yX))
+  var WYw_EDAt =  not (qJ4d(115, yX, -yX, yX)) == yX
+  yX += rTwN[22] * WYw_EDAt - 19
+  rTwN[63] = qJ4d(-80, yX, 48, WYw_EDAt) - yX > 118
+  r85TTo6 += 33 >= 116 / WYw_EDAt
+  rTwN[57] = rTwN[qJ4d(WYw_EDAt, 96, 69, WYw_EDAt)] and 39
+  if ( not rTwN[74] and qJ4d(WYw_EDAt, 101, 21, yX) < qJ4d(99, 78, 23, yX))
+    var YbEf
+    VvjC = 84
+  end
+end
+
+var kHb[47]
+
+function z5iUtz_3(DS, Ea45, Bi, zt7, mC_bdA)
+  var fx58kDrS = 46
+  var UDnvui3o[124]
+  var LO5oJZ
+  var NobHe[89]
+  return LO5oJZ
+  Ea45 = 81 or (-36)
+  while (rTwN[LO5oJZ and LO5oJZ])
+    return fx58kDrS - -qJ4d(1, 120, fx58kDrS, 121) - fx58kDrS
+    var t9 = LO5oJZ
+    return (t9) <= t9 > z5iUtz_3(-21, 26, 44, 44, 58)
+  end
+  rTwN[76] =  not LO5oJZ * z5iUtz_3(108, fx58kDrS, fx58kDrS, fx58kDrS, LO5oJZ) - z5iUtz_3(LO5oJZ, LO5oJZ, LO5oJZ, 71, LO5oJZ)
+end
+

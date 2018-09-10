@@ -1,0 +1,95 @@
+# SEED 12963
+
+var ww0J
+
+var kL[76]
+
+function zL53MF25(Ey8BVn_O)
+  var uA4SMs5
+  if (63)
+    var Ok6URoq0[18]
+    var RzmBf = -91
+    if ( not  not zL53MF25(uA4SMs5) <=  not Ok6URoq0[RzmBf])
+      Ey8BVn_O = zL53MF25(57) * Ok6URoq0[uA4SMs5]
+      var OmQE
+    end
+  end
+  uA4SMs5 = kL[ not -kL[0]]
+  Ey8BVn_O = 124 < ww0J >= (zL53MF25(-57))
+  kL[28] =  not  not ww0J <= uA4SMs5 <= -zL53MF25(16)
+  uA4SMs5 = zL53MF25(63) or ww0J < (-zL53MF25(uA4SMs5))
+  return (zL53MF25(uA4SMs5) and ww0J)
+  Ey8BVn_O += zL53MF25(73) - 63
+end
+
+var QF5[61]
+
+var o4jFe[60]
+
+function B8kQG(e_, kQ2V, W4, mNZ, __faY, DB)
+  var sZGXk1[16]
+  ww0J = sZGXk1[120 == 99]
+  ww0J = zL53MF25(20)
+  if (B8kQG(-55, 42, ww0J, ww0J, 38, ww0J) >= B8kQG(15, ww0J, 102, 65, ww0J, 2) < -B8kQG(-ww0J, ww0J, 58, ww0J, ww0J, 17))
+    __faY = o4jFe[-ww0J + 44]
+    return 98 and B8kQG(110, 84, ww0J, 84, 18, ww0J)
+  end
+  while ((-(127)))
+    while (QF5[kL[zL53MF25(126)]])
+      var Jj =  not  not ww0J <= -58 / kL[B8kQG(ww0J, ww0J, 52, 56, ww0J, ww0J)]
+      if (Jj)
+        var fx_n40R[5]
+        var rZAfbI[84]
+        return ww0J
+      end
+      var BK
+    end
+    ww0J += B8kQG(33, 103, 74, ww0J, 62, 15) and 80 / (zL53MF25(42))
+    var eL3[90]
+    if (-QF5[zL53MF25(ww0J)])
+      __faY = (38 * ww0J)
+    end
+    if (ww0J)
+      var o255[2]
+      if (QF5[ not 101 <= 100])
+        if (ww0J)
+          ww0J += (10 / B8kQG(ww0J, 113, -43, 58, ww0J, 17))
+          zL53MF25(44)
+          if (97)
+            var nhy[49]
+            while (zL53MF25(-42))
+              kL[42] = 76
+              var r7b = ww0J
+              e_ = o255[zL53MF25(ww0J)] / (zL53MF25(r7b))
+            end
+            if (120)
+              return eL3[ not  not 84]
+              ww0J += ww0J >= B8kQG(112, -96, ww0J, 76, 115, ww0J) > B8kQG(71, ww0J, ww0J, ww0J, 58, 4)
+              while (sZGXk1[10 == ww0J])
+                mNZ += ww0J or  not B8kQG(87, ww0J, ww0J, -ww0J, -ww0J, ww0J) / 65
+                ww0J = B8kQG(27, ww0J, 22, ww0J, ww0J, ww0J) + -ww0J <= nhy[104]
+                eL3[45] = zL53MF25(zL53MF25(ww0J))
+              end
+              QF5[88] = ww0J <= 106 == eL3[B8kQG(103, 79, ww0J, ww0J, 42, ww0J)]
+            end
+            return (kL[ww0J])
+          end
+          zL53MF25(zL53MF25(ww0J))
+          return zL53MF25(51) <= zL53MF25(127) and eL3[ww0J]
+        end
+        while ((zL53MF25(72) - ww0J))
+          var J8hxqvgX[109]
+          if ( not 64 * ww0J > ww0J * B8kQG(-97, 124, 53, ww0J, ww0J, 92))
+          end
+          W4 += QF5[(B8kQG(88, -ww0J, 108, ww0J, -ww0J, 38))]
+        end
+      end
+      sZGXk1[50] = B8kQG(ww0J, 109, 40, ww0J, 57, 68) * -zL53MF25(3) == 43
+      mNZ += o4jFe[zL53MF25(ww0J)] >= (99)
+    end
+  end
+  var mPFfwKX[32]
+  W4 = 2
+  var TXyZ[129]
+end
+

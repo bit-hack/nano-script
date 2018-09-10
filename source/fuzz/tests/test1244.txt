@@ -1,0 +1,43 @@
+# SEED 12565
+
+var vyIh_[54]
+
+var jI4K
+
+function p116AP(AyhJ9, P3QRJ, i45T, J8h, jImF, TE, kJin5)
+  J8h = 22
+  jI4K = p116AP(77, jI4K, p116AP(102, -102, jI4K, jI4K, jI4K, jI4K, -jI4K), jI4K, jI4K, jI4K, p116AP(122, jI4K, jI4K, 95, jI4K, jI4K, 14))
+  if ( not jI4K >  not (jI4K))
+    vyIh_[104] = vyIh_[p116AP(-jI4K, 125, 48, jI4K, jI4K, jI4K, 81)] >  not 102 >= jI4K
+  end
+  while (98)
+    if (( not (72)))
+      var wA = vyIh_[78] and p116AP(106, jI4K, 101, 76, 106, 118, jI4K) and 87
+      var oQhQru5g[25]
+      var iUrsqS[27]
+      var Yy1 = wA
+      AyhJ9 = (wA)
+    end
+    if (vyIh_[jI4K - 118])
+      var LUe3W2A
+      LUe3W2A = 79
+      var cv2IjW[26]
+      return  not 5
+    end
+  end
+  var lH9rCXQO[109]
+  lH9rCXQO[33] =  not p116AP(jI4K, jI4K, p116AP(24, jI4K, jI4K, jI4K, 59, jI4K, jI4K), 16, 1, jI4K, 34)
+  while (jI4K / p116AP(jI4K, 111, jI4K, 68, jI4K, jI4K, jI4K) >= p116AP(jI4K, jI4K, jI4K, jI4K, 123, 77, 0) or jI4K)
+    vyIh_[71] = lH9rCXQO[-vyIh_[114]]
+  end
+  jImF = (p116AP(jI4K, jI4K, jI4K, 108, jI4K, 104, 43))
+end
+
+var iD7
+
+var nXIX = 53
+
+var qKog[72]
+
+var DD = 125
+

@@ -1,0 +1,36 @@
+# SEED 13041
+
+var KK5[7]
+
+var ReZGMUh = 50
+
+function c2q9o(WOVA, NTA, Q1, SnyDS, bei9I)
+  bei9I = ReZGMUh
+  if ( not 67)
+    ReZGMUh = c2q9o(ReZGMUh, 85, 4, ReZGMUh, 21) / c2q9o(ReZGMUh, 23, -ReZGMUh, 100, 101) + (-52)
+    NTA += c2q9o(29, ReZGMUh, -ReZGMUh, 93, ReZGMUh) < c2q9o(75, 67, ReZGMUh, ReZGMUh, ReZGMUh) or c2q9o(-ReZGMUh, 81, 38, 2, -ReZGMUh) == 17
+    while (c2q9o(105, ReZGMUh, ReZGMUh, ReZGMUh, -36) or KK5[72])
+      SnyDS = c2q9o(-97, c2q9o(53, ReZGMUh, 121, 111, 118), ReZGMUh, ReZGMUh, c2q9o(ReZGMUh, ReZGMUh, ReZGMUh, 30, ReZGMUh))
+      ReZGMUh +=  not KK5[-(c2q9o(-ReZGMUh, ReZGMUh, ReZGMUh, -ReZGMUh, -44))]
+      return ReZGMUh + ReZGMUh > ReZGMUh * ReZGMUh
+      KK5[14] = 79
+    end
+  end
+  while (74 == c2q9o(29, ReZGMUh, 119, 117, 31) or 105)
+    if (71 or c2q9o(90, 109, ReZGMUh, 49, 25) == c2q9o(48, 66, -60, 102, 98))
+      KK5[32] = ReZGMUh
+    end
+    Q1 += c2q9o(c2q9o(ReZGMUh, ReZGMUh, ReZGMUh, ReZGMUh, 80), ReZGMUh, ReZGMUh, 123, c2q9o(ReZGMUh, 116, 92, -ReZGMUh, ReZGMUh))
+    WOVA = -KK5[12]
+    return (ReZGMUh) - -c2q9o(70, 103, ReZGMUh, 10, ReZGMUh)
+  end
+  c2q9o(ReZGMUh, ReZGMUh, c2q9o(ReZGMUh, 56, 88, 73, ReZGMUh), c2q9o(115, 118, 110, 110, ReZGMUh), 9)
+  WOVA = KK5[KK5[ReZGMUh]]
+  var y1JHb = 48
+  KK5[87] =  not c2q9o(y1JHb, y1JHb, ReZGMUh, 18, ReZGMUh)
+  while (KK5[-ReZGMUh])
+    KK5[0] = KK5[(c2q9o(93, ReZGMUh, ReZGMUh, 2, 37))]
+    c2q9o(ReZGMUh, c2q9o(-ReZGMUh, 61, -107, y1JHb, 116), 117, c2q9o(24, 35, ReZGMUh, y1JHb, 58), c2q9o(y1JHb, 127, 58, 97, 126))
+  end
+end
+

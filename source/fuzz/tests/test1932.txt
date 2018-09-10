@@ -1,0 +1,8 @@
+# SEED 13253
+
+var dbih6 = 63
+
+var Sg = 47
+
+var LkS0L3k
+

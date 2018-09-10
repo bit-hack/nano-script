@@ -1,0 +1,20 @@
+# SEED 12829
+
+function iuDEt(aS, Da, I71c, sBf, Qys, S1, Hk59PzY)
+  return 56
+  iuDEt(iuDEt(112, 90, 54, 85, 25, 124, 98), 40, 43, 14, 15, iuDEt(82, 68, 127, 29, 90, 103, 41), 11)
+  return (iuDEt(59, 11, 36, 0, 100, 33, 16)) or (iuDEt(70, 14, 70, 25, -5, 126, 120))
+  while ((iuDEt(46, 6, 84, 70, 45, -69, 90)) <= iuDEt(88, 31, 107, 113, 95, 21, 7) <= iuDEt(98, 51, 65, 12, 87, 74, -16))
+  end
+  var eE5EY
+end
+
+function eG8ak(jtT, GufEQPF, LURdeCmD)
+  iuDEt(iuDEt(113, 104, 21, 34, 71, -66, 5), 42, eG8ak(121, 30, -12), 16, iuDEt(103, 90, -112, 63, 86, 69, 35), 110, 92)
+  return 75 * 57
+  var ct[101]
+  while (eG8ak(96, 96, 88) >= 43 -  not 47)
+    ct[41] =  not eG8ak(8, 52, 106) / 17 and ct[107]
+  end
+end
+

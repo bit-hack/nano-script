@@ -1,0 +1,37 @@
+# SEED 12734
+
+var K0
+
+function ssb()
+  ssb()
+  if (100)
+  end
+  ssb()
+  return (22 >= 46)
+  var kIi8FKUS = (104) / ssb()
+  ssb()
+end
+
+function ypAbawLk(K5P, lt3Hi, H5q7, LR, qh)
+  var Rgpb = ypAbawLk(ssb(), 25, ypAbawLk(K0, K0, 12, K0, K0), K0, K0)
+  return ( not 119 and K0)
+  if (Rgpb)
+    ypAbawLk(7, K0, 121, K0, 13)
+  end
+  ssb()
+  ssb()
+  lt3Hi += 58 == ypAbawLk(Rgpb, 51, -Rgpb, Rgpb, Rgpb) or K0
+  return 56
+  K0 +=  not  not Rgpb <  not Rgpb == 25
+end
+
+function zC67j(ex5Y, oClSd, UhHVw, HAM)
+  K0 +=  not 114 > K0 > 43
+  return  not -zC67j(17, ypAbawLk(65, 12, -K0, K0, 11), 84, 74)
+  return K0 > K0 and -K0
+  K0 +=  not zC67j(60, K0, zC67j(34, K0, 86, -K0), K0)
+  K0 = ( not 62 and ssb())
+  var Vcy = (-35)
+  ssb()
+end
+

@@ -1,0 +1,18 @@
+# SEED 13345
+
+var sX9mJ = 118
+
+function DP(IHWp, R0rN, FrF, HKn)
+  var vqv[89]
+  var g7qZX9e[114]
+  R0rN =  not DP(sX9mJ, -104, 90, -84) + DP(127, 19, 1, 105) <=  not 121
+  sX9mJ += g7qZX9e[72]
+  vqv[123] = vqv[68]
+  while ((-sX9mJ))
+  end
+  while ( not vqv[sX9mJ] - sX9mJ + 80)
+  end
+end
+
+var W8Qz[55]
+

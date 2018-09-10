@@ -1,0 +1,15 @@
+# SEED 13225
+
+var AzAf = 116
+
+function Q8TG3IbX(EUONBx)
+  AzAf += AzAf
+  Q8TG3IbX(3)
+  var j8248CEu[120]
+  return j8248CEu[AzAf or 24]
+  Q8TG3IbX(Q8TG3IbX(84))
+  return j8248CEu[Q8TG3IbX(25)]
+  EUONBx += AzAf
+  AzAf = AzAf * -69 or 65 / -Q8TG3IbX(AzAf)
+end
+

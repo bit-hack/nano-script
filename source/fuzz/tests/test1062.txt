@@ -1,0 +1,68 @@
+# SEED 12383
+
+var M38SkAh = 6
+
+var O8uq = 56
+
+var kH_qdX1[121]
+
+function Cxh(yM, AH, xvrmMz63)
+  if (-kH_qdX1[M38SkAh] > kH_qdX1[32])
+    return kH_qdX1[59 == O8uq]
+    while (Cxh(O8uq, M38SkAh, 38) + -(O8uq))
+      return O8uq
+      AH =  not Cxh(-M38SkAh, 55, M38SkAh) / Cxh(M38SkAh, M38SkAh, 109)
+      var UVb2
+      var MN5QS[115]
+    end
+    kH_qdX1[93] = kH_qdX1[126] > 64 < 92
+    while (kH_qdX1[Cxh(1, 60, M38SkAh)])
+      var QoHQU2O = -(Cxh(M38SkAh, O8uq, 102)) - Cxh(41, O8uq, 59)
+    end
+  end
+  if (108)
+    if ( not M38SkAh - 83 >= Cxh(114, M38SkAh, 66) + O8uq)
+    end
+  end
+  while (21)
+  end
+  if ( not M38SkAh)
+    var JVYKj8AS[45]
+    O8uq = kH_qdX1[O8uq]
+    JVYKj8AS[24] = 119
+    M38SkAh +=  not  not 24 - Cxh(O8uq, -O8uq, O8uq)
+    var Ay16uDaI[108]
+  end
+  if (126 or M38SkAh * 89)
+  end
+  return -(Cxh(O8uq, -127, 84) / Cxh(M38SkAh, -O8uq, M38SkAh))
+  var NU
+  kH_qdX1[105] = -Cxh(42, 52, O8uq) / Cxh(124, 19, 89) or 46
+end
+
+var r71 = 63
+
+var _oA7obOU[73]
+
+function i_Kv(_d0o3, hh1, Rf, t2I, lnlDvYN, LuC8n, fvQM_T)
+  var GDCMmw2t[20]
+  var HHOI =  not i_Kv(Cxh(r71, M38SkAh, O8uq), Cxh(114, M38SkAh, 122), Cxh(M38SkAh, -M38SkAh, 81), 83, 30, O8uq, -i_Kv(M38SkAh, 53, O8uq, M38SkAh, O8uq, 27, 100))
+  return Cxh(HHOI, 116, HHOI) and HHOI == Cxh(O8uq, -8, 79) > i_Kv(118, 104, -15, HHOI, 61, M38SkAh, 41)
+  var Ij
+  t2I += -(i_Kv(86, -r71, r71, M38SkAh, M38SkAh, 26, M38SkAh) <= Cxh(-M38SkAh, 55, 26))
+  i_Kv(r71, 35, Ij, 109, i_Kv(83, -76, Ij, Ij, 106, -M38SkAh, HHOI), 35, r71)
+  kH_qdX1[40] = _oA7obOU[i_Kv(-HHOI, 22, 51, 84, HHOI, HHOI, HHOI) >= 112]
+  return  not (Cxh(69, 42, Ij))
+end
+
+function bv(oKbsC0dZ, fyHb7, bLJvtd)
+  O8uq += (0)
+  var Ppty6Y = r71 / bv(O8uq, 100, 16) and -i_Kv(r71, r71, M38SkAh, -97, 17, 82, 72)
+  return Cxh(r71, O8uq, -Ppty6Y) * 16 >= i_Kv(M38SkAh, 53, -O8uq, 77, 124, Ppty6Y, 96)
+  _oA7obOU[121] =  not M38SkAh / bv(73, r71, 69) < (Ppty6Y)
+  var nVC
+  var rUc3k
+  _oA7obOU[110] = (-_oA7obOU[Cxh(23, Ppty6Y, 116)])
+  oKbsC0dZ += (109) * 25 / bv(16, rUc3k, nVC)
+end
+

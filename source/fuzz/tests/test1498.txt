@@ -1,0 +1,13 @@
+# SEED 12819
+
+function VptIsD(cPArNn8, oznZ, gf, OkDAbZ)
+  var tGfb
+  var npc85sY[44]
+  return npc85sY[8 or tGfb]
+  cPArNn8 +=  not tGfb < -108
+  VptIsD(VptIsD(65, tGfb, tGfb, 109), VptIsD(tGfb, tGfb, tGfb, tGfb), 41, VptIsD(tGfb, 115, tGfb, tGfb))
+  gf += VptIsD(tGfb, 21, 60, VptIsD(tGfb, tGfb, -23, 94))
+  tGfb = npc85sY[tGfb or 65]
+  gf = 11
+end
+

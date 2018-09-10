@@ -1,0 +1,48 @@
+# SEED 12752
+
+var mi[127]
+
+var ZFWnrthT = 38
+
+function Leq0k(GwHFK, sYREJoEQ, u8xCC50X)
+  Leq0k(12, Leq0k(-101, ZFWnrthT, ZFWnrthT), Leq0k(ZFWnrthT, 99, ZFWnrthT))
+  var KSjY9RP[15]
+  var hAQpe
+  sYREJoEQ = 112 or Leq0k(hAQpe, 99, ZFWnrthT) + ZFWnrthT / Leq0k(hAQpe, ZFWnrthT, 31)
+  while ( not Leq0k(-Leq0k(-hAQpe, ZFWnrthT, -hAQpe), -84, ZFWnrthT))
+  end
+  GwHFK +=  not Leq0k(79, ZFWnrthT, 74) > -Leq0k(57, 122, hAQpe) >= hAQpe
+  return Leq0k(ZFWnrthT, 41, 71) > Leq0k(ZFWnrthT, ZFWnrthT, hAQpe)
+  if (127 or 28 >= mi[hAQpe])
+    Leq0k(Leq0k(91, ZFWnrthT, 22), hAQpe, Leq0k(ZFWnrthT, hAQpe, 22))
+    return hAQpe < ZFWnrthT or 98
+    return  not Leq0k(18, 85, hAQpe) - Leq0k(ZFWnrthT, hAQpe, 17) <= (Leq0k(ZFWnrthT, 78, 61))
+    sYREJoEQ = hAQpe + ZFWnrthT >= Leq0k(37, -107, 41) <= -83
+    KSjY9RP[0] = 10
+  end
+end
+
+function Ls(T6glpNe, dBEcBv5, cxXdjCp, amjZef, Fue, dnEVD83i, Ssa9PV)
+  mi[85] = ZFWnrthT / ZFWnrthT or 121
+  Leq0k(ZFWnrthT, 111, ZFWnrthT)
+  while ( not ZFWnrthT)
+    ZFWnrthT +=  not  not mi[ZFWnrthT]
+    var zeu80m2[126]
+    return 80 == Leq0k(ZFWnrthT, ZFWnrthT, ZFWnrthT) >  not Ls(ZFWnrthT, 20, 59, 56, ZFWnrthT, -ZFWnrthT, 111)
+  end
+  Leq0k(ZFWnrthT, ZFWnrthT, -Leq0k(ZFWnrthT, ZFWnrthT, ZFWnrthT))
+  amjZef =  not Ls(58, ZFWnrthT, 89, 50, ZFWnrthT, 30, ZFWnrthT) / 124 or ZFWnrthT - ZFWnrthT
+  while (-mi[82] < 83)
+    ZFWnrthT = ZFWnrthT
+    Ls(ZFWnrthT, -Leq0k(ZFWnrthT, 81, ZFWnrthT), ZFWnrthT, 11, 69, 13, 79)
+  end
+  ZFWnrthT = ZFWnrthT
+  T6glpNe = Ls(ZFWnrthT, ZFWnrthT, 75, ZFWnrthT, ZFWnrthT, 18, 33) >= 97
+end
+
+var UX9NL28 = 43
+
+var UxIROQ7 = 20
+
+var QVH[111]
+

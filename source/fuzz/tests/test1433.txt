@@ -1,0 +1,25 @@
+# SEED 12754
+
+var Xn_h = 60
+
+var qD = 15
+
+function ILttMc(F5szL2KU, kpq, Jtv8, asCQgSz, Yc, Pi0)
+  var ARuyVlR_[46]
+  if (Xn_h)
+  end
+  var sIcGz[85]
+  qD +=  not  not (sIcGz[ILttMc(Xn_h, qD, 17, 84, qD, 77)])
+  Jtv8 += Xn_h
+  if (Xn_h and qD <= 90)
+    qD += qD > 29 + 51
+    var ksKxY = 55 or qD
+  end
+  sIcGz[105] =  not  not Xn_h and 100 == Xn_h / 15
+  ARuyVlR_[113] = (ILttMc(57, 76, qD, qD, 119, qD)) == 114 < ILttMc(52, 48, 117, 86, 76, 52)
+end
+
+var PF[24]
+
+var LrGl[96]
+

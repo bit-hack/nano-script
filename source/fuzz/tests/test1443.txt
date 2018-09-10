@@ -1,0 +1,10 @@
+# SEED 12764
+
+var SkiDYngF
+
+var Ws[22]
+
+var DmDDdlTH[50]
+
+var NNOx7 = 87
+

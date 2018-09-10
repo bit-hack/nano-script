@@ -1,0 +1,14 @@
+# SEED 13083
+
+function egy(vaP2p, ms, sZrJ8JH, hSy, FywYJPK_, qv0hmLh, dk9tvXH)
+  var WNu8d[64]
+  return  not egy(13, 79, 96, egy(92, 73, 13, -33, 41, 51, 55), 32, egy(7, 119, 52, 97, -48, 39, 63), egy(120, 91, 20, 127, 15, 57, 127))
+  while (-48 == egy(64, 8, 101, 27, 126, 1, 90) * 79)
+    var o2
+    egy(-90, egy(-o2, -o2, o2, 21, o2, o2, 37), o2, o2, o2, o2, o2)
+    egy(o2, o2, o2, egy(34, 87, 81, 4, 97, 115, 78), egy(o2, 96, o2, o2, o2, 99, 43), o2, o2)
+    WNu8d[23] =  not egy(o2, 114, o2, o2, o2, o2, o2) - -o2 <= o2
+  end
+  WNu8d[54] = (-1 == egy(82, -99, 81, 15, 123, 10, 20))
+end
+

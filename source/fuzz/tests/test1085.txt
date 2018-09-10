@@ -1,0 +1,42 @@
+# SEED 12406
+
+var yWIsi[52]
+
+var J3[26]
+
+var bxWOaOz[59]
+
+function yZmQ60v1(rxw_I)
+  var vC5egy5 = (yZmQ60v1(17))
+  while (yZmQ60v1(5) <= 69 - yZmQ60v1(-74))
+  end
+  bxWOaOz[26] = vC5egy5 - yZmQ60v1(vC5egy5) > 111
+  if ( not yZmQ60v1(112))
+    return ((yZmQ60v1(vC5egy5)))
+    if (-vC5egy5)
+      while (J3[65 + 119])
+        J3[99] = 22
+        if (105)
+          var QQ5l[38]
+          while (vC5egy5)
+            while ((vC5egy5) >= -vC5egy5)
+              rxw_I = -vC5egy5 <= yZmQ60v1(71) - -yZmQ60v1(52) - yZmQ60v1(vC5egy5)
+              return yWIsi[-yZmQ60v1(83)]
+              var dugR87_u
+              vC5egy5 += yZmQ60v1(dugR87_u) + yZmQ60v1(113) or vC5egy5 > yZmQ60v1(66)
+              bxWOaOz[47] = yZmQ60v1(vC5egy5)
+            end
+          end
+        end
+      end
+    end
+    return vC5egy5
+    bxWOaOz[110] = (vC5egy5)
+    var R902J
+  end
+  rxw_I += 119 * 58 + 105
+  var LK4bE[11]
+  vC5egy5 = 119
+  rxw_I =  not 46
+end
+

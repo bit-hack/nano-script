@@ -1,0 +1,50 @@
+# SEED 13142
+
+var Q73s3QN[60]
+
+var hP[120]
+
+function mUm()
+  return (125)
+  var m9 = 42 == (96)
+  mUm()
+  mUm()
+  if ( not mUm())
+    mUm()
+    Q73s3QN[45] = m9
+  end
+  return -(m9 <= m9)
+end
+
+var E1U_[104]
+
+var VWT[62]
+
+var PDw[26]
+
+function Nh0ctY(i8sr, b41rci_, Ukq, _g, bY, TrkydC, JVw)
+  while (Nh0ctY(32, 110, 22, mUm(), -mUm(), 119, mUm()))
+  end
+  while (E1U_[mUm() >= 16])
+    while (Nh0ctY(Nh0ctY(63, 106, 12, 98, 8, 92, 50), 6, 23, 77, 116, 55, 65))
+    end
+    while (75)
+      while (120 <= -Nh0ctY(123, 96, 82, 30, 99, 45, 55) / (mUm()))
+        var twr9Otbk[63]
+        Nh0ctY(mUm(), 29, 48, Nh0ctY(124, 101, 43, 30, 59, 80, 95), 41, Nh0ctY(13, 9, 78, 51, 3, 3, 61), Nh0ctY(15, 47, 69, 120, 43, 80, 82))
+      end
+    end
+  end
+  mUm()
+  while (86 == 2)
+  end
+  return Nh0ctY(26, 18, -83, -59, 44, 53, 16) < 3 <=  not 111 >= Nh0ctY(27, 67, 71, 106, 104, -78, 83)
+  return  not Nh0ctY(106, 127, 113, 105, 58, -6, 86) - 5 and mUm() * Nh0ctY(76, 112, -83, 39, 127, -36, 0)
+  while (Nh0ctY(mUm(), 100, Nh0ctY(81, 96, 17, 111, 29, 71, 111), mUm(), Nh0ctY(74, 3, 4, 97, 94, 44, -99), mUm(), Nh0ctY(10, 34, 48, 17, 25, -37, 107)))
+    return (Q73s3QN[mUm()])
+    return Nh0ctY(124, 106, 57, 17, 52, 63, 39) + mUm() - mUm()
+    return 28 + VWT[110]
+    var gj[59]
+  end
+end
+

@@ -1,0 +1,47 @@
+# SEED 12883
+
+var R8 = 127
+
+var a4x[40]
+
+function EyKxHa1(zbtHLN, jrh_, EwjE637, nh0)
+  return EyKxHa1(38, EyKxHa1(R8, 76, R8, R8), 82, R8)
+  R8 =  not 124
+  return EyKxHa1(R8, R8, 0, EyKxHa1(30, 113, R8, R8))
+  var kE[32]
+  return R8
+  while (-(-kE[111]))
+    while (R8)
+      kE[114] = 71
+      if (a4x[EyKxHa1(R8, R8, R8, R8)])
+        a4x[121] = R8
+      end
+      EyKxHa1(-4, -R8, EyKxHa1(R8, R8, 108, R8), EyKxHa1(35, R8, R8, R8))
+      R8 =  not EyKxHa1(R8, 116, R8, 70) < R8
+    end
+    a4x[127] = a4x[EyKxHa1(R8, R8, R8, 11)] <= EyKxHa1(R8, 116, R8, -R8)
+    R8 += kE[EyKxHa1(69, R8, R8, 102)]
+  end
+  nh0 += R8
+  var wbo637[49]
+end
+
+var IOQ6U1sg = 7
+
+function fPv2()
+  var OPK = 28 > 93 <= 107
+  a4x[90] = a4x[a4x[R8]]
+  while (EyKxHa1(OPK, IOQ6U1sg, -fPv2(), fPv2()))
+  end
+  if (IOQ6U1sg == EyKxHa1(116, 60, 33, -88))
+  end
+  var L75o[79]
+  if (IOQ6U1sg)
+    if ( not  not 22 / fPv2() <= fPv2())
+    end
+    a4x[98] = (-EyKxHa1(88, OPK, 57, R8)) < 10
+  end
+end
+
+var SGQEJS0K
+

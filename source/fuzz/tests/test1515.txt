@@ -1,0 +1,59 @@
+# SEED 12836
+
+function HUZF(Pomp, UTN6MoL, greP, qOd)
+  HUZF(19, -HUZF(44, 94, 5, 9), 98, 75)
+  HUZF(HUZF(-14, 81, 71, -16), HUZF(3, -68, 94, 36), HUZF(10, 4, 9, 116), 100)
+  var JmyLbWy1 = HUZF(55, 71, 3, -111) > 47 / 118
+  JmyLbWy1 +=  not -(HUZF(91, JmyLbWy1, 12, JmyLbWy1)) and JmyLbWy1
+  greP = 78
+end
+
+function SRtm(NlA6, cD, F624O0Gn)
+  if ( not 124 >= 101 - HUZF(20, 40, 40, 55))
+    var o1NM
+    HUZF(SRtm(-o1NM, 40, 64), SRtm(26, o1NM, 41), o1NM, 70)
+    HUZF(o1NM, HUZF(91, o1NM, -81, 60), SRtm(71, 95, -o1NM), o1NM)
+  end
+  return 84 * -HUZF(-50, -16, 26, 104) < HUZF(66, 26, 12, 23) >= 32
+  return (HUZF(-76, -2, 55, -33))
+  if (SRtm(116, 83, 27) - 52 >=  not HUZF(80, 15, 125, 51) > HUZF(10, 82, -91, 124))
+  end
+end
+
+var BL7u = 8
+
+function aIO4(BVPKo65, dTO, I_I9, wkjVh, rq, wI, TGqHysf)
+  var pv[33]
+  var WL3Mu9tG[120]
+  WL3Mu9tG[113] = BL7u
+  return pv[BL7u and BL7u]
+  while (-pv[BL7u] +  not aIO4(56, -BL7u, BL7u, BL7u, BL7u, 87, -107) <= HUZF(89, BL7u, -BL7u, 98))
+    return 75
+    var fAMM[123]
+    pv[92] = aIO4(BL7u, 122, 17, 60, BL7u, 114, 19) <= BL7u + BL7u
+    SRtm(BL7u, SRtm(126, -BL7u, BL7u), 117)
+  end
+  var c6TFCeRk
+  aIO4(BL7u, -71, 110, aIO4(c6TFCeRk, -33, BL7u, BL7u, 120, 46, BL7u), aIO4(BL7u, 17, 81, 92, BL7u, 90, 0), HUZF(BL7u, BL7u, BL7u, 59), 112)
+  BVPKo65 = (114 + c6TFCeRk)
+end
+
+var zGB[86]
+
+function fOC(zKl)
+  if (zGB[SRtm(66, -21, 8) and BL7u])
+    zGB[71] = BL7u
+    while ( not zGB[101 * BL7u])
+      var xvH
+    end
+    var ScYM9k
+  end
+  zGB[99] = BL7u
+  zKl += fOC(BL7u)
+  var Q5Ap[95]
+  zKl = SRtm(BL7u, BL7u, 121) * 30 - (BL7u)
+  Q5Ap[98] = SRtm(BL7u, 86, BL7u) - HUZF(-BL7u, -BL7u, BL7u, 107) <=  not SRtm(44, BL7u, BL7u) - 86
+  Q5Ap[2] = 85
+  fOC(BL7u)
+end
+

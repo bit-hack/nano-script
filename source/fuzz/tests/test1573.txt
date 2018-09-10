@@ -1,0 +1,39 @@
+# SEED 12894
+
+var BTeqC = 109
+
+var Bw[67]
+
+var rZlmy9nl[60]
+
+var QIN5[45]
+
+function GiBC(LIoxTSYd, T7ZbrJ, l_, faQ, kX7Lj9G)
+  var FAG[109]
+  QIN5[54] = -126 == BTeqC == (GiBC(124, BTeqC, BTeqC, BTeqC, 64))
+  GiBC(-BTeqC, 76, BTeqC, BTeqC, GiBC(-BTeqC, BTeqC, -BTeqC, 43, 78))
+  return -GiBC(BTeqC, 103, GiBC(BTeqC, 74, 124, BTeqC, BTeqC), GiBC(14, 69, 109, 58, BTeqC), GiBC(-64, BTeqC, BTeqC, BTeqC, BTeqC))
+  Bw[37] = FAG[32] < QIN5[-BTeqC]
+  while (Bw[BTeqC <= BTeqC])
+    GiBC(BTeqC, 122, BTeqC, -GiBC(80, BTeqC, BTeqC, 113, 112), -104)
+    if (rZlmy9nl[BTeqC] / 17)
+      return 122
+    end
+    if ((GiBC(44, 10, 100, 9, BTeqC) == 92))
+      return GiBC(BTeqC, 25, 36, BTeqC, BTeqC)
+      GiBC(BTeqC, -GiBC(BTeqC, 99, BTeqC, BTeqC, 46), 106, BTeqC, GiBC(BTeqC, 93, 37, BTeqC, BTeqC))
+      Bw[48] = GiBC(GiBC(BTeqC, 72, BTeqC, BTeqC, BTeqC), BTeqC, -GiBC(107, BTeqC, 103, 24, BTeqC), BTeqC, BTeqC)
+      Bw[54] =  not -105
+    end
+    if (BTeqC)
+      BTeqC = 109
+      GiBC(GiBC(28, 56, BTeqC, BTeqC, BTeqC), 13, 73, -26, BTeqC)
+      var cFzYCvl[43]
+      var J7bOZy7[111]
+      kX7Lj9G += 82 == BTeqC +  not BTeqC
+    end
+  end
+  GiBC(BTeqC, 105, 62, 41, GiBC(113, 100, BTeqC, BTeqC, 100))
+  l_ += GiBC(BTeqC, GiBC(89, 112, BTeqC, BTeqC, BTeqC), 24, 26, GiBC(BTeqC, BTeqC, BTeqC, BTeqC, 60))
+end
+

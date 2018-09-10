@@ -1,0 +1,17 @@
+# SEED 12576
+
+function Uf(as, tapiVnyR, zpt, UL4Q, UbPjk, ONGTQzh)
+  var oOfwBHd[37]
+  oOfwBHd[122] = (26) <= (6)
+  oOfwBHd[66] = oOfwBHd[101] > Uf(45, 12, 23, 17, 125, 102)
+  while ( not Uf(54, 109, 96, 23, 55, 97) <= Uf(83, 48, 46, 80, 99, 122) / -(107))
+    var Zhbv0xdm[77]
+    Uf(-Uf(96, 66, 111, 123, 35, -51), Uf(-76, 127, 45, 64, 32, 80), 103, 108, 69, 20)
+    oOfwBHd[21] = 9 * Zhbv0xdm[Uf(-107, -80, 103, 39, 11, 101)]
+  end
+  var gw5Qt[86]
+  if (50)
+    var OJGs[33]
+  end
+end
+

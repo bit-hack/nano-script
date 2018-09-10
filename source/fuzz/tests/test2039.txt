@@ -1,0 +1,57 @@
+# SEED 13360
+
+var RY[37]
+
+var aPbgFtCj[15]
+
+var H8A = 116
+
+var WcCqUPRp[43]
+
+var Dn2KpEL[69]
+
+function aW67da(t9v, AkCd)
+  RY[43] =  not Dn2KpEL[64 or aW67da(H8A, H8A)]
+  Dn2KpEL[23] = (H8A <= -aW67da(65, H8A))
+  H8A += (H8A) < H8A
+  aW67da(aW67da(34, 49), aW67da(18, H8A))
+  aW67da(H8A, H8A)
+  if ( not H8A == -11 == aPbgFtCj[H8A])
+    AkCd += aW67da(-28, 124) -  not -H8A and H8A
+  end
+  H8A += Dn2KpEL[-aW67da(H8A, H8A)]
+  while (H8A)
+    var HWw
+    aW67da(HWw, 127)
+  end
+end
+
+function gC3y2Wl(mC4fs, Eamh, PuSz_W, seT, roN, k0BshFNt, V5WCH4ax)
+  H8A = aW67da(H8A, aW67da(57, H8A))
+  return -14
+  while (H8A)
+    if (-(gC3y2Wl(H8A, 54, 43, H8A, 49, 107, H8A)))
+      V5WCH4ax = gC3y2Wl(H8A, 0, H8A, H8A, H8A, H8A, H8A) * H8A >= gC3y2Wl(H8A, H8A, H8A, H8A, 25, H8A, 13)
+      while (gC3y2Wl(21, 22, 21, gC3y2Wl(18, H8A, H8A, 11, H8A, 114, H8A), H8A, -aW67da(H8A, -118), 115))
+        var Ts5Q4K
+      end
+      return H8A * gC3y2Wl(82, H8A, H8A, H8A, H8A, H8A, 64) >= H8A
+    end
+    if (125 - 117)
+      gC3y2Wl(aW67da(29, H8A), aW67da(H8A, 15), H8A, -H8A, aW67da(H8A, 123), gC3y2Wl(58, 10, H8A, 122, H8A, 101, H8A), H8A)
+      var KlIJX =  not  not 103
+    end
+    var Itk
+    aPbgFtCj[35] =  not Itk
+    var fEU[126]
+  end
+  V5WCH4ax += 86
+  gC3y2Wl(15, 42, aW67da(43, 8), 111, 38, 64, H8A)
+  H8A = gC3y2Wl(120, H8A, H8A, 115, 76, -H8A, H8A) - -35 == aW67da(H8A, H8A)
+  H8A = 87 <= H8A or aW67da(26, 87)
+  if (aW67da(H8A, 96) + gC3y2Wl(H8A, 3, 63, -H8A, H8A, 112, 21) + 84)
+    return  not aW67da(H8A, aW67da(100, 27))
+    var cdNvHx[80]
+  end
+end
+

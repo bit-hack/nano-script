@@ -1,0 +1,45 @@
+# SEED 12871
+
+var PidZFch
+
+var tbQa
+
+var TE[70]
+
+function fxaEJ()
+  var re = 52 == fxaEJ()
+  TE[24] = TE[fxaEJ()] + 75
+  fxaEJ()
+  TE[6] = 95 or -tbQa > TE[re]
+  TE[10] = re
+  return fxaEJ()
+end
+
+function jMd(Ju1jOc, GdTrm)
+  if (-jMd(PidZFch, 65) >= jMd(-22, 9) < -PidZFch)
+    PidZFch = (-(69))
+    if (jMd(-PidZFch, fxaEJ()))
+      PidZFch = TE[-TE[jMd(tbQa, 73)]]
+      return (fxaEJ()) and PidZFch / tbQa
+    end
+    tbQa += tbQa and fxaEJ() < 58
+    if (-tbQa >= PidZFch / 120 == tbQa)
+      return TE[jMd(112, PidZFch) <= tbQa]
+      tbQa = 19
+    end
+    TE[17] = TE[jMd(tbQa, 62)]
+  end
+  var wPBPq = (tbQa)
+  return -TE[22]
+  TE[60] = fxaEJ()
+  if ( not tbQa)
+  end
+  while (( not -tbQa < fxaEJ()))
+    fxaEJ()
+    var Ric4l3[33]
+    var KFyLv13
+  end
+  var HyfeF
+  var MJ7od1V =  not fxaEJ()
+end
+

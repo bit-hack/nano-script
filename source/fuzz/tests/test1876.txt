@@ -1,0 +1,48 @@
+# SEED 13197
+
+var By = 99
+
+var LlPjq08[119]
+
+var EWHv[3]
+
+var FP4qIiKu = 6
+
+var jRNW71[44]
+
+var bfzU7IhT[115]
+
+function J3(Ewq68n, Oz, YQE)
+  while (FP4qIiKu)
+    var eb =  not 106 / By + FP4qIiKu
+    return EWHv[J3(FP4qIiKu, 17, FP4qIiKu) < 10]
+  end
+  var P9CyGYG
+  J3(P9CyGYG, -By, 88)
+  J3(P9CyGYG, 45, -J3(P9CyGYG, 115, -FP4qIiKu))
+  if (EWHv[14])
+  end
+  return J3(P9CyGYG, 15, 27) < 83 >  not J3(68, By, 73) * -By
+  return J3(FP4qIiKu, 49, -61)
+  YQE = (120) - J3(-65, FP4qIiKu, By)
+end
+
+function Bp(btzgFfXe, DO)
+  var rD[59]
+  var VMXn[117]
+  var iK97QX[121]
+  var KoCKvNHO =  not  not J3(J3(FP4qIiKu, By, By), J3(FP4qIiKu, 70, 80), 117)
+  while ((13 / FP4qIiKu))
+    Bp(By, Bp(KoCKvNHO, FP4qIiKu))
+  end
+  while (J3(Bp(KoCKvNHO, FP4qIiKu), J3(KoCKvNHO, 119, 75), FP4qIiKu))
+    var e5OQ4 = 87
+    return  not ((72))
+    FP4qIiKu +=  not  not 2
+    jRNW71[28] = 27 < 53 - (49)
+    var V7c = (J3(112, e5OQ4, 87)) / LlPjq08[FP4qIiKu]
+  end
+  return  not  not 11
+  EWHv[75] = 22 <=  not By > By
+end
+

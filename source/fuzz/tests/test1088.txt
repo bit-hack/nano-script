@@ -1,0 +1,47 @@
+# SEED 12409
+
+function PRh()
+  return ( not  not PRh() < 34)
+  PRh()
+  var YxjCh6[16]
+  var GF0bt[71]
+  if ( not (44) <= YxjCh6[126])
+  end
+  var O9mDNSb[19]
+end
+
+var H596 = 28
+
+var aSiyzBc = 104
+
+var z7
+
+function yY(ZIBFSmm, UHj)
+  while (H596 < aSiyzBc * H596)
+    return (H596) < aSiyzBc >= H596
+    if ( not H596 < 107 + 18)
+      H596 += PRh() and (z7)
+      H596 += yY(51, -14) == z7 / yY(17, 81)
+      var BY[121]
+      H596 = yY(H596, 24) * H596 + yY(49, H596) == aSiyzBc
+    end
+    yY(yY(56, H596), -aSiyzBc)
+  end
+  aSiyzBc = PRh()
+  if ((yY(117, H596)) / 1)
+    return 47
+    while (41)
+    end
+    H596 = PRh()
+  end
+  PRh()
+  ZIBFSmm += 41
+  var pNn7r[32]
+end
+
+var lwYKifT = 93
+
+var CDk = 11
+
+var eu3piJh[96]
+

@@ -1,0 +1,39 @@
+# SEED 12618
+
+var YezDhQK[76]
+
+var H3At[43]
+
+function o3XWKaY4(iSjy, dC, gAmD25R, dL)
+  var a4yvAIJq
+  var mXVl868z[91]
+  a4yvAIJq += a4yvAIJq and 123 and 121 <= o3XWKaY4(a4yvAIJq, a4yvAIJq, a4yvAIJq, a4yvAIJq)
+  dL = o3XWKaY4(a4yvAIJq, 109, o3XWKaY4(20, 49, a4yvAIJq, 62), -a4yvAIJq)
+  if (11 == (114))
+  end
+  var FAViT
+  var Kq4BzxuP
+  if (o3XWKaY4(104, FAViT, o3XWKaY4(37, FAViT, Kq4BzxuP, a4yvAIJq), o3XWKaY4(-105, a4yvAIJq, -44, a4yvAIJq)))
+    a4yvAIJq += Kq4BzxuP
+    var t0[29]
+    var bg6x
+  end
+end
+
+var Y06c0ZQM[92]
+
+var DVSJ
+
+var d0
+
+function F0le9hCi(Xg_jq, wI2o96, nBXB12ll, S_, okppwp, zG)
+  F0le9hCi(122, d0, -o3XWKaY4(DVSJ, 53, d0, DVSJ), F0le9hCi(d0, d0, 30, d0, DVSJ, 127), 105, 43)
+  F0le9hCi(51, 1, 62, F0le9hCi(-d0, DVSJ, d0, d0, 109, d0), F0le9hCi(d0, 37, DVSJ, d0, d0, DVSJ), 122)
+  d0 = 85
+  Xg_jq += Y06c0ZQM[Y06c0ZQM[-38]]
+  nBXB12ll += d0
+  DVSJ += (91) +  not F0le9hCi(7, -37, -DVSJ, d0, 48, 67) >= o3XWKaY4(DVSJ, d0, 21, d0)
+  F0le9hCi(52, F0le9hCi(-97, -46, 33, DVSJ, 10, DVSJ), F0le9hCi(DVSJ, d0, 56, 123, 105, DVSJ), o3XWKaY4(75, 81, 115, DVSJ), 70, 81)
+  var kSLKqX4
+end
+

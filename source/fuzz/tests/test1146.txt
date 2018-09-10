@@ -1,0 +1,27 @@
+# SEED 12467
+
+var jBQjzMoq
+
+function qSpk(OoFnu, enS, Afv4, zfKtW6xd, p5ctZrb, Ew, eUp)
+  return 30
+  jBQjzMoq = -37
+  qSpk(qSpk(76, 88, jBQjzMoq, -107, jBQjzMoq, 122, jBQjzMoq), qSpk(jBQjzMoq, jBQjzMoq, -124, jBQjzMoq, 29, -23, jBQjzMoq), jBQjzMoq, qSpk(jBQjzMoq, 80, 48, jBQjzMoq, 75, 3, jBQjzMoq), qSpk(57, -80, jBQjzMoq, jBQjzMoq, jBQjzMoq, jBQjzMoq, 31), jBQjzMoq, 61)
+  while (qSpk(jBQjzMoq, 108, 21, 56, -jBQjzMoq, 17, 58) / 61 * qSpk(71, 55, 54, jBQjzMoq, 112, -jBQjzMoq, -20))
+    qSpk(jBQjzMoq, qSpk(54, 14, 92, jBQjzMoq, -jBQjzMoq, 11, jBQjzMoq), 98, qSpk(36, jBQjzMoq, jBQjzMoq, 76, 43, jBQjzMoq, 104), -jBQjzMoq, 5, qSpk(jBQjzMoq, 105, 53, -8, jBQjzMoq, jBQjzMoq, jBQjzMoq))
+    qSpk(jBQjzMoq, qSpk(-79, 44, jBQjzMoq, 53, jBQjzMoq, jBQjzMoq, 108), jBQjzMoq, 54, qSpk(117, jBQjzMoq, 32, jBQjzMoq, 41, 7, 30), 75, jBQjzMoq)
+  end
+  var corqHU = (jBQjzMoq / 112)
+  while (0 - qSpk(corqHU, 4, 37, corqHU, 93, jBQjzMoq, -9) / 7)
+    var RWbqKaC[116]
+    while ( not 86 + 56)
+      corqHU += RWbqKaC[44]
+      RWbqKaC[109] = corqHU
+      jBQjzMoq =  not 101 > qSpk(jBQjzMoq, -112, jBQjzMoq, jBQjzMoq, 108, corqHU, 91) >= RWbqKaC[jBQjzMoq]
+      jBQjzMoq += qSpk(112, qSpk(16, -17, 31, -90, 20, jBQjzMoq, -64), 35, jBQjzMoq, -corqHU, corqHU, qSpk(97, 100, jBQjzMoq, 106, corqHU, 78, 37))
+      RWbqKaC[58] = 2 <= 10
+    end
+    qSpk(qSpk(corqHU, 104, 77, 10, 4, jBQjzMoq, 127), qSpk(98, corqHU, jBQjzMoq, corqHU, 85, 73, jBQjzMoq), corqHU, corqHU, -125, qSpk(90, jBQjzMoq, 39, 49, corqHU, corqHU, 16), -qSpk(73, 38, -57, 90, jBQjzMoq, 76, corqHU))
+    RWbqKaC[40] = 91 / -79 < qSpk(corqHU, 15, -77, 66, 31, jBQjzMoq, jBQjzMoq)
+  end
+end
+

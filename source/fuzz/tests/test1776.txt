@@ -1,0 +1,15 @@
+# SEED 13097
+
+var PFFac
+
+function B3ZNXCh(F7Z, Ewritxm)
+  PFFac = 40
+  var ISmTGNWP[101]
+  var MwKp
+  F7Z = ISmTGNWP[B3ZNXCh(77, MwKp)] >= -111
+  var tuaG[127]
+  B3ZNXCh(PFFac, B3ZNXCh(MwKp, MwKp))
+end
+
+var qum7wZ
+

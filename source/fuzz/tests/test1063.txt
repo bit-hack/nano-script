@@ -1,0 +1,32 @@
+# SEED 12384
+
+var p_h = 69
+
+function owsk(cP06M8P, nFuBIe, VxW4, eWLqei)
+  cP06M8P = 72
+  if (p_h)
+  end
+  owsk(69, 123, 51, owsk(56, p_h, -12, -4))
+  p_h +=  not (p_h < 14)
+  return p_h or p_h * owsk(72, p_h, 6, p_h) or p_h
+  var iDr0
+  return (owsk(p_h, 87, p_h, 112))
+  while (iDr0)
+  end
+end
+
+var jdF4Cr[84]
+
+var kc5nLD[85]
+
+function YmV3l(TrUCOtC, cydkyMwF, TEH, zEH6mP1, kWCxMLu, ubX, UAoEwqW9)
+  return 58
+  owsk(owsk(p_h, 122, 24, -p_h), 1, YmV3l(81, p_h, -p_h, 30, 110, 24, -52), p_h)
+  cydkyMwF +=  not owsk(p_h, 2, p_h, p_h) + p_h
+  TEH += p_h <= jdF4Cr[-p_h]
+  kc5nLD[73] = jdF4Cr[-25] / (owsk(p_h, 95, -p_h, 83))
+  return p_h and 40 == 30 == 111
+  p_h = jdF4Cr[p_h] < YmV3l(22, p_h, p_h, p_h, p_h, p_h, 42)
+  return jdF4Cr[p_h < p_h]
+end
+

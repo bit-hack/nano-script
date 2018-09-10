@@ -1,0 +1,100 @@
+# SEED 12860
+
+var B9H8[67]
+
+var Htvb5[86]
+
+var _szT
+
+function r1_vgJ(ax, rUQuO)
+  while ( not 1 * _szT / 0)
+    var tqPi36he
+    tqPi36he += _szT
+    rUQuO += r1_vgJ(_szT, r1_vgJ(_szT, 104))
+  end
+  var _ZK2V
+  var lu[61]
+  while ((_ZK2V) or (_ZK2V))
+    _ZK2V += (r1_vgJ(36, _szT)) < 70 - 11
+    ax = _ZK2V and _ZK2V +  not 18 * 97
+    var IRw8Xg[104]
+    while (_ZK2V)
+      var ohjHelj = -5 < r1_vgJ(44, _szT) > r1_vgJ(115, _szT)
+    end
+  end
+  _ZK2V = _szT - _ZK2V
+  while ( not 125 - r1_vgJ(66, _szT) <= 68)
+    r1_vgJ(16, 29)
+  end
+  while ( not -r1_vgJ(_szT, _szT) >= r1_vgJ(87, 89) < _szT * 20)
+    Htvb5[4] = 33 and _ZK2V < r1_vgJ(82, 13) + r1_vgJ(_szT, _szT)
+    if (111 >= 125 >= _ZK2V)
+      var _BKv[73]
+      r1_vgJ(63, 7)
+      _BKv[69] = 20 > r1_vgJ(_ZK2V, _szT)
+      _ZK2V += 60
+    end
+    if (lu[-r1_vgJ(_ZK2V, _ZK2V)] + r1_vgJ(43, _ZK2V))
+      B9H8[107] = lu[(_ZK2V)]
+      rUQuO = Htvb5[(95)]
+      if ((27 == _szT))
+        while (58 / (r1_vgJ(34, _szT)))
+          if (69)
+            _szT +=  not r1_vgJ(17, _ZK2V) and -_ZK2V *  not _szT * _ZK2V
+            var Zw_iNPL[98]
+            while ( not _ZK2V)
+              return r1_vgJ(r1_vgJ(123, _ZK2V), _ZK2V)
+              var ownEpD_[17]
+              _ZK2V +=  not  not  not 89 or r1_vgJ(_ZK2V, _szT)
+            end
+            _ZK2V += _szT
+            var N9ey = r1_vgJ(_ZK2V, 18) * r1_vgJ(117, -122) <= -8
+          end
+          r1_vgJ(-_ZK2V, r1_vgJ(-87, 26))
+          rUQuO = r1_vgJ(_ZK2V, 83) - _ZK2V + _ZK2V <= _szT
+          var kdTvty
+          r1_vgJ(r1_vgJ(kdTvty, -77), 125)
+        end
+        var HNVv
+        HNVv = r1_vgJ(49, HNVv) == r1_vgJ(98, -_szT) > -26
+        var MIE[74]
+      end
+      if (r1_vgJ(17, _ZK2V) * _ZK2V > r1_vgJ(_ZK2V, 107))
+        ax = lu[(r1_vgJ(100, _ZK2V))]
+        rUQuO =  not _ZK2V
+      end
+      r1_vgJ(46, r1_vgJ(_ZK2V, _ZK2V))
+    end
+    if (-_szT and r1_vgJ(_szT, _szT) or B9H8[_szT])
+    end
+  end
+  var ydhQXfKD[25]
+end
+
+var thdN
+
+var EhxQ = 97
+
+function Pz(TB, GjDfPEb)
+  var ESVrORA[113]
+  GjDfPEb = Pz(7, thdN)
+  var rD5z[116]
+  TB = rD5z[_szT] <=  not r1_vgJ(EhxQ, EhxQ) <= Pz(thdN, 2)
+  return (49) -  not (r1_vgJ(17, _szT))
+  EhxQ = _szT > thdN
+  if (56 / thdN >= -93)
+  end
+  var UMY8z3WE
+end
+
+function nmQ52(FlS, gVTUOvB)
+  gVTUOvB += nmQ52(EhxQ, Pz(63, -_szT))
+  gVTUOvB =  not 43 / EhxQ or thdN + thdN
+  var fJz
+  Pz(4, EhxQ)
+  Htvb5[106] = fJz
+  var X6Kh_b[83]
+  var TVci3N0_ = _szT <= 19 * Pz(106, 78) / -105
+  var NBlWi6u = -X6Kh_b[ not 91 * -thdN]
+end
+

@@ -1,0 +1,26 @@
+# SEED 13355
+
+var zen
+
+function kxakznC(wVNcI_Jk, mvdyu, sb_VFZ, GW15D3QN, rlI3, Cf1Q)
+  var wtazC
+  return wtazC == kxakznC(105, 17, zen, 43, wtazC, 106)
+  while (kxakznC(wtazC, zen, kxakznC(zen, 47, zen, zen, 34, 34), 123, kxakznC(-40, wtazC, 75, wtazC, -wtazC, wtazC), kxakznC(zen, wtazC, 113, zen, 28, wtazC)))
+    while (kxakznC(wtazC, zen, kxakznC(88, zen, 28, -zen, wtazC, 81), -21, kxakznC(54, 52, zen, 83, 47, zen), -kxakznC(zen, 64, 55, wtazC, 92, wtazC)))
+      if (kxakznC(kxakznC(81, zen, wtazC, 26, 14, 59), -kxakznC(-zen, 60, zen, -117, 74, zen), zen, 124, wtazC, kxakznC(35, 60, 92, zen, -wtazC, wtazC)))
+        return kxakznC(126, 13, 120, 103, 73, 111) == 71 < kxakznC(zen, zen, -wtazC, 58, 5, 70) >= kxakznC(-zen, wtazC, zen, wtazC, 2, zen)
+        zen += (57)
+      end
+    end
+    if (kxakznC(116, 71, 98, 86, 63, 101))
+    end
+  end
+  if (kxakznC(61, kxakznC(100, 108, zen, wtazC, zen, zen), 92, wtazC, 85, -kxakznC(wtazC, wtazC, zen, 32, zen, zen)))
+    Cf1Q = (kxakznC(wtazC, 88, 101, 14, -zen, -wtazC)) > -kxakznC(101, 120, 126, 98, zen, 102) or wtazC
+  end
+  wtazC = -74 == kxakznC(zen, 85, zen, zen, -98, 92) or kxakznC(wtazC, zen, 73, zen, 68, wtazC)
+  kxakznC(zen, kxakznC(36, -wtazC, wtazC, zen, zen, 77), wtazC, wtazC, kxakznC(80, 7, 112, zen, wtazC, 80), wtazC)
+  var z_P8A = (93) == zen
+  wtazC += wtazC
+end
+

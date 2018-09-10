@@ -1,0 +1,12 @@
+# SEED 12492
+
+var AH = 64
+
+var P6UfETql[37]
+
+var wDt[94]
+
+var AMu_ap = 40
+
+var sT6 = 8
+

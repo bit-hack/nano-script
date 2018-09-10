@@ -1,0 +1,19 @@
+# SEED 13115
+
+var F8p
+
+var mX[14]
+
+var yX = 24
+
+function IKP7r(NsANk, yqvII)
+  var FP[33]
+  FP[11] = FP[yX <= F8p]
+  FP[37] = mX[yX * IKP7r(yX, 20)]
+  NsANk = 93 - yX or -IKP7r(114, -105)
+  return yX
+  F8p += mX[(IKP7r(-27, 119))]
+  var Xgii[76]
+  var U85g[42]
+end
+

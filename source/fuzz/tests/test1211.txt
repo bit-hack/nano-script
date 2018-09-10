@@ -1,0 +1,42 @@
+# SEED 12532
+
+function Aj9v8p(yM9Z6zI0, zwlG9g, QZWpl6Zf, YTahb)
+  var vd[104]
+  vd[24] = (Aj9v8p(127, -33, 70, 107)) + Aj9v8p(123, 67, 26, 40) + 38
+  var oQpk =  not -54 < 78 - 31
+  var c_lz4 =  not Aj9v8p(89, oQpk, oQpk, oQpk) and oQpk
+  return Aj9v8p(c_lz4, 85, Aj9v8p(oQpk, -127, 119, oQpk), c_lz4)
+  return vd[(67)]
+  var EGDpReL4 = c_lz4
+end
+
+var fH[128]
+
+var fIf[117]
+
+function T0P8U(yKioaF, T6_RXUl, sd0E7RT, rxxP)
+  Aj9v8p(49, 49, 7, T0P8U(54, 116, 90, 107))
+  var tXrXE
+  var KA = T0P8U(68, tXrXE, tXrXE, tXrXE) / 114 + 119
+  if (Aj9v8p(tXrXE, 4, tXrXE, 50) <= T0P8U(KA, 92, KA, 40))
+    return  not 58 >= 55 - KA
+    if (67 +  not  not  not T0P8U(-6, tXrXE, 105, 105))
+    end
+    if ((KA) / -(0))
+      rxxP += 48 > KA + 122 >= 106
+      return fIf[39] * (T0P8U(tXrXE, 14, 41, 80))
+    end
+    while (-KA)
+      if (-(Aj9v8p(90, 66, tXrXE, -80) or -49))
+      end
+    end
+    tXrXE += fH[3]
+  end
+  Aj9v8p(KA, 1, Aj9v8p(KA, tXrXE, 62, KA), T0P8U(-88, tXrXE, 0, KA))
+  var YueqVp = tXrXE
+  T0P8U(tXrXE, T0P8U(100, 80, 30, -YueqVp), 109, Aj9v8p(tXrXE, 34, KA, YueqVp))
+  return 76
+end
+
+var hI2HYQ
+

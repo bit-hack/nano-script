@@ -1,0 +1,24 @@
+# SEED 12362
+
+function A4o(BzZXlC, Cix4p)
+  return 33 * A4o(125, 36) > 102
+  if (A4o(A4o(120, 23), A4o(75, 33)))
+    return  not (19 - 59)
+  end
+  var cJUf4A9Q[97]
+  var DtIp[71]
+  var fD2D0b = ( not -(58))
+end
+
+function DAqy(k89c3xp, Zc_7, w2bgfzt, Rj4e, Sjb)
+  while (A4o(33, 127) * 86 < DAqy(55, 55, 30, 18, 81))
+  end
+  var Ncua23 = 18
+  Ncua23 = DAqy(-10, -45, 49, Ncua23, 25) >= -12 < Ncua23 * Ncua23
+  Ncua23 =  not A4o(DAqy(Ncua23, 25, -Ncua23, Ncua23, Ncua23), -Ncua23)
+  A4o(DAqy(Ncua23, Ncua23, 18, Ncua23, 17), Ncua23)
+  var szmD = (Ncua23 == Ncua23)
+  var IR2lo520
+  var dj[108]
+end
+
