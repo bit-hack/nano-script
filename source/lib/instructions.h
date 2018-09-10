@@ -2,6 +2,7 @@
 
 namespace ccml {
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 enum instruction_e {
 
   // binary operand

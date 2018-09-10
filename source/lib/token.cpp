@@ -5,6 +5,7 @@
 
 using namespace ccml;
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 token_stream_t::token_stream_t(ccml_t &ccml)
   : ccml_(ccml)
   , index_(0)
@@ -49,6 +50,7 @@ void token_stream_t::reset() {
   stream_.clear();
 }
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 const char *token_t::token_name(token_e e) {
   switch (e) {
   case TOK_FUNC:     return "function";

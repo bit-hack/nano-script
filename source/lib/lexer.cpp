@@ -6,6 +6,7 @@ using namespace ccml;
 
 namespace {
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 bool is_alpha_numeric(const char t) {
   return (t >= 'a' && t <= 'z') ||
          (t >= 'A' && t <= 'Z') ||
@@ -36,6 +37,7 @@ bool munch(const char *&s, const char *string) {
 
 } // namespace
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 bool lexer_t::lex(const char *s) {
 
   const char *new_line_ = s;

@@ -6,6 +6,7 @@
 
 using namespace ccml;
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void error_manager_t::on_error_(uint32_t line, const char *fmt, ...) {
   // generate the error message
   char buffer[1024] = {'\0'};

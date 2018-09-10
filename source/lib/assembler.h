@@ -11,6 +11,7 @@
 
 namespace ccml {
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 // the asm stream bridges the assembler and the code store
 struct asm_stream_t {
 
@@ -70,6 +71,7 @@ struct asm_stream_t {
   // if line is nullptr then current lexer line is used
   void set_line(lexer_t &lexer, const token_t *line);
 
+  // add identifier
   void add_ident(const identifier_t &ident);
 
 protected:
@@ -81,6 +83,7 @@ protected:
   uint8_t *ptr;
 };
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct assembler_t {
 
   assembler_t(ccml_t &c, asm_stream_t &stream);

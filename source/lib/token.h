@@ -8,6 +8,7 @@
 
 namespace ccml {
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 enum token_e {
   TOK_FUNC,
   TOK_END,
@@ -45,6 +46,7 @@ enum token_e {
   TOK_NEG,
 };
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct token_t {
 
   token_t(token_e t, uint32_t line)
@@ -84,6 +86,7 @@ struct token_t {
   uint32_t line_no_;
 };
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct token_stream_t {
 
   token_stream_t(ccml_t &ccml);

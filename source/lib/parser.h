@@ -9,6 +9,7 @@
 
 namespace ccml {
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct scope_list_t {
 
   scope_list_t(ccml_t &ccml)
@@ -165,6 +166,7 @@ protected:
   int32_t arg_head_;
 };
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct function_t {
   ccml_syscall_t sys_;
   std::string name_;
@@ -191,6 +193,7 @@ struct function_t {
   }
 };
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct global_t {
   const token_t *token_;
   int32_t offset_;
@@ -198,6 +201,7 @@ struct global_t {
   int32_t size_;
 };
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct parser_t {
 
   parser_t(ccml_t &c)

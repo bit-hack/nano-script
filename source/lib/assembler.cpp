@@ -10,15 +10,11 @@
 
 using namespace ccml;
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void asm_stream_t::set_line(lexer_t &lexer, const token_t *t) {
   const uint32_t pc = pos();
   const uint32_t line = t ? t->line_no_ : lexer.stream_.line_number();
   store_.add_line(pc, line);
-}
-
-void assembler_t::add_ident(const identifier_t &ident) {
-//  printf("%03d -> %03d  %s\n", ident.start, ident.end, ident.token->string());
-  stream.add_ident(ident);
 }
 
 void asm_stream_t::add_ident(const identifier_t &ident) {
@@ -32,10 +28,16 @@ void asm_stream_t::add_ident(const identifier_t &ident) {
   store_.identifiers_.push_back(ident);
 }
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 assembler_t::assembler_t(ccml_t &c, asm_stream_t &stream)
   : ccml_(c)
   , stream(stream)
 {
+}
+
+void assembler_t::add_ident(const identifier_t &ident) {
+//  printf("%03d -> %03d  %s\n", ident.start, ident.end, ident.token->string());
+  stream.add_ident(ident);
 }
 
 void assembler_t::write8(const uint8_t v) {

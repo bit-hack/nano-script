@@ -9,6 +9,7 @@
 
 namespace ccml {
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct error_t {
 
   void clear() {
@@ -20,6 +21,7 @@ struct error_t {
   uint32_t line;
 };
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct error_manager_t {
 
   error_manager_t(ccml_t &ccml): ccml_(ccml) {}

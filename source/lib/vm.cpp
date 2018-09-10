@@ -6,8 +6,6 @@
 #include "disassembler.h"
 
 
-using namespace ccml;
-
 /*
  *   s_     STACK LAYOUT
  *        .  .  .  .  .  .
@@ -29,7 +27,15 @@ using namespace ccml;
  *        '--------------'
  */
 
-static int32_t history[__INS_COUNT__];
+
+using namespace ccml;
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+namespace {
+
+int32_t history[__INS_COUNT__];
+
+} // namespace {}
 
 void print_history() {
   printf("histogram:\n");
@@ -39,6 +45,7 @@ void print_history() {
   }
 }
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 int32_t thread_t::_read_operand() {
   const uint8_t *c = ccml_.code();
   // XXX: range check for c
@@ -350,9 +357,7 @@ void thread_t::step_imp_() {
   case INS_POP:    _do_INS_POP();    break;
   case INS_CONST:  _do_INS_CONST();  break;
   case INS_LOCALS: _do_INS_LOCALS(); break;
-
   case INS_ACCV:   _do_INS_ACCV();   break;
-
   case INS_GETV:   _do_INS_GETV();   break;
   case INS_SETV:   _do_INS_SETV();   break;
   case INS_GETVI:  _do_INS_GETVI();  break;
@@ -462,10 +467,6 @@ bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
   return true;
 }
 
-void vm_t::reset() {
-  // nothing to do
-}
-
 value_t thread_t::getv(int32_t offs) {
   const int32_t index = frame_().sp_ + offs;
   if (index < 0 || index >= int32_t(s_head_)) {
@@ -496,4 +497,9 @@ bool thread_t::peek(int32_t offset, bool absolute, value_t &out) const {
     return true;
   }
   return false;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+void vm_t::reset() {
+  // nothing to do
 }

@@ -6,6 +6,7 @@
 
 namespace {
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 const char *gMnemonic[] = {
     // operators
     "INS_ADD", "INS_SUB", "INS_MUL", "INS_DIV", "INS_MOD", "INS_AND", "INS_OR",
@@ -30,6 +31,7 @@ static_assert(sizeof(gMnemonic) / sizeof(const char *) == ccml::__INS_COUNT__,
 
 namespace ccml {
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 const char *disassembler_t::get_mnemonic(const instruction_e e) {
   assert(e < __INS_COUNT__);
   return gMnemonic[e];

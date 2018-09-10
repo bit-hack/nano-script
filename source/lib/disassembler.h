@@ -4,6 +4,7 @@
 
 namespace ccml {
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct disassembler_t {
 
   disassembler_t(ccml_t &ccml)

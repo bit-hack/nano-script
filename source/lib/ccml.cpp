@@ -12,6 +12,7 @@
 
 using namespace ccml;
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 ccml_t::ccml_t()
   : store_()
   , lexer_(new lexer_t(*this))
@@ -55,6 +56,7 @@ void ccml_t::reset() {
   store_.reset();
 }
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 code_store_t::code_store_t()
   : stream_(new asm_stream_t{*this}) {
 }
