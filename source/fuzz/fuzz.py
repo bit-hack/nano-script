@@ -377,13 +377,14 @@ class Generator(object):
 
 def main():
     global _seed
+    base = 1024
     for i in range(0, 1024):
         _seed = 12345 + i
         gen = Generator()
         out = '# SEED {0}\n\n'.format(_seed)
         out += gen.do_program()
 
-        with open('tests/test{0}.txt'.format(i), 'w') as fd:
+        with open('tests/test{0}.txt'.format(base + i), 'w') as fd:
             fd.write(out)
 
 

@@ -37,6 +37,7 @@ protected:
   void push(token_e);
   void push_ident(const char *start, const char *end);
   void push_val(const char *start, const char *end);
+  void push_string(const char *start, const char *end);
 };
 
 } // namespace ccml

@@ -122,6 +122,10 @@ struct error_manager_t {
     on_error_(line, "unexpected character '%c' in source", ch);
   }
 
+  virtual void string_quote_mismatch(const uint32_t line, const char ch) {
+    on_error_(line, "string missing closing quote \"");
+  }
+
 protected:
   uint32_t line_number_() const {
     return ccml_.lexer().stream_.line_number();

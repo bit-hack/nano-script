@@ -53,6 +53,24 @@ bool lexer_t::lex(const char *s) {
       continue;
     }
 
+    // consume a string
+    if (*s == '"') {
+      const char *b = s + 1;
+      for (++s; ; ++s) {
+        if (*s == '"') {
+          break;
+        }
+        if (*s == '\n' || *s == '\0') {
+          // raise an error
+          lines_.push_back(std::string(new_line_, (s+1) - new_line_));
+          ccml_.errors().string_quote_mismatch(line_no_, *s);
+          return false;
+        }
+      }
+      push_string(b, s);
+      continue;
+    }
+
     // comments
     if (*s == '#') {
       for (; *s && *s != '\n'; ++s) {
@@ -240,7 +258,11 @@ void lexer_t::push(token_e tok) {
 }
 
 void lexer_t::push_ident(const char *start, const char *end) {
-  stream_.push(token_t(std::string(start, end), line_no_));
+  stream_.push(token_t(TOK_IDENT, std::string(start, end), line_no_));
+}
+
+void lexer_t::push_string(const char *start, const char *end) {
+  stream_.push(token_t(TOK_STRING, std::string(start, end), line_no_));
 }
 
 void lexer_t::push_val(const char *s, const char *e) {

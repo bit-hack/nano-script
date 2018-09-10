@@ -469,6 +469,14 @@ function main()
   x(y)
 end
 )",
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- lexer
+R"(
+this "is a quote mismatch
+)",
+R"(
+this "is a quote mismatch
+      on another line too"
+)",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
   nullptr
 };

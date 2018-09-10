@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <array>
+#include <bitset>
+#include <string>
 
 #include "ccml.h"
 
@@ -25,6 +27,42 @@ enum class thread_error_t {
 };
 
 using value_t = int32_t;
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+template <size_t SIZE>
+struct stack_t {
+
+  bool is_string(int32_t index) const {
+    return type_[index];
+  }
+
+  bool is_value(int32_t index) const {
+    return !type_[index];
+  }
+
+  value_t &value(int32_t index) {
+    return value_[index];
+  }
+
+  std::string &string(int32_t index) {
+    return string_[index];
+  }
+
+  void set(int32_t index, const value_t &v) {
+    type_[index] = 0;
+    value_[index] = v;
+  }
+
+  void set(index_t index, const std::string &v) {
+    type_[index] = 1;
+    string_[index] = v;
+  }
+
+protected:
+  std::bitset<SIZE> type_;
+  std::array<value_t, SIZE> value_;
+  std::array<std::string, SIZE> string_;
+};
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct thread_t {

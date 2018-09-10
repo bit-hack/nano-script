@@ -643,6 +643,51 @@ static bool test_lexer_1() {
   return (tok->type_ == TOK_IDENT) && (tok->str_ == prog);
 }
 
+static bool test_lexer_2() {
+  static const char *prog = "\"quoted string here\"";
+  ccml_t ccml;
+  if (!ccml.lexer().lex(prog)) {
+    return false;
+  }
+  auto &stream = ccml.lexer().stream_;
+  const token_t *tok = stream.pop();
+  return tok->type_ == TOK_STRING && tok->str_ == "quoted string here";
+}
+
+static bool test_lexer_3() {
+  static const char *prog = "\"\"";
+  ccml_t ccml;
+  if (!ccml.lexer().lex(prog)) {
+    return false;
+  }
+  auto &stream = ccml.lexer().stream_;
+  const token_t *tok = stream.pop();
+  return (tok->type_ == TOK_STRING) && tok->str_.empty();
+}
+
+static bool test_lexer_4() {
+  static const char *prog = "a\"b\"c\"d\"e";
+  ccml_t ccml;
+  if (!ccml.lexer().lex(prog)) {
+    return false;
+  }
+  auto &stream = ccml.lexer().stream_;
+  for (int32_t i = 0; i < 5; ++i) {
+    const token_t *tok = stream.pop();
+    if (tok->str_[0] != 'a' + i) {
+      return false;
+    }
+    if ((i % 2) == 0) {
+      if (tok->type_ != TOK_IDENT)
+        return false;
+    } else {
+      if (tok->type_ != TOK_STRING)
+        return false;
+    }
+  }
+  return true;
+}
+
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 static bool test_array_1() {
   static const char *prog = R"(
@@ -1014,6 +1059,9 @@ static const test_pair_t tests[] = {
     TEST(test_weekday),
     TEST(test_xfails),
     TEST(test_lexer_1),
+    TEST(test_lexer_2),
+    TEST(test_lexer_3),
+    TEST(test_lexer_4),
     TEST(test_array_1),
     TEST(test_array_2),
     TEST(test_array_3),

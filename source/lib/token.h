@@ -41,7 +41,7 @@ enum token_e {
   TOK_RETURN,
   TOK_EOF,
   TOK_ACC,
-
+  TOK_STRING,
   // artificial token generated during expression parser
   TOK_NEG,
 };
@@ -55,14 +55,14 @@ struct token_t {
     , val_(0)
     , line_no_(line) {}
 
-  token_t(const char *s, uint32_t line)
-    : type_(TOK_IDENT)
+  token_t(token_e tok, const char *s, uint32_t line)
+    : type_(tok)
     , str_(s)
     , val_(0)
     , line_no_(line) {}
 
-  token_t(const std::string &s, uint32_t line)
-    : type_(TOK_IDENT)
+  token_t(token_e tok, const std::string &s, uint32_t line)
+    : type_(tok)
     , str_(s)
     , val_(0)
     , line_no_(line) {}
