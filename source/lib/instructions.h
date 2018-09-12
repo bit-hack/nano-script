@@ -29,9 +29,19 @@ enum instruction_e {
   INS_LT,
 
   // compare greater then
+  //    push( pop() > pop() )
   INS_GT,
+
+  // compare less than or equal to
+  //    push( pop() <= pop() )
   INS_LEQ,
+
+  // compare greater then or equal to
+  //    push( pop() >= pop() )
   INS_GEQ,
+
+  // compare equal to
+  //    push( pop() == pop() )
   INS_EQ,
 
   // unconditional jump
@@ -39,13 +49,14 @@ enum instruction_e {
   INS_JMP,
 
   // conditional jump to code offset
-  //    if (pop() != 0)
+  // note: jump when false
+  //    if (pop() == 0)
   //      pc = operand
-  // note: this would be more efficient in the general case to branch when the
-  //       condition == 0.  we can avoid a INS_NOT instruction.
   INS_CJMP,
 
   // call a function
+  //    push( next_pc )
+  //    pc = operand
   INS_CALL,
 
   // return to previous frame {popping locals and args}

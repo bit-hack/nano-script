@@ -26,11 +26,11 @@ bool parser_t::parse(error_t &error) {
         continue;
       }
       if (stream_.found(TOK_VAR)) {
-        parse_global();
+        parse_global_();
         continue;
       }
       if (stream_.found(TOK_FUNC)) {
-        parse_function();
+        parse_function_();
         continue;
       }
 
@@ -79,7 +79,7 @@ const function_t *parser_t::find_function(uint32_t id) const {
   return nullptr;
 }
 
-int32_t parser_t::op_type(token_e type) const {
+int32_t parser_t::op_type_(token_e type) const {
   // return precedence
   // note: higher number will be evaluated earlier in an expression
   switch (type) {
@@ -107,12 +107,12 @@ int32_t parser_t::op_type(token_e type) const {
   }
 }
 
-bool parser_t::is_operator() const {
+bool parser_t::is_operator_() const {
   token_stream_t &stream_ = ccml_.lexer().stream_;
-  return op_type(stream_.type()) > 0;
+  return op_type_(stream_.type()) > 0;
 }
 
-void parser_t::ident_load(const token_t &t) {
+void parser_t::ident_load_(const token_t &t) {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -135,7 +135,7 @@ void parser_t::ident_load(const token_t &t) {
   ccml_.errors().unknown_identifier(t);
 }
 
-void parser_t::ident_save(const token_t &t) {
+void parser_t::ident_save_(const token_t &t) {
   assembler_t &asm_ = ccml_.assembler();
 
   // assign to local variable
@@ -157,7 +157,7 @@ void parser_t::ident_save(const token_t &t) {
   ccml_.errors().cant_assign_unknown_var(t);
 }
 
-void parser_t::parse_lhs() {
+void parser_t::parse_lhs_() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -173,7 +173,7 @@ void parser_t::parse_lhs() {
 
     // ( <expr> )
     if (stream_.found(TOK_LPAREN)) {
-      parse_expr();
+      parse_expr_();
       stream_.found(TOK_RPAREN);
       break;
     }
@@ -183,17 +183,17 @@ void parser_t::parse_lhs() {
       // <TOK_IDENT> ( ... )
       if (stream_.found(TOK_LPAREN)) {
         // call function
-        parse_call(*t);
+        parse_call_(*t);
 
       // <TOK_IDENT> [ ... ]
       } else if (stream_.found(TOK_LBRACKET)) {
         // array access
-        parse_array_get(*t);
+        parse_array_get_(*t);
 
       // <TOK_IDENT>
       } else {
         // load a local/global
-        ident_load(*t);
+        ident_load_(*t);
       }
       break;
     }
@@ -214,7 +214,7 @@ void parser_t::parse_lhs() {
   }
 }
 
-void parser_t::parse_expr_ex(uint32_t tide) {
+void parser_t::parse_expr_ex_(uint32_t tide) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
   assembler_t &asm_ = ccml_.assembler();
 
@@ -225,20 +225,20 @@ void parser_t::parse_expr_ex(uint32_t tide) {
   //    'not' <lhs>
 
   if (const token_t *not = stream_.found(TOK_NOT)) {
-    parse_expr_ex(tide);
-    op_push(TOK_NOT, tide);
+    parse_expr_ex_(tide);
+    op_push_(TOK_NOT, tide);
   }
   else {
-    parse_lhs();
-    if (is_operator()) {
+    parse_lhs_();
+    if (is_operator_()) {
       const token_t *op = stream_.pop();
-      op_push(op->type_, tide);
-      parse_expr_ex(tide);
+      op_push_(op->type_, tide);
+      parse_expr_ex_(tide);
     }
   }
 }
 
-void parser_t::parse_expr() {
+void parser_t::parse_expr_() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -246,11 +246,11 @@ void parser_t::parse_expr() {
   //    <expr_ex>
 
   const uint32_t tide = op_stack_.size();
-  parse_expr_ex(tide);
-  op_pop_all(tide);
+  parse_expr_ex_(tide);
+  op_pop_all_(tide);
 }
 
-void parser_t::parse_decl_array(const token_t &name) {
+void parser_t::parse_decl_array_(const token_t &name) {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -270,7 +270,7 @@ void parser_t::parse_decl_array(const token_t &name) {
   scope_.var_add(name, size->val_);
 }
 
-void parser_t::parse_decl() {
+void parser_t::parse_decl_() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -288,14 +288,14 @@ void parser_t::parse_decl() {
   // check for [ <TOK_VAL> ] array declaration
   if (const token_t *bracket = stream_.found(TOK_LBRACKET)) {
     // pass control to a specialize array decl parser
-    parse_decl_array(*name);
+    parse_decl_array_(*name);
     return;
   }
 
   // parse assignment expression
   const token_t *assign = stream_.found(TOK_ASSIGN);
   if (assign) {
-    parse_expr();
+    parse_expr_();
   } else {
     // implicitly set to zero
     // TODO: add tests for this
@@ -312,7 +312,7 @@ void parser_t::parse_decl() {
   asm_.emit(INS_SETV, ident->offset, assign);
 }
 
-void parser_t::parse_assign(const token_t &name) {
+void parser_t::parse_assign_(const token_t &name) {
   assembler_t &asm_ = ccml_.assembler();
 
   // format:
@@ -326,12 +326,12 @@ void parser_t::parse_assign(const token_t &name) {
   }
 
   // parse assignment expression
-  parse_expr();
+  parse_expr_();
   // generate assignment instruction
-  ident_save(name);
+  ident_save_(name);
 }
 
-void parser_t::parse_accumulate(const token_t &name) {
+void parser_t::parse_accumulate_(const token_t &name) {
   assembler_t &asm_ = ccml_.assembler();
 
   // format:
@@ -345,20 +345,20 @@ void parser_t::parse_accumulate(const token_t &name) {
   }
 
   // parse increment expression
-  parse_expr();
+  parse_expr_();
 
   if (ident->is_array() || ident->is_global) {
     // load, accumulate, save
-    ident_load(name);
+    ident_load_(name);
     asm_.emit(INS_ADD, &name);
-    ident_save(name);
+    ident_save_(name);
   }
   else {
     asm_.emit(INS_ACCV, ident->offset, &name);
   }
 }
 
-void parser_t::parse_call(const token_t &name) {
+void parser_t::parse_call_(const token_t &name) {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -370,7 +370,7 @@ void parser_t::parse_call(const token_t &name) {
   int32_t arg_count = 0;
   if (!stream_.found(TOK_RPAREN)) {
     do {
-      parse_expr();
+      parse_expr_();
       ++arg_count;
     } while (stream_.found(TOK_COMMA));
     stream_.pop(TOK_RPAREN);
@@ -392,7 +392,7 @@ void parser_t::parse_call(const token_t &name) {
   }
 }
 
-void parser_t::parse_if() {
+void parser_t::parse_if_() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -407,10 +407,11 @@ void parser_t::parse_if() {
   bool has_else = false;
   // IF condition
   stream_.pop(TOK_LPAREN);
-  parse_expr();
+  parse_expr_();
 
   // this jump skips the body of the if, hence not
-  int32_t *l1 = asm_.emit(INS_CJMP, 0);
+  asm_.emit(INS_CJMP, 0);
+  int32_t *l1 = asm_.get_fixup();
 
   // note: moved below not and jmp to keep linetable correct
   stream_.pop(TOK_RPAREN);
@@ -425,7 +426,7 @@ void parser_t::parse_if() {
         has_else = true;
         break;
       }
-      parse_stmt();
+      parse_stmt_();
     }
     scope_.leave();
   }
@@ -433,7 +434,8 @@ void parser_t::parse_if() {
   int32_t *l2 = nullptr;
   if (has_else) {
     // skip over ELSE body
-    l2 = asm_.emit(INS_JMP, 0);
+    asm_.emit(INS_JMP, 0);
+    l2 = asm_.get_fixup();
   }
   *l1 = asm_.pos();
   if (has_else) {
@@ -441,7 +443,7 @@ void parser_t::parse_if() {
     {
       scope_.enter();
       while (!stream_.found(TOK_END)) {
-        parse_stmt();
+        parse_stmt_();
       }
       scope_.leave();
     }
@@ -452,7 +454,7 @@ void parser_t::parse_if() {
   // note: no need to pop newline as parse_stmt() handles that
 }
 
-void parser_t::parse_while() {
+void parser_t::parse_while_() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -470,10 +472,11 @@ void parser_t::parse_while() {
   const int32_t l1 = asm_.pos();
   // WHILE condition
   stream_.pop(TOK_LPAREN);
-  parse_expr();
+  parse_expr_();
 
   // GOTO end if false
-  int32_t *l2 = asm_.emit(INS_CJMP, 0);
+  asm_.emit(INS_CJMP, 0);
+  int32_t *l2 = asm_.get_fixup();
 
   // note: moved below not and jump to keep line table correct
   stream_.pop(TOK_RPAREN);
@@ -483,7 +486,7 @@ void parser_t::parse_while() {
   {
     scope_.enter();
     while (!stream_.found(TOK_END)) {
-      parse_stmt();
+      parse_stmt_();
     }
     scope_.leave();
   }
@@ -495,7 +498,7 @@ void parser_t::parse_while() {
   *l2 = asm_.pos();
 }
 
-void parser_t::parse_return() {
+void parser_t::parse_return_() {
   assembler_t &asm_ = ccml_.assembler();
 
   // format:
@@ -505,14 +508,15 @@ void parser_t::parse_return() {
   // TODO: we need to fixup all of the return sizes after the function has been
   //       processed in total so that it matches the INS_LOCALS size
 
-  parse_expr();
-  int32_t *fixup = asm_.emit(INS_RET, scope_.arg_count() + scope_.var_count());
+  parse_expr_();
+  asm_.emit(INS_RET, scope_.arg_count() + scope_.var_count());
+  int32_t *fixup = asm_.get_fixup();
 
   // TODO: add fixup to a list here for process at function end
   funcs_.back().add_return_fixup(fixup);
 }
 
-void parser_t::parse_stmt() {
+void parser_t::parse_stmt_() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -530,31 +534,31 @@ void parser_t::parse_stmt() {
 
   if (stream_.found(TOK_VAR)) {
     // var ...
-    parse_decl();
+    parse_decl_();
   } else if (const token_t *var = stream_.found(TOK_IDENT)) {
     if (stream_.found(TOK_ASSIGN)) {
       // x = ...
-      parse_assign(*var);
+      parse_assign_(*var);
     } else if (stream_.found(TOK_ACC)) {
       // x += ...
-      parse_accumulate(*var);
+      parse_accumulate_(*var);
     } else if (stream_.found(TOK_LPAREN)) {
       // x(
-      parse_call(*var);
+      parse_call_(*var);
       // note: we throw away the return value since its not being used
       asm_.emit(INS_POP, 1);
     } else if (stream_.found(TOK_LBRACKET)) {
       // x[
-      parse_array_set(*var);
+      parse_array_set_(*var);
     } else {
       ccml_.errors().assign_or_call_expected_after(*var);
     }
   } else if (stream_.found(TOK_IF)) {
-    parse_if();
+    parse_if_();
   } else if (stream_.found(TOK_WHILE)) {
-    parse_while();
+    parse_while_();
   } else if (stream_.found(TOK_RETURN)) {
-    parse_return();
+    parse_return_();
   } else {
     ccml_.errors().statement_expected();
   }
@@ -563,7 +567,7 @@ void parser_t::parse_stmt() {
   stream_.pop(TOK_EOL);
 }
 
-void parser_t::parse_function() {
+void parser_t::parse_function_() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -602,7 +606,7 @@ void parser_t::parse_function() {
 
   // emit dummy prologue
   asm_.emit(INS_LOCALS, 0, name);
-  int32_t &locals = asm_.get_fixup();
+  int32_t *locals = asm_.get_fixup();
 
   // note: at this point we parse all of the statements inside
   //       the function
@@ -611,7 +615,7 @@ void parser_t::parse_function() {
   {
     scope_.enter();
     while (!stream_.found(TOK_END)) {
-      parse_stmt();
+      parse_stmt_();
     }
     scope_.leave();
   }
@@ -619,7 +623,7 @@ void parser_t::parse_function() {
   // fixup the number of locals we are reserving with INS_LOCALS
   const uint32_t num_locals = scope_.max_depth();
   if (num_locals) {
-    locals = num_locals;
+    *locals = num_locals;
   }
 
   const int32_t ret_size = scope_.arg_count() + num_locals;
@@ -635,7 +639,7 @@ void parser_t::parse_function() {
   scope_.leave_function();
 }
 
-void parser_t::parse_array_get(const token_t &name) {
+void parser_t::parse_array_get_(const token_t &name) {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -651,7 +655,7 @@ void parser_t::parse_array_get(const token_t &name) {
     }
 
     // this expression is the index subscript
-    parse_expr();
+    parse_expr_();
 
     // if array is global we are relative to bottom of stack
     if (ident->is_global) {
@@ -669,7 +673,7 @@ void parser_t::parse_array_get(const token_t &name) {
   }
 }
 
-void parser_t::parse_array_set(const token_t &name) {
+void parser_t::parse_array_set_(const token_t &name) {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -678,13 +682,13 @@ void parser_t::parse_array_set(const token_t &name) {
   //    <TOK_IDENT> [   <expr> ] = <expr>
 
   // parse the subscript expression
-  parse_expr();
+  parse_expr_();
 
   stream_.pop(TOK_RBRACKET);
   stream_.pop(TOK_ASSIGN);
 
   // the expression to assign
-  parse_expr();
+  parse_expr_();
 
   if (const identifier_t *ident = scope_.find_ident(name)) {
 
@@ -707,7 +711,7 @@ void parser_t::parse_array_set(const token_t &name) {
   }
 }
 
-void parser_t::parse_global() {
+void parser_t::parse_global_() {
   assembler_t &asm_ = ccml_.assembler();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -753,7 +757,7 @@ void parser_t::parse_global() {
   }
 }
 
-void parser_t::op_push(token_e op, uint32_t tide) {
+void parser_t::op_push_(token_e op, uint32_t tide) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   // walk the operator stack for the current expression
@@ -761,7 +765,7 @@ void parser_t::op_push(token_e op, uint32_t tide) {
     // get the top operator on the stack
     const token_e top = op_stack_.back();
     // if this operator is higher precedence then top of stack
-    if (op_type(op) > op_type(top)) {
+    if (op_type_(op) > op_type_(top)) {
       break;
     }
     // if lower or = precedence, pop from the stack and emit it
@@ -772,7 +776,7 @@ void parser_t::op_push(token_e op, uint32_t tide) {
   op_stack_.push_back(op);
 }
 
-void parser_t::op_pop_all(uint32_t tide) {
+void parser_t::op_pop_all_(uint32_t tide) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   // walk the operator stack for the current expression
@@ -793,4 +797,17 @@ void parser_t::reset() {
   funcs_.clear();
   global_.clear();
   op_stack_.clear();
+}
+
+parser_t::parser_t(ccml_t &c)
+  : ccml_(c)
+  , scope_(c)
+{
+  // register builtin functions
+  void builtin_abs(struct ccml::thread_t &);
+  void builtin_max(struct ccml::thread_t &);
+  void builtin_min(struct ccml::thread_t &);
+  add_function("abs", builtin_abs, 1);
+  add_function("min", builtin_min, 2);
+  add_function("max", builtin_max, 2);
 }

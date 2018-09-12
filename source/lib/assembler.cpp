@@ -1,6 +1,7 @@
 #include <cstring>
 
 #include "assembler.h"
+#include "disassembler.h"
 #include "lexer.h"
 #include "ccml.h"
 #include "errors.h"
@@ -9,6 +10,35 @@
 
 
 using namespace ccml;
+
+namespace {
+
+bool has_operand(const instruction_e ins) {
+  switch (ins) {
+  case INS_JMP:
+  case INS_CJMP:
+  case INS_CALL:
+  case INS_RET:
+  case INS_SCALL:
+  case INS_POP:
+  case INS_CONST:
+  case INS_LOCALS:
+  case INS_ACCV:
+  case INS_GETV:
+  case INS_SETV:
+  case INS_GETVI:
+  case INS_SETVI:
+  case INS_GETG:
+  case INS_SETG:
+  case INS_GETGI:
+  case INS_SETGI:
+    return true;
+  default:
+    return false;
+  }
+}
+
+} // namespace
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void asm_stream_t::set_line(lexer_t &lexer, const token_t *t) {
@@ -40,13 +70,13 @@ void assembler_t::add_ident(const identifier_t &ident) {
   stream.add_ident(ident);
 }
 
-void assembler_t::write8(const uint8_t v) {
+void assembler_t::write8_(const uint8_t v) {
   if (!stream.write8(v)) {
     ccml_.errors().program_too_large();
   }
 }
 
-void assembler_t::write32(const int32_t v) {
+void assembler_t::write32_(const int32_t v) {
   if (!stream.write32(v)) {
     ccml_.errors().program_too_large();
   }
@@ -70,14 +100,14 @@ void assembler_t::emit(instruction_e ins, const token_t *t) {
   case INS_GEQ:
   case INS_EQ:
   case INS_NEG:
-    write8(ins);
+    peep_hole_.push_back(instruction_t{ins, 0, t});
     break;
   default:
     assert(!"unknown instruction");
   }
 }
 
-int32_t *assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
+void assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   stream.set_line(ccml_.lexer(), t);
   // encode this instruction
   switch (ins) {
@@ -98,14 +128,11 @@ int32_t *assembler_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   case INS_SETG:
   case INS_GETGI:
   case INS_SETGI:
-    write8(ins);
-    write32(v);
+    peep_hole_.push_back(instruction_t{ins, v, t});
     break;
   default:
     assert(!"unknown instruction");
   }
-  // return the operand
-  return (int32_t*)(stream.head(-4));
 }
 
 void assembler_t::emit(token_e tok, const token_t *t) {
@@ -129,13 +156,55 @@ void assembler_t::emit(token_e tok, const token_t *t) {
   }
 }
 
-int32_t assembler_t::pos() const {
+int32_t assembler_t::pos() {
+  peep_hole_flush_();
   return stream.pos();
 }
 
-int32_t &assembler_t::get_fixup() {
-  return *reinterpret_cast<int32_t*>(stream.head(-4));
+int32_t *assembler_t::get_fixup() {
+  assert(!peep_hole_.empty());
+  const instruction_t last = peep_hole_.back();
+  peep_hole_.pop_back();
+  peep_hole_flush_();
+  emit_(last);
+  return reinterpret_cast<int32_t*>(stream.head(-4));
 }
 
 void assembler_t::reset() {
+  peep_hole_.clear();
+  // stream.reset() ?
+}
+
+// emit an instruction into the instruction stream
+void assembler_t::emit_(const instruction_t &ins) {
+  stream.set_line(ccml_.lexer(), ins.token);
+  write8_(ins.opcode);
+  if (has_operand(ins.opcode)) {
+    write32_(ins.operand);
+  }
+}
+
+void assembler_t::peep_hole_flush_() {
+
+  // note: we can optimize anything in the peephole
+  // XXX: dump these runs out somewhere to see what we have
+
+  if (peep_hole_.empty()) {
+    return;
+  }
+
+  // printf("---- ---- ---- ----\n");
+
+  // flush all instruction to the output stream
+  for (const instruction_t &ins : peep_hole_) {
+
+    // printf("%s ", disassembler_t::get_mnemonic(ins.opcode));
+    // if (has_operand(ins.opcode)) {
+    //   printf("%04d", ins.operand);
+    // }
+    // printf("\n");
+
+    emit_(ins);
+  }
+  peep_hole_.clear();
 }

@@ -84,23 +84,30 @@ protected:
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+struct instruction_t {
+  instruction_e opcode;
+  int32_t operand;
+  const token_t *token;
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct assembler_t {
 
   assembler_t(ccml_t &c, asm_stream_t &stream);
 
   // emit into the code stream
-  void     emit(token_e, const token_t *t = nullptr);
-  void     emit(instruction_e ins, const token_t *t = nullptr);
-  int32_t *emit(instruction_e ins, int32_t v, const token_t *t = nullptr);
+  void emit(token_e, const token_t *t = nullptr);
+  void emit(instruction_e ins, const token_t *t = nullptr);
+  void emit(instruction_e ins, int32_t v, const token_t *t = nullptr);
 
   // add an identifier for debug purposes
   void add_ident(const struct identifier_t &ident);
 
   // return the current output head
-  int32_t pos() const;
+  int32_t pos();
 
   // return a reference to the last instructions operand
-  int32_t &get_fixup();
+  int32_t *get_fixup();
 
   // reset any stored state
   void reset();
@@ -109,13 +116,24 @@ struct assembler_t {
   asm_stream_t &stream;
 
 protected:
+
+  // flush the peephole to the output stream
+  void peep_hole_flush_();
+
+  // emit an instruction type
+  void emit_(const instruction_t &ins);
+
+  // ?
   std::vector<uint32_t> scope_pc_;
 
+  // instruction peephole
+  std::vector<instruction_t> peep_hole_;
+
   // write 8bits to the code stream
-  void write8(const uint8_t v);
+  void write8_(const uint8_t v);
 
   // write 32bits to the code stream
-  void write32(const int32_t v);
+  void write32_(const int32_t v);
 
   ccml_t &ccml_;
 };

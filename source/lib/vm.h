@@ -29,42 +29,6 @@ enum class thread_error_t {
 using value_t = int32_t;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-template <size_t SIZE>
-struct stack_t {
-
-  bool is_string(int32_t index) const {
-    return type_[index];
-  }
-
-  bool is_value(int32_t index) const {
-    return !type_[index];
-  }
-
-  value_t &value(int32_t index) {
-    return value_[index];
-  }
-
-  std::string &string(int32_t index) {
-    return string_[index];
-  }
-
-  void set(int32_t index, const value_t &v) {
-    type_[index] = 0;
-    value_[index] = v;
-  }
-
-  void set(index_t index, const std::string &v) {
-    type_[index] = 1;
-    string_[index] = v;
-  }
-
-protected:
-  std::bitset<SIZE> type_;
-  std::array<value_t, SIZE> value_;
-  std::array<std::string, SIZE> string_;
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct thread_t {
 
   // XXXX: as it stands globals are not shared among threads
@@ -128,12 +92,23 @@ protected:
   // step a single instruction (internal)
   void step_imp_();
 
-  // XXX: add a halted flag?
+  // ccml service locator
   ccml_t &ccml_;
+
+  // the return value of the thread function
   int32_t return_code_;
-  bool finished_;
+
+  // set when a thread raises and error
   thread_error_t error_;
+
+  // total cycle count for thread execution
   uint32_t cycles_;
+
+  // true when a thread has finished executing
+  bool finished_;
+
+  // syscalls can set to true to halt execution
+  bool halted_;
 
   struct frame_t {
     int32_t sp_;
@@ -148,7 +123,7 @@ protected:
 
   void enter_(uint32_t sp, uint32_t pc) {
     if (f_head_ >= f_.size()) {
-      set_error(thread_error_t::e_stack_overflow);
+      set_error_(thread_error_t::e_stack_overflow);
     }
     else {
       ++f_head_;
@@ -160,7 +135,7 @@ protected:
   // return - old PC as return value
   uint32_t leave_() {
     if (f_head_ <= 0) {
-      set_error(thread_error_t::e_stack_underflow);
+      set_error_(thread_error_t::e_stack_underflow);
       return 0;
     }
     else {
@@ -170,77 +145,82 @@ protected:
     }
   }
 
+  // current stack frame
   const frame_t &frame_() const {
     assert(f_head_);
     return f_[f_head_-1];
   }
 
+  // current stack frame
   frame_t &frame_() {
     assert(f_head_);
     return f_[f_head_-1];
   }
 
+  // push value onto stack
   void push_(value_t v) {
     if (s_head_ >= s_.size()) {
-      set_error(thread_error_t::e_stack_overflow);
+      set_error_(thread_error_t::e_stack_overflow);
     } else {
       s_[s_head_++] = v;
     }
   }
 
+  // pop value from stack
   value_t pop_() {
     if (s_head_ <= 0) {
-      set_error(thread_error_t::e_stack_underflow);
+      set_error_(thread_error_t::e_stack_underflow);
       return 0;
     } else {
       return s_[--s_head_];
     }
   }
 
-  void set_error(thread_error_t error) {
+  // raise an error
+  void set_error_(thread_error_t error) {
     finished_ = true;
     error_ = error;
     return_code_ = -1;
   }
 
-  value_t getv(int32_t offs);
-  void setv(int32_t offs, value_t val);
+  value_t getv_(int32_t offs);
+  void setv_(int32_t offs, value_t val);
 
-  int32_t _read_operand();
-  uint8_t _read_opcode();
-  uint8_t _peek_opcode();
+  int32_t read_operand_();
+  uint8_t read_opcode_();
+  uint8_t peek_opcode_();
 
-  void _do_INS_ADD();
-  void _do_INS_SUB();
-  void _do_INS_MUL();
-  void _do_INS_DIV();
-  void _do_INS_MOD();
-  void _do_INS_AND();
-  void _do_INS_OR();
-  void _do_INS_NOT();
-  void _do_INS_NEG();
-  void _do_INS_LT();
-  void _do_INS_GT();
-  void _do_INS_LEQ();
-  void _do_INS_GEQ();
-  void _do_INS_EQ();
-  void _do_INS_JMP();
-  void _do_INS_CJMP();
-  void _do_INS_CALL();
-  void _do_INS_RET();
-  void _do_INS_SCALL();
-  void _do_INS_POP();
-  void _do_INS_CONST();
-  void _do_INS_LOCALS();
-  void _do_INS_ACCV();
-  void _do_INS_GETV();
-  void _do_INS_SETV();
-  void _do_INS_GETVI();
-  void _do_INS_SETVI();
-  void _do_INS_GETG();
-  void _do_INS_SETG();
-  void _do_INS_GETGI();
-  void _do_INS_SETGI();
+  void do_INS_ADD_();
+  void do_INS_SUB_();
+  void do_INS_MUL_();
+  void do_INS_DIV_();
+  void do_INS_MOD_();
+  void do_INS_AND_();
+  void do_INS_OR_();
+  void do_INS_NOT_();
+  void do_INS_NEG_();
+  void do_INS_LT_();
+  void do_INS_GT_();
+  void do_INS_LEQ_();
+  void do_INS_GEQ_();
+  void do_INS_EQ_();
+  void do_INS_JMP_();
+  void do_INS_CJMP_();
+  void do_INS_CALL_();
+  void do_INS_RET_();
+  void do_INS_SCALL_();
+  void do_INS_POP_();
+  void do_INS_CONST_();
+  void do_INS_LOCALS_();
+  void do_INS_ACCV_();
+  void do_INS_GETV_();
+  void do_INS_SETV_();
+  void do_INS_GETVI_();
+  void do_INS_SETVI_();
+  void do_INS_GETG_();
+  void do_INS_SETG_();
+  void do_INS_GETGI_();
+  void do_INS_SETGI_();
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

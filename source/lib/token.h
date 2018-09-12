@@ -117,6 +117,7 @@ struct token_stream_t {
 
 protected:
   ccml_t &ccml_;
+
   uint32_t index_;
   uint32_t line_no_;
   std::vector<token_t> stream_;

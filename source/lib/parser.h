@@ -204,11 +204,7 @@ struct global_t {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct parser_t {
 
-  parser_t(ccml_t &c)
-    : ccml_(c)
-    , scope_(c)
-  {
-  }
+  parser_t(ccml_t &c);
 
   // parse all tokens stored in the lexer
   bool parse(struct error_t &error);
@@ -257,38 +253,38 @@ protected:
   scope_list_t scope_;
 
   // parse specific language constructs
-  void parse_array_get(const token_t &name);
-  void parse_array_set(const token_t &name);
-  void parse_function();
-  void parse_stmt();
-  void parse_return();
-  void parse_while();
-  void parse_if();
-  void parse_call(const token_t &name);
-  void parse_assign(const token_t &name);
-  void parse_accumulate(const token_t &name);
-  void parse_decl_array(const token_t &name);
-  void parse_decl();
-  void parse_expr();
-  void parse_expr_ex(uint32_t tide);
-  void parse_lhs();
-  void parse_global();
+  void parse_array_get_(const token_t &name);
+  void parse_array_set_(const token_t &name);
+  void parse_function_();
+  void parse_stmt_();
+  void parse_return_();
+  void parse_while_();
+  void parse_if_();
+  void parse_call_(const token_t &name);
+  void parse_assign_(const token_t &name);
+  void parse_accumulate_(const token_t &name);
+  void parse_decl_array_(const token_t &name);
+  void parse_decl_();
+  void parse_expr_();
+  void parse_expr_ex_(uint32_t tide);
+  void parse_lhs_();
+  void parse_global_();
 
   // return true if next token is an operator
-  bool is_operator() const;
+  bool is_operator_() const;
 
   // get the precedence of this operator
-  int32_t op_type(token_e type) const;
+  int32_t op_type_(token_e type) const;
 
   // load/save a given identifier (local/global)
-  void ident_load(const token_t &name);
-  void ident_save(const token_t &name);
+  void ident_load_(const token_t &name);
+  void ident_save_(const token_t &name);
 
   // push an operator on the stack
-  void op_push(token_e op, uint32_t tide);
+  void op_push_(token_e op, uint32_t tide);
 
   // pop all operators off the stack
-  void op_pop_all(uint32_t tide);
+  void op_pop_all_(uint32_t tide);
 };
 
 } // namespace ccml

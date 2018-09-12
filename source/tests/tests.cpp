@@ -380,13 +380,14 @@ function next(n, i)
   return (n + i / n) / 2
 end
 
-function abs(i)
-  if (i >= 0)
-    return i
-  else
-    return 0 - i
-  end
-end
+# -- this is now a builtin
+# function abs(i)
+#   if (i >= 0)
+#     return i
+#   else
+#     return 0 - i
+#   end
+# end
 
 function sqrt(number)
   var n = 1

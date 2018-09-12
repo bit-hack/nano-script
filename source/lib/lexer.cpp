@@ -67,7 +67,7 @@ bool lexer_t::lex(const char *s) {
           return false;
         }
       }
-      push_string(b, s);
+      push_string_(b, s);
       continue;
     }
 
@@ -82,7 +82,7 @@ bool lexer_t::lex(const char *s) {
         new_line_ = s + 1;
         ++line_no_;
       }
-      push(TOK_EOL);
+      push_(TOK_EOL);
       continue;
     }
 
@@ -90,96 +90,96 @@ bool lexer_t::lex(const char *s) {
     switch (tolower(*s)) {
     case 'a':
       if (munch(s, "and")) {
-        push(TOK_AND);
+        push_(TOK_AND);
         continue;
       }
       break;
     case 'e':
       if (munch(s, "end")) {
-        push(TOK_END);
+        push_(TOK_END);
         continue;
       } else if (munch(s, "else")) {
-        push(TOK_ELSE);
+        push_(TOK_ELSE);
         continue;
       }
       break;
     case 'f':
       if (munch(s, "function")) {
-        push(TOK_FUNC);
+        push_(TOK_FUNC);
         continue;
       }
       break;
     case 'i':
       if (munch(s, "if")) {
-        push(TOK_IF);
+        push_(TOK_IF);
         continue;
       }
       break;
     case 'n':
       if (munch(s, "not")) {
-        push(TOK_NOT);
+        push_(TOK_NOT);
         continue;
       }
       break;
     case 'o':
       if (munch(s, "or")) {
-        push(TOK_OR);
+        push_(TOK_OR);
         continue;
       }
       break;
     case 'r':
       if (munch(s, "return")) {
-        push(TOK_RETURN);
+        push_(TOK_RETURN);
         continue;
       }
       break;
     case 'v':
       if (munch(s, "var")) {
-        push(TOK_VAR);
+        push_(TOK_VAR);
         continue;
       }
       break;
     case 'w':
       if (munch(s, "while")) {
-        push(TOK_WHILE);
+        push_(TOK_WHILE);
         continue;
       }
       break;
     case '(':
-      push(TOK_LPAREN);
+      push_(TOK_LPAREN);
       continue;
     case ')':
-      push(TOK_RPAREN);
+      push_(TOK_RPAREN);
       continue;
     case '[':
-      push(TOK_LBRACKET);
+      push_(TOK_LBRACKET);
       continue;
     case ']':
-      push(TOK_RBRACKET);
+      push_(TOK_RBRACKET);
       continue;
     case ',':
-      push(TOK_COMMA);
+      push_(TOK_COMMA);
       continue;
     case '+':
       if (s[1] == '=') {
-        push(TOK_ACC);
+        push_(TOK_ACC);
         ++s;
       }
       else {
-        push(TOK_ADD);
+        push_(TOK_ADD);
       }
       continue;
     case '-':
-      push(TOK_SUB);
+      push_(TOK_SUB);
       continue;
     case '*':
-      push(TOK_MUL);
+      push_(TOK_MUL);
       continue;
     case '/':
-      push(TOK_DIV);
+      push_(TOK_DIV);
       continue;
     case '%':
-      push(TOK_MOD);
+      push_(TOK_MOD);
       continue;
     case '\n':
     {
@@ -188,30 +188,30 @@ bool lexer_t::lex(const char *s) {
       new_line_ = s + 1;
       ++line_no_;
     }
-      push(TOK_EOL);
+      push_(TOK_EOL);
       continue;
     case '=':
       if (s[1] == '=') {
-        push(TOK_EQ);
+        push_(TOK_EQ);
         ++s;
       } else {
-        push(TOK_ASSIGN);
+        push_(TOK_ASSIGN);
       }
       continue;
     case '<':
       if (s[1] == '=') {
-        push(TOK_LEQ);
+        push_(TOK_LEQ);
         ++s;
       } else {
-        push(TOK_LT);
+        push_(TOK_LT);
       }
       continue;
     case '>':
       if (s[1] == '=') {
-        push(TOK_GEQ);
+        push_(TOK_GEQ);
         ++s;
       } else {
-        push(TOK_GT);
+        push_(TOK_GT);
       }
       continue;
     } // switch
@@ -223,7 +223,7 @@ bool lexer_t::lex(const char *s) {
         // empty
       }
       if (t != s) {
-        push_val(s, t);
+        push_val_(s, t);
         s = t - 1; // (-1 because of ++ in forloop)
         continue;
       }
@@ -236,7 +236,7 @@ bool lexer_t::lex(const char *s) {
         // empty
       }
       if (t != s) {
-        push_ident(s, t);
+        push_ident_(s, t);
         s = t - 1; // (-1 because of ++ in forloop)
         continue;
       }
@@ -253,19 +253,19 @@ bool lexer_t::lex(const char *s) {
   return true;
 }
 
-void lexer_t::push(token_e tok) {
+void lexer_t::push_(token_e tok) {
   stream_.push(token_t{tok, line_no_});
 }
 
-void lexer_t::push_ident(const char *start, const char *end) {
+void lexer_t::push_ident_(const char *start, const char *end) {
   stream_.push(token_t(TOK_IDENT, std::string(start, end), line_no_));
 }
 
-void lexer_t::push_string(const char *start, const char *end) {
+void lexer_t::push_string_(const char *start, const char *end) {
   stream_.push(token_t(TOK_STRING, std::string(start, end), line_no_));
 }
 
-void lexer_t::push_val(const char *s, const char *e) {
+void lexer_t::push_val_(const char *s, const char *e) {
   int32_t v = 0;
   for (; s != e; ++s) {
     assert(is_numeric(*s));

@@ -67,7 +67,7 @@ int main(int argc, char **argv) {
     return -1;
   const char *source = load_file(argv[1]);
   if (!source) {
-    printf("unable to load input");
+    fprintf(stderr, "unable to load input");
     return -1;
   }
   if (!ccml.lexer().lex(source))
@@ -82,7 +82,10 @@ int main(int argc, char **argv) {
   ccml.disassembler().disasm();
 
   const function_t *func = ccml.parser().find_function("main");
-  printf("entry point: %d\n", func->pos_);
+  if (!func) {
+    fprintf(stderr, "unable to locate function 'main'\n");
+    exit(1);
+  }
 
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
