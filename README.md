@@ -8,7 +8,7 @@ small.
 
 Why have I made a new language?  Is a reasonable question, but the answer is
 simply... to satisfy my own curiosity, and desire for learning new things.
-CCML was born as a learning exerciser to spend a weekend implementing a compiler
+CCML was born as a learning exercise to spend a weekend implementing a compiler
 and virtual machine for a very simple language.  A secondary goal was to keep
 the language as simple as I possibly could, to see how useful such a basic
 language could be.
@@ -25,14 +25,15 @@ Language/implementation features:
 - Functions take arguments and return values
 - Compiler and virtual machine are embeddable
 - External functions can be implemented in C++
-- Stack based virtual machine
-- Very simple byte code (~27 instructions currently)
+- Very simple stack based virtual machine
+- Small byte code (~27 instructions currently)
 - Support for multitasking and multiple threads
+- Debug information is generated during compilation
 - No external dependencies
 - Robust testing
 - Extensively commented source code
 
-What does CCML look like?  Check out the follow example:
+What does CCML look like?  Check out the follow simple example:
 ```
 function is_prime(x)
   var i = 2
@@ -53,7 +54,15 @@ CCML follows a very conventional language pipeline for which, execution can be
 broken into the following broad stages.
 
 ```
-source code -> lexer -> parser -> assembler -> bytecode -> virtual machine
+ source code --.
+                \ 
+                 \ . lexer
+                  \ . parser
+                   \ . assembler
+                    \ . optimizer
+                     \ . bytecode
+                      \
+                       '--> virtual machine
 ```
 
 ----
