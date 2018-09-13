@@ -115,25 +115,25 @@ struct assembler_t {
   // return the currently bound output stream
   asm_stream_t &stream;
 
+  // flush any pending instructions
+  void flush();
+
 protected:
 
   // flush the peephole to the output stream
   void peep_hole_flush_();
+
+  // optimize code in the peephole
+  void peep_hole_optimize_();
+
+  // instruction peephole
+  std::vector<instruction_t> peep_hole_;
 
   // emit an instruction type
   void emit_(const instruction_t &ins);
 
   // ?
   std::vector<uint32_t> scope_pc_;
-
-  // instruction peephole
-  std::vector<instruction_t> peep_hole_;
-
-  // write 8bits to the code stream
-  void write8_(const uint8_t v);
-
-  // write 32bits to the code stream
-  void write32_(const int32_t v);
 
   ccml_t &ccml_;
 };

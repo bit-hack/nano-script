@@ -10,6 +10,7 @@
 namespace ccml {
 
 enum instruction_e;
+struct instruction_t;
 
 struct error_manager_t;
 struct error_t;
@@ -24,6 +25,8 @@ struct identifier_t;
 
 struct asm_stream_t;
 struct assembler_t;
+struct peephole_t;
+
 struct disassembler_t;
 
 struct thread_t;

@@ -17,6 +17,9 @@ struct disassembler_t {
   // return number of bytes disassembled or <= 0 on error
   int32_t disasm();
 
+  // disassemble an instruction one by one
+  bool disasm(int32_t &index, instruction_t &out) const;
+
   // return instruction mnemonic
   static const char *get_mnemonic(const enum instruction_e e);
 

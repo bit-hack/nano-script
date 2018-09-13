@@ -70,18 +70,6 @@ void assembler_t::add_ident(const identifier_t &ident) {
   stream.add_ident(ident);
 }
 
-void assembler_t::write8_(const uint8_t v) {
-  if (!stream.write8(v)) {
-    ccml_.errors().program_too_large();
-  }
-}
-
-void assembler_t::write32_(const int32_t v) {
-  if (!stream.write32(v)) {
-    ccml_.errors().program_too_large();
-  }
-}
-
 void assembler_t::emit(instruction_e ins, const token_t *t) {
   stream.set_line(ccml_.lexer(), t);
   // encode this instruction
@@ -178,33 +166,35 @@ void assembler_t::reset() {
 // emit an instruction into the instruction stream
 void assembler_t::emit_(const instruction_t &ins) {
   stream.set_line(ccml_.lexer(), ins.token);
-  write8_(ins.opcode);
-  if (has_operand(ins.opcode)) {
-    write32_(ins.operand);
+  if (!stream.write8(ins.opcode)) {
+    ccml_.errors().program_too_large();
   }
+  if (has_operand(ins.opcode)) {
+    if (!stream.write32(ins.operand)) {
+      ccml_.errors().program_too_large();
+    }
+  }
+}
+
+void assembler_t::flush() {
+  peep_hole_flush_();
 }
 
 void assembler_t::peep_hole_flush_() {
 
-  // note: we can optimize anything in the peephole
-  // XXX: dump these runs out somewhere to see what we have
-
+  // nothing to do
   if (peep_hole_.empty()) {
     return;
   }
 
-  // printf("---- ---- ---- ----\n");
+  // lets do some optimizations
+  peep_hole_optimize_();
 
   // flush all instruction to the output stream
   for (const instruction_t &ins : peep_hole_) {
-
-    // printf("%s ", disassembler_t::get_mnemonic(ins.opcode));
-    // if (has_operand(ins.opcode)) {
-    //   printf("%04d", ins.operand);
-    // }
-    // printf("\n");
-
     emit_(ins);
   }
+
+  // peephole is empty now
   peep_hole_.clear();
 }

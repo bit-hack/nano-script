@@ -103,6 +103,10 @@ struct error_manager_t {
               t.str_.c_str(), t.str_.c_str());
   }
 
+  virtual void constant_divie_by_zero(const token_t &t) {
+    on_error_(t.line_no_, "constant divide by zero");
+  }
+
   // token
 
   virtual void unexpected_token(const token_t &t, token_e e) {

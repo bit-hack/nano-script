@@ -1012,13 +1012,41 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  ccml.disassembler().disasm();
   const function_t *func = ccml.parser().find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
   return res == 3;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_opt_1() {
+  static const char *prog = R"(
+function main()
+  return 1 + 2 * 3 - 5 / 1
+end
+)";
+  ccml_t ccml;
+  error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+
+  // should be:
+  //    INS_LOCALS 0
+  //    INS_CONST  2
+  //    INS_RET
+
+  int32_t i = 0;
+  while (i < 8) {
+    instruction_t inst;
+    ccml.disassembler().disasm(i, inst);
+    if (inst.opcode == INS_CONST && inst.operand == 2) {
+      return true;
+    }
+  }
+  return false;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -1078,6 +1106,7 @@ static const test_pair_t tests[] = {
     TEST(test_neg_3),
     TEST(test_neg_4),
     TEST(test_acc_1),
+    TEST(test_opt_1),
     // sentinel
     nullptr, nullptr};
 

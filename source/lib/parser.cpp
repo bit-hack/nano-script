@@ -637,6 +637,9 @@ void parser_t::parse_function_() {
 
   // return the max scope depth
   scope_.leave_function();
+
+  // flush any pending instructions
+  asm_.flush();
 }
 
 void parser_t::parse_array_get_(const token_t &name) {
