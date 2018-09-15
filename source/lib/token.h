@@ -73,7 +73,7 @@ struct token_t {
     , line_no_(line) {}
 
   // convert a token_e to a token string
-  static const char *token_t::token_name(token_e e);
+  static const char *token_name(token_e e);
 
   // stringify this token
   const char *string() const {
