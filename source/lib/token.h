@@ -80,6 +80,40 @@ struct token_t {
     return str_.empty() ? token_name(type_) : str_.c_str();
   }
 
+  bool is_binary_op() const {
+    switch (type_) {
+    case TOK_ADD:
+    case TOK_SUB:
+    case TOK_MUL:
+    case TOK_DIV:
+    case TOK_MOD:
+    case TOK_AND:
+    case TOK_OR:
+    case TOK_EQ:
+    case TOK_LT:
+    case TOK_GT:
+    case TOK_LEQ:
+    case TOK_GEQ:
+      return true;
+    default:
+      return false;
+    }
+  }
+
+  bool is_unary_op() const {
+    switch (type_) {
+    case TOK_NOT:
+    case TOK_NEG:
+      return true;
+    default:
+      return false;
+    }
+  }
+
+  bool is_operator() const {
+    return is_binary_op() || is_unary_op();
+  }
+
   token_e type_;
   std::string str_;
   int32_t val_;

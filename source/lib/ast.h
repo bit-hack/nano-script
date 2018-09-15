@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "ccml.h"
+#include "token.h"
 
 namespace ccml {
 
@@ -41,7 +42,7 @@ struct ast_node_t {
 
   template <typename type_t>
   bool is_a() {
-    return type_ == type_t::TYPE;
+    return type == type_t::TYPE;
   }
 
   const ast_type_t type;
@@ -204,6 +205,7 @@ struct ast_decl_func_t : public ast_node_t {
 
   ast_decl_func_t(const token_t *name)
     : ast_node_t(TYPE)
+    , name(name)
   {}
 
   const token_t *name;
@@ -235,6 +237,203 @@ struct ast_decl_array_t : public ast_node_t {
 
   const token_t *name;
   const token_t *size;
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+struct ast_visitor_t {
+
+  virtual void visit(ast_program_t* n) {
+    stack.push_back(n);
+    for (auto *c : n->children)
+      dispatch(c);
+    stack.pop_back();
+  }
+
+  virtual void visit(ast_exp_ident_t* n) {}
+  virtual void visit(ast_exp_const_t* n) {}
+  virtual void visit(ast_exp_array_t* n) {}
+
+  virtual void visit(ast_exp_call_t* n) {
+    stack.push_back(n);
+    for (auto *c : n->args)
+      dispatch(c);
+    stack.pop_back();
+  }
+
+  virtual void visit(ast_exp_bin_op_t* n) {
+    stack.push_back(n);
+    dispatch(n->left);
+    dispatch(n->right);
+    stack.pop_back();
+  }
+
+  virtual void visit(ast_exp_unary_op_t* n) {
+    stack.push_back(n);
+    dispatch(n->child);
+    stack.pop_back();
+  }
+
+  virtual void visit(ast_stmt_if_t* n) {
+    stack.push_back(n);
+    dispatch(n->expr);
+    for (auto *c : n->then_block)
+      dispatch(c);
+    for (auto *c : n->else_block)
+      dispatch(c);
+    stack.pop_back();
+  }
+
+  virtual void visit(ast_stmt_while_t* n) {
+    stack.push_back(n);
+    dispatch(n->expr);
+    for (auto *c : n->body)
+      dispatch(c);
+    stack.pop_back();
+  }
+
+  virtual void visit(ast_stmt_return_t* n) {
+    stack.push_back(n);
+    dispatch(n->expr);
+    stack.pop_back();
+  }
+
+  virtual void visit(ast_stmt_assign_var_t* n) {
+    stack.push_back(n);
+    dispatch(n->expr);
+    stack.pop_back();
+  }
+
+  virtual void visit(ast_stmt_assign_array_t* n) {}
+
+  virtual void visit(ast_decl_func_t* n) {
+    stack.push_back(n);
+    for (auto *c : n->body)
+      dispatch(c);
+    stack.pop_back();
+  }
+
+  virtual void visit(ast_decl_var_t* n) {
+    stack.push_back(n);
+    dispatch(n->expr);
+    stack.pop_back();
+  }
+
+  virtual void visit(ast_decl_array_t* n) {}
+
+protected:
+  std::vector<ast_node_t*> stack;
+  void dispatch(ast_node_t *node);
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+struct ast_printer_t : ast_visitor_t {
+  
+  ast_printer_t()
+    : fd_(stderr)
+  {}
+
+  ~ast_printer_t()     {
+    fflush(fd_);
+  }
+
+  virtual void visit(ast_program_t* n) {
+    indent_();
+    printf("ast_program_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_exp_ident_t* n) {
+    indent_();
+    printf("ast_exp_ident_t {name: %s}\n", n->name->string());
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_exp_const_t* n) {
+    indent_();
+    printf("ast_exp_const_t {value: %d}\n", n->value->val_);
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_exp_array_t* n) {
+    indent_();
+    printf("ast_exp_array_t {name: %s}\n", n->name->string());
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_exp_call_t* n) {
+    indent_();
+    printf("ast_exp_call_t {name: %s}\n", n->name->string());
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_exp_bin_op_t* n) {
+    indent_();
+    printf("ast_exp_bin_op_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_exp_unary_op_t* n) {
+    indent_();
+    printf("ast_exp_unary_op_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_stmt_if_t* n) {
+    indent_();
+    printf("ast_stmt_if_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_stmt_while_t* n) {
+    indent_();
+    printf("ast_stmt_while_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_stmt_return_t* n) {
+    indent_();
+    printf("ast_stmt_return_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_stmt_assign_var_t* n) {
+    indent_();
+    printf("ast_stmt_assign_var_t {name: %s}\n", n->name->string());
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_stmt_assign_array_t* n) {
+    indent_();
+    printf("ast_stmt_assign_array_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_decl_func_t* n) {
+    indent_();
+    printf("ast_decl_func_t {name: %s}\n", n->name->string());
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_decl_var_t* n) {
+    indent_();
+    printf("ast_decl_var_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_decl_array_t* n) {
+    indent_();
+    printf("ast_decl_array_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+protected:
+  FILE *fd_;
+
+  void indent_() {
+    for (size_t i = 0; i < stack.size(); ++i) {
+      fputs(".  ", fd_);
+    }
+  }
 };
 
 } // namespace ccml

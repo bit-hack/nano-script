@@ -51,6 +51,8 @@ bool parser_t::parse(error_t &error) {
     return false;
   }
 
+  ast_printer_t().visit(program);
+
   return true;
 }
 
@@ -207,7 +209,6 @@ void parser_t::parse_expr_ex_(uint32_t tide) {
 }
 
 ast_node_t* parser_t::parse_expr_() {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
 
   // format:
   //    <expr_ex>
@@ -456,17 +457,17 @@ ast_node_t* parser_t::parse_function_(const token_t &t) {
     } while (stream_.found(TOK_COMMA));
     stream_.pop(TOK_RPAREN);
   }
-  stream_.pop(TOK_EOL);
+stream_.pop(TOK_EOL);
 
-  // function body
-  scope_.enter();
-  while (!stream_.found(TOK_END)) {
-    ast_node_t *stmt = parse_stmt_();
-    func->body.push_back(stmt);
-  }
-  scope_.leave();
+// function body
+scope_.enter();
+while (!stream_.found(TOK_END)) {
+  ast_node_t *stmt = parse_stmt_();
+  func->body.push_back(stmt);
+}
+scope_.leave();
 
-  return func;
+return func;
 }
 
 ast_node_t* parser_t::parse_array_get_(const token_t &name) {
@@ -540,9 +541,31 @@ ast_node_t* parser_t::parse_global_() {
   }
 }
 
-void parser_t::op_push_(const token_t *op, uint32_t tide) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+void parser_t::op_reduce_() {
+  // pop operator
+  assert(!op_stack_.empty());
+  const token_t *op = op_stack_.back();
+  op_stack_.pop_back();
 
+  // if this is a binary operator
+  if (op->is_binary_op()) {
+    assert(exp_stack_.size() >= 2);
+    auto *expr = new ast_exp_bin_op_t(op);
+    expr->left = exp_stack_.rbegin()[0];
+    expr->right = exp_stack_.rbegin()[1];
+    exp_stack_.pop_back();
+    exp_stack_.back() = expr;
+
+  // if this is a unary operator
+  } else if (op->is_unary_op()) {
+    assert(exp_stack_.size() >= 1);
+    auto *expr = new ast_exp_unary_op_t(op);
+    expr->child = exp_stack_.back();
+    exp_stack_.back() = expr;
+  }
+}
+
+void parser_t::op_push_(const token_t *op, uint32_t tide) {
   // walk the operator stack for the current expression
   while (op_stack_.size() > tide) {
     // get the top operator on the stack
@@ -552,25 +575,17 @@ void parser_t::op_push_(const token_t *op, uint32_t tide) {
       break;
     }
     // if lower or = precedence, pop from the stack and emit it
-
-    if (ins_is_binary)
-
-    ccml_.assembler().emit(top);
-    op_stack_.pop_back();
+    op_reduce_();
   }
   // push this token on the top of the stack
   op_stack_.push_back(op);
 }
 
 void parser_t::op_pop_all_(uint32_t tide) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
-
   // walk the operator stack for the current expression
   while (op_stack_.size() > tide) {
     // emit this operator
-    const token_e op = op_stack_.back();
-    ccml_.assembler().emit(op);
-    op_stack_.pop_back();
+    op_reduce_();
   }
 }
 

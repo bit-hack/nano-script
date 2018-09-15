@@ -279,11 +279,13 @@ protected:
   // get the precedence of this operator
   int32_t op_type_(token_e type) const;
 
+  // XXX: move into subclass
   // push an operator on the stack
   void op_push_(const token_t* op, uint32_t tide);
-
   // pop all operators off the stack
   void op_pop_all_(uint32_t tide);
+  // reduce an operation
+  void op_reduce_();
 };
 
 } // namespace ccml

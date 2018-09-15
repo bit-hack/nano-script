@@ -124,4 +124,16 @@ enum instruction_e {
   __INS_COUNT__,
 };
 
+// return true if instruction takes an operand
+bool ins_has_operand(const instruction_e ins);
+
+// return true if execution can branch after instruction
+bool ins_will_branch(const instruction_e ins);
+
+// return true if instruction is a binary operator
+bool ins_is_binary_op(const instruction_e ins);
+
+// return true if instruction is a unary operator
+bool ins_is_unary_op(const instruction_e ins);
+
 } // namespace {}
