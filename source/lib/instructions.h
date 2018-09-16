@@ -49,10 +49,16 @@ enum instruction_e {
   INS_JMP,
 
   // conditional jump to code offset
+  // note: jump when true
+  //    if (pop() != 0)
+  //      pc = operand
+  INS_TJMP,
+
+  // conditional jump to code offset
   // note: jump when false
   //    if (pop() == 0)
   //      pc = operand
-  INS_CJMP,
+  INS_FJMP,
 
   // call a function
   //    push( next_pc )

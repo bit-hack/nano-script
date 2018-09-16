@@ -15,7 +15,7 @@ const char *gMnemonic[] = {
     // comparators
     "INS_LT", "INS_GT", "INS_LEQ", "INS_GEQ", "INS_EQ",
     // branching
-    "INS_JMP", "INS_CJMP", "INS_CALL", "INS_RET", "INS_SCALL",
+    "INS_JMP", "INS_TJMP", "INS_FJMP", "INS_CALL", "INS_RET", "INS_SCALL",
     // stack
     "INS_POP", "INS_CONST", "INS_LOCALS",
     // local variables
@@ -32,7 +32,8 @@ bool has_operand(const ccml::instruction_e ins) {
   using namespace ccml;
   switch (ins) {
   case INS_JMP:
-  case INS_CJMP:
+  case INS_TJMP:
+  case INS_FJMP:
   case INS_CALL:
   case INS_RET:
   case INS_SCALL:
@@ -56,9 +57,9 @@ bool has_operand(const ccml::instruction_e ins) {
 
 } // namespace {}
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 namespace ccml {
 
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 const char *disassembler_t::get_mnemonic(const instruction_e e) {
   assert(e < __INS_COUNT__);
   return gMnemonic[e];
@@ -106,7 +107,8 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
 
   switch (op) {
   case INS_JMP:
-  case INS_CJMP:
+  case INS_TJMP:
+  case INS_FJMP:
   case INS_CALL:
   case INS_RET:
   case INS_POP:
@@ -187,4 +189,4 @@ int32_t disassembler_t::disasm() {
   return count;
 }
 
-}
+} // namespace ccml

@@ -5,7 +5,8 @@ namespace ccml {
 bool ins_has_operand(const instruction_e ins) {
   switch (ins) {
   case INS_JMP:
-  case INS_CJMP:
+  case INS_FJMP:
+  case INS_TJMP:
   case INS_CALL:
   case INS_RET:
   case INS_SCALL:
@@ -30,7 +31,8 @@ bool ins_has_operand(const instruction_e ins) {
 bool ins_will_branch(const instruction_e ins) {
   switch (ins) {
   case INS_JMP:
-  case INS_CJMP:
+  case INS_FJMP:
+  case INS_TJMP:
   case INS_CALL:
   case INS_RET:
     return true;

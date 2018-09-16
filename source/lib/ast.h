@@ -20,14 +20,11 @@ enum ast_type_t {
   ast_stmt_return_e,
   ast_stmt_assign_var_e,
   ast_stmt_assign_array_e,
+  ast_stmt_call_e,
   ast_decl_func_e,
   ast_decl_var_e,
   ast_decl_array_e,
 };
-
-struct ast_node_t;
-struct ast_program_t;
-struct ast_exp_ident_t;
 
 struct ast_node_t {
 
@@ -91,6 +88,17 @@ struct ast_exp_array_t : public ast_node_t {
 
   const token_t *name;
   ast_node_t *index;
+};
+
+
+struct ast_stmt_call_t : public ast_node_t {
+  static const ast_type_t TYPE = ast_stmt_call_e;
+
+  ast_stmt_call_t(ast_node_t *expr)
+    : ast_node_t(TYPE)
+  {}
+
+  ast_node_t *expr;
 };
 
 struct ast_exp_call_t : public ast_node_t {
@@ -239,6 +247,28 @@ struct ast_decl_array_t : public ast_node_t {
   const token_t *size;
 };
 
+struct ast_t {
+
+  ast_t(ccml_t &ccml)
+    : ccml_(ccml)
+  {}
+
+  template <typename T, class... Types>
+  T *alloc(Types &&... args) {
+    static_assert(std::is_base_of<ast_node_t, T>::value,
+      "type must derive from ast_node_t");
+    T *obj = new T(std::forward<Types>(args)...);
+    alloc_.push_back(obj);
+    return obj;
+  }
+
+  ast_program_t program;
+
+protected:
+  ccml_t &ccml_;
+  std::vector<ast_node_t*> alloc_;
+};
+
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct ast_visitor_t {
 
@@ -252,6 +282,12 @@ struct ast_visitor_t {
   virtual void visit(ast_exp_ident_t* n) {}
   virtual void visit(ast_exp_const_t* n) {}
   virtual void visit(ast_exp_array_t* n) {}
+
+  virtual void visit(ast_stmt_call_t* n) {
+    stack.push_back(n);
+    dispatch(n->expr);
+    stack.pop_back();
+  }
 
   virtual void visit(ast_exp_call_t* n) {
     stack.push_back(n);
@@ -405,6 +441,12 @@ struct ast_printer_t : ast_visitor_t {
   virtual void visit(ast_stmt_assign_array_t* n) {
     indent_();
     printf("ast_stmt_assign_array_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_stmt_call_t* n) {
+    indent_();
+    printf("ast_stmt_call_t\n");
     ast_visitor_t::visit(n);
   }
 

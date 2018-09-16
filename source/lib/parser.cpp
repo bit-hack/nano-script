@@ -12,6 +12,7 @@ using namespace ccml;
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 bool parser_t::parse(error_t &error) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
+  ast_t &ast = ccml_.ast();
 
   ast_program_t *program = new ast_program_t;
 
@@ -410,7 +411,8 @@ ast_node_t* parser_t::parse_stmt_() {
       stmt = parse_assign_(*var);
     } else if (stream_.found(TOK_LPAREN)) {
       // x(
-      stmt = parse_call_(*var);
+      ast_node_t *expr = parse_call_(*var);
+      stmt = new ast_stmt_call_t{expr};
     } else if (stream_.found(TOK_LBRACKET)) {
       // x[
       stmt = parse_array_set_(*var);
@@ -457,17 +459,15 @@ ast_node_t* parser_t::parse_function_(const token_t &t) {
     } while (stream_.found(TOK_COMMA));
     stream_.pop(TOK_RPAREN);
   }
-stream_.pop(TOK_EOL);
+  stream_.pop(TOK_EOL);
 
-// function body
-scope_.enter();
-while (!stream_.found(TOK_END)) {
-  ast_node_t *stmt = parse_stmt_();
-  func->body.push_back(stmt);
-}
-scope_.leave();
+  // function body
+  while (!stream_.found(TOK_END)) {
+    ast_node_t *stmt = parse_stmt_();
+    func->body.push_back(stmt);
+  }
 
-return func;
+  return func;
 }
 
 ast_node_t* parser_t::parse_array_get_(const token_t &name) {
@@ -602,7 +602,6 @@ void parser_t::reset() {
 
 parser_t::parser_t(ccml_t &c)
   : ccml_(c)
-  , scope_(c)
 {
   // register builtin functions
   void builtin_abs(struct ccml::thread_t &);

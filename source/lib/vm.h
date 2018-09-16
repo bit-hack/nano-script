@@ -205,7 +205,8 @@ protected:
   void do_INS_GEQ_();
   void do_INS_EQ_();
   void do_INS_JMP_();
-  void do_INS_CJMP_();
+  void do_INS_TJMP_();
+  void do_INS_FJMP_();
   void do_INS_CALL_();
   void do_INS_RET_();
   void do_INS_SCALL_();

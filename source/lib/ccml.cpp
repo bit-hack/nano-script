@@ -2,12 +2,13 @@
 
 #include "ccml.h"
 
+#include "errors.h"
 #include "lexer.h"
 #include "parser.h"
+#include "ast.h"
 #include "assembler.h"
 #include "disassembler.h"
 #include "vm.h"
-#include "errors.h"
 
 
 using namespace ccml;
@@ -17,6 +18,7 @@ ccml_t::ccml_t()
   : store_()
   , lexer_(new lexer_t(*this))
   , parser_(new parser_t(*this))
+  , ast_(new ast_t(*this))
   , assembler_(new assembler_t(*this, store_.stream()))
   , disassembler_(new disassembler_t(*this))
   , vm_(new vm_t(*this))
@@ -39,6 +41,9 @@ bool ccml_t::build(const char *source, error_t &error) {
     if (!parser_->parse(error)) {
       return false;
     }
+    // XXX: we need a sema stage
+    // kick off the code generator
+    assembler_->visit(&(ast_->program));
   }
   catch (const error_t &e) {
     error = e;

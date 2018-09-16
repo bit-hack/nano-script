@@ -23,6 +23,7 @@ struct parser_t;
 struct function_t;
 struct identifier_t;
 
+struct ast_t;
 struct ast_node_t;
 struct ast_program_t;
 struct ast_exp_ident_t;
@@ -41,7 +42,6 @@ struct ast_decl_array_t;
 
 struct asm_stream_t;
 struct assembler_t;
-struct peephole_t;
 
 struct disassembler_t;
 
@@ -145,13 +145,14 @@ struct ccml_t {
   ~ccml_t();
 
   // accessors
-  vm_t            &vm()           { return *vm_; }
-  lexer_t         &lexer()        { return *lexer_; }
+  error_manager_t &errors()       { return *errors_; }
   code_store_t    &store()        { return store_; }
+  lexer_t         &lexer()        { return *lexer_; }
   parser_t        &parser()       { return *parser_; }
+  ast_t           &ast()          { return *ast_; }
   assembler_t     &assembler()    { return *assembler_; }
   disassembler_t  &disassembler() { return *disassembler_; }
-  error_manager_t &errors()       { return *errors_; }
+  vm_t            &vm()           { return *vm_; }
 
   bool build(const char *source, error_t &error);
 
@@ -170,15 +171,16 @@ private:
   friend struct token_stream_t;
   friend struct error_manager_t;
 
-  // the default code stream
+  // the code store
   code_store_t store_;
 
-  std::unique_ptr<vm_t> vm_;
-  std::unique_ptr<lexer_t> lexer_;
-  std::unique_ptr<parser_t> parser_;
-  std::unique_ptr<assembler_t> assembler_;
-  std::unique_ptr<disassembler_t> disassembler_;
   std::unique_ptr<error_manager_t> errors_;
+  std::unique_ptr<lexer_t>         lexer_;
+  std::unique_ptr<parser_t>        parser_;
+  std::unique_ptr<ast_t>           ast_;
+  std::unique_ptr<assembler_t>     assembler_;
+  std::unique_ptr<disassembler_t>  disassembler_;
+  std::unique_ptr<vm_t>            vm_;
 };
 
 typedef void(*ccml_syscall_t)(struct thread_t &thread);

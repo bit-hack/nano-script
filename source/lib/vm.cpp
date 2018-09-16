@@ -146,7 +146,14 @@ void thread_t::do_INS_JMP_() {
   pc_ = read_operand_();
 }
 
-void thread_t::do_INS_CJMP_() {
+void thread_t::do_INS_TJMP_() {
+  const int32_t operand = read_operand_();
+  if (pop()) {
+    pc_ = operand;
+  }
+}
+
+void thread_t::do_INS_FJMP_() {
   const int32_t operand = read_operand_();
   if (!pop()) {
     pc_ = operand;
@@ -354,7 +361,8 @@ void thread_t::step_imp_() {
   case INS_GEQ:    do_INS_GEQ_();    break;
   case INS_EQ:     do_INS_EQ_();     break;
   case INS_JMP:    do_INS_JMP_();    break;
-  case INS_CJMP:   do_INS_CJMP_();   break;
+  case INS_TJMP:   do_INS_TJMP_();   break;
+  case INS_FJMP:   do_INS_FJMP_();   break;
   case INS_CALL:   do_INS_CALL_();   break;
   case INS_RET:    do_INS_RET_();    break;
   case INS_SCALL:  do_INS_SCALL_();  break;
