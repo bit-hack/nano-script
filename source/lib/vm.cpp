@@ -1,7 +1,7 @@
 #include <cstring>
 
 #include "vm.h"
-#include "assembler.h"
+#include "codegen.h"
 #include "parser.h"
 #include "disassembler.h"
 

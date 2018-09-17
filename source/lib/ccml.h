@@ -41,7 +41,7 @@ struct ast_decl_var_t;
 struct ast_decl_array_t;
 
 struct asm_stream_t;
-struct assembler_t;
+struct codegen_t;
 
 struct disassembler_t;
 
@@ -150,7 +150,7 @@ struct ccml_t {
   lexer_t         &lexer()        { return *lexer_; }
   parser_t        &parser()       { return *parser_; }
   ast_t           &ast()          { return *ast_; }
-  assembler_t     &assembler()    { return *assembler_; }
+  codegen_t       &codegen()      { return *codegen_; }
   disassembler_t  &disassembler() { return *disassembler_; }
   vm_t            &vm()           { return *vm_; }
 
@@ -166,7 +166,7 @@ private:
   friend struct vm_t;
   friend struct lexer_t;
   friend struct parser_t;
-  friend struct assembler_t;
+  friend struct codegen_t;
   friend struct disassembler_t;
   friend struct token_stream_t;
   friend struct error_manager_t;
@@ -178,7 +178,7 @@ private:
   std::unique_ptr<lexer_t>         lexer_;
   std::unique_ptr<parser_t>        parser_;
   std::unique_ptr<ast_t>           ast_;
-  std::unique_ptr<assembler_t>     assembler_;
+  std::unique_ptr<codegen_t>       codegen_;
   std::unique_ptr<disassembler_t>  disassembler_;
   std::unique_ptr<vm_t>            vm_;
 };

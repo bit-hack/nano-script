@@ -96,6 +96,7 @@ struct ast_stmt_call_t : public ast_node_t {
 
   ast_stmt_call_t(ast_node_t *expr)
     : ast_node_t(TYPE)
+    , expr(nullptr)
   {}
 
   ast_node_t *expr;
@@ -258,15 +259,17 @@ struct ast_t {
     static_assert(std::is_base_of<ast_node_t, T>::value,
       "type must derive from ast_node_t");
     T *obj = new T(std::forward<Types>(args)...);
-    alloc_.push_back(obj);
+    allocs_.push_back(obj);
     return obj;
   }
 
   ast_program_t program;
 
+  void reset();
+
 protected:
   ccml_t &ccml_;
-  std::vector<ast_node_t*> alloc_;
+  std::vector<ast_node_t*> allocs_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -368,7 +371,7 @@ struct ast_printer_t : ast_visitor_t {
     : fd_(stderr)
   {}
 
-  ~ast_printer_t()     {
+  ~ast_printer_t() {
     fflush(fd_);
   }
 

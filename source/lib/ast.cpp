@@ -15,6 +15,7 @@ void ast_visitor_t::dispatch(ast_node_t *n) {
   case ast_exp_bin_op_e:        visit(n->cast<ast_exp_bin_op_t>());        break;
   case ast_exp_unary_op_e:      visit(n->cast<ast_exp_unary_op_t>());      break;
   case ast_stmt_if_e:           visit(n->cast<ast_stmt_if_t>());           break;
+  case ast_stmt_call_e:         visit(n->cast<ast_stmt_call_t>());         break;
   case ast_stmt_while_e:        visit(n->cast<ast_stmt_while_t>());        break;
   case ast_stmt_return_e:       visit(n->cast<ast_stmt_return_t>());       break;
   case ast_stmt_assign_var_e:   visit(n->cast<ast_stmt_assign_var_t>());   break;
@@ -25,6 +26,14 @@ void ast_visitor_t::dispatch(ast_node_t *n) {
   default:
     assert(!"unexpected ast_node_t type");
   }
+}
+
+void ast_t::reset() {
+  program.children.clear();
+  for (auto *x : allocs_) {
+    delete x;
+  }
+  allocs_.clear();
 }
 
 } // namespace ccml

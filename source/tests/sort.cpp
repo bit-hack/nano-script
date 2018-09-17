@@ -3,7 +3,7 @@
 #include "../lib/ccml.h"
 #include "../lib/vm.h"
 #include "../lib/parser.h"
-#include "../lib/assembler.h"
+#include "../lib/codegen.h"
 #include "../lib/errors.h"
 
 static const char *sort_prog = R"(

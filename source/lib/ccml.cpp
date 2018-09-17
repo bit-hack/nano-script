@@ -6,7 +6,7 @@
 #include "lexer.h"
 #include "parser.h"
 #include "ast.h"
-#include "assembler.h"
+#include "codegen.h"
 #include "disassembler.h"
 #include "vm.h"
 
@@ -19,7 +19,7 @@ ccml_t::ccml_t()
   , lexer_(new lexer_t(*this))
   , parser_(new parser_t(*this))
   , ast_(new ast_t(*this))
-  , assembler_(new assembler_t(*this, store_.stream()))
+  , codegen_(new codegen_t(*this, store_.stream()))
   , disassembler_(new disassembler_t(*this))
   , vm_(new vm_t(*this))
   , errors_(new error_manager_t(*this))
@@ -43,7 +43,9 @@ bool ccml_t::build(const char *source, error_t &error) {
     }
     // XXX: we need a sema stage
     // kick off the code generator
-    assembler_->visit(&(ast_->program));
+    codegen_->run(ast_->program);
+
+    disassembler().disasm();
   }
   catch (const error_t &e) {
     error = e;
@@ -56,7 +58,8 @@ bool ccml_t::build(const char *source, error_t &error) {
 void ccml_t::reset() {
   lexer_->reset();
   parser_->reset();
-  assembler_->reset();
+  ast_->reset();
+  codegen_->reset();
   vm_->reset();
   store_.reset();
 }

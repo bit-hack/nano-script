@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <cstdio>
 
-#include "../lib/assembler.h"
+#include "../lib/codegen.h"
 #include "../lib/disassembler.h"
 #include "../lib/ccml.h"
 #include "../lib/errors.h"

@@ -1,6 +1,6 @@
 #include <cassert>
 
-#include "../lib/assembler.h"
+#include "../lib/codegen.h"
 #include "../lib/ccml.h"
 #include "../lib/lexer.h"
 #include "../lib/parser.h"

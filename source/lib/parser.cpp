@@ -1,5 +1,5 @@
 #include "parser.h"
-#include "assembler.h"
+#include "codegen.h"
 #include "lexer.h"
 #include "token.h"
 #include "errors.h"
@@ -14,7 +14,7 @@ bool parser_t::parse(error_t &error) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
   ast_t &ast = ccml_.ast();
 
-  ast_program_t *program = new ast_program_t;
+  ast_program_t *program = &ccml_.ast().program;
 
   // format:
   //    var <TOK_IDENT> [ = <TOK_VAL> ]
@@ -51,8 +51,6 @@ bool parser_t::parse(error_t &error) {
     error = e;
     return false;
   }
-
-  ast_printer_t().visit(program);
 
   return true;
 }
@@ -372,7 +370,7 @@ ast_node_t* parser_t::parse_while_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_return_(const token_t &t) {
-  assembler_t &asm_ = ccml_.assembler();
+  codegen_t &asm_ = ccml_.codegen();
 
   // format:
   //           V
@@ -435,7 +433,7 @@ ast_node_t* parser_t::parse_stmt_() {
 }
 
 ast_node_t* parser_t::parse_function_(const token_t &t) {
-  assembler_t &asm_ = ccml_.assembler();
+  codegen_t &asm_ = ccml_.codegen();
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   // format:
