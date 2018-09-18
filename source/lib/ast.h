@@ -23,7 +23,6 @@ enum ast_type_t {
   ast_stmt_call_e,
   ast_decl_func_e,
   ast_decl_var_e,
-  ast_decl_array_e,
 };
 
 struct ast_node_t {
@@ -218,34 +217,55 @@ struct ast_decl_func_t : public ast_node_t {
   {}
 
   const token_t *name;
-  std::vector<const token_t *> args;
+  std::vector<ast_node_t *> args;
   std::vector<ast_node_t *> body;
 };
 
 struct ast_decl_var_t : public ast_node_t {
   static const ast_type_t TYPE = ast_decl_var_e;
 
+  enum kind_t {
+    e_local,
+    e_global,
+    e_arg
+  };
+
   ast_decl_var_t(const token_t *name)
     : ast_node_t(TYPE)
     , name(name)
     , expr(nullptr)
+    , size(nullptr)
+    , is_arg_(false)
   {}
 
+  bool is_local() const {
+    return kind == e_local;
+  }
+
+  bool is_arg() const {
+    return kind == e_arg;
+  }
+
+  bool is_global() const {
+    return kind == e_global;
+  }
+
+  bool is_array() const {
+    return size != nullptr;
+  }
+
+  int32_t count() const {
+    return size ? size->val_ : 1;
+  }
+
+  kind_t kind;
+
   const token_t *name;
+  // if var this could be valid
   ast_node_t *expr;
-};
-
-struct ast_decl_array_t : public ast_node_t {
-  static const ast_type_t TYPE = ast_decl_array_e;
-
-  ast_decl_array_t(const token_t *name)
-    : ast_node_t(TYPE)
-    , name(name)
-    , size(size)
-  {}
-
-  const token_t *name;
+  // if array this will be valid
   const token_t *size;
+  bool is_arg_;
 };
 
 struct ast_t {
@@ -357,8 +377,6 @@ struct ast_visitor_t {
     stack.pop_back();
   }
 
-  virtual void visit(ast_decl_array_t* n) {}
-
 protected:
   std::vector<ast_node_t*> stack;
   void dispatch(ast_node_t *node);
@@ -461,13 +479,7 @@ struct ast_printer_t : ast_visitor_t {
 
   virtual void visit(ast_decl_var_t* n) {
     indent_();
-    printf("ast_decl_var_t\n");
-    ast_visitor_t::visit(n);
-  }
-
-  virtual void visit(ast_decl_array_t* n) {
-    indent_();
-    printf("ast_decl_array_t\n");
+    printf("ast_decl_var_t {name: %s, size:%d}\n", n->name->string(), n->count());
     ast_visitor_t::visit(n);
   }
 

@@ -233,7 +233,7 @@ ast_node_t* parser_t::parse_decl_array_(const token_t &name) {
   //    var <TOK_IDENT> '['   <TOK_VAR> ']'
 
   const token_t *size = stream_.pop(TOK_VAL);
-  auto *decl = new ast_decl_array_t{&name};
+  auto *decl = new ast_decl_var_t{&name};
   decl->size = size;
   stream_.pop(TOK_RBRACKET);
 
@@ -453,7 +453,9 @@ ast_node_t* parser_t::parse_function_(const token_t &t) {
   if (!stream_.found(TOK_RPAREN)) {
     do {
       const token_t *arg = stream_.pop(TOK_IDENT);
-      func->args.push_back(arg);
+      auto *a = new ast_decl_var_t(arg);
+      a->is_arg_ = true;
+      func->args.push_back(a);
     } while (stream_.found(TOK_COMMA));
     stream_.pop(TOK_RPAREN);
   }
@@ -514,10 +516,10 @@ ast_node_t* parser_t::parse_global_() {
   //    var   <TOK_IDENT> [ <TOK_VAL> ]
 
   const token_t *name = stream_.pop(TOK_IDENT);
+  ast_decl_var_t *decl = new ast_decl_var_t(name);
 
   // parse global array decl
   if (stream_.found(TOK_LBRACKET)) {
-    ast_decl_array_t *decl = new ast_decl_array_t(name);
     const token_t *size = stream_.pop(TOK_VAL);
     stream_.pop(TOK_RBRACKET);
     // validate array size
@@ -525,18 +527,16 @@ ast_node_t* parser_t::parse_global_() {
       ccml_.errors().array_size_must_be_greater_than(*name);
     }
     decl->size = size;
-    return decl;
   }
   // parse global var decl
   else {
-    ast_decl_var_t *decl = new ast_decl_var_t(name);
     // assign a default value
     if (stream_.found(TOK_ASSIGN)) {
       const token_t *value = stream_.pop(TOK_VAL);
       decl->expr = new ast_exp_const_t(value);
     }
-    return decl;
   }
+  return decl;
 }
 
 void parser_t::op_reduce_() {

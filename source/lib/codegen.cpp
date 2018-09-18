@@ -57,13 +57,6 @@ void asm_stream_t::add_ident(const identifier_t &ident) {
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-struct globals_pass_t: ast_visitor_t {
-
-  void visit(ast_program_t *p) override {
-  }
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct stack_pass_t: ast_visitor_t {
 
   stack_pass_t()
@@ -90,17 +83,16 @@ struct stack_pass_t: ast_visitor_t {
   void visit(ast_decl_func_t *n) {
     reset();
     scope_.emplace_back();
-
     // add arguments
     int32_t i = -int32_t(n->args.size());
     for (auto *a : n->args) {
-      if (args_.count(a->str_)) {
-        // duplicate argument name!
-      }
-      args_[a->str_] = i;
-      ++i;
+      auto *var = a->cast<ast_decl_var_t>();
+      assert(var);
+      scope_.back().insert(var);
+      args_.insert(var);
+      offsets_[var] = i++;
     }
-
+    // visit body
     ast_visitor_t::visit(n);
     scope_.pop_back();
   }
@@ -112,19 +104,7 @@ struct stack_pass_t: ast_visitor_t {
         // duplicate identifier!
       }
       offsets_[n] = size_;
-      size_ += 1;
-      max_size_ = std::max(size_, max_size_);
-    }
-  }
-
-  void visit(ast_decl_array_t *n) {
-    if (!scope_.empty()) {
-      scope_.back().insert(n);
-      if (find(n->name->str_)) {
-        // duplicate identifier!
-      }
-      offsets_[n] = size_;
-      size_ += n->size->val_;
+      size_ += n->count();
       max_size_ = std::max(size_, max_size_);
     }
   }
@@ -134,13 +114,10 @@ struct stack_pass_t: ast_visitor_t {
     if (!node) {
       // identifier not found!
     }
-    if (node->type == ast_decl_var_e) {
-      // unable to index variable
-    }
-    if (node->type != ast_decl_array_e) {
-      assert(!"");
-    }
-    decl_[i] = node;
+    ast_decl_var_t *v = node->cast<ast_decl_var_t>();
+    assert(v);
+
+    decl_[i] = v;
   }
 
   void visit(ast_exp_ident_t *i) {
@@ -148,23 +125,30 @@ struct stack_pass_t: ast_visitor_t {
     if (!node) {
       // identifier not found!
     }
-    if (node->type == ast_decl_array_e) {
+    auto *var = node->cast<ast_decl_var_t>();
+    if (var->is_array()) {
       // array access requires subscript []
     }
-    if (node->type != ast_decl_var_e) {
-      assert(!"");
-    }
-    decl_[i] = node;
+    decl_[i] = var;
   }
 
-  void visit(ast_program_t *prog) {
-    for (ast_node_t *c : prog->children) {
-      if (c->is_a<ast_decl_var_t>() || 
-          c->is_a<ast_decl_array_t>()) {
-        // save this global
-        globals_.insert(c);
+  void visit(ast_program_t *p) {
+    int32_t size = 0;
+    scope_.emplace_back();
+    for (ast_node_t *n : p->children) {
+      // collect var decls
+      if (ast_decl_var_t *v = n->cast<ast_decl_var_t>()) {
+        globals_.insert(v);
+        const std::string &name = v->name->str_;
+        offsets_[v] = size;
+        size += v->count();
+      }
+      // traverse functions
+      if (ast_decl_func_t *f = n->cast<ast_decl_func_t>()) {
+        dispatch(f);
       }
     }
+    scope_.pop_back();
   }
 
   void reset() {
@@ -172,13 +156,13 @@ struct stack_pass_t: ast_visitor_t {
     offsets_.clear();
     scope_.clear();
     size_ = 0;
-    args_.clear();
     max_size_ = 0;
+    args_.clear();
     // note: dont clear globals
   }
 
   // find the stack offset for a given decl
-  int32_t find_offset(ast_node_t *decl) {
+  int32_t find_offset(ast_decl_var_t *decl) {
     auto itt = offsets_.find(decl);
     if (itt == offsets_.end()) {
       assert(!"unknown decl");
@@ -187,7 +171,7 @@ struct stack_pass_t: ast_visitor_t {
   }
 
   // given a use, find its matching decl
-  ast_node_t *find_decl(ast_node_t *use) const {
+  ast_decl_var_t *find_decl(ast_node_t *use) const {
     auto itt = decl_.find(use);
     if (itt == decl_.end()) {
       return nullptr;
@@ -203,51 +187,29 @@ struct stack_pass_t: ast_visitor_t {
     return max_size_ + args_.size();
   }
 
-  bool find_arg_offset(const std::string &name, int32_t &out) const {
-    for (const auto a : args_) {
-      if (a.first == name) {
-        out = a.second;
-        return true;
-      }
-    }
-    return false;
-  }
-
 protected:
-  ast_node_t *find(const std::string &name) const {
+  // find a decl given its name
+  ast_decl_var_t *find(const std::string &name) const {
+    // find locals/args/globals
     for (auto i = scope_.rbegin(); i != scope_.rend(); ++i) {
-      for (auto *j : *i) {
-        switch (j->type) {
-        case ast_decl_array_e: {
-          ast_decl_array_t* n = j->cast<ast_decl_array_t>();
-          if (n->name->str_ == name) {
-            return n;
-          }
-          break;
-        }
-        case ast_decl_var_e: {
-          ast_decl_var_t* n = j->cast<ast_decl_var_t>();
-          if (n->name->str_ == name) {
-            return n;
-          }
-          break;
-        }
-        }
+      for (ast_decl_var_t *j : *i) {
+        if (j->name->str_ == name)
+          return j;
       }
     }
     return nullptr;
   }
 
   // identifier -> decl map
-  std::map<ast_node_t*, ast_node_t*> decl_;
-  // ast_decl_var_t / ast_decl_array_t -> offset map
-  std::map<ast_node_t*, int32_t> offsets_;
-  // ast_decl_var_t / ast_decl_array_t
-  std::vector<std::set<ast_node_t*>> scope_;
-  // arguments
-  std::map<std::string, int32_t> args_;
+  std::map<ast_node_t*, ast_decl_var_t*> decl_;
+  // decl -> offset map
+  std::map<ast_decl_var_t*, int32_t> offsets_;
+  // ast_decl_var_t
+  std::vector<std::set<ast_decl_var_t*>> scope_;
   // global variables
-  std::set<ast_node_t*> globals_;
+  std::set<ast_decl_var_t*> globals_;
+  // args
+  std::set<ast_decl_var_t*> args_;
   // current stack size
   int32_t size_;
   // max stack size
@@ -270,21 +232,9 @@ struct codegen_pass_t : ast_visitor_t {
   }
 
   void visit(ast_exp_ident_t* n) override {
-
-    int32_t offset = 0;
-
-    if (ast_node_t *decl = stack_pass_.find_decl(n)) {
-      offset = stack_pass_.find_offset(decl);
-    }
-    else if (stack_pass_.find_arg_offset(n->name->str_, offset)) {
-      // it was an arg
-    }
-    else {
-      // not local var or argument, maby global
-    }
-
+    ast_decl_var_t *decl = stack_pass_.find_decl(n);
     // getv/getg
-    emit(INS_GETV, offset, n->name);
+    emit(INS_GETV, 0, n->name);
   }
 
   virtual void visit(ast_exp_const_t* n) override {
@@ -292,19 +242,10 @@ struct codegen_pass_t : ast_visitor_t {
   }
 
   void visit(ast_exp_array_t* n) override {
-
     int32_t offset = 0;
-
-    if (ast_node_t *decl = stack_pass_.find_decl(n)) {
+    if (ast_decl_var_t *decl = stack_pass_.find_decl(n)) {
       offset = stack_pass_.find_offset(decl);
     }
-    else if (stack_pass_.find_arg_offset(n->name->str_, offset)) {
-      // it was an arg
-    }
-    else {
-      // not local var or argument, maby global
-    }
-
     // getvi/getgi
     dispatch(n->index);
     emit(INS_GETVI, offset, nullptr);
@@ -395,8 +336,6 @@ struct codegen_pass_t : ast_visitor_t {
   }
 
   void visit(ast_decl_func_t* n) override {
-    // collect stack information
-    stack_pass_.visit(n);
     // 
     const int32_t space = stack_pass_.get_locals_operand();
     if (space > 0) {
@@ -418,9 +357,6 @@ struct codegen_pass_t : ast_visitor_t {
       dispatch(n->expr);
       emit(INS_SETV, 0, n->name);
     }
-  }
-
-  void visit(ast_decl_array_t* n) override {
   }
 
 protected:

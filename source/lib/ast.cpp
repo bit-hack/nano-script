@@ -22,7 +22,6 @@ void ast_visitor_t::dispatch(ast_node_t *n) {
   case ast_stmt_assign_array_e: visit(n->cast<ast_stmt_assign_array_t>()); break;
   case ast_decl_func_e:         visit(n->cast<ast_decl_func_t>());         break;
   case ast_decl_var_e:          visit(n->cast<ast_decl_var_t>());          break;
-  case ast_decl_array_e:        visit(n->cast<ast_decl_array_t>());        break;
   default:
     assert(!"unexpected ast_node_t type");
   }
