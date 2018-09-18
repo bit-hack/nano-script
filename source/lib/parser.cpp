@@ -233,7 +233,7 @@ ast_node_t* parser_t::parse_decl_array_(const token_t &name) {
   //    var <TOK_IDENT> '['   <TOK_VAR> ']'
 
   const token_t *size = stream_.pop(TOK_VAL);
-  auto *decl = new ast_decl_var_t{&name};
+  auto *decl = new ast_decl_var_t(&name, ast_decl_var_t::e_local);
   decl->size = size;
   stream_.pop(TOK_RBRACKET);
 
@@ -255,7 +255,7 @@ ast_node_t* parser_t::parse_decl_(const token_t &t) {
     return parse_decl_array_(*name);
   }
 
-  auto *decl = new ast_decl_var_t(name);
+  auto *decl = new ast_decl_var_t(name, ast_decl_var_t::e_local);
 
   // parse assignment expression
   if (const token_t *assign = stream_.found(TOK_ASSIGN)) {
@@ -453,8 +453,7 @@ ast_node_t* parser_t::parse_function_(const token_t &t) {
   if (!stream_.found(TOK_RPAREN)) {
     do {
       const token_t *arg = stream_.pop(TOK_IDENT);
-      auto *a = new ast_decl_var_t(arg);
-      a->is_arg_ = true;
+      auto *a = new ast_decl_var_t(arg, ast_decl_var_t::e_arg);
       func->args.push_back(a);
     } while (stream_.found(TOK_COMMA));
     stream_.pop(TOK_RPAREN);
@@ -516,7 +515,7 @@ ast_node_t* parser_t::parse_global_() {
   //    var   <TOK_IDENT> [ <TOK_VAL> ]
 
   const token_t *name = stream_.pop(TOK_IDENT);
-  ast_decl_var_t *decl = new ast_decl_var_t(name);
+  ast_decl_var_t *decl = new ast_decl_var_t(name, ast_decl_var_t::e_global);
 
   // parse global array decl
   if (stream_.found(TOK_LBRACKET)) {

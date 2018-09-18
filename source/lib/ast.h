@@ -230,12 +230,13 @@ struct ast_decl_var_t : public ast_node_t {
     e_arg
   };
 
-  ast_decl_var_t(const token_t *name)
+  ast_decl_var_t(const token_t *name, kind_t kind)
     : ast_node_t(TYPE)
     , name(name)
     , expr(nullptr)
     , size(nullptr)
     , is_arg_(false)
+    , kind(kind)
   {}
 
   bool is_local() const {

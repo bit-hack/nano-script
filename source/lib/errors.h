@@ -40,6 +40,14 @@ struct error_manager_t {
     on_error_(t.line_no_, "unknown identifier '%s'", t.str_.c_str());
   }
 
+  virtual void unknown_variable(const token_t &t) {
+    on_error_(t.line_no_, "unknown variable '%s'", t.str_.c_str());
+  }
+
+  virtual void unknown_array(const token_t &t) {
+    on_error_(t.line_no_, "unknown array '%s'", t.str_.c_str());
+  }
+
   virtual void expecting_lit_or_ident(const token_t &t) {
     on_error_(line_number_(),
               "expecting literal or identifier, found '%s' instead",
