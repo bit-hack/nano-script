@@ -4,37 +4,9 @@
 
 #include "ccml.h"
 #include "token.h"
-// #include "codegen.h"
 
 
 namespace ccml {
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-struct function_t {
-  ccml_syscall_t sys_;
-  std::string name_;
-  int32_t pos_;
-  uint32_t num_args_;
-  uint32_t id_;
-  std::vector<int32_t*> ret_fixup_;
-
-  function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args,
-             int32_t id)
-    : sys_(sys), name_(name), pos_(-1), num_args_(num_args), id_(id) {}
-
-  function_t(const std::string &name, int32_t pos, int32_t num_args, int32_t id)
-    : sys_(nullptr), name_(name), pos_(pos), num_args_(num_args), id_(id) {}
-
-  void add_return_fixup(int32_t *r) {
-    ret_fixup_.push_back(r);
-  }
-
-  void fix_return_operands(const int32_t count) {
-    for (int32_t *r : ret_fixup_) {
-      *r = count;
-    }
-  }
-};
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct global_t {

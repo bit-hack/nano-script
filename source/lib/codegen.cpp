@@ -65,7 +65,7 @@ struct stack_pass_t: ast_visitor_t {
     , max_size_(0) {
   }
 
-  void visit(ast_stmt_while_t *n) {
+  void visit(ast_stmt_while_t *n) override {
     scope_.emplace_back();
     const int32_t s = size_;
     ast_visitor_t::visit(n);
@@ -73,7 +73,7 @@ struct stack_pass_t: ast_visitor_t {
     scope_.pop_back();
   }
 
-  void visit(ast_stmt_if_t *n) {
+  void visit(ast_stmt_if_t *n) override {
     scope_.emplace_back();
     const int32_t s = size_;
     ast_visitor_t::visit(n);
@@ -81,7 +81,7 @@ struct stack_pass_t: ast_visitor_t {
     scope_.pop_back();
   }
 
-  void visit(ast_decl_func_t *n) {
+  void visit(ast_decl_func_t *n) override {
     reset();
     scope_.emplace_back();
     // add arguments
@@ -97,7 +97,8 @@ struct stack_pass_t: ast_visitor_t {
     scope_.pop_back();
   }
 
-  void visit(ast_stmt_assign_var_t *n) {
+  void visit(ast_stmt_assign_var_t *n) override {
+    ast_visitor_t::visit(n);
     ast_decl_var_t *v = find(n->name->str_);
     if (!v) {
       ccml_.errors().cant_assign_unknown_var(*n->name);
@@ -105,7 +106,8 @@ struct stack_pass_t: ast_visitor_t {
     decl_[n] = v;
   }
 
-  void visit(ast_stmt_assign_array_t *n) {
+  void visit(ast_stmt_assign_array_t *n) override {
+    ast_visitor_t::visit(n);
     ast_decl_var_t *v = find(n->name->str_);
     if (!v) {
       ccml_.errors().assign_to_unknown_array(*n->name);
@@ -113,7 +115,8 @@ struct stack_pass_t: ast_visitor_t {
     decl_[n] = v;
   }
 
-  void visit(ast_decl_var_t *n) {
+  void visit(ast_decl_var_t *n) override {
+    ast_visitor_t::visit(n);
     if (!scope_.empty()) {
       if (find(n->name->str_)) {
         // duplicate identifier!
@@ -127,7 +130,8 @@ struct stack_pass_t: ast_visitor_t {
     }
   }
 
-  void visit(ast_exp_array_t *i) {
+  void visit(ast_exp_array_t *i) override {
+    ast_visitor_t::visit(i);
     ast_node_t *node = find(i->name->str_);
     if (!node) {
       // identifier not found!
@@ -136,11 +140,11 @@ struct stack_pass_t: ast_visitor_t {
     }
     ast_decl_var_t *v = node->cast<ast_decl_var_t>();
     assert(v);
-
     decl_[i] = v;
   }
 
   void visit(ast_exp_ident_t *i) {
+    ast_visitor_t::visit(i);
     ast_node_t *node = find(i->name->str_);
     if (!node) {
       // identifier not found!
@@ -150,6 +154,8 @@ struct stack_pass_t: ast_visitor_t {
     auto *var = node->cast<ast_decl_var_t>();
     if (var->is_array()) {
       // array access requires subscript []
+      __debugbreak();
+      return;
     }
     decl_[i] = var;
   }
@@ -274,14 +280,10 @@ struct codegen_pass_t: ast_visitor_t {
     if (!decl) {
       // unknown variable
       ccml_.errors().unknown_variable(*n->name);
-      __debugbreak();
-      return;
     }
     if (decl->is_array()) {
       // identifier is array not var
       ccml_.errors().ident_is_array_not_var(*n->name);
-      __debugbreak();
-      return;
     }
     const int32_t offset = stack_pass_.find_offset(decl);
     if (decl->is_local()) {
@@ -297,14 +299,10 @@ struct codegen_pass_t: ast_visitor_t {
     if (!decl) {
       // unknown array
       ccml_.errors().unknown_array(*n->name);
-      __debugbreak();
-      return;
     }
     if (!decl->is_array()) {
       // unable to find identifier
       ccml_.errors().variable_is_not_array(*n->name);
-      __debugbreak();
-      return;
     }
     const int32_t offset = stack_pass_.find_offset(decl);
     if (decl->is_local()) {
@@ -348,40 +346,63 @@ struct codegen_pass_t: ast_visitor_t {
     dispatch(n->expr);
     // false jump to L0 (else)
     emit(INS_FJMP, 0, n->token); // ---> LO
+    int32_t *to_L0 = get_fixup();
 
     // then
     for (ast_node_t *c : n->then_block) {
       dispatch(c);
     }
+
+    // if there is no else
+    if (n->else_block.empty()) {
+      *to_L0 = pos();
+      return;
+    }
+
     // unconditional jump to end
     emit(INS_JMP, 0); // ---> L1
+    int32_t *to_L1 = get_fixup();
 
     // else
     // L0 <---
+    const int32_t L0 = pos();
+
     for (ast_node_t *c : n->else_block) {
       dispatch(c);
     }
 
     // L1 <---
+    const int32_t L1 = pos();
+
+    // apply fixups
+    *to_L0 = L0;
+    *to_L1 = L1;
   }
 
   void visit(ast_stmt_while_t* n) override {
 
     // initial jump to L1 --->
     emit(INS_JMP, 0, n->token);
-    int32_t *fixup = get_fixup();
+    int32_t *to_L1 = get_fixup();
 
     // L0 <---
+    const int32_t L0 = pos();
     // emit the while loop body
     for (ast_node_t *c : n->body) {
       dispatch(c);
     }
 
     // L1 <---
+    const int32_t L1 = pos();
     // while loop condition
     dispatch(n->expr);
     // true jump to L0 --->
     emit(INS_TJMP, 0, n->token);
+    int32_t *to_L0 = get_fixup();
+
+    // apply fixups
+    *to_L0 = L0;
+    *to_L1 = L1;
   }
 
   void visit(ast_stmt_return_t *n) override {
@@ -421,6 +442,10 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_decl_func_t* n) override {
+
+    const function_t handle(n->name->str_, pos(), n->args.size());
+    funcs_.push_back(handle);
+
     // insert into func map
     func_map_[n->name->str_] = pos();
     // parse function
@@ -440,10 +465,15 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_decl_var_t* n) override {
+    const int32_t offset = stack_pass_.find_offset(n);
     if (n->expr) {
       dispatch(n->expr);
-      emit(INS_SETV, 0, n->name);
+      emit(INS_SETV, offset, n->name);
     }
+  }
+
+  const std::vector<function_t> &functions() const {
+    return funcs_;
   }
 
 protected:
@@ -462,6 +492,7 @@ protected:
     return reinterpret_cast<int32_t *>(stream_.head(-4));
   }
 
+  std::vector<function_t> funcs_;
   std::map<std::string, int32_t> func_map_;
   std::vector<std::pair<const token_t *, int32_t *>> call_fixups_;
   stack_pass_t stack_pass_;
@@ -531,11 +562,19 @@ codegen_t::codegen_t(ccml_t &c, asm_stream_t &s)
 {
 }
 
-bool codegen_t::run(ast_program_t &program) {
-
+bool codegen_t::run(ast_program_t &program, error_t &error) {
   codegen_pass_t cg{ccml_, stream_};
-  cg.visit(&program);
-
+  try {
+    cg.visit(&program);
+  }
+  catch (const error_t &e) {
+    error = e;
+    return false;
+  }
+  // add functions to ccml
+  for (const auto &f : cg.functions()) {
+    ccml_.add_(f);
+  }
   return true;
 }
 

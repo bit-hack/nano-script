@@ -96,7 +96,7 @@ struct codegen_t {
 
   codegen_t(ccml_t &c, asm_stream_t &stream);
 
-  bool run(ast_program_t &program);
+  bool run(ast_program_t &program, error_t &error);
 
   void reset();
 

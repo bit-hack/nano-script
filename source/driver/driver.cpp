@@ -79,9 +79,14 @@ int main(int argc, char **argv) {
     on_error(error);
     return -2;
   }
+
+  if (!ccml.codegen().run(ccml.ast().program, error)) {
+    return -3;
+  }
+
   ccml.disassembler().disasm();
 
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   if (!func) {
     fprintf(stderr, "unable to locate function 'main'\n");
     exit(1);

@@ -43,8 +43,9 @@ bool ccml_t::build(const char *source, error_t &error) {
     }
     // XXX: we need a sema stage
     // kick off the code generator
-    codegen_->run(ast_->program);
-
+    if (!codegen_->run(ast_->program, error)) {
+      return false;
+    }
     disassembler().disasm();
   }
   catch (const error_t &e) {
@@ -62,6 +63,15 @@ void ccml_t::reset() {
   codegen_->reset();
   vm_->reset();
   store_.reset();
+}
+
+const function_t *ccml_t::find_function(const std::string &name) const {
+  for (const auto &f : functions_) {
+    if (f.name_ == name) {
+      return &f;
+    }
+  }
+  return nullptr;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

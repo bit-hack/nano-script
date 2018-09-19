@@ -81,6 +81,25 @@ struct identifier_t {
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+typedef void(*ccml_syscall_t)(struct thread_t &thread);
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+struct function_t {
+  ccml_syscall_t sys_;
+  std::string name_;
+  int32_t pos_;
+  uint32_t num_args_;
+
+  function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args,
+             int32_t id)
+    : sys_(sys), name_(name), pos_(-1), num_args_(num_args) {}
+
+  function_t(const std::string &name, int32_t pos, int32_t num_args)
+    : sys_(nullptr), name_(name), pos_(pos), num_args_(num_args) {}
+};
+
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct code_store_t {
 
   code_store_t();
@@ -162,6 +181,8 @@ struct ccml_t {
     return store_.data();
   }
 
+  const function_t *find_function(const std::string &name) const;
+
 private:
   friend struct vm_t;
   friend struct lexer_t;
@@ -171,8 +192,13 @@ private:
   friend struct token_stream_t;
   friend struct error_manager_t;
 
+  void add_(const function_t &func) {
+    functions_.push_back(func);
+  }
+
   // the code store
   code_store_t store_;
+  std::vector<function_t> functions_;
 
   std::unique_ptr<error_manager_t> errors_;
   std::unique_ptr<lexer_t>         lexer_;
@@ -182,7 +208,5 @@ private:
   std::unique_ptr<disassembler_t>  disassembler_;
   std::unique_ptr<vm_t>            vm_;
 };
-
-typedef void(*ccml_syscall_t)(struct thread_t &thread);
 
 } // namespace ccml

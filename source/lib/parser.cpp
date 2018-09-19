@@ -548,8 +548,8 @@ void parser_t::op_reduce_() {
   if (op->is_binary_op()) {
     assert(exp_stack_.size() >= 2);
     auto *expr = new ast_exp_bin_op_t(op);
-    expr->left = exp_stack_.rbegin()[0];
-    expr->right = exp_stack_.rbegin()[1];
+    expr->left = exp_stack_.rbegin()[1];
+    expr->right = exp_stack_.rbegin()[0];
     exp_stack_.pop_back();
     exp_stack_.back() = expr;
 

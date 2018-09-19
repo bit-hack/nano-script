@@ -291,10 +291,6 @@ void thread_t::do_INS_SETGI_() {
 }
 
 bool thread_t::prepare(const function_t &func, int32_t argc, const value_t *argv) {
-
-  // XXX: remove later
-  return false;
-
   error_ = thread_error_t::e_success;
   finished_ = true;
   cycles_ = 0;
