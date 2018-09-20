@@ -74,24 +74,23 @@ const function_t *ccml_t::find_function(const std::string &name) const {
   return nullptr;
 }
 
+void ccml_t::add_function(const std::string &name, ccml_syscall_t sys, int32_t num_args) {
+  function_t fn{name, sys, num_args};
+  functions_.push_back(fn);
+}
+
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 code_store_t::code_store_t()
   : stream_(new asm_stream_t{*this}) {
 }
 
 void code_store_t::reset() {
-  identifiers_.clear();
   line_table_.clear();
   stream_.reset(new asm_stream_t(*this));
 }
 
 bool code_store_t::active_vars(const uint32_t pc,
                                std::vector<const identifier_t *> &out) const {
-  // collect all active identifiers
-  for (const auto &ident : identifiers_) {
-    if (pc >= ident.start && pc < ident.end) {
-      out.push_back(&ident);
-    }
-  }
+  // TODO
   return true;
 }

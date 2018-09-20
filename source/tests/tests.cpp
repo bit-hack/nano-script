@@ -28,7 +28,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -49,7 +49,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("func_name");
+  const function_t *func = ccml.find_function("func_name");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -69,7 +69,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("test_arg_return");
+  const function_t *func = ccml.find_function("test_arg_return");
   int32_t input = 7654;
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 1, &input, &res)) {
@@ -95,7 +95,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -115,7 +115,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -135,7 +135,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -155,7 +155,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -175,7 +175,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -195,7 +195,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -218,7 +218,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -241,7 +241,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -263,7 +263,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("func_b");
+  const function_t *func = ccml.find_function("func_b");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -290,7 +290,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("func_b");
+  const function_t *func = ccml.find_function("func_b");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -321,7 +321,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("driver");
+  const function_t *func = ccml.find_function("driver");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -345,7 +345,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("driver");
+  const function_t *func = ccml.find_function("driver");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -407,7 +407,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("sqrt");
+  const function_t *func = ccml.find_function("sqrt");
   int32_t input[] = {1234};
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 1, input + 0, &res)) {
@@ -437,7 +437,7 @@ end
     return false;
   }
 
-  const function_t *func = ccml.parser().find_function("is_prime");
+  const function_t *func = ccml.find_function("is_prime");
   const int32_t     primes[] = {13, 17, 19, 23, 29, 9973, 0}; // prime
   const int32_t non_primes[] = {12, 15, 9, 21, 33, 9977, 0}; // nonprime
 
@@ -485,7 +485,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("hcf");
+  const function_t *func = ccml.find_function("hcf");
   const int32_t inputs[] = {12, 25,  // coprime
                             55, 42,  // coprime
                             56, 42}; // non coprime
@@ -523,7 +523,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("fib");
+  const function_t *func = ccml.find_function("fib");
   const int32_t inputs[] = {9};
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 1, inputs, &res)) {
@@ -552,7 +552,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   const int32_t inputs[] = {81, 153};
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 2, inputs, &res)) {
@@ -585,7 +585,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   const int32_t inputs[] = {3};
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 1, inputs, &res)) {
@@ -619,7 +619,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("weekday");
+  const function_t *func = ccml.find_function("weekday");
   const int32_t inputs[] = {23,    // day
                             8,     // month
                             2018}; // year
@@ -701,7 +701,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -723,7 +723,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -749,7 +749,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -777,7 +777,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -814,7 +814,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -862,7 +862,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -899,7 +899,7 @@ end
   //    INS_LOCALS shoud == 13
   //    INS_RET should == 15
 
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
 
   int32_t inputs[] = {1, 2};
 
@@ -924,7 +924,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -944,7 +944,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -967,7 +967,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -990,7 +990,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
@@ -1012,7 +1012,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
-  const function_t *func = ccml.parser().find_function("main");
+  const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;

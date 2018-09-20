@@ -55,36 +55,6 @@ bool parser_t::parse(error_t &error) {
   return true;
 }
 
-const function_t *parser_t::find_function(const token_t *name, bool can_fail) const {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
-  for (const function_t &func : funcs_) {
-    if (func.name_ == name->str_) {
-      return &func;
-    }
-  }
-  if (!can_fail) {
-    ccml_.errors().unknown_function(*name);
-  }
-  return nullptr;
-}
-
-const function_t *parser_t::find_function(const std::string &name) const {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
-  for (const function_t &func : funcs_) {
-    if (func.name_ == name) {
-      return &func;
-    }
-  }
-  return nullptr;
-}
-
-const function_t *parser_t::find_function(uint32_t id) const {
-  if (funcs_.size() > id) {
-    return &funcs_[id];
-  }
-  return nullptr;
-}
-
 int32_t parser_t::op_type_(token_e type) const {
   // return precedence
   // note: higher number will be evaluated earlier in an expression
@@ -586,25 +556,11 @@ void parser_t::op_pop_all_(uint32_t tide) {
   }
 }
 
-void parser_t::add_function(const std::string &name, ccml_syscall_t func,
-                            uint32_t num_args) {
-  funcs_.emplace_back(name, func, num_args, funcs_.size());
-}
-
 void parser_t::reset() {
-  funcs_.clear();
-  global_.clear();
   op_stack_.clear();
 }
 
 parser_t::parser_t(ccml_t &c)
   : ccml_(c)
 {
-  // register builtin functions
-  void builtin_abs(struct ccml::thread_t &);
-  void builtin_max(struct ccml::thread_t &);
-  void builtin_min(struct ccml::thread_t &);
-  add_function("abs", builtin_abs, 1);
-  add_function("min", builtin_min, 2);
-  add_function("max", builtin_max, 2);
 }

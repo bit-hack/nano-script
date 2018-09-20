@@ -49,6 +49,14 @@ struct thread_t;
 struct vm_t;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+struct global_t {
+  const token_t *token_;
+  int32_t offset_;
+  int32_t value_;
+  int32_t size_;
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct identifier_t {
 
   identifier_t()
@@ -85,19 +93,19 @@ typedef void(*ccml_syscall_t)(struct thread_t &thread);
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct function_t {
-  ccml_syscall_t sys_;
   std::string name_;
   int32_t pos_;
-  uint32_t num_args_;
+  union {
+    ccml_syscall_t sys_;
+    uint32_t num_args_;
+  };
 
-  function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args,
-             int32_t id)
+  function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args)
     : sys_(sys), name_(name), pos_(-1), num_args_(num_args) {}
 
   function_t(const std::string &name, int32_t pos, int32_t num_args)
     : sys_(nullptr), name_(name), pos_(pos), num_args_(num_args) {}
 };
-
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct code_store_t {
@@ -118,10 +126,6 @@ struct code_store_t {
 
   const std::map<uint32_t, uint32_t> &line_table() const {
     return line_table_;
-  }
-
-  const std::vector<identifier_t> &identifiers() const {
-    return identifiers_;
   }
 
   int32_t get_line(uint32_t pc) const {
@@ -153,8 +157,6 @@ protected:
 
   // line table [PC -> Line]
   std::map<uint32_t, uint32_t> line_table_;
-
-  std::vector<identifier_t> identifiers_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -183,6 +185,16 @@ struct ccml_t {
 
   const function_t *find_function(const std::string &name) const;
 
+  void add_function(const std::string &name, ccml_syscall_t sys, int32_t num_args);
+
+  const std::vector<function_t> &functions() const {
+    return functions_;
+  }
+
+  const std::vector<global_t> &globals() const {
+    return globals_;
+  }
+
 private:
   friend struct vm_t;
   friend struct lexer_t;
@@ -192,13 +204,20 @@ private:
   friend struct token_stream_t;
   friend struct error_manager_t;
 
+  void add_builtins_();
+
   void add_(const function_t &func) {
     functions_.push_back(func);
+  }
+
+  void add_(const global_t &ident) {
+    globals_.push_back(ident);
   }
 
   // the code store
   code_store_t store_;
   std::vector<function_t> functions_;
+  std::vector<global_t> globals_;
 
   std::unique_ptr<error_manager_t> errors_;
   std::unique_ptr<lexer_t>         lexer_;

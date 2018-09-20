@@ -186,12 +186,14 @@ void thread_t::do_INS_RET_() {
 
 void thread_t::do_INS_SCALL_() {
   const int32_t operand = read_operand_();
-  if (const function_t *func = ccml_.parser().find_function(operand)) {
-    func->sys_(*this);
-  }
-  else
-  {
+
+  const auto &funcs = ccml_.functions();
+  if (operand < 0 || operand >= funcs.size()) {
     set_error_(thread_error_t::e_bad_syscall);
+  }
+  else {
+    const function_t *func = &ccml_.functions()[operand];
+    func->sys_(*this);
   }
 }
 
@@ -290,6 +292,18 @@ void thread_t::do_INS_SETGI_() {
   }
 }
 
+namespace {
+
+int32_t global_space(const std::vector<global_t> &globals) {
+  int32_t sum = 0;
+  for (const auto &g : globals) {
+    sum += g.size_;
+  }
+  return sum;
+}
+
+} // namespace {}
+
 bool thread_t::prepare(const function_t &func, int32_t argc, const value_t *argv) {
   error_ = thread_error_t::e_success;
   finished_ = true;
@@ -297,14 +311,12 @@ bool thread_t::prepare(const function_t &func, int32_t argc, const value_t *argv
   halted_ = false;
 
   // push globals
-  if (const int32_t size = ccml_.parser().global_size()) {
-    if (size < 0 || size >= int32_t(s_.size())) {
-      set_error_(thread_error_t::e_bad_globals_size);
-      return false;
-    }
+  if (!ccml_.globals().empty()) {
+    //
+    const int32_t size = global_space(ccml_.globals());
     // reserve this much space for globals
     s_head_ += size;
-    for (const auto &g : ccml_.parser().globals()) {
+    for (const auto &g : ccml_.globals()) {
       if (g.size_ == 1) {
         s_[g.offset_] = g.value_;
       }
@@ -493,7 +505,6 @@ void thread_t::setv_(int32_t offs, value_t val) {
     s_[index] = val;
   }
 }
-
 
 // peek a stack value
 bool thread_t::peek(int32_t offset, bool absolute, value_t &out) const {

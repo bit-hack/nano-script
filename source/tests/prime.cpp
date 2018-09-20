@@ -102,8 +102,8 @@ struct test_prime_t {
 
     ccml_t ccml;
     // register syscalls
-    ccml.parser().add_function("validate", sys_check, 1);
-    ccml.parser().add_function("is_marking", is_marking, 1);
+    ccml.add_function("validate", sys_check, 1);
+    ccml.add_function("is_marking", is_marking, 1);
     // compile the program
     error_t error;
     if (!ccml.build(prime_prog, error)) {
@@ -111,7 +111,7 @@ struct test_prime_t {
     }
     ccml.disassembler().disasm();
     // run it
-    const function_t* func = ccml.parser().find_function("main");
+    const function_t* func = ccml.find_function("main");
 
     thread_t thread{ccml};
     if (!thread.prepare(*func, 0, nullptr)) {

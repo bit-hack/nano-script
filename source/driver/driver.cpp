@@ -60,8 +60,8 @@ int main(int argc, char **argv) {
   using namespace ccml;
 
   ccml_t ccml;
-  ccml.parser().add_function("putc", vm_putc, 1);
-  ccml.parser().add_function("getc", vm_getc, 0);
+  ccml.add_function("putc", vm_putc, 1);
+  ccml.add_function("getc", vm_getc, 0);
 
   if (argc <= 1)
     return -1;

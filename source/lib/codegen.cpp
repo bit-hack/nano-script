@@ -45,17 +45,6 @@ void asm_stream_t::set_line(lexer_t &lexer, const token_t *t) {
   store_.add_line(pc, line);
 }
 
-void asm_stream_t::add_ident(const identifier_t &ident) {
-  for (auto &i : store_.identifiers_) {
-    if (i.token == ident.token) {
-      i.start = std::min(ident.start, i.start);
-      i.end   = std::max(ident.end,   i.end);
-      return;
-    }
-  }
-  store_.identifiers_.push_back(ident);
-}
-
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct stack_pass_t: ast_visitor_t {
 
@@ -166,8 +155,9 @@ struct stack_pass_t: ast_visitor_t {
     for (ast_node_t *n : p->children) {
       // collect var decls
       if (ast_decl_var_t *v = n->cast<ast_decl_var_t>()) {
+        scope_.back().insert(v);
+        // insert into global list
         globals_.insert(v);
-        const std::string &name = v->name->str_;
         offsets_[v] = size;
         size += v->count();
       }
@@ -181,10 +171,8 @@ struct stack_pass_t: ast_visitor_t {
 
   void reset() {
     decl_.clear();
-    offsets_.clear();
     size_ = 0;
     max_size_ = 0;
-    // note: dont clear globals
   }
 
   // find the stack offset for a given decl
@@ -211,6 +199,10 @@ struct stack_pass_t: ast_visitor_t {
 
   int32_t get_ret_operand() const {
     return max_size_ + num_args_();
+  }
+
+  const std::set<ast_decl_var_t*> &globals() const {
+    return globals_;
   }
 
 protected:
@@ -262,12 +254,25 @@ struct codegen_pass_t: ast_visitor_t {
     stack_pass_.visit(n);
     // visit all constructs
     for (ast_node_t *c : n->children) {
-      dispatch(c);
+      if (c->is_a<ast_decl_func_t>()) {
+        dispatch(c);
+      }
     }
     // process call fixups
     for (const auto &fixups : call_fixups_) {
       const int32_t offs = func_map_[fixups.first->str_];
       *fixups.second = offs;
+    }
+    // process globals
+    for (const auto &global : stack_pass_.globals()) {
+      assert(global);
+      global_t g;
+      g.token_ = global->name;
+      g.offset_ = stack_pass_.find_offset(global);
+      const auto *expr = global->expr->cast<ast_exp_const_t>();
+      g.value_ = expr->value->val_;
+      g.size_ = global->count();
+      globals_.push_back(g);
     }
   }
 
@@ -317,10 +322,23 @@ struct codegen_pass_t: ast_visitor_t {
     for (ast_node_t *c : n->args) {
       dispatch(c);
     }
-    emit(INS_CALL, 0, n->name);
-    int32_t *operand = get_fixup();
-    // insert addr into map
-    call_fixups_.emplace_back(n->name, operand);
+    // find syscall
+    int32_t index = 0;
+    for (const auto &f : ccml_.functions()) {
+      if (f.name_ == n->name->str_) {
+        emit(INS_SCALL, index, n->name);
+        index = -1;
+        break;
+      }
+      ++index;
+    }
+    // emit regular call
+    if (index != -1) {
+      emit(INS_CALL, 0, n->name);
+      int32_t *operand = get_fixup();
+      // insert addr into map
+      call_fixups_.emplace_back(n->name, operand);
+    }
   }
 
   void visit(ast_stmt_call_t *n) override {
@@ -476,6 +494,10 @@ struct codegen_pass_t: ast_visitor_t {
     return funcs_;
   }
 
+  const std::vector<global_t> &globals() const {
+    return globals_;
+  }
+
 protected:
 
   // emit into the code stream
@@ -492,6 +514,7 @@ protected:
     return reinterpret_cast<int32_t *>(stream_.head(-4));
   }
 
+  std::vector<global_t> globals_;
   std::vector<function_t> funcs_;
   std::map<std::string, int32_t> func_map_;
   std::vector<std::pair<const token_t *, int32_t *>> call_fixups_;
@@ -574,6 +597,10 @@ bool codegen_t::run(ast_program_t &program, error_t &error) {
   // add functions to ccml
   for (const auto &f : cg.functions()) {
     ccml_.add_(f);
+  }
+  // add globals to ccml
+  for (const auto &g : cg.globals()) {
+    ccml_.add_(g);
   }
   return true;
 }

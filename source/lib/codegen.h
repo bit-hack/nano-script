@@ -72,9 +72,6 @@ struct asm_stream_t {
   // if line is nullptr then current lexer line is used
   void set_line(lexer_t &lexer, const token_t *line);
 
-  // add identifier
-  void add_ident(const identifier_t &ident);
-
 protected:
   code_store_t &store_;
   std::map<const uint8_t *, uint32_t> line_table_;

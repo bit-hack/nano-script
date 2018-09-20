@@ -70,7 +70,7 @@ int main() {
       continue;
     }
 
-    const auto &funcs = ccml.parser().functions();
+    const auto &funcs = ccml.functions();
     for (const auto &func : funcs) {
 
       std::array<int32_t, 16> args;
