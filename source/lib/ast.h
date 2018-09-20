@@ -95,7 +95,7 @@ struct ast_stmt_call_t : public ast_node_t {
 
   ast_stmt_call_t(ast_node_t *expr)
     : ast_node_t(TYPE)
-    , expr(nullptr)
+    , expr(expr)
   {}
 
   ast_node_t *expr;

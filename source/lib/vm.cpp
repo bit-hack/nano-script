@@ -172,7 +172,7 @@ void thread_t::do_INS_RET_() {
   // pop return value
   const int32_t sval = pop();
   // remove arguments and local vars
-  if (s_head_ - operand < 0) {
+  if (s_head_ < operand) {
     set_error_(thread_error_t::e_stack_underflow);
   }
   else {
@@ -309,6 +309,7 @@ bool thread_t::prepare(const function_t &func, int32_t argc, const value_t *argv
   finished_ = true;
   cycles_ = 0;
   halted_ = false;
+  s_head_ = 0;
 
   // push globals
   if (!ccml_.globals().empty()) {

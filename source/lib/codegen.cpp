@@ -108,9 +108,7 @@ struct stack_pass_t: ast_visitor_t {
     ast_visitor_t::visit(n);
     if (!scope_.empty()) {
       if (find(n->name->str_)) {
-        // duplicate identifier!
-        __debugbreak();
-        return;
+        ccml_.errors().variable_already_declared(*n->name);
       }
       scope_.back().insert(n);
       offsets_[n] = size_;
@@ -123,9 +121,7 @@ struct stack_pass_t: ast_visitor_t {
     ast_visitor_t::visit(i);
     ast_node_t *node = find(i->name->str_);
     if (!node) {
-      // identifier not found!
-      __debugbreak();
-      return;
+      ccml_.errors().unknown_identifier(*i->name);
     }
     ast_decl_var_t *v = node->cast<ast_decl_var_t>();
     assert(v);
@@ -136,21 +132,18 @@ struct stack_pass_t: ast_visitor_t {
     ast_visitor_t::visit(i);
     ast_node_t *node = find(i->name->str_);
     if (!node) {
-      // identifier not found!
-      __debugbreak();
-      return;
+      ccml_.errors().unknown_identifier(*i->name);
     }
     auto *var = node->cast<ast_decl_var_t>();
     if (var->is_array()) {
-      // array access requires subscript []
-      __debugbreak();
-      return;
+      ccml_.errors().array_requires_subscript(*i->name);
     }
     decl_[i] = var;
   }
 
   void visit(ast_program_t *p) {
     int32_t size = 0;
+    scope_.clear();
     scope_.emplace_back();
     for (ast_node_t *n : p->children) {
       // collect var decls
@@ -161,18 +154,22 @@ struct stack_pass_t: ast_visitor_t {
         offsets_[v] = size;
         size += v->count();
       }
-      // traverse functions
-      if (ast_decl_func_t *f = n->cast<ast_decl_func_t>()) {
-        dispatch(f);
-      }
     }
-    scope_.pop_back();
   }
 
   void reset() {
     decl_.clear();
     size_ = 0;
     max_size_ = 0;
+    // remove all but globals
+    for (auto itt = offsets_.begin(); itt != offsets_.end();) {
+      if (itt->first->is_global()) {
+        ++itt;
+      }
+      else {
+        itt = offsets_.erase(itt);
+      }
+    }
   }
 
   // find the stack offset for a given decl
@@ -269,8 +266,11 @@ struct codegen_pass_t: ast_visitor_t {
       global_t g;
       g.token_ = global->name;
       g.offset_ = stack_pass_.find_offset(global);
-      const auto *expr = global->expr->cast<ast_exp_const_t>();
-      g.value_ = expr->value->val_;
+      g.value_ = 0;
+      if (global->expr) {
+        const auto *expr = global->expr->cast<ast_exp_const_t>();
+        g.value_ = expr->value->val_;
+      }
       g.size_ = global->count();
       globals_.push_back(g);
     }
@@ -291,7 +291,7 @@ struct codegen_pass_t: ast_visitor_t {
       ccml_.errors().ident_is_array_not_var(*n->name);
     }
     const int32_t offset = stack_pass_.find_offset(decl);
-    if (decl->is_local()) {
+    if (decl->is_local() || decl->is_arg()) {
       emit(INS_GETV, offset, n->name);
     }
     if (decl->is_global()) {
@@ -435,7 +435,7 @@ struct codegen_pass_t: ast_visitor_t {
     ast_decl_var_t *d = stack_pass_.find_decl(n);
     assert(d);
     const int32_t offset = stack_pass_.find_offset(d);
-    if (d->is_local()) {
+    if (d->is_local() || d->is_arg()) {
       emit(INS_SETV, offset, n->name);
     }
     if (d->is_global()) {
@@ -460,6 +460,7 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_decl_func_t* n) override {
+    stack_pass_.visit(n);
 
     const function_t handle(n->name->str_, pos(), n->args.size());
     funcs_.push_back(handle);

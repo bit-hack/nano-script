@@ -24,6 +24,7 @@ ccml_t::ccml_t()
   , vm_(new vm_t(*this))
   , errors_(new error_manager_t(*this))
 {
+  add_builtins_();
 }
 
 ccml_t::~ccml_t() {
@@ -46,7 +47,7 @@ bool ccml_t::build(const char *source, error_t &error) {
     if (!codegen_->run(ast_->program, error)) {
       return false;
     }
-    disassembler().disasm();
+//    disassembler().disasm();
   }
   catch (const error_t &e) {
     error = e;
@@ -75,7 +76,7 @@ const function_t *ccml_t::find_function(const std::string &name) const {
 }
 
 void ccml_t::add_function(const std::string &name, ccml_syscall_t sys, int32_t num_args) {
-  function_t fn{name, sys, num_args};
+  const function_t fn{name, sys, num_args};
   functions_.push_back(fn);
 }
 

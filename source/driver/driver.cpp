@@ -93,7 +93,7 @@ int main(int argc, char **argv) {
   }
 
   int32_t res = 0;
-  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+  if (!ccml.vm().execute(*func, 0, nullptr, &res, true)) {
     fprintf(stderr, "max cycle count reached\n");
     exit(1);
   }

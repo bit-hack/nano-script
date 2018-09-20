@@ -28,6 +28,14 @@ struct error_manager_t {
 
   // parser
 
+  virtual void array_requires_subscript(const token_t &t) {
+    on_error_(t.line_no_, "array '%s' requires subscript []", t.string());
+  }
+
+  virtual void variable_already_declared(const token_t &t) {
+    on_error_(t.line_no_, "variable '%s' already declared", t.string());
+  }
+
   virtual void unexpected_token(const token_t &t) {
     on_error_(t.line_no_, "unexpected token '%s'", t.string());
   }

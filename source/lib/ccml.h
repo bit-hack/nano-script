@@ -95,16 +95,14 @@ typedef void(*ccml_syscall_t)(struct thread_t &thread);
 struct function_t {
   std::string name_;
   int32_t pos_;
-  union {
-    ccml_syscall_t sys_;
-    uint32_t num_args_;
-  };
+  ccml_syscall_t sys_;
+  uint32_t num_args_;
 
   function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args)
-    : sys_(sys), name_(name), pos_(-1), num_args_(num_args) {}
+    : name_(name), pos_(-1), sys_(sys), num_args_(num_args) {}
 
   function_t(const std::string &name, int32_t pos, int32_t num_args)
-    : sys_(nullptr), name_(name), pos_(pos), num_args_(num_args) {}
+    : name_(name), pos_(pos), sys_(nullptr), num_args_(num_args) {}
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
