@@ -1,0 +1,10 @@
+var global = 1234
+
+function func_a()
+  global = 987
+end
+
+function main()
+  func_a()
+  return global
+end

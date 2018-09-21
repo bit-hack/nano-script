@@ -81,6 +81,7 @@ int main(int argc, char **argv) {
   }
 
   if (!ccml.codegen().run(ccml.ast().program, error)) {
+    on_error(error);
     return -3;
   }
 

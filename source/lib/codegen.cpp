@@ -300,6 +300,10 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_exp_array_t* n) override {
+    // dispatch the array index
+    assert(n->index);
+    dispatch(n->index);
+    // find the array itself
     ast_decl_var_t *decl = stack_pass_.find_decl(n);
     if (!decl) {
       // unknown array
