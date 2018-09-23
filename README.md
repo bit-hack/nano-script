@@ -58,11 +58,13 @@ broken into the following broad stages.
                 \ 
                  \ . lexer
                   \ . parser
-                   \ . assembler
-                    \ . optimizer
-                     \ . bytecode
-                      \
-                       '--> virtual machine
+                   \ . abstract syntax tree
+                    \ . semantic checking
+                     \ . optimizer
+                      \ . code generator
+                       \ . bytecode
+                        \
+                         '--> virtual machine
 ```
 
 ----
