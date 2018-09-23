@@ -70,19 +70,11 @@ int main(int argc, char **argv) {
     fprintf(stderr, "unable to load input");
     return -1;
   }
-  if (!ccml.lexer().lex(source))
-    return -1;
-  delete[] source;
 
   error_t error;
-  if (!ccml.parser().parse(error)) {
+  if (!ccml.build(source, error)) {
     on_error(error);
     return -2;
-  }
-
-  if (!ccml.codegen().run(ccml.ast().program, error)) {
-    on_error(error);
-    return -3;
   }
 
   ccml.disassembler().disasm();

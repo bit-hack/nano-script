@@ -124,7 +124,7 @@ struct test_debug_t {
       }
       for (int32_t i = -2; i < 2; ++i) {
         const std::string &src = ccml.lexer().get_line(line + i);
-        printf("%03d  %s %s\n", line + i, (i == 0 ? "->" : " ."), src.c_str());
+//        printf("%03d  %s %s\n", line + i, (i == 0 ? "->" : " ."), src.c_str());
       }
       std::vector<const identifier_t*> vars;
       if (!thread.active_vars(vars)) {
@@ -133,14 +133,14 @@ struct test_debug_t {
       for (const auto &v : vars) {
         value_t out = 0;
         if (v->is_array()) {
-          printf(" : %s  []\n", v->token->string());
+//          printf(" : %s  []\n", v->token->string());
           continue;
         }
         if (thread.peek(v->offset, v->is_global, out)) {
-          printf(" : %s  %d\n", v->token->string(), out);
+//          printf(" : %s  %d\n", v->token->string(), out);
           continue;
         }
-        printf(" : %s\n", v->token->string());
+//        printf(" : %s\n", v->token->string());
       }
       if (!thread.step_line()) {
         break;

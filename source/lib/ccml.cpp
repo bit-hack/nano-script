@@ -9,6 +9,7 @@
 #include "codegen.h"
 #include "disassembler.h"
 #include "vm.h"
+#include "sema.h"
 
 
 using namespace ccml;
@@ -42,6 +43,9 @@ bool ccml_t::build(const char *source, error_t &error) {
     if (!parser_->parse(error)) {
       return false;
     }
+
+    run_sema(*this);
+
     // XXX: we need a sema stage
     // kick off the code generator
     if (!codegen_->run(ast_->program, error)) {

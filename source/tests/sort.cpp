@@ -14,7 +14,7 @@ function main()
   # fill array with random data
   while (i < 64)
     data[i] = random()
-    i += 1
+    i = i + 1
   end
 
   # do 64 sort iterations
@@ -29,16 +29,16 @@ function main()
         data[j] = data[j + 1]
         data[j + 1] = t
       end
-      j += 1
+      j = j + 1
     end
-    i += 1
+    i = i + 1
   end
 
   # check in the sorted array
   i = 0
   while (i < 64)
     check(data[i])
-    i += 1
+    i = i + 1
   end
 end
 )";

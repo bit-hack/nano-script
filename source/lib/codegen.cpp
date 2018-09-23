@@ -82,7 +82,9 @@ struct stack_pass_t: ast_visitor_t {
       offsets_[var] = i++;
     }
     // visit body
-    ast_visitor_t::visit(n);
+    for (auto *c : n->body) {
+      dispatch(c);
+    }
     scope_.pop_back();
   }
 
@@ -359,7 +361,10 @@ struct codegen_pass_t: ast_visitor_t {
 
   void visit(ast_exp_unary_op_t* n) override {
     dispatch(n->child);
-    emit(tok_to_ins_(n->op->type_), n->op);
+    switch (n->op->type_) {
+    case TOK_SUB: emit(INS_NEG, n->op); break;
+    case TOK_NOT: emit(INS_NOT, n->op); break;
+    }
   }
 
   void visit(ast_stmt_if_t* n) override {

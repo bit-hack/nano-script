@@ -26,7 +26,13 @@ struct error_manager_t {
 
   error_manager_t(ccml_t &ccml): ccml_(ccml) {}
 
-  // parser
+  virtual void too_many_args(const token_t &t) {
+    on_error_(t.line_no_, "too many arguments given to '%s'", t.string());
+  }
+
+  virtual void not_enought_args(const token_t &t) {
+    on_error_(t.line_no_, "not enough arguments given to '%s'", t.string());
+  }
 
   virtual void array_requires_subscript(const token_t &t) {
     on_error_(t.line_no_, "array '%s' requires subscript []", t.string());

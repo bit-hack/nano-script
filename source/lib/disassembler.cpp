@@ -27,34 +27,6 @@ const char *gMnemonic[] = {
 static_assert(sizeof(gMnemonic) / sizeof(const char *) == ccml::__INS_COUNT__,
               "gMnemonic table should match instruction_e enum layout");
 
-// XXX: this is a duplicate, sort it out
-bool has_operand(const ccml::instruction_e ins) {
-  using namespace ccml;
-  switch (ins) {
-  case INS_JMP:
-  case INS_TJMP:
-  case INS_FJMP:
-  case INS_CALL:
-  case INS_RET:
-  case INS_SCALL:
-  case INS_POP:
-  case INS_CONST:
-  case INS_LOCALS:
-  case INS_ACCV:
-  case INS_GETV:
-  case INS_SETV:
-  case INS_GETVI:
-  case INS_SETVI:
-  case INS_GETG:
-  case INS_SETG:
-  case INS_GETGI:
-  case INS_SETGI:
-    return true;
-  default:
-    return false;
-  }
-}
-
 } // namespace {}
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -146,7 +118,7 @@ bool disassembler_t::disasm(int32_t &index, instruction_t &out) const {
 
   out.opcode = (instruction_e)(p[0]);
   index += 1;
-  if (has_operand(out.opcode)) {
+  if (ins_has_operand(out.opcode)) {
     out.operand = *(int32_t*)(p + 1);
     index += 4;
   }

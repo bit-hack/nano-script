@@ -109,7 +109,7 @@ struct test_prime_t {
     if (!ccml.build(prime_prog, error)) {
       return false;
     }
-    ccml.disassembler().disasm();
+//    ccml.disassembler().disasm();
     // run it
     const function_t* func = ccml.find_function("main");
 

@@ -98,7 +98,7 @@ void parser_t::parse_lhs_() {
   //    [-] <TOK_IDENT> [ ... ]
   //    [-] <TOK_VAL>
 
-//  const token_t *neg = stream_.found(TOK_SUB);
+  const token_t *neg = stream_.found(TOK_SUB);
   do {
 
     // ( <expr> )
@@ -149,9 +149,13 @@ void parser_t::parse_lhs_() {
   } while (false);
 
   // insert unary minus operator
-//  if (neg) {
-//    asm_.emit(INS_NEG, neg);
-//  }
+  if (neg) {
+    ast_node_t *back = exp_stack_.back();
+    exp_stack_.pop_back();
+    auto *op = new ast_exp_unary_op_t(neg);
+    op->child = back;
+    exp_stack_.push_back(op);
+  }
 }
 
 void parser_t::parse_expr_ex_(uint32_t tide) {

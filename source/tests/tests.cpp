@@ -366,7 +366,6 @@ end
   ccml_t ccml;
   error_t error;
   if (!ccml.build(prog, error)) {
-    // XXX: make warning "variable cant be accessed from this scope"
     return true;
   }
   return false;
@@ -379,15 +378,6 @@ static bool test_sqrt() {
 function next(n, i)
   return (n + i / n) / 2
 end
-
-# -- this is now a builtin
-# function abs(i)
-#   if (i >= 0)
-#     return i
-#   else
-#     return 0 - i
-#   end
-# end
 
 function sqrt(number)
   var n = 1

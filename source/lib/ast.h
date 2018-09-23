@@ -305,7 +305,12 @@ struct ast_visitor_t {
 
   virtual void visit(ast_exp_ident_t* n) {}
   virtual void visit(ast_exp_const_t* n) {}
-  virtual void visit(ast_exp_array_t* n) {}
+
+  virtual void visit(ast_exp_array_t* n) {
+    stack.push_back(n);
+    dispatch(n->index);
+    stack.pop_back();
+  }
 
   virtual void visit(ast_stmt_call_t* n) {
     stack.push_back(n);
@@ -363,10 +368,19 @@ struct ast_visitor_t {
     stack.pop_back();
   }
 
-  virtual void visit(ast_stmt_assign_array_t* n) {}
+  virtual void visit(ast_stmt_assign_array_t* n) {
+    stack.push_back(n);
+    dispatch(n->index);
+    if (n->expr) {
+      dispatch(n->expr);
+    }
+    stack.pop_back();
+  }
 
   virtual void visit(ast_decl_func_t* n) {
     stack.push_back(n);
+    for (auto *a : n->args)
+      dispatch(a);
     for (auto *c : n->body)
       dispatch(c);
     stack.pop_back();
