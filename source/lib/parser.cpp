@@ -381,6 +381,8 @@ ast_node_t* parser_t::parse_stmt_() {
     if (stream_.found(TOK_ASSIGN)) {
       // x = ...
       stmt = parse_assign_(*var);
+    } else if (stream_.found(TOK_ACC)) {
+      __debugbreak();
     } else if (stream_.found(TOK_LPAREN)) {
       // x(
       ast_node_t *expr = parse_call_(*var);

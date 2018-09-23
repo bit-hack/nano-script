@@ -10,6 +10,7 @@
 #include "disassembler.h"
 #include "vm.h"
 #include "sema.h"
+#include "optimize.h"
 
 
 using namespace ccml;
@@ -44,7 +45,11 @@ bool ccml_t::build(const char *source, error_t &error) {
       return false;
     }
 
+    // run semantic checker
     run_sema(*this);
+
+    // run optmizer
+    run_optimize(*this);
 
     // XXX: we need a sema stage
     // kick off the code generator
