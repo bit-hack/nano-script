@@ -1040,6 +1040,57 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_opt_2() {
+  static const char *prog = R"(
+function main()
+  return 1
+  var test = 1 + 3
+  return 2
+end
+)";
+  ccml_t ccml;
+  error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+
+  // should be:
+  //    INS_CONST 1
+  //    INS_RET
+
+  ccml.disassembler().disasm();
+  return true;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_opt_3() {
+  static const char *prog = R"(
+function main()
+  if (1)
+    return 1
+    var test = 1 + 3
+    return test
+  end
+  return 2
+  while (1)
+  end
+end
+)";
+  ccml_t ccml;
+  error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+
+  // should be:
+  //    INS_CONST 1
+  //    INS_RET
+
+  ccml.disassembler().disasm();
+  return true;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 typedef bool (*test_t)();
 struct test_pair_t {
   const char *name;
@@ -1097,6 +1148,8 @@ static const test_pair_t tests[] = {
     TEST(test_neg_4),
     TEST(test_acc_1),
     TEST(test_opt_1),
+    TEST(test_opt_2),
+    TEST(test_opt_3),
     // sentinel
     nullptr, nullptr};
 
