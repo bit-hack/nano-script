@@ -135,6 +135,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
+  ccml.disassembler().disasm();
   const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
@@ -175,6 +176,7 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
+  ccml.disassembler().disasm();
   const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
@@ -1082,9 +1084,26 @@ end
     return false;
   }
 
-  // should be:
-  //    INS_CONST 1
-  //    INS_RET
+  ccml.disassembler().disasm();
+  return true;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_opt_4() {
+  static const char *prog = R"(
+function main()
+  if (5 - 5)
+    return 1 + 3
+  else
+    return 1 - 8
+  end
+end
+)";
+  ccml_t ccml;
+  error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
 
   ccml.disassembler().disasm();
   return true;
@@ -1150,6 +1169,7 @@ static const test_pair_t tests[] = {
     TEST(test_opt_1),
     TEST(test_opt_2),
     TEST(test_opt_3),
+    TEST(test_opt_4),
     // sentinel
     nullptr, nullptr};
 

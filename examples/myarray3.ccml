@@ -1,9 +1,0 @@
-function main()
-  var my_array[10]
-  var i = 0
-  while (i < 10)
-    my_array[i] = i
-    i = i + 1
-  end
-  return my_array[8]
-end

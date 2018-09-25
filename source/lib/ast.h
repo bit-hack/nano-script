@@ -37,7 +37,12 @@ struct ast_node_t {
   }
 
   template <typename type_t>
-  bool is_a() {
+  const type_t *cast() const {
+    return is_a<type_t>() ? static_cast<const type_t *>(this) : nullptr;
+  }
+
+  template <typename type_t>
+  bool is_a() const {
     return type == type_t::TYPE;
   }
 
@@ -68,12 +73,20 @@ struct ast_exp_ident_t: public ast_node_t {
 struct ast_exp_const_t: public ast_node_t {
   static const ast_type_t TYPE = ast_exp_const_e;
 
-  ast_exp_const_t(const token_t *value)
+  ast_exp_const_t(const token_t *token)
     : ast_node_t(TYPE)
+    , token(token)
+    , value(token->val_)
+  {}
+
+  ast_exp_const_t(const int32_t value)
+    : ast_node_t(TYPE)
+    , token(nullptr)
     , value(value)
   {}
 
-  const token_t *value;
+  const token_t *token;
+  int32_t value;
 };
 
 struct ast_exp_array_t : public ast_node_t {
@@ -422,7 +435,7 @@ struct ast_printer_t : ast_visitor_t {
 
   virtual void visit(ast_exp_const_t* n) {
     indent_();
-    printf("ast_exp_const_t {value: %d}\n", n->value->val_);
+    printf("ast_exp_const_t {value: %d}\n", n->value);
     ast_visitor_t::visit(n);
   }
 

@@ -271,7 +271,7 @@ struct codegen_pass_t: ast_visitor_t {
       g.value_ = 0;
       if (global->expr) {
         const auto *expr = global->expr->cast<ast_exp_const_t>();
-        g.value_ = expr->value->val_;
+        g.value_ = expr->value;
       }
       g.size_ = global->count();
       globals_.push_back(g);
@@ -279,7 +279,7 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   virtual void visit(ast_exp_const_t* n) override {
-    emit(INS_CONST, n->value->val_, n->value);
+    emit(INS_CONST, n->value, n->token);
   }
 
   void visit(ast_exp_ident_t* n) override {
@@ -369,8 +369,14 @@ struct codegen_pass_t: ast_visitor_t {
 
   void visit(ast_stmt_if_t* n) override {
 
+    // XXX:
+    //  if both blocks are empty 
+    //  if expr contains a call emit it
+    //  if expr is const, emit specific body
+
     // expr
     dispatch(n->expr);
+
     // false jump to L0 (else)
     emit(INS_FJMP, 0, n->token); // ---> LO
     int32_t *to_L0 = get_fixup();

@@ -188,7 +188,7 @@ void thread_t::do_INS_SCALL_() {
   const int32_t operand = read_operand_();
 
   const auto &funcs = ccml_.functions();
-  if (operand < 0 || operand >= funcs.size()) {
+  if (operand < 0 || operand >= int32_t(funcs.size())) {
     set_error_(thread_error_t::e_bad_syscall);
   }
   else {
