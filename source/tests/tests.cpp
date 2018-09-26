@@ -1004,12 +1004,44 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
+
+  ccml.disassembler().disasm();
+
   const function_t *func = ccml.find_function("main");
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
   return res == 3;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_acc_2() {
+  static const char *prog = R"(
+function y(blah)
+  return blah * 2
+end
+
+function main()
+  var x = 3
+  x += 2 * y(x)
+  return x
+end
+)";
+  ccml_t ccml;
+  error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+
+  ccml.disassembler().disasm();
+
+  const function_t *func = ccml.find_function("main");
+  int32_t res = 0;
+  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+    return false;
+  }
+  return res == 15;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -1166,6 +1198,7 @@ static const test_pair_t tests[] = {
     TEST(test_neg_3),
     TEST(test_neg_4),
     TEST(test_acc_1),
+    TEST(test_acc_2),
     TEST(test_opt_1),
     TEST(test_opt_2),
     TEST(test_opt_3),

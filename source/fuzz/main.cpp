@@ -34,13 +34,17 @@ int main() {
   uint32_t tests = 0;
   std::vector<std::string> fails;
 
-  for (int32_t i = 0; ; ++i) {
+  for (int32_t i = 0, e = 0; ; ++i) {
 
     std::string fname = "tests/" + std::string("test") + std::to_string(i) + ".txt";
     FILE *fd = fopen(fname.c_str(), "r");
     if (!fd) {
-      break;
+      if (++e > 2) {
+        break;
+      }
+      continue;
     }
+    e = 0;
 
     program.fill('\0');
     int read = fread(program.data(), 1, program.size(), fd);

@@ -252,6 +252,31 @@ ast_node_t* parser_t::parse_assign_(const token_t &name) {
   return stmt;
 }
 
+ast_node_t* parser_t::parse_accumulate_(const token_t &name) {
+
+  // format:
+  //
+  //                   V
+  //    <TOK_IDENT> +=   <expr>
+
+  // synthesize:
+  //  assign {
+  //    name,
+  //    op {
+  //      +,
+  //      name,
+  //      expr } }
+
+  auto *stmt = new ast_stmt_assign_var_t(&name);
+  auto *acc = new ast_exp_bin_op_t{&name};
+  acc->left = new ast_exp_ident_t{&name};
+  acc->right = parse_expr_();
+  acc->op = TOK_ADD;
+  stmt->expr = acc;
+
+  return stmt;
+}
+
 ast_node_t* parser_t::parse_call_(const token_t &name) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
@@ -382,7 +407,7 @@ ast_node_t* parser_t::parse_stmt_() {
       // x = ...
       stmt = parse_assign_(*var);
     } else if (stream_.found(TOK_ACC)) {
-      __debugbreak();
+      stmt = parse_accumulate_(*var);
     } else if (stream_.found(TOK_LPAREN)) {
       // x(
       ast_node_t *expr = parse_call_(*var);

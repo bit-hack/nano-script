@@ -356,7 +356,7 @@ struct codegen_pass_t: ast_visitor_t {
   void visit(ast_exp_bin_op_t* n) override {
     dispatch(n->left);
     dispatch(n->right);
-    emit(tok_to_ins_(n->op->type_), n->op);
+    emit(tok_to_ins_(n->op), n->token);
   }
 
   void visit(ast_exp_unary_op_t* n) override {
@@ -370,7 +370,7 @@ struct codegen_pass_t: ast_visitor_t {
   void visit(ast_stmt_if_t* n) override {
 
     // XXX:
-    //  if both blocks are empty 
+    //  if both blocks are empty
     //  if expr contains a call emit it
     //  if expr is const, emit specific body
 

@@ -129,14 +129,16 @@ struct ast_exp_call_t : public ast_node_t {
 struct ast_exp_bin_op_t : public ast_node_t {
   static const ast_type_t TYPE = ast_exp_bin_op_e;
 
-  ast_exp_bin_op_t(const token_t *op)
+  ast_exp_bin_op_t(const token_t *token)
     : ast_node_t(TYPE)
-    , op(op)
+    , op(token->type_)
+    , token(token)
     , left(nullptr)
     , right(nullptr)
   {}
 
-  const token_t *op;
+  token_e op;
+  const token_t *token;
   ast_node_t *left, *right;
 };
 

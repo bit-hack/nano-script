@@ -276,12 +276,6 @@ end
   )",
   R"(
 function look()
-  return global
-end
-var global
-  )",
-  R"(
-function look()
   return look
 end
   )",

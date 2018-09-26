@@ -105,16 +105,39 @@ protected:
   }
 
   bool eval_(const ast_exp_bin_op_t *o, int32_t &v) {
+    // get opcode
+    const auto op = o->op;
     // get operands
     int32_t a, b;
-    if (value_(o->left, a) && value_(o->right, b)) {
+    const bool vl = value_(o->left, a);
+    const bool vb = value_(o->right, b);
+#if 0
+    // note: disabled because it could skip function calls
+    if (op == TOK_AND) {
+      if ((vl && a == 0) || (vb && b == 0) {
+        val_[o] = 0;
+        return true;
+      }
+    }
+    if (op == TOK_OR) {
+      if ((vl && a != 0) || (vb && b != 0)) {
+        val_[o] = 1;
+        return true;
+      }
+    }
+#endif
+    if (vl && vb) {
+      // check for constant division
+      if (b == 0) {
+        if (op == TOK_DIV || op == TOK_MOD) {
+          errs_.constant_divie_by_zero(*o->token);
+        }
+      }
       // evaluate operator
-      switch (o->op->type_) {
+      switch (o->op) {
       case TOK_ADD: v = a +  b; break;
       case TOK_SUB: v = a -  b; break;
       case TOK_MUL: v = a *  b; break;
-      case TOK_DIV: v = a /  b; break;
-      case TOK_MOD: v = a %  b; break;
       case TOK_AND: v = a && b; break;
       case TOK_OR:  v = a || b; break;
       case TOK_LEQ: v = a <= b; break;
@@ -122,6 +145,8 @@ protected:
       case TOK_LT:  v = a <  b; break;
       case TOK_GT:  v = a >  b; break;
       case TOK_EQ:  v = a == b; break;
+      case TOK_DIV: v = a /  b; break;
+      case TOK_MOD: v = a %  b; break;
       default: assert(!"unknown operator");
       }
       val_[o] = v;
