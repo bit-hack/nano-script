@@ -1,3 +1,5 @@
+#include <crtdbg.h>
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <cstdint>
 #include <array>
@@ -34,7 +36,7 @@ int main() {
   uint32_t tests = 0;
   std::vector<std::string> fails;
 
-  for (int32_t i = 0, e = 0; ; ++i) {
+  for (int32_t i = 0, e = 0; i < 32; ++i) {
 
     std::string fname = "tests/" + std::string("test") + std::to_string(i) + ".txt";
     FILE *fd = fopen(fname.c_str(), "r");
@@ -112,6 +114,8 @@ int main() {
 #if 1
   print_history();
 #endif
+
+  _CrtDumpMemoryLeaks();
 
   return fails.empty() ? 0 : 1;
 }

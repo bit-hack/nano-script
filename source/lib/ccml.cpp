@@ -56,6 +56,10 @@ bool ccml_t::build(const char *source, error_t &error) {
     if (!codegen_->run(ast_->program, error)) {
       return false;
     }
+
+    // collect all garbage
+    ast().gc();
+
 //    disassembler().disasm();
   }
   catch (const error_t &e) {

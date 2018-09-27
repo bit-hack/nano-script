@@ -11,7 +11,8 @@ namespace ccml {
 struct opt_const_expr_t: public ast_visitor_t {
 
   opt_const_expr_t(ccml_t &ccml)
-    : errs_(ccml.errors()) {}
+    : errs_(ccml.errors())
+    , ast_(ccml.ast()) {}
 
   void visit(ast_exp_bin_op_t *o) override {
     dispatch(o->left);
@@ -32,7 +33,7 @@ struct opt_const_expr_t: public ast_visitor_t {
     int32_t v = 0;
     if (auto *e = s->expr->cast<ast_exp_bin_op_t>()) {
       if (eval_(e, v)) {
-        s->expr = new ast_exp_const_t(v);
+        s->expr = ast_.alloc<ast_exp_const_t>(v);
       }
     }
   }
@@ -42,7 +43,7 @@ struct opt_const_expr_t: public ast_visitor_t {
     int32_t v = 0;
     if (auto *e = s->expr->cast<ast_exp_bin_op_t>()) {
       if (eval_(e, v)) {
-        s->expr = new ast_exp_const_t(v);
+        s->expr = ast_.alloc<ast_exp_const_t>(v);
       }
     }
   }
@@ -52,7 +53,7 @@ struct opt_const_expr_t: public ast_visitor_t {
     int32_t v = 0;
     if (auto *e = s->expr->cast<ast_exp_bin_op_t>()) {
       if (eval_(e, v)) {
-        s->expr = new ast_exp_const_t(v);
+        s->expr = ast_.alloc<ast_exp_const_t>(v);
       }
     }
   }
@@ -62,7 +63,7 @@ struct opt_const_expr_t: public ast_visitor_t {
     int32_t v = 0;
     if (auto *e = s->expr->cast<ast_exp_bin_op_t>()) {
       if (eval_(e, v)) {
-        s->expr = new ast_exp_const_t(v);
+        s->expr = ast_.alloc<ast_exp_const_t>(v);
       }
     }
   }
@@ -156,6 +157,7 @@ protected:
   }
 
   error_manager_t &errs_;
+  ast_t &ast_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

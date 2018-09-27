@@ -290,6 +290,8 @@ struct ast_t {
     : ccml_(ccml)
   {}
 
+  ~ast_t();
+
   template <typename T, class... Types>
   T *alloc(Types &&... args) {
     static_assert(std::is_base_of<ast_node_t, T>::value,
@@ -302,6 +304,9 @@ struct ast_t {
   ast_program_t program;
 
   void reset();
+
+  // garbace collect
+  void gc();
 
 protected:
   ccml_t &ccml_;
