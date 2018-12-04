@@ -268,10 +268,10 @@ struct codegen_pass_t: ast_visitor_t {
       global_t g;
       g.token_ = global->name;
       g.offset_ = stack_pass_.find_offset(global);
-      g.value_ = 0;
+      g.value_ = value_from_int(0);
       if (global->expr) {
         const auto *expr = global->expr->cast<ast_exp_const_t>();
-        g.value_ = expr->value;
+        g.value_ = value_from_int(expr->value);
       }
       g.size_ = global->count();
       globals_.push_back(g);

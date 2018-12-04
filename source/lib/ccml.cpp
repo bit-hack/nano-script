@@ -108,3 +108,155 @@ bool code_store_t::active_vars(const uint32_t pc,
   // TODO
   return true;
 }
+
+namespace ccml {
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+value_t value_add(const value_t &a, const value_t &b) {
+#if USE_OLD_VALUE_TYPE
+  return value_t{a + b};
+#else
+  return value_t{a.v + b.v};
+#endif
+}
+
+value_t value_sub(const value_t &a, const value_t &b) {
+#if USE_OLD_VALUE_TYPE
+  return value_t{a - b};
+#else
+  return value_t{a.v - b.v};
+#endif
+}
+
+value_t value_mul(const value_t &a, const value_t &b) {
+#if USE_OLD_VALUE_TYPE
+  return value_t{a * b};
+#else
+  return value_t{a.v * b.v};
+#endif
+}
+
+bool value_div(const value_t &a, const value_t &b, value_t &r) {
+#if USE_OLD_VALUE_TYPE
+  if (b == 0) {
+    return false;
+  } else {
+    r = value_t{a / b};
+    return true;
+  }
+#else
+  if (b.v == 0) {
+    return false;
+  } else {
+    r = value_t{a.v / b.v};
+    return true;
+  }
+#endif
+}
+
+bool value_mod(const value_t &a, const value_t &b, value_t &r) {
+#if USE_OLD_VALUE_TYPE
+  if (b == 0) {
+    return false;
+  } else {
+    r = value_t{a % b};
+    return true;
+  }
+#else
+  if (b.v == 0) {
+    return false;
+  } else {
+    r = value_t{a.v % b.v};
+    return true;
+  }
+#endif
+}
+
+value_t value_and(const value_t &a, const value_t &b) {
+#if USE_OLD_VALUE_TYPE
+  return value_t{a && b};
+#else
+  return value_t{a.v && b.v};
+#endif
+}
+
+value_t value_or(const value_t &a, const value_t &b) {
+#if USE_OLD_VALUE_TYPE
+  return value_t{a || b};
+#else
+  return value_t{a.v || b.v};
+#endif
+}
+
+value_t value_not(const value_t &a) {
+#if USE_OLD_VALUE_TYPE
+  return value_t{!a};
+#else
+  return value_t{!a.v};
+#endif
+}
+
+value_t value_neg(const value_t &a) {
+#if USE_OLD_VALUE_TYPE
+  return value_t{-a};
+#else
+  return value_t{-a.v};
+#endif
+}
+
+bool value_lt(const value_t &a, const value_t &b) {
+#if USE_OLD_VALUE_TYPE
+  return a < b;
+#else
+  return a.v < b.v;
+#endif
+}
+
+bool value_gt(const value_t &a, const value_t &b) {
+#if USE_OLD_VALUE_TYPE
+  return a > b;
+#else
+  return a.v > b.v;
+#endif
+}
+
+bool value_leq(const value_t &a, const value_t &b) {
+#if USE_OLD_VALUE_TYPE
+  return a <= b;
+#else
+  return a.v <= b.v;
+#endif
+}
+
+bool value_geq(const value_t &a, const value_t &b) {
+#if USE_OLD_VALUE_TYPE
+  return a >= b;
+#else
+  return a.v >= b.v;
+#endif
+}
+
+bool value_eq(const value_t &a, const value_t &b) {
+#if USE_OLD_VALUE_TYPE
+  return a == b;
+#else
+  return a.v == b.v;
+#endif
+}
+
+int32_t value_to_int(const value_t &a) {
+#if USE_OLD_VALUE_TYPE
+  return int32_t(a);
+#else
+  return int32_t(a.v);
+#endif
+}
+
+value_t value_from_int(const int32_t &a) {
+#if USE_OLD_VALUE_TYPE
+  return value_t{a};
+#else
+  return value_t{a};
+#endif
+}
+
+} // namespace ccml

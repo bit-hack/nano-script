@@ -1,0 +1,16 @@
+# calculate pi in 16:16 fixed point format
+function main()
+
+  var fx = 1048576
+  var z = 4 * fx
+  var j = -1
+
+  var i = 3
+  while (i < 4000)
+    z += j * (4 * fx) / i
+    j = j * -1
+    i += 2
+  end
+
+  return z
+end

@@ -12,6 +12,11 @@ FILE(GLOB FILE_DRIVER_H "source/driver/*.h")
 add_executable(ccml_driver ${FILE_DRIVER_CPP} ${FILE_DRIVER_H})
 target_link_libraries(ccml_driver ccml_lib)
 
+FILE(GLOB FILE_DRIVER_SDL_CPP "source/driver_sdl/*.cpp")
+FILE(GLOB FILE_DRIVER_SDL_H "source/driver_sdl/*.h")
+add_executable(ccml_driver_sdl ${FILE_DRIVER_SDL_CPP} ${FILE_DRIVER_SDL_H})
+target_link_libraries(ccml_driver_sdl ccml_lib SDL.lib)
+
 FILE(GLOB FILE_TESTS_CPP "source/tests/*.cpp")
 FILE(GLOB FILE_TESTS_H "source/tests/*.h")
 add_executable(ccml_tests  ${FILE_TESTS_CPP} ${FILE_TESTS_H})

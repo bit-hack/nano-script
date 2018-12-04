@@ -1,0 +1,59 @@
+var width = 128
+var height = 128
+
+function line(x0, y0, x1, y1)
+
+  var dx = abs(x1-x0)
+  var sx = -1
+  if (x0 < x1)
+    sx = 1
+  end
+
+  var dy = abs(y1-y0)
+  var sy = -1
+  if (y0 < y1)
+    sy = 1
+  end
+
+  var err = -dy / 2
+  if (dx > dy)
+    err = dx / 2
+  end
+  var e2
+ 
+  while (not (x0 == x1 and y0 == y1))
+    plot(x0, y0)
+    e2 = err
+    if (e2 > -dx)
+        err = err - dy
+        x0 += sx
+    end
+    if (e2 < dy)
+        err += dx
+        y0 += sy
+    end
+  end
+end
+
+function update()
+  var i = 0
+  while (i < 64)
+    var x0 = 64 + rand() % 60
+    var y0 = 64 + rand() % 60
+    var x1 = 64 + rand() % 60
+    var y1 = 64 + rand() % 60
+    setrgb(rand(), rand(), rand())
+    line(x0, y0, x1, y1)
+    i += 1
+  end
+end
+
+function main()
+  # open video window
+  video(width, height)
+  # main loop
+  while (1)
+    update()
+    flip()
+  end
+end

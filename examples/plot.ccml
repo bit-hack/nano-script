@@ -1,0 +1,24 @@
+var width = 128
+var height = 128
+
+function run()
+  var area = width * height
+  var i = 0
+  while (i < area)
+    var x = i % width
+    var y = i / height
+    setrgb(rand(), rand(), rand())
+    plot(x, y)
+    i += 1
+  end
+end
+
+function main()
+  # open video window
+  video(width, height)
+  # main loop
+  while (1)
+    run()
+    flip()
+  end  
+end

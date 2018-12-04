@@ -70,12 +70,12 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("test_arg_return");
-  int32_t input = 7654;
+  value_t input = value_from_int(7654);
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 1, &input, &res)) {
     return false;
   }
-  return res == input;
+  return res == value_to_int(input);
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -400,9 +400,9 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("sqrt");
-  int32_t input[] = {1234};
+  value_t input[] = {1234};
   int32_t res = 0;
-  if (!ccml.vm().execute(*func, 1, input + 0, &res)) {
+  if (!ccml.vm().execute(*func, 1, input, &res)) {
     return false;
   }
   return res == 35;
@@ -430,10 +430,10 @@ end
   }
 
   const function_t *func = ccml.find_function("is_prime");
-  const int32_t     primes[] = {13, 17, 19, 23, 29, 9973, 0}; // prime
-  const int32_t non_primes[] = {12, 15, 9, 21, 33, 9977, 0}; // nonprime
+  const value_t     primes[] = {13, 17, 19, 23, 29, 9973, 0}; // prime
+  const value_t non_primes[] = {12, 15, 9, 21, 33, 9977, 0}; // nonprime
 
-  for (int i = 0; primes[i]; ++i) {
+  for (int i = 0; value_to_int(primes[i]); ++i) {
     int32_t res = 0;
     if (!ccml.vm().execute(*func, 1, primes + i, &res)) {
       return false;
@@ -442,7 +442,7 @@ end
       return false;
     }
   }
-  for (int i = 0; non_primes[i]; ++i) {
+  for (int i = 0; value_to_int(non_primes[i]); ++i) {
     int32_t res = 1;
     if (!ccml.vm().execute(*func, 1, non_primes + 1, &res)) {
       return false;
@@ -478,7 +478,7 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("hcf");
-  const int32_t inputs[] = {12, 25,  // coprime
+  const value_t inputs[] = {12, 25,  // coprime
                             55, 42,  // coprime
                             56, 42}; // non coprime
   int32_t res1, res2, res3;
@@ -516,7 +516,7 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("fib");
-  const int32_t inputs[] = {9};
+  const value_t inputs[] = {9};
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 1, inputs, &res)) {
     return false;
@@ -545,7 +545,7 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  const int32_t inputs[] = {81, 153};
+  const value_t inputs[] = {81, 153};
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 2, inputs, &res)) {
     return false;
@@ -578,7 +578,7 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  const int32_t inputs[] = {3};
+  const value_t inputs[] = {3};
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 1, inputs, &res)) {
     return false;
@@ -612,7 +612,7 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("weekday");
-  const int32_t inputs[] = {23,    // day
+  const value_t inputs[] = {23,    // day
                             8,     // month
                             2018}; // year
   int32_t res = 0;
@@ -893,7 +893,7 @@ end
 
   const function_t *func = ccml.find_function("main");
 
-  int32_t inputs[] = {1, 2};
+  value_t inputs[] = {1, 2};
 
   int32_t res = 0;
   if (!ccml.vm().execute(*func, 2, inputs, &res)) {

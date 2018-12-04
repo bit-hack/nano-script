@@ -53,19 +53,19 @@ struct sort_test_t {
     x ^= x << 13;
     x ^= x >> 17;
     x ^= x << 5;
-    thread.push(x & 0xff);
+    thread.push(ccml::value_from_int(x & 0xff));
   }
 
   // check that the output is in an ascending order
   static void sys_check(struct ccml::thread_t &thread) {
     static int32_t last = -1;
-    const int32_t current = thread.pop();
+    const int32_t current = ccml::value_to_int(thread.pop());
     if (current < last) {
       test_passing = false;
     }
     last = current;
     // push dummy return value
-    thread.push(0);
+    thread.push(ccml::value_from_int(0));
   }
 
   static bool run() {
@@ -98,7 +98,7 @@ struct sort_test_t {
     // with !CJMP:                86792
     const uint32_t cycle_count = thread.cycle_count();
 
-    const int32_t res = thread.return_code();
+    const value_t res = thread.return_code();
     return test_passing && !thread.has_error();
   }
 };

@@ -1,0 +1,29 @@
+var width = 128
+var height = 128
+
+function draw()
+    var y = 0
+    while (y < height)
+
+        var x = 0
+        while (x < width)
+        
+            setrgb(x * 2, y * 2, 0)
+            var c = plot(x, y)
+        
+            x += 1
+        end
+    
+        y += 1
+    end
+end
+
+function main()
+  # open video window
+  video(width, height)
+  # main loop
+  while (1)
+    draw()
+    flip()
+  end
+end

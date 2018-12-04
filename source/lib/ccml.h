@@ -7,6 +7,10 @@
 #include <map>
 
 
+// use plain integer value types or abstract
+#define USE_OLD_VALUE_TYPE 0
+
+
 namespace ccml {
 
 enum instruction_e;
@@ -49,10 +53,19 @@ struct thread_t;
 struct vm_t;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+#if USE_OLD_VALUE_TYPE
+using value_t = int32_t;
+#else
+struct value_t {
+  int64_t v;
+};
+#endif
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct global_t {
   const token_t *token_;
   int32_t offset_;
-  int32_t value_;
+  value_t value_;
   int32_t size_;
 };
 
@@ -225,5 +238,22 @@ private:
   std::unique_ptr<disassembler_t>  disassembler_;
   std::unique_ptr<vm_t>            vm_;
 };
+
+value_t value_add(const value_t &a, const value_t &b);
+value_t value_sub(const value_t &a, const value_t &b);
+value_t value_mul(const value_t &a, const value_t &b);
+bool value_div(const value_t &a, const value_t &b, value_t &r);
+bool value_mod(const value_t &a, const value_t &b, value_t &r);
+value_t value_and(const value_t &a, const value_t &b);
+value_t value_or(const value_t &a, const value_t &b);
+value_t value_not(const value_t &a);
+value_t value_neg(const value_t &a);
+bool value_lt(const value_t &a, const value_t &b);
+bool value_gt(const value_t &a, const value_t &b);
+bool value_leq(const value_t &a, const value_t &b);
+bool value_geq(const value_t &a, const value_t &b);
+bool value_eq(const value_t &a, const value_t &b);
+int32_t value_to_int(const value_t &a);
+value_t value_from_int(const int32_t &a);
 
 } // namespace ccml

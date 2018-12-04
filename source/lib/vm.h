@@ -26,16 +26,19 @@ enum class thread_error_t {
   e_bad_globals_size,
 };
 
-using value_t = int32_t;
-
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct thread_t {
 
   // XXXX: as it stands globals are not shared among threads
 
   thread_t(ccml_t &ccml)
-      : ccml_(ccml), return_code_(0), finished_(true), cycles_(0), s_head_(0),
-        f_head_(0) {}
+    : ccml_(ccml)
+    , return_code_(value_from_int(0))
+    , finished_(true)
+    , cycles_(0)
+    , s_head_(0)
+    , f_head_(0) {
+  }
 
   // peek a stack value
   bool peek(int32_t offset, bool absolute, value_t &out) const;
@@ -67,8 +70,8 @@ struct thread_t {
   }
 
   // return the current error code
-  int32_t return_code() const {
-    return finished_ ? return_code_ : 0;
+  value_t return_code() const {
+    return finished_ ? return_code_ : value_from_int(0);
   }
 
   // return the total cycle count
@@ -96,7 +99,7 @@ protected:
   ccml_t &ccml_;
 
   // the return value of the thread function
-  int32_t return_code_;
+  value_t return_code_;
 
   // set when a thread raises and error
   thread_error_t error_;
@@ -116,7 +119,7 @@ protected:
   };
 
   int32_t pc_;                    // program counter
-  std::array<value_t, 1024> s_;   // value stack
+  std::array<value_t, 1024 * 8> s_;   // value stack
   std::array<frame_t, 64> f_;     // frame stack
   uint32_t s_head_;
   uint32_t f_head_;
@@ -170,7 +173,7 @@ protected:
   value_t pop_() {
     if (s_head_ <= 0) {
       set_error_(thread_error_t::e_stack_underflow);
-      return 0;
+      return value_t{0};
     } else {
       return s_[--s_head_];
     }
@@ -180,7 +183,7 @@ protected:
   void set_error_(thread_error_t error) {
     finished_ = true;
     error_ = error;
-    return_code_ = -1;
+    return_code_ = value_from_int(-1);
   }
 
   value_t getv_(int32_t offs);

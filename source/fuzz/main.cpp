@@ -79,10 +79,10 @@ int main() {
     const auto &funcs = ccml.functions();
     for (const auto &func : funcs) {
 
-      std::array<int32_t, 16> args;
+      std::array<value_t, 16> args;
       assert(func.num_args_ < args.size());
       for (uint32_t j = 0; j < func.num_args_; ++j) {
-        args[j] = rand() & 0xff;
+        args[j] = value_from_int(rand() & 0xff);
       }
 
       thread_t thread{ccml};
@@ -115,7 +115,7 @@ int main() {
   print_history();
 #endif
 
-  _CrtDumpMemoryLeaks();
+  // _CrtDumpMemoryLeaks();
 
   return fails.empty() ? 0 : 1;
 }

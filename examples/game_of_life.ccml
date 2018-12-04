@@ -1,0 +1,61 @@
+var width = 64
+var height = 64
+
+var cell[4096]
+
+function draw()
+  var area = width * height
+  var i = 0
+  while (i < area)
+    var x = i % width
+    var y = i / height
+    var c = cell[i]
+    if (c)
+      setrgb(255, 255, 255)
+    else
+      setrgb(0, 0, 0)
+    end
+    plot(x, y)
+    i += 1
+  end
+end
+
+function setup()
+  var area = width * height
+  var y = 1
+  while (y < height - 1)
+    var x = 1
+    while (x < width - 1)
+      cell[x + y * width] = rand() % 2
+      x += 1
+    end
+    y += 1
+  end
+end
+
+function update()
+  var area = width * height
+  var y = 1
+  while (y < height - 1)
+    var x = 1
+    while (x < width - 1)
+
+      var c = 0
+      c += cell[  ]
+
+      x += 1
+    end
+    y += 1
+  end
+end
+
+function main()
+  # open video window
+  video(width, height)
+  # main loop
+  setup()
+  while (1)
+    draw()
+    flip()
+  end  
+end

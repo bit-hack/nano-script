@@ -37,14 +37,16 @@ const char *load_file(const char *path) {
 }
 
 void vm_getc(ccml::thread_t &t) {
-  const int32_t ch = getchar();
+  using namespace ccml;
+  const value_t ch = value_from_int(getchar());
   t.push(ch);
 }
 
 void vm_putc(ccml::thread_t &t) {
-  const int32_t v = t.pop();
+  using namespace ccml;
+  const int32_t v = value_to_int(t.pop());
   putchar(v);
-  t.push(0);
+  t.push(value_from_int(0));
 }
 
 void on_error(const ccml::error_t &error) {

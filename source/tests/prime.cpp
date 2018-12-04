@@ -83,17 +83,17 @@ struct test_prime_t {
   static void sys_check(struct ccml::thread_t &thread) {
     ++checks_done;
     // pop prime number off stack
-    const int32_t value = thread.pop();
-    if (!is_prime(value)) {
+    const ccml::value_t value = thread.pop();
+    if (!is_prime(ccml::value_to_int(value))) {
       test_passing = false;
     }
     // push dummy return value
-    thread.push(0);
+    thread.push(ccml::value_from_int(0));
   }
 
   static void is_marking(struct ccml::thread_t &thread) {
-    const int32_t value = thread.pop();
-    thread.push(0);
+    const ccml::value_t value = thread.pop();
+    thread.push(ccml::value_from_int(0));
   }
 
   static bool run() {
@@ -126,7 +126,7 @@ struct test_prime_t {
 
     const uint32_t cycle_count = thread.cycle_count();
 
-    const int32_t res = thread.return_code();
+    const value_t res = thread.return_code();
     return test_passing && !thread.has_error() && checks_done;
   }
 };

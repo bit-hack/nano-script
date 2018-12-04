@@ -71,75 +71,81 @@ uint8_t thread_t::read_opcode_() {
 
 void thread_t::do_INS_ADD_() {
   const value_t r = pop(), l = pop();
-  push(l + r);
+  push(value_add(l, r));
 }
 
 void thread_t::do_INS_SUB_() {
   const value_t r = pop(), l = pop();
-  push(l - r);
+  push(value_sub(l, r));
 }
 
 void thread_t::do_INS_MUL_() {
   const value_t r = pop(), l = pop();
-  push(l * r);
+  push(value_mul(l, r));
 }
 
 void thread_t::do_INS_DIV_() {
   const value_t r = pop(), l = pop();
-  if (r == 0) {
+  value_t x;
+  if (value_div(l, r, x)) {
+    push(x);
+  } else {
     set_error_(thread_error_t::e_bad_divide_by_zero);
-  }
-  else {
-    push(l / r);
   }
 }
 
 void thread_t::do_INS_MOD_() {
   const value_t r = pop(), l = pop();
-  push(l % r);
+  value_t x;
+  if (value_mod(l, r, x)) {
+    push(x);
+  } else {
+    set_error_(thread_error_t::e_bad_divide_by_zero);
+  }
 }
 
 void thread_t::do_INS_AND_() {
   const value_t r = pop(), l = pop();
-  push(l && r);
+  push(value_and(l, r));
 }
 
 void thread_t::do_INS_OR_() {
   const value_t r = pop(), l = pop();
-  push(l || r);
+  push(value_or(l, r));
 }
 
 void thread_t::do_INS_NOT_() {
-  push(!pop());
+  push(value_not(pop()));
 }
 
 void thread_t::do_INS_NEG_() {
-  push(-pop());
+  const value_t o = pop();
+  push(value_neg(o));
 }
 
 void thread_t::do_INS_LT_() {
   const value_t r = pop(), l = pop();
-  push(l < r);
+  push(value_lt(l, r) ? value_t{1} : value_t{0});
 }
 
 void thread_t::do_INS_GT_() {
   const value_t r = pop(), l = pop();
-  push(l > r);
+  push(value_gt(l, r) ? value_t{1} : value_t{0});
 }
 
 void thread_t::do_INS_LEQ_() {
   const value_t r = pop(), l = pop();
-  push(l <= r);
+  push(value_leq(l, r) ? value_t{1} : value_t{0});
 }
 
 void thread_t::do_INS_GEQ_() {
   const value_t r = pop(), l = pop();
-  push(l >= r);
+  push(value_geq(l, r) ? value_t{1} : value_t{0});
 }
 
 void thread_t::do_INS_EQ_() {
   const value_t r = pop(), l = pop();
-  push(l == r);
+  push(value_eq(l, r) ? value_t{1} : value_t{0});
 }
 
 void thread_t::do_INS_JMP_() {
@@ -148,14 +154,16 @@ void thread_t::do_INS_JMP_() {
 
 void thread_t::do_INS_TJMP_() {
   const int32_t operand = read_operand_();
-  if (pop()) {
+  const value_t o = pop();
+  if (!value_eq(o, value_t{0})) {
     pc_ = operand;
   }
 }
 
 void thread_t::do_INS_FJMP_() {
   const int32_t operand = read_operand_();
-  if (!pop()) {
+  const value_t o = pop();
+  if (value_eq(o, value_t{0})) {
     pc_ = operand;
   }
 }
@@ -170,7 +178,7 @@ void thread_t::do_INS_CALL_() {
 void thread_t::do_INS_RET_() {
   const int32_t operand = read_operand_();
   // pop return value
-  const int32_t sval = pop();
+  const value_t sval = pop();
   // remove arguments and local vars
   if (int32_t(s_head_) < operand) {
     set_error_(thread_error_t::e_stack_underflow);
@@ -205,7 +213,7 @@ void thread_t::do_INS_POP_() {
 }
 
 void thread_t::do_INS_CONST_() {
-  const int32_t operand = read_operand_();
+  const value_t operand = value_from_int(read_operand_());
   push(operand);
 }
 
@@ -218,7 +226,7 @@ void thread_t::do_INS_LOCALS_() {
       return;
     }
     for (int i = 0; i < operand; ++i) {
-      s_[s_head_ + i] = 0;
+      s_[s_head_ + i] = value_t{0};
     }
     s_head_ += operand;
   }
@@ -227,7 +235,7 @@ void thread_t::do_INS_LOCALS_() {
 void thread_t::do_INS_ACCV_() {
   const int32_t operand = read_operand_();
   const value_t val = pop();
-  setv_(operand, getv_(operand) + val);
+  setv_(operand, value_add(getv_(operand), val));
 }
 
 void thread_t::do_INS_GETV_() {
@@ -242,13 +250,23 @@ void thread_t::do_INS_SETV_() {
 
 void thread_t::do_INS_GETVI_() {
   const int32_t operand = read_operand_();
+#if USE_OLD_VALUE_TYPE
   push(getv_(operand + pop()));
+#else
+  const int32_t index = value_to_int(pop());
+  push(getv_(operand + index));
+#endif
 }
 
 void thread_t::do_INS_SETVI_() {
   const int32_t operand = read_operand_();
+#if USE_OLD_VALUE_TYPE
   const int32_t value = pop();
   setv_(operand + pop(), value);
+#else
+  const value_t value = pop();
+  setv_(operand + value_to_int(pop()), value);
+#endif
 }
 
 void thread_t::do_INS_GETG_() {
@@ -273,7 +291,7 @@ void thread_t::do_INS_SETG_() {
 
 void thread_t::do_INS_GETGI_() {
   const int32_t operand = read_operand_();
-  const int32_t index = operand + pop();
+  const int32_t index = operand + value_to_int(pop());
   if (index < 0 || index >= int32_t(s_.size())) {
     set_error_(thread_error_t::e_bad_get_global);
   } else {
@@ -284,7 +302,7 @@ void thread_t::do_INS_GETGI_() {
 void thread_t::do_INS_SETGI_() {
   const int32_t operand = read_operand_();
   const value_t value = pop();
-  const int32_t index = operand + pop();
+  const int32_t index = operand + value_to_int(pop());
   if (index < 0 || index >= int32_t(s_.size())) {
     set_error_(thread_error_t::e_bad_set_global);
   } else {
@@ -327,13 +345,13 @@ bool thread_t::prepare(const function_t &func, int32_t argc, const value_t *argv
   // save the target pc (entry point)
   pc_ = func.pos_;
   if (func.num_args_ != argc) {
-    return_code_ = -1;
+    return_code_ = value_from_int(-1);
     error_ = thread_error_t::e_bad_num_args;
     return false;
   }
 
   // push any arguments
-  for (value_t i = 0; i < argc; ++i) {
+  for (int i = 0; i < argc; ++i) {
     push(argv[i]);
   }
 
@@ -483,7 +501,8 @@ bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
     return false;
   }
   if (ret) {
-    *ret = t.return_code();
+    value_t r = t.return_code();
+    *ret = value_to_int(r);
   }
   return true;
 }
@@ -492,7 +511,7 @@ value_t thread_t::getv_(int32_t offs) {
   const int32_t index = frame_().sp_ + offs;
   if (index < 0 || index >= int32_t(s_head_)) {
     set_error_(thread_error_t::e_bad_getv);
-    return 0;
+    return value_from_int(0);
   }
   return s_[index];
 }

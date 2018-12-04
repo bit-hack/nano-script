@@ -5,6 +5,9 @@
 #include "errors.h"
 
 
+// TODO: loop invariant code motion?
+
+
 namespace ccml {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
