@@ -10,7 +10,7 @@ void builtin_abs(struct ccml::thread_t &thread) {
 #if USE_OLD_VALUE_TYPE
   thread.push(v < 0 ? -v : v);
 #else
-  thread.push(value_lt(v, value_t{0}) ? value_neg(v) : v);
+  thread.push((v < value_t{0}) ? (-v) : v);
 #endif
 }
 
@@ -20,7 +20,7 @@ void builtin_max(struct ccml::thread_t &thread) {
 #if USE_OLD_VALUE_TYPE
   thread.push(a > b ? a : b);
 #else
-  thread.push(value_gt(a, b) ? a : b);
+  thread.push((a > b) ? a : b);
 #endif
 }
 
@@ -30,7 +30,7 @@ void builtin_min(struct ccml::thread_t &thread) {
 #if USE_OLD_VALUE_TYPE
   thread.push(a < b ? a : b);
 #else
-  thread.push(value_lt(a, b) ? a : b);
+  thread.push((a < b) ? a : b);
 #endif
 }
 

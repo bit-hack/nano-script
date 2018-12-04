@@ -71,17 +71,17 @@ uint8_t thread_t::read_opcode_() {
 
 void thread_t::do_INS_ADD_() {
   const value_t r = pop(), l = pop();
-  push(value_add(l, r));
+  push(l + r);
 }
 
 void thread_t::do_INS_SUB_() {
   const value_t r = pop(), l = pop();
-  push(value_sub(l, r));
+  push(l - r);
 }
 
 void thread_t::do_INS_MUL_() {
   const value_t r = pop(), l = pop();
-  push(value_mul(l, r));
+  push(l * r);
 }
 
 void thread_t::do_INS_DIV_() {
@@ -106,46 +106,46 @@ void thread_t::do_INS_MOD_() {
 
 void thread_t::do_INS_AND_() {
   const value_t r = pop(), l = pop();
-  push(value_and(l, r));
+  push(l && r);
 }
 
 void thread_t::do_INS_OR_() {
   const value_t r = pop(), l = pop();
-  push(value_or(l, r));
+  push(l || r);
 }
 
 void thread_t::do_INS_NOT_() {
-  push(value_not(pop()));
+  push(!pop());
 }
 
 void thread_t::do_INS_NEG_() {
   const value_t o = pop();
-  push(value_neg(o));
+  push(-o);
 }
 
 void thread_t::do_INS_LT_() {
   const value_t r = pop(), l = pop();
-  push(value_lt(l, r) ? value_t{1} : value_t{0});
+  push((l < r) ? value_t{1} : value_t{0});
 }
 
 void thread_t::do_INS_GT_() {
   const value_t r = pop(), l = pop();
-  push(value_gt(l, r) ? value_t{1} : value_t{0});
+  push((l > r) ? value_t{1} : value_t{0});
 }
 
 void thread_t::do_INS_LEQ_() {
   const value_t r = pop(), l = pop();
-  push(value_leq(l, r) ? value_t{1} : value_t{0});
+  push((l <= r) ? value_t{1} : value_t{0});
 }
 
 void thread_t::do_INS_GEQ_() {
   const value_t r = pop(), l = pop();
-  push(value_geq(l, r) ? value_t{1} : value_t{0});
+  push((l >= r) ? value_t{1} : value_t{0});
 }
 
 void thread_t::do_INS_EQ_() {
   const value_t r = pop(), l = pop();
-  push(value_eq(l, r) ? value_t{1} : value_t{0});
+  push((l == r) ? value_t{1} : value_t{0});
 }
 
 void thread_t::do_INS_JMP_() {
@@ -155,7 +155,7 @@ void thread_t::do_INS_JMP_() {
 void thread_t::do_INS_TJMP_() {
   const int32_t operand = read_operand_();
   const value_t o = pop();
-  if (!value_eq(o, value_t{0})) {
+  if (o != value_t{0}) {
     pc_ = operand;
   }
 }
@@ -163,7 +163,7 @@ void thread_t::do_INS_TJMP_() {
 void thread_t::do_INS_FJMP_() {
   const int32_t operand = read_operand_();
   const value_t o = pop();
-  if (value_eq(o, value_t{0})) {
+  if (o == value_t{0}) {
     pc_ = operand;
   }
 }
@@ -235,7 +235,7 @@ void thread_t::do_INS_LOCALS_() {
 void thread_t::do_INS_ACCV_() {
   const int32_t operand = read_operand_();
   const value_t val = pop();
-  setv_(operand, value_add(getv_(operand), val));
+  setv_(operand, getv_(operand) + val);
 }
 
 void thread_t::do_INS_GETV_() {

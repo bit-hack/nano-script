@@ -120,8 +120,8 @@ void vm_flip(ccml::thread_t &t) {
     uint32_t *s = (uint32_t*)global.video_.get();
     uint32_t *d = (uint32_t*)global.screen_->pixels;
 
-    for (int32_t y = 0; y < h; ++y) {
-      for (int32_t x = 0, j = 0; x < h; ++x, j +=3) {
+    for (uint32_t y = 0; y < h; ++y) {
+      for (uint32_t x = 0, j = 0; x < h; ++x, j +=3) {
         const uint32_t c = s[x];
         d[j + 0 + p0] = d[j + 1 + p0] = d[j + 2 + p0] = c;
         d[j + 0 + p1] = d[j + 1 + p1] = d[j + 2 + p1] = c;
