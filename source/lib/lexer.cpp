@@ -98,7 +98,8 @@ bool lexer_t::lex(const char *s) {
       if (munch(s, "end")) {
         push_(TOK_END);
         continue;
-      } else if (munch(s, "else")) {
+      }
+      if (munch(s, "else")) {
         push_(TOK_ELSE);
         continue;
       }
@@ -118,6 +119,10 @@ bool lexer_t::lex(const char *s) {
     case 'n':
       if (munch(s, "not")) {
         push_(TOK_NOT);
+        continue;
+      }
+      if (munch(s, "none")) {
+        push_(TOK_NONE);
         continue;
       }
       break;

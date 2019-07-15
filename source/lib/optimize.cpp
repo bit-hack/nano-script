@@ -5,12 +5,12 @@
 #include "errors.h"
 
 
-// TODO: loop invariant code motion?
-
-
 namespace ccml {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
+// constant propagation
+//
 struct opt_const_expr_t: public ast_visitor_t {
 
   opt_const_expr_t(ccml_t &ccml)
@@ -36,7 +36,7 @@ struct opt_const_expr_t: public ast_visitor_t {
     int32_t v = 0;
     if (auto *e = s->expr->cast<ast_exp_bin_op_t>()) {
       if (eval_(e, v)) {
-        s->expr = ast_.alloc<ast_exp_const_t>(v);
+        s->expr = ast_.alloc<ast_exp_lit_var_t>(v);
       }
     }
   }
@@ -46,7 +46,7 @@ struct opt_const_expr_t: public ast_visitor_t {
     int32_t v = 0;
     if (auto *e = s->expr->cast<ast_exp_bin_op_t>()) {
       if (eval_(e, v)) {
-        s->expr = ast_.alloc<ast_exp_const_t>(v);
+        s->expr = ast_.alloc<ast_exp_lit_var_t>(v);
       }
     }
   }
@@ -56,7 +56,7 @@ struct opt_const_expr_t: public ast_visitor_t {
     int32_t v = 0;
     if (auto *e = s->expr->cast<ast_exp_bin_op_t>()) {
       if (eval_(e, v)) {
-        s->expr = ast_.alloc<ast_exp_const_t>(v);
+        s->expr = ast_.alloc<ast_exp_lit_var_t>(v);
       }
     }
   }
@@ -66,7 +66,7 @@ struct opt_const_expr_t: public ast_visitor_t {
     int32_t v = 0;
     if (auto *e = s->expr->cast<ast_exp_bin_op_t>()) {
       if (eval_(e, v)) {
-        s->expr = ast_.alloc<ast_exp_const_t>(v);
+        s->expr = ast_.alloc<ast_exp_lit_var_t>(v);
       }
     }
   }
@@ -80,7 +80,7 @@ protected:
   std::map<const ast_node_t *, int32_t> val_;
 
   bool value_(const ast_node_t *n, int32_t &v) const {
-    if (const auto *e = n->cast<ast_exp_const_t>()) {
+    if (const auto *e = n->cast<ast_exp_lit_var_t>()) {
       v = e->value;
       return true;
     }
@@ -164,6 +164,9 @@ protected:
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
+// delete dead code after a return statement
+//
 struct opt_post_ret_t: public ast_visitor_t {
 
   opt_post_ret_t(ccml_t &ccml)
@@ -208,6 +211,9 @@ protected:
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
+// remove unreachable branches
+//
 struct opt_if_remove_t: public ast_visitor_t {
 
   opt_if_remove_t(ccml_t &ccml)
@@ -215,7 +221,7 @@ struct opt_if_remove_t: public ast_visitor_t {
 
   void visit(ast_stmt_if_t *s) override {
     ast_visitor_t::visit(s);
-    if (auto *c = s->expr->cast<ast_exp_const_t>()) {
+    if (auto *c = s->expr->cast<ast_exp_lit_var_t>()) {
       if (c->value != 0) {
         s->else_block.clear();
       }
@@ -227,7 +233,7 @@ struct opt_if_remove_t: public ast_visitor_t {
 
   void visit(ast_stmt_while_t *s) override {
     ast_visitor_t::visit(s);
-    if (auto *c = s->expr->cast<ast_exp_const_t>()) {
+    if (auto *c = s->expr->cast<ast_exp_lit_var_t>()) {
       if (c->value == 0) {
         s->body.clear();
       }
@@ -243,10 +249,66 @@ protected:
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
+// commutative tree rotation
+//
+struct opt_com_rotation_t: public ast_visitor_t {
+
+  opt_com_rotation_t(ccml_t &ccml)
+    : ccml_(ccml)
+  {}
+
+  void visit(ast_exp_lit_var_t *n) override {
+    depth_ = 0;    // terminal node
+  }
+
+  void visit(ast_exp_lit_str_t *n) override {
+    depth_ = 0;    // terminal node
+  }
+
+  void visit(ast_exp_call_t *n) override {
+    depth_ = 0;    // terminal node
+  }
+
+  void visit(ast_exp_bin_op_t *o) override {
+    assert(o->left || o->right);
+    // depth of both subtrees
+    const int32_t dl = depth_;
+    dispatch(o->left);
+    const int32_t dr = depth_;
+    dispatch(o->right);
+    // if its a commutative operator
+    switch (o->op) {
+    case TOK_ADD:
+    case TOK_MUL:
+    case TOK_AND:
+    case TOK_OR:
+      if (dr > dl) {
+        std::swap(o->left, o->right);
+      }
+    }
+    ++depth_;
+  }
+
+  void visit(ast_exp_unary_op_t *o) override {
+    dispatch(o->child);
+    ++depth_;
+  }
+
+  void visit(ast_program_t *p) override {
+    ast_visitor_t::visit(p);
+  }
+
+  int32_t depth_;
+  ccml_t &ccml_;
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_optimize(ccml_t &ccml) {
-  opt_post_ret_t  (ccml).visit(&(ccml.ast().program));
-  opt_const_expr_t(ccml).visit(&(ccml.ast().program));
-  opt_if_remove_t (ccml).visit(&(ccml.ast().program));
+  opt_post_ret_t    (ccml).visit(&(ccml.ast().program));
+  opt_const_expr_t  (ccml).visit(&(ccml.ast().program));
+  opt_if_remove_t   (ccml).visit(&(ccml.ast().program));
+  opt_com_rotation_t(ccml).visit(&(ccml.ast().program));
 }
 
 } // namespace ccml

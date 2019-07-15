@@ -54,6 +54,10 @@ struct error_manager_t {
     on_error_(t.line_no_, "unknown identifier '%s'", t.str_.c_str());
   }
 
+  virtual void expected_func_call(const token_t &t) {
+    on_error_(t.line_no_, "expected function call with '%s'", t.str_.c_str());
+  }
+
   virtual void unknown_variable(const token_t &t) {
     on_error_(t.line_no_, "unknown variable '%s'", t.str_.c_str());
   }

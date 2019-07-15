@@ -105,7 +105,7 @@ struct test_prime_t {
     ccml.add_function("validate", sys_check, 1);
     ccml.add_function("is_marking", is_marking, 1);
     // compile the program
-    error_t error;
+    ccml::error_t error;
     if (!ccml.build(prime_prog, error)) {
       return false;
     }

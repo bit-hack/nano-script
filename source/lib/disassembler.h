@@ -9,7 +9,12 @@ struct disassembler_t {
 
   disassembler_t(ccml_t &ccml)
     : ccml_(ccml)
+    , fd_(stderr)
   {}
+
+  void set_file(FILE *fd) {
+    fd_ = fd;
+  }
 
   // return number of bytes disassembled or <= 0 on error
   int32_t disasm(const uint8_t *ptr) const;
@@ -25,6 +30,7 @@ struct disassembler_t {
 
 protected:
   ccml_t &ccml_;
+  FILE *fd_;
 };
 
 } // ccml

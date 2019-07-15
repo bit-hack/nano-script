@@ -98,6 +98,7 @@ void parser_t::parse_lhs_() {
   //    [-] <TOK_IDENT> ( ... )
   //    [-] <TOK_IDENT> [ ... ]
   //    [-] <TOK_VAL>
+  //    [-] <TOK_STRING>
 
   const token_t *neg = stream_.found(TOK_SUB);
   do {
@@ -140,7 +141,14 @@ void parser_t::parse_lhs_() {
 
     // <TOK_VAL>
     if (const token_t *t = stream_.found(TOK_VAL)) {
-      ast_node_t *expr = ast.alloc<ast_exp_const_t>(t);
+      ast_node_t *expr = ast.alloc<ast_exp_lit_var_t>(t);
+      exp_stack_.push_back(expr);
+      break;
+    }
+
+    // <TOK_STRING>
+    if (const token_t *t = stream_.found(TOK_STRING)) {
+      ast_node_t *expr = ast.alloc<ast_exp_lit_str_t>(t);
       exp_stack_.push_back(expr);
       break;
     }
@@ -168,9 +176,9 @@ void parser_t::parse_expr_ex_(uint32_t tide) {
   //    'not' <lhs> <op> <expr_ex>
   //    'not' <lhs>
 
-  if (const token_t *not = stream_.found(TOK_NOT)) {
+  if (const token_t *n = stream_.found(TOK_NOT)) {
     parse_expr_ex_(tide);
-    op_push_(not, tide);
+    op_push_(n, tide);
   }
   else {
     parse_lhs_();
@@ -216,7 +224,7 @@ ast_node_t* parser_t::parse_decl_array_(const token_t &name) {
   return decl;
 }
 
-ast_node_t* parser_t::parse_decl_(const token_t &t) {
+ast_node_t* parser_t::parse_decl_var_(const token_t &t) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
   auto &ast = ccml_.ast();
 
@@ -397,6 +405,7 @@ ast_node_t* parser_t::parse_stmt_() {
   // format:
   //    [ '\n' ]+
   //    var <TOK_IDENT> [ = <expr> ] '\n'
+  //    str <TOK_IDENT> [ = <expr> ] '\n'
   //    <TOK_IDENT> ( <expression list> ) '\n'
   //    if ( <expr> ) '\n'
   //    while ( <expr> ) '\n'
@@ -411,8 +420,9 @@ ast_node_t* parser_t::parse_stmt_() {
 
   if (t = stream_.found(TOK_VAR)) {
     // var ...
-    stmt = parse_decl_(*t);
-  } else if (const token_t *var = stream_.found(TOK_IDENT)) {
+    stmt = parse_decl_var_(*t);
+  }
+  else if (const token_t *var = stream_.found(TOK_IDENT)) {
     if (stream_.found(TOK_ASSIGN)) {
       // x = ...
       stmt = parse_assign_(*var);
@@ -463,9 +473,11 @@ ast_node_t* parser_t::parse_function_(const token_t &t) {
   stream_.pop(TOK_LPAREN);
   if (!stream_.found(TOK_RPAREN)) {
     do {
+
       const token_t *arg = stream_.pop(TOK_IDENT);
       auto *a = ast.alloc<ast_decl_var_t>(arg, ast_decl_var_t::e_arg);
       func->args.push_back(a);
+
     } while (stream_.found(TOK_COMMA));
     stream_.pop(TOK_RPAREN);
   }
@@ -546,7 +558,7 @@ ast_node_t* parser_t::parse_global_() {
     // assign a default value
     if (stream_.found(TOK_ASSIGN)) {
       const token_t *value = stream_.pop(TOK_VAL);
-      decl->expr = ast.alloc<ast_exp_const_t>(value);
+      decl->expr = ast.alloc<ast_exp_lit_var_t>(value);
     }
   }
   return decl;

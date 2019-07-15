@@ -42,6 +42,7 @@ enum token_e {
   TOK_EOF,
   TOK_ACC,
   TOK_STRING,
+  TOK_NONE,
   // artificial token generated during expression parser
   TOK_NEG,
 };

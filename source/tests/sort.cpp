@@ -75,7 +75,7 @@ struct sort_test_t {
     ccml.add_function("random", sys_random, 0);
     ccml.add_function("check", sys_check, 1);
     // compile the program
-    error_t error;
+    ccml::error_t error;
     if (!ccml.build(sort_prog, error)) {
       return false;
     }

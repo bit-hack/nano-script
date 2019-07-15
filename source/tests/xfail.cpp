@@ -59,6 +59,20 @@ end
 function and()
 end
   )",
+  R"(
+function v()
+end
+function boo()
+  return 1 + v
+end
+  )",
+  R"(
+function v()
+end
+function boo()
+  return 1 + v[12]
+end
+  )",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- if
   R"(
 function look()

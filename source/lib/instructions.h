@@ -77,7 +77,20 @@ enum instruction_e {
 
   // push constant:
   //    push( operand )
-  INS_CONST,
+  INS_NEW_INT,
+
+  // push string literal:
+  //    push( string( string_table_index ) )
+  INS_NEW_STR,
+
+  // create a new array
+  //    size = pop()
+  //    push( new array( size ) )
+  INS_NEW_ARY,
+
+  // create a new none type
+  //    push( new none )
+  INS_NEW_NONE,
 
   // reserve locals in stack frame
   INS_LOCALS,
@@ -95,16 +108,18 @@ enum instruction_e {
   //    stack[ fp + operand ] = v
   INS_SETV,
 
-  // get local indexed:
-  //    i = pop()
-  //    push( stack[ fp + operand + i ] )
-  INS_GETVI,
+  // get array element
+  //    index = pop()
+  //    array = pop()
+  //    push( array[ index ] )
+  INS_GETA,
 
-  // set local indexed
-  //    v = pop()
-  //    i = pop()
-  //    stack[ fp + operand + i ] = v
-  INS_SETVI,
+  // set array element
+  //    value = pop()
+  //    index = pop()
+  //    array = pop()
+  //    array[ index ] = value
+  INS_SETA,
 
   // get global
   //    push( stack[ operand ] )
@@ -114,17 +129,6 @@ enum instruction_e {
   //    v = pop()
   //    stack[ operand ] = v
   INS_SETG,
-
-  // get global indexed:
-  //    i = pop()
-  //    push( stack[ operand + i ] )
-  INS_GETGI,
-
-  // set global indexed:
-  //    v = pop()
-  //    i = pop()
-  //    stack[ operand + i ] = v
-  INS_SETGI,
 
   // number of instructions
   __INS_COUNT__,

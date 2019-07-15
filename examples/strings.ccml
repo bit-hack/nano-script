@@ -1,0 +1,4 @@
+function main()
+    str a = "Hello World"
+    str b = "Test me" + a
+end

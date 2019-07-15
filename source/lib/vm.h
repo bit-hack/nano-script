@@ -3,6 +3,7 @@
 #include <array>
 #include <bitset>
 #include <string>
+#include <set>
 
 #include "ccml.h"
 
@@ -24,6 +25,48 @@ enum class thread_error_t {
   e_stack_overflow,
   e_stack_underflow,
   e_bad_globals_size,
+  e_bad_array_bounds,
+  e_bad_type_operation,
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
+// ultra simple halt-the-world garbage collector
+//
+struct value_gc_t {
+
+  value_t *new_int(int64_t value);
+
+  value_t *new_array(int64_t value);
+
+  value_t *new_string(const std::string &value);
+
+  value_t *new_none();
+
+  value_t *copy(const value_t &v);
+
+  void collect(value_t **input, size_t count);
+
+  ~value_gc_t() {
+    for (value_t *v : allocs_) {
+      release_(v);
+    }
+  }
+
+protected:
+
+  void release_(value_t *v) {
+    assert(v);
+    if (v->array_) {
+      assert(v->type == val_type_array);
+      delete[] v->array_;
+    }
+    delete v;
+  }
+
+  void visit_(std::set<const value_t*> &s, const value_t *v);
+
+  std::set<value_t*> allocs_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -33,7 +76,7 @@ struct thread_t {
 
   thread_t(ccml_t &ccml)
     : ccml_(ccml)
-    , return_code_(value_from_int(0))
+    , return_code_(nullptr)
     , finished_(true)
     , cycles_(0)
     , s_head_(0)
@@ -41,15 +84,25 @@ struct thread_t {
   }
 
   // peek a stack value
-  bool peek(int32_t offset, bool absolute, value_t &out) const;
+  bool peek(int32_t offset, bool absolute, value_t *out) const;
 
   // pop from the value stack
-  value_t pop() {
+  value_t* pop() {
     return pop_();
   }
 
+  // push integer onto the value stack
+  void push_int(const int64_t v) {
+    push_(gc_.new_int(v));
+  }
+
+  // push string onto the value stack
+  void push_string(const std::string &v) {
+    push_(gc_.new_string(v));
+  }
+
   // push onto the value stack
-  void push(value_t v) {
+  void push(value_t* v) {
     push_(v);
   }
 
@@ -70,8 +123,8 @@ struct thread_t {
   }
 
   // return the current error code
-  value_t return_code() const {
-    return finished_ ? return_code_ : value_from_int(0);
+  value_t* return_code() const {
+    return finished_ ? return_code_ : nullptr;
   }
 
   // return the total cycle count
@@ -89,7 +142,18 @@ struct thread_t {
   // collect all currently active variables
   bool active_vars(std::vector<const identifier_t *> &out) const;
 
+  // raise a thread error
+  void raise_error(thread_error_t e) {
+    error_ = e;
+  }
+
+  // return garbage collector
+  value_gc_t &gc() {
+    return gc_;
+  }
+
 protected:
+
   friend struct vm_t;
 
   // step a single instruction (internal)
@@ -99,7 +163,7 @@ protected:
   ccml_t &ccml_;
 
   // the return value of the thread function
-  value_t return_code_;
+  value_t* return_code_;
 
   // set when a thread raises and error
   thread_error_t error_;
@@ -118,9 +182,15 @@ protected:
     int32_t pc_;
   };
 
-  int32_t pc_;                    // program counter
-  std::array<value_t, 1024 * 8> s_;   // value stack
-  std::array<frame_t, 64> f_;     // frame stack
+  int32_t pc_;                        // program counter
+
+  value_gc_t gc_;
+
+  void gc_collect();
+
+  // TODO: this should be value_t*
+  std::array<value_t*, 1024 * 8> s_;  // value stack
+  std::array<frame_t, 64> f_;         // frame stack
   uint32_t s_head_;
   uint32_t f_head_;
 
@@ -161,7 +231,7 @@ protected:
   }
 
   // push value onto stack
-  void push_(value_t v) {
+  void push_(value_t *v) {
     if (s_head_ >= s_.size()) {
       set_error_(thread_error_t::e_stack_overflow);
     } else {
@@ -170,10 +240,10 @@ protected:
   }
 
   // pop value from stack
-  value_t pop_() {
+  value_t* pop_() {
     if (s_head_ <= 0) {
       set_error_(thread_error_t::e_stack_underflow);
-      return value_t{0};
+      return gc_.new_int(0);
     } else {
       return s_[--s_head_];
     }
@@ -183,11 +253,11 @@ protected:
   void set_error_(thread_error_t error) {
     finished_ = true;
     error_ = error;
-    return_code_ = value_from_int(-1);
+    return_code_ = gc_.new_int(-1);
   }
 
-  value_t getv_(int32_t offs);
-  void setv_(int32_t offs, value_t val);
+  value_t* getv_(int32_t offs);
+  void setv_(int32_t offs, value_t* val);
 
   int32_t read_operand_();
   uint8_t read_opcode_();
@@ -214,17 +284,18 @@ protected:
   void do_INS_RET_();
   void do_INS_SCALL_();
   void do_INS_POP_();
-  void do_INS_CONST_();
+  void do_INS_NEW_INT_();
+  void do_INS_NEW_STR_();
+  void do_INS_NEW_ARY_();
+  void do_INS_NEW_NONE_();
   void do_INS_LOCALS_();
   void do_INS_ACCV_();
   void do_INS_GETV_();
   void do_INS_SETV_();
-  void do_INS_GETVI_();
-  void do_INS_SETVI_();
   void do_INS_GETG_();
   void do_INS_SETG_();
-  void do_INS_GETGI_();
-  void do_INS_SETGI_();
+  void do_INS_GETA_();
+  void do_INS_SETA_();
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -234,7 +305,7 @@ struct vm_t {
     : ccml_(c) {}
 
   bool execute(const function_t &func, int32_t argc, const value_t *argv,
-               int32_t *ret = nullptr, bool trace = false);
+               value_t **ret = nullptr, bool trace = false);
 
   // reset any stored state
   void reset();

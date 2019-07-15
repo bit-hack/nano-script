@@ -1,6 +1,9 @@
-#include <crtdbg.h>
-
 #define _CRT_SECURE_NO_WARNINGS
+
+#ifdef _MSC_VER
+#include <crtdbg.h>
+#endif
+
 #include <cstdint>
 #include <array>
 #include <cstdio>
@@ -68,24 +71,25 @@ int main() {
 
     ccml_t ccml;
     // compile the program
-    error_t error;
+    ccml::error_t error;
     if (!ccml.build(program.data(), error)) {
       fails.push_back(fname);
-      printf("%s\n", error.error.c_str());
-      printf("%d:  %s\n", error.line, ccml.lexer().get_line(error.line).c_str());
+      fprintf(stderr, "%s\n", error.error.c_str());
+      fprintf(stderr, "%d:  %s\n", error.line, ccml.lexer().get_line(error.line).c_str());
       continue;
     }
 
     const auto &funcs = ccml.functions();
     for (const auto &func : funcs) {
 
+      thread_t thread{ccml};
+
       std::array<value_t, 16> args;
       assert(func.num_args_ < args.size());
       for (uint32_t j = 0; j < func.num_args_; ++j) {
-        args[j] = value_from_int(rand() & 0xff);
+        args[j].from_int(rand() & 0xff);
       }
 
-      thread_t thread{ccml};
       if (!thread.prepare(func, func.num_args_, args.data())) {
         continue;
       }
@@ -111,11 +115,13 @@ int main() {
     getchar();
   }
 
-#if 1
+#if 0
   print_history();
 #endif
 
+#ifdef _MSC_VER
   // _CrtDumpMemoryLeaks();
+#endif
 
   return fails.empty() ? 0 : 1;
 }

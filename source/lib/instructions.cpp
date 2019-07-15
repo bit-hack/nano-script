@@ -11,17 +11,14 @@ bool ins_has_operand(const instruction_e ins) {
   case INS_RET:
   case INS_SCALL:
   case INS_POP:
-  case INS_CONST:
+  case INS_NEW_INT:
+  case INS_NEW_STR:
   case INS_LOCALS:
   case INS_ACCV:
   case INS_GETV:
   case INS_SETV:
-  case INS_GETVI:
-  case INS_SETVI:
   case INS_GETG:
   case INS_SETG:
-  case INS_GETGI:
-  case INS_SETGI:
     return true;
   default:
     return false;

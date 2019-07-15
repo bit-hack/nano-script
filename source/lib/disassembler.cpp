@@ -8,20 +8,21 @@ namespace {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 const char *gMnemonic[] = {
-    // operators
-    "INS_ADD", "INS_SUB", "INS_MUL", "INS_DIV", "INS_MOD", "INS_AND", "INS_OR",
-    // unary operators
-    "INS_NOT", "INS_NEG",
-    // comparators
-    "INS_LT", "INS_GT", "INS_LEQ", "INS_GEQ", "INS_EQ",
-    // branching
-    "INS_JMP", "INS_TJMP", "INS_FJMP", "INS_CALL", "INS_RET", "INS_SCALL",
-    // stack
-    "INS_POP", "INS_CONST", "INS_LOCALS",
-    // local variables
-    "INS_ACCV", "INS_GETV", "INS_SETV", "INS_GETVI", "INS_SETVI",
-    // global variables
-    "INS_GETG", "INS_SETG", "INS_GETGI", "INS_SETGI"};
+  // operators
+  "INS_ADD", "INS_SUB", "INS_MUL", "INS_DIV", "INS_MOD", "INS_AND", "INS_OR",
+  // unary operators
+  "INS_NOT", "INS_NEG",
+  // comparators
+  "INS_LT", "INS_GT", "INS_LEQ", "INS_GEQ", "INS_EQ",
+  // branching
+  "INS_JMP", "INS_TJMP", "INS_FJMP", "INS_CALL", "INS_RET", "INS_SCALL",
+  // stack
+  "INS_POP", "INS_NEW_INT", "INS_NEW_STR", "INS_NEW_ARY", "INS_NEW_NONE", "INS_LOCALS",
+  // local variables
+  "INS_ACCV", "INS_GETV", "INS_SETV", "INS_GETA", "INS_SETA",
+  // global variables
+  "INS_GETG", "INS_SETG"
+};
 
 // make sure this is kept up to date with the opcode table 'instruction_e'
 static_assert(sizeof(gMnemonic) / sizeof(const char *) == ccml::__INS_COUNT__,
@@ -60,7 +61,10 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
   case INS_LEQ:
   case INS_GEQ:
   case INS_EQ:
-    printf("%s\n", gMnemonic[op]);
+  case INS_SETA:
+  case INS_GETA:
+  case INS_NEW_NONE:
+    fprintf(fd_, "%s\n", gMnemonic[op]);
     return i;
   }
 
@@ -69,7 +73,7 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
     void *call = 0;
     memcpy(&call, ptr + i, sizeof(void *));
     i += sizeof(void *);
-    printf("%-12s %p\n", "INS_SCALL", call);
+    fprintf(fd_, "%-12s %p\n", "INS_SCALL", call);
     return i;
   }
 
@@ -84,18 +88,16 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
   case INS_CALL:
   case INS_RET:
   case INS_POP:
-  case INS_CONST:
+  case INS_NEW_ARY:
+  case INS_NEW_INT:
+  case INS_NEW_STR:
   case INS_ACCV:
   case INS_GETV:
   case INS_SETV:
   case INS_LOCALS:
   case INS_GETG:
   case INS_SETG:
-  case INS_GETGI:
-  case INS_SETGI:
-  case INS_GETVI:
-  case INS_SETVI:
-    printf("%-12s %d\n", gMnemonic[op], val);
+    fprintf(fd_, "%-12s %d\n", gMnemonic[op], val);
     return i;
   }
 
@@ -147,11 +149,11 @@ int32_t disassembler_t::disasm() {
 
     if (line_no >= 0 && line_no != old_line) {
       const std::string &line = ccml_.lexer().get_line(line_no);
-      printf("  %02d -- %s\n", line_no, line.c_str());
+      fprintf(fd_, "  %02d -- %s\n", line_no, line.c_str());
       old_line = line_no;
     }
 
-    printf("%04d ", int32_t(p - start));
+    fprintf(fd_, "%04d ", int32_t(p - start));
     const int32_t nb = disasm(p);
     if (nb <= 0) {
       assert(!"unknown opcode");

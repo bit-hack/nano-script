@@ -39,7 +39,7 @@ protected:
   ast_node_t* parse_call_(const token_t &name);
   ast_node_t* parse_assign_(const token_t &name);
   ast_node_t* parse_decl_array_(const token_t &name);
-  ast_node_t* parse_decl_(const token_t &t);
+  ast_node_t* parse_decl_var_(const token_t &t);
   ast_node_t* parse_expr_();
 
   // expressions parsing helpers

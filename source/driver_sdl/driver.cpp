@@ -56,52 +56,60 @@ uint32_t xorshift32() {
 }
 
 void vm_rand(ccml::thread_t &t) {
-  const uint32_t x = xorshift32();
+  const int32_t x = xorshift32();
   // return value
-  t.push(ccml::value_from_int(x));
+  t.push(t.gc().new_int(x));
 }
 
 void vm_video(ccml::thread_t &t) {
   using namespace ccml;
-
-  const int32_t h = value_to_int(t.pop());
-  const int32_t w = value_to_int(t.pop());
-
-  global.width_ = w;
-  global.height_ = h;
-  global.video_.reset(new uint32_t[w * h]);
-  global.screen_ = SDL_SetVideoMode(w*3, h*3, 32, 0);
-  // return value
-  t.push(ccml::value_from_int(global.screen_ != nullptr));
+  const value_t* h = t.pop();
+  const value_t* w = t.pop();
+  if (w->is_int() && h->is_int()) {
+    global.width_ = w->v;
+    global.height_ = h->v;
+    global.video_.reset(new uint32_t[w->v * h->v]);
+    global.screen_ = SDL_SetVideoMode(w->v * 3, h->v * 3, 32, 0);
+    // return value
+    t.push(t.gc().new_int(global.screen_ != nullptr));
+  }
+  else {
+    t.push(t.gc().new_int(0));
+  }
 }
 
 void vm_setrgb(ccml::thread_t &t) {
   using namespace ccml;
-
-  const int32_t b = value_to_int(t.pop());
-  const int32_t g = value_to_int(t.pop());
-  const int32_t r = value_to_int(t.pop());
-  global.rgb_ = ((r & 0xff) << 16) | ((g & 0xff) << 8) | (b & 0xff);
+  const value_t* b = t.pop();
+  const value_t* g = t.pop();
+  const value_t* r = t.pop();
+  if (r->is_int() && g->is_int() && b->is_int()) {
+    global.rgb_ = ((r->v & 0xff) << 16) | ((g->v & 0xff) << 8) | (b->v & 0xff);
+  }
   // return code
-  t.push(value_from_int(0));
+  t.push(t.gc().new_int(0));
 }
 
 void vm_plot(ccml::thread_t &t) {
   using namespace ccml;
 
-  const int32_t y = value_to_int(t.pop());
-  const int32_t x = value_to_int(t.pop());
+  const value_t* y = t.pop();
+  const value_t* x = t.pop();
+  // return value
+  t.push(t.gc().new_int(0));
+
   const int32_t w = global.width_;
   const int32_t h = global.height_;
-  // return value
-  t.push(value_from_int(0));
-  // do the plot
-  if (auto *s = global.screen_) {
-    uint32_t *v = global.video_.get();
-    if (x < 0 || y < 0 || x >= w || y >= h) {
-      return;
+
+  if (x->is_int() && y->is_int()) {
+    // do the plot
+    if (auto *s = global.screen_) {
+      uint32_t *v = global.video_.get();
+      if (x->v < 0 || y->v < 0 || x->v >= w || y->v >= h) {
+        return;
+      }
+      v[x->v + y->v * w] = global.rgb_;
     }
-    v[x + y * w] = global.rgb_;
   }
 }
 
@@ -134,7 +142,7 @@ void vm_flip(ccml::thread_t &t) {
     SDL_Flip(screen);
   }
   // return value
-  t.push(value_from_int(0));
+  t.push(t.gc().new_int(0));
 }
 
 void on_error(const ccml::error_t &error) {
@@ -168,7 +176,7 @@ int main(int argc, char **argv) {
     return -1;
   }
 
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(source, error)) {
     on_error(error);
     return -2;
@@ -181,8 +189,6 @@ int main(int argc, char **argv) {
     fprintf(stderr, "unable to locate function 'main'\n");
     exit(1);
   }
-
-  int32_t res = 0;
 
   ccml::thread_t thread{ccml};
   if (!thread.prepare(*func, 0, nullptr)) {
@@ -205,7 +211,7 @@ int main(int argc, char **argv) {
   }
 
   fflush(stdout);
-  printf("exit: %d\n", res);
+  printf("exit: %d\n", 0);
   SDL_Quit();
   return 0;
 }

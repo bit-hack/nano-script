@@ -24,16 +24,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 123;
+  return value_to_int(res) == 123;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -45,16 +45,16 @@ function func_name()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("func_name");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 1234;
+  return value_to_int(res) == 1234;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -65,17 +65,17 @@ function test_arg_return(x)
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("test_arg_return");
   value_t input = value_from_int(7654);
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 1, &input, &res)) {
     return false;
   }
-  return res == value_to_int(input);
+  return value_to_int(res) == value_to_int(input);
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -91,16 +91,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 11;
+  return value_to_int(res) == 11;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -111,16 +111,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 59;
+  return value_to_int(res) == 59;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -131,17 +131,17 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   ccml.disassembler().disasm();
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 1;
+  return value_to_int(res) == 1;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -152,16 +152,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 3;
+  return value_to_int(res) == 3;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -172,17 +172,17 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   ccml.disassembler().disasm();
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 1;
+  return value_to_int(res) == 1;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -193,16 +193,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 0;
+  return value_to_int(res) == 0;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -216,16 +216,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 1;
+  return value_to_int(res) == 1;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -239,16 +239,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 0;
+  return value_to_int(res) == 0;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -261,16 +261,16 @@ function func_b()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("func_b");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 1234;
+  return value_to_int(res) == 1234;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -288,16 +288,16 @@ function func_b()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("func_b");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 987;
+  return value_to_int(res) == 987;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -319,16 +319,16 @@ function driver()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("driver");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 15;
+  return value_to_int(res) == 15;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -343,16 +343,16 @@ function driver()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("driver");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 128;
+  return value_to_int(res) == 128;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -366,7 +366,7 @@ function scope(flag)
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return true;
   }
@@ -395,17 +395,17 @@ function sqrt(number)
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("sqrt");
   value_t input[] = {1234};
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 1, input, &res)) {
     return false;
   }
-  return res == 35;
+  return value_to_int(res) == 35;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -424,7 +424,7 @@ function is_prime(x)
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -434,20 +434,20 @@ end
   const value_t non_primes[] = {12, 15, 9, 21, 33, 9977, 0}; // nonprime
 
   for (int i = 0; value_to_int(primes[i]); ++i) {
-    int32_t res = 0;
+    value_t res = value_from_int(0);
     if (!ccml.vm().execute(*func, 1, primes + i, &res)) {
       return false;
     }
-    if (res != 1) {
+    if (value_to_int(res) != 1) {
       return false;
     }
   }
   for (int i = 0; value_to_int(non_primes[i]); ++i) {
-    int32_t res = 1;
+    value_t res = value_from_int(1);
     if (!ccml.vm().execute(*func, 1, non_primes + 1, &res)) {
       return false;
     }
-    if (res != 0) {
+    if (value_to_int(res) != 0) {
       return false;
     }
   }
@@ -473,7 +473,7 @@ function hcf(a, b)
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -481,7 +481,7 @@ end
   const value_t inputs[] = {12, 25,  // coprime
                             55, 42,  // coprime
                             56, 42}; // non coprime
-  int32_t res1, res2, res3;
+  value_t res1, res2, res3;
   if (!ccml.vm().execute(*func, 2, inputs + 0, &res1)) {
     return false;
   }
@@ -491,7 +491,9 @@ end
   if (!ccml.vm().execute(*func, 2, inputs + 4, &res3)) {
     return false;
   }
-  return res1 == 1 && res2 == 1 && res3 != 1;
+  return value_to_int(res1) == 1 &&
+         value_to_int(res2) == 1 &&
+         value_to_int(res3) != 1;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -511,17 +513,17 @@ function fib(count)
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("fib");
   const value_t inputs[] = {9};
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 1, inputs, &res)) {
     return false;
   }
-  return res == 34;
+  return value_to_int(res) == 34;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -540,17 +542,17 @@ function main(a, b)
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
   const value_t inputs[] = {81, 153};
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 2, inputs, &res)) {
     return false;
   }
-  return res == 9;
+  return value_to_int(res) == 9;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -573,17 +575,17 @@ function main(a)
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
   const value_t inputs[] = {3};
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 1, inputs, &res)) {
     return false;
   }
-  return res == 6;
+  return value_to_int(res) == 6;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -607,7 +609,7 @@ function weekday(day, month, year)
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -615,11 +617,11 @@ end
   const value_t inputs[] = {23,    // day
                             8,     // month
                             2018}; // year
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 3, inputs, &res)) {
     return false;
   }
-  return res == 4; // thursday
+  return value_to_int(res) == 4; // thursday
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -689,16 +691,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 0;
+  return value_to_int(res) == 0;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -711,16 +713,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 1234;
+  return value_to_int(res) == 1234;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -737,16 +739,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 8;
+  return value_to_int(res) == 8;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -765,16 +767,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 13;
+  return value_to_int(res) == 13;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -802,16 +804,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 140;
+  return value_to_int(res) == 140;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -850,16 +852,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 28;
+  return value_to_int(res) == 28;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -883,7 +885,7 @@ function main(a, b)
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -895,7 +897,7 @@ end
 
   value_t inputs[] = {1, 2};
 
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 2, inputs, &res)) {
     return false;
   }
@@ -912,16 +914,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == -1;
+  return value_to_int(res) == -1;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -932,16 +934,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 2;
+  return value_to_int(res) == 2;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -955,16 +957,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == -5;
+  return value_to_int(res) == -5;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -978,16 +980,16 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == -7;
+  return value_to_int(res) == -7;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -1000,7 +1002,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -1008,11 +1010,11 @@ end
   ccml.disassembler().disasm();
 
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 3;
+  return value_to_int(res) == 3;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -1029,7 +1031,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -1037,11 +1039,11 @@ end
   ccml.disassembler().disasm();
 
   const function_t *func = ccml.find_function("main");
-  int32_t res = 0;
+  value_t res = value_from_int(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return res == 15;
+  return value_to_int(res) == 15;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -1052,7 +1054,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -1066,7 +1068,7 @@ end
   while (i < 8) {
     instruction_t inst;
     ccml.disassembler().disasm(i, inst);
-    if (inst.opcode == INS_CONST && inst.operand == 2) {
+    if (inst.opcode == INS_NEW_INT && inst.operand == 2) {
       return true;
     }
   }
@@ -1083,7 +1085,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -1111,7 +1113,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -1132,7 +1134,7 @@ function main()
 end
 )";
   ccml_t ccml;
-  error_t error;
+  ccml::error_t error;
   if (!ccml.build(prog, error)) {
     return false;
   }
@@ -1231,7 +1233,7 @@ int main(const int argc, const char **args) {
     bool result = false;
     try {
       result = pair->func();
-    } catch (const error_t &error) {
+    } catch (const ccml::error_t &error) {
       (void)error;
       result = false;
     }

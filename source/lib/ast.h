@@ -10,7 +10,11 @@ namespace ccml {
 enum ast_type_t {
   ast_program_e,
   ast_exp_ident_e,
-  ast_exp_const_e,
+
+  ast_exp_lit_var_e,
+  ast_exp_lit_str_e,
+  ast_exp_none_e,
+
   ast_exp_array_e,
   ast_exp_call_e,
   ast_exp_bin_op_e,
@@ -23,6 +27,7 @@ enum ast_type_t {
   ast_stmt_call_e,
   ast_decl_func_e,
   ast_decl_var_e,
+  ast_decl_str_e,
 };
 
 struct ast_node_t {
@@ -46,6 +51,7 @@ struct ast_node_t {
     return type == type_t::TYPE;
   }
 
+  // node type
   const ast_type_t type;
 };
 
@@ -65,21 +71,43 @@ struct ast_exp_ident_t: public ast_node_t {
   ast_exp_ident_t(const token_t *name)
     : ast_node_t(TYPE)
     , name(name)
+    , decl(nullptr)
   {}
 
   const token_t *name;
+  // where this was declared
+  ast_node_t *decl;
 };
 
-struct ast_exp_const_t: public ast_node_t {
-  static const ast_type_t TYPE = ast_exp_const_e;
+struct ast_exp_lit_str_t: public ast_node_t {
+  static const ast_type_t TYPE = ast_exp_lit_str_e;
 
-  ast_exp_const_t(const token_t *token)
+  ast_exp_lit_str_t(const token_t *token)
+    : ast_node_t(TYPE)
+    , token(token)
+    , value(token->str_)
+  {}
+
+  ast_exp_lit_str_t(const std::string &value)
+    : ast_node_t(TYPE)
+    , token(nullptr)
+    , value(value)
+  {}
+
+  const token_t *token;
+  std::string value;
+};
+
+struct ast_exp_lit_var_t: public ast_node_t {
+  static const ast_type_t TYPE = ast_exp_lit_var_e;
+
+  ast_exp_lit_var_t(const token_t *token)
     : ast_node_t(TYPE)
     , token(token)
     , value(token->val_)
   {}
 
-  ast_exp_const_t(const int32_t value)
+  ast_exp_lit_var_t(const int32_t value)
     : ast_node_t(TYPE)
     , token(nullptr)
     , value(value)
@@ -87,6 +115,17 @@ struct ast_exp_const_t: public ast_node_t {
 
   const token_t *token;
   int32_t value;
+};
+
+struct ast_exp_none_t: public ast_node_t {
+  static const ast_type_t TYPE = ast_exp_none_e;
+
+  ast_exp_none_t(const token_t *token)
+    : ast_node_t(TYPE)
+    , token(token)
+  {}
+
+  const token_t *token;
 };
 
 struct ast_exp_array_t : public ast_node_t {
@@ -99,9 +138,11 @@ struct ast_exp_array_t : public ast_node_t {
   {}
 
   const token_t *name;
+  // index expression
   ast_node_t *index;
+  // where this was declared
+  ast_node_t *decl;
 };
-
 
 struct ast_stmt_call_t : public ast_node_t {
   static const ast_type_t TYPE = ast_stmt_call_e;
@@ -111,6 +152,7 @@ struct ast_stmt_call_t : public ast_node_t {
     , expr(expr)
   {}
 
+  // an ast_exp_call_t
   ast_node_t *expr;
 };
 
@@ -120,10 +162,14 @@ struct ast_exp_call_t : public ast_node_t {
   ast_exp_call_t(const token_t *name)
     : ast_node_t(TYPE)
     , name(name)
+    , decl(nullptr)
+    , is_syscall(false)
   {}
 
   const token_t *name;
+  bool is_syscall;
   std::vector<ast_node_t *> args;
+  ast_decl_func_t *decl;
 };
 
 struct ast_exp_bin_op_t : public ast_node_t {
@@ -207,6 +253,8 @@ struct ast_stmt_assign_var_t : public ast_node_t {
 
   const token_t *name;
   ast_node_t *expr;
+  // where was 'name' declared
+  ast_node_t *decl;
 };
 
 struct ast_stmt_assign_array_t : public ast_node_t {
@@ -221,6 +269,8 @@ struct ast_stmt_assign_array_t : public ast_node_t {
 
   const token_t *name;
   ast_node_t *index, *expr;
+  // where was 'name' declared
+  ast_node_t *decl;
 };
 
 struct ast_decl_func_t : public ast_node_t {
@@ -281,6 +331,7 @@ struct ast_decl_var_t : public ast_node_t {
   ast_node_t *expr;
   // if array this will be valid
   const token_t *size;
+  // 
   bool is_arg_;
 };
 
@@ -308,6 +359,8 @@ struct ast_t {
   // garbace collect
   void gc();
 
+  void dump(FILE *fd);
+
 protected:
   ccml_t &ccml_;
   std::vector<ast_node_t*> allocs_;
@@ -324,7 +377,9 @@ struct ast_visitor_t {
   }
 
   virtual void visit(ast_exp_ident_t* n) {}
-  virtual void visit(ast_exp_const_t* n) {}
+  virtual void visit(ast_exp_lit_var_t* n) {}
+  virtual void visit(ast_exp_lit_str_t* n) {}
+  virtual void visit(ast_exp_none_t* n) {}
 
   virtual void visit(ast_exp_array_t* n) {
     stack.push_back(n);
@@ -419,9 +474,9 @@ protected:
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct ast_printer_t : ast_visitor_t {
-  
-  ast_printer_t()
-    : fd_(stderr)
+
+  ast_printer_t(FILE *fd)
+    : fd_(fd)
   {}
 
   ~ast_printer_t() {
@@ -430,91 +485,103 @@ struct ast_printer_t : ast_visitor_t {
 
   virtual void visit(ast_program_t* n) {
     indent_();
-    printf("ast_program_t\n");
+    fprintf(fd_, "ast_program_t\n");
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_exp_ident_t* n) {
     indent_();
-    printf("ast_exp_ident_t {name: %s}\n", n->name->string());
+    fprintf(fd_, "ast_exp_ident_t {name: %s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_exp_const_t* n) {
+  virtual void visit(ast_exp_lit_var_t* n) {
     indent_();
-    printf("ast_exp_const_t {value: %d}\n", n->value);
+    fprintf(fd_, "ast_exp_lit_var_t {value: %d}\n", n->value);
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_exp_lit_str_t* n) {
+    indent_();
+    fprintf(fd_, "ast_exp_lit_str_t {value: %s}\n", n->value.c_str());
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_exp_none_t* n) {
+    indent_();
+    fprintf(fd_, "ast_exp_none_t\n");
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_exp_array_t* n) {
     indent_();
-    printf("ast_exp_array_t {name: %s}\n", n->name->string());
+    fprintf(fd_, "ast_exp_array_t {name: %s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_exp_call_t* n) {
     indent_();
-    printf("ast_exp_call_t {name: %s}\n", n->name->string());
+    fprintf(fd_, "ast_exp_call_t {name: %s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_exp_bin_op_t* n) {
     indent_();
-    printf("ast_exp_bin_op_t\n");
+    fprintf(fd_, "ast_exp_bin_op_t\n");
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_exp_unary_op_t* n) {
     indent_();
-    printf("ast_exp_unary_op_t\n");
+    fprintf(fd_, "ast_exp_unary_op_t\n");
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_stmt_if_t* n) {
     indent_();
-    printf("ast_stmt_if_t\n");
+    fprintf(fd_, "ast_stmt_if_t\n");
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_stmt_while_t* n) {
     indent_();
-    printf("ast_stmt_while_t\n");
+    fprintf(fd_, "ast_stmt_while_t\n");
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_stmt_return_t* n) {
     indent_();
-    printf("ast_stmt_return_t\n");
+    fprintf(fd_, "ast_stmt_return_t\n");
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_stmt_assign_var_t* n) {
     indent_();
-    printf("ast_stmt_assign_var_t {name: %s}\n", n->name->string());
+    fprintf(fd_, "ast_stmt_assign_var_t {name: %s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_stmt_assign_array_t* n) {
     indent_();
-    printf("ast_stmt_assign_array_t\n");
+    fprintf(fd_, "ast_stmt_assign_array_t\n");
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_stmt_call_t* n) {
     indent_();
-    printf("ast_stmt_call_t\n");
+    fprintf(fd_, "ast_stmt_call_t\n");
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_decl_func_t* n) {
     indent_();
-    printf("ast_decl_func_t {name: %s}\n", n->name->string());
+    fprintf(fd_, "ast_decl_func_t {name: %s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 
   virtual void visit(ast_decl_var_t* n) {
     indent_();
-    printf("ast_decl_var_t {name: %s, size:%d}\n", n->name->string(), n->count());
+    fprintf(fd_, "ast_decl_var_t {name: %s, size:%d}\n", n->name->string(), n->count());
     ast_visitor_t::visit(n);
   }
 

@@ -46,6 +46,12 @@ void asm_stream_t::set_line(lexer_t &lexer, const token_t *t) {
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
+// essentially called during code gen when a function is encountered
+//
+// collect all decls and assign a stack offset to them
+// also get a max frame size for the function
+//
 struct stack_pass_t: ast_visitor_t {
 
   stack_pass_t(ccml_t &ccml)
@@ -90,19 +96,23 @@ struct stack_pass_t: ast_visitor_t {
 
   void visit(ast_stmt_assign_var_t *n) override {
     ast_visitor_t::visit(n);
+    // find this nodes declaration
     ast_decl_var_t *v = find(n->name->str_);
     if (!v) {
-      ccml_.errors().cant_assign_unknown_var(*n->name);
+      assert(false);
     }
+    // store in ident->decl map
     decl_[n] = v;
   }
 
   void visit(ast_stmt_assign_array_t *n) override {
     ast_visitor_t::visit(n);
+    // find this nodes declaration
     ast_decl_var_t *v = find(n->name->str_);
     if (!v) {
-      ccml_.errors().assign_to_unknown_array(*n->name);
+      assert(false);
     }
+    // store in ident->decl map
     decl_[n] = v;
   }
 
@@ -114,7 +124,7 @@ struct stack_pass_t: ast_visitor_t {
       }
       scope_.back().insert(n);
       offsets_[n] = size_;
-      size_ += n->count();
+      size_ += 1;
       max_size_ = std::max(size_, max_size_);
     }
   }
@@ -122,24 +132,18 @@ struct stack_pass_t: ast_visitor_t {
   void visit(ast_exp_array_t *i) override {
     ast_visitor_t::visit(i);
     ast_node_t *node = find(i->name->str_);
-    if (!node) {
-      ccml_.errors().unknown_identifier(*i->name);
-    }
-    ast_decl_var_t *v = node->cast<ast_decl_var_t>();
-    assert(v);
-    decl_[i] = v;
+    assert(node);
+    auto *var = node->cast<ast_decl_var_t>();
+    assert(var);
+    decl_[i] = var;
   }
 
   void visit(ast_exp_ident_t *i) {
     ast_visitor_t::visit(i);
     ast_node_t *node = find(i->name->str_);
-    if (!node) {
-      ccml_.errors().unknown_identifier(*i->name);
-    }
+    assert(node);
     auto *var = node->cast<ast_decl_var_t>();
-    if (var->is_array()) {
-      ccml_.errors().array_requires_subscript(*i->name);
-    }
+    assert(var);
     decl_[i] = var;
   }
 
@@ -227,6 +231,8 @@ protected:
 
   ccml_t &ccml_;
 
+  // string table
+  std::vector<std::string> strings_;
   // identifier -> decl map
   std::map<ast_node_t*, ast_decl_var_t*> decl_;
   // decl -> offset map
@@ -268,29 +274,42 @@ struct codegen_pass_t: ast_visitor_t {
       global_t g;
       g.token_ = global->name;
       g.offset_ = stack_pass_.find_offset(global);
-      g.value_ = value_from_int(0);
+      g.value_.v = 0;
       if (global->expr) {
-        const auto *expr = global->expr->cast<ast_exp_const_t>();
-        g.value_ = value_from_int(expr->value);
+        const auto *expr = global->expr->cast<ast_exp_lit_var_t>();
+        g.value_.type = val_type_int;
+        g.value_.v = expr->value;
       }
       g.size_ = global->count();
       globals_.push_back(g);
     }
   }
 
-  virtual void visit(ast_exp_const_t* n) override {
-    emit(INS_CONST, n->value, n->token);
+  void visit(ast_exp_lit_str_t* n) override {
+    const uint32_t index = strings_.size();
+    strings_.push_back(n->value);
+    emit(INS_NEW_STR, index, n->token);
+  }
+
+  void visit(ast_exp_lit_var_t* n) override {
+    emit(INS_NEW_INT, n->value, n->token);
+  }
+
+  void visit(ast_exp_none_t *n) override {
+    emit(INS_NEW_NONE, n->token);
   }
 
   void visit(ast_exp_ident_t* n) override {
     ast_decl_var_t *decl = stack_pass_.find_decl(n);
     if (!decl) {
       // unknown variable
-      ccml_.errors().unknown_variable(*n->name);
+//      ccml_.errors().unknown_variable(*n->name);
+      assert(false);
     }
     if (decl->is_array()) {
       // identifier is array not var
-      ccml_.errors().ident_is_array_not_var(*n->name);
+//      ccml_.errors().ident_is_array_not_var(*n->name);
+      assert(false);
     }
     const int32_t offset = stack_pass_.find_offset(decl);
     if (decl->is_local() || decl->is_arg()) {
@@ -302,26 +321,21 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_exp_array_t* n) override {
-    // dispatch the array index
-    assert(n->index);
-    dispatch(n->index);
-    // find the array itself
     ast_decl_var_t *decl = stack_pass_.find_decl(n);
-    if (!decl) {
-      // unknown array
-      ccml_.errors().unknown_array(*n->name);
-    }
-    if (!decl->is_array()) {
-      // unable to find identifier
-      ccml_.errors().variable_is_not_array(*n->name);
-    }
+    assert(decl);
     const int32_t offset = stack_pass_.find_offset(decl);
-    if (decl->is_local()) {
-      emit(INS_GETVI, offset, n->name);
-    }
+    // emit the array index
+    dispatch(n->index);
+    // load the array object
     if (decl->is_global()) {
-      emit(INS_GETGI, offset, n->name);
+      emit(INS_GETG, offset, n->name);
     }
+    else {
+      assert(decl->is_local());  // cant have arg arrays yet
+      emit(INS_GETV, offset, n->name);
+    }
+    // index the array
+    emit(INS_GETA, n->name);
   }
 
   void visit(ast_exp_call_t* n) override {
@@ -459,19 +473,21 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_stmt_assign_array_t *n) override {
-    assert(n->index);
-    dispatch(n->index);
-    assert(n->expr);
+    assert(n);
+    // dispatch the value to set
     dispatch(n->expr);
+    // dispatch the index
+    dispatch(n->index);
     ast_decl_var_t *d = stack_pass_.find_decl(n);
     assert(d);
     const int32_t offset = stack_pass_.find_offset(d);
-    if (d->is_local()) {
-      emit(INS_SETVI, offset, n->name);
+    if (d->is_local() || d->is_arg()) {
+      emit(INS_GETV, offset, n->name);
     }
     if (d->is_global()) {
-      emit(INS_SETGI, offset, n->name);
+      emit(INS_GETG, offset, n->name);
     }
+    emit(INS_SETA, n->name);
   }
 
   void visit(ast_decl_func_t* n) override {
@@ -493,13 +509,17 @@ struct codegen_pass_t: ast_visitor_t {
       is_return = c->is_a<ast_stmt_return_t>();
     }
     if (!is_return) {
-      emit(INS_CONST, 0, nullptr);
+      emit(INS_NEW_INT, 0, nullptr);
       emit(INS_RET, stack_pass_.get_ret_operand(), nullptr);
     }
   }
 
   void visit(ast_decl_var_t* n) override {
     const int32_t offset = stack_pass_.find_offset(n);
+    if (n->is_array()) {
+      emit(INS_NEW_ARY, n->size->val_, n->name);
+      emit(INS_SETV, offset, n->name);
+    }
     if (n->expr) {
       dispatch(n->expr);
       emit(INS_SETV, offset, n->name);
@@ -514,6 +534,10 @@ struct codegen_pass_t: ast_visitor_t {
     return globals_;
   }
 
+  const std::vector<std::string> &strings() const {
+    return strings_;
+  }
+
 protected:
 
   // emit into the code stream
@@ -526,12 +550,13 @@ protected:
   }
 
   // return a reference to the last instructions operand
-  int32_t *codegen_pass_t::get_fixup() {
+  int32_t *get_fixup() {
     return reinterpret_cast<int32_t *>(stream_.head(-4));
   }
 
   std::vector<global_t> globals_;
   std::vector<function_t> funcs_;
+  std::vector<std::string> strings_;
   std::map<std::string, int32_t> func_map_;
   std::vector<std::pair<const token_t *, int32_t *>> call_fixups_;
   stack_pass_t stack_pass_;
@@ -557,6 +582,9 @@ void codegen_pass_t::emit(instruction_e ins, const token_t *t) {
   case INS_GEQ:
   case INS_EQ:
   case INS_NEG:
+  case INS_SETA:
+  case INS_GETA:
+  case INS_NEW_NONE:
     stream_.write8(uint32_t(ins));
     break;
   default:
@@ -575,17 +603,15 @@ void codegen_pass_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   case INS_RET:
   case INS_SCALL:
   case INS_POP:
-  case INS_CONST:
+  case INS_NEW_ARY:
+  case INS_NEW_INT:
+  case INS_NEW_STR:
   case INS_LOCALS:
   case INS_ACCV:
   case INS_GETV:
   case INS_SETV:
-  case INS_GETVI:
-  case INS_SETVI:
   case INS_GETG:
   case INS_SETG:
-  case INS_GETGI:
-  case INS_SETGI:
     stream_.write8(uint8_t(ins));
     stream_.write32(v);
     break;
@@ -618,6 +644,11 @@ bool codegen_t::run(ast_program_t &program, error_t &error) {
   for (const auto &g : cg.globals()) {
     ccml_.add_(g);
   }
+  // add strings to ccml
+  for (const auto &s : cg.strings()) {
+    ccml_.add_(s);
+  }
+
   return true;
 }
 

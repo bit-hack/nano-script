@@ -7,6 +7,7 @@
 #include <map>
 
 #include "value.h"
+#include "instructions.h"
 
 
 namespace ccml {
@@ -40,7 +41,6 @@ struct ast_stmt_assign_var_t;
 struct ast_stmt_assign_array_t;
 struct ast_decl_func_t;
 struct ast_decl_var_t;
-struct ast_decl_array_t;
 
 struct asm_stream_t;
 struct codegen_t;
@@ -196,6 +196,10 @@ struct ccml_t {
     return globals_;
   }
 
+  const std::vector<std::string> &strings() const {
+    return strings_;
+  }
+
 private:
   friend struct vm_t;
   friend struct lexer_t;
@@ -215,10 +219,15 @@ private:
     globals_.push_back(ident);
   }
 
+  void add_(const std::string &string) {
+    strings_.push_back(string);
+  }
+
   // the code store
   code_store_t store_;
   std::vector<function_t> functions_;
   std::vector<global_t> globals_;
+  std::vector<std::string> strings_;
 
   std::unique_ptr<error_manager_t> errors_;
   std::unique_ptr<lexer_t>         lexer_;

@@ -36,20 +36,6 @@ const char *load_file(const char *path) {
   return source;
 }
 
-void vm_getc(ccml::thread_t &t) {
-  using namespace ccml;
-  const int64_t ch = getchar();
-  t.push_int(ch);
-}
-
-void vm_putc(ccml::thread_t &t) {
-  using namespace ccml;
-  const value_t *v = t.pop();
-  assert(v && v->is_int());
-  putchar((int)(v->v));
-  t.push_int(0);
-}
-
 void on_error(const ccml::error_t &error) {
   fprintf(stderr, "line:%d - %s\n", error.line, error.error.c_str());
   fflush(stderr);
@@ -58,13 +44,17 @@ void on_error(const ccml::error_t &error) {
 
 }; // namespace
 
+FILE *fd_open(const char *base, const char *ext) {
+  char buf[1024];
+  sprintf(buf, "%s%s", base, ext);
+  return fopen(buf, "wb");
+}
+
 int main(int argc, char **argv) {
 
   using namespace ccml;
 
   ccml_t ccml;
-  ccml.add_function("putc", vm_putc, 1);
-  ccml.add_function("getc", vm_getc, 0);
 
   if (argc <= 1)
     return -1;
@@ -74,41 +64,38 @@ int main(int argc, char **argv) {
     return -1;
   }
 
+  FILE *fd_ast = nullptr;
+  FILE *fd_dis = nullptr;
+
+  for (int i = 2; i < argc; ++i) {
+    const char *arg = argv[i];
+    if (arg[0] != '-') {
+      continue;
+    }
+    switch (arg[1]) {
+    case 'a':
+      fd_ast = fd_open(argv[1], ".ast");
+      break;
+    case 'd':
+      fd_dis = fd_open(argv[1], ".dis");
+      break;
+    }
+  }
+
   ccml::error_t error;
   if (!ccml.build(source, error)) {
     on_error(error);
     return -2;
   }
 
-  ccml.disassembler().disasm();
-
-  const function_t *func = ccml.find_function("main");
-  if (!func) {
-    fprintf(stderr, "unable to locate function 'main'\n");
-    exit(1);
+  if (fd_ast) {
+    ccml.ast().dump(fd_ast);
   }
 
-  value_t *res = nullptr;
-  if (!ccml.vm().execute(*func, 0, nullptr, &res, true)) {
-    fprintf(stderr, "max cycle count reached\n");
-    exit(1);
+  if (fd_dis) {
+    ccml.disassembler().set_file(fd_dis);
+    ccml.disassembler().disasm();
   }
-  fflush(stdout);
-
-  assert(res);
-  if (res->is_int()) {
-    printf("exit: %d\n", (int)(res->v));
-  }
-  if (res->is_string()) {
-    printf("exit: %s\n", res->s.c_str());
-  }
-  if (res->is_none()) {
-    printf("exit: none\n");
-  }
-  if (res->is_array()) {
-    printf("exit: array\n");
-  }
-  getchar();
 
   return 0;
 }

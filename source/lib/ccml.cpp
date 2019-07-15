@@ -51,7 +51,6 @@ bool ccml_t::build(const char *source, error_t &error) {
     // run optmizer
     run_optimize(*this);
 
-    // XXX: we need a sema stage
     // kick off the code generator
     if (!codegen_->run(ast_->program, error)) {
       return false;
