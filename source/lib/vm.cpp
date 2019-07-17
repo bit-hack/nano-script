@@ -684,41 +684,37 @@ void vm_t::reset() {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 
 value_t *value_gc_t::new_int(int64_t value) {
-  value_t *v = new value_t;
+  value_t *v = alloc_();
   v->type = val_type_int;
   v->v = value;
-  allocs_.insert(v);
   return v;
 }
 
 value_t *value_gc_t::new_array(int64_t value) {
-  value_t *v = new value_t;
+  value_t *v = alloc_();
   v->type = val_type_array;
   assert(value > 0);
   v->array_ = new value_t*[size_t(value)];
   memset(v->array_, 0, size_t(sizeof(value_t*) * value));
   v->array_size_ = int32_t(value);
-  allocs_.insert(v);
   return v;
 }
 
 value_t *value_gc_t::new_string(const std::string &value) {
-  value_t *v = new value_t;
+  value_t *v = alloc_();
   v->type = val_type_string;
   v->s = value;
-  allocs_.insert(v);
   return v;
 }
 
 value_t *value_gc_t::new_none() {
-  value_t *v = new value_t;
+  value_t *v = alloc_();
   v->type = val_type_none;
-  allocs_.insert(v);
   return v;
 }
 
 value_t *value_gc_t::copy(const value_t &a) {
-  value_t *v = new value_t;
+  value_t *v = alloc_();
   v->type = a.type;
   switch (v->type) {
   case val_type_int:
@@ -755,14 +751,16 @@ void value_gc_t::collect(value_t **v, size_t num) {
   std::set<const value_t *> alive;
   for (size_t i = 0; i < num; ++i) {
     value_t *x = v[i];
-    visit_(alive, x);
+    if (x) {
+      visit_(alive, x);
+    }
   }
   for (auto itt = allocs_.begin(); itt != allocs_.end();) {
     if (alive.count(*itt)) {
       ++itt;
-    }
-    else {
-      value_t * val = *itt;
+    } else {
+      value_t *val = *itt;
+      assert(val);
       release_(val);
       itt = allocs_.erase(itt);
     }
