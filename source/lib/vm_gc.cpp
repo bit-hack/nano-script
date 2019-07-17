@@ -13,7 +13,9 @@ value_t *value_gc_t::new_array(int64_t value) {
   value_t *v = alloc_();
   v->type = val_type_array;
   assert(value > 0);
+  assert(v->array_ == nullptr);
   v->array_ = new value_t *[size_t(value)];
+  assert(v->array_);
   memset(v->array_, 0, size_t(sizeof(value_t *) * value));
   v->array_size_ = int32_t(value);
   return v;

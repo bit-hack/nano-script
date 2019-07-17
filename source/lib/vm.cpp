@@ -408,6 +408,7 @@ void thread_t::do_INS_GETA_() {
     raise_error(thread_error_t::e_bad_array_bounds);
     return;
   }
+  assert(a->array_);
   value_t *out = a->array_[index];
   if (out) {
     push(out);
@@ -432,6 +433,7 @@ void thread_t::do_INS_SETA_() {
     raise_error(thread_error_t::e_bad_array_bounds);
     return;
   }
+  assert(a->array_);
   a->array_[index] = gc_.copy(*v);
 }
 
