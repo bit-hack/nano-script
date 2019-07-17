@@ -50,6 +50,7 @@ void vm_putc(ccml::thread_t &t) {
     t.raise_error(thread_error_t::e_bad_argument);
   } else {
     putchar((int)(v->v));
+    fflush(stdout);
   }
   t.push_int(0);
 }
@@ -58,6 +59,9 @@ void vm_gets(ccml::thread_t &t) {
   using namespace ccml;
   char buffer[80];
   fgets(buffer, sizeof(buffer), stdin);
+  for (int i = 0; i < sizeof(buffer); ++i) {
+    buffer[i] = (buffer[i] == '\n') ? '\0' : buffer[i];
+  }
   buffer[79] = '\0';
   t.push_string(std::string{buffer});
 }
@@ -70,6 +74,7 @@ void vm_puts(ccml::thread_t &t) {
     t.raise_error(thread_error_t::e_bad_argument);
   } else {
     printf("%s\n", s->s.c_str());
+    fflush(stdout);
   }
   t.push_int(0);
   return;
@@ -107,35 +112,32 @@ int main(int argc, char **argv) {
     return -2;
   }
 
-  ccml.disassembler().disasm();
-
   const function_t *func = ccml.find_function("main");
   if (!func) {
     fprintf(stderr, "unable to locate function 'main'\n");
     exit(1);
   }
 
-  value_t *res = nullptr;
-  if (!ccml.vm().execute(*func, 0, nullptr, &res, true)) {
+  value_t res;
+  if (!ccml.vm().execute(*func, 0, nullptr, &res, false)) {
     fprintf(stderr, "max cycle count reached\n");
     exit(1);
   }
   fflush(stdout);
 
-  assert(res);
-  if (res->is_int()) {
-    printf("exit: %d\n", (int)(res->v));
+  if (res.is_int()) {
+    printf("exit: %d\n", (int)(res.v));
   }
-  if (res->is_string()) {
-    printf("exit: %s\n", res->s.c_str());
+  if (res.is_string()) {
+    printf("exit: %s\n", res.s.c_str());
   }
-  if (res->is_none()) {
+  if (res.is_none()) {
     printf("exit: none\n");
   }
-  if (res->is_array()) {
+  if (res.is_array()) {
     printf("exit: array\n");
   }
-  getchar();
+//  getchar();
 
   return 0;
 }

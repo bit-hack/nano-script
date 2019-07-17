@@ -267,7 +267,7 @@ struct vm_t {
     : ccml_(c) {}
 
   bool execute(const function_t &func, int32_t argc, const value_t *argv,
-               value_t **ret = nullptr, bool trace = false);
+               value_t *ret = nullptr, bool trace = false);
 
   // reset any stored state
   void reset();

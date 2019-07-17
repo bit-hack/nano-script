@@ -3,9 +3,11 @@ function func1(a, b)
 end
 
 function main()
-    var i = 10
-    while (i > 0)
-        puts(func1("Hello World", i))
-        i = i - 1
+    var i = 1
+    while (i)
+        var x = gets()
+        puts("> " + x)
+        i = len(x)
     end
+    puts("DONE")
 end

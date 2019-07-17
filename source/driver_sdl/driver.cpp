@@ -182,8 +182,6 @@ int main(int argc, char **argv) {
     return -2;
   }
 
-  ccml.disassembler().disasm();
-
   const function_t *func = ccml.find_function("main");
   if (!func) {
     fprintf(stderr, "unable to locate function 'main'\n");

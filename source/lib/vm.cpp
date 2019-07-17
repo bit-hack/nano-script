@@ -626,7 +626,7 @@ bool thread_t::active_vars(std::vector<const identifier_t *> &out) const {
 }
 
 bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
-                   value_t **ret, bool trace) {
+                   value_t *ret, bool trace) {
   thread_t t{ccml_};
   if (!t.prepare(func, argc, argv)) {
     return false;
@@ -639,7 +639,12 @@ bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
   }
   if (ret) {
     value_t* r = t.return_code();
-    *ret = r;
+    *ret = *r;
+    // we cant return array contents as the thread_t will be out of scope
+    if (r->is_array()) {
+      ret->array_ = nullptr;
+      ret->array_size_ = 0;
+    }
   }
   return true;
 }
