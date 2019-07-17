@@ -1,4 +1,11 @@
+function func1(a, b)
+    return a + b
+end
+
 function main()
-    str a = "Hello World"
-    str b = "Test me" + a
+    var i = 10
+    while (i > 0)
+        puts(func1("Hello World", i))
+        i = i - 1
+    end
 end

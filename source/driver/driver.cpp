@@ -45,9 +45,34 @@ void vm_getc(ccml::thread_t &t) {
 void vm_putc(ccml::thread_t &t) {
   using namespace ccml;
   const value_t *v = t.pop();
-  assert(v && v->is_int());
-  putchar((int)(v->v));
+  assert(v);
+  if (!v->is_int()) {
+    t.raise_error(thread_error_t::e_bad_argument);
+  } else {
+    putchar((int)(v->v));
+  }
   t.push_int(0);
+}
+
+void vm_gets(ccml::thread_t &t) {
+  using namespace ccml;
+  char buffer[80];
+  fgets(buffer, sizeof(buffer), stdin);
+  buffer[79] = '\0';
+  t.push_string(std::string{buffer});
+}
+
+void vm_puts(ccml::thread_t &t) {
+  using namespace ccml;
+  value_t *s = t.pop();
+  assert(s);
+  if (!s->is_string()) {
+    t.raise_error(thread_error_t::e_bad_argument);
+  } else {
+    printf("%s\n", s->s.c_str());
+  }
+  t.push_int(0);
+  return;
 }
 
 void on_error(const ccml::error_t &error) {
@@ -65,6 +90,8 @@ int main(int argc, char **argv) {
   ccml_t ccml;
   ccml.add_function("putc", vm_putc, 1);
   ccml.add_function("getc", vm_getc, 0);
+  ccml.add_function("puts", vm_puts, 1);
+  ccml.add_function("gets", vm_gets, 0);
 
   if (argc <= 1)
     return -1;

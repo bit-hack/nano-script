@@ -28,6 +28,7 @@ enum class thread_error_t {
   e_bad_globals_size,
   e_bad_array_bounds,
   e_bad_type_operation,
+  e_bad_argument,
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
