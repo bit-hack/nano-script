@@ -84,18 +84,18 @@ struct test_debug_t {
     using namespace ccml;
     ++checks_done;
     // pop prime number off stack
-    const int32_t value = value_to_int(thread.pop());
-    if (!is_prime(value)) {
+    const value_t* value = thread.pop();
+    if (!is_prime(value->v)) {
       test_passing = false;
     }
     // push dummy return value
-    thread.push(ccml::value_from_int(0));
+    thread.push_int(0);
   }
 
   static void is_marking(struct ccml::thread_t &thread) {
     using namespace ccml;
-    const int32_t value = value_to_int(thread.pop());
-    thread.push(value_from_int(0));
+    const value_t* value = thread.pop();
+    thread.push_int(0);
   }
 
   static bool run() {
@@ -133,7 +133,7 @@ struct test_debug_t {
         break;
       }
       for (const auto &v : vars) {
-        value_t out = value_from_int(0);
+        value_t *out = nullptr;
         if (v->is_array()) {
 //          printf(" : %s  []\n", v->token->string());
           continue;
@@ -156,7 +156,7 @@ struct test_debug_t {
 
     const uint32_t cycle_count = thread.cycle_count();
 
-    const value_t res = thread.return_code();
+    const value_t *res = thread.return_code();
     return test_passing && !thread.has_error() && checks_done;
   }
 };

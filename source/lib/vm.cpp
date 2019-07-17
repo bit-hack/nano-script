@@ -670,18 +670,19 @@ void thread_t::setv_(int32_t offs, value_t* val) {
 }
 
 // peek a stack value
-bool thread_t::peek(int32_t offset, bool absolute, value_t *out) const {
-  if (!absolute) {
-    offset += frame_().sp_;
-  }
-  if (offset >= 0 && offset < int32_t(s_.size())) {
-    out = s_[offset];
-    return true;
+bool thread_t::peek(int32_t offset, bool absolute, value_t *&out) const {
+  if (out) {
+    if (!absolute) {
+      offset += frame_().sp_;
+    }
+    if (offset >= 0 && offset < int32_t(s_.size())) {
+      out = s_[offset];
+      return true;
+    }
   }
   return false;
 }
 
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void vm_t::reset() {
   // nothing to do
 }

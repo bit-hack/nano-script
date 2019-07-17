@@ -46,7 +46,7 @@ struct thread_t {
   }
 
   // peek a stack value
-  bool peek(int32_t offset, bool absolute, value_t *out) const;
+  bool peek(int32_t offset, bool absolute, value_t *&out) const;
 
   // pop from the value stack
   value_t* pop() {

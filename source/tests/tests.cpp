@@ -29,11 +29,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 123;
+  return res.v == 123;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -50,11 +50,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("func_name");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 1234;
+  return (res.v) == 1234;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -70,12 +70,12 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("test_arg_return");
-  value_t input = value_from_int(7654);
-  value_t res = value_from_int(0);
+  value_t input(7654);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 1, &input, &res)) {
     return false;
   }
-  return value_to_int(res) == value_to_int(input);
+  return res.v == input.v;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -96,11 +96,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 11;
+  return (res.v) == 11;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -116,11 +116,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 59;
+  return res.v == 59;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -137,11 +137,11 @@ end
   }
   ccml.disassembler().disasm();
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 1;
+  return res.v == 1;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -157,11 +157,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 3;
+  return res.v == 3;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -178,11 +178,11 @@ end
   }
   ccml.disassembler().disasm();
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 1;
+  return res.v == 1;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -198,11 +198,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 0;
+  return res.v == 0;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -221,11 +221,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 1;
+  return res.v == 1;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -244,11 +244,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 0;
+  return res.v == 0;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -266,11 +266,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("func_b");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 1234;
+  return res.v == 1234;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -293,11 +293,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("func_b");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 987;
+  return res.v == 987;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -324,11 +324,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("driver");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 15;
+  return res.v == 15;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -348,11 +348,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("driver");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 128;
+  return res.v == 128;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -401,11 +401,11 @@ end
   }
   const function_t *func = ccml.find_function("sqrt");
   value_t input[] = {1234};
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 1, input, &res)) {
     return false;
   }
-  return value_to_int(res) == 35;
+  return res.v == 35;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -433,21 +433,21 @@ end
   const value_t     primes[] = {13, 17, 19, 23, 29, 9973, 0}; // prime
   const value_t non_primes[] = {12, 15, 9, 21, 33, 9977, 0}; // nonprime
 
-  for (int i = 0; value_to_int(primes[i]); ++i) {
-    value_t res = value_from_int(0);
+  for (int i = 0; primes[i].v; ++i) {
+    value_t res(0);
     if (!ccml.vm().execute(*func, 1, primes + i, &res)) {
       return false;
     }
-    if (value_to_int(res) != 1) {
+    if ((res.v) != 1) {
       return false;
     }
   }
-  for (int i = 0; value_to_int(non_primes[i]); ++i) {
-    value_t res = value_from_int(1);
+  for (int i = 0; non_primes[i].v; ++i) {
+    value_t res(1);
     if (!ccml.vm().execute(*func, 1, non_primes + 1, &res)) {
       return false;
     }
-    if (value_to_int(res) != 0) {
+    if (res.v != 0) {
       return false;
     }
   }
@@ -491,9 +491,9 @@ end
   if (!ccml.vm().execute(*func, 2, inputs + 4, &res3)) {
     return false;
   }
-  return value_to_int(res1) == 1 &&
-         value_to_int(res2) == 1 &&
-         value_to_int(res3) != 1;
+  return (res1.v) == 1 &&
+         (res2.v) == 1 &&
+         (res3.v) != 1;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -519,11 +519,11 @@ end
   }
   const function_t *func = ccml.find_function("fib");
   const value_t inputs[] = {9};
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 1, inputs, &res)) {
     return false;
   }
-  return value_to_int(res) == 34;
+  return res.v == 34;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -548,11 +548,11 @@ end
   }
   const function_t *func = ccml.find_function("main");
   const value_t inputs[] = {81, 153};
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 2, inputs, &res)) {
     return false;
   }
-  return value_to_int(res) == 9;
+  return res.v == 9;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -581,11 +581,11 @@ end
   }
   const function_t *func = ccml.find_function("main");
   const value_t inputs[] = {3};
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 1, inputs, &res)) {
     return false;
   }
-  return value_to_int(res) == 6;
+  return res.v == 6;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -617,11 +617,11 @@ end
   const value_t inputs[] = {23,    // day
                             8,     // month
                             2018}; // year
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 3, inputs, &res)) {
     return false;
   }
-  return value_to_int(res) == 4; // thursday
+  return res.v == 4; // thursday
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -696,11 +696,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 0;
+  return res.v == 0;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -718,11 +718,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 1234;
+  return res.v == 1234;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -744,11 +744,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 8;
+  return res.v == 8;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -772,11 +772,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 13;
+  return res.v == 13;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -809,11 +809,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 140;
+  return res.v == 140;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -857,11 +857,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 28;
+  return res.v == 28;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -897,7 +897,7 @@ end
 
   value_t inputs[] = {1, 2};
 
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 2, inputs, &res)) {
     return false;
   }
@@ -919,11 +919,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == -1;
+  return res.v == -1;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -939,11 +939,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 2;
+  return res.v == 2;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -962,11 +962,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == -5;
+  return res.v == -5;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -985,11 +985,11 @@ end
     return false;
   }
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == -7;
+  return res.v == -7;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -1010,11 +1010,11 @@ end
   ccml.disassembler().disasm();
 
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 3;
+  return res.v == 3;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -1039,11 +1039,11 @@ end
   ccml.disassembler().disasm();
 
   const function_t *func = ccml.find_function("main");
-  value_t res = value_from_int(0);
+  value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
-  return value_to_int(res) == 15;
+  return res.v == 15;
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
