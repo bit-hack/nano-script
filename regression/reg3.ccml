@@ -1,0 +1,12 @@
+function main()
+
+    # this isnt touched so it could be eliminated
+    var y = 19
+
+    # we should be able to eliminate the store 14
+    var x = 14
+    x = 16
+
+    # in theory we could remove the store and load to just return 16
+    return x
+end
