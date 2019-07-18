@@ -9,6 +9,122 @@ namespace ccml {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
+// redundant decl elimination
+//
+struct op_decl_elim_t: public ast_visitor_t {
+
+  op_decl_elim_t(ccml_t &ccml)
+    : errs_(ccml.errors())
+    , ast_(ccml.ast())
+    , removing_(false)
+    , decl_(nullptr)
+  {}
+
+  std::set<const ast_decl_var_t*> uses_;
+  bool removing_;
+  ast_decl_var_t *decl_;
+
+  void visit(ast_decl_func_t *n) override {
+    uses_.clear();
+    // collect all uses
+    removing_ = false;
+    ast_visitor_t::visit(n);
+    // remove an unused decls
+    removing_ = true;
+    ast_visitor_t::visit(n);
+  }
+
+  void visit(ast_exp_call_t *n) override {
+    // if a decl expr calls a function we cant remove it
+    if (decl_ && !removing_) {
+      uses_.insert(decl_);
+    }
+  }
+
+  void visit(ast_decl_var_t *n) override {
+    decl_ = removing_ ? nullptr : n;
+    ast_visitor_t::visit(n);
+    decl_ = nullptr;
+  }
+
+  void visit(ast_stmt_if_t *n) override {
+    if (removing_) {
+      for (auto itt = n->then_block.begin(); itt != n->then_block.end();) {
+        ast_decl_var_t *a = (*itt)->cast<ast_decl_var_t>();
+        if (uses_.count(a) == 0) {
+          itt = n->then_block.erase(itt);
+        } else {
+          ++itt;
+        }
+      }
+      for (auto itt = n->else_block.begin(); itt != n->else_block.end();) {
+        ast_decl_var_t *a = (*itt)->cast<ast_decl_var_t>();
+        if (uses_.count(a) == 0) {
+          itt = n->then_block.erase(itt);
+        } else {
+          ++itt;
+        }
+      }
+    }
+    ast_visitor_t::visit(n);
+  }
+
+  void visit(ast_stmt_while_t *n) override {
+    if (removing_) {
+      for (auto itt = n->body.begin(); itt != n->body.end();) {
+        ast_decl_var_t *a = (*itt)->cast<ast_decl_var_t>();
+        if (uses_.count(a) == 0) {
+          itt = n->body.erase(itt);
+        } else {
+          ++itt;
+        }
+      }
+    }
+    ast_visitor_t::visit(n);
+  }
+
+  void visit(ast_exp_ident_t *n) override {
+    if (!removing_) {
+      // find the decl
+      const ast_decl_var_t *decl = n->decl->cast<const ast_decl_var_t>();
+      if (decl) {
+        uses_.insert(decl);
+      }
+    }
+  }
+
+  error_manager_t &errs_;
+  ast_t &ast_;
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
+// redundant store elimination
+//
+struct op_store_elim_t: public ast_visitor_t {
+
+  op_store_elim_t(ccml_t &ccml)
+    : errs_(ccml.errors())
+    , ast_(ccml.ast()) {}
+
+  void visit(ast_decl_func_t *n) override {
+    // has a body
+  }
+
+  void visit(ast_stmt_while_t *n) override {
+    // has a body
+  }
+
+  void visit(ast_stmt_if_t *n) override {
+    // has a body
+  }
+
+  error_manager_t &errs_;
+  ast_t &ast_;
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
 // constant propagation
 //
 struct opt_const_expr_t: public ast_visitor_t {
