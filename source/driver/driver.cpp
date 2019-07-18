@@ -119,7 +119,7 @@ int main(int argc, char **argv) {
   }
 
   value_t res;
-  if (!ccml.vm().execute(*func, 0, nullptr, &res, false)) {
+  if (!ccml.vm().execute(*func, 0, nullptr, &res, true)) {
     fprintf(stderr, "max cycle count reached\n");
     exit(1);
   }

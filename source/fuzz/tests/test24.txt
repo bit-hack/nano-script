@@ -21,3 +21,6 @@ function ITf3m(zEzfVhIf, _JxvfQ)
   return nrAoh4ZR >= nrAoh4ZR + nrAoh4ZR
 end
 
+function main()
+    ITf3m(1, 2)
+end

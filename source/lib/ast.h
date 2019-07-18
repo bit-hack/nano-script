@@ -141,7 +141,7 @@ struct ast_exp_array_t : public ast_node_t {
   // index expression
   ast_node_t *index;
   // where this was declared
-  ast_node_t *decl;
+  ast_decl_var_t *decl;
 };
 
 struct ast_stmt_call_t : public ast_node_t {
@@ -254,7 +254,7 @@ struct ast_stmt_assign_var_t : public ast_node_t {
   const token_t *name;
   ast_node_t *expr;
   // where was 'name' declared
-  ast_node_t *decl;
+  ast_decl_var_t *decl;
 };
 
 struct ast_stmt_assign_array_t : public ast_node_t {
@@ -270,7 +270,7 @@ struct ast_stmt_assign_array_t : public ast_node_t {
   const token_t *name;
   ast_node_t *index, *expr;
   // where was 'name' declared
-  ast_node_t *decl;
+  ast_decl_var_t *decl;
 };
 
 struct ast_decl_func_t : public ast_node_t {

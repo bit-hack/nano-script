@@ -148,7 +148,6 @@ struct stack_pass_t: ast_visitor_t {
   }
 
   void visit(ast_program_t *p) {
-    int32_t size = 0;
     scope_.clear();
     scope_.emplace_back();
     for (ast_node_t *n : p->children) {
@@ -156,9 +155,8 @@ struct stack_pass_t: ast_visitor_t {
       if (ast_decl_var_t *v = n->cast<ast_decl_var_t>()) {
         scope_.back().insert(v);
         // insert into global list
+        offsets_[v] = globals_.size();
         globals_.insert(v);
-        offsets_[v] = size;
-        size += v->count();
       }
     }
   }

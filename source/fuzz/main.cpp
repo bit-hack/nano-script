@@ -39,7 +39,7 @@ int main() {
   uint32_t tests = 0;
   std::vector<std::string> fails;
 
-  for (int32_t i = 0, e = 0; i < 32; ++i) {
+  for (int32_t i = 0, e = 0; i < 512; ++i) {
 
     std::string fname = "tests/" + std::string("test") + std::to_string(i) + ".txt";
     FILE *fd = fopen(fname.c_str(), "r");

@@ -34,8 +34,7 @@ struct op_decl_elim_t: public ast_visitor_t {
     removing_ = true;
     if (removing_) {
       for (auto itt = n->body.begin(); itt != n->body.end();) {
-        ast_decl_var_t *a = (*itt)->cast<ast_decl_var_t>();
-        if (a && uses_.count(a) == 0) {
+        if (should_erase(*itt)) {
           itt = n->body.erase(itt);
         } else {
           ++itt;
@@ -52,6 +51,7 @@ struct op_decl_elim_t: public ast_visitor_t {
     if (decl_ && !removing_) {
       uses_.insert(decl_);
     }
+    ast_visitor_t::visit(n);
   }
 
   void visit(ast_decl_var_t *n) override {
@@ -60,19 +60,49 @@ struct op_decl_elim_t: public ast_visitor_t {
     decl_ = nullptr;
   }
 
+  void visit(ast_stmt_assign_var_t *n) override {
+    if (!removing_) {
+      decl_ = n->decl;
+      ast_visitor_t::visit(n);
+      decl_ = nullptr;
+    }
+  }
+
+  void visit(ast_stmt_assign_array_t *n) override {
+    if (!removing_) {
+      decl_ = n->decl;
+      ast_visitor_t::visit(n);
+      decl_ = nullptr;
+    }
+  }
+
+  bool should_erase(ast_node_t *node) {
+    // if this is a declaration of an unused variable
+    if (auto *a = node->cast<ast_decl_var_t>()) {
+      return uses_.count(a) == 0;
+    }
+    // if we assign to an unused variable
+    if (auto *a = node->cast<ast_stmt_assign_var_t>()) {
+      return uses_.count(a->decl) == 0;
+    }
+    // if we assign to an unused array
+    if (auto *a = node->cast<ast_stmt_assign_array_t>()) {
+      return uses_.count(a->decl) == 0;
+    }
+    return false;
+  }
+
   void visit(ast_stmt_if_t *n) override {
     if (removing_) {
       for (auto itt = n->then_block.begin(); itt != n->then_block.end();) {
-        ast_decl_var_t *a = (*itt)->cast<ast_decl_var_t>();
-        if (uses_.count(a) == 0) {
+        if (should_erase(*itt)) {
           itt = n->then_block.erase(itt);
         } else {
           ++itt;
         }
       }
       for (auto itt = n->else_block.begin(); itt != n->else_block.end();) {
-        ast_decl_var_t *a = (*itt)->cast<ast_decl_var_t>();
-        if (uses_.count(a) == 0) {
+        if (should_erase(*itt)) {
           itt = n->then_block.erase(itt);
         } else {
           ++itt;
@@ -85,8 +115,7 @@ struct op_decl_elim_t: public ast_visitor_t {
   void visit(ast_stmt_while_t *n) override {
     if (removing_) {
       for (auto itt = n->body.begin(); itt != n->body.end();) {
-        ast_decl_var_t *a = (*itt)->cast<ast_decl_var_t>();
-        if (uses_.count(a) == 0) {
+        if (should_erase(*itt)) {
           itt = n->body.erase(itt);
         } else {
           ++itt;
@@ -106,6 +135,17 @@ struct op_decl_elim_t: public ast_visitor_t {
     }
   }
 
+  void visit(ast_exp_array_t *n) override {
+    if (!removing_) {
+      // find the decl
+      const ast_decl_var_t *decl = n->decl->cast<const ast_decl_var_t>();
+      if (decl) {
+        uses_.insert(decl);
+      }
+    }
+    ast_visitor_t::visit(n);
+  }
+
   void visit(ast_program_t *p) override {
     ast_visitor_t::visit(p);
   }
@@ -116,20 +156,29 @@ struct op_decl_elim_t: public ast_visitor_t {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
-// redundant store elimination
+// constant value forwarding
 //
-struct op_store_elim_t: public ast_visitor_t {
+struct op_const_forward_t: public ast_visitor_t {
 
-  op_store_elim_t(ccml_t &ccml)
+  op_const_forward_t(ccml_t &ccml)
     : errs_(ccml.errors())
     , ast_(ccml.ast()) {}
 
+  std::map<ast_decl_var_t*, int64_t> values_;
+
+  void visit(ast_stmt_assign_var_t *n) override {
+    // if n->expr is const expr then set its value in a map
+    // if its not then make sure its removed
+    auto itt = values_.find(n->decl);
+  }
+
   void visit(ast_decl_func_t *n) override {
-    // has a body
+    // clear the value map
+    values_.clear();
   }
 
   void visit(ast_stmt_while_t *n) override {
-    // has a body
+    // clear the value map
   }
 
   void visit(ast_stmt_if_t *n) override {

@@ -144,29 +144,29 @@ struct sema_decl_annotate_t: public ast_visitor_t {
 
   void visit(ast_stmt_assign_var_t* n) override {
     ast_visitor_t::visit(n);
-    n->decl = find_decl(n->name->str_);
+    ast_node_t *found = find_decl(n->name->str_);
+    if (!found) {
+      errs_.unknown_variable(*n->name);
+    }
+    n->decl = found->cast<ast_decl_var_t>();
     if (!n->decl) {
       errs_.unknown_variable(*n->name);
     }
-    if (const auto *v = n->decl->cast<ast_decl_var_t>()) {
-      if (v->is_array()) {
-        errs_.ident_is_array_not_var(*n->name);
-      }
-      if (v->is_arg()) {
-        // can you assign to an argument?
-      }
+    if (n->decl->is_array()) {
+      errs_.ident_is_array_not_var(*n->name);
     }
-    else {
-      if (n->decl->is_a<ast_decl_func_t>()) {
-        // cant assign to function
-        errs_.expected_func_call(*n->name);
-      }
+    if (n->decl->is_arg()) {
+      // can you assign to an argument?
     }
   }
 
   void visit(ast_stmt_assign_array_t* n) override {
     ast_visitor_t::visit(n);
-    n->decl = find_decl(n->name->str_);
+    ast_node_t *found = find_decl(n->name->str_);
+    if (!found) {
+      errs_.unknown_array(*n->name);
+    }
+    n->decl = found->cast<ast_decl_var_t>();
     if (!n->decl) {
       errs_.unknown_array(*n->name);
     }
@@ -174,12 +174,13 @@ struct sema_decl_annotate_t: public ast_visitor_t {
 
   void visit(ast_exp_array_t* n) override {
     ast_visitor_t::visit(n);
-    n->decl = find_decl(n->name->str_);
-    if (!n->decl) {
+    ast_node_t *found = find_decl(n->name->str_);
+    if (!found) {
       errs_.unknown_array(*n->name);
     }
-    if (const auto *v = n->decl->cast<ast_decl_var_t>()) {
-      if (!v->is_array()) {
+    n->decl = found->cast<ast_decl_var_t>();
+    if (n->decl) {
+      if (!n->decl->is_array()) {
         errs_.variable_is_not_array(*n->name);
       }
     }
