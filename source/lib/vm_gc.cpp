@@ -1,3 +1,4 @@
+#include <string.h>
 #include "vm_gc.h"
 
 namespace ccml {

@@ -29,8 +29,21 @@ struct op_decl_elim_t: public ast_visitor_t {
     // collect all uses
     removing_ = false;
     ast_visitor_t::visit(n);
-    // remove an unused decls
+
+    // remove any unused function level decls
     removing_ = true;
+    if (removing_) {
+      for (auto itt = n->body.begin(); itt != n->body.end();) {
+        ast_decl_var_t *a = (*itt)->cast<ast_decl_var_t>();
+        if (a && uses_.count(a) == 0) {
+          itt = n->body.erase(itt);
+        } else {
+          ++itt;
+        }
+      }
+    }
+
+    // remove scoped decls where needed
     ast_visitor_t::visit(n);
   }
 
@@ -93,6 +106,10 @@ struct op_decl_elim_t: public ast_visitor_t {
     }
   }
 
+  void visit(ast_program_t *p) override {
+    ast_visitor_t::visit(p);
+  }
+
   error_manager_t &errs_;
   ast_t &ast_;
 };
@@ -117,6 +134,10 @@ struct op_store_elim_t: public ast_visitor_t {
 
   void visit(ast_stmt_if_t *n) override {
     // has a body
+  }
+
+  void visit(ast_program_t *p) override {
+    ast_visitor_t::visit(p);
   }
 
   error_manager_t &errs_;
@@ -425,6 +446,7 @@ void run_optimize(ccml_t &ccml) {
   opt_const_expr_t  (ccml).visit(&(ccml.ast().program));
   opt_if_remove_t   (ccml).visit(&(ccml.ast().program));
   opt_com_rotation_t(ccml).visit(&(ccml.ast().program));
+  op_decl_elim_t    (ccml).visit(&(ccml.ast().program));
 }
 
 } // namespace ccml
