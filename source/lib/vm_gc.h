@@ -36,23 +36,33 @@ struct value_gc_t {
   }
 
 protected:
-
   void release_(value_t *v) {
     assert(v);
-    if (v->array_) {
+    if (v->type == val_type_array) {
       // todo: pool arrays?
-      assert(v->type == val_type_array);
+      assert(v->array_);
       delete[] v->array_;
       v->array_ = nullptr;
+      v->array_size_ = 0;
+    }
+    if (v->type == val_type_string) {
+      delete v->s;
+      v->s = nullptr;
     }
     avail_.push_back(v);
   }
 
   void delete_(value_t *v) {
     assert(v);
-    if (v->array_) {
-      assert(v->type == val_type_array);
+    if (v->type == val_type_array) {
+      // todo: pool arrays?
+      assert(v->array_);
       delete[] v->array_;
+      v->array_ = nullptr;
+    }
+    if (v->type == val_type_string) {
+      delete v->s;
+      v->s = nullptr;
     }
     delete v;
   }
@@ -71,6 +81,9 @@ protected:
       assert(v);
       avail_.pop_back();
     }
+    // XXX: i dont think we need to do this at all and we can just mark all
+    //      of the alive objects at traversal time.
+    //      perhaps clear the free list, and insert them back in?
     allocs_.insert(v);
     return v;
   }

@@ -329,7 +329,6 @@ struct opt_if_remove_t: public ast_visitor_t {
         s->else_block = nullptr;
         c->value = 1;
       }
-
     }
   }
 

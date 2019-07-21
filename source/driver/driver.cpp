@@ -73,7 +73,7 @@ void vm_puts(ccml::thread_t &t) {
   if (!s->is_string()) {
     t.raise_error(thread_error_t::e_bad_argument);
   } else {
-    printf("%s\n", s->s.c_str());
+    printf("%s\n", s->str().c_str());
     fflush(stdout);
   }
   t.push_int(0);
@@ -129,7 +129,7 @@ int main(int argc, char **argv) {
     printf("exit: %d\n", (int)(res.v));
   }
   if (res.is_string()) {
-    printf("exit: %s\n", res.s.c_str());
+    printf("exit: %s\n", res.str().c_str());
   }
   if (res.is_none()) {
     printf("exit: none\n");

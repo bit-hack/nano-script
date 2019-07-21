@@ -15,20 +15,12 @@ struct value_t {
 
   value_t()
     : type(val_type_none)
-    , array_(nullptr)
   {}
 
   value_t(int64_t int_val)
     : type(val_type_int)
     , v(int_val)
-    , array_(nullptr)
   {}
-
-  value_t(const std::string &s)
-    : type(val_type_string)
-    , array_(nullptr)
-  {
-  }
 
   bool is_int() const {
     return type == val_type_int;
@@ -51,17 +43,24 @@ struct value_t {
     v = val;
   }
 
+  const std::string &str() const {
+    assert(s);
+    return *s;
+  }
+
   value_type_t type;
 
-  // int type
-  int64_t v;
-
-  // string type
-  std::string s;
-
-  // array type
-  value_t** array_;
-  int32_t array_size_;
+  union {
+    // int type
+    int64_t v;
+    // string type
+    std::string *s;
+    // array type
+    struct {
+      value_t** array_;
+      int32_t array_size_;
+    };
+  };
 };
 
 } // namespace ccml

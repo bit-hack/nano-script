@@ -49,7 +49,8 @@ void builtin_len(struct ccml::thread_t &t) {
     t.push_int(res);
   } break;
   case val_type_string: {
-    const int64_t res = a->s.size();
+    assert(a->s);
+    const int64_t res = a->s->size();
     t.push_int(res);
   } break;
   default:

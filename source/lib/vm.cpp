@@ -76,15 +76,15 @@ void thread_t::do_INS_ADD_() {
     return;
   }
   if (l->is_string() && r->is_string()) {
-    push(gc_.new_string(l->s + r->s));
+    push(gc_.new_string(l->str() + r->str()));
     return;
   }
   if (l->is_int() && r->is_string()) {
-    push(gc_.new_string(std::to_string(l->v) + r->s));
+    push(gc_.new_string(std::to_string(l->v) + r->str()));
     return;
   }
   if (l->is_string() && r->is_int()) {
-    push(gc_.new_string(l->s + std::to_string(r->v)));
+    push(gc_.new_string(l->str() + std::to_string(r->v)));
     return;
   }
   // raise error

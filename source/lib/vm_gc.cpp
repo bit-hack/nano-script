@@ -14,7 +14,6 @@ value_t *value_gc_t::new_array(int64_t value) {
   value_t *v = alloc_();
   v->type = val_type_array;
   assert(value > 0);
-  assert(v->array_ == nullptr);
   v->array_ = new value_t *[size_t(value)];
   assert(v->array_);
   memset(v->array_, 0, size_t(sizeof(value_t *) * value));
@@ -25,7 +24,7 @@ value_t *value_gc_t::new_array(int64_t value) {
 value_t *value_gc_t::new_string(const std::string &value) {
   value_t *v = alloc_();
   v->type = val_type_string;
-  v->s = value;
+  v->s = new std::string(value);
   return v;
 }
 
@@ -36,17 +35,13 @@ value_t *value_gc_t::new_none() {
 }
 
 value_t *value_gc_t::copy(const value_t &a) {
-  value_t *v = alloc_();
-  v->type = a.type;
-  switch (v->type) {
+  switch (a.type) {
   case val_type_int:
-    v->v = a.v;
-    return v;
+    return new_int(a.v);
   case val_type_string:
-    v->s = a.s;
-    return v;
+    return new_string(a.str());
   case val_type_none:
-    return v;
+    return new_none();
   default:
     assert(false);
     return nullptr;
