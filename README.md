@@ -7,29 +7,33 @@ A great deal of attention has been paid to keeping the implementation simple and
 small.
 
 Why have I made a new language?  Is a reasonable question, but the answer is
-simple... to satisfy my own curiosity, and desire for learning new things.
+simple... to satisfy my own curiosity and desire to learn new things.
 CCML was born as a learning exercise to spend a weekend implementing a compiler
 and virtual machine for a very simple language.  A secondary goal was to keep
 the language as simple as I possibly could, to see how useful such a basic
 language could be.
 
-Now that the basic implementation is up and running, i'm adding new features and
-extending the language, while keeping things simple but no simpler.
+I managed to complete my weekend project, and now I am adding new features and
+extending the language, while trying to keep things simple but no simpler.
 
-Language/implementation features:
+Current language/implementation features:
+- Imperative language modeled on BASIC
 - Hand crafted recursive decent parser
-- Variables can only be of signed integer type
+- Dynamic type system
+- Variables can be integer or string types
 - There are two control flow constructs; `if` and `while`
 - Variables can be `global` or `local`
-- Supports global and local array types
+- Support for arrays
 - Functions take arguments and return values
 - Compiler and virtual machine are embeddable
 - External functions can be implemented in C++
-- Very simple stack based virtual machine
-- Small byte code (~27 instructions currently)
+- A simple stack based virtual machine
+- Mark and sweep garbage collector
+- A suite of optimizations to improve generated code
+- Simple byte code (~33 instructions currently)
 - Support for multitasking and multiple threads
 - Debug information is generated during compilation
-- No external dependencies
+- No external dependencies beyond the STL
 - Robust testing
 - Extensively commented source code
 

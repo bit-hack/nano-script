@@ -333,6 +333,7 @@ ast_node_t* parser_t::parse_if_(const token_t &t) {
   stream_.pop(TOK_EOL);
 
   // IF body
+  stmt->then_block = ast.alloc<ast_block_t>();
   bool has_else = false;
   while (!stream_.found(TOK_END)) {
     if (stream_.found(TOK_ELSE)) {
@@ -341,13 +342,14 @@ ast_node_t* parser_t::parse_if_(const token_t &t) {
       break;
     }
     ast_node_t *s = parse_stmt_();
-    stmt->then_block.push_back(s);
+    stmt->then_block->add(s);
   }
   // ELSE body
   if (has_else) {
+    stmt->else_block = ast.alloc<ast_block_t>();
     while (!stream_.found(TOK_END)) {
       ast_node_t *s = parse_stmt_();
-      stmt->else_block.push_back(s);
+      stmt->else_block->add(s);
     }
   }
 
@@ -374,9 +376,10 @@ ast_node_t* parser_t::parse_while_(const token_t &t) {
   stream_.pop(TOK_EOL);
 
   // WHILE body
+  stmt->body = ast.alloc<ast_block_t>();
   while (!stream_.found(TOK_END)) {
     ast_node_t *child = parse_stmt_();
-    stmt->body.push_back(child);
+    stmt->body->add(child);
   }
 
   // note: no need to pop newline as parse_stmt() handles that
@@ -468,6 +471,7 @@ ast_node_t* parser_t::parse_function_(const token_t &t) {
   assert(name);
 
   auto *func = ast.alloc<ast_decl_func_t>(name);
+  assert(func);
 
   // argument list
   stream_.pop(TOK_LPAREN);
@@ -484,9 +488,12 @@ ast_node_t* parser_t::parse_function_(const token_t &t) {
   stream_.pop(TOK_EOL);
 
   // function body
+  func->body = ast.alloc<ast_block_t>();
+  assert(func->body);
+
   while (!stream_.found(TOK_END)) {
     ast_node_t *stmt = parse_stmt_();
-    func->body.push_back(stmt);
+    func->body->add(stmt);
   }
 
   return func;

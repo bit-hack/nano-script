@@ -24,24 +24,28 @@ struct op_decl_elim_t: public ast_visitor_t {
   bool removing_;
   ast_decl_var_t *decl_;
 
-  void visit(ast_decl_func_t *n) override {
-    uses_.clear();
-    // collect all uses
-    removing_ = false;
-    ast_visitor_t::visit(n);
-
-    // remove any unused function level decls
-    removing_ = true;
+#if 0
+  void visit(ast_block_t *n) override {
     if (removing_) {
-      for (auto itt = n->body.begin(); itt != n->body.end();) {
+      for (auto itt = n->nodes.begin(); itt != n->nodes.end();) {
         if (should_erase(*itt)) {
-          itt = n->body.erase(itt);
+          itt = n->nodes.erase(itt);
         } else {
           ++itt;
         }
       }
     }
+    ast_visitor_t::visit(n);
+  }
+#endif
 
+  void visit(ast_decl_func_t *n) override {
+    uses_.clear();
+    // collect all uses
+    removing_ = false;
+    ast_visitor_t::visit(n);
+    // remove any unused function level decls
+    removing_ = true;
     // remove scoped decls where needed
     ast_visitor_t::visit(n);
   }
@@ -92,39 +96,6 @@ struct op_decl_elim_t: public ast_visitor_t {
     return false;
   }
 
-  void visit(ast_stmt_if_t *n) override {
-    if (removing_) {
-      for (auto itt = n->then_block.begin(); itt != n->then_block.end();) {
-        if (should_erase(*itt)) {
-          itt = n->then_block.erase(itt);
-        } else {
-          ++itt;
-        }
-      }
-      for (auto itt = n->else_block.begin(); itt != n->else_block.end();) {
-        if (should_erase(*itt)) {
-          itt = n->then_block.erase(itt);
-        } else {
-          ++itt;
-        }
-      }
-    }
-    ast_visitor_t::visit(n);
-  }
-
-  void visit(ast_stmt_while_t *n) override {
-    if (removing_) {
-      for (auto itt = n->body.begin(); itt != n->body.end();) {
-        if (should_erase(*itt)) {
-          itt = n->body.erase(itt);
-        } else {
-          ++itt;
-        }
-      }
-    }
-    ast_visitor_t::visit(n);
-  }
-
   void visit(ast_exp_ident_t *n) override {
     if (!removing_) {
       // find the decl
@@ -133,6 +104,7 @@ struct op_decl_elim_t: public ast_visitor_t {
         uses_.insert(decl);
       }
     }
+    ast_visitor_t::visit(n);
   }
 
   void visit(ast_exp_array_t *n) override {
@@ -358,42 +330,27 @@ struct opt_post_ret_t: public ast_visitor_t {
   opt_post_ret_t(ccml_t &ccml)
     : errs_(ccml.errors()) {}
 
-  void visit(ast_stmt_while_t *w) override {
-    simplify_(w->body);
-    ast_visitor_t::visit(w);
-  }
-
-  void visit(ast_stmt_if_t *d) override {
-    simplify_(d->then_block);
-    simplify_(d->else_block);
-    ast_visitor_t::visit(d);
-  }
-
-  void visit(ast_decl_func_t *f) override {
-    simplify_(f->body);
-    ast_visitor_t::visit(f);
-  }
-
   void visit(ast_program_t *p) override {
     ast_visitor_t::visit(p);
   }
 
-protected:
-  error_manager_t &errs_;
-
-  void simplify_(std::vector<ast_node_t*> &body) {
+  void visit(ast_block_t *n) {
+    assert(n);
     bool found_return = false;
-    for (auto i = body.begin(); i != body.end();) {
-      ast_node_t *n = *i;
+    auto &nodes = n->nodes;
+    for (auto i = nodes.begin(); i != nodes.end();) {
       if (found_return) {
-        i = body.erase(i);
+        i = nodes.erase(i);
       }
       else {
-        found_return = n->is_a<ast_stmt_return_t>();
+        found_return = (*i)->is_a<ast_stmt_return_t>();
         ++i;
       }
     }
   }
+
+protected:
+  error_manager_t &errs_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -408,12 +365,16 @@ struct opt_if_remove_t: public ast_visitor_t {
   void visit(ast_stmt_if_t *s) override {
     ast_visitor_t::visit(s);
     if (auto *c = s->expr->cast<ast_exp_lit_var_t>()) {
+
       if (c->value != 0) {
-        s->else_block.clear();
+        s->else_block = nullptr;
       }
       else {
-        s->then_block.clear();
+        s->then_block = s->else_block;
+        s->else_block = nullptr;
+        c->value = 1;
       }
+
     }
   }
 
@@ -421,7 +382,7 @@ struct opt_if_remove_t: public ast_visitor_t {
     ast_visitor_t::visit(s);
     if (auto *c = s->expr->cast<ast_exp_lit_var_t>()) {
       if (c->value == 0) {
-        s->body.clear();
+        s->body = nullptr;
       }
     }
   }
@@ -491,11 +452,13 @@ struct opt_com_rotation_t: public ast_visitor_t {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_optimize(ccml_t &ccml) {
+#if 1
   opt_post_ret_t    (ccml).visit(&(ccml.ast().program));
   opt_const_expr_t  (ccml).visit(&(ccml.ast().program));
   opt_if_remove_t   (ccml).visit(&(ccml.ast().program));
   opt_com_rotation_t(ccml).visit(&(ccml.ast().program));
   op_decl_elim_t    (ccml).visit(&(ccml.ast().program));
+#endif
 }
 
 } // namespace ccml

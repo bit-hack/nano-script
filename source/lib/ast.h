@@ -15,6 +15,8 @@ enum ast_type_t {
   ast_exp_lit_str_e,
   ast_exp_none_e,
 
+  ast_block_e,
+
   ast_exp_array_e,
   ast_exp_call_e,
   ast_exp_bin_op_e,
@@ -208,11 +210,33 @@ struct ast_stmt_if_t : public ast_node_t {
     : ast_node_t(TYPE)
     , token(token)
     , expr(nullptr)
+    , then_block(nullptr)
+    , else_block(nullptr)
   {}
 
   const token_t *token;
   ast_node_t *expr;
-  std::vector<ast_node_t*> then_block, else_block;
+  ast_block_t *then_block;
+  ast_block_t *else_block;
+};
+
+struct ast_block_t: public ast_node_t {
+  static const ast_type_t TYPE = ast_block_e;
+
+  ast_block_t()
+    : ast_node_t(TYPE)
+  {}
+
+  void add(ast_node_t *n) {
+    assert(n);
+    nodes.push_back(n);
+  }
+
+  bool empty() const {
+    return nodes.empty();
+  }
+
+  std::vector<ast_node_t*> nodes;
 };
 
 struct ast_stmt_while_t : public ast_node_t {
@@ -222,11 +246,12 @@ struct ast_stmt_while_t : public ast_node_t {
     : ast_node_t(TYPE)
     , token(token)
     , expr(nullptr)
+    , body(nullptr)
   {}
 
   const token_t *token;
   ast_node_t *expr;
-  std::vector<ast_node_t*> body;
+  ast_block_t *body;
 };
 
 struct ast_stmt_return_t : public ast_node_t {
@@ -279,11 +304,12 @@ struct ast_decl_func_t : public ast_node_t {
   ast_decl_func_t(const token_t *name)
     : ast_node_t(TYPE)
     , name(name)
+    , body(nullptr)
   {}
 
   const token_t *name;
   std::vector<ast_node_t *> args;
-  std::vector<ast_node_t *> body;
+  ast_block_t *body;
 };
 
 struct ast_decl_var_t : public ast_node_t {
@@ -416,18 +442,17 @@ struct ast_visitor_t {
   virtual void visit(ast_stmt_if_t* n) {
     stack.push_back(n);
     dispatch(n->expr);
-    for (auto *c : n->then_block)
-      dispatch(c);
-    for (auto *c : n->else_block)
-      dispatch(c);
+    if (n->then_block)
+      dispatch(n->then_block);
+    if (n->else_block)
+      dispatch(n->else_block);
     stack.pop_back();
   }
 
   virtual void visit(ast_stmt_while_t* n) {
     stack.push_back(n);
     dispatch(n->expr);
-    for (auto *c : n->body)
-      dispatch(c);
+    dispatch(n->body);
     stack.pop_back();
   }
 
@@ -452,12 +477,18 @@ struct ast_visitor_t {
     stack.pop_back();
   }
 
+  virtual void visit(ast_block_t *n) {
+    stack.push_back(n);
+    for (auto *a : n->nodes)
+      dispatch(a);
+    stack.pop_back();
+  }
+
   virtual void visit(ast_decl_func_t* n) {
     stack.push_back(n);
     for (auto *a : n->args)
       dispatch(a);
-    for (auto *c : n->body)
-      dispatch(c);
+    dispatch(n->body);
     stack.pop_back();
   }
 
@@ -534,6 +565,12 @@ struct ast_printer_t : ast_visitor_t {
   virtual void visit(ast_exp_unary_op_t* n) {
     indent_();
     fprintf(fd_, "ast_exp_unary_op_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  virtual void visit(ast_block_t* n) {
+    indent_();
+    fprintf(fd_, "ast_block_t\n");
     ast_visitor_t::visit(n);
   }
 

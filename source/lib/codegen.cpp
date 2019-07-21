@@ -88,9 +88,7 @@ struct stack_pass_t: ast_visitor_t {
       offsets_[var] = i++;
     }
     // visit body
-    for (auto *c : n->body) {
-      dispatch(c);
-    }
+    dispatch(n->body);
     scope_.pop_back();
   }
 
@@ -394,12 +392,10 @@ struct codegen_pass_t: ast_visitor_t {
     int32_t *to_L0 = get_fixup();
 
     // then
-    for (ast_node_t *c : n->then_block) {
-      dispatch(c);
-    }
+    dispatch(n->then_block);
 
     // if there is no else
-    if (n->else_block.empty()) {
+    if (!n->else_block) {
       *to_L0 = pos();
       return;
     }
@@ -412,9 +408,7 @@ struct codegen_pass_t: ast_visitor_t {
     // L0 <---
     const int32_t L0 = pos();
 
-    for (ast_node_t *c : n->else_block) {
-      dispatch(c);
-    }
+    dispatch(n->else_block);
 
     // L1 <---
     const int32_t L1 = pos();
@@ -422,6 +416,12 @@ struct codegen_pass_t: ast_visitor_t {
     // apply fixups
     *to_L0 = L0;
     *to_L1 = L1;
+  }
+
+  void visit(ast_block_t* n) override {
+    for (ast_node_t *c : n->nodes) {
+      dispatch(c);
+    }
   }
 
   void visit(ast_stmt_while_t* n) override {
@@ -433,9 +433,7 @@ struct codegen_pass_t: ast_visitor_t {
     // L0 <---
     const int32_t L0 = pos();
     // emit the while loop body
-    for (ast_node_t *c : n->body) {
-      dispatch(c);
-    }
+    dispatch(n->body);
 
     // L1 <---
     const int32_t L1 = pos();
@@ -502,9 +500,11 @@ struct codegen_pass_t: ast_visitor_t {
       emit(INS_LOCALS, space, n->name);
     }
     bool is_return = false;
-    for (ast_node_t *c : n->body) {
-      dispatch(c);
-      is_return = c->is_a<ast_stmt_return_t>();
+    dispatch(n->body);
+    if (n->body) {
+      for (ast_node_t *c : n->body->nodes) {
+        is_return = c->is_a<ast_stmt_return_t>();
+      }
     }
     if (!is_return) {
       emit(INS_NEW_INT, 0, nullptr);

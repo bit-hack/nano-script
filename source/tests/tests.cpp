@@ -356,6 +356,30 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_global_5() {
+  static const char *prog = R"(
+var a = 10
+var b[2]
+
+function driver()
+  b[0] = a
+  return b[0]
+end
+)";
+  ccml_t ccml;
+  ccml::error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+  const function_t *func = ccml.find_function("driver");
+  value_t res(0);
+  if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
+    return false;
+  }
+  return res.v == 10;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 static bool test_scope() {
   static const char *prog = R"(
 function scope(flag)
@@ -1144,6 +1168,47 @@ end
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_opt_5() {
+  static const char *prog = R"(
+function main()
+  var x = 10
+  x = 12
+  return 1
+end
+)";
+  ccml_t ccml;
+  ccml::error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+
+  ccml.disassembler().disasm();
+  return true;
+}
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_opt_6() {
+  static const char *prog = R"(
+function dummy(y)
+  return y
+end
+function main()
+  var x = 10
+  x = dummy(12)
+  return 1
+end
+)";
+  ccml_t ccml;
+  ccml::error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+  ccml.disassembler().disasm();
+  return true;
+}
+
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 typedef bool (*test_t)();
 struct test_pair_t {
   const char *name;
@@ -1172,6 +1237,7 @@ static const test_pair_t tests[] = {
     TEST(test_global_2),
     TEST(test_global_3),
     TEST(test_global_4),
+    TEST(test_global_5),
     TEST(test_scope),
     TEST(test_sqrt),
     TEST(test_is_prime),
@@ -1205,6 +1271,8 @@ static const test_pair_t tests[] = {
     TEST(test_opt_2),
     TEST(test_opt_3),
     TEST(test_opt_4),
+    TEST(test_opt_5),
+    TEST(test_opt_6),
     // sentinel
     nullptr, nullptr};
 

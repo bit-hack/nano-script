@@ -27,6 +27,7 @@ struct function_t;
 struct identifier_t;
 
 struct ast_t;
+struct ast_block_t;
 struct ast_node_t;
 struct ast_program_t;
 struct ast_exp_ident_t;

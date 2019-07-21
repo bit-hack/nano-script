@@ -184,8 +184,12 @@ struct sema_decl_annotate_t: public ast_visitor_t {
         errs_.variable_is_not_array(*n->name);
       }
     }
-    if (n->decl->cast<ast_decl_func_t>()) {
-      errs_.expected_func_call(*n->name);
+    else {
+      if (found->cast<ast_decl_func_t>()) {
+        errs_.expected_func_call(*n->name);
+      } else {
+        errs_.unexpected_token((*n->name));
+      }
     }
   }
 
@@ -200,8 +204,12 @@ struct sema_decl_annotate_t: public ast_visitor_t {
         errs_.array_requires_subscript(*n->name);
       }
     }
-    if (n->decl->cast<ast_decl_func_t>()) {
-      errs_.expected_func_call(*n->name);
+    else {
+      if (n->decl->cast<ast_decl_func_t>()) {
+        errs_.expected_func_call(*n->name);
+      } else {
+        errs_.unexpected_token((*n->name));
+      }
     }
   }
 
@@ -317,9 +325,7 @@ struct sema_multi_decls_t: public ast_visitor_t {
     for (const auto &a : func->args) {
       dispatch(a);
     }
-    for (const auto &s : func->body) {
-      dispatch(s);
-    }
+    dispatch(func->body);
     scope_.pop_back();
   }
 

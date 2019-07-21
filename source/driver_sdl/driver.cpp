@@ -66,10 +66,12 @@ void vm_video(ccml::thread_t &t) {
   const value_t* h = t.pop();
   const value_t* w = t.pop();
   if (w->is_int() && h->is_int()) {
-    global.width_ = w->v;
-    global.height_ = h->v;
-    global.video_.reset(new uint32_t[w->v * h->v]);
-    global.screen_ = SDL_SetVideoMode(w->v * 3, h->v * 3, 32, 0);
+    global.width_  = (uint32_t)w->v;
+    global.height_ = (uint32_t)h->v;
+    global.video_.reset(new uint32_t[(uint32_t)(w->v * h->v)]);
+    global.screen_ = SDL_SetVideoMode(
+      (uint32_t)(w->v * 3),
+      (uint32_t)(h->v * 3), 32, 0);
     // return value
     t.push(t.gc().new_int(global.screen_ != nullptr));
   }
