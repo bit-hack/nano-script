@@ -414,9 +414,8 @@ ast_node_t* parser_t::parse_stmt_() {
   //    while ( <expr> ) '\n'
   //    return <expr> '\n'
 
-  while (stream_.found(TOK_EOL)) {
-    // consume any blank lines
-  }
+  // consume any blank lines
+  while (stream_.found(TOK_EOL));
 
   const token_t *t = nullptr;
   ast_node_t *stmt = nullptr;
@@ -451,8 +450,11 @@ ast_node_t* parser_t::parse_stmt_() {
     ccml_.errors().statement_expected();
   }
 
-  // all statements should be on their own line
+  // all statements should be on their own line so must have one or more EOLs
   stream_.pop(TOK_EOL);
+  // pop any extra EOLS now so we can sync with TOK_END correctly
+  while (stream_.found(TOK_EOL));
+
   return stmt;
 }
 

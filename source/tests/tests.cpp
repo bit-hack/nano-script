@@ -297,6 +297,7 @@ end
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {
     return false;
   }
+  ccml.ast().dump(stderr);
   return res.v == 987;
 }
 
@@ -1207,6 +1208,21 @@ end
   return true;
 }
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+static bool test_misc_1() {
+  static const char *prog = R"(
+function main()
+  return 1
+
+end
+)";
+  ccml_t ccml;
+  ccml::error_t error;
+  if (!ccml.build(prog, error)) {
+    return false;
+  }
+  return true;
+}
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 typedef bool (*test_t)();
@@ -1273,6 +1289,7 @@ static const test_pair_t tests[] = {
     TEST(test_opt_4),
     TEST(test_opt_5),
     TEST(test_opt_6),
+    TEST(test_misc_1),
     // sentinel
     nullptr, nullptr};
 

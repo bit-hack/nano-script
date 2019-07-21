@@ -350,6 +350,10 @@ end
 var g = 1
 var g = 2
   )",
+  R"(
+  func test(a, a)
+  end
+  )"
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- arguments
   R"(
 function f(a, b, c)

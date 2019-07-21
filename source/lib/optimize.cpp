@@ -24,7 +24,6 @@ struct op_decl_elim_t: public ast_visitor_t {
   bool removing_;
   ast_decl_var_t *decl_;
 
-#if 0
   void visit(ast_block_t *n) override {
     if (removing_) {
       for (auto itt = n->nodes.begin(); itt != n->nodes.end();) {
@@ -35,18 +34,6 @@ struct op_decl_elim_t: public ast_visitor_t {
         }
       }
     }
-    ast_visitor_t::visit(n);
-  }
-#endif
-
-  void visit(ast_decl_func_t *n) override {
-    uses_.clear();
-    // collect all uses
-    removing_ = false;
-    ast_visitor_t::visit(n);
-    // remove any unused function level decls
-    removing_ = true;
-    // remove scoped decls where needed
     ast_visitor_t::visit(n);
   }
 
@@ -119,45 +106,10 @@ struct op_decl_elim_t: public ast_visitor_t {
   }
 
   void visit(ast_program_t *p) override {
+    uses_.clear();
+    removing_ = false;
     ast_visitor_t::visit(p);
-  }
-
-  error_manager_t &errs_;
-  ast_t &ast_;
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-//
-// constant value forwarding
-//
-struct op_const_forward_t: public ast_visitor_t {
-
-  op_const_forward_t(ccml_t &ccml)
-    : errs_(ccml.errors())
-    , ast_(ccml.ast()) {}
-
-  std::map<ast_decl_var_t*, int64_t> values_;
-
-  void visit(ast_stmt_assign_var_t *n) override {
-    // if n->expr is const expr then set its value in a map
-    // if its not then make sure its removed
-    auto itt = values_.find(n->decl);
-  }
-
-  void visit(ast_decl_func_t *n) override {
-    // clear the value map
-    values_.clear();
-  }
-
-  void visit(ast_stmt_while_t *n) override {
-    // clear the value map
-  }
-
-  void visit(ast_stmt_if_t *n) override {
-    // has a body
-  }
-
-  void visit(ast_program_t *p) override {
+    removing_ = true;
     ast_visitor_t::visit(p);
   }
 
@@ -173,7 +125,8 @@ struct opt_const_expr_t: public ast_visitor_t {
 
   opt_const_expr_t(ccml_t &ccml)
     : errs_(ccml.errors())
-    , ast_(ccml.ast()) {}
+    , ast_(ccml.ast())
+  {}
 
   void visit(ast_exp_bin_op_t *o) override {
     dispatch(o->left);
@@ -328,7 +281,8 @@ protected:
 struct opt_post_ret_t: public ast_visitor_t {
 
   opt_post_ret_t(ccml_t &ccml)
-    : errs_(ccml.errors()) {}
+    : errs_(ccml.errors())
+  {}
 
   void visit(ast_program_t *p) override {
     ast_visitor_t::visit(p);
@@ -360,7 +314,8 @@ protected:
 struct opt_if_remove_t: public ast_visitor_t {
 
   opt_if_remove_t(ccml_t &ccml)
-    : errs_(ccml.errors()) {}
+    : errs_(ccml.errors())
+  {}
 
   void visit(ast_stmt_if_t *s) override {
     ast_visitor_t::visit(s);

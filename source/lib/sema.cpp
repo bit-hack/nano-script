@@ -127,7 +127,6 @@ struct sema_decl_annotate_t: public ast_visitor_t {
   {}
 
   void visit(ast_program_t *p) override {
-
     // collect global decls
     scope_.emplace_back();
     for (auto &f : p->children) {
@@ -137,7 +136,6 @@ struct sema_decl_annotate_t: public ast_visitor_t {
         scope_[0].insert(f);
       }
     }
-
     prog_ = p;
     ast_visitor_t::visit(p);
   }
@@ -195,7 +193,11 @@ struct sema_decl_annotate_t: public ast_visitor_t {
 
   void visit(ast_exp_ident_t* n) override {
     ast_visitor_t::visit(n);
-    n->decl = find_decl(n->name->str_);
+    ast_node_t *found = find_decl(n->name->str_);
+    if (!found) {
+      errs_.unknown_identifier(*n->name);
+    }
+    n->decl = found->cast<ast_decl_var_t>();
     if (!n->decl) {
       errs_.unknown_identifier(*n->name);
     }
@@ -259,6 +261,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
   }
 
   ast_node_t* find_decl(const std::string &name) {
+    ast_node_t *out = nullptr;
     // move from inner to outer scope
     for (auto s = scope_.rbegin(); s != scope_.rend(); ++s) {
       for (auto d : *s) {
@@ -276,7 +279,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
         }
       }
     }
-    return nullptr;
+    return out;
   }
 
   std::vector<std::set<ast_node_t*>> scope_;

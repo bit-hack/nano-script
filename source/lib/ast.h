@@ -78,7 +78,7 @@ struct ast_exp_ident_t: public ast_node_t {
 
   const token_t *name;
   // where this was declared
-  ast_node_t *decl;
+  ast_decl_var_t *decl;
 };
 
 struct ast_exp_lit_str_t: public ast_node_t {
