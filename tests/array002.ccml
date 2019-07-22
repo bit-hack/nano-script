@@ -1,0 +1,6 @@
+var a = "test"
+var b = "case"
+
+function main()
+    return a + b
+end

@@ -1,0 +1,16 @@
+function fib(count)
+  var a = 0
+  var b = 1
+  while (count >= 2)
+    var c = a + b
+    a = b
+    b = c
+    count = count - 1
+  end
+  return b
+end
+
+# should return 34
+function main()
+  return fib(9)
+end

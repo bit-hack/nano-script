@@ -1,0 +1,9 @@
+function main()
+    var x = ""
+    var i = 0
+    while (i < 10)
+        x = x + i
+        i += 1
+    end
+    puts(x)
+end

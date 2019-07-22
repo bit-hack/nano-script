@@ -620,15 +620,27 @@ bool thread_t::active_vars(std::vector<const identifier_t *> &out) const {
 }
 
 bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
-                   value_t *ret, bool trace) {
+                   value_t *ret, bool trace, thread_error_t *err) {
+  if (err) {
+    *err = thread_error_t::e_success;
+  }
   thread_t t{ccml_};
   if (!t.prepare(func, argc, argv)) {
+    if (err) {
+      *err = t.error_;
+    }
     return false;
   }
   if (!t.resume(INT_MAX, trace)) {
+    if (err) {
+      *err = t.error_;
+    }
     return false;
   }
   if (!t.finished()) {
+    if (err) {
+      *err = thread_error_t::e_max_cycle_count;
+    }
     return false;
   }
   if (ret) {

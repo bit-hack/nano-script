@@ -14,6 +14,7 @@ namespace ccml {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 enum class thread_error_t {
   e_success = 0,
+  e_max_cycle_count,
   e_bad_getv,
   e_bad_setv,
   e_bad_num_args,
@@ -267,7 +268,7 @@ struct vm_t {
     : ccml_(c) {}
 
   bool execute(const function_t &func, int32_t argc, const value_t *argv,
-               value_t *ret = nullptr, bool trace = false);
+               value_t *ret = nullptr, bool trace = false, thread_error_t *err = nullptr);
 
   // reset any stored state
   void reset();

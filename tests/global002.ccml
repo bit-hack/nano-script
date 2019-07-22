@@ -1,0 +1,8 @@
+var x = 1
+var y = 2
+
+function main()
+    return (x + y) * z
+end
+
+var z = 3

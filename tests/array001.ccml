@@ -1,0 +1,25 @@
+var size = 10
+var a[10]
+
+function init()
+    var i = 0
+    while (i < size)
+        a[i] = 10 - i
+        i += 1
+    end
+end
+
+function sum()
+    var s = 0
+    var i = 0
+    while (i < size)
+        s += a[i]
+        i += 1
+    end
+    return s
+end
+
+function main()
+    init()
+    return sum()
+end
