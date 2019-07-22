@@ -24,6 +24,7 @@ expected = {
     "array001" : "55",
     "array002" : "testcase",
     "array003" : "testcase",
+    "eol001"   : "1",
     }
 
 
