@@ -288,7 +288,7 @@ struct opt_post_ret_t: public ast_visitor_t {
     ast_visitor_t::visit(p);
   }
 
-  void visit(ast_block_t *n) {
+  void visit(ast_block_t *n) override {
     assert(n);
     bool found_return = false;
     auto &nodes = n->nodes;
@@ -387,6 +387,9 @@ struct opt_com_rotation_t: public ast_visitor_t {
       if (dr > dl) {
         std::swap(o->left, o->right);
       }
+      break;
+    default:
+      break;
     }
     ++depth_;
   }

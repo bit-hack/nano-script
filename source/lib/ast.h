@@ -514,109 +514,109 @@ struct ast_printer_t : ast_visitor_t {
     fflush(fd_);
   }
 
-  virtual void visit(ast_program_t* n) {
+  void visit(ast_program_t* n) override {
     indent_();
     fprintf(fd_, "ast_program_t\n");
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_exp_ident_t* n) {
+  void visit(ast_exp_ident_t* n) override {
     indent_();
     fprintf(fd_, "ast_exp_ident_t {name: %s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_exp_lit_var_t* n) {
+  void visit(ast_exp_lit_var_t* n) override {
     indent_();
     fprintf(fd_, "ast_exp_lit_var_t {value: %d}\n", n->value);
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_exp_lit_str_t* n) {
+  void visit(ast_exp_lit_str_t* n) override {
     indent_();
     fprintf(fd_, "ast_exp_lit_str_t {value: %s}\n", n->value.c_str());
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_exp_none_t* n) {
+  void visit(ast_exp_none_t* n) override {
     indent_();
     fprintf(fd_, "ast_exp_none_t\n");
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_exp_array_t* n) {
+  void visit(ast_exp_array_t* n) override {
     indent_();
     fprintf(fd_, "ast_exp_array_t {name: %s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_exp_call_t* n) {
+  void visit(ast_exp_call_t* n) override {
     indent_();
     fprintf(fd_, "ast_exp_call_t {name: %s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_exp_bin_op_t* n) {
+  void visit(ast_exp_bin_op_t* n) override {
     indent_();
     fprintf(fd_, "ast_exp_bin_op_t\n");
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_exp_unary_op_t* n) {
+  void visit(ast_exp_unary_op_t* n) override {
     indent_();
     fprintf(fd_, "ast_exp_unary_op_t\n");
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_block_t* n) {
+  void visit(ast_block_t* n) override {
     indent_();
     fprintf(fd_, "ast_block_t\n");
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_stmt_if_t* n) {
+  void visit(ast_stmt_if_t* n) override {
     indent_();
     fprintf(fd_, "ast_stmt_if_t\n");
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_stmt_while_t* n) {
+  void visit(ast_stmt_while_t* n) override {
     indent_();
     fprintf(fd_, "ast_stmt_while_t\n");
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_stmt_return_t* n) {
+  void visit(ast_stmt_return_t* n) override {
     indent_();
     fprintf(fd_, "ast_stmt_return_t\n");
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_stmt_assign_var_t* n) {
+  void visit(ast_stmt_assign_var_t* n) override {
     indent_();
     fprintf(fd_, "ast_stmt_assign_var_t {name: %s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_stmt_assign_array_t* n) {
+  void visit(ast_stmt_assign_array_t* n) override {
     indent_();
     fprintf(fd_, "ast_stmt_assign_array_t\n");
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_stmt_call_t* n) {
+  void visit(ast_stmt_call_t* n) override {
     indent_();
     fprintf(fd_, "ast_stmt_call_t\n");
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_decl_func_t* n) {
+  void visit(ast_decl_func_t* n) override {
     indent_();
     fprintf(fd_, "ast_decl_func_t {name: %s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 
-  virtual void visit(ast_decl_var_t* n) {
+  void visit(ast_decl_var_t* n) override {
     indent_();
     fprintf(fd_, "ast_decl_var_t {name: %s, size:%d}\n", n->name->string(), n->count());
     ast_visitor_t::visit(n);

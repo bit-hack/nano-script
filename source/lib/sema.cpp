@@ -103,6 +103,8 @@ struct sema_type_annotation_t: public ast_visitor_t {
       switch (type_of(n->expr)) {
       case val_type_int:
         break;
+      default:
+        break;
       }
     }
   }
@@ -134,6 +136,9 @@ struct sema_decl_annotate_t: public ast_visitor_t {
       case ast_decl_func_e:
       case ast_decl_var_e:
         scope_[0].insert(f);
+        break;
+      default:
+        break;
       }
     }
     prog_ = p;
@@ -299,7 +304,7 @@ struct sema_multi_decls_t: public ast_visitor_t {
     : errs_(ccml.errors()) {
   }
 
-  void visit(ast_decl_var_t *var) {
+  void visit(ast_decl_var_t *var) override {
     const auto &name = var->name->str_;
     if (is_def_(name)) {
       errs_.var_already_exists(*var->name);
@@ -307,19 +312,19 @@ struct sema_multi_decls_t: public ast_visitor_t {
     add_(name);
   }
 
-  void visit(ast_stmt_if_t *stmt) {
+  void visit(ast_stmt_if_t *stmt) override {
     scope_.emplace_back();
     ast_visitor_t::visit(stmt);
     scope_.pop_back();
   }
 
-  void visit(ast_stmt_while_t *stmt) {
+  void visit(ast_stmt_while_t *stmt) override {
     scope_.emplace_back();
     ast_visitor_t::visit(stmt);
     scope_.pop_back();
   }
 
-  void visit(ast_decl_func_t *func) {
+  void visit(ast_decl_func_t *func) override {
     if (is_def_(func->name->str_)) {
       errs_.function_already_exists(*func->name);
     }
@@ -370,51 +375,51 @@ struct sema_type_uses_t: public ast_visitor_t {
     : errs_(ccml.errors()) {
   }
 
-  void visit(ast_decl_var_t *var) {
+  void visit(ast_decl_var_t *var) override {
     add_(var);
   }
 
-  void visit(ast_stmt_assign_array_t *a) {
+  void visit(ast_stmt_assign_array_t *a) override {
     const ast_decl_var_t *d = get_decl_(a->name->str_);
     if (d && !d->is_array()) {
       errs_.variable_is_not_array(*d->name);
     }
   }
 
-  void visit(ast_stmt_assign_var_t *v) {
+  void visit(ast_stmt_assign_var_t *v) override {
     const ast_decl_var_t *d = get_decl_(v->name->str_);
     if (d && d->is_array()) {
       errs_.ident_is_array_not_var(*d->name);
     }
   }
 
-  void visit(ast_exp_array_t *i) {
+  void visit(ast_exp_array_t *i) override {
     const ast_decl_var_t *d = get_decl_(i->name->str_);
     if (d && !d->is_array()) {
       errs_.variable_is_not_array(*d->name);
     }
   }
 
-  void visit(ast_exp_ident_t *i) {
+  void visit(ast_exp_ident_t *i) override {
     const ast_decl_var_t *d = get_decl_(i->name->str_);
     if (d && d->is_array()) {
       errs_.ident_is_array_not_var(*d->name);
     }
   }
 
-  void visit(ast_stmt_if_t *stmt) {
+  void visit(ast_stmt_if_t *stmt) override {
     scope_.emplace_back();
     ast_visitor_t::visit(stmt);
     scope_.pop_back();
   }
 
-  void visit(ast_stmt_while_t *stmt) {
+  void visit(ast_stmt_while_t *stmt) override {
     scope_.emplace_back();
     ast_visitor_t::visit(stmt);
     scope_.pop_back();
   }
 
-  void visit(ast_decl_func_t *func) {
+  void visit(ast_decl_func_t *func) override {
     scope_.emplace_back();
     ast_visitor_t::visit(func);
     scope_.pop_back();

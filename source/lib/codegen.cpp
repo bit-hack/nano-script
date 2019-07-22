@@ -102,7 +102,7 @@ struct stack_pass_t: ast_visitor_t {
     }
   }
 
-  void visit(ast_program_t *p) {
+  void visit(ast_program_t *p) override {
     scope_.clear();
     scope_.emplace_back();
     for (ast_node_t *n : p->children) {
@@ -314,6 +314,7 @@ struct codegen_pass_t: ast_visitor_t {
     switch (n->op->type_) {
     case TOK_SUB: emit(INS_NEG, n->op); break;
     case TOK_NOT: emit(INS_NOT, n->op); break;
+    default: break;
     }
   }
 
