@@ -187,6 +187,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
         // runtime error as strings are also acceptable
         // errs_.variable_is_not_array(*n->name);
       }
+      return;
     }
     else {
       if (found->cast<ast_decl_func_t>()) {
@@ -195,6 +196,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
         errs_.unexpected_token((*n->name));
       }
     }
+//    assert(false);
   }
 
   void visit(ast_exp_ident_t* n) override {

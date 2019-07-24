@@ -118,6 +118,8 @@ struct thread_t {
 
 protected:
 
+  void tick_gc_(int32_t cycles);
+
   friend struct vm_t;
 
   // step a single instruction (internal)

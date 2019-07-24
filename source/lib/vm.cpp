@@ -87,7 +87,6 @@ void thread_t::do_INS_ADD_() {
     push(gc_.new_string(l->str() + std::to_string(r->v)));
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -98,7 +97,6 @@ void thread_t::do_INS_SUB_() {
     push(gc_.new_int(l->v - r->v));
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -109,7 +107,6 @@ void thread_t::do_INS_MUL_() {
     push(gc_.new_int(l->v * r->v));
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -125,7 +122,6 @@ void thread_t::do_INS_DIV_() {
     }
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -141,7 +137,6 @@ void thread_t::do_INS_MOD_() {
     }
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -152,7 +147,6 @@ void thread_t::do_INS_AND_() {
     push(gc_.new_int(l->v && r->v));
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -163,7 +157,6 @@ void thread_t::do_INS_OR_() {
     push(gc_.new_int(l->v || r->v));
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -176,7 +169,6 @@ void thread_t::do_INS_NOT_() {
     push(gc_.new_int(!l->v));
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -186,7 +178,6 @@ void thread_t::do_INS_NEG_() {
     push(gc_.new_int(-o->v));
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -197,7 +188,6 @@ void thread_t::do_INS_LT_() {
     push(gc_.new_int(l->v < r->v ? 1 : 0));
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -208,7 +198,6 @@ void thread_t::do_INS_GT_() {
     push(gc_.new_int(l->v > r->v ? 1 : 0));
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -219,7 +208,6 @@ void thread_t::do_INS_LEQ_() {
     push(gc_.new_int(l->v <= r->v ? 1 : 0));
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -230,7 +218,6 @@ void thread_t::do_INS_GEQ_() {
     push(gc_.new_int(l->v >= r->v ? 1 : 0));
     return;
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -249,7 +236,6 @@ void thread_t::do_INS_EQ_() {
   if (l->is_none() || r->is_none()) {
     push(gc_.new_int(l->is_none() && r->is_none() ? 1 : 0));
   }
-  // raise error
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -340,12 +326,12 @@ void thread_t::do_INS_NEW_NONE_() {
 
 void thread_t::do_INS_LOCALS_() {
   const int32_t operand = read_operand_();
-  // reserve this many values on the stack
   if (operand) {
     if (s_head_ + operand >= s_.size()) {
       set_error_(thread_error_t::e_stack_overflow);
       return;
     }
+    // reserve this many values on the stack
     for (int i = 0; i < operand; ++i) {
       s_[s_head_ + i] = nullptr;
     }
@@ -360,8 +346,7 @@ void thread_t::do_INS_ACCV_() {
     setv_(operand, getv_(operand) + val->v);
     return;
   }
-  // raise error
-  assert(false);
+  raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_GETV_() {
@@ -413,7 +398,7 @@ void thread_t::do_INS_GETA_() {
   }
   if (a->type == val_type_string) {
     assert(a->s);
-    if (index < 0 || index >= a->s->size()) {
+    if (index < 0 || index >= (int32_t)a->s->size()) {
       raise_error(thread_error_t::e_bad_array_bounds);
       return;
     }
@@ -582,6 +567,13 @@ int32_t thread_t::source_line() const {
   return ccml_.store().get_line(pc_);
 }
 
+void thread_t::tick_gc_(int32_t cycles) {
+  // XXX: better - when allocated objects are 2x the stack size?
+  if ((cycles % 500) == 1) {
+    gc_collect();
+  }
+}
+
 bool thread_t::resume(int32_t cycles, bool trace) {
   if (finished_) {
     return false;
@@ -590,12 +582,7 @@ bool thread_t::resume(int32_t cycles, bool trace) {
   // while we should keep processing instructions
   while (cycles > 0 && f_head_) {
 
-#if 1
-    // XXX: better - when allocated objects are 2x the stack size?
-    if ((cycles % 100) == 1) {
-      gc_collect();
-    }
-#endif
+    tick_gc_(cycles);
 
     --cycles;
     // fetch opcode
