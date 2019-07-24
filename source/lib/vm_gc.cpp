@@ -1,16 +1,17 @@
 #include <string.h>
+
 #include "vm_gc.h"
 
 namespace ccml {
 
-value_t *value_gc_t::new_int(int64_t value) {
+value_t *value_gc_t::new_int(int32_t value) {
   value_t *v = alloc_();
   v->type = val_type_int;
   v->v = value;
   return v;
 }
 
-value_t *value_gc_t::new_array(int64_t value) {
+value_t *value_gc_t::new_array(int32_t value) {
   value_t *v = alloc_();
   v->type = val_type_array;
   assert(value > 0);
@@ -24,7 +25,14 @@ value_t *value_gc_t::new_array(int64_t value) {
 value_t *value_gc_t::new_string(const std::string &value) {
   value_t *v = alloc_();
   v->type = val_type_string;
-  v->s = new std::string(value);
+  if (string_pool_.empty()) {
+    v->s = new std::string(value);
+  }
+  else {
+    v->s = string_pool_.back();
+    string_pool_.pop_back();
+    *(v->s) = value;
+  }
   return v;
 }
 
@@ -48,7 +56,7 @@ value_t *value_gc_t::copy(const value_t &a) {
   }
 }
 
-void value_gc_t::visit_(std::set<const value_t *> &s, const value_t *v) {
+void value_gc_t::visit_(std::unordered_set<const value_t *> &s, const value_t *v) {
   if (v == nullptr) {
     return;
   }
@@ -61,21 +69,22 @@ void value_gc_t::visit_(std::set<const value_t *> &s, const value_t *v) {
 }
 
 void value_gc_t::collect(value_t **v, size_t num) {
-  std::set<const value_t *> alive;
+
+  const size_t reserve = commit_.size() / 2;
+
+  std::unordered_set<const value_t *> alive(reserve);
   for (size_t i = 0; i < num; ++i) {
     value_t *x = v[i];
     if (x) {
       visit_(alive, x);
     }
   }
-  for (auto itt = allocs_.begin(); itt != allocs_.end();) {
-    if (alive.count(*itt)) {
-      ++itt;
-    } else {
+  avail_.clear();
+  for (auto itt = commit_.begin(); itt != commit_.end(); ++itt) {
+    if (alive.count(*itt) == 0) {
       value_t *val = *itt;
       assert(val);
       release_(val);
-      itt = allocs_.erase(itt);
     }
   }
 }

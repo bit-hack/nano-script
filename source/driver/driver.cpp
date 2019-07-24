@@ -38,7 +38,7 @@ const char *load_file(const char *path) {
 
 void vm_getc(ccml::thread_t &t) {
   using namespace ccml;
-  const int64_t ch = getchar();
+  const int32_t ch = getchar();
   t.push_int(ch);
 }
 

@@ -184,7 +184,8 @@ struct sema_decl_annotate_t: public ast_visitor_t {
     n->decl = found->cast<ast_decl_var_t>();
     if (n->decl) {
       if (!n->decl->is_array()) {
-        errs_.variable_is_not_array(*n->name);
+        // runtime error as strings are also acceptable
+        // errs_.variable_is_not_array(*n->name);
       }
     }
     else {
@@ -396,7 +397,8 @@ struct sema_type_uses_t: public ast_visitor_t {
   void visit(ast_exp_array_t *i) override {
     const ast_decl_var_t *d = get_decl_(i->name->str_);
     if (d && !d->is_array()) {
-      errs_.variable_is_not_array(*d->name);
+      // now a runtime error as strings are also acceptable
+      // errs_.variable_is_not_array(*d->name);
     }
   }
 

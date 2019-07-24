@@ -120,7 +120,7 @@ void thread_t::do_INS_DIV_() {
     if (r->v == 0) {
       set_error_(thread_error_t::e_bad_divide_by_zero);
     } else {
-      const int64_t o = l->v / r->v;
+      const int32_t o = l->v / r->v;
       push(gc_.new_int(o));
     }
     return;
@@ -136,7 +136,7 @@ void thread_t::do_INS_MOD_() {
     if (r->v == 0) {
       set_error_(thread_error_t::e_bad_divide_by_zero);
     } else {
-      const int64_t o = l->v % r->v;
+      const int32_t o = l->v % r->v;
       push(gc_.new_int(o));
     }
     return;
@@ -396,25 +396,32 @@ void thread_t::do_INS_GETA_() {
   value_t *a = pop();
   value_t *i = pop();
   assert(a && i);
-  if (a->type != val_type_array) {
-    assert(false);
-  }
   if (i->type != val_type_int) {
-    raise_error(thread_error_t::e_bad_type_operation);
+    raise_error(thread_error_t::e_bad_array_index);
     return;
   }
-  const int64_t index = i->v;
-  if (index < 0 || index >= a->array_size_) {
-    raise_error(thread_error_t::e_bad_array_bounds);
+  const int32_t index = i->v;
+  if (a->type == val_type_array) {
+    assert(a->array_);
+    if (index < 0 || index >= a->array_size_) {
+      raise_error(thread_error_t::e_bad_array_bounds);
+      return;
+    }
+    value_t *out = a->array_[index];
+    push(out ? out : gc_.new_none());
     return;
   }
-  assert(a->array_);
-  value_t *out = a->array_[index];
-  if (out) {
-    push(out);
-  } else {
-    push(gc_.new_none());
+  if (a->type == val_type_string) {
+    assert(a->s);
+    if (index < 0 || index >= a->s->size()) {
+      raise_error(thread_error_t::e_bad_array_bounds);
+      return;
+    }
+    uint32_t ch = ((const uint8_t*)(a->s->data()))[index];
+    push(gc_.new_int(ch));
+    return;
   }
+  raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_SETA_() {
@@ -426,7 +433,8 @@ void thread_t::do_INS_SETA_() {
     assert(false);
   }
   if (i->type != val_type_int) {
-    assert(false);
+    raise_error(thread_error_t::e_bad_array_index);
+    return;
   }
   const int64_t index = i->v;
   if (index < 0 || index >= a->array_size_) {

@@ -1,0 +1,6 @@
+var x = 1234
+
+function main()
+    var y = x
+    return y + 6
+end

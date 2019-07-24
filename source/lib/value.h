@@ -17,7 +17,7 @@ struct value_t {
     : type(val_type_none)
   {}
 
-  value_t(int64_t int_val)
+  value_t(int32_t int_val)
     : type(val_type_int)
     , v(int_val)
   {}
@@ -38,7 +38,7 @@ struct value_t {
     return type == val_type_none;
   }
 
-  void from_int(int64_t val) {
+  void from_int(int32_t val) {
     type = val_type_int;
     v = val;
   }
@@ -52,7 +52,7 @@ struct value_t {
 
   union {
     // int type
-    int64_t v;
+    int32_t v;
     // string type
     std::string *s;
     // array type
