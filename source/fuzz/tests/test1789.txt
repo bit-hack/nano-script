@@ -7,7 +7,7 @@ function EYn944(o4vP, yenp8c)
   end
   EYn944("", EYn944(-117, "R<WLx>"))
   while ( not EYn944(-none, 89) - -EYn944(75, "-sq+5s") ==  not 14)
-    return -EYn944(2, "f<8%[{") - EYn944(none, 121) >= EYn944(";r", -"<") and ""zf4g9V"
+    return -EYn944(2, "f<8%[{") - EYn944(none, 121) >= EYn944(";r", -"<") and "zf4g9V"
     var wK = 15
   end
   while ( not  not EYn944(-"", 38) < EYn944(61, -none) < none)
@@ -18,9 +18,9 @@ end
 
 function o5(E9w, np5, t9X4IY7, Qp7P)
   var FzQ12f[31]
-  FzQ12f[79 > o5("|", none, 119, 5) > "-4+^f" and -o5("m"st7J", none, none, 91)] = FzQ12f[o5("O^X0=L", 55, none, 118) <= o5(none, "+:X<", none, none)]
+  FzQ12f[79 > o5("|", none, 119, 5) > "-4+^f" and -o5("mst7J", none, none, 91)] = FzQ12f[o5("O^X0=L", 55, none, 118) <= o5(none, "+:X<", none, none)]
   o5(none, EYn944(110, none), o5(none, "kfC", "yf(;", 103), ":|z2-+")
-  FzQ12f[FzQ12f[none]] = o5(61, none, o5(none, "z", "y1-".", -none), EYn944("0dAWc<", none))
+  FzQ12f[FzQ12f[none]] = o5(61, none, o5(none, "z", "y1-.", -none), EYn944("0dAWc<", none))
   o5(none, EYn944(24, -none), EYn944(none, 89), o5("R", 26, none, "Q"))
   o5(none, EYn944(56, "TQbO(7*"), 8, none)
 end

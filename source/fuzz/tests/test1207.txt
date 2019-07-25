@@ -5,7 +5,7 @@ function I1MCycCD(N8W0Or4, k912)
   I1MCycCD(none, 118)
   return "QDs+"
   while (I1MCycCD(20, "") / (I1MCycCD("x/EUJ", none)))
-    return "p*" + -I1MCycCD("fp'No"", "2^r@") >= 69 < I1MCycCD(21, 55)
+    return "p*" + -I1MCycCD("fp'No", "2^r@") >= 69 < I1MCycCD(21, 55)
   end
   return I1MCycCD(none, none) < I1MCycCD(-46, none) + I1MCycCD(68, 5)
 end
@@ -79,7 +79,7 @@ function Qshv(ibuWp, FzV, RP, dNVE, yIi6, bPj)
     yIi6 = I1MCycCD(DZBaZ24q, Vq_NagPm(15, 113, "m%;ch}", -oHUOvWVB, 10, DZBaZ24q))
     I1MCycCD(DZBaZ24q, "?X]")
     var p530B
-    tyMO[Vq_NagPm(p530B, none, p530B, oHUOvWVB, DZBaZ24q, "P") == Qshv("Goa", p530B, 46, none, p530B, 18)] =  not tyMO[ not Qshv(40, -DZBaZ24q, none, none, DZBaZ24q, ""-7#")]
+    tyMO[Vq_NagPm(p530B, none, p530B, oHUOvWVB, DZBaZ24q, "P") == Qshv("Goa", p530B, 46, none, p530B, 18)] =  not tyMO[ not Qshv(40, -DZBaZ24q, none, none, DZBaZ24q, "-7#")]
   end
 end
 

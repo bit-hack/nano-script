@@ -3,7 +3,7 @@
 var MUl0sL[60]
 
 function UVq(znZ62MF, g87c1xS, _gsd5X, sel)
-  if ( not -MUl0sL[UVq("xMCl"3R", "msK:G", "I", 125)])
+  if ( not -MUl0sL[UVq("xMCl3R", "msK:G", "I", 125)])
     if ((UVq(1, none, 42, "^7x@K")))
     end
   end

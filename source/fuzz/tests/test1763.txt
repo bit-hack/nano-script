@@ -8,7 +8,7 @@ function sSN2(klor, Hu)
     var TFC9QjVZ
   end
   while ((42 <= ""))
-    sSN2("=h5da"", sSN2(none, -57))
+    sSN2("=h5da", sSN2(none, -57))
   end
   sSN2(sSN2("", none), sSN2(26, 47))
   var pC9[115]

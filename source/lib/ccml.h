@@ -102,6 +102,10 @@ struct function_t {
   ccml_syscall_t sys_;
   uint32_t num_args_;
 
+  bool is_syscall() const {
+    return sys_ != nullptr;
+  }
+
   function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args)
     : name_(name), pos_(-1), sys_(sys), num_args_(num_args) {}
 

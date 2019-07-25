@@ -15,7 +15,7 @@ function IsfnjX(cJGJWmqR, E3tXMba, cQ)
 end
 
 function fhDG(JRDGfmHn, Gge, Z25, Vwi, L41D, eB3YO, ec)
-  while (fhDG("vh$;*un", "", 121, "]"A", 96, "ZLU+[gY", -"qw%") * -fhDG(-76, "zf18B", -"7J<-]DF", "`wXV=M", none, -29, none) == -none == "%vt%GFL")
+  while (fhDG("vh$;*un", "", 121, "]A", 96, "ZLU+[gY", -"qw%") * -fhDG(-76, "zf18B", -"7J<-]DF", "`wXV=M", none, -29, none) == -none == "%vt%GFL")
   end
   var QeqIFMKW
   fhDG("$o]", "3[:4>", ".", IsfnjX(QeqIFMKW, "ovCC", none), 100, IsfnjX(-QeqIFMKW, none, QeqIFMKW), IsfnjX(none, none, none))

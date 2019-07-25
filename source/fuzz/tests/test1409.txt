@@ -9,7 +9,7 @@ var tS[93]
 var MZsPrO2
 
 function RoaiL(p2O8, juv, L9G, BT)
-  if (RoaiL(-""'Jv", -gP5G6, RoaiL(gP5G6, none, MZsPrO2, MZsPrO2), MZsPrO2))
+  if (RoaiL(-"'Jv", -gP5G6, RoaiL(gP5G6, none, MZsPrO2, MZsPrO2), MZsPrO2))
     var ymuApQy[31]
     if (MZsPrO2)
       RoaiL(11, -RoaiL("[k9=[B", "7di6<HR", 110, MZsPrO2), MZsPrO2, RoaiL(MZsPrO2, none, -gP5G6, "nLR#];"))
@@ -71,7 +71,7 @@ function RoaiL(p2O8, juv, L9G, BT)
   if (GU81vR[44 >= RoaiL(gP5G6, -12, -55, gP5G6)])
   end
   return  not none == MZsPrO2 >= MZsPrO2
-  if (RoaiL(none, MZsPrO2, -gP5G6, 23) < "rw6Nzf"")
+  if (RoaiL(none, MZsPrO2, -gP5G6, 23) < "rw6Nzf")
     if ( not RoaiL(-MZsPrO2, -MZsPrO2, 69, 96) and RoaiL(MZsPrO2, gP5G6, 49, MZsPrO2) / (none))
       gP5G6 +=  not MZsPrO2
       var J7fe98 = (RoaiL(MZsPrO2, none, gP5G6, "FG? "))

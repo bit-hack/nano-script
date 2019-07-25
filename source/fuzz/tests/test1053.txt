@@ -20,7 +20,7 @@ function wuCcLin(TB5pReIB, a9hGjE, kBOLP7S, YN, JW845IeS)
         af0H[UHjAgWV[none] * wuCcLin(mwRKDfrO, none, mwRKDfrO, -mVGND, DhSR) * -DhSR] = mVGND < buDW[wuCcLin(47, mwRKDfrO, none, mwRKDfrO, mVGND)]
       end
       mwRKDfrO = DhSR or wuCcLin(none, none, none, mwRKDfrO, mwRKDfrO) <= ("")
-      wuCcLin(none, wuCcLin(mwRKDfrO, mwRKDfrO, mwRKDfrO, "qu]uI", -"J"1"), wuCcLin(none, none, -34, none, mVGND), "", mVGND)
+      wuCcLin(none, wuCcLin(mwRKDfrO, mwRKDfrO, mwRKDfrO, "qu]uI", -"J1"), wuCcLin(none, none, -34, none, mVGND), "", mVGND)
     end
     wuCcLin("k$yt5rE", mVGND, -none, none, wuCcLin("", DhSR, DhSR, -none, 98))
     mVGND += wuCcLin(122, none, mVGND, none, DhSR) * (none)
@@ -34,7 +34,7 @@ end
 
 function Eg(ZQUndZ, EmToJWv0, Xf0f, ac_drp7l)
   var Cs6yrB[33]
-  if (wuCcLin(Eg(none, DhSR, " "}kz", DhSR), none, DhSR, none, Eg(DhSR, none, "B", DhSR)))
+  if (wuCcLin(Eg(none, DhSR, " }kz", DhSR), none, DhSR, none, Eg(DhSR, none, "B", DhSR)))
     var vAp
     EmToJWv0 +=  not -104
     while ( not  not Eg(vAp, Eg(-DhSR, "B&<", DhSR, "ST"), DhSR, none))

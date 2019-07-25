@@ -12,7 +12,7 @@ function vskz(IvQN, dy_, QJ25u)
       vskz("w", "", 67)
     end
     return vskz(-77, none, none) - none / -46
-    while ( not vskz("9!", none, "2"_") / 123 - "VSj")
+    while ( not vskz("9!", none, "2_") / 123 - "VSj")
       var gx1YaQV[68]
       return  not  not RjXrX[vskz("{wTxJ]", none, 28)]
     end
@@ -28,7 +28,7 @@ end
 var DnOxS5[60]
 
 function YdW(OVYI8, eQdL, Qmu, sLLLXX, Gai1)
-  if (vskz(none, 24, 88) > -vskz(7, none, ""(/p6") <=  not  not YdW(47, 20, "", "d", "Leyp") <= YdW(-"", none, none, none, ""))
+  if (vskz(none, 24, 88) > -vskz(7, none, "(/p6") <=  not  not YdW(47, 20, "", "d", "Leyp") <= YdW(-"", none, none, none, ""))
     while (none < none + YdW(none, none, "\4ktnU", none, 86))
       var qql[22]
       return qql[DnOxS5[YdW(none, ">%T/|m!", "Bm@]=C;", -108, none)]]

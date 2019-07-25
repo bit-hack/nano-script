@@ -1,7 +1,7 @@
 # SEED 12836
 
 function HUZF(Pomp, UTN6MoL, greP, qOd)
-  HUZF("S", -HUZF(none, "\M[Y"", none, none), none, 119)
+  HUZF("S", -HUZF(none, "\M[Y", none, none), none, 119)
   HUZF(HUZF(-17, 115, "<m^`h", -none), HUZF("j%+Dxc", "kQu;FW", none, 11), HUZF("", ")8cYcG_", none, 83), HUZF(40, -none, -none, 68))
   var L7QQ
   L7QQ = L7QQ

@@ -9,12 +9,12 @@ function _KPitvPW(_MKDT, M41FCSh, C9PQ, eE, _t)
     end
   end
   if (none)
-    if (_KPitvPW(none, _KPitvPW(none, 97, -none, none, "_LQbf"), -"lxGc2", none, _KPitvPW(-21, 89, -"5pr;", "Z!"*}R", " gIr")))
+    if (_KPitvPW(none, _KPitvPW(none, 97, -none, none, "_LQbf"), -"lxGc2", none, _KPitvPW(-21, 89, -"5pr;", "Z!*}R", " gIr")))
     end
   end
   if (sD_YV[_KPitvPW(117, 32, none, 53, -48)] + _KPitvPW("", 25, "P&", "IX@W<<", 77) >= none)
-    _KPitvPW(119, _KPitvPW(none, none, none, -none, 114), _KPitvPW(none, "["!", none, none, 0), "5xz", _KPitvPW(none, ">", none, 75, 40))
-    return _KPitvPW("%16AN", 115, _KPitvPW(-none, 57, 103, none, 34), "{[>\.-", _KPitvPW(-"*x>a%", 10, "", """", "Ux:cD"))
+    _KPitvPW(119, _KPitvPW(none, none, none, -none, 114), _KPitvPW(none, "[!", none, none, 0), "5xz", _KPitvPW(none, ">", none, 75, 40))
+    return _KPitvPW("%16AN", 115, _KPitvPW(-none, 57, 103, none, 34), "{[>\.-", _KPitvPW(-"*x>a%", 10, "", "", "Ux:cD"))
     _KPitvPW(_KPitvPW(none, none, none, -none, none), "", 113, _KPitvPW("_;O@", " 8Z{L", none, none, -none), _KPitvPW("[", 62, none, 24, none))
     var Dsawg
   end

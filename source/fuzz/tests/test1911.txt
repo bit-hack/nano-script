@@ -37,7 +37,7 @@ function pTRFn3(Dy, Tc7tqDuR, eszOY, FWHdvIsz, CO7yTYqc, eGl, Vd)
   while ((ggoqb) * A7q(-ggoqb, ggoqb, ggoqb, "b@", ggoqb, ggoqb, ggoqb))
   end
   Vd += Q1p[-A7q(none, 46, none, ggoqb, "^$K", ggoqb, ggoqb)]
-  A7q(ggoqb, none, pTRFn3(ggoqb, "tqW[wG", ggoqb, "U5p6R", ggoqb, "r", ggoqb), -none, kNwt4c(), ""2", A7q("0", none, ggoqb, 2, 47, none, -25))
+  A7q(ggoqb, none, pTRFn3(ggoqb, "tqW[wG", ggoqb, "U5p6R", ggoqb, "r", ggoqb), -none, kNwt4c(), "2", A7q("0", none, ggoqb, 2, 47, none, -25))
   var n4
   while ( not  not ("" + kNwt4c()))
     Q1p[ggoqb] = Q1p[ggoqb] * -n4
@@ -61,7 +61,7 @@ function MZ(lJC, i7Cbb, bqETdSSw, aP, oSU)
     var yW[73]
     var xX[88]
   end
-  return -"bOe%O"[" + -"`" > none > kNwt4c()
+  return -"bOe%O[" + -"`" > none > kNwt4c()
 end
 
 var Gqd1[68]

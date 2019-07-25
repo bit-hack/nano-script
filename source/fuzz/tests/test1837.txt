@@ -7,9 +7,9 @@ function yDdzxVf(MPD, EKWw, P7iE, POOr0g, hTpe9_s6, _vZI7hi, ixbWkSGl)
   yDdzxVf(59, 19, none, hCCW, hCCW, yDdzxVf(none, -41, 118, "", "2I$uAC-", hCCW, 88), hCCW)
   return hCCW +  not none < hCCW
   while (yDdzxVf(hCCW, hCCW, hCCW, none, "Ds#-VO", -hCCW, hCCW) > hCCW - "tdLVi1c")
-    yDdzxVf("]ZZ}2", ""%N1wc", yDdzxVf(hCCW, hCCW, none, none, hCCW, hCCW, ""), hCCW, hCCW, -yDdzxVf(hCCW, hCCW, hCCW, none, ".882%#9", "6k;2E|", "%]|"), hCCW)
+    yDdzxVf("]ZZ}2", "%N1wc", yDdzxVf(hCCW, hCCW, none, none, hCCW, hCCW, ""), hCCW, hCCW, -yDdzxVf(hCCW, hCCW, hCCW, none, ".882%#9", "6k;2E|", "%]|"), hCCW)
     if (94)
-      if (hCCW <= yDdzxVf(none, hCCW, -109, hCCW, hCCW, hCCW, hCCW) or none == yDdzxVf("&|OK"", hCCW, hCCW, hCCW, -hCCW, hCCW, 85))
+      if (hCCW <= yDdzxVf(none, hCCW, -109, hCCW, hCCW, hCCW, hCCW) or none == yDdzxVf("&|OK", hCCW, hCCW, hCCW, -hCCW, hCCW, 85))
         return hCCW > yDdzxVf("_;6", hCCW, hCCW, -hCCW, hCCW, none, hCCW)
         _vZI7hi +=  not hCCW < yDdzxVf(-none, hCCW, hCCW, 106, hCCW, hCCW, hCCW) and yDdzxVf(65, "", "(*", hCCW, hCCW, "`FK[", hCCW)
       end

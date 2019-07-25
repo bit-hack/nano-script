@@ -11,7 +11,7 @@ end
 
 function _wid18Jt()
   return (_wid18Jt()) < "lr" or "Rr"
-  return -_wid18Jt() == "d_Rk"lb" -  not  not _wid18Jt()
+  return -_wid18Jt() == "d_Rklb" -  not  not _wid18Jt()
   if (BAaFvkk(-"[K9", 100, 25, "4NrsDA6", "49A$", "") - "=7*_zxu" or _wid18Jt() < BAaFvkk(122, 27, "=qHb", ")v}&", "M|ee6]I", -none))
     var Gqe86a = BAaFvkk("]BV", -_wid18Jt(), BAaFvkk(none, "\Lh{", 114, none, "-/D}", none), _wid18Jt(), _wid18Jt(), _wid18Jt())
     if ( not none)

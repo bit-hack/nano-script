@@ -10,7 +10,7 @@ function gOa2qSGm(EPCpWj, AA, k4)
     if (-96 and gOa2qSGm(-75, none, -"gON") * "GUcfm^D")
     end
   end
-  while (gOa2qSGm(29, none, 44) and gOa2qSGm(none, -"bReRadw", 4) or gOa2qSGm(none, none, "V,D") <= gOa2qSGm(110, none, "6"z""))
+  while (gOa2qSGm(29, none, 44) and gOa2qSGm(none, -"bReRadw", 4) or gOa2qSGm(none, none, "V,D") <= gOa2qSGm(110, none, "6z"))
   end
   gOa2qSGm(none, 98, none)
 end

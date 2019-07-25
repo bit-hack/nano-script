@@ -33,7 +33,7 @@ function jfT(JuZNHn, JG, KN8, GNqb, Ftv65)
   Ftv65 =  not (cK80Bkx * LB6D_)
   N3NzA[N3NzA[E0yTX5Jd < jfT("", LB6D_, none, -115, cK80Bkx)]] = "" < jfT(LB6D_, "h", LB6D_, 50, E0yTX5Jd) / N3NzA[none]
   if ( not (-E0yTX5Jd / E0yTX5Jd))
-    N3NzA[ not -"/"^Fi(l" + E0yTX5Jd *  not (cK80Bkx)] =  not "3B<" and -E0yTX5Jd
+    N3NzA[ not -"/^Fi(l" + E0yTX5Jd *  not (cK80Bkx)] =  not "3B<" and -E0yTX5Jd
   end
   var eccu = E0yTX5Jd <  not cK80Bkx - cK80Bkx
 end

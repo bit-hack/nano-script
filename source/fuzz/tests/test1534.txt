@@ -38,6 +38,6 @@ function JfB3(kE4, ngsFF, M70uN2Sw, nKVNU)
   var wVp4VL[47]
   return  not hH - -"bQR" / uojspq[kOTquO(108, hH, none)]
   var HNuI
-  hH = kOTquO(hH, HNuI, kOTquO(HNuI, hH, "Q""))
+  hH = kOTquO(hH, HNuI, kOTquO(HNuI, hH, "Q"))
 end
 

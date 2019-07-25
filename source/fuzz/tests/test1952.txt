@@ -4,7 +4,7 @@ var _S0HXfL[123]
 
 function sR8zFx(xGcsAU2, QXKvZg)
   return (74)
-  while (_S0HXfL[sR8zFx("", none)] >= "+5gQ4KU" or ""r#3X{4")
+  while (_S0HXfL[sR8zFx("", none)] >= "+5gQ4KU" or "r#3X{4")
     var Upi3GO
     if (Upi3GO < -88)
       sR8zFx(Upi3GO, Upi3GO)

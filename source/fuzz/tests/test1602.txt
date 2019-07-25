@@ -22,10 +22,10 @@ function t1cRCh(CP, YS, F8Bv3, BNsc, PI, wT3)
   return "/"
   CP = KNu0UC
   var gUeFX[69]
-  wT3 += "mMa"b`" or none * gUeFX[IfHlO78()]
+  wT3 += "mMab`" or none * gUeFX[IfHlO78()]
   gUeFX[ not (KNu0UC) or  not KNu0UC <= KNu0UC] =  not gUeFX[IfHlO78()] >= 112 + t1cRCh(KNu0UC, none, KNu0UC, KNu0UC, KNu0UC, 87)
   var pPwO0A[13]
-  t1cRCh(IfHlO78(), KNu0UC, IfHlO78(), -KNu0UC, KNu0UC, t1cRCh(KNu0UC, "=*N.", "4H"", 101, KNu0UC, KNu0UC))
+  t1cRCh(IfHlO78(), KNu0UC, IfHlO78(), -KNu0UC, KNu0UC, t1cRCh(KNu0UC, "=*N.", "4H", 101, KNu0UC, KNu0UC))
   IfHlO78()
 end
 

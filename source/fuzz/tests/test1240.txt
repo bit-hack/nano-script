@@ -1,9 +1,9 @@
 # SEED 12561
 
 function CgLbc(F1gwmt, aI, JT, pprhZupt, PlK7, h4C)
-  while (CgLbc(82, "j_;", "|", "Z#04ji", "63J'x", "K"/^@-"))
+  while (CgLbc(82, "j_;", "|", "Z#04ji", "63J'x", "K/^@-"))
   end
-  while (CgLbc("1", none, "^", -none, none, 10) <= "2y"" or "#FU2H" + none)
+  while (CgLbc("1", none, "^", -none, none, 10) <= "2y" or "#FU2H" + none)
     CgLbc(CgLbc(105, "O^", none, none, "?]5", none), CgLbc("6)p_|,>", none, none, "+uY#B", none, 23), 19, none, none, CgLbc(none, "c3", "", 85, 95, 70))
     if ( not  not "n")
     end

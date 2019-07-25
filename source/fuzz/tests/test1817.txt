@@ -69,7 +69,7 @@ function P1ayCGR(KLn7HU4)
                   end
                 end
               end
-              var gF_G = P1ayCGR("?"TN8") >  not rcgURU7 or 51
+              var gF_G = P1ayCGR("?TN8") >  not rcgURU7 or 51
               return (P1ayCGR(25))
             end
             var Lv[126]
@@ -130,7 +130,7 @@ function w7dD4(zleiuuU, SU, _Wq, YMDon, SAuz, MfO, jFFfT8)
       while ( not P1ayCGR(P1ayCGR(35)))
         var wK = none <= rcgURU7 > -w7dD4(Iz, "", "mcmSO?N", -Iz, rcgURU7, Iz, Iz) >= Iz
       end
-      sJdE8Yml["""] = DW0t97C >= none * w7dD4(rcgURU7, -92, rcgURU7, rcgURU7, 50, -DW0t97C, 62) < P1ayCGR(none)
+      sJdE8Yml[""] = DW0t97C >= none * w7dD4(rcgURU7, -92, rcgURU7, rcgURU7, 50, -DW0t97C, 62) < P1ayCGR(none)
       var Tif4hN[127]
       var V7ab1E[3]
     end

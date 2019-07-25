@@ -1,7 +1,7 @@
 # SEED 12845
 
 function kxR(dRFwMKs, jNJZh7IZ, xfl)
-  if (kxR("f^v:"A", none, "eX/") == kxR(34, "d6 0A", "]U") >= (kxR("W?zoZ;{", "", "2z")))
+  if (kxR("f^v:A", none, "eX/") == kxR(34, "d6 0A", "]U") >= (kxR("W?zoZ;{", "", "2z")))
     kxR(kxR(none, "", 64), kxR("N|:RE", 125, "T"), none)
     var JQP = kxR(-121, none, 90) + 94 / (kxR(-106, none, "J3"))
   end

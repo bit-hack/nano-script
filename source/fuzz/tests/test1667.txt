@@ -62,9 +62,9 @@ function NCwD(TJOI, QuCcF, Ny4rqAJ, quDzwvJ, R0)
                 jRi7yjEz[ not  not jRi7yjEz[-jRi7yjEz[NCwD("", none, "kOg!", none, none)]]] = m3C > 89 * m3C
                 m3C = NFEaT - NCwD(none, none, NFEaT, gqg, NFEaT)
               end
-              NFEaT += 18 <= 38 or NCwD(-m3C, none, m3C, "St"a:]", -m3C)
+              NFEaT += 18 <= 38 or NCwD(-m3C, none, m3C, "Sta:]", -m3C)
             end
-            b1Qqt[AAyuO > NCwD(m3C, ""bb.B@d", none, AAyuO, 76)] = b1Qqt[AAyuO] and  not  not (none)
+            b1Qqt[AAyuO > NCwD(m3C, "bb.B@d", none, AAyuO, 76)] = b1Qqt[AAyuO] and  not  not (none)
             R0 = gqg
             var jVyUIn[71]
           end

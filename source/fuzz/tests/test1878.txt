@@ -6,7 +6,7 @@ var rBa = 41
 
 function Jillefk(Ul, HV56, ZNKe, vM8, lPl, Nc7PACD, _jgJ)
   var zulJYgf = none or Jillefk(35, none, P_nRpD, P_nRpD, 86, none, P_nRpD) <= rBa
-  while ("["*D7N")
+  while ("[*D7N")
     if (P_nRpD)
     end
     if (-(("-XR")))

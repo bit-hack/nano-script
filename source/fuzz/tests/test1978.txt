@@ -34,7 +34,7 @@ function sVr7kBC(s6RxX7, Fp2, MGgc, dj)
           JtK +=  not  not sVr7kBC(wpq094, none, 43, none) and "; CAY+"
           sVr7kBC(4, JtK, sVr7kBC(48, none, wpq094, wpq094), 126)
         end
-        if ((sVr7kBC(wpq094, none, wpq094, 90) + sVr7kBC("<{"O", none, 124, wpq094)))
+        if ((sVr7kBC(wpq094, none, wpq094, 90) + sVr7kBC("<{O", none, 124, wpq094)))
           if (22)
             var WKio3m6
             while ((JtK > JtK))
@@ -42,7 +42,7 @@ function sVr7kBC(s6RxX7, Fp2, MGgc, dj)
           end
         end
       end
-      s6RxX7 += fzl[wpq094] or wpq094 == sVr7kBC(wpq094, wpq094, "k*N"k", none)
+      s6RxX7 += fzl[wpq094] or wpq094 == sVr7kBC(wpq094, wpq094, "k*Nk", none)
       return -fzl[fzl[wpq094]]
       sVr7kBC(73, none, -78, JtK)
     end
@@ -89,6 +89,6 @@ function yFygxd(iDB_qM, snFdQ, d9lZ6a, MMHifP)
     d9lZ6a = none or yFygxd(99, "HE", "#at", 74) <= -yFygxd(RhCmkJ1I, BIG_Gnx, 84, "P")
     d9lZ6a = wpq094
   end
-  var Kh8WNBqe = -(none < yFygxd(-none, RhCmkJ1I, 57, ""hfB"))
+  var Kh8WNBqe = -(none < yFygxd(-none, RhCmkJ1I, 57, "hfB"))
 end
 

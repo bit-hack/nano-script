@@ -52,7 +52,7 @@ function Z7DL()
         return SrPRqb[-qcoNQ() == ""]
       end
       var qqbuZ[86]
-      return pJHU(113, 102, none, none) >= "bE>"" or Fd
+      return pJHU(113, 102, none, none) >= "bE>" or Fd
     end
     Z7DL()
     PzXV[PzXV[Fd or 63]] = -PzXV[x794KKi / Z7DL()]

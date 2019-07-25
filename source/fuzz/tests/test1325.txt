@@ -7,11 +7,11 @@ function mgg(U7OhSd, CUAI, yhvPoAa, ULX, Xvss, EVMex)
   if ((-"`%Tn") <=  not 96)
     var FB[105]
     if ((-mgg("+|.", 90, -none, 95, 24, "eG2hAgv") <= none))
-      eFXhTs8Y[ not  not 118 + -mgg(122, 25, 107, 82, none, -none) and mgg(none, 84, none, "jB", none, 112)] = -mgg(mgg("IGzMV", "b", 79, "v[6Z0T", "E", "Ojlh"), mgg(-47, none, "g`", 54, 126, -none), mgg(none, -23, none, 9, none, "92%"), 39, mgg(-"QgFJ", 24, "E!m_", "}tA*S_", "{S B", ".Wh6z"), mgg("<+0x", "c>5.pA", none, "", "E"p91", -79))
+      eFXhTs8Y[ not  not 118 + -mgg(122, 25, 107, 82, none, -none) and mgg(none, 84, none, "jB", none, 112)] = -mgg(mgg("IGzMV", "b", 79, "v[6Z0T", "E", "Ojlh"), mgg(-47, none, "g`", 54, 126, -none), mgg(none, -23, none, 9, none, "92%"), 39, mgg(-"QgFJ", 24, "E!m_", "}tA*S_", "{S B", ".Wh6z"), mgg("<+0x", "c>5.pA", none, "", "Ep91", -79))
       mgg(mgg(60, 23, none, none, 101, "'O"), mgg("m", none, -87, 67, "XFb u<", 80), 91, 108, none, 99)
     end
   end
-  eFXhTs8Y[42] = mgg(mgg("V(k'a,^", none, none, "U+:06", -none, 85), mgg(none, none, 30, none, none, 98), mgg(none, none, "Gp", none, 6, none), "w_0\"(M", 59, " ;giW5")
+  eFXhTs8Y[42] = mgg(mgg("V(k'a,^", none, none, "U+:06", -none, 85), mgg(none, none, 30, none, none, 98), mgg(none, none, "Gp", none, 6, none), "w_0\(M", 59, " ;giW5")
 end
 
 var syCTVDqg

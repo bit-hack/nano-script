@@ -37,7 +37,7 @@ function AkILgTlm(dAUWP)
     AkILgTlm("51h7")
   end
   while (AkILgTlm(AkILgTlm(none)))
-    while ("xc8*" or ":w8"k" / (""))
+    while ("xc8*" or ":w8k" / (""))
     end
     AkILgTlm("vH7b")
   end

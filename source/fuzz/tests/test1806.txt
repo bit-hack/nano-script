@@ -18,8 +18,8 @@ function mto_(xZ, Rjm1leD, qPAZ3X)
     var eG10TV =  not none
     if ("zVw{!*K" >= Gvc <= Gvc > Gvc)
       KUt_yPp[KUt_yPp[ not none or 53]] = Gvc < KUt_yPp[mto_("(@QZyE", eG10TV, none)]
-      while (mto_("Fw"B<", -eG10TV, Gvc) == mto_(2, Gvc, -none) + mto_(eG10TV, Gvc, 56))
-        var NXVga = (""A05" and -56)
+      while (mto_("FwB<", -eG10TV, Gvc) == mto_(2, Gvc, -none) + mto_(eG10TV, Gvc, 56))
+        var NXVga = ("A05" and -56)
         var DXUh = mto_(-none, Gvc, NXVga) > 55
         while (mto_("", mto_(NXVga, 126, "Cc&"), "m"))
           return KUt_yPp[mto_(DXUh, DXUh, eG10TV)]

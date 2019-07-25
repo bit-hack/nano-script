@@ -6,7 +6,7 @@ var rJSuex8 = "Y."
 
 var cMas = none
 
-var fB = """
+var fB = ""
 
 var VVGLgZi[123]
 

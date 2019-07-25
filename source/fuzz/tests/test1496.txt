@@ -9,7 +9,7 @@ function gxET0T(iLBA)
     gxET0T(gxET0T(69))
     gxET0T(gxET0T(2))
   end
-  return gxET0T(gxET0T("(yoEL""))
+  return gxET0T(gxET0T("(yoEL"))
   gxET0T(gxET0T(73))
   var FYzzl49
   return _r[gxET0T(FYzzl49) == 84]

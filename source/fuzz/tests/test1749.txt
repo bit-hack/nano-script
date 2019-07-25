@@ -75,7 +75,7 @@ function QiXDAW(NoLX, _nV, su)
   end
   var XyQQ6g
   var cxw8VkFC[114]
-  var SZykr = 42 <= "" - "=h5da"" or FcR8h2(W2VYIwx, XyQQ6g, -57, W2VYIwx)
+  var SZykr = 42 <= "" - "=h5da" or FcR8h2(W2VYIwx, XyQQ6g, -57, W2VYIwx)
   gc("", W2VYIwx, none, gc(XyQQ6g, none, XyQQ6g, W2VYIwx))
   if ((QiXDAW(-XyQQ6g, 17, none) * W2VYIwx))
   end

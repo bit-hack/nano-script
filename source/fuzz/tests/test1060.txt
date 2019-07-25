@@ -12,7 +12,7 @@ end
 
 function rBMAOkd(yH, aveLnw, F6Y87C5, vt)
   if ((-none or P7eag2(none, "Yj+", -none, none, "_!dG", "H!", -10)))
-    while (-"i](V"hx" == 35 and P7eag2("!", ":/", -none, none, none, 27, 66))
+    while (-"i](Vhx" == 35 and P7eag2("!", ":/", -none, none, none, 27, 66))
       P7eag2(rBMAOkd(none, 78, 95, -1), rBMAOkd(46, 71, none, none), 49, P7eag2("=C", -32, none, none, none, 66, 61), 66, 76, -rBMAOkd("", 100, 31, 18))
       if (-90 == none / 47)
       end
@@ -24,7 +24,7 @@ function rBMAOkd(yH, aveLnw, F6Y87C5, vt)
   while (33 - none or "H{" / rBMAOkd("CF", none, none, "m98"))
     if (-93)
     end
-    rBMAOkd(118, P7eag2("O{Oa", -none, "", 100, "m"[i", "", "*dMy"), rBMAOkd(none, none, "gVz/#", 25), "Iv('")
+    rBMAOkd(118, P7eag2("O{Oa", -none, "", 100, "m[i", "", "*dMy"), rBMAOkd(none, none, "gVz/#", 25), "Iv('")
   end
   return "\?"
   P7eag2(none, "_0", rBMAOkd(-78, none, "", none), none, none, "F", 50)

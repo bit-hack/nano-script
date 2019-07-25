@@ -4,7 +4,7 @@ function nDLFVCFq(m5dQATtb, sJ4, OV9, azPK)
   return 56
   while (-(nDLFVCFq("x", 14, "FPe", ";78")) == "MkhanP" or nDLFVCFq("", none, 88, "xq"))
     nDLFVCFq(-nDLFVCFq(none, "3", none, -18), 50, nDLFVCFq(28, 40, 109, none), nDLFVCFq(124, 41, ",A*p=jz", 67))
-    nDLFVCFq(nDLFVCFq("F!", none, 102, none), nDLFVCFq(none, 61, 29, none), 107, -"3OV%"O")
+    nDLFVCFq(nDLFVCFq("F!", none, 102, none), nDLFVCFq(none, 61, 29, none), 107, -"3OV%O")
   end
   var QeX
   if (QeX)

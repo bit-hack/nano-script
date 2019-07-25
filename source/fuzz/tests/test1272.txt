@@ -10,7 +10,7 @@ function MzhwSgE(Skc, sE8A2v)
       var WBn
       var nuJug[6]
     end
-    MzhwSgE(" gl", "X4"]&'U")
+    MzhwSgE(" gl", "X4]&'U")
   end
   var p0AI[84]
   EQo =  not  not MzhwSgE(none, EQo)

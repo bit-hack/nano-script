@@ -6,7 +6,7 @@ function kP(rcU, Ztrv, ogCrjm0s, Wt2iqT, ee)
   var nr = (sjVpe) / 48
   while (kP(-kP(49, 118, 13, -27, sjVpe), "+%ZD/", sjVpe, kP(sjVpe, sjVpe, 31, sjVpe, sjVpe), nr))
     var uT[47]
-    uT[kP(kP(nr, sjVpe, 17, sjVpe, none), -sjVpe, "s-"", kP("H", 11, sjVpe, nr, 24), 117)] = 64 ==  not -kP(sjVpe, 18, 40, -100, nr) * nr
+    uT[kP(kP(nr, sjVpe, 17, sjVpe, none), -sjVpe, "s-", kP("H", 11, sjVpe, nr, 24), 117)] = 64 ==  not -kP(sjVpe, 18, 40, -100, nr) * nr
     var kyR = none
     while ((kP(-nr, kyR, -"]$>", "ch", none)))
       uT[nr or kyR >= -kyR * kP(nr, none, kyR, none, -"/[gN")] = uT[none]
@@ -17,7 +17,7 @@ function kP(rcU, Ztrv, ogCrjm0s, Wt2iqT, ee)
     end
     var sqt[2]
   end
-  sjVpe =  not ""fr"
+  sjVpe =  not "fr"
   while ( not kP(nr, sjVpe, "l9]*", none, "s'") > nr > kP("H+", nr, sjVpe, ">0vV.C", sjVpe) + kP(none, -nr, nr, nr, sjVpe))
   end
   ee = (kP("pG^XD1", sjVpe, sjVpe, nr, 32) or nr)

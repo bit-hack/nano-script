@@ -4,7 +4,7 @@ function KMAnWDpx(oSqo, lK, WP, pH1Qx6)
   if (( not (KMAnWDpx("#fhi", 79, "imhr=E]", none))))
     if ( not none - none < 67)
     end
-    KMAnWDpx(KMAnWDpx(-97, 34, 26, ""|"), -KMAnWDpx(none, 94, 92, ""), KMAnWDpx(80, none, "FBDvN4}", none), KMAnWDpx("4uOO}", none, none, ""))
+    KMAnWDpx(KMAnWDpx(-97, 34, 26, "|"), -KMAnWDpx(none, 94, 92, ""), KMAnWDpx(80, none, "FBDvN4}", none), KMAnWDpx("4uOO}", none, none, ""))
     var pO = KMAnWDpx(KMAnWDpx("2aI;>", none, 2, 26), -KMAnWDpx(80, none, none, 99), KMAnWDpx("}zq)HDO", 74, -104, none), KMAnWDpx("\7$`;y=", none, "F;k#", none))
   end
   return 104
@@ -73,7 +73,7 @@ function pQch(QU, rVZq, uNu5Kuh, u_y6o3G, b92H6T3, I2O95p7, oL8_7cdb)
       var hIs6jWe[20]
       vMB3[ not Vo - -KMAnWDpx(Dd, -none, none, none) == vMB3[Vo]] = vMB3[-(S0bs8E2o(20, 106, 40, Dd, "#", Dd, 82))]
       return  not pQch(pQch(-none, none, qNQreLFk, none, none, "[W`Is{c", -58), 90, pQch("[I0?", qNQreLFk, 54, Dd, none, 125, none), "^R19]", Vo, KMAnWDpx(Vo, qNQreLFk, "d2r", 14), qNQreLFk)
-      S0bs8E2o(-qNQreLFk, none, ""7", KMAnWDpx(Vo, -Vo, -none, Vo), -qNQreLFk, KMAnWDpx(none, none, Dd, 66), qNQreLFk)
+      S0bs8E2o(-qNQreLFk, none, "7", KMAnWDpx(Vo, -Vo, -none, Vo), -qNQreLFk, KMAnWDpx(none, none, Dd, 66), qNQreLFk)
     end
     var J3
   end

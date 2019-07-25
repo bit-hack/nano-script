@@ -6,7 +6,7 @@ function up6I(V6, NtJ7l1N, WejK2c, fi, Wb)
   return -none
   var APV
   APV = ("^u") and (none)
-  if (none - up6I(G6, APV, "K=zHEp\", G6, "Bf1GKYg") or ";"MN`W")
+  if (none - up6I(G6, APV, "K=zHEp\", G6, "Bf1GKYg") or ";MN`W")
     G6 += up6I(-G6, APV, G6, up6I(G6, -none, "M&RC", -G6, none), up6I(G6, G6, G6, -13, APV))
     V6 = none and none > APV
   end
@@ -24,7 +24,7 @@ function H8sU(NTHh, jXq0, cKwMm6o, rW, rfyyYA)
   if (Z9O[-none] >= JTAo[G6])
   end
   up6I(up6I("^sR", none, LG, G6, 98), LG, LG, LG, 28)
-  JTAo[ not Z9O[LG] <= JTAo[93]] = "st@W" >  not "-f"" - G6
+  JTAo[ not Z9O[LG] <= JTAo[93]] = "st@W" >  not "-f" - G6
 end
 
 var hix

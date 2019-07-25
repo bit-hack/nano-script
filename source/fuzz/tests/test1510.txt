@@ -45,7 +45,7 @@ function IbQDvvn(P8PJim0, rbs0V, Bna50, tjL1oP, H2eFiB6T)
   sU[(IbQDvvn(K6q5, "\yK#]3?", K6q5, K6q5, 123)) or K6q5] =  not  not sU[5]
   if (none)
     sU[sU[K6q5] or pOE4_(K6q5, K6q5, 70, K6q5) >= K6q5] = K6q5 + K6q5 + rbO4sQC(-K6q5, K6q5, -K6q5, K6q5)
-    sU[K6q5] =  not IbQDvvn(K6q5, none, K6q5, none, "6") >= ""*OAJj" <= -K6q5
+    sU[K6q5] =  not IbQDvvn(K6q5, none, K6q5, none, "6") >= "*OAJj" <= -K6q5
     sU[(rbO4sQC(none, K6q5, "3a", K6q5)) == 75 == IbQDvvn(-K6q5, K6q5, K6q5, K6q5, K6q5)] = none
     if (pOE4_(K6q5, K6q5, none, none) > 85 or pOE4_(none, K6q5, none, K6q5) + IbQDvvn(K6q5, -"iJ4:K", none, -K6q5, K6q5))
     end

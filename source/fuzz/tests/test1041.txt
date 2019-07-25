@@ -8,7 +8,7 @@ function A4o(BzZXlC, Cix4p)
       var ES_Y[61]
       while ((A4o(TtvwEpry, -"") <= -")%sQ]z5"))
         TtvwEpry += A4o(-TtvwEpry, -TtvwEpry) - ES_Y[TtvwEpry]
-        TtvwEpry += ES_Y[A4o(35, TtvwEpry) - """]
+        TtvwEpry += ES_Y[A4o(35, TtvwEpry) - ""]
         var Gq6Vmn[97]
         return 35
       end

@@ -30,9 +30,9 @@ function QH()
         end
       end
       while ((GD(none, 99, 96, none, "=F")) > GD(none, 26, 66, -none, -38) >= 41)
-        while (GD(44, -76, none, none, 2) + GD("N"+M9", "C H)#lE", 13, 24, none) > none)
+        while (GD(44, -76, none, none, 2) + GD("N+M9", "C H)#lE", 13, 24, none) > none)
           if ( not  not QH() > QH() >= QH() + QH())
-            while (GD(none, 75, -none, none, 47) < GD(-none, none, none, "0"V;W", 80) / (none))
+            while (GD(none, 75, -none, none, 47) < GD(-none, none, none, "0V;W", 80) / (none))
               var zgELb[39]
               zgELb[none] = -none
               return -">)b6Vy"
@@ -66,7 +66,7 @@ var wv5l0[40]
 
 function Q3(DAD4Hy9, yjbT, HRoIP, TbF2YDyD)
   var n88AhDa[56]
-  return  not GD(none, none, "S"L1", none, 44) > -Q3("s", "- y-Y|", none, "kzW") <= GD("-L\", none, 3, "4J'", "FrN")
+  return  not GD(none, none, "SL1", none, 44) > -Q3("s", "- y-Y|", none, "kzW") <= GD("-L\", none, 3, "4J'", "FrN")
   while ("v`c?c")
     GD(QH(), GD(-none, 73, 93, -none, "SA02"), GD(none, "){", 12, "yLw MH", none), -QH(), Q3(89, none, "", "bQ+_P"))
     n88AhDa[11 and 36 <= none or GD(57, "(", "]!Axv!", none, none)] = (none >= QH())

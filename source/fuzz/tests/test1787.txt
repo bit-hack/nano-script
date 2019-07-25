@@ -10,7 +10,7 @@ function Fto(MbqFyF, Pne6Ok28, IOcjyq, j4q, JraE_6NV, c4)
   var hTS[62]
   tUW = Fto(tUW, none, 89, "I 9W_,P", none, tUW) or  not none / "K"
   while (Jr[tUW] <= 27 + "p")
-    return hTS[Fto(tUW, tUW, 69, tUW, tUW, "&"")]
+    return hTS[Fto(tUW, tUW, 69, tUW, tUW, "&")]
   end
   Fto(90, tUW, Fto(-tUW, tUW, tUW, 115, tUW, -46), Fto(none, 122, "]ox8E1U", -tUW, none, "]an+,"), tUW, tUW)
   while ( not Fto(tUW, "'", 38, -"w?v", none, tUW) and none)
@@ -32,7 +32,7 @@ end
 function M4bHoG(YpBEkE4, B0TImM1A, o5, UR47M, w8h, nKDsJS, wUyiM)
   o5 += Fto("g1)4;S", tUW, 10, tUW, 0, 42)
   var E9mpU =  not (Fto(tUW, tUW, tUW, tUW, none, 44) <= Fto(tUW, "E[6p4O", 31, 49, none, tUW))
-  YpBEkE4 += M4bHoG(tUW, 118, E9mpU, 107, none, 108, tUW) or -Fto(tUW, none, 109, "", tUW, tUW) + M4bHoG(tUW, E9mpU, -tUW, 71, 31, E9mpU, none) and "#M'H@"e"
+  YpBEkE4 += M4bHoG(tUW, 118, E9mpU, 107, none, 108, tUW) or -Fto(tUW, none, 109, "", tUW, tUW) + M4bHoG(tUW, E9mpU, -tUW, 71, 31, E9mpU, none) and "#M'H@e"
   tUW += (E9mpU) * M4bHoG(none, -"<s.H", none, -tUW, tUW, 47, -none)
   YpBEkE4 += tUW
   Jr[(77) >=  not M4bHoG(E9mpU, E9mpU, tUW, none, "", -E9mpU, E9mpU) - Fto(none, tUW, tUW, 75, tUW, E9mpU)] =  not E9mpU
@@ -69,7 +69,7 @@ function YsfHxk(SRJXjgfV, GMLWpJJW)
         var PN5c[50]
         if ((Fto(14, "gg1}rG5", "", D_8pYXT, D_8pYXT, 126) - none))
           var huqxGZ[73]
-          uxo4(YsfHxk(D_8pYXT, mGO), YsfHxk(tUW, ""?9:#d"), 55, eH6A1kh)
+          uxo4(YsfHxk(D_8pYXT, mGO), YsfHxk(tUW, "?9:#d"), 55, eH6A1kh)
           if (-M4bHoG(-none, eH6A1kh, uxo4(-26, D_8pYXT, "jo;QRi7", 4), 66, none, none, 30))
             PN5c[M4bHoG(tUW, D_8pYXT, "6)*ha", none, none, -mGO, uxo4(none, eH6A1kh, mGO, tUW))] = none < 52 >  not tUW
           end
@@ -78,7 +78,7 @@ function YsfHxk(SRJXjgfV, GMLWpJJW)
             GMLWpJJW = Fto(eH6A1kh, uxo4(tUW, D_8pYXT, tUW, 52), mGO, 63, M4bHoG(eH6A1kh, 58, none, none, mGO, mGO, eH6A1kh), M4bHoG(tUW, -eH6A1kh, D_8pYXT, none, mGO, "A>", eH6A1kh))
             SRJXjgfV = M4bHoG(-YsfHxk(tUW, "KJ7tj"), tUW, uxo4("X>J", D_8pYXT, eH6A1kh, "Yp39"), D_8pYXT, 77, tUW, D_8pYXT)
             return eH6A1kh
-            while (Fto(none, eH6A1kh, "ufb"z++", tUW, mGO, 94) < uxo4(eH6A1kh, D_8pYXT, tUW, eH6A1kh) <= none)
+            while (Fto(none, eH6A1kh, "ufbz++", tUW, mGO, 94) < uxo4(eH6A1kh, D_8pYXT, tUW, eH6A1kh) <= none)
               D_8pYXT += (none and M4bHoG(D_8pYXT, mGO, D_8pYXT, mGO, none, D_8pYXT, "Ga.N"))
               tUW += D_8pYXT
               var LjV_n[80]

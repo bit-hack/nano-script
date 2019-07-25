@@ -30,7 +30,7 @@ function LZVO0(af3RpB, IqQo, oqV, W7GVJYV1, ZFla8Zp, LnCoviWl, EIcZwhQ)
     LnCoviWl += RV1(-LZ)
   end
   return "$N" == RV1(LZ) + RV1(-LZ) and none
-  if (62 / r1IJd[LZVO0(none, -"X"1C", 59, none, LZ, 30, "Ah")])
+  if (62 / r1IJd[LZVO0(none, -"X1C", 59, none, LZ, 30, "Ah")])
     LnCoviWl += LZ
     LZVO0(LZ, LZVO0(-55, none, 8, "Yl+&[;}", "o=}58", none, LZ), RV1(LZ), LZVO0(LZ, LZ, "?CBi", LZ, LZ, 119, LZ), LZ, LZ, LZ)
     return 93
@@ -58,7 +58,7 @@ function LZVO0(af3RpB, IqQo, oqV, W7GVJYV1, ZFla8Zp, LnCoviWl, EIcZwhQ)
       var LF
       LZVO0(RV1(HCLGOmVD), LZ, -HCLGOmVD, 77, none, 88, LZVO0(LF, "y@:", 43, "\w{", LF, LuRn6G, LZ))
     end
-    while (RV1(LZ) or LZVO0(123, LZ, LuRn6G, LZ, "!B"", none, ".d@") or LZ)
+    while (RV1(LZ) or LZVO0(123, LZ, LuRn6G, LZ, "!B", none, ".d@") or LZ)
     end
   end
 end

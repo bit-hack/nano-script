@@ -9,7 +9,7 @@ function pD9L(IC3)
     pD9L(120)
     if ( not A6e == pD9L(-A6e) <  not "A?")
       while ((A6e) and A6e)
-        A6e += "0"9^"
+        A6e += "09^"
       end
       while (pD9L(64) < A6e or A6e)
       end
@@ -26,7 +26,7 @@ function pD9L(IC3)
         var aqYMxlx =  not  not -none >= ("")
         if (A6e >= none * 11)
           var xi2di[66]
-          xi2di[A6e <= xi2di[""bAX"]] = pD9L("`)%(h") + 116 - -none
+          xi2di[A6e <= xi2di["bAX"]] = pD9L("`)%(h") + 116 - -none
           var dOS[38]
         end
         var HbU[54]

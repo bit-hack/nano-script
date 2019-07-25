@@ -2,7 +2,7 @@
 
 function youv8()
   while (" ")
-    while ("3D"T" + -youv8() <= youv8())
+    while ("3DT" + -youv8() <= youv8())
       youv8()
       if (85 + (youv8()))
         var d6uDdutv[63]

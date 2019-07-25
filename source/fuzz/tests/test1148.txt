@@ -23,7 +23,7 @@ function ut7Z()
     return 101
   end
   if ("0hWr^S")
-    if ("[y(&"G" and -"7UI|B" * qFaYs(-"Zl+#P", 62, none, 93, 68))
+    if ("[y(&G" and -"7UI|B" * qFaYs(-"Zl+#P", 62, none, 93, 68))
       ut7Z()
       return  not "4Q"
       var Eu0 = 106 <= ut7Z() >= (none)

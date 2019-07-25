@@ -1,6 +1,6 @@
 # SEED 12983
 
-var gjdnu = "<5=.w""
+var gjdnu = "<5=.w"
 
 function cT(bpse, UOvA, UQS4v76, v_kXA, SnJOncDN, yuH)
   while ( not cT(gjdnu, gjdnu, gjdnu, gjdnu, gjdnu, 34) or cT(none, -gjdnu, gjdnu, -gjdnu, gjdnu, gjdnu) - cT("", 46, ")", "R+L.}", gjdnu, "$hc``Z"))

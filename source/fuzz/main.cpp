@@ -39,7 +39,7 @@ int main() {
   uint32_t tests = 0;
   std::vector<std::string> fails;
 
-  for (int32_t i = 0, e = 0; i < 512; ++i) {
+  for (int32_t i = 0, e = 0; i < 2048; ++i) {
 
     std::string fname = "tests/" + std::string("test") + std::to_string(i) + ".txt";
     FILE *fd = fopen(fname.c_str(), "r");
@@ -74,13 +74,21 @@ int main() {
     ccml::error_t error;
     if (!ccml.build(program.data(), error)) {
       fails.push_back(fname);
+
+      fprintf(stderr, "[%s]\n", fname.c_str());
       fprintf(stderr, "%s\n", error.error.c_str());
       fprintf(stderr, "%d:  %s\n", error.line, ccml.lexer().get_line(error.line).c_str());
+      fprintf(stderr, "\n");
       continue;
     }
 
     const auto &funcs = ccml.functions();
     for (const auto &func : funcs) {
+
+      if (func.sys_) {
+        // dont try to call builtin functions
+        continue;
+      }
 
       thread_t thread{ccml};
 

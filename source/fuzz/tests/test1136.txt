@@ -12,7 +12,7 @@ function BFn(h1RR7WVY, tZUsj2, iwfVs, Cvo, px)
     h34JLH += "c#RI1" + BFn(h34JLH, -h34JLH, 84, -none, 22) or BFn(h34JLH, h34JLH, 30, 19, h34JLH)
   end
   while (3)
-    if (gb[ not h34JLH or ">"!'"])
+    if (gb[ not h34JLH or ">!'"])
       h34JLH += gb[BFn(27, "n<b(wt", 92, h34JLH, none) / 4]
       h34JLH =  not h34JLH and h34JLH - (-h34JLH)
       var ddVJQ[116]

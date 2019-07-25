@@ -20,7 +20,7 @@ end
 
 function xCc(Pu4, fmYv43WR, jIKK, xUJ_, lVRWrY)
   var ZbBff
-  xCc(ZbBff, "U|$Lw"", ZbBff, mzUtyC(ZbBff, ZbBff, ZbBff), 59)
+  xCc(ZbBff, "U|$Lw", ZbBff, mzUtyC(ZbBff, ZbBff, ZbBff), 59)
   Pu4 = xCc(none, none, "B1z#q", 121, none) - xCc(none, none, ZbBff, -95, -ZbBff) + none
   while (ZbBff and ZbBff < "9$0^%#r")
     return "x58jphc" and ZbBff >= "wR=$" * -ZbBff
@@ -43,7 +43,7 @@ function Mquc0F(ftMB, bwU6Mvr, CQR, lNyCIFf, xU)
   var Mt[81]
   mzUtyC(OQ, OQ, none)
   if (mzUtyC(-30, OQ, xCc(none, none, none, 96, "")))
-    if (none / "V<|Z"" >= "Uw0u" or OQ)
+    if (none / "V<|Z" >= "Uw0u" or OQ)
       if ((xCc(OQ, none, "BXyr", "", OQ)) - none)
         var I6e6[46]
         Mt[mzUtyC(OQ, OQ, Mquc0F(43, -")A;Ck/", OQ, "", -OQ))] = "@2J(" and none

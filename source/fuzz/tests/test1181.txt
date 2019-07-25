@@ -34,7 +34,7 @@ function vl29QN(B9JtELY, SW, wu)
         if (WG or vl29QN(WG, none, WG) <= WG)
           if (48)
           end
-          vl29QN(vl29QN(WG, "-q5;"%", WG), -vl29QN(WG, none, 35), 56)
+          vl29QN(vl29QN(WG, "-q5;%", WG), -vl29QN(WG, none, 35), 56)
           WG = WG
         end
       end

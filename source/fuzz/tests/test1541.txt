@@ -11,7 +11,7 @@ function wgvP38Ir(V8, _UdNVjq, kupua, Z7AzLrX7, tMn, e1_, WGh)
       return "JwWd" > wgvP38Ir(pOC4, pOC4, none, none, 24, "N%", pOC4) -  not "kgY" < pOC4
     end
   end
-  if ("t9M"")
+  if ("t9M")
   end
   var xpG = -"W)'"
   wgvP38Ir(wgvP38Ir(xpG, xpG, none, xpG, xpG, xpG, xpG), wgvP38Ir(xpG, none, xpG, "._f3&<", xpG, 12, xpG), "FU{V", xpG, -xpG, xpG, 52)
@@ -21,7 +21,7 @@ end
 function BGwj(GGXwD6)
   BGwj(BGwj("8+_g"))
   return (-BGwj("i1") == none)
-  wgvP38Ir(none, 1, wgvP38Ir(none, "SXG552", 36, "H#'e", -none, none, 56), 97, wgvP38Ir(none, 19, "w9", ",", "mXiIo_=", "b"Zn!_", "$]INS.O"), wgvP38Ir(none, -121, none, 123, 28, none, none), none)
+  wgvP38Ir(none, 1, wgvP38Ir(none, "SXG552", 36, "H#'e", -none, none, 56), 97, wgvP38Ir(none, 19, "w9", ",", "mXiIo_=", "bZn!_", "$]INS.O"), wgvP38Ir(none, -121, none, 123, 28, none, none), none)
   return -(wgvP38Ir(96, none, 124, none, ";{$1@", none, -none) - none)
   while ((none))
     return -wgvP38Ir(-"L68X", none, 50, -92, "", none, none) + BGwj(none) - (wgvP38Ir(":M", 24, -120, none, "", none, "\G3LT"))

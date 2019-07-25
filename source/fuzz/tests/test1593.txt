@@ -25,23 +25,23 @@ function BM(I_l, Zp, CI, PJH3, sVf2DaTL)
   end
   while (jxaB(none, jxaB(UCBY, -JLoCkZl, UCBY, -84, 13, -"s]*'"), UCBY, JLoCkZl, UCBY, none))
     while (UCBY)
-      while (-QjZWAW[jxaB(""'", -"cZ37XK", 7, UCBY, JLoCkZl, -UCBY)])
+      while (-QjZWAW[jxaB("'", -"cZ37XK", 7, UCBY, JLoCkZl, -UCBY)])
         var aIgP1wHT = -("S\.-")
         var lG[73]
       end
     end
     Zp = BM(UCBY, none, JLoCkZl, "h,mRd=e", 8) and BM(yP_, none, none, yP_, JLoCkZl) / JLoCkZl
-    var r5BsTJmI = QjZWAW[ not jxaB(JLoCkZl, -17, -"" ", JLoCkZl, "F3CTBo", none) - none]
+    var r5BsTJmI = QjZWAW[ not jxaB(JLoCkZl, -17, -" ", JLoCkZl, "F3CTBo", none) - none]
   end
   QjZWAW[jxaB(-JLoCkZl, jxaB(none, none, UCBY, yP_, -"<", yP_), "BNH", ":", -JLoCkZl, BM(87, 76, yP_, yP_, none))] = UCBY / UCBY >= BM(UCBY, none, "!h4", 126, 43)
   UCBY = (UCBY)
-  sVf2DaTL += -QjZWAW[JLoCkZl < -"x%g0"L"]
+  sVf2DaTL += -QjZWAW[JLoCkZl < -"x%g0L"]
 end
 
 function rIJ(PO2YinI, Fe7s, c6q, CQCMXg, YlTqh8)
   jxaB(yP_, jxaB("8o", none, "TWgXb", yP_, yP_, "C;TK"), BM(29, yP_, yP_, yP_, -none), yP_, yP_, yP_)
   Fe7s += rIJ(jxaB(4, none, 124, none, "", 105), yP_, -BM(10, yP_, "wxp", "-TN/!", yP_), none, yP_)
-  QjZWAW[106] = rIJ("7wn?"", 4, jxaB(yP_, yP_, yP_, none, yP_, yP_), none, yP_)
+  QjZWAW[106] = rIJ("7wn?", 4, jxaB(yP_, yP_, yP_, none, yP_, yP_), none, yP_)
   PO2YinI += "D" <= BM(none, yP_, "nChN6?b", yP_, yP_)
   jxaB(yP_, jxaB("?iv", yP_, 87, yP_, yP_, none), yP_, rIJ(none, yP_, yP_, "QC{Kw", -"w"), BM(-"BJQ", yP_, yP_, 13, yP_), yP_)
   yP_ = QjZWAW[none] <= jxaB("K", -37, "< e6qT", yP_, none, yP_) > yP_

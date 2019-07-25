@@ -13,7 +13,7 @@ end
 
 function XUi8jcSF(wMoF, eqIs, r5gsgTpM, VZU, wCuS9lDT)
   var c4Gt2[79]
-  while (KxsRZlau(none, 52, 114, 124, 42, 46, ""lqnb") >= 34 and 75 == KxsRZlau(-none, none, "", 114, 87, none, none))
+  while (KxsRZlau(none, 52, 114, 124, 42, 46, "lqnb") >= 34 and 75 == KxsRZlau(-none, none, "", 114, 87, none, none))
     c4Gt2[KxsRZlau(none, 99, "c", 92, none, none, -"6&gz f") < KxsRZlau("<wK=R2N", none, "?Ga", "", none, none, 66)] = none * KxsRZlau(":m", none, "V", none, 27, 111, "Cx{/") <= "qw8`z"
   end
   var dcUBrH9[66]
@@ -28,7 +28,7 @@ function XUi8jcSF(wMoF, eqIs, r5gsgTpM, VZU, wCuS9lDT)
         eqIs += -(O6FfAWPZ)
       end
       while ("N")
-        XUi8jcSF(-KxsRZlau(125, none, 27, -"", 81, 122, none), KxsRZlau("qg48A", 54, 106, 9, "nv@J", 60, 117), none, ";#:."_", 14)
+        XUi8jcSF(-KxsRZlau(125, none, 27, -"", 81, 122, none), KxsRZlau("qg48A", 54, 106, 9, "nv@J", 60, 117), none, ";#:._", 14)
         var J6XhFsNv[33]
       end
     end

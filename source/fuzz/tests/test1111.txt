@@ -24,11 +24,11 @@ function Xq6sR(J89, U3ed, fssMrx, pTTX7, ZjQvyQR)
           end
         end
         uw1 = j2uWxT
-        while (("(H"f") * Xq6sR(104, j2uWxT, hE5aFT2S, uw1, none))
+        while (("(Hf") * Xq6sR(104, j2uWxT, hE5aFT2S, uw1, none))
           pTTX7 = none
           while ( not  not 87 - Xq6sR(uw1, hE5aFT2S, ".c$%", uw1, j2uWxT) / Xq6sR("qL=w", uw1, -uw1, hE5aFT2S, "C6"))
           end
-          return Xq6sR(j2uWxT, "v|:Mn>"", "n", uw1, Xq6sR(69, none, none, "G", hE5aFT2S))
+          return Xq6sR(j2uWxT, "v|:Mn>", "n", uw1, Xq6sR(69, none, none, "G", hE5aFT2S))
           while ((4))
             var o7ag[45]
           end

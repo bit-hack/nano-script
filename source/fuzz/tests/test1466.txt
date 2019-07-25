@@ -10,13 +10,13 @@ function H345EMIG(lrez6L, Gg7jy, wbBL)
     H345EMIG(kd, H345EMIG(kd, 23, 114), 10)
   end
   if (((H345EMIG(kd, kd, kd))))
-    H345EMIG(H345EMIG(">_I", "_*p7N", kd), "E3P+"t", kd)
+    H345EMIG(H345EMIG(">_I", "_*p7N", kd), "E3P+t", kd)
     kd = "" < none * -kd * "&43"
   end
   var Hsf = 45 <= none
   if (H345EMIG(none, -kd, H345EMIG(none, none, -"nd#")))
     var GJGkn[19]
-    Hsf =  not 31 and (H345EMIG(kd, -""[27$", Hsf))
+    Hsf =  not 31 and (H345EMIG(kd, -"[27$", Hsf))
     if (H345EMIG(none, "S>", 82))
       if (H345EMIG(kd, -none, kd))
         return GJGkn[GJGkn[""]]
@@ -68,7 +68,7 @@ function ddoIsEH(gh_R6j6, q8vIiXW, HPR9cdjj, JS)
     gh_R6j6 += (H345EMIG("A =", kd, kd))
     ddoIsEH(H345EMIG("", kd, kd), H345EMIG(none, kd, kd), "J_?2n", -kd)
     var Na5t[107]
-    Na5t[ddoIsEH(ddoIsEH(kd, none, "hU"$9", "3"), H345EMIG(35, "X`:", kd), kd, 126)] = kd
+    Na5t[ddoIsEH(ddoIsEH(kd, none, "hU$9", "3"), H345EMIG(35, "X`:", kd), kd, 126)] = kd
   end
 end
 

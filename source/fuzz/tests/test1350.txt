@@ -21,7 +21,7 @@ function jHYGlLp(rtCzQq0n, Jdx, sYgd2yn, XXWSxf, S53nS, FtUZ2h, Yl)
   jHYGlLp(mR6TAn, none, Pq6NJDN, Pq6NJDN, mR6TAn, aitld4C5, jHYGlLp(-aitld4C5, none, mR6TAn, none, 18, 127, Pq6NJDN))
   if (mR6TAn <= jHYGlLp(Pq6NJDN, 28, Pq6NJDN, aitld4C5, -41, -mR6TAn, none))
     Pq6NJDN = 92
-    while (none * Pq6NJDN >  not ("|\s&:"$"))
+    while (none * Pq6NJDN >  not ("|\s&:$"))
       Jdx += "}3X"
       mR6TAn += jHYGlLp(jHYGlLp(Pq6NJDN, none, none, Pq6NJDN, mR6TAn, none, Pq6NJDN), jHYGlLp(none, none, 19, Pq6NJDN, -"`$:", Pq6NJDN, mR6TAn), Pq6NJDN, jHYGlLp(aitld4C5, "?Bod", Pq6NJDN, aitld4C5, 75, "Ml!^", none), -jHYGlLp("xXw", aitld4C5, aitld4C5, mR6TAn, 45, Pq6NJDN, "hE+|a="), mR6TAn, jHYGlLp("RtKg", 12, "-pB<", Pq6NJDN, "Z[k", none, 13))
     end

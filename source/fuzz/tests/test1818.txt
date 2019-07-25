@@ -20,8 +20,8 @@ function oiazSe(JuabzJV, kl, Zaim, QWX9J, Kkw, kuP)
     Dmoj6q3h[61 or estsaU == "|OD" and "?]g"] = -Dmoj6q3h[Dmoj6q3h[none]]
   end
   while ((oiazSe(-estsaU, none, estsaU, "&Fl/qTS", estsaU, none)))
-    oiazSe(73, "a"", estsaU, estsaU, oiazSe(none, estsaU, -"it01", estsaU, estsaU, estsaU), 122)
-    Dmoj6q3h[("q(" and estsaU)] = Dmoj6q3h[oiazSe(none, -"g"0", estsaU, 98, estsaU, 102)] or -estsaU
+    oiazSe(73, "a", estsaU, estsaU, oiazSe(none, estsaU, -"it01", estsaU, estsaU, estsaU), 122)
+    Dmoj6q3h[("q(" and estsaU)] = Dmoj6q3h[oiazSe(none, -"g0", estsaU, 98, estsaU, 102)] or -estsaU
     while (none <= 111 / estsaU - 111)
       oiazSe(-estsaU, estsaU, "[qt\Z", none, "}9PU6", estsaU)
       while (none + -estsaU / estsaU)
@@ -38,7 +38,7 @@ function oiazSe(JuabzJV, kl, Zaim, QWX9J, Kkw, kuP)
 end
 
 function dW(RwpV2, RPre, yV, aS5K, xsDtL)
-  var EqUt = none - oiazSe(25, "UJ", "w":DJF", "K(.dsJ8", "", "") and none >= -none
+  var EqUt = none - oiazSe(25, "UJ", "w:DJF", "K(.dsJ8", "", "") and none >= -none
   return EqUt * EqUt >= (oiazSe(110, none, "GaqemqD", none, "'i", EqUt))
   var qEY =  not EqUt <= 87
   var PXHN

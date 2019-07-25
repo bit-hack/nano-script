@@ -51,7 +51,7 @@ function Gpb2UNAY(wm, c5)
     Vg = pgc0(Vg, "$", none, none, -UwSPBYv) == WV4()
     c5 += (Vg)
     while (UwSPBYv >= 37 < (none))
-      UwSPBYv += "Jr"Fu7"
+      UwSPBYv += "JrFu7"
       var VWG
       if (none)
         if ((pgc0(VWG, Vg, Vg, Vg, 124)) or (VWG))
@@ -67,6 +67,6 @@ function Gpb2UNAY(wm, c5)
     end
     return 57
   end
-  return ""?q" + UwSPBYv >= Gpb2UNAY(Vg, 8)
+  return "?q" + UwSPBYv >= Gpb2UNAY(Vg, 8)
 end
 

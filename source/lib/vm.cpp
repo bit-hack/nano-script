@@ -422,7 +422,8 @@ void thread_t::do_INS_SETA_() {
   value_t *v = pop();
   assert(a && i);
   if (a->type != val_type_array) {
-    assert(false);
+    raise_error(thread_error_t::e_bad_array_object);
+    return;
   }
   if (i->type != val_type_int) {
     raise_error(thread_error_t::e_bad_array_index);
@@ -452,6 +453,10 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   cycles_ = 0;
   halted_ = false;
   s_head_ = 0;
+
+  if (func.is_syscall()) {
+    return false;
+  }
 
   // push globals
   if (!ccml_.globals().empty()) {

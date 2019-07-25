@@ -8,14 +8,14 @@ function ZnH(xfiD, mFM, L8XUKc0a, g8Zv, w0, nXwzK, DeQVzqW)
   var KiqyS5tQ[60]
   ZnH(ZnH("u27uQ/", none, "W:", 37, 61, "1e{*<]h", none), 68, -118, ZnH(none, -78, 65, -none, 105, "XgQ$_9?", "vxxQ"), ZnH(none, 41, none, -none, "'^_t1fx", "VM", none), "", 121)
   var MdT[11]
-  H9Q[ not  not none + "" >= "tiq,e" > -59] = "O""
+  H9Q[ not  not none + "" >= "tiq,e" > -59] = "O"
   var gj[87]
   if (ZnH("", "k", none, none, none, none, none) / aibi[ZnH("J", none, 126, 14, "q#", none, none)])
     var zKRWi
     return -ZnH(ZnH(zKRWi, none, zKRWi, none, 69, zKRWi, zKRWi), zKRWi, "Z4JL5sf", -ZnH(none, none, 113, zKRWi, -97, zKRWi, zKRWi), ZnH(zKRWi, none, zKRWi, zKRWi, zKRWi, zKRWi, 60), zKRWi, -ZnH("+FwuK^", "QA", none, zKRWi, "", 110, "t"))
     ZnH(ZnH(zKRWi, zKRWi, zKRWi, "tO", 44, zKRWi, zKRWi), ZnH(-72, "mP9CH?k", -"#", 63, zKRWi, zKRWi, 85), ZnH(zKRWi, 19, zKRWi, zKRWi, zKRWi, zKRWi, zKRWi), ZnH(zKRWi, "I'lj.8W", -"A@(MQh5", "M", zKRWi, zKRWi, none), zKRWi, zKRWi, zKRWi)
     if (zKRWi)
-      return ZnH(ZnH("U=6;@+", none, -zKRWi, zKRWi, "'_", zKRWi, zKRWi), "340",]d", ">(", ZnH(zKRWi, -zKRWi, zKRWi, zKRWi, zKRWi, zKRWi, zKRWi), ZnH(zKRWi, none, "aQTAu5", 48, zKRWi, zKRWi, zKRWi), none, ZnH(none, zKRWi, zKRWi, "m_#", 106, -zKRWi, -zKRWi))
+      return ZnH(ZnH("U=6;@+", none, -zKRWi, zKRWi, "'_", zKRWi, zKRWi), "340,]d", ">(", ZnH(zKRWi, -zKRWi, zKRWi, zKRWi, zKRWi, zKRWi, zKRWi), ZnH(zKRWi, none, "aQTAu5", 48, zKRWi, zKRWi, zKRWi), none, ZnH(none, zKRWi, zKRWi, "m_#", 106, -zKRWi, -zKRWi))
       while (zKRWi)
         var tYG[101]
       end
@@ -33,7 +33,7 @@ end
 
 var Myt
 
-var tIC = "SD"X,"
+var tIC = "SDX,"
 
 var YUMWcCp = 104
 
@@ -51,7 +51,7 @@ function WtkRS3(vr3d)
   WtkRS3(RAkdz)
   while (-(YUMWcCp) + -"5HYI" <= "$")
     var UaE9hX[14]
-    while (("bp @te") > ("'|OR%L""))
+    while (("bp @te") > ("'|OR%L"))
       var N5NAA
       UaE9hX[none] = fQz5O_C8["-L" <= N5NAA]
     end

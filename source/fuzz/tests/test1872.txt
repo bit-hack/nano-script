@@ -12,7 +12,7 @@ end
 
 function vC8NHz(QpXx, jVOY5QF)
   while (none > vC8NHz(99, 23) and  not vC8NHz(none, none) - eQVX(78, 45, none, none, none, none, none))
-    while (eQVX(none, none, "Ux"sk", "4)VT;ls", none, 96, none) or 80 + vC8NHz(-none, 48) >= "W&")
+    while (eQVX(none, none, "Uxsk", "4)VT;ls", none, 96, none) or 80 + vC8NHz(-none, 48) >= "W&")
       return eQVX(none, -none, 1, 49, ">|E", 26, "BcJnT+W") / 45 >= 60 == 36
     end
   end

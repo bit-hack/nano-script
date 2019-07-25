@@ -6,7 +6,7 @@ function IwgVSty(Wcl, cWfvSk, FSq)
   var oyog[42]
   while (W_s[IwgVSty(none, "", "J,p+Jo")])
     oyog[-55 >= (IwgVSty(19, none, 28))] = oyog[IwgVSty("l12", "LEHfR", none) < IwgVSty("q6Zqw", none, none)]
-    if ( not 92 >= IwgVSty(125, 121, -"2j"]d3y") * 106 or IwgVSty(none, "", none))
+    if ( not 92 >= IwgVSty(125, 121, -"2j]d3y") * 106 or IwgVSty(none, "", none))
       while (W_s[52] / none and none)
         IwgVSty(IwgVSty(none, "Xx5+.;$", none), none, none)
         var cT72[46]

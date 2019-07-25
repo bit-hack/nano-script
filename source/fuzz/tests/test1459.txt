@@ -5,7 +5,7 @@ var un = "[B7"
 function rYwrLtF(y4W, St_aFFD, dGevswx0, eQ, jjjleafX, aO4, vmoWBxi9)
   if ( not (none == ""))
     while (rYwrLtF(un, -un, un, none, un, un, 39) < un)
-      rYwrLtF(rYwrLtF(un, 127, 106, -un, un, -un, "D"), un, "LCy"71J", rYwrLtF(none, 74, "1N5OoK", un, un, un, un), rYwrLtF(un, """, none, un, un, none, un), none, -95)
+      rYwrLtF(rYwrLtF(un, 127, 106, -un, un, -un, "D"), un, "LCy71J", rYwrLtF(none, 74, "1N5OoK", un, un, un, un), rYwrLtF(un, "", none, un, un, none, un), none, -95)
       dGevswx0 = un
     end
     un += rYwrLtF(un, rYwrLtF(25, un, un, none, none, 30, -un), "FCD", -rYwrLtF(un, 68, un, none, 121, 1, 102), rYwrLtF(-"I* t&yD", 75, none, un, "0LDD@b", un, un), rYwrLtF("g9#C", 103, un, none, un, un, un), un)
@@ -17,7 +17,7 @@ function rYwrLtF(y4W, St_aFFD, dGevswx0, eQ, jjjleafX, aO4, vmoWBxi9)
   while (un <=  not 1)
     if ( not un and  not rYwrLtF(un, "XB${w", none, 9, none, none, "2|") > "")
     end
-    return rYwrLtF(rYwrLtF(none, un, un, un, none, none, 67), un, rYwrLtF("8?", un, ")[`GLg+", un, un, none, none), rYwrLtF(un, un, un, un, 118, 118, un), un, un, ""hw\32")
+    return rYwrLtF(rYwrLtF(none, un, un, un, none, none, 67), un, rYwrLtF("8?", un, ")[`GLg+", un, un, none, none), rYwrLtF(un, un, un, un, 118, 118, un), un, un, "hw\32")
     var c0pNZwLS[112]
     aO4 = rYwrLtF(un, rYwrLtF(un, un, 81, ":8T9s", un, un, -38), none, rYwrLtF("# Uy", un, none, -un, -38, un, none), rYwrLtF("|", un, none, none, 53, un, un), 40, ".")
   end
@@ -55,7 +55,7 @@ function qZAGL()
       end
       qZAGL()
     end
-    return ".""
+    return "."
   end
   var dQkMl5
   rYwrLtF(qZAGL(), rYwrLtF(-un, un, 107, none, "?RP", dQkMl5, dQkMl5), dQkMl5, rYwrLtF(74, dQkMl5, none, dQkMl5, -un, 67, un), qZAGL(), rYwrLtF(70, "6", none, un, dQkMl5, un, "4M'|KU"), qZAGL())

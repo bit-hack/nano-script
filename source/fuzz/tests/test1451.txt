@@ -25,7 +25,7 @@ function _NCVr(YuSPc, iN, BfgShT, Anz8EWe, mLUXK, KLFMyjV)
               mLUXK += (_NCVr(113, utov, utov, utov, 121, none))
               var NgGb
               utov =  not  not NgGb / NgGb < "ZHi .E"
-              NgGb += "VD"{c.m" >= NgGb == none + 68
+              NgGb += "VD{c.m" >= NgGb == none + 68
             end
             return (none <= _NCVr(none, "ntNJn8=", 57, 106, -96, 27))
             mLUXK = s1k1gMt1[-_NCVr(111, 41, none, utov, none, utov)] + -utov or utov
@@ -48,7 +48,7 @@ function _NCVr(YuSPc, iN, BfgShT, Anz8EWe, mLUXK, KLFMyjV)
     end
   end
   while (none)
-    return  not (_NCVr(utov, utov, utov, utov, ""iqC", -none))
+    return  not (_NCVr(utov, utov, utov, utov, "iqC", -none))
     mLUXK = s1k1gMt1[none] <= (_NCVr(utov, none, utov, utov, utov, "b!"))
   end
   utov = -(utov)
@@ -58,7 +58,7 @@ end
 function lU1LQ8hq(MTWss2)
   var oLRN[57]
   while ( not -lU1LQ8hq(-"a") and none == (lU1LQ8hq(123)))
-    _NCVr(_NCVr(-"bh"\", 59, 79, 16, 66, none), lU1LQ8hq(none), lU1LQ8hq(none), none, "gHh;0", none)
+    _NCVr(_NCVr(-"bh\", 59, 79, 16, 66, none), lU1LQ8hq(none), lU1LQ8hq(none), none, "gHh;0", none)
     var Cn = _NCVr("gqk", 101, "6P!O<", none, 51, none) == -none > none
   end
   var xcFA8Z

@@ -14,7 +14,7 @@ function UJQNH(TWNjHHK0, J4Vgrd9, BOC, yr, sYw08)
       while (UJQNH(UJQNH(74, none, 67, none, ""), -71, UJQNH("T_", 77, -none, 110, none), UJQNH(96, 24, 36, 70, ""), UJQNH(-none, none, "+}=#,-j", 29, none)))
         var prT
         while ((UJQNH(115, prT, 19, "5W1Z9j\", prT) >= none))
-          BOC = prT < none / "g` "o_"" + UJQNH(none, prT, none, none, none)
+          BOC = prT < none / "g` o_" + UJQNH(none, prT, none, none, none)
           UJQNH(prT, 21, none, 21, prT)
           while (prT)
             UJQNH(UJQNH(-119, prT, prT, prT, none), prT, prT, UJQNH(none, prT, 62, none, prT), UJQNH("1H@0", prT, -prT, 70, prT))
@@ -31,7 +31,7 @@ function UJQNH(TWNjHHK0, J4Vgrd9, BOC, yr, sYw08)
   return "5 NN" and none
   return UJQNH(none, "`K1L", 79, none, -"") < "Ns%" or UJQNH(none, none, "E", "IY)JVD", "gF)CKoD")
   var qoCpU_K6[27]
-  qoCpU_K6[59 <= 127] =  not -UJQNH(none, 108, UJQNH(none, none, "c$hSJ", "a"", "UFRS"), 33, -UJQNH("oYsE5I", 54, 22, none, "P=D"))
+  qoCpU_K6[59 <= 127] =  not -UJQNH(none, 108, UJQNH(none, none, "c$hSJ", "a", "UFRS"), 33, -UJQNH("oYsE5I", 54, 22, none, "P=D"))
 end
 
 var A3o[86]

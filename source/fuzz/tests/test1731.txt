@@ -26,11 +26,11 @@ function ShSe(Dwz745m, w0mP, dg9bXMd, hb, Ww)
       FdW[CvWgeb() < none + ShSe(-none, none, "t;@@", none, none)] = FdW[none] - 18
     end
   end
-  if (ShSe(none, 46, 2, none, "3"{") and CvWgeb() * -"I")
+  if (ShSe(none, 46, 2, none, "3{") and CvWgeb() * -"I")
     if ((CvWgeb() == ShSe(-"# ;", none, none, 65, none)))
     end
     CvWgeb()
-    FdW[("dCBH*" or "":INN+J")] = CvWgeb() * (50)
+    FdW[("dCBH*" or ":INN+J")] = CvWgeb() * (50)
   end
   return ShSe(ShSe(106, -61, 94, none, none), CvWgeb(), ShSe(-67, none, 83, none, "mU{5"), -"X4<zO#|", CvWgeb())
 end

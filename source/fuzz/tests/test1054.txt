@@ -25,7 +25,7 @@ function MOlFB(LgndAC0, Wut4wH7, ZjXyinP)
     var XL5Uz6[82]
     var CF[72]
     XL5Uz6[za3GqXM[MOlFB(none, GxC8N, -none)] - "R;| 0g" + 77] = GxC8N
-    return  not ".'Jk"" and 75 or CF[10]
+    return  not ".'Jk" and 75 or CF[10]
     Z45L["7?sZi" - MOlFB(">+", GxC8N, GxC8N)] =  not (Kc1b4(none, GxC8N, none, none)) == GxC8N - GxC8N
   end
   GxC8N = none <= none *  not Kc1b4(78, "#?!5", GxC8N, 72) < GxC8N

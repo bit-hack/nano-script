@@ -5,7 +5,7 @@ var RA2aj
 function Jvl0T(foJ_vJt, aOMoz)
   if (RA2aj)
     var get6X[17]
-    if ("Pb")0a" - (Jvl0T(-1, "")))
+    if ("Pb)0a" - (Jvl0T(-1, "")))
       if ((Jvl0T(none, none)))
       end
       Jvl0T(-Jvl0T(RA2aj, 47), Jvl0T(RA2aj, RA2aj))

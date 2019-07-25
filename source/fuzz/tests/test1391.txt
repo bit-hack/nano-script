@@ -22,7 +22,7 @@ function ZWA_qiw(Ltm6K, oS, OE0, eVbZA_H)
         var MC4UpYmO = ZWA_qiw(ZWA_qiw(zKkaOt, TNxP8OQ, zKkaOt, zKkaOt), zKkaOt, -TNxP8OQ, zKkaOt)
         while (none)
           if (pi1IsI[(-ZWA_qiw(23, zKkaOt, none, none))])
-            TNxP8OQ =  not -""'Jv" > -ZWA_qiw(TNxP8OQ, TNxP8OQ, -26, TNxP8OQ) or zKkaOt - ZWA_qiw(zKkaOt, MC4UpYmO, MC4UpYmO, -zKkaOt)
+            TNxP8OQ =  not -"'Jv" > -ZWA_qiw(TNxP8OQ, TNxP8OQ, -26, TNxP8OQ) or zKkaOt - ZWA_qiw(zKkaOt, MC4UpYmO, MC4UpYmO, -zKkaOt)
             return 51 and none
             if (none / ZWA_qiw("[k9=[B", "7di6<HR", 110, zKkaOt))
               MC4UpYmO = 67 and zKkaOt <= ZWA_qiw(none, -MC4UpYmO, "nLR#];", TNxP8OQ)
@@ -72,7 +72,7 @@ function ZWA_qiw(Ltm6K, oS, OE0, eVbZA_H)
     end
     return  not none == TNxP8OQ >= TNxP8OQ
   end
-  if (ZWA_qiw(none, TNxP8OQ, -TNxP8OQ, 23) < "rw6Nzf"")
+  if (ZWA_qiw(none, TNxP8OQ, -TNxP8OQ, 23) < "rw6Nzf")
     if ( not ZWA_qiw(-TNxP8OQ, -TNxP8OQ, 69, 96) and ZWA_qiw(TNxP8OQ, TNxP8OQ, 49, TNxP8OQ) / (none))
       TNxP8OQ +=  not TNxP8OQ
       var J7fe98 = (ZWA_qiw(TNxP8OQ, none, TNxP8OQ, "FG? "))

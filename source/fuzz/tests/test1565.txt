@@ -3,7 +3,7 @@
 function sWS(WBl3j)
   if (14)
     return -none >= sWS(14) and (sWS(none))
-    var RG8 = sWS(sWS("p"[UAe"))
+    var RG8 = sWS(sWS("p[UAe"))
   end
   return "."
   return (sWS("f{,ql") + "")
@@ -17,7 +17,7 @@ function sWS(WBl3j)
   end
   if (4)
     return ( not  not sWS(-none))
-    if (none * "IyHCZ="" + sWS("= l/h|)"))
+    if (none * "IyHCZ=" + sWS("= l/h|)"))
       var rSsIkBjw = -sWS("r95Yw3") >= 120 >= sWS(none)
       var kKh2cErK[107]
       sWS(rSsIkBjw)

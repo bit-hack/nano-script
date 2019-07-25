@@ -14,7 +14,7 @@ function Fr85Z8jd(APHzp, oGuA, e3j2H7LV)
       var RCD_id =  not (wYVbNl) + wYVbNl
     end
     if (Fr85Z8jd(54, wYVbNl, wYVbNl) > 21 -  not  not Fr85Z8jd(wYVbNl, none, 87))
-      e3j2H7LV += -"Ob k""
+      e3j2H7LV += -"Ob k"
       hcreWJB[ not -wYVbNl or Fr85Z8jd(wYVbNl, wYVbNl, wYVbNl)] = Fr85Z8jd(Fr85Z8jd(-wYVbNl, wYVbNl, wYVbNl), Fr85Z8jd(120, 124, wYVbNl), wYVbNl)
       Fr85Z8jd(Fr85Z8jd(wYVbNl, wYVbNl, wYVbNl), none, 44)
       e3j2H7LV = wYVbNl
@@ -25,6 +25,6 @@ function Fr85Z8jd(APHzp, oGuA, e3j2H7LV)
   var OnLl = hcreWJB[xZr8] + "[1mbxT$" < Fr85Z8jd(xZr8, "", wYVbNl)
   oGuA += -hcreWJB[(Fr85Z8jd(26, xZr8, 126))]
   Fr85Z8jd(68, Fr85Z8jd(xZr8, none, wYVbNl), 74)
-  oGuA += hcreWJB[126] or "^s3b8l" or Fr85Z8jd("%v"@(1", none, OnLl)
+  oGuA += hcreWJB[126] or "^s3b8l" or Fr85Z8jd("%v@(1", none, OnLl)
 end
 

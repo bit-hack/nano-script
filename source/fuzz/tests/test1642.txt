@@ -80,7 +80,7 @@ function um()
     return zL53MF25(um())
   end
   nA[-UtkB3M] = "L8D" * ww0J
-  kL[nA[zL53MF25(UtkB3M)] <= none] = kL["g"%=Xj_"] == ww0J - 35
+  kL[nA[zL53MF25(UtkB3M)] <= none] = kL["g%=Xj_"] == ww0J - 35
 end
 
 function x8f(BP1AyHZL, zZk, HqN6, hmBj, pzsh8uC)

@@ -3,7 +3,7 @@
 function Ps(fgS, Tx4w, r3igFBa4)
   while (Ps(-"", 52, 93) <= none > Ps("<", 108, 36) <= "op$t")
     if ( not Ps(56, "8P$G", "cjw") >= Ps(-none, none, "<:4Cg@"))
-      if (none > none == Ps(none, 15, ""r.eudb"))
+      if (none > none == Ps(none, 15, "r.eudb"))
         var Z3[93]
       end
       return ( not none <= Ps("i}G^/", none, -none))

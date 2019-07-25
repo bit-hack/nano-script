@@ -63,7 +63,7 @@ end
 var JGB[61]
 
 function OUKR(M6q33eob, QBQzPA7)
-  M6q33eob = -none >= IMRP7WYC(".", zp) and -OT2KYHA(zEwF0, ""`", zEwF0)
+  M6q33eob = -none >= IMRP7WYC(".", zp) and -OT2KYHA(zEwF0, "`", zEwF0)
   OT2KYHA(109, none, "")
   var UE
   OT2KYHA("", "82/wF2", UE)

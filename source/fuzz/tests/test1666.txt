@@ -13,7 +13,7 @@ function eMdpH(MQlFyQlT, amjv5v, TpDsaU5y, ZgR7)
   end
   US9WE += US9WE / none and US9WE
   var q0[125]
-  while ( not eMdpH(none, -"3".zp< ", 92, US9WE) - "y8@\+" or  not (US9WE))
+  while ( not eMdpH(none, -"3.zp< ", 92, US9WE) - "y8@\+" or  not (US9WE))
   end
   var vx[83]
   US9WE = q0["L5" > eMdpH(US9WE, "OBt", "v4", "KVl=")]

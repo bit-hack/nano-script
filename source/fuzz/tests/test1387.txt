@@ -3,7 +3,7 @@
 function WEJAeZ()
   var Vi3[38]
   var GFE2bYys = Vi3[-6]
-  while (Vi3[""g{-yxE"])
+  while (Vi3["g{-yxE"])
     var tY1v[114]
     if (((none)))
       var f0YpI

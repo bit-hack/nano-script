@@ -28,10 +28,10 @@ function aW67da(t9v, AkCd)
       aW67da(aW67da(H8A, H8A), aW67da(none, H8A))
       Dn2KpEL[H8A / H8A >= -H8A / H8A] = (aW67da(H8A, H8A) <= aW67da("v0S", H8A))
     end
-    var HvP = (aW67da(13, """) or none)
+    var HvP = (aW67da(13, "") or none)
     H8A =  not aW67da(43, HvP) == aW67da("eaXc", H8A) <= (H8A)
   end
-  Dn2KpEL[123] = WcCqUPRp[aW67da(H8A, H8A)] < "MOW0f["" <= H8A
+  Dn2KpEL[123] = WcCqUPRp[aW67da(H8A, H8A)] < "MOW0f[" <= H8A
   if (aW67da("T!ze7E", H8A) and H8A <= none)
     return H8A
     while ((117 == 61))

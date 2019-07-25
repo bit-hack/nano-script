@@ -3,7 +3,7 @@
 var tpR09VG9[45]
 
 function HI8(cyZkyim, nCdoq0, nIEvxO, LiVN29)
-  while ( not 33 * "u":h:V")
+  while ( not 33 * "u:h:V")
     if ( not HI8(none, none, 97, "mT {2") == 87 or ("@E"))
     end
     return (HI8(none, 39, "v", none)) + -"&OA>KZ"

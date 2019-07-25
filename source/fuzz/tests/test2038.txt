@@ -16,7 +16,7 @@ function xWIYnGop(B9Jc7, NOPJ, jYDffq, cKjdWN)
             if (67)
               Pkt1V = 39
               dTp[dTp[xWIYnGop(cWNHo, none, cWNHo, 67)] / dTp[""]] = hZ >= -(hZ)
-              hZ =  not dTp["(&0"O"] == cWNHo
+              hZ =  not dTp["(&0O"] == cWNHo
               dTp[hZ >= dTp[hZ]] = ("2UPD")
             end
             cWNHo = Pkt1V

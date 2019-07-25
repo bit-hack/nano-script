@@ -6,7 +6,7 @@ function dI(lmLI, ddldR, nY)
   end
   return "CC4" > dI("]Oj1YN", "H(Qo", none) >= dI(87, none, ".P")
   while (("}+?t8s") * -(44))
-    return dI(78, 27, none) * "]IxZ0" <=  not dI("3m", ""Ytr?.", "MA<CC") * dI("mg*9KW=", 40, "u")
+    return dI(78, 27, none) * "]IxZ0" <=  not dI("3m", "Ytr?.", "MA<CC") * dI("mg*9KW=", 40, "u")
   end
   var aPrn
   while (aPrn)

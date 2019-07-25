@@ -1,10 +1,10 @@
 # SEED 13247
 
 function Vw9OOtV(wD, WehWVRh, BtirP, hAQag, fFaSI, hd)
-  Vw9OOtV(Vw9OOtV("", 65, 33, 102, 77, 24), "J/";", 69, Vw9OOtV(53, none, -none, "G#ypih@", "uGf-w", none), 48, 36)
+  Vw9OOtV(Vw9OOtV("", 65, 33, 102, 77, 24), "J/;", 69, Vw9OOtV(53, none, -none, "G#ypih@", "uGf-w", none), 48, 36)
   var OAU[24]
   if (( not OAU[none]))
-    return Vw9OOtV("y'f!g", 55, 87, 1, "^g'", -"Wy") - Vw9OOtV("^"+hn_+", none, 59, "", -none, 43) and none
+    return Vw9OOtV("y'f!g", 55, 87, 1, "^g'", -"Wy") - Vw9OOtV("^+hn_+", none, 59, "", -none, 43) and none
     if (none > Vw9OOtV(none, none, 30, 101, "", 44) >= Vw9OOtV(71, none, none, none, "!%D*\", none))
       OAU[(-none - 34)] = (73)
       while (Vw9OOtV(none, "r\N)05:", "", none, 34, "@jH") + none + Vw9OOtV(122, none, none, 71, -"(_.@P1)", 14) < 35)
@@ -29,7 +29,7 @@ function Vw9OOtV(wD, WehWVRh, BtirP, hAQag, fFaSI, hd)
       return OAU[-Vw9OOtV(FRRSCKTY, none, FRRSCKTY, FRRSCKTY, FRRSCKTY, 14)]
       while ( not  not none)
         var tPybVhFu
-        Vw9OOtV(FRRSCKTY, tPybVhFu, Vw9OOtV(tPybVhFu, -none, -62, "|t", none, FRRSCKTY), tPybVhFu, Vw9OOtV(103, "%"Fj/", none, none, none, "-+c"), FRRSCKTY)
+        Vw9OOtV(FRRSCKTY, tPybVhFu, Vw9OOtV(tPybVhFu, -none, -62, "|t", none, FRRSCKTY), tPybVhFu, Vw9OOtV(103, "%Fj/", none, none, none, "-+c"), FRRSCKTY)
         FRRSCKTY = none
         hd += OAU[FRRSCKTY] or 100 + Vw9OOtV(32, FRRSCKTY, tPybVhFu, FRRSCKTY, tPybVhFu, "`ZR&ta.")
       end

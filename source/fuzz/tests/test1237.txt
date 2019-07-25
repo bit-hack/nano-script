@@ -3,7 +3,7 @@
 function aGzCma(W2)
   var UWG[76]
   while ("3" < "" - aGzCma(none) > aGzCma(48))
-    UWG[-63 or -75 <= UWG[aGzCma("")]] = none * aGzCma("") *  not aGzCma(35) or -"^%?""
+    UWG[-63 or -75 <= UWG[aGzCma("")]] = none * aGzCma("") *  not aGzCma(35) or -"^%?"
   end
   aGzCma(")g")
   var dL[108]
@@ -16,7 +16,7 @@ var wyN2JRs6[100]
 
 var nCMb[77]
 
-var Sjji9wBF = "#$s]"="
+var Sjji9wBF = "#$s]="
 
 var ad
 

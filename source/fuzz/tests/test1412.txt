@@ -22,7 +22,7 @@ end
 var LSPUW[10]
 
 function wj8f(BorrX6Q, boV, MF45eC, SryDDXp, LzcEiUw)
-  LSPUW[EopwM(wj8f(none, eg, eg, "la("x", ""!LTN"), eg, eg)] = eg <= EopwM(92, eg, eg) >= eg - eg
+  LSPUW[EopwM(wj8f(none, eg, eg, "la(x", "!LTN"), eg, eg)] = eg <= EopwM(92, eg, eg) >= eg - eg
   return (12) * eg
   return LSPUW[(none)]
   eg = -(LSPUW[eg])

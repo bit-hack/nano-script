@@ -21,7 +21,7 @@ function Qu(iffk3lzn, VnW0a0Z)
   Qu(">E", -Qu(none, 96))
   if (none < Qu(none, "\Q<y@") * none > 30)
     if (Qu(89, none) + "" == Qu(none, ":+VPtl("))
-      return  not "v#>" + Qu("613gY"", 48) + Qu(none, 62)
+      return  not "v#>" + Qu("613gY", 48) + Qu(none, 62)
       while (( not none))
         Qu("z3-", Qu(none, none))
         var sC2X[24]

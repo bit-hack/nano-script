@@ -1,7 +1,7 @@
 # SEED 12872
 
 function Pb(pgzT, U5W, RZ8eNHMt, ijz11vB)
-  while (Pb(15, -"!", ">", "xS") > none - Pb(73, ""Ezyb1;", -none, -none))
+  while (Pb(15, -"!", ">", "xS") > none - Pb(73, "Ezyb1;", -none, -none))
     if ((none) / Pb(none, "=5+KIE", "SB9", 8) == -13)
     end
   end
@@ -24,7 +24,7 @@ function Pb(pgzT, U5W, RZ8eNHMt, ijz11vB)
           end
           var AIW4[44]
         end
-        if ( not  not -Pb("KP#_8", -uqW2Jyn, uqW2Jyn, -uqW2Jyn) == Pb(uqW2Jyn, uqW2Jyn, none, uqW2Jyn) - -"\W"_")
+        if ( not  not -Pb("KP#_8", -uqW2Jyn, uqW2Jyn, -uqW2Jyn) == Pb(uqW2Jyn, uqW2Jyn, none, uqW2Jyn) - -"\W_")
           while (uqW2Jyn)
             uqW2Jyn = h4rER_[Pb(uqW2Jyn, -"F", uqW2Jyn, "vgZ4tQ") <= uqW2Jyn]
           end

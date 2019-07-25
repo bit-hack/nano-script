@@ -15,7 +15,7 @@ function I1MJ(yfY9C)
     if (jUaHQNKI[";pNK"] / (":=>"))
       while (jUaHQNKI[I1MJ(HISVz)] - I1MJ(-103))
         if (I1MJ(-HISVz))
-          var qwXoc = "{" + ""yqRS"
+          var qwXoc = "{" + "yqRS"
           HISVz = HISVz or HISVz
         end
         HISVz = HISVz
@@ -25,7 +25,7 @@ function I1MJ(yfY9C)
       end
       var wcNf0 = ""
       var _bDSC[108]
-      jUaHQNKI[_bDSC[none / -wcNf0]] = "Vm6e" == wcNf0 or "HX"Lv" > I1MJ(none)
+      jUaHQNKI[_bDSC[none / -wcNf0]] = "Vm6e" == wcNf0 or "HXLv" > I1MJ(none)
     end
     if ( not  not  not HISVz)
       I1MJ(-HISVz)

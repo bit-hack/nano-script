@@ -33,7 +33,7 @@ function I77X5gOV()
     I77X5gOV()
   end
   x7_8m[(84) - UHaUpS0m(none, -none)] = "(k6=s5"
-  x7_8m["^$T"Yg"] = none
+  x7_8m["^$TYg"] = none
 end
 
 var yXe26E

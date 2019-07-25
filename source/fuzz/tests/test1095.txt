@@ -67,7 +67,7 @@ function lk8g(wVvz)
     m9i[m9i[72] >= m9i[-MLhIo(AYI1vo, AYI1vo, N9NR, 118, none)]] = (MLhIo(AYI1vo, N9NR, 100, N9NR, AYI1vo) < N9NR)
     return (";)wU")
   end
-  N9NR += MLhIo("gF&s", N9NR, N9NR, AYI1vo, "G/p2"Di")
+  N9NR += MLhIo("gF&s", N9NR, N9NR, AYI1vo, "G/p2Di")
 end
 
 function sDSnsl(pMvjmy, qFI5pFOj, Dq2R3sY, zz, Q2840_8S)
@@ -106,7 +106,7 @@ function sDSnsl(pMvjmy, qFI5pFOj, Dq2R3sY, zz, Q2840_8S)
   if (wt[wt[-N9NR]])
     return -(none)
     MLhIo(lk8g(N9NR), none, lk8g(51), none, N9NR)
-    zz = sDSnsl("_gBN"S", none, sDSnsl(81, "66", none, 31, 110), sDSnsl("on)R2cG", 72, N9NR, 21, N9NR), -lk8g(N9NR))
+    zz = sDSnsl("_gBNS", none, sDSnsl(81, "66", none, 31, 110), sDSnsl("on)R2cG", 72, N9NR, 21, N9NR), -lk8g(N9NR))
   end
   var bicCxAF[112]
   if (MLhIo(34, sDSnsl(N9NR, N9NR, none, "g", "#"), none, 106, N9NR))

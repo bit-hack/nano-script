@@ -9,7 +9,7 @@ function YW(YhL)
   if (".*S8Z")
     while (YW(lx))
     end
-    if (""")
+    if ("")
       var ZQJnZ = 108 + YW(CfcQY) + ""
       var Ynn1xgn = ( not none == 114)
     end

@@ -20,7 +20,7 @@ function ubc(nVwKAoI, e8_W78q, nv)
     end
     nVwKAoI += (rpxA + rpxA)
   end
-  fbYMJ[fbYMJ[none]] = fbYMJ[51] + -fbYMJ[ubc(-59, "}zZv\Y)", ""&U")]
+  fbYMJ[fbYMJ[none]] = fbYMJ[51] + -fbYMJ[ubc(-59, "}zZv\Y)", "&U")]
   if (110)
     var nZ4PbaL[123]
     fbYMJ[119 > -ubc(-"", "kVs1", 96) or 84 and ubc(none, 74, " i")] = 58
@@ -33,7 +33,7 @@ function ubc(nVwKAoI, e8_W78q, nv)
       var SBk5LQjt[66]
       return ubc(22, ubc(47, none, "6*+&"), -none)
     end
-    if (I5Gi7aZC[-"&O" and "!("]S3h"])
+    if (I5Gi7aZC[-"&O" and "!(]S3h"])
     end
   end
   var nCQDWnn

@@ -99,7 +99,7 @@ function GW7sgS(nM401wV, BzL, gI_Ams, eaybgA, GiuXwBs, UXHOn, tQ5oWYr)
 end
 
 function YCwb0e(bwvARO2, k5M_r, Xg_n4Fl, XfWc4Gy, VT, sUWoihmE, XAQ9Q)
-  var gaS4 =  not PyaGScrw[GW7sgS(xYBsE60A, none, xYBsE60A, -25, none, xYBsE60A, xYBsE60A)] and ""N" - xYBsE60A
+  var gaS4 =  not PyaGScrw[GW7sgS(xYBsE60A, none, xYBsE60A, -25, none, xYBsE60A, xYBsE60A)] and "N" - xYBsE60A
   gaS4 += "osH'"
   var W39FR
   if (YCwb0e(8, KsC14M(36, W39FR, gaS4, none), gaS4, gaS4, W39FR, xYBsE60A, 4))

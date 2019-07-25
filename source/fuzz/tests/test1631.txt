@@ -25,9 +25,9 @@ function xaya7()
     end
   end
   kks[none] = dm6ln[PJ(none, none, ";", "#6Kj", "", -none)] <= xaya7()
-  kks[PJ(74, -"#k"B-", "F[", "S", "P_p^", "Z") <= PJ(none, 62, "n", none, none, none) or "Qi+" or xaya7()] = ( not PJ(none, "5d", 68, 31, none, 90) - -"e"R")
+  kks[PJ(74, -"#kB-", "F[", "S", "P_p^", "Z") <= PJ(none, 62, "n", none, none, none) or "Qi+" or xaya7()] = ( not PJ(none, "5d", 68, 31, none, 90) - -"eR")
   while (PJ(none, 32, none, none, none, 33) == -none - 119 > PJ("t14", none, 95, 15, none, 84))
-    while (none or PJ(51, none, "ooB:"", 81, none, 35))
+    while (none or PJ(51, none, "ooB:", 81, none, 35))
       var FocE
       xaya7()
       var Ma
@@ -43,7 +43,7 @@ function xaya7()
         end
       end
     end
-    var r4sT = "" or xaya7() + kks[-PJ(none, "_'E"MkF", "58,fg", -109, -none, 108)]
+    var r4sT = "" or xaya7() + kks[-PJ(none, "_'EMkF", "58,fg", -109, -none, 108)]
     if (xaya7() or r4sT or r4sT)
     end
   end
@@ -51,7 +51,7 @@ end
 
 function SE5oj(UXSan, lC, FYSIO)
   kks[xaya7()] = none / SE5oj(-102, 20, none) + PJ(52, none, "bVJ", none, ";uGHO", 62) == xaya7()
-  var hakj__fO = SE5oj(-PJ(5, none, "mg3", 1, -"Acg", 122), PJ("}I", none, """, none, none, -"fWm@;q"), xaya7())
+  var hakj__fO = SE5oj(-PJ(5, none, "mg3", 1, -"Acg", 122), PJ("}I", none, "", none, none, -"fWm@;q"), xaya7())
   hakj__fO += kks[17] and  not -("K")
   var zXbLNL
   var DNb[85]

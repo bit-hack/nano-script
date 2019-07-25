@@ -32,7 +32,7 @@ function WvEeZUZ9()
       jr[WvEeZUZ9() == WvEeZUZ9() -  not  not -WvEeZUZ9() - -WvEeZUZ9()] = (jr[WvEeZUZ9()])
       return -WvEeZUZ9() == WvEeZUZ9() and WvEeZUZ9()
     end
-    if ( not "k"}B{(;" and -"" <= KeJA[">6Kg"])
+    if ( not "k}B{(;" and -"" <= KeJA[">6Kg"])
       KeJA[WvEeZUZ9() < WvEeZUZ9() - WvEeZUZ9()] =  not "ODbV" / 7 < (none)
     end
     while ( not  not ("B%\\4;") /  not "Cf" == WvEeZUZ9())
@@ -73,7 +73,7 @@ function BFb(UP0QkM, w0N, wHT, iPIt, e79)
     var cRi6 = KeJA[(-WvEeZUZ9())]
     if (S5cvNC * "5 mPV" <= cRi6)
     end
-    while (BFb(29, ""8w", WvEeZUZ9(), WvEeZUZ9(), none))
+    while (BFb(29, "8w", WvEeZUZ9(), WvEeZUZ9(), none))
       w0N += cRi6 * S5cvNC / S5cvNC
       var NBCEBPe[125]
     end

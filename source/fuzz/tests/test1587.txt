@@ -14,7 +14,7 @@ function B2H(G6mLUAC6, yCsQ6O, M_J76c)
   var MMJKQ[47]
   var wXFuY
   yCsQ6O = (-gDsks(78))
-  MMJKQ[""U" - "" == none] = wXFuY
+  MMJKQ["U" - "" == none] = wXFuY
   var bUTc[43]
   bUTc[(wXFuY < B2H(112, -wXFuY, "<"))] = gDsks(wXFuY)
 end

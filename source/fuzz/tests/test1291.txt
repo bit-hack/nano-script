@@ -35,7 +35,7 @@ function KX9Y(I97F, osJ8F, qcsu7, ifUA, q8FL4, MxWowUD, zJV8pPyk)
     wij[KX9Y(20, RYyi, hxpQrI6(TBKdpy2U), RYyi, hxpQrI6("XT'L"), none, -"##")] =  not -"u='|{G{"
     var UV[37]
     TBKdpy2U += hxpQrI6(none) == UV[RYyi]
-    KX9Y(KX9Y("ti'op", RYyi, RYyi, RYyi, -none, -"DR", "24ia"), 6, -TBKdpy2U, KX9Y(none, RYyi, -88, "V"d*h*H", none, RYyi, RYyi), -none, KX9Y(TBKdpy2U, TBKdpy2U, TBKdpy2U, "rvR_P", -",Ub", none, RYyi), KX9Y("%u", TBKdpy2U, TBKdpy2U, TBKdpy2U, RYyi, "DAHNoj%", TBKdpy2U))
+    KX9Y(KX9Y("ti'op", RYyi, RYyi, RYyi, -none, -"DR", "24ia"), 6, -TBKdpy2U, KX9Y(none, RYyi, -88, "Vd*h*H", none, RYyi, RYyi), -none, KX9Y(TBKdpy2U, TBKdpy2U, TBKdpy2U, "rvR_P", -",Ub", none, RYyi), KX9Y("%u", TBKdpy2U, TBKdpy2U, TBKdpy2U, RYyi, "DAHNoj%", TBKdpy2U))
     var Ju1LGd[113]
   end
   KX9Y(82, TBKdpy2U, hxpQrI6(RYyi), 28, TBKdpy2U, 36, KX9Y(TBKdpy2U, "4=zN", -TBKdpy2U, none, RYyi, TBKdpy2U, RYyi))
@@ -44,7 +44,7 @@ function KX9Y(I97F, osJ8F, qcsu7, ifUA, q8FL4, MxWowUD, zJV8pPyk)
     u3OgRXD += RYyi > "" -  not "8@PFu]"
     return (hxpQrI6("kmf2-Q")) >= KX9Y("", RYyi, TBKdpy2U, "'Z", TBKdpy2U, RYyi, TBKdpy2U) + 125
     var VjCD = wij[KX9Y(none, none, TBKdpy2U, 36, u3OgRXD, 19, u3OgRXD) + none]
-    var p0Yo = -hxpQrI6(u3OgRXD) >= u3OgRXD and  not hxpQrI6(VjCD) or KX9Y(u3OgRXD, "wk3y5"", RYyi, "qk.", u3OgRXD, 88, VjCD)
+    var p0Yo = -hxpQrI6(u3OgRXD) >= u3OgRXD and  not hxpQrI6(VjCD) or KX9Y(u3OgRXD, "wk3y5", RYyi, "qk.", u3OgRXD, 88, VjCD)
     q8FL4 += (TBKdpy2U * KX9Y(-VjCD, 54, -RYyi, 112, "9p;", 14, 19))
   end
 end

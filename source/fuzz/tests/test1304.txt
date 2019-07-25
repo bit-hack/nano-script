@@ -5,7 +5,7 @@ var J01T = 64
 function FBS1()
   var aZ[109]
   FBS1()
-  while (-aZ[45 and -""Q>?tR@"])
+  while (-aZ[45 and -"Q>?tR@"])
     FBS1()
   end
   aZ[none <= J01T or J01T <= "`"] = FBS1() /  not  not FBS1() * FBS1()

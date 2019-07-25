@@ -13,7 +13,7 @@ function rNLrT()
 end
 
 function OoUtcgg(XUl0HL, XC, M_FtA, zAVgX)
-  while ( not Ws[-OoUtcgg(none, "ErPC.f6", "L", "pdsr")] / OoUtcgg("v`", "1"", none, -8))
+  while ( not Ws[-OoUtcgg(none, "ErPC.f6", "L", "pdsr")] / OoUtcgg("v`", "1", none, -8))
     var onSDR[23]
     var t1XI8H2X[106]
     rNLrT()

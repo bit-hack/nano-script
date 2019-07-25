@@ -9,7 +9,7 @@ function FKUK(MJWM7, w0Y6bgO)
     var mnaKt = none >= FKUK(127, 122) + none
     var RxC = -mnaKt
     w0Y6bgO += -FKUK("LtM5d", "1F.wvL8") + "EA?We"
-    Zyrtv0v[Zyrtv0v[-RxC] >=  not FKUK(""-L", RxC) < mnaKt] = none
+    Zyrtv0v[Zyrtv0v[-RxC] >=  not FKUK("-L", RxC) < mnaKt] = none
   end
   while (FKUK(">i7(", 46) == FKUK(3, 74) - FKUK(32, 70) * "/fgYr")
     FKUK(FKUK(60, 113), FKUK(43, 76))

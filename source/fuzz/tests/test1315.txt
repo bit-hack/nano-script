@@ -14,7 +14,7 @@ function hmd(HfcOEiH, rOkb)
   while ( not hmd(none, -RJFv3) > hmd(-"0u4", 13) / 110 <= fecy4h)
   end
   return kyUE4Nhx[(82)]
-  while ((" ! ,U".") >=  not  not  not hmd(RJFv3, -none) / RJFv3)
+  while ((" ! ,U.") >=  not  not  not hmd(RJFv3, -none) / RJFv3)
     var NEA = hmd(RJFv3, none)
     var hLoD
     rOkb = -92 + "h"

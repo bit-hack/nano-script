@@ -1,7 +1,7 @@
 # SEED 13146
 
 function SVA(eB, kf, IN, eCxt9v, HIsZ77A2, UKlZ3Nj)
-  SVA(SVA(48, none, "Xg^{", 87, none, -":#.$^Q"), "_$"^d^", "W if-`o", none, "", 11)
+  SVA(SVA(48, none, "Xg^{", 87, none, -":#.$^Q"), "_$^d^", "W if-`o", none, "", 11)
   var tecylT = "Rn"
   while (SVA(tecylT, tecylT, 81, tecylT, -tecylT, tecylT))
     return -tecylT >= "HP!j" > tecylT or SVA(tecylT, tecylT, tecylT, tecylT, tecylT, "8d")
@@ -15,7 +15,7 @@ function SVA(eB, kf, IN, eCxt9v, HIsZ77A2, UKlZ3Nj)
     SVA(tecylT, tecylT, "N|", tecylT, tecylT, none)
   end
   var n3 = (SVA(tecylT, none, -tecylT, tecylT, "LjlK", tecylT) >= SVA(tecylT, none, tecylT, tecylT, tecylT, tecylT))
-  SVA(SVA(101, n3, none, 89, 87, 90), SVA(none, "nxcdy"j", tecylT, n3, "O%4v", ";1("), 8, none, SVA(n3, n3, "XJ;", -none, tecylT, -n3), "S7")
+  SVA(SVA(101, n3, none, 89, 87, 90), SVA(none, "nxcdyj", tecylT, n3, "O%4v", ";1("), 8, none, SVA(n3, n3, "XJ;", -none, tecylT, -n3), "S7")
   var QwAK = -"cD2s7c" or -SVA(none, 63, tecylT, 63, n3, none) * tecylT
 end
 

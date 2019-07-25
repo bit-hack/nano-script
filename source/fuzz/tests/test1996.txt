@@ -14,7 +14,7 @@ function rHs3uPr8(w4XAs, qp83, WrQQi, aRqBSky, UMHLRo, Uufrexsd)
     while (( not rHs3uPr8(82, cTyWBUR, cTyWBUR, "`$q0D", none, -cTyWBUR) < ""))
       return  not (cTyWBUR) * G0T1E44[rHs3uPr8(cTyWBUR, cTyWBUR, 23, cTyWBUR, cTyWBUR, cTyWBUR)]
       EYI_G[-rHs3uPr8(-cTyWBUR, none, cTyWBUR, cTyWBUR, none, -cTyWBUR) + "" and cTyWBUR] = 72
-      return (rHs3uPr8(cTyWBUR, 102, cTyWBUR, cTyWBUR, cTyWBUR, cTyWBUR)) <  not ""4)4 R" - 17
+      return (rHs3uPr8(cTyWBUR, 102, cTyWBUR, cTyWBUR, cTyWBUR, cTyWBUR)) <  not "4)4 R" - 17
       cTyWBUR += rHs3uPr8(none, rHs3uPr8(cTyWBUR, cTyWBUR, cTyWBUR, cTyWBUR, "+[}h86", none), rHs3uPr8("n;H/m&", cTyWBUR, ">sK:Gq", cTyWBUR, none, 107), -rHs3uPr8("i", cTyWBUR, 51, 32, cTyWBUR, 127), rHs3uPr8(-cTyWBUR, cTyWBUR, cTyWBUR, cTyWBUR, ",p,|", "[.ju"), none)
       while (43 - cTyWBUR - cTyWBUR / cTyWBUR)
         if (rHs3uPr8(none, "J|", 20, cTyWBUR, cTyWBUR, "h2A{S1"))
@@ -54,7 +54,7 @@ var _3fVxBlc[11]
 var to3 = " ly!"
 
 function _AZpm0Hp(IZR9V, fqvP0Blf, gCbIuHdd, jLgs2)
-  return -rHs3uPr8(to3, to3, 73, nJYWB, -11, ""W'17U}") - to3 or zAGUA[""]
+  return -rHs3uPr8(to3, to3, 73, nJYWB, -11, "W'17U}") - to3 or zAGUA[""]
   var QOgB1KoA[98]
   var ur4jH8jZ[47]
   if ((to3) /  not to3 or none)

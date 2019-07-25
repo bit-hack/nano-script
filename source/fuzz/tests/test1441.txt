@@ -35,7 +35,7 @@ function Ka(yCl3vMw, wUG4a)
     var VG1tFz[101]
     yCl3vMw = none and szGa6 >= IEjq
     var tJUYQ_[67]
-    tJUYQ_[ not Ka(""", IEjq)] =  not Y_[-none + IEjq]
+    tJUYQ_[ not Ka("", IEjq)] =  not Y_[-none + IEjq]
     var sSKf8
   end
 end
@@ -101,7 +101,7 @@ function HCRSVKhG(Rl, ms1vj, UagYFvpc, t9, v2)
       return IEjq
       while (Ka(HCRSVKhG(IEjq, szGa6, szGa6, ZqM, z9Nag), z9Nag))
         v2 = ZqM - Ka(z9Nag, 48) * -Ka(-IEjq, 49) < -z9Nag
-        Ka(HCRSVKhG(-IEjq, szGa6, """, "g>l7", szGa6), none)
+        Ka(HCRSVKhG(-IEjq, szGa6, "", "g>l7", szGa6), none)
         if (-Ka(-none, z9Nag) < -"3Ma" / ZqM * szGa6)
           var Nihb = 53 - none - none
           var rFZrhlJD[87]

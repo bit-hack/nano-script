@@ -29,7 +29,7 @@ function t91lv(SQAx0, pa, hQP)
   while (none > t91lv("Y1F\\", "J|", 3) - t91lv(97, 93, none))
   end
   if (t91lv(66, 13, "QwY8tdk") >= 90 or "$VDN%no" <= t91lv(-93, 51, 108))
-    while (t91lv("|Ak/1F", t91lv(")|ZHIKk", -1, "@"Ys"), none))
+    while (t91lv("|Ak/1F", t91lv(")|ZHIKk", -1, "@Ys"), none))
       var hxWOgi9[53]
       var wjilDX[48]
     end
@@ -37,7 +37,7 @@ function t91lv(SQAx0, pa, hQP)
       return -t91lv(-"", "RY5x", t91lv(none, "yc", "5"))
       var LkV_c =  not t91lv("8%&u", -none, 13) or -t91lv(73, -34, none) < t91lv(13, "B c|>-", 112)
     end
-    if ((117) == t91lv(-"X`h1", "", -112) < -"2+"Yx%w")
+    if ((117) == t91lv(-"X`h1", "", -112) < -"2+Yx%w")
       while (t91lv("", t91lv("<+", none, "z1F\"), "S1ccN@@"))
         var HzucGpx[60]
         var WA[102]
@@ -56,7 +56,7 @@ function t91lv(SQAx0, pa, hQP)
     end
   end
   while ((t91lv("ND]Gd", 34, "q0 r)#") > none))
-    if ((-t91lv(72, """, 125) < "oy"))
+    if ((-t91lv(72, "", 125) < "oy"))
       var pXQUiq98[29]
       t91lv(t91lv(none, "BO", 58), 91, none)
     end

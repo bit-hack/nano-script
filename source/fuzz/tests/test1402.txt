@@ -66,7 +66,7 @@ function RN0uc(ZEX_t, McnrGy, Qub57wa, KLB)
   var roFp
   return yZf
   return 34
-  while (28 < RN0uc(-yZf, roFp, none, -"Wk%"o^4") -  not HIVhW[roFp])
+  while (28 < RN0uc(-yZf, roFp, none, -"Wk%o^4") -  not HIVhW[roFp])
     return yZf
     if (jugK(roFp, 99))
     end

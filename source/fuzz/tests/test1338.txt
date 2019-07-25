@@ -26,7 +26,7 @@ function ibbP(ETvd3cO, eOx9o, yVLOw, PUwR, fixXpCKh, BQ)
     while ((-93 < 116))
       if (((-WOpl9(zj6rUaXY, zj6rUaXY, zj6rUaXY))))
         return  not -none - WOpl9(zj6rUaXY, zj6rUaXY, 103)
-        while (ibbP("[@$"A", "W6uG", none, zj6rUaXY, zj6rUaXY, " dwDzd") >=  not zj6rUaXY - ibbP(zj6rUaXY, zj6rUaXY, 75, zj6rUaXY, "V.>wz", zj6rUaXY))
+        while (ibbP("[@$A", "W6uG", none, zj6rUaXY, zj6rUaXY, " dwDzd") >=  not zj6rUaXY - ibbP(zj6rUaXY, zj6rUaXY, 75, zj6rUaXY, "V.>wz", zj6rUaXY))
           var iYmxpMB9
           var Wf
           while (Wf >= 123 * WOpl9("s(cx", iYmxpMB9, ""))

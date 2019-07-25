@@ -77,7 +77,7 @@ function uYJl(l7UBysc2, Yw, B7C, zjWY, VuP)
     end
   end
   VuP += (56)
-  zjWY = uYJl(xftZEL, "*_S%k"s", -On, none, On) == -axj95J() /  not "_/" >= xftZEL
+  zjWY = uYJl(xftZEL, "*_S%ks", -On, none, On) == -axj95J() /  not "_/" >= xftZEL
 end
 
 var Stnx7uB[50]

@@ -1,7 +1,7 @@
 # SEED 12961
 
 function jv()
-  if (none - 81 >= jv() < "m4"")
+  if (none - 81 >= jv() < "m4")
     return "-#{"
     return  not jv()
     return jv() > jv() == 6
@@ -28,7 +28,7 @@ function LalAS(vKg, Gh1E, WckW, Z_65kR5, HEv, CWV_lsSL, G7bY3FBZ)
       var i9ah
       var cEFOxqP
     end
-    while (Uiqsmj > "AM"f" > -Uiqsmj)
+    while (Uiqsmj > "AMf" > -Uiqsmj)
       while ( not Uiqsmj + jv() * (Uiqsmj))
         var pC88C
       end

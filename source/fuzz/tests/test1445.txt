@@ -16,7 +16,7 @@ function iL(SwO7lW, tkm, qmr9rOCS, nH1U7ms, zTZ, lzjvR2)
   end
   return iL(none, none, none, ThHXoxwr, "w`d&]", GR8b) - none == ThHXoxwr and -GR8b
   if (GR8b)
-    while ( not iL(ThHXoxwr, "", -none, "zdSx"</", -iL(95, GR8b, "T", -ThHXoxwr, none, none), GR8b))
+    while ( not iL(ThHXoxwr, "", -none, "zdSx</", -iL(95, GR8b, "T", -ThHXoxwr, none, none), GR8b))
       diI56t[70] = GR8b
       if (iL("|05/; ", none, 100, GR8b, GR8b, none) * iL("jET", GR8b, "KzT", GR8b, GR8b, "wMT-"))
       end

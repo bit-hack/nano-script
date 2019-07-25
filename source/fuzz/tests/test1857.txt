@@ -5,7 +5,7 @@ var XPsruj
 var kd993157 = none
 
 function ZU(IRj, FH, pEhV9DYe, HKw0cz, ubKxPk, RN1j5gu)
-  return ZU(none, none, XPsruj, -kd993157, XPsruj, "n\/"") / -XPsruj
+  return ZU(none, none, XPsruj, -kd993157, XPsruj, "n\/") / -XPsruj
   var F_RS
   F_RS = none - 69 == F_RS
   XPsruj += -F_RS or kd993157 < none + F_RS

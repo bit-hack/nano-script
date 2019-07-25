@@ -29,7 +29,7 @@ function w1(Awmd0vj, Xhc, oTBhGr, cgJ)
       end
     end
     GIeTQV(-"9fdhA?", w1(XawmP_8f, 33, XawmP_8f, SCxQfyo), 74)
-    SCxQfyo = w1(""", XawmP_8f, "NQq", XawmP_8f) >  not w1(none, XawmP_8f, -SCxQfyo, "Q!t)@&'") >= GIeTQV(SCxQfyo, XawmP_8f, none)
+    SCxQfyo = w1("", XawmP_8f, "NQq", XawmP_8f) >  not w1(none, XawmP_8f, -SCxQfyo, "Q!t)@&'") >= GIeTQV(SCxQfyo, XawmP_8f, none)
     var eqGwmPog[54]
   end
   SCxQfyo += XawmP_8f < 36 and XawmP_8f

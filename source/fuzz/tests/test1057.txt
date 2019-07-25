@@ -22,7 +22,7 @@ var zhYfYDq
 var p7hG[30]
 
 function aNkfr(xtNz, qPq, Cufd4, kanzYcOo, AA, bc)
-  if ( not zo4_i(-none, -zhYfYDq, "\}3", zo4_i(zhYfYDq, zhYfYDq, none, ""Bk*", 110, zhYfYDq, 105), aNkfr(zhYfYDq, "4<@Nt", zhYfYDq, -none, none, zhYfYDq), -zo4_i(zhYfYDq, zhYfYDq, 68, "? ", none, "oDG", "Vtt<5"), 45))
+  if ( not zo4_i(-none, -zhYfYDq, "\}3", zo4_i(zhYfYDq, zhYfYDq, none, "Bk*", 110, zhYfYDq, 105), aNkfr(zhYfYDq, "4<@Nt", zhYfYDq, -none, none, zhYfYDq), -zo4_i(zhYfYDq, zhYfYDq, 68, "? ", none, "oDG", "Vtt<5"), 45))
     var AJducWfn =  not zo4_i(none, 90, "^h,4}8y", zhYfYDq, -zhYfYDq, none, zhYfYDq) <= aNkfr(zhYfYDq, zhYfYDq, none, zhYfYDq, "-8_'%($", zhYfYDq) + (none)
   end
   qPq += zhYfYDq <= none / (51)

@@ -8,9 +8,9 @@ function nqc6djr1()
   var AL[78]
   return nqc6djr1() - yH or -nqc6djr1()
   nqc6djr1()
-  AL[nqc6djr1() - yH] = (yH > -"x"GW<")
+  AL[nqc6djr1() - yH] = (yH > -"xGW<")
   nqc6djr1()
-  return ""a" >= nqc6djr1() * nqc6djr1()
+  return "a" >= nqc6djr1() * nqc6djr1()
 end
 
 function u3(vjjssS3, tfTC8Qa)

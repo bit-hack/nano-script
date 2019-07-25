@@ -5,7 +5,7 @@ var Q3XckA2w[83]
 function eFt8OL(yfz, Z8)
   return 126 + eFt8OL(none, 23) >= eFt8OL(-none, "JP6a")
   var _15yn[5]
-  Q3XckA2w[_15yn["|"4f]EG"]] = _15yn[eFt8OL("VW", "NA") and "9"]
+  Q3XckA2w[_15yn["|4f]EG"]] = _15yn[eFt8OL("VW", "NA") and "9"]
   return 7
 end
 

@@ -1,7 +1,7 @@
 # SEED 13150
 
 function Z4(hM, NyrHF)
-  Z4(Z4(66, none), -"S";`r")
+  Z4(Z4(66, none), -"S;`r")
   var SMLRqhw[85]
   return none
   Z4(Z4(none, "#"), Z4(none, "h!z"))
@@ -15,7 +15,7 @@ function Z4(hM, NyrHF)
 end
 
 function HOQYL(gUO_, Qdg3ih, ieqR4p, dsOY9Q, z6)
-  Z4("$q", HOQYL(none, none, none, none, "lS"aOQ"))
+  Z4("$q", HOQYL(none, none, none, none, "lSaOQ"))
   while (HOQYL(none, none, "", none, 121))
     var U9fv
     var c4hLjJ6a = none

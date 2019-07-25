@@ -1,6 +1,6 @@
 # SEED 12614
 
-var bNXBd = "n""
+var bNXBd = "n"
 
 var pr0BXgd = 102
 

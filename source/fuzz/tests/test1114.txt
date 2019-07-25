@@ -39,7 +39,7 @@ function JMWGyOJh(WuLL, Mn, rQ, hXmR7, df_V, YgUipU, ZSql)
       end
     end
     L9c = AMrn
-    return aRi(AMrn) and (-""hX-")
+    return aRi(AMrn) and (-"hX-")
   end
   var sjN
   var oDRo1s[11]

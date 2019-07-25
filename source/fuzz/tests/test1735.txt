@@ -41,7 +41,7 @@ function rz_l(uU_0K7MP, ySOP6EvJ)
             end
           end
         end
-        var Kdtg = -(rz_l(none, "M!"iu") >= rz_l(80, 86))
+        var Kdtg = -(rz_l(none, "M!iu") >= rz_l(80, 86))
         sAdi[rz_l(Kdtg, Kdtg) == rz_l("|v>.", Kdtg)] = rz_l(115, Kdtg) <= Kdtg or rz_l(120, 121)
         var Fwh9IiQ = rz_l(-Kdtg, Kdtg) * Kdtg
       end

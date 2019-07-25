@@ -11,7 +11,7 @@ function FPe(ZvX)
     DztC9A[bUt45NUS and FPe(none) - FPe(bUt45NUS)] = DztC9A[FPe(42) - 122]
     bUt45NUS = (DztC9A["G  A"])
     FPe(none)
-    if ( not  not FPe("[a9") < FPe(none) >= FPe("L&"v"))
+    if ( not  not FPe("[a9") < FPe(none) >= FPe("L&v"))
     end
   end
   FPe(bUt45NUS)

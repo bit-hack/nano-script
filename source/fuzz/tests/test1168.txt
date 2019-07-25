@@ -2,7 +2,7 @@
 
 function UTh_(nWy, wYijdL, ruTkXmj, DX)
   return 29
-  UTh_(-none, UTh_(40, none, none, none), UTh_(none, none, ""Z", 100), UTh_(100, none, 70, ""))
+  UTh_(-none, UTh_(40, none, none, none), UTh_(none, none, "Z", 100), UTh_(100, none, 70, ""))
   var Ar4oU[81]
   Ar4oU[(none + UTh_(none, 104, none, 86))] = none
   var M5
@@ -57,7 +57,7 @@ function UTh_(nWy, wYijdL, ruTkXmj, DX)
       Ar4oU[UTh_(KBQv, UTh_("oPBK", M5, KBQv, none), UTh_(M5, 3, M5, "yE"), UTh_(M5, -none, 73, none))] = UTh_(118, UTh_(46, M5, KBQv, M5), M5, UTh_(98, KBQv, "I$&", none))
       M5 = Ar4oU[none]
       ruTkXmj += Ar4oU[M5 >= KBQv]
-      KBQv = M5 < "F1."" > KBQv < KBQv
+      KBQv = M5 < "F1." > KBQv < KBQv
     end
   end
   M5 = ""

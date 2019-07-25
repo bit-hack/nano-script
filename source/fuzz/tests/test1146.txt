@@ -20,7 +20,7 @@ function qSpk(OoFnu, enS, Afv4, zfKtW6xd, p5ctZrb, Ew, eUp)
         end
         rzCnLvV[jBQjzMoq] = rzCnLvV[""] <= qSpk(jBQjzMoq, jBQjzMoq, jBQjzMoq, jBQjzMoq, none, jBQjzMoq, 113) - jBQjzMoq
         qSpk(qSpk(6, jBQjzMoq, -jBQjzMoq, -none, jBQjzMoq, 21, jBQjzMoq), "|:", none, qSpk(65, jBQjzMoq, jBQjzMoq, -26, jBQjzMoq, "L3", 67), 52, 27, jBQjzMoq)
-        jBQjzMoq = (jBQjzMoq) <= qSpk("D$T]v", jBQjzMoq, "^F"C", jBQjzMoq, none, "w]", jBQjzMoq)
+        jBQjzMoq = (jBQjzMoq) <= qSpk("D$T]v", jBQjzMoq, "^FC", jBQjzMoq, none, "w]", jBQjzMoq)
         return (qSpk(jBQjzMoq, jBQjzMoq, jBQjzMoq, jBQjzMoq, -jBQjzMoq, jBQjzMoq, 73) and 79)
       end
       rzCnLvV[none] = (-none > jBQjzMoq)
@@ -45,7 +45,7 @@ function qSpk(OoFnu, enS, Afv4, zfKtW6xd, p5ctZrb, Ew, eUp)
   while (cb8a232e[jBQjzMoq] == -qSpk("qL&+_", jBQjzMoq, -jBQjzMoq, 66, 35, ">)s", none) * 29)
     jBQjzMoq += qSpk(qSpk(none, "cnr'e4R", jBQjzMoq, jBQjzMoq, jBQjzMoq, -jBQjzMoq, jBQjzMoq), "Ds|Y", -54, qSpk(120, jBQjzMoq, jBQjzMoq, jBQjzMoq, jBQjzMoq, jBQjzMoq, 120), jBQjzMoq, -none, "")
     while (cb8a232e[qSpk(-jBQjzMoq, -jBQjzMoq, 37, 58, jBQjzMoq, jBQjzMoq, jBQjzMoq) <= jBQjzMoq])
-      cb8a232e[33 >= qSpk(jBQjzMoq, none, jBQjzMoq, jBQjzMoq, jBQjzMoq, "F"#*WI", jBQjzMoq) >= -qSpk(jBQjzMoq, jBQjzMoq, "M\*j7s", jBQjzMoq, jBQjzMoq, jBQjzMoq, jBQjzMoq)] = jBQjzMoq - jBQjzMoq > "}5%" * jBQjzMoq
+      cb8a232e[33 >= qSpk(jBQjzMoq, none, jBQjzMoq, jBQjzMoq, jBQjzMoq, "F#*WI", jBQjzMoq) >= -qSpk(jBQjzMoq, jBQjzMoq, "M\*j7s", jBQjzMoq, jBQjzMoq, jBQjzMoq, jBQjzMoq)] = jBQjzMoq - jBQjzMoq > "}5%" * jBQjzMoq
       jBQjzMoq =  not jBQjzMoq * qSpk(jBQjzMoq, none, none, "A5", jBQjzMoq, "Q|74)'C", jBQjzMoq) == qSpk(none, jBQjzMoq, jBQjzMoq, jBQjzMoq, jBQjzMoq, "Sx.OUr", jBQjzMoq) / qSpk(jBQjzMoq, -jBQjzMoq, -jBQjzMoq, none, jBQjzMoq, none, 77)
       if ("h" or jBQjzMoq or jBQjzMoq)
         if (-((qSpk("FwB", none, jBQjzMoq, "[F", 86, 78, 58))))
@@ -88,7 +88,7 @@ function qSpk(OoFnu, enS, Afv4, zfKtW6xd, p5ctZrb, Ew, eUp)
           var nPhn
         end
         jBQjzMoq += jBQjzMoq
-        cb8a232e[qSpk(jBQjzMoq, 47, "rg\s.", -");7", 4, none, jBQjzMoq)] = qSpk(jBQjzMoq, "uagv7\G", qSpk(124, jBQjzMoq, jBQjzMoq, -jBQjzMoq, 110, jBQjzMoq, jBQjzMoq), 90, "2 "L]K", jBQjzMoq, jBQjzMoq)
+        cb8a232e[qSpk(jBQjzMoq, 47, "rg\s.", -");7", 4, none, jBQjzMoq)] = qSpk(jBQjzMoq, "uagv7\G", qSpk(124, jBQjzMoq, jBQjzMoq, -jBQjzMoq, 110, jBQjzMoq, jBQjzMoq), 90, "2 L]K", jBQjzMoq, jBQjzMoq)
       end
       while (jBQjzMoq)
         p5ctZrb = -cb8a232e[("lM.OQZ@")]

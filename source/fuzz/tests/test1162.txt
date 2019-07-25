@@ -34,7 +34,7 @@ function qD(QwK2YuSZ, xdk)
   end
   while ((none) < "yuhkt9_" + qD(69, 22))
     qD(VS(60, 67, none), qD(82, none))
-    return "Rk"\S" == none /  not none < qD(-"nt", 24)
+    return "Rk\S" == none /  not none < qD(-"nt", 24)
   end
   if ( not 97 + qD(19, "4/eaY") <  not 25 or "/z-v")
     return VS(6, -qD(none, 85), VS(64, "r[", none))
@@ -46,7 +46,7 @@ function qD(QwK2YuSZ, xdk)
 end
 
 function Er37Nn(SIKh2vK, Nj, fZh, gTWp, nB, wrwrTV)
-  while (-"!rW|" >= VS(">0"e2PN", none, "D!=S1DG") * Er37Nn(-",plS@", -"f}d.X?n", -"+U>Y3", none, 38, none) < ":Y ")
+  while (-"!rW|" >= VS(">0e2PN", none, "D!=S1DG") * Er37Nn(-",plS@", -"f}d.X?n", -"+U>Y3", none, 38, none) < ":Y ")
     VS(none, Er37Nn(41, "<]{J", 113, none, 12, "?bWtY{e"), VS(-"(1e", "S)TeW", 110))
   end
   return qD(67, none) > qD(116, 20) and "" >= VS("M_", none, none)

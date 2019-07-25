@@ -14,7 +14,7 @@ function lgsTk(x5x, OJidOBN1)
   YbTg0t[49] = YbTg0t[lgsTk(24, "Q<")] or none / lgsTk("Kd$,W{", 4)
   while (lgsTk(bdzD, "iM)") and bdzD or none - bdzD)
     YbTg0t[("x WCxI") <  not 104] = (bdzD) + YbTg0t[lgsTk(bdzD, bdzD)]
-    return YbTg0t[ not "Dm}" * "6H?"Y[)"]
+    return YbTg0t[ not "Dm}" * "6H?Y[)"]
   end
 end
 

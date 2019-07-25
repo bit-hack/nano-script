@@ -161,13 +161,13 @@ class Generator(object):
     def do_number(self, scope, base=0):
         return str(base + random(128))
 
-    # string ::= [a-zA-Z0-9]*
+    # string ::= '"' [a-zA-Z0-9]* '"'
     def do_string(self, scope):
         s = ""
         l = random(8)
         for i in range(0, l):
             s += chr( 32 + random(94) )
-        return '\"' + s + '\"'
+        return '\"' + s.replace('"', '') + '\"'
 
     # literal ::= number
     #           | string

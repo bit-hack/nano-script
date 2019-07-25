@@ -6,7 +6,7 @@ function bZW(INk, YiXM6)
     bZW(none, bZW(none, 69))
     var QyQn[56]
     bZW(bZW(none, "q{p{"), bZW("'(!s", "62 c"))
-    QyQn[ not -QyQn[-"!G=_"D"] * bZW(none, 36) and none] = bZW(bZW(45, none), -bZW(-126, "l;c"))
+    QyQn[ not -QyQn[-"!G=_D"] * bZW(none, 36) and none] = bZW(bZW(45, none), -bZW(-126, "l;c"))
   end
   if (none * bZW(none, "46h") or bZW(none, -"]O|/jc`") and 35)
     return none == bZW("x", 51) - none

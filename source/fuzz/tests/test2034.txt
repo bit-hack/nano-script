@@ -4,7 +4,7 @@ var zen
 
 function kxakznC(wVNcI_Jk, mvdyu, sb_VFZ, GW15D3QN, rlI3, Cf1Q)
   var wtazC
-  return wtazC == kxakznC("uy)", "{3"( ", zen, none, wtazC, none)
+  return wtazC == kxakznC("uy)", "{3( ", zen, none, wtazC, none)
   while (kxakznC(wtazC, zen, kxakznC(zen, 87, "", 107, zen, "8iW"), wtazC, none, kxakznC(-41, 49, "V./", wtazC, -wtazC, wtazC)))
     kxakznC(zen, wtazC, 75, "mq0U>?", zen, kxakznC(none, 124, wtazC, 80, 18, "B{DF"))
     var KRT
@@ -25,7 +25,7 @@ function kxakznC(wVNcI_Jk, mvdyu, sb_VFZ, GW15D3QN, rlI3, Cf1Q)
     end
   end
   kxakznC(none, 4, "SV", -zen, kxakznC(none, -wtazC, 32, zen, none, none), none)
-  kxakznC(zen, kxakznC(-"pv#]`o", wtazC, zen, none, zen, zen), -"B`", kxakznC(zen, none, zen, 31, "*"Z", "Ta"), kxakznC(87, wtazC, zen, zen, 94, wtazC), kxakznC("_Ac", "FGhT", zen, wtazC, none, wtazC))
+  kxakznC(zen, kxakznC(-"pv#]`o", wtazC, zen, none, zen, zen), -"B`", kxakznC(zen, none, zen, 31, "*Z", "Ta"), kxakznC(87, wtazC, zen, zen, 94, wtazC), kxakznC("_Ac", "FGhT", zen, wtazC, none, wtazC))
   var z_P8A = ("u.pc") - wtazC <= zen
 end
 

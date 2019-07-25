@@ -8,7 +8,7 @@ function qJ1xQb(sCmPJASV, wK, scaZRMDa, oTLkxf8, KN6Zk)
       return none < (36)
       var Fz = qJ1xQb(-67, none, 7, -none, none) and qJ1xQb("KH", 64, 101, "1fM`V3", 19) or qJ1xQb("/Q_hd", "OpR&qCW", none, "o", 4) + qJ1xQb(none, none, none, none, "Ak\T")
       var WZmW4mn = Fz > Fz + -Fz <= none
-      qJ1xQb(WZmW4mn, qJ1xQb(none, none, "j67)", Fz, 87), qJ1xQb("Yb", 72, "Sc$"nmx", WZmW4mn, WZmW4mn), none, -91)
+      qJ1xQb(WZmW4mn, qJ1xQb(none, none, "j67)", Fz, 87), qJ1xQb("Yb", 72, "Sc$nmx", WZmW4mn, WZmW4mn), none, -91)
       var nulzJ[68]
     end
   end

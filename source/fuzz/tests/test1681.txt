@@ -25,9 +25,9 @@ function HoeT(AdHx, pO_, hgb)
   if (-(-gvQJmW("HS", -"F4j0au", "IM", 74, "K}'", "") * gvQJmW(none, 110, 33, none, none, "v%")))
   end
   if ( not gvQJmW(none, none, -33, "C#X>'", HoeT(none, 17, "9R^,"), gvQJmW(-none, none, "|Woyj", "$", 49, 75)))
-    gvQJmW(none, "", 48, HoeT("'", none, none), gvQJmW("kp3^g", ")N90"", none, "[;", "ph1ST|", none), none)
+    gvQJmW(none, "", 48, HoeT("'", none, none), gvQJmW("kp3^g", ")N90", none, "[;", "ph1ST|", none), none)
   end
-  while (gvQJmW("e?0"V", 124, "K!^", -"`", none, 113) and -gvQJmW(110, 119, "", 80, none, none) >  not HoeT("^b[", "JbETrv", none))
+  while (gvQJmW("e?0V", 124, "K!^", -"`", none, 113) and -gvQJmW(110, 119, "", 80, none, none) >  not HoeT("^b[", "JbETrv", none))
     if (HoeT(112, HoeT(-none, 114, none), none))
       var kTmZlMGb = -((-gvQJmW(22, 71, none, 74, -"kMI%d{$", none)))
     end
