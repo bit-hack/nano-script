@@ -1,72 +1,101 @@
 # SEED 13296
 
 function axj95J()
-  return axj95J() or -9 or 75
-  axj95J()
-  while (axj95J() or (114))
+  return axj95J() or -"JT*;i" - -axj95J()
+  while (axj95J())
+  end
+  if (axj95J())
+    axj95J()
     axj95J()
   end
   var y3xBV[10]
-  while (-y3xBV[y3xBV[9]])
-    y3xBV[88] = 8
+  while (-y3xBV[y3xBV[none]])
+    y3xBV[y3xBV[16 / axj95J()]] = y3xBV[y3xBV[axj95J()]]
   end
+  var ZXG[13]
 end
 
-var tRKc[39]
+var On = 68
 
-var pis4[8]
+var xftZEL = "2'i'"
 
-function nVa2()
-  tRKc[98] = 113 - axj95J() and (116)
-  if (74 - 116 == (nVa2()))
-  end
-  axj95J()
-  while ( not  not 67 / nVa2() and nVa2())
-  end
-end
-
-function _E(Do, gdee3sWf)
-  return  not tRKc[ not tRKc[66]]
-  if ( not _E(81, 64) - 78 - axj95J())
-    tRKc[53] = tRKc[26] +  not -100 and _E(33, 44)
-    while (nVa2() < _E(115, 102) or 100 / 43)
-    end
-    return axj95J() <= -axj95J() >= 27
-  end
-  if (_E(79, -4) * axj95J() - -96)
-    axj95J()
-    if (pis4[axj95J() / axj95J()])
-      if (52 and 81 and (87))
-        var XU8k9[43]
-        return (axj95J() and axj95J())
-        if ((75) == nVa2())
-          var _WvnMKY[115]
-          axj95J()
-          axj95J()
-          var WA7wWTq6[41]
-          while (122)
-            var sbQYNQOh[90]
-            var IPPpSj[7]
-          end
-        end
+function uYJl(l7UBysc2, Yw, B7C, zjWY, VuP)
+  while ( not  not xftZEL)
+    xftZEL += 38 < "b3R" <=  not "&UwtbY" and xftZEL
+    if (On)
+      if ( not uYJl(On, none, none, xftZEL, 8) and "z2}")
+        zjWY += "n"
+        xftZEL +=  not -none and uYJl(none, "?*>", xftZEL, "WnlD-S", xftZEL) == (none)
       end
-      if (nVa2())
-        tRKc[102] = tRKc[axj95J()]
-        while (tRKc[53] * 107)
-          axj95J()
-        end
-        _E(28, axj95J())
-      end
+      xftZEL += xftZEL
       axj95J()
+      return axj95J() > axj95J() <=  not -On
+    end
+    axj95J()
+  end
+  B7C = uYJl("", -xftZEL, 57, xftZEL, none) + -none + 55
+  return On <= uYJl(On, 99, "e|", 119, "dYcLl&<") * On
+  if ( not xftZEL and axj95J() < axj95J())
+    zjWY = -uYJl(none, -none, -xftZEL, xftZEL, 29) <  not none / uYJl(On, "H,!`zu", -xftZEL, xftZEL, xftZEL)
+    if (On and axj95J() * 2)
+    end
+    l7UBysc2 =  not On
+    if ("}1{dV(")
+      if (none)
+      end
+      return  not uYJl(xftZEL, axj95J(), 95, -none, 89)
+      if ( not xftZEL <  not none <= "5?")
+        uYJl(-xftZEL, xftZEL, On, axj95J(), uYJl(none, On, 81, none, xftZEL))
+        while ( not axj95J())
+          while (uYJl("$S{@R", axj95J(), On, -"8(z", On))
+            uYJl(none, none, -axj95J(), 101, axj95J())
+            return uYJl(uYJl(On, none, On, 120, -"V2;\|Q"), xftZEL, "(+!)oE", "l", xftZEL)
+          end
+          while (none)
+            return 25 / uYJl(54, -On, On, "CLY(X", xftZEL) <= axj95J()
+            var dADIN[121]
+          end
+          if (xftZEL)
+            while (uYJl(54, "PdLA", uYJl(none, xftZEL, xftZEL, -none, none), 94, 21))
+            end
+          end
+          uYJl("E;x", -2, none, uYJl(xftZEL, 88, xftZEL, 126, xftZEL), xftZEL)
+        end
+      end
+    end
+    uYJl("vnK*r", -On, uYJl(39, -68, xftZEL, xftZEL, On), none, uYJl(none, none, -none, none, -none))
+  end
+  while (none * "UL" > uYJl(56, "`4,6V", none, xftZEL, On))
+    while (8 * uYJl(-57, On, xftZEL, xftZEL, -122))
+    end
+    return ((axj95J()))
+    uYJl(0, On, 27, axj95J(), "")
+  end
+  while (31 - axj95J() - none > -axj95J())
+    while (axj95J() <= (-uYJl(-On, -"kNH", xftZEL, On, On)))
+      var v2bs11z3 = uYJl(xftZEL, -xftZEL, "[B", xftZEL, 42) / -"_Ch]N$" > (On)
     end
   end
-  if (0 >= nVa2() <= 34 / 74)
-    tRKc[31] =  not 9 and 45
-    var Hx2vWFV[106]
-    return nVa2()
-  end
-  return  not 95 and -54 >= pis4[108]
+  VuP += (56)
+  zjWY = uYJl(xftZEL, "*_S%k"s", -On, none, On) == -axj95J() /  not "_/" >= xftZEL
 end
 
-var baEnCSh[119]
+var Stnx7uB[50]
+
+function s7Qyzjt8(uy, To36, yw_OSR1)
+  if ( not Stnx7uB[-On])
+    On = Stnx7uB[Stnx7uB[xftZEL]]
+    yw_OSR1 = none
+    return (Stnx7uB[xftZEL])
+    yw_OSR1 += Stnx7uB[xftZEL] == (axj95J())
+    var zqO[49]
+  end
+  s7Qyzjt8(xftZEL, xftZEL, -On)
+  axj95J()
+  var uReFx1 = Stnx7uB[uYJl(xftZEL, "s7G)", none, "RG5", xftZEL)]
+  yw_OSR1 += 125
+  return uYJl("nA(M ?", On, xftZEL, uReFx1, On)
+  yw_OSR1 =  not On <= 113 <= 30
+  yw_OSR1 = s7Qyzjt8(xftZEL, On, none) / xftZEL == uReFx1 or -On
+end
 

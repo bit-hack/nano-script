@@ -5,12 +5,9 @@ var kAc5[36]
 var gwHv[41]
 
 function EhfX9eC7()
-  kAc5[44] = EhfX9eC7()
-  var i0M[29]
-  while (kAc5[ not 54])
-  end
-  var LM =  not kAc5[EhfX9eC7() >= 84]
-  if (-(EhfX9eC7()))
-  end
+  kAc5[kAc5[EhfX9eC7()] and EhfX9eC7() >= none] = kAc5[(EhfX9eC7())]
+  return EhfX9eC7()
+  kAc5[EhfX9eC7()] = none / none - EhfX9eC7() / none
+  gwHv[EhfX9eC7()] = EhfX9eC7() * ")WRL(2!" - EhfX9eC7() * EhfX9eC7()
 end
 

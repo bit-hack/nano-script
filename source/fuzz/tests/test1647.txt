@@ -1,15 +1,17 @@
 # SEED 12968
 
-var UM = 25
+var UM = none
 
 function zRXXI0iZ(Ipifw, STAj, w7Lk, UH, ZEEx, Oy, wl)
-  return zRXXI0iZ(31, zRXXI0iZ(UM, 36, UM, UM, UM, UM, UM), UM, 3, zRXXI0iZ(77, 120, 113, UM, 98, UM, UM), 52, 114)
-  zRXXI0iZ(UM, 41, -zRXXI0iZ(66, UM, 63, UM, 20, -78, UM), UM, -UM, zRXXI0iZ(UM, 78, -69, UM, UM, 84, 63), 98)
-  UM = zRXXI0iZ(zRXXI0iZ(UM, UM, UM, UM, 1, 109, 93), 56, UM, zRXXI0iZ(UM, 121, UM, UM, 123, 120, 4), 83, 16, UM)
-  var Ol[21]
-  UM = -Ol[-UM or 76]
-  Ipifw +=  not (-zRXXI0iZ(117, UM, 35, UM, 55, UM, 20))
+  return zRXXI0iZ("1ZOQh", UM, UM, zRXXI0iZ(UM, UM, UM, UM, UM, UM, "%aVfo="), UM, 113, UM)
+  return -UM
+  UM += zRXXI0iZ(zRXXI0iZ(UM, "", UM, none, UM, none, none), zRXXI0iZ(-UM, none, UM, "Nb-[*R", 94, UM, -none), zRXXI0iZ(UM, -UM, UM, UM, "", UM, UM), "0?", UM, "wZT", UM)
+  Oy = zRXXI0iZ(UM, UM, UM, "Sycv", none, none, "F"=<")
+  wl = UM >= UM - UM == UM
+  while ((UM == zRXXI0iZ(UM, 80, none, 24, 119, UM, none)))
+    UM += -UM or 81 / UM
+  end
+  var mU3r =  not UM > UM and UM + 20
   var KD9Qx_h_[8]
-  zRXXI0iZ(76, UM, UM, UM, zRXXI0iZ(-104, 91, UM, UM, UM, 25, UM), -zRXXI0iZ(78, UM, UM, UM, 114, UM, -48), -7)
 end
 

@@ -1,62 +1,27 @@
 # SEED 12847
 
-var ix = 39
+var ix = none
 
 function UZ8F(DpKGT_, Jtx, EKML, eC2k34zK)
-  while ((UZ8F(97, 50, ix, ix)) <= ix)
-    var ju[116]
-    return (34)
-    var NZGpWrj[114]
-  end
-  return 119
-  return UZ8F(ix, 81, UZ8F(ix, ix, ix, 84), UZ8F(ix, ix, -ix, ix))
-  while (ix < UZ8F(ix, -ix, ix, ix) / 111 < UZ8F(-ix, 43, 98, 113))
-    while ((41) >= 19)
-      eC2k34zK = (-33)
-      ix +=  not 31 / ix - 101
-      if (35 <= 88)
-        ix += 120
-        if (UZ8F(ix, 117, ix, 66) > ix)
-          while (ix == 42 or ix)
-            if (UZ8F(UZ8F(ix, -79, 113, 43), UZ8F(ix, ix, 38, -ix), ix, 113))
-              EKML = -UZ8F(ix, 65, ix, ix) and 45 or UZ8F(ix, ix, ix, 14)
-              ix = -ix <= UZ8F(126, ix, 72, ix) * 13
-              DpKGT_ = UZ8F(ix, ix, ix, ix) * UZ8F(ix, -ix, 43, 36) * 93 / 54
-            end
-            DpKGT_ +=  not -(ix) - (UZ8F(121, 16, 84, ix))
-            ix += (-UZ8F(90, 94, ix, 102) < UZ8F(77, -51, 95, 9))
-            return 65 + (25)
-          end
-          ix = ix or ix == 28 or ix
-          return ix
-          UZ8F(UZ8F(ix, 7, 105, 99), 89, -UZ8F(ix, -122, 27, 34), -ix)
-        end
-        var MDrJs[69]
-      end
-      if (UZ8F(ix, UZ8F(110, ix, ix, ix), 6, ix))
-        var EcpXRo[48]
-      end
-    end
-    eC2k34zK = -ix < 6 - 101
-    if ( not (UZ8F(ix, -ix, 115, 98)) * 61 - UZ8F(ix, 32, -ix, ix))
-      ix =  not ix < ix *  not -UZ8F(ix, ix, ix, ix) and 87
-      ix = ix
-      return 1
-      ix += -UZ8F(UZ8F(-45, 5, 84, 92), 16, ix, UZ8F(ix, ix, ix, ix))
-      while (42 >=  not ix <= -UZ8F(33, 106, 68, 8))
-        eC2k34zK = ix * UZ8F(65, ix, ix, 51)
-        if ((-UZ8F(ix, ix, ix, ix) and 14))
-          UZ8F(UZ8F(89, 119, 32, 3), UZ8F(115, ix, ix, ix), 86, UZ8F(ix, ix, 9, 11))
-        end
-        EKML = ix and ix * (11)
-        UZ8F(UZ8F(ix, -ix, ix, ix), 73, UZ8F(ix, 1, ix, ix), 45)
-      end
+  while ((UZ8F(114, ix, ix, ix)) and ix)
+    ix += "uNm" >= ix or (ix)
+    ix += none / UZ8F(ix, 50, "3Z", ix) or UZ8F(none, ix, -ix, ix)
+    while (ix < UZ8F(ix, -ix, ix, ix) / "!@" <= UZ8F(ix, ix, 29, 25))
+      var iGCNj_X
     end
   end
-  UZ8F(52, UZ8F(64, ix, ix, ix), ix, ix)
-  var TjgRgOZf =  not -UZ8F(88, ix, -23, ix) - -115 - ix
-  DpKGT_ = ( not UZ8F(ix, TjgRgOZf, ix, TjgRgOZf))
-  if (98)
+  var tTJA[110]
+  eC2k34zK = (-none)
+  ix +=  not "i" >= ix - 67
+  ix = none > (none)
+  if (UZ8F(ix, "6#('tl", 45, ix) >= UZ8F(39, ix, none, 106) <= UZ8F(ix, ix, -" ;+%0i+", ix))
+    UZ8F(UZ8F("#", ix, ix, ix), "X\;s", ix, -ix)
+    tTJA[-tTJA[tTJA[ix]]] = -UZ8F(ix, 28, "", ix) and none or UZ8F(ix, ix, ix, 64)
+    UZ8F(ix, UZ8F("q03", ix, none, ix), "x", "")
+    var Omj
+    Jtx = Omj or ""
   end
+  var jJFf5FN3
+  return UZ8F(ix, "ol\j=q", ix, -ix) + 23
 end
 

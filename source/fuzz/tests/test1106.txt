@@ -1,14 +1,11 @@
 # SEED 12427
 
-var LEdH = 17
+var LEdH = 75
 
-function Xm2(BXzel41K, Wfy, hp, gbHO1YD, FCK, DzpuS5A)
-  LEdH = 119
-  LEdH = 81 == LEdH
-  LEdH += -52
-  LEdH += -(LEdH) - 65 or 93
-  LEdH = 122 - LEdH == LEdH
-  LEdH += LEdH
-  Wfy = LEdH
+function G2CV1Xze(eKQ, yy, hp)
+  LEdH +=  not G2CV1Xze(LEdH, none, -none)
+  LEdH += -(LEdH) - none or "_)uiP"
+  var kpszKBBH
+  var Z4UAd = LEdH
 end
 

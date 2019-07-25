@@ -1,48 +1,32 @@
 # SEED 13337
 
-var I5r = 100
+var I5r = "qAK"
 
-var elYtV[114]
+var ormmPha4 = ""
 
-var wha4eynz[84]
-
-function Vlj(hf, SX3n8cxh, JWKA0rbv)
-  SX3n8cxh += 74 > Vlj(33, I5r, 40) - Vlj(93, 0, 0) > Vlj(65, I5r, I5r)
-  var HpxLacV[16]
-  var J5hfXm3 = wha4eynz[elYtV[I5r]]
-  while ((J5hfXm3))
-    if (-J5hfXm3 * 25 / J5hfXm3 < J5hfXm3)
-      while (Vlj(21, 2, I5r) or Vlj(18, 85, 95) and I5r)
-        return  not  not I5r > 77 >= Vlj(I5r, 99, J5hfXm3) + Vlj(I5r, J5hfXm3, I5r)
-        var YAuNJBfM[6]
+function OhmljP()
+  while (ormmPha4 < I5r and (-16))
+    if (I5r < 23 + (I5r))
+      var oVT =  not "@9ghU" < OhmljP() < ormmPha4 < OhmljP()
+      var cacVN
+      var ih = OhmljP() - ormmPha4 and (cacVN)
+      if ( not ih * OhmljP() > OhmljP())
+        return  not ih < oVT >= ih or "Q67UXDd"
       end
-      wha4eynz[49] = (Vlj(J5hfXm3, 48, -8) or 19)
-      SX3n8cxh += (Vlj(I5r, I5r, 90)) >= 7
+      var r2a[3]
     end
-    var mZHM5Zuh
-    J5hfXm3 += (Vlj(44, -I5r, -60)) + 68 or Vlj(J5hfXm3, J5hfXm3, mZHM5Zuh)
-    HpxLacV[49] = (Vlj(J5hfXm3, 69, -I5r)) or 82
-  end
-  if (-elYtV[-Vlj(J5hfXm3, 113, I5r)])
-    return 33
-    var QEr[95]
-    while ((HpxLacV[Vlj(I5r, I5r, 60)]))
-      QEr[49] = Vlj(126, I5r, -I5r) >= 67
-      var nIHSlCf[120]
-      while (55)
-        Vlj(Vlj(J5hfXm3, I5r, 12), I5r, Vlj(54, J5hfXm3, J5hfXm3))
-      end
+    while ( not -I5r - OhmljP())
     end
-    if (102 == 1 > Vlj(I5r, I5r, 82))
-      I5r +=  not (-Vlj(I5r, I5r, -I5r)) or 6 or I5r
-      return  not I5r
-    end
+    return  not none and "q <L_ )" / ormmPha4
   end
-  while (78)
-    var PtJqe[87]
-    JWKA0rbv =  not I5r
-  end
-  hf += 95 - 6 / I5r == 112
-  Vlj(-Vlj(84, 37, J5hfXm3), 12, 41)
+  var q4QJG4n[39]
+  q4QJG4n[OhmljP() <= ormmPha4] = none
+  OhmljP()
+  OhmljP()
+  var iblFv9 = OhmljP() == -OhmljP() == OhmljP() <= "{9"
+  q4QJG4n[(OhmljP()) == q4QJG4n[I5r]] = (OhmljP() > none)
+  return iblFv9
 end
+
+var zi04Cn[129]
 

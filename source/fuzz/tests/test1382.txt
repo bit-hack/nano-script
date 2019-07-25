@@ -1,63 +1,35 @@
 # SEED 12703
 
-var G6 = 32
+var G6 = none
 
 function up6I(V6, NtJ7l1N, WejK2c, fi, Wb)
-  return -84
+  return -none
   var APV
-  APV = (1) <= 62 / 106
-  while (up6I(G6, APV, 80, 108, 33))
-    up6I(43, 58, 106, APV, G6)
-    if (-APV * up6I(-G6, G6, -116, 71, APV) + 54)
-    end
-    if (up6I(G6, G6, G6, -26, 49) and 121 > APV)
-      APV +=  not APV <= -APV <= G6 >= G6
-    end
+  APV = ("^u") and (none)
+  if (none - up6I(G6, APV, "K=zHEp\", G6, "Bf1GKYg") or ";"MN`W")
+    G6 += up6I(-G6, APV, G6, up6I(G6, -none, "M&RC", -G6, none), up6I(G6, G6, G6, -13, APV))
+    V6 = none and none > APV
   end
-  return 62
-  while (G6 * APV * APV)
-    while (-G6)
-      var TAVHqu
-    end
-    while (27)
-      G6 = 12 <= 25
-      while (13 * APV * 122 > 7)
-        up6I(58, APV, 87, up6I(17, 1, APV, G6, G6), -G6)
-        if ((G6))
-        end
-        return (-122)
-        up6I(up6I(G6, APV, -APV, G6, 25), G6, G6, up6I(APV, 84, 63, 127, G6), 39)
-      end
-    end
-    Wb = (G6)
-    return (G6 <= G6)
-  end
-  up6I(35, up6I(APV, G6, 28, APV, APV), 92, -APV, G6)
-  if (121)
-    if (G6)
-      var VCmokJu[75]
-      up6I(2, 70, G6, APV, -G6)
-      return  not up6I(G6, up6I(APV, 14, G6, 109, G6), G6, 119, 12)
-    end
-    while (-APV)
-    end
-    APV += up6I(7, 98, G6, 73, 91) / G6
-    if (90 * -up6I(31, 26, 22, 81, 70) - up6I(G6, G6, G6, 28, G6) * 21)
-      fi += 120
-      G6 += APV and up6I(118, 45, 60, APV, 109) ==  not (up6I(-G6, APV, APV, 78, 113))
-      up6I(up6I(G6, 86, G6, 45, 55), G6, G6, APV, up6I(G6, APV, G6, -14, 18))
-    end
-    if (G6 <= APV < G6)
-      G6 += -98 - APV >= G6
-    end
-  end
+  var dfL
+  WejK2c +=  not "wpXMe)@" or 88 *  not dfL
+  return 108
 end
 
-var e3e
+function H8sU(NTHh, jXq0, cKwMm6o, rW, rfyyYA)
+  up6I(none, H8sU(none, none, none, G6, none), -H8sU(20, "O9x", 7, G6, G6), G6, up6I(-G6, G6, -none, G6, -G6))
+  var Z9O[104]
+  return  not (none) > G6 + G6
+  var JTAo[21]
+  var LG = up6I(G6, "", "ZLC1-.", H8sU("|k>i", G6, "epX)}BH", G6, G6), G6)
+  if (Z9O[-none] >= JTAo[G6])
+  end
+  up6I(up6I("^sR", none, LG, G6, 98), LG, LG, LG, 28)
+  JTAo[ not Z9O[LG] <= JTAo[93]] = "st@W" >  not "-f"" - G6
+end
 
-var rfq3[2]
+var hix
 
-var sM4M30F
+var l2QXYZD[35]
 
-var DJT
+var t3vw2ti0[89]
 

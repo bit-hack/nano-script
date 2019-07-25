@@ -1,4 +1,4 @@
 # SEED 12462
 
-var RZox = 83
+var RZox = none
 

@@ -1,84 +1,65 @@
 # SEED 13134
 
 function bZW(INk, YiXM6)
-  bZW(67, 120)
-  return bZW(bZW(108, 68), 74)
-  var BQA3JB =  not (bZW(42, 72))
-  YiXM6 = 10 * 85 / bZW(106, 49) + bZW(94, 101)
+  bZW("", -bZW(none, 26))
+  while (46)
+    bZW(none, bZW(none, 69))
+    var QyQn[56]
+    bZW(bZW(none, "q{p{"), bZW("'(!s", "62 c"))
+    QyQn[ not -QyQn[-"!G=_"D"] * bZW(none, 36) and none] = bZW(bZW(45, none), -bZW(-126, "l;c"))
+  end
+  if (none * bZW(none, "46h") or bZW(none, -"]O|/jc`") and 35)
+    return none == bZW("x", 51) - none
+  end
+  var DifLiga4[66]
+  return  not ("m") >= (none)
+  while (106)
+    if (-bZW(4, ""))
+      var n2n7HgR
+    end
+    bZW(112, "\O`cc]")
+    var q54Z3[6]
+    DifLiga4[q54Z3[bZW("'w`8Kn&", "b!Dl}r") == -"%UL"]] = bZW(bZW("", none), bZW(none, "O'+SZs_"))
+  end
 end
 
-var KWBxuSaE[128]
+var BMOifA = "1eRWxky"
 
-function yQLN(mF4Rq)
-  var X4b014pl = (bZW(64, 11))
-  var CRAXoioO = yQLN(56)
-  CRAXoioO += (25) < 111
-  mF4Rq = yQLN(X4b014pl) * 110 * CRAXoioO >= 32
-  var BY2shU[74]
-  if (yQLN(110))
-    mF4Rq = KWBxuSaE[35 / X4b014pl]
-    yQLN(X4b014pl)
+var EmL[42]
+
+var Y6QcZD[107]
+
+function KWpooF0Q(rmWKdm, RzFh7, E4m3, toIfvkMp, nUTs, KYDiuc)
+  var mY4zl[41]
+  KWpooF0Q(BMOifA, BMOifA, "{", bZW(BMOifA, BMOifA), "{|>]9Xs", BMOifA)
+  return (none) <= Y6QcZD["?[6,5"]
+  return ( not BMOifA > KWpooF0Q(125, "", "Hl", BMOifA, BMOifA, BMOifA))
+  BMOifA = (BMOifA)
+  var BRXPoU =  not BMOifA / BMOifA < -mY4zl["E3$q"]
+  if (bZW(-96, BRXPoU))
+    while ((none))
+    end
   end
-  mF4Rq = yQLN(65)
-  CRAXoioO += (125 and CRAXoioO)
+  var Fks9b
 end
 
-var UVxoxP
+var pU[96]
 
-var gArTQG
+var USycs[83]
 
-var HPI[14]
-
-function dmv0DU3(P_l, G9oEM, wPTTYT4, jgZ, Gkd, c0niJ, Tw)
-  var slsb[115]
-  while (9 / 36 <= KWBxuSaE[41])
-    bZW(64, gArTQG)
-    return ((10))
-    jgZ += HPI[121] > 85
-    while (-dmv0DU3(107, gArTQG, 110, -UVxoxP, 40, gArTQG, UVxoxP) <= -dmv0DU3(7, UVxoxP, UVxoxP, 95, -UVxoxP, 111, -69) ==  not dmv0DU3(UVxoxP, gArTQG, gArTQG, gArTQG, UVxoxP, UVxoxP, 109) < 106)
+function jgkS(lX6, lhRfE, ad, RiEaUK, SeDfgTE, PCG)
+  BMOifA = BMOifA <= BMOifA or BMOifA or KWpooF0Q(BMOifA, none, BMOifA, BMOifA, BMOifA, BMOifA)
+  var wyU[45]
+  ad += (-none and BMOifA)
+  var ADQzA81 =  not (-bZW(4, 125)) + BMOifA
+  while (pU[(none)])
+    if (-ADQzA81 + bZW(ADQzA81, BMOifA))
+      SeDfgTE = BMOifA
     end
+    lhRfE += -EmL[(jgkS(ADQzA81, 61, none, ADQzA81, "lT2`", none))]
   end
-  KWBxuSaE[121] = (yQLN(UVxoxP))
-  while (95 > 116 >= bZW(67, UVxoxP))
-    UVxoxP = gArTQG
-    var KWpooF0Q[112]
-  end
-  var cWKdmSCz = gArTQG
-  return  not gArTQG or cWKdmSCz < UVxoxP or 115
-  return gArTQG == KWBxuSaE[gArTQG]
-  slsb[8] =  not dmv0DU3(UVxoxP, UVxoxP, 49, -26, UVxoxP, gArTQG, cWKdmSCz) + 89 / UVxoxP > yQLN(53)
-end
-
-function N2j2bN(obb, IS, aO, GOVF4u, LJD, GCkP, jpvb)
-  KWBxuSaE[115] = ((UVxoxP))
-  UVxoxP = (UVxoxP)
-  var BRXPoU =  not gArTQG / UVxoxP < -HPI[59]
-  GCkP = bZW(-122, 57) <= (-N2j2bN(36, UVxoxP, 111, 10, 72, gArTQG, BRXPoU))
-  GOVF4u = dmv0DU3(-33, bZW(gArTQG, UVxoxP), bZW(29, gArTQG), bZW(BRXPoU, BRXPoU), -92, 86, yQLN(UVxoxP))
-  while (KWBxuSaE[(58)])
-    if (-UVxoxP + N2j2bN(UVxoxP, gArTQG, 36, UVxoxP, 94, 45, 93))
-      while (yQLN(UVxoxP) + BRXPoU > yQLN(7) <= BRXPoU)
-      end
-      gArTQG = ( not gArTQG + 60)
-      var D3[125]
-      HPI[74] = dmv0DU3(20, BRXPoU, UVxoxP, 77, gArTQG, BRXPoU, 66) - -UVxoxP > HPI[yQLN(8)]
-      D3[112] = (dmv0DU3(BRXPoU, 60, 76, 9, BRXPoU, UVxoxP, 7))
-    end
-    GCkP = bZW(31, dmv0DU3(40, BRXPoU, 28, gArTQG, 74, gArTQG, BRXPoU))
-  end
-  while (BRXPoU <= BRXPoU)
-    while ( not UVxoxP and UVxoxP > (gArTQG))
-      if (BRXPoU < gArTQG == -yQLN(120) and UVxoxP)
-        aO = -KWBxuSaE[bZW(-UVxoxP, -BRXPoU)]
-      end
-      var ANL = -yQLN(76)
-      while ( not N2j2bN(30, -98, 117, BRXPoU, -90, 113, 42) - KWBxuSaE[bZW(7, BRXPoU)])
-        while (HPI[gArTQG or 89])
-        end
-      end
-    end
-    KWBxuSaE[109] =  not 110 == 32 / bZW(38, 73)
-  end
-  var ci = 124 and -dmv0DU3(99, 126, BRXPoU, BRXPoU, UVxoxP, gArTQG, 95) + -90 * 84
+  return Y6QcZD[BMOifA]
+  var CGNNBIO = "f_7(JH6" > BMOifA + none
+  var D3[125]
 end
 

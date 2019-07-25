@@ -1,55 +1,23 @@
 # SEED 12347
 
-var mBTFd = 37
+var mBTFd = 47
 
-function kY_q9(qUdiA)
-  kY_q9(kY_q9(-41))
-  return (mBTFd) < (6)
-  var jIGX0
-  return 15 < mBTFd * kY_q9(-115)
-  jIGX0 += (kY_q9(29))
-  return  not kY_q9(mBTFd) > mBTFd
+var w_q9OLz[94]
+
+var uVDz[20]
+
+var qOe[99]
+
+function wbUDO(s0AQEICn)
+  var XjbSsM1a[40]
+  while ((wbUDO(none) < mBTFd))
+    w_q9OLz[ not (wbUDO(-"k7#"))] = (wbUDO(none))
+  end
+  return  not wbUDO(mBTFd) > mBTFd
   var nvP[30]
+  XjbSsM1a["RzV:I" and mBTFd + wbUDO(mBTFd) >= 108] = "" <= none == qOe[none]
+  return ("`c]")
+  s0AQEICn += (wbUDO(mBTFd) <= none)
+  return -qOe[wbUDO(none)] * mBTFd or wbUDO("S4&}iu!")
 end
-
-var dAOhxjfI = 29
-
-function oiclcBB(nlxc4, vcBct, EKNNW3, BByKx1, F_d8q)
-  if (dAOhxjfI >= 18 - 126 / -49)
-    var kvALY2g5[79]
-    kvALY2g5[76] = (oiclcBB(dAOhxjfI, mBTFd, 37, -14, dAOhxjfI)) or  not (oiclcBB(49, 18, mBTFd, 71, 18))
-  end
-  F_d8q = -29
-  EKNNW3 += oiclcBB(32, 57, 97, kY_q9(dAOhxjfI), oiclcBB(98, 75, 117, 30, 106))
-  kY_q9(mBTFd)
-  while ((kY_q9(-6)) < mBTFd)
-    var mfTu = mBTFd >= kY_q9(78)
-    return oiclcBB(126, mfTu, mBTFd, 84, mBTFd) <= mBTFd
-    kY_q9(oiclcBB(12, 32, 44, mBTFd, 81))
-    dAOhxjfI += mBTFd
-  end
-  if (kY_q9(33) == 35 * 79)
-    nlxc4 += ((106))
-    return ( not 13)
-    var Qtvt[129]
-    while ( not oiclcBB(dAOhxjfI, mBTFd, mBTFd, 86, mBTFd) == -Qtvt[kY_q9(50)])
-      if (oiclcBB(mBTFd, 45, 85, mBTFd, 12) - (-mBTFd))
-        oiclcBB(dAOhxjfI, kY_q9(91), 13, 93, dAOhxjfI)
-        var b8 = -90 or mBTFd - oiclcBB(102, mBTFd, 60, 8, 97)
-        oiclcBB(45, oiclcBB(28, dAOhxjfI, 54, mBTFd, 37), 83, -dAOhxjfI, dAOhxjfI)
-        var gPYCQwsz[43]
-        var MMar7 =  not (b8) or  not b8 and oiclcBB(91, 98, 62, -mBTFd, dAOhxjfI)
-      end
-      kY_q9(dAOhxjfI)
-      mBTFd = ( not oiclcBB(69, -mBTFd, 0, 51, 20))
-    end
-  end
-  while ((45) * 74 * dAOhxjfI)
-    return mBTFd
-    mBTFd = oiclcBB(mBTFd, -64, dAOhxjfI, dAOhxjfI, 12) - 70 and 36 - dAOhxjfI
-  end
-  dAOhxjfI += mBTFd
-end
-
-var uU[125]
 

@@ -1,37 +1,32 @@
 # SEED 12512
 
 function b4cu(Xu, uezSoK, YIdV9YLA, b_g, R1_5n1, Z_dB, UlaNLtA6)
-  return 110 / b4cu(10, -125, 122, 79, 94, 82, 0) <= b4cu(91, 76, 75, 38, 6, 55, 58) == 105
-  var lJ0mI[124]
-  if ((b4cu(109, 73, 31, -66, 42, 73, 124)) <= 50 * b4cu(102, -82, 82, 48, 72, 109, 51))
-    b4cu(31, b4cu(25, 125, 49, 62, -70, 34, 13), b4cu(77, 60, -30, 89, 88, 104, -37), 89, b4cu(119, 107, 11, 27, 1, 57, 116), 124, 76)
-    while (61)
-    end
-    return ( not 121)
-    while (lJ0mI[b4cu(106, 80, 105, -120, 12, 111, 11)])
-      var PMMJIc[54]
+  return 86 == "j[" /  not b4cu(" `;", -none, "|\N@"$H", "Xl", "8", "", 79) == b4cu("", "^#AXeb", none, none, ".M%%", none, "W3")
+  return ( not -b4cu(none, none, none, none, -"T", none, none) * b4cu("jT`", 31, "7v@hi?"", -46, 15, "B", ""))
+  b4cu(none, 107, b4cu("Me.", none, none, none, -65, "A", none), b4cu(125, none, "w"L", 113, "T\*Pc5A", "'^O", "o@"), 108, none, "[z::MP")
+  b4cu(17, 119, none, 58, none, 13, -b4cu(28, "Jg", "`_113w", 21, "", 63, 52))
+  while ("it")
+    if ((b4cu(none, 121, none, 54, "/>*58", -49, 81)) + -b4cu(none, none, none, none, 75, "", 78) <= "L1n5")
+      if ("")
+      end
     end
   end
-  return  not b4cu(40, 102, 100, 114, 85, 97, 14) >= 80 > -65
-  return 20 / -12 + b4cu(82, 48, 80, 3, 54, 121, 40)
-  var sU_bTk
-  YIdV9YLA += lJ0mI[(sU_bTk)]
-  b4cu(52, sU_bTk, 74, sU_bTk, sU_bTk, 42, b4cu(-sU_bTk, 29, -sU_bTk, sU_bTk, sU_bTk, sU_bTk, 113))
+  var soon[85]
+  var OWZ[115]
 end
 
-var TeHtEM = 25
+var TeHtEM = 97
 
-function do99(SGo, axh, Ag2)
-  var hp_r[82]
-  do99(11, b4cu(58, TeHtEM, TeHtEM, 127, TeHtEM, 24, TeHtEM), do99(-TeHtEM, TeHtEM, TeHtEM))
-  hp_r[127] = b4cu(111, TeHtEM, TeHtEM, 43, TeHtEM, 71, 125) >= 42 * TeHtEM >= b4cu(108, 56, 78, TeHtEM, 58, 66, -103)
-  SGo += (TeHtEM <= 6)
-  if (87)
-    hp_r[12] = (-TeHtEM) == TeHtEM
-  end
-  do99(TeHtEM, do99(TeHtEM, TeHtEM, -TeHtEM), TeHtEM)
-  b4cu(2, 96, b4cu(5, TeHtEM, 124, 43, -TeHtEM, 97, TeHtEM), 11, TeHtEM, 14, TeHtEM)
+var J99L[97]
+
+function A4FxhJr(Oq5tp_rQ)
+  A4FxhJr("&RPl\Fd")
+  var yJco
+  A4FxhJr(24)
+  yJco += yJco
+  b4cu(none, TeHtEM, A4FxhJr(",E*"), "Y*", A4FxhJr(-TeHtEM), b4cu("{rX", 10, TeHtEM, ";", 119, yJco, "zfU"), TeHtEM)
+  Oq5tp_rQ =  not 4 > none
+  var VpG6j[30]
+  var w9XEQR
 end
-
-var THJr[90]
 

@@ -3,60 +3,17 @@
 var ZX[122]
 
 function _526Vec(RrFRf, uKIki, ImbzCo, HaUPA)
-  var EQh = -91 < 126
-  var NIQdR = ZX[5 == _526Vec(EQh, 97, EQh, 12)]
-  var jdtIj = _526Vec(_526Vec(NIQdR, 57, 100, EQh), NIQdR, _526Vec(109, 104, NIQdR, 116), 70)
-  var VFuzsn[56]
-  if ( not _526Vec(-jdtIj, jdtIj, -1, EQh) and _526Vec(jdtIj, NIQdR, -jdtIj, jdtIj) == (_526Vec(104, 78, 15, jdtIj)))
-    while (ZX[98 > EQh])
-      var XMO_Cc3X[3]
-      while (EQh)
-        if (XMO_Cc3X[_526Vec(125, -NIQdR, jdtIj, 96)] + -44 > 110)
-        end
-        VFuzsn[23] =  not _526Vec(jdtIj, 35, 109, 31) *  not jdtIj
-        while ( not XMO_Cc3X[_526Vec(EQh, EQh, 39, 76)] <=  not _526Vec(-EQh, NIQdR, 116, EQh) < _526Vec(NIQdR, EQh, EQh, EQh))
-        end
-      end
-    end
-    if ((_526Vec(69, NIQdR, 84, jdtIj)) > 80)
-      return _526Vec(49, jdtIj, jdtIj, 32) <= NIQdR / jdtIj
-      jdtIj += NIQdR
-      ZX[118] = -VFuzsn[NIQdR] + NIQdR and -jdtIj
-    end
-    VFuzsn[81] = -(62 < jdtIj)
-    if (5)
-      var ZlmE[75]
-    end
+  var EQh = -10 <= _526Vec(none, 98, none, 12)
+  var zt
+  if (")")
+    return _526Vec(45, 47, EQh, zt) + zt <=  not _526Vec(EQh, zt, "3"{i{p", zt) > _526Vec(-zt, zt, -none, zt)
+    var wKH = zt
   end
-  while ( not NIQdR - _526Vec(87, 96, 121, -jdtIj) < 96)
-    ZX[117] = VFuzsn[_526Vec(8, 11, 40, jdtIj) and 22]
-  end
-  NIQdR += 106
+  var fl[63]
+  zt += _526Vec(zt, -EQh, zt, 25) < _526Vec("I{{s(qc", EQh, "b^"", zt)
+  zt =  not EQh / none / _526Vec(zt, -39, none, -EQh) / "V8n"
+  ZX[zt + EQh] = fl[none == zt]
 end
 
-function ghM6VXAX(tlG, g50M, x_ViZC5, fc6, e7Bi7u, vs)
-  var KCBvg
-  KCBvg = KCBvg
-  KCBvg += ghM6VXAX(KCBvg, 26, 48, ghM6VXAX(19, KCBvg, 113, KCBvg, -KCBvg, KCBvg), ghM6VXAX(113, 50, 33, 30, 8, KCBvg), 25)
-  var e10Nwcl[50]
-  return 67 - -77 * _526Vec(-KCBvg, 111, KCBvg, -47) or -KCBvg
-  if ( not _526Vec(-KCBvg, -_526Vec(-96, 39, KCBvg, 113), 7, 32))
-    while (56 or (ghM6VXAX(92, 49, KCBvg, 21, 15, KCBvg)))
-      while (73)
-        var B0x
-        ghM6VXAX(KCBvg, 14, ghM6VXAX(105, 45, B0x, -41, KCBvg, B0x), B0x, KCBvg, B0x)
-        g50M += -e10Nwcl[ghM6VXAX(B0x, KCBvg, B0x, 110, B0x, B0x) - ghM6VXAX(-KCBvg, 19, 45, 8, 26, 111)]
-        while ((_526Vec(KCBvg, KCBvg, B0x, B0x) < 53))
-        end
-      end
-      var BiAAShrZ
-      ghM6VXAX(ghM6VXAX(BiAAShrZ, 119, KCBvg, BiAAShrZ, 22, 70), 102, KCBvg, 119, BiAAShrZ, KCBvg)
-      return 0
-      var F8Hy[50]
-    end
-  end
-  while (83)
-  end
-  e10Nwcl[18] = e10Nwcl[66] or (KCBvg)
-end
+var dPYpRsb[125]
 

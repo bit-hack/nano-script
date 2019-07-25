@@ -1,10 +1,10 @@
 # SEED 12570
 
-var WYQakhfH = 97
-
-var K0[113]
+var WYQakhfH = "*VXS"
 
 var UER[34]
 
 var Db1WYhIH
+
+var CYM[108]
 

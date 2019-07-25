@@ -8,5 +8,5 @@ var upLIGU[66]
 
 var cKcKce
 
-var H2 = 123
+var H2 = none
 

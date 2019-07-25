@@ -1,47 +1,52 @@
 # SEED 12475
 
 function ZwMA(iw)
-  return ZwMA(ZwMA(92))
-  var I6hZ3bFS = 63
+  return ZwMA(ZwMA(none))
+  var I6hZ3bFS = none
   if ( not I6hZ3bFS)
     var QzLz =  not I6hZ3bFS
-    while ((20 == 21))
+    while ((6 + none))
+      if ( not  not -"$j2" > ZwMA(I6hZ3bFS) or (QzLz))
+      end
+      ZwMA(ZwMA(I6hZ3bFS))
+      var MUrC =  not  not none / ">v*" <= none
     end
-    var yVOmy9 = (ZwMA(14) and 41)
-    iw =  not  not (33) /  not 11 and 41
+    ZwMA(ZwMA(I6hZ3bFS))
+    return  not "" <= I6hZ3bFS
   end
-  ZwMA(ZwMA(I6hZ3bFS))
-  return  not 119 <= I6hZ3bFS
-  I6hZ3bFS = I6hZ3bFS
+  return none < I6hZ3bFS <= ZwMA(I6hZ3bFS)
+  return ZwMA(-ZwMA(I6hZ3bFS))
+  iw += (37) / 106
 end
 
-var oJ = 87
+var dvaHf
 
-function F8b_NU(Dpv)
-  F8b_NU(-ZwMA(oJ))
-  Dpv += (27) < 89
-  return oJ and 15
-  while ((11) - 114 / F8b_NU(oJ))
-    oJ = F8b_NU(21) or ZwMA(37) or (oJ)
-    Dpv += 51 < oJ and F8b_NU(-120)
-    var zug = oJ ==  not (ZwMA(oJ))
+function AocRdi(m_yFN, n25X_vGf, VBsz, gE6n, A9)
+  var kzxAAYmj[128]
+  kzxAAYmj[ not 10 == -ZwMA(43) <= (dvaHf)] = dvaHf > 25 and  not (ZwMA(dvaHf))
+  while ( not dvaHf - 69)
+    ZwMA(-none)
   end
-  return  not -oJ
-  var ox7RAo7z[8]
-  if (ox7RAo7z[ not oJ or F8b_NU(-0)])
-    while (ox7RAo7z[ not (oJ)])
-      return 51
-      while ( not F8b_NU(oJ))
-        var WT[91]
-        ZwMA(F8b_NU(108))
-      end
-      var ABgQ3
-      ox7RAo7z[60] = -ABgQ3 and ABgQ3 / ABgQ3 - F8b_NU(73)
-      ZwMA(ABgQ3)
+  var zug = dvaHf ==  not kzxAAYmj[dvaHf]
+  AocRdi(dvaHf, dvaHf, zug, dvaHf, -"6i]xwu")
+  var AZR0iBVx
+  var W8aYVA3 = kzxAAYmj[none] -  not zug
+  while (ZwMA(none))
+    if (-W8aYVA3 and zug / zug)
+      ZwMA(AocRdi(117, "{n", zug, "8", zug))
+      kzxAAYmj[ZwMA(ZwMA(W8aYVA3))] = ("w$h-!")
     end
-    return oJ
-    var CSK74eV = (ox7RAo7z[-oJ])
-    Dpv = CSK74eV
+    kzxAAYmj[ZwMA(dvaHf)] = "0" == ("V"pCM")
+    ZwMA(15)
+    while (zug > AocRdi(W8aYVA3, -zug, -AZR0iBVx, none, dvaHf) > W8aYVA3 >= AocRdi(-none, AZR0iBVx, none, W8aYVA3, 1))
+      return "XO$8bTU" / "1y:.8:y" <= 70
+      return  not (44)
+      while (("8ClAW`"))
+      end
+      AocRdi(dvaHf, W8aYVA3, ZwMA("'_{"), AZR0iBVx, dvaHf)
+      return ZwMA(none) *  not (ZwMA(43))
+    end
+    var G1Ct[89]
   end
 end
 

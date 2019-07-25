@@ -6,30 +6,20 @@ var hiK
 
 function Z70T(To, q7, s9Eq, SKL, vcX2m7)
   var Hz[88]
-  kUgJh3[64] = hiK
-  q7 += -hiK
-  while (-(Z70T(14, hiK, hiK, hiK, 72)))
-    Z70T(-44, hiK, hiK, hiK, Z70T(-97, 59, 109, 123, 74))
-    hiK = Z70T(-Z70T(91, hiK, 83, 119, 108), 95, hiK, Z70T(70, hiK, hiK, 77, hiK), hiK)
-    while (0)
-      q7 += Hz[Z70T(5, 63, -97, 5, hiK)]
-      Hz[4] = hiK
-      return Z70T(Z70T(hiK, hiK, hiK, 122, 120), hiK, 28, -hiK, 36)
-      hiK += hiK
-      var K6
-    end
-  end
-  var kHm[56]
-  q7 +=  not Z70T(hiK, -hiK, 26, 124, -21) / hiK == hiK
-  return  not  not Z70T(95, Z70T(hiK, 93, 108, hiK, hiK), hiK, hiK, 118)
-  return 31 > 49 <= 68
+  kUgJh3[(66 <= -hiK)] = -(Z70T("P}[D", none, hiK, hiK, hiK))
+  kUgJh3[Z70T(-61, hiK, "l7KL`", -hiK, 78) / "8" >= Z70T(13, 26, none, 5, "T\")] = "u7Z1k"
+  kUgJh3[(hiK) and (hiK)] = Z70T(none, hiK, Z70T(57, hiK, hiK, hiK, hiK), Z70T(none, 109, none, none, -"j!R`?i5"), Z70T(hiK, 67, 61, hiK, hiK))
+  return -( not Z70T(120, hiK, "Me8K", none, hiK) <= Z70T(52, hiK, 25, -hiK, 40))
+  hiK +=  not kUgJh3[none]
+  var m0cwKEe_
+  To = Z70T(Z70T(none, hiK, "8", m0cwKEe_, m0cwKEe_), hiK, hiK, 43, none)
 end
 
-var uar5 = 69
+var k3F0iNc[51]
 
-var XLjwtlXP = 41
+var AMw2[101]
 
-var YFH99[38]
+var AdAK
 
-var ZxvrNec_ = 53
+var vx44xwH[83]
 

@@ -2,31 +2,11 @@
 
 var shpjzgj[103]
 
-var rJSuex8 = 20
+var rJSuex8 = "Y."
 
-function P_(jasdton)
-  var Np[75]
-  Np[108] = 109
-  while ((-shpjzgj[P_(37)]))
-    return (P_(125) * P_(62))
-    P_(96)
-  end
-  if (rJSuex8)
-    rJSuex8 = P_(122) - (19)
-    if (rJSuex8 < (rJSuex8))
-      jasdton += P_(99) - 9 < 65
-    end
-    var Oi3ujr =  not  not 31 <= 44 <= P_(37)
-    Np[111] = 118 * -Oi3ujr + rJSuex8
-    return P_(P_(7))
-  end
-  jasdton = rJSuex8 > rJSuex8 - rJSuex8
-  var ueizq1o[66]
-  ueizq1o[83] = (P_(22)) >= shpjzgj[P_(-17)]
-  return rJSuex8
-end
+var cMas = none
 
-var Vt5tT = 110
+var fB = """
 
-var yPKimtpH[71]
+var VVGLgZi[123]
 

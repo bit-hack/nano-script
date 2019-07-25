@@ -1,56 +1,23 @@
 # SEED 13239
 
 function Eu(cvYllO, PQVTNY)
-  Eu(5, -33)
-  while (109)
-    while ( not  not 47 == 11 + Eu(-9, -82))
-      return 17 - Eu(44, 114) or Eu(108, 38) > -Eu(1, 79)
-      while ( not 103)
-        var w099n0 = 115
-        var B4[44]
-        cvYllO = 55 >= Eu(w099n0, 2) + Eu(w099n0, 63)
+  Eu("B`-", -"(&yP")
+  while ( not Eu("},%", Eu(-84, none)))
+    while (Eu(none, 93) and "" and none)
+      var Tk
+      var rRsRP_
+    end
+    var boHs9i[104]
+    while (-boHs9i[(38)])
+      if (Eu(none, none) / (Eu(none, "Yt/+l")))
       end
+      boHs9i[":P&{(8" == Eu(127, none) or Eu(none, none) + none] = (88 + Eu(97, 45))
     end
-    var hb[53]
-    while ( not  not Eu(56, 9) - Eu(12, 36) - 93)
-    end
-    hb[104] = Eu(24, -7) * Eu(70, 116) and 9
+    boHs9i["Q sS"] = (Eu("T", -none) / none)
   end
-  var vVfvrz[70]
-  while (-127 / 25 - (Eu(56, 125)))
-    while (Eu(Eu(80, 110), -90))
-      while ( not 29 - 124 - Eu(86, -39) * 21)
-        while ((Eu(42, 120) and 108))
-          return Eu(115, 115) / 6 > vVfvrz[Eu(109, -101)]
-          Eu(90, 22)
-          if ((Eu(98, 99)) / 101 * 108)
-            if (17)
-              Eu(Eu(40, 104), 48)
-            end
-            Eu(-3, -Eu(19, 45))
-            return Eu(22, -115) <= vVfvrz[Eu(21, 108)]
-          end
-          while (64)
-            while (-vVfvrz[38] >= Eu(101, 113) - 104)
-              var DoQZ9cHt[24]
-            end
-          end
-        end
-        vVfvrz[88] = Eu(115, Eu(22, 64))
-        var RFPh7sx_ = Eu(Eu(113, 113), 47)
-        RFPh7sx_ += RFPh7sx_ >= 112 - RFPh7sx_
-      end
-      vVfvrz[48] = vVfvrz[vVfvrz[Eu(69, 14)]]
-    end
-    if (122)
-      while (48)
-        var Qyn = -Eu(85, 19) >= 101 or Eu(72, 54)
-        var KwrYwBAc = Eu(50, Qyn)
-        return  not vVfvrz[Qyn] / 62
-      end
-      var IgWfBix6[95]
-    end
-  end
-  vVfvrz[33] = -64
+  return Eu(13, 48) == 3 >= 22 or Eu(-120, 63)
+  var KY7JW[65]
+  var pFJH =  not Eu("kWH", -none)
+  return none
 end
 

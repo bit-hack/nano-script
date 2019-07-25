@@ -1,97 +1,29 @@
 # SEED 12446
 
-var UgtP = 17
+var UgtP = none
 
 var dcnXPGln[2]
 
 function ioshwft(HtspNH, Q9)
-  UgtP += dcnXPGln[ioshwft(UgtP, 94)] / (121)
-  while ( not UgtP >= UgtP)
-    var YsGvbuN = -ioshwft(ioshwft(44, 69), UgtP)
-    while (64 < -106)
-      UgtP += ioshwft(ioshwft(YsGvbuN, YsGvbuN), ioshwft(56, 23))
-      if ( not YsGvbuN / YsGvbuN <= ioshwft(85, 93) * 23)
-        return 5 < -UgtP + ioshwft(-101, UgtP)
-        if (39 + 2 > -UgtP == 104)
-          var H_
-          var tuC
-          var R6Deg33 = 87
-          return dcnXPGln[dcnXPGln[YsGvbuN]]
-          var ozTd1ts[33]
-        end
-        while (ioshwft(YsGvbuN, ioshwft(70, UgtP)))
-          Q9 += YsGvbuN < dcnXPGln[ioshwft(UgtP, YsGvbuN)]
-          HtspNH = -UgtP or 77 * 10
-          if (ioshwft(UgtP, UgtP))
-            if ( not ioshwft(-YsGvbuN, -ioshwft(UgtP, UgtP)))
-            end
-            return ioshwft(10, 11) - -40 >= YsGvbuN
-            if ( not YsGvbuN)
-            end
-            var OWb97[128]
-            if (((UgtP)))
-            end
-          end
-          HtspNH = dcnXPGln[UgtP] and YsGvbuN
-          dcnXPGln[78] = ioshwft(UgtP, 98) >= ioshwft(UgtP, 16)
-        end
-      end
-      UgtP = -ioshwft(UgtP, UgtP)
-      UgtP += UgtP
-      ioshwft(-UgtP, 108)
+  UgtP += dcnXPGln[ioshwft(UgtP, 81)] or ioshwft(UgtP, "/W")
+  var w3Y3cc[53]
+  ioshwft(ioshwft(UgtP, "n*X>3"), UgtP)
+  w3Y3cc[w3Y3cc[ not ioshwft(UgtP, UgtP) > UgtP]] = ioshwft(24, none) > UgtP or (ioshwft(72, UgtP))
+  return  not UgtP <= ioshwft(none, none) * none
+  return (18) *  not -UgtP + ioshwft(-"y1", "#=bhRf")
+  while (none > -UgtP == "c")
+    return ioshwft(69, none) > UgtP == ioshwft(UgtP, UgtP)
+    while (none)
     end
-    Q9 = dcnXPGln[ioshwft(98, YsGvbuN)] + ioshwft(62, 64) == YsGvbuN
-    UgtP += UgtP - 103 > 100 - ioshwft(96, UgtP)
-    Q9 = (dcnXPGln[ioshwft(YsGvbuN, 81)])
+    HtspNH = ioshwft(UgtP, UgtP) == ioshwft(-UgtP, UgtP)
+    if ( not -UgtP and ioshwft(7, UgtP) <= -UgtP * UgtP)
+      var hI7iP43n = ioshwft(-ioshwft(124, UgtP), -113)
+      if ((UgtP))
+      end
+    end
   end
-  HtspNH += -dcnXPGln[ not 4 < 124]
-  var LDsvvI9W[24]
-  UgtP = UgtP > ioshwft(54, 127) + 31 * 24
-  return 58 - UgtP
-  if (LDsvvI9W[85 or 87])
-  end
-  return LDsvvI9W[ioshwft(UgtP, 78) or UgtP]
+  HtspNH = dcnXPGln[UgtP] and UgtP
 end
 
-function cRc6(T12HdUcq, s1, BH, mZ5agJbs)
-  cRc6(cRc6(UgtP, -UgtP, UgtP, 124), ioshwft(UgtP, UgtP), UgtP, ioshwft(-51, UgtP))
-  if (dcnXPGln[(UgtP)])
-    mZ5agJbs += UgtP
-  end
-  UgtP = 5
-  while (UgtP >  not cRc6(116, 62, 25, 101))
-    var w7zAInm = ioshwft(UgtP, 91) > -UgtP *  not 98
-  end
-  return UgtP and ioshwft(110, UgtP) - 97 >= UgtP
-  if (dcnXPGln[-ioshwft(UgtP, 90)])
-    cRc6(UgtP, UgtP, 29, UgtP)
-    dcnXPGln[47] = UgtP <= ioshwft(UgtP, -UgtP)
-    while ( not cRc6(114, UgtP, 41, -UgtP) + 126 *  not dcnXPGln[UgtP])
-      var zV5
-      if (91 > cRc6(58, 16, zV5, 20) <= cRc6(zV5, zV5, 112, UgtP) + -56)
-      end
-      var _ni7n
-      var tlbhwe
-    end
-    if (UgtP < 80 == -(UgtP))
-      while (-UgtP + UgtP > UgtP)
-        cRc6(67, UgtP, cRc6(UgtP, -UgtP, -UgtP, UgtP), UgtP)
-        dcnXPGln[0] = (126) or UgtP
-        s1 += (56)
-        UgtP =  not -112 > 98 - 63
-      end
-      dcnXPGln[9] =  not ioshwft(62, ioshwft(-UgtP, UgtP))
-      UgtP +=  not  not  not (32) <= 93
-    end
-    while (cRc6(43, 62, -cRc6(9, UgtP, 54, 113), -ioshwft(21, UgtP)))
-    end
-  end
-  var _nrn = (18) / -0 > -ioshwft(108, UgtP)
-  if (_nrn)
-    dcnXPGln[97] = 99 or  not 23
-    _nrn = (UgtP * _nrn)
-    var AvI7Bb4
-    _nrn += dcnXPGln[ not cRc6(AvI7Bb4, -_nrn, 108, 87) + 43]
-  end
-end
+var xva = 90
 

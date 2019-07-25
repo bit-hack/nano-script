@@ -1,26 +1,16 @@
 # SEED 12798
 
 function Ps(fgS, Tx4w, r3igFBa4)
-  while (Ps(-46, 103, 92) or Ps(106, 87, 29) >= (0))
-    var eCS6sr2L[54]
-    while ( not -(Ps(20, 118, 67)) < 11)
+  while (Ps(-"", 52, 93) <= none > Ps("<", 108, 36) <= "op$t")
+    if ( not Ps(56, "8P$G", "cjw") >= Ps(-none, none, "<:4Cg@"))
+      if (none > none == Ps(none, 15, ""r.eudb"))
+        var Z3[93]
+      end
+      return ( not none <= Ps("i}G^/", none, -none))
+      return  not Ps(none, 92, none) or none and 7
     end
   end
-  while ( not (112) * -42 - Ps(48, 16, 115))
-    Ps(Ps(14, 69, 59), Ps(50, -98, 45), 73)
-    var CI[115]
-  end
-  Ps(Ps(106, 111, 127), 7, Ps(118, 2, 44))
-  if (Ps(117, 122, 20))
-    if ((Ps(76, 20, 97) and 60))
-      while (Ps(45, 19, 17) >= Ps(57, 127, 18))
-      end
-      while (58 > 72 * Ps(5, 60, 52) + 118)
-      end
-    end
-  end
-  if (21 or -15 < (Ps(55, 108, 35)))
-  end
-  var dG = Ps(68, 3, 35) + 77 - 67 - Ps(60, 74, 113)
+  return Ps(Ps(").&", none, 70), "", none)
+  var JBEjBl[71]
 end
 

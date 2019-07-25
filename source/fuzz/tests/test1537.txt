@@ -1,63 +1,20 @@
 # SEED 12858
 
-var S6k = 114
+var S6k = "7$4"
 
-function KT0o7LXu(e8bvBw4y, S57QbD5)
-  S6k = KT0o7LXu(KT0o7LXu(S6k, 104), 48)
-  e8bvBw4y = -(KT0o7LXu(S6k, S6k)) or  not  not KT0o7LXu(S6k, 10)
-  while (KT0o7LXu(S6k, S6k) - KT0o7LXu(4, 105) > -KT0o7LXu(S6k, 111) - KT0o7LXu(34, S6k))
-    S57QbD5 += KT0o7LXu(KT0o7LXu(S6k, 41), S6k)
-    return KT0o7LXu(S6k, 21) >=  not 13 / S6k
+function tLX(Mn8b, Yw4)
+  var S57QbD5 = S6k
+  while ( not tLX(tLX("{/?pg`", -none), S6k))
   end
-  S6k += KT0o7LXu(60, S6k) - 118 / 24
-  e8bvBw4y += S6k
-  while (-S6k - 113 >= (S6k))
-    if ((S6k - 26))
-      if ( not KT0o7LXu(97, S6k) == KT0o7LXu(99, 16) <= KT0o7LXu(S6k, 127) < KT0o7LXu(S6k, 10))
-        if (-KT0o7LXu(2, S6k) or -126 * S6k)
-          while (S6k > KT0o7LXu(S6k, S6k) == 102 > S6k)
-            return -KT0o7LXu(KT0o7LXu(3, 57), 82)
-          end
-          if (S6k or (KT0o7LXu(8, S6k)))
-          end
-          S6k += 111
-        end
-        var ixH7BfA2[78]
-        KT0o7LXu(KT0o7LXu(123, 115), KT0o7LXu(S6k, 50))
-      end
-      while ( not  not 48)
-        while (KT0o7LXu(88, S6k) - 54 and S6k)
-          var iy5iLh0U
-        end
-      end
-      var mh8GAs_m
-    end
-  end
-  while (49 * -S6k == 109)
-    if (-(S6k) + 82 == S6k)
-      if ( not S6k)
-        var djLJ
-        if (djLJ + -djLJ <  not 87 - -KT0o7LXu(djLJ, djLJ))
-          djLJ += S6k
-        end
-      end
-      if (KT0o7LXu(KT0o7LXu(S6k, 28), S6k))
-        return S6k < (-64)
-        while (S6k == 43 < 59)
-          S6k +=  not -(S6k) and 49 / S6k
-        end
-      end
-      return (S6k)
-    end
-    S57QbD5 +=  not 31 + KT0o7LXu(S6k, S6k) or S6k
-  end
-  if (KT0o7LXu(100, 101) * S6k / S6k * KT0o7LXu(108, 11))
-    return (114) - 26 * S6k
-    S6k += 82
-  end
+  return S57QbD5 or tLX(S6k, none) < tLX(S57QbD5, S6k) - tLX(53, 114)
+  tLX(tLX("T", S6k), tLX(none, none))
+  S6k += 42
+  var Gan4cchR[65]
+  Mn8b = tLX(6, tLX(S57QbD5, "F'"))
+  return tLX(S57QbD5, "g_wFl%") *  not tLX(-S6k, 83)
 end
 
-var xxcYrvZr[91]
+var Mc7nQ = none
 
-var F5n_[30]
+var d_pX
 

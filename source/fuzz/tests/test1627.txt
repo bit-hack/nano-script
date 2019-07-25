@@ -1,62 +1,53 @@
 # SEED 12948
 
 function pt(DNL)
-  while (44)
-    pt(pt(102))
-    while (113 >= pt(55) <= pt(-15))
-      return  not pt(pt(-75))
+  while (none)
+    pt(pt(none))
+    while (77 - pt(none) > -55)
+      if (-35 *  not pt("?IN|"))
+        pt(38)
+        return (pt(">#j*it")) or pt(33) == none
+      end
     end
-    var oxMVy[118]
-    var xTe4[27]
-    return  not (119 >= 8)
-  end
-  return (pt(93)) - 118
-  pt(pt(113))
-  var YLn7myq = 48 / pt(33) ==  not 30 or 20
-  while (-YLn7myq)
-    var v1J3 = pt(YLn7myq) or YLn7myq > YLn7myq
-    var IWx = 0
-  end
-  return -37
-end
-
-function nY2MKkrr(IHxLxNbM, V16, L025nW_)
-  return -(14) < 72 or 125
-  while ( not pt(101) < pt(-70) <= nY2MKkrr(53, 3, 113) + 93)
-  end
-  var mSdJ7 = nY2MKkrr(-nY2MKkrr(74, 69, -35), pt(66), 104)
-  nY2MKkrr(119, nY2MKkrr(mSdJ7, 64, 96), nY2MKkrr(37, 125, 86))
-  mSdJ7 += mSdJ7 + 76 or mSdJ7
-  var G4cpLe[22]
-  pt(-nY2MKkrr(58, 32, mSdJ7))
-end
-
-var If5zrie
-
-function Ko2DRNLo(QezQ9, AD, tB2SRjaJ, VG, DpcD, QJKG, DdMfS)
-  pt(pt(If5zrie))
-  while (pt(119) - If5zrie == 113)
-    If5zrie += 55 <= Ko2DRNLo(If5zrie, If5zrie, If5zrie, If5zrie, -86, 29, 127) + Ko2DRNLo(58, If5zrie, If5zrie, -If5zrie, If5zrie, If5zrie, 63) and If5zrie
-    if (2)
-      var xgEJEq
-      var H86[29]
-      xgEJEq = 89
-      var ZzY[59]
+    var qoa[79]
+    while ( not pt(55) * none ==  not 92 > pt(49))
+      return -qoa[pt(38)] == 86 / 32
+      var SBP58cC_
     end
-    pt(Ko2DRNLo(-If5zrie, 16, If5zrie, -29, If5zrie, If5zrie, If5zrie))
-    return -125 / (nY2MKkrr(114, If5zrie, If5zrie))
-    var pGww[62]
   end
-  var G9iXH
-  var MG0nY = (121) + 7 - Ko2DRNLo(27, G9iXH, 24, 120, If5zrie, If5zrie, 54)
-  If5zrie += (If5zrie) or If5zrie + 32
-  tB2SRjaJ += If5zrie < If5zrie > 25
-  while (38)
-    return (nY2MKkrr(117, 98, G9iXH))
-    DpcD += 104
+  while ((("'zP!")))
+    while (pt(-"5#") and pt(9) <= pt(45))
+      return  not 30 > 96 >= pt("@v6") / pt(11)
+    end
   end
-  var eGl4
+  pt(-103)
+  var R_[68]
+  var N0JcS = "q<t|OU/" > (pt(none))
+  var wgR[8]
 end
 
-var o_B9biZ6[119]
+var aTOaXYoz = "uE01,"
+
+function cpJnu(FLFVuxXv, JTxsxm, A7, KcpL)
+  FLFVuxXv += -cpJnu(33, aTOaXYoz, "QRTY", 54) <= aTOaXYoz >= -"\]h%" == aTOaXYoz
+  FLFVuxXv = "k"
+  return -cpJnu(pt(aTOaXYoz), cpJnu(aTOaXYoz, "5%}@", "i4", "]"), none, "J&")
+  while (aTOaXYoz - (none))
+  end
+  var QH = ""
+  return  not pt(QH)
+  var Qovvy = (aTOaXYoz)
+  pt(cpJnu("9C]_V", -aTOaXYoz, Qovvy, QH))
+end
+
+var MQd6 = 73
+
+function V0Bk(BzubYTZS, jTjK, fvpyPg, GEqyR)
+  var C6pWrd
+  var OhvSz = cpJnu(MQd6, -C6pWrd, "i?AneX", -none) >= cpJnu(C6pWrd, "py*qR[", aTOaXYoz, C6pWrd) < none
+  MQd6 =  not cpJnu(MQd6, "z!2bf,", "9C`UE", OhvSz)
+  aTOaXYoz = 109 / none
+  return OhvSz
+  C6pWrd =  not "qo,a?" >= aTOaXYoz
+end
 

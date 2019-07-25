@@ -1,34 +1,18 @@
 # SEED 13361
 
 function f6O3o(ZtM, BwYa, by2vH)
-  f6O3o(f6O3o(43, 86, 19), 6, -f6O3o(51, 39, 25))
-  while ((f6O3o(67, -96, 44)))
-    var Yb33qFs = f6O3o(63, 34, -4) >= 35 > -48 >= f6O3o(84, 2, 107)
-  end
-  while ( not f6O3o(71, 78, 34) < f6O3o(57, 8, 67) * -f6O3o(92, 107, 101))
-    while ( not f6O3o(115, 42, 55) > 3 >= f6O3o(-114, 80, 2))
-      while ((69) ==  not (f6O3o(-104, 103, 9)))
-        return f6O3o(77, -19, 6) - f6O3o(20, 65, 60) <= (f6O3o(26, 37, 31))
-        var KFyTRO3[73]
-        var J_57NDsf[36]
-        var l3CCz = f6O3o(f6O3o(56, 22, 82), 24, f6O3o(99, 85, 123))
-      end
-      return  not  not 8
+  f6O3o(f6O3o(none, "16", ""), "", f6O3o(31, none, 51))
+  var bO5 = ((none))
+  var dq = bO5 / f6O3o("&R;", -"?3o#Zv", bO5) < bO5
+  while ( not f6O3o(bO5, -dq, dq) > -f6O3o(dq, -73, "2Rgv2") <  not  not -none)
+    var iXChk66y = (f6O3o(dq, "wbXA,)!", dq) > f6O3o(none, bO5, "6"))
+    while ((f6O3o(iXChk66y, 29, bO5)) + (f6O3o(none, bO5, bO5)))
     end
+    var WtF0bdi[108]
   end
-  if (f6O3o(-5, 90, -15) + 65 >= 71)
-    if ( not 75)
-    end
-    while (f6O3o(29, 116, -95) > f6O3o(62, 116, -117) <= (f6O3o(55, 73, 87)))
-      var veC
-      veC += f6O3o(veC, veC, f6O3o(veC, -5, veC))
-    end
-    var tmXf1
-  end
-  var jxS6
-  return f6O3o(jxS6, 106, 22) or 127 or jxS6 <= f6O3o(jxS6, jxS6, jxS6)
-  var lc36Kaz[63]
+  return f6O3o(bO5, dq, 7) > 8 >  not -f6O3o(none, dq, "pfO") / f6O3o(dq, dq, dq)
+  var Uno3wL6K
 end
 
-var WtCxVBM
+var VuVMNGc
 

@@ -1,17 +1,30 @@
 # SEED 12962
 
 function p8(aA, nI, kvTTeUsq, QgYF, TQmAn, i3pK5XcV)
-  p8(82, p8(37, 90, 97, 11, 8, 55), 74, p8(32, -84, 87, 38, 43, 2), p8(-56, 39, 74, 92, 32, 66), p8(30, 123, 85, 83, 21, 89))
-  var qWY54Jkk = -p8(p8(80, 100, 109, 99, 61, -119), p8(40, 16, 26, 82, 46, 46), -25, p8(88, 104, 81, 106, 77, 67), -18, -15)
-  var e9[90]
-  var speO8[51]
-  var NKwJT[10]
-  return 76
-  p8(qWY54Jkk, qWY54Jkk, qWY54Jkk, p8(20, 64, 126, qWY54Jkk, 104, 52), 104, p8(45, 82, 101, 103, qWY54Jkk, qWY54Jkk))
-  var vG2wwmDz[63]
+  p8(none, p8(19, 115, 30, -":x", 22, none), p8(none, "", none, none, -none, 38), none, none, none)
+  while (p8(p8(none, 107, "/", none, "<X-", ";#z"), 7, p8("WE* V&H", none, ",:o:", 97, none, none), p8(24, "q", "[5<", "TBwlyR", none, -""), p8(none, none, none, "4k", none, none), -"Ozz"))
+    if (-117)
+    end
+    var oLWpe[85]
+    var TEwKwJT7 = 108
+    var kswMY8
+  end
+  p8(p8(45, "", 115, "", none, "]0=RQ]p"), p8("*SJpg%k", "=H>U", none, "qe/pj", "(SY$'", "{WP#8L2"), 10, p8(none, 123, 75, "|lfO?", 60, "wCit$a{"), none, p8(108, 58, "q_Y]#", "n2'`E", "L", "(cPz"))
+  var hl = -""
+  if (42)
+    hl = (hl) / hl
+    if (95 - p8(88, hl, hl, hl, -hl, "0j*") == hl)
+      var gWgLCjN[92]
+      QgYF = -gWgLCjN[p8(-hl, hl, hl, none, "aQi&", "t{yU")] >= hl * p8(hl, hl, -none, hl, 33, "sf6&")
+    end
+    return -"m$y\J:T"
+    var OWd7V
+  end
+  return (hl / none)
+  kvTTeUsq += -p8(hl, hl, hl, "", "#(*\!", 44) * p8(hl, hl, hl, -none, hl, 38)
 end
 
-var zsXJfe[113]
+var OUKQ[37]
 
-var d_w3IFWm
+var xv8[91]
 

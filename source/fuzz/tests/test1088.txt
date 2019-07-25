@@ -1,47 +1,44 @@
 # SEED 12409
 
 function PRh()
-  return ( not  not PRh() < 34)
-  PRh()
-  var YxjCh6[16]
+  return ( not  not PRh() < "#)gU`")
+  if (none)
+  end
   var GF0bt[71]
-  if ( not (44) <= YxjCh6[126])
-  end
-  var O9mDNSb[19]
-end
-
-var H596 = 28
-
-var aSiyzBc = 104
-
-var z7
-
-function yY(ZIBFSmm, UHj)
-  while (H596 < aSiyzBc * H596)
-    return (H596) < aSiyzBc >= H596
-    if ( not H596 < 107 + 18)
-      H596 += PRh() and (z7)
-      H596 += yY(51, -14) == z7 / yY(17, 81)
-      var BY[121]
-      H596 = yY(H596, 24) * H596 + yY(49, H596) == aSiyzBc
+  if ( not (82) * 70 == PRh())
+    while (GF0bt["jx2`\e6"] or "D&q'!&N" + -PRh())
     end
-    yY(yY(56, H596), -aSiyzBc)
+    GF0bt[ not  not -PRh() and PRh()] = PRh()
   end
-  aSiyzBc = PRh()
-  if ((yY(117, H596)) / 1)
-    return 47
-    while (41)
+  return (GF0bt[none])
+  while (PRh() and -"ilQ" == GF0bt["h6)K,"])
+    PRh()
+    var C6 = PRh()
+    if (-none == C6 / PRh())
+      var j_ARc[64]
+      while ( not -j_ARc[PRh()] > C6 < PRh())
+        var HpqN
+        var dLJPvRc[79]
+        var z5[45]
+      end
     end
-    H596 = PRh()
+    return GF0bt[C6]
+    GF0bt[ not PRh() and C6 ==  not (C6)] = GF0bt[-"Q!jMckA" > none]
   end
   PRh()
-  ZIBFSmm += 41
-  var pNn7r[32]
 end
 
-var lwYKifT = 93
+var e6ukE[70]
 
-var CDk = 11
+var RmHWm75
 
-var eu3piJh[96]
+var Xj = ":AR*pYB"
+
+var q9014p_Q[3]
+
+var PJ6kEcVD = none
+
+var KFsf4AO
+
+var JLgxzS_N[10]
 

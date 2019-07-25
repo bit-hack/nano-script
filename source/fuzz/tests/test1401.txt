@@ -5,39 +5,54 @@ var tt[35]
 var G4_3CkAz
 
 function NKwi(a_U, kRPvoiU)
-  while (NKwi(77, NKwi(123, G4_3CkAz)))
-    return  not 36
-    a_U = G4_3CkAz / (-76)
-    return 99 == NKwi(3, G4_3CkAz) and G4_3CkAz
-    tt[72] = NKwi(NKwi(-102, 11), G4_3CkAz)
-    a_U += -93
-  end
-  var yQO
-  a_U += 7 and 80 == yQO == yQO
-  if (59 or G4_3CkAz * NKwi(84, 119) + 19)
-    if (105 and NKwi(yQO, G4_3CkAz) < tt[20])
-      kRPvoiU += tt[20]
-      var hT9FF[74]
-      tt[97] = 119 and 43 / G4_3CkAz + 103
-      hT9FF[16] = (tt[-19])
+  while (NKwi(17, -NKwi("c,%", 2)))
+    while (NKwi(G4_3CkAz, "P"))
+      G4_3CkAz += G4_3CkAz < G4_3CkAz <= G4_3CkAz > G4_3CkAz
     end
-    var Fc
+    tt[G4_3CkAz] = 64
   end
-  var vT11[29]
-  while (NKwi(82, G4_3CkAz) > 47 * 42 and yQO)
-    yQO +=  not  not NKwi(NKwi(G4_3CkAz, yQO), yQO)
-    if (yQO)
-    end
-  end
-  vT11[77] = NKwi(NKwi(-49, 16), NKwi(yQO, G4_3CkAz))
-  if (NKwi(yQO, G4_3CkAz))
-    G4_3CkAz = 98 >= 34 and 74
-    var vYC3s = yQO
-    var iEOO[66]
-    a_U = 103
-    var uiZHf = vT11[-yQO == NKwi(-vYC3s, 119)]
+  return -G4_3CkAz >= -"NhWXo" or G4_3CkAz * G4_3CkAz
+  var PpXHQ
+  G4_3CkAz = -none
+  tt[("fUK")] = PpXHQ
+  return -PpXHQ
+  G4_3CkAz = tt[G4_3CkAz * none]
+  while ((-">"))
   end
 end
 
-var kq = 10
+function bWz(FQ, L33r, wNIv)
+  L33r = none
+  return 48 > none > 69 >= none
+  while (tt[bWz("b*j9{d2", G4_3CkAz, 94) * none])
+    G4_3CkAz += G4_3CkAz
+    tt[tt[16 >= 87]] = bWz(none, -115, G4_3CkAz) /  not -45
+  end
+  var tEIwtT11[29]
+  while (NKwi("TX", G4_3CkAz) <= NKwi(G4_3CkAz, G4_3CkAz) < NKwi(G4_3CkAz, 76) + bWz(-none, 20, G4_3CkAz))
+    while (G4_3CkAz)
+      var teP6OAp6[25]
+      var qQdJi266
+      G4_3CkAz = "" >= bWz(none, none, G4_3CkAz) and 69 == -qQdJi266
+      var wQTp
+    end
+    tt[((124))] = tt[39] == 103
+    var D3QHv[53]
+    return  not tEIwtT11[ not " 9"]
+    var OZzlcSH
+  end
+  var zjNPeaks[83]
+  var mprYx[100]
+  if (tt[G4_3CkAz] < NKwi(58, ""))
+    if (("W!<,@"))
+      var R0ef11f
+      bWz(G4_3CkAz, "S"4y", bWz(none, R0ef11f, "pk,"))
+      tt[G4_3CkAz == R0ef11f < NKwi(none, -41) <= NKwi(R0ef11f, G4_3CkAz)] = mprYx[G4_3CkAz]
+      if (none / -R0ef11f or zjNPeaks[G4_3CkAz])
+        var O1lY
+      end
+      G4_3CkAz += none >= none * 35
+    end
+  end
+end
 

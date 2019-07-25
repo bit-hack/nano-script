@@ -2,54 +2,17 @@
 
 var raLT[35]
 
-var XK = 79
+var XK = 11
 
-var hx = 66
+var WxS0RD[90]
 
-function fY09(J3, CuZ_, i_SjI, M0w, zD8E, qO)
-  XK += (XK >= hx)
-  M0w = fY09(XK, fY09(62, 51, 1, 93, XK, hx), fY09(hx, 76, XK, XK, hx, XK), 42, hx, XK)
-  XK += 40
-  var b76Gqufh = 40
-  if ( not -raLT[(51)])
-    i_SjI = fY09(fY09(hx, b76Gqufh, b76Gqufh, 120, 41, -11), fY09(XK, 105, 21, XK, hx, 10), fY09(b76Gqufh, XK, XK, 40, 11, b76Gqufh), b76Gqufh, b76Gqufh, b76Gqufh)
-    return raLT[117] + 65
-    raLT[123] =  not  not fY09(24, 104, 39, 87, 30, 27) == fY09(XK, 5, 123, 113, hx, 10) - fY09(XK, 100, 61, 116, 52, hx)
-    fY09(58, 29, XK, 44, hx, 54)
-  end
-  while (fY09(hx, 19, 59, -77, 105, -XK) - 50 and  not hx + 59)
-    fY09(27, XK, 113, fY09(hx, 10, -hx, 85, hx, 63), XK, -fY09(92, b76Gqufh, hx, hx, hx, b76Gqufh))
-    b76Gqufh =  not  not (hx) >= raLT[fY09(hx, 50, 94, XK, XK, XK)]
-    var BIg4qMLj = 125
-    if (raLT[113] <= hx)
-      if (fY09(hx, hx, b76Gqufh, 25, hx, -fY09(BIg4qMLj, XK, hx, XK, 119, 50)))
-        var rdugoVm[77]
-      end
-      if (XK and b76Gqufh == 127)
-        raLT[88] = 37
-        while (-b76Gqufh /  not XK / 4)
-          var mQmv[120]
-          qO = hx and fY09(-hx, hx, BIg4qMLj, 95, 116, b76Gqufh)
-        end
-        fY09(fY09(hx, 8, 123, 61, b76Gqufh, hx), 18, 66, b76Gqufh, 91, 94)
-        b76Gqufh += 103
-        var o5VqC6
-      end
-      var fSFN4pmz[84]
-      return 81 >= BIg4qMLj <= fSFN4pmz[22]
-    end
-    var Nh0Td_G
-  end
-  qO += ((fY09(-b76Gqufh, -hx, 24, 45, 70, 124)))
-  while (-raLT[fY09(36, -108, hx, 87, XK, 111)] -  not fY09(1, 62, 102, 113, XK, 86))
-    while (XK >= 57 + -fY09(80, 82, XK, 0, 68, hx) < 40)
-      zD8E = fY09(hx, XK, -24, hx, fY09(b76Gqufh, 30, b76Gqufh, b76Gqufh, hx, XK), hx)
-      fY09(-fY09(73, 103, XK, 91, b76Gqufh, hx), fY09(XK, 95, -b76Gqufh, XK, 13, hx), fY09(XK, -79, 62, 86, 40, 92), XK, 8, XK)
-      b76Gqufh = fY09(89, -89, b76Gqufh, b76Gqufh, 116, hx) + raLT[fY09(113, 43, 29, 97, b76Gqufh, 9)]
-      fY09(6, fY09(hx, hx, 55, XK, XK, 91), fY09(54, 115, 126, XK, hx, 93), fY09(hx, b76Gqufh, XK, -107, 75, XK), hx, XK)
-    end
-    return  not fY09(34, -b76Gqufh, 125, b76Gqufh, 33, 11) +  not 86 and 114
-    return  not fY09(-75, -hx, hx, XK, 51, -fY09(-109, 95, 55, 46, 25, XK))
+function Xu53RcuZ()
+  WxS0RD[raLT[none >= XK]] = none or XK >= XK
+  Xu53RcuZ()
+  var ZKho = XK
+  var WJuVTc[124]
+  Xu53RcuZ()
+  if ( not "]s#$" and Xu53RcuZ() > XK)
   end
 end
 

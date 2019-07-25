@@ -2,7 +2,7 @@
 
 var Wz[100]
 
-var CMDq = 110
+var CMDq = 87
 
-var Sa[3]
+var iMSBeP
 

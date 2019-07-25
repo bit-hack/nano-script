@@ -1,52 +1,48 @@
 # SEED 12724
 
-var A0bDem = 68
+var A0bDem = none
 
 var Nf
 
 function YlHW0dh(GWZPy5NS, ayWSiZw, Q0VObJcI, uE, wO)
   var KMqHO3[117]
-  A0bDem += -YlHW0dh(Nf, YlHW0dh(A0bDem, 120, 53, 110, A0bDem), Nf, YlHW0dh(11, 77, 68, 84, 52), A0bDem)
-  var mnXBS8O
-  var lEuk2W = YlHW0dh(A0bDem, 33, 48, 101, Nf) / 12 + 2 < YlHW0dh(Nf, Nf, 41, 31, -Nf)
-  if ( not KMqHO3[27] and YlHW0dh(Nf, mnXBS8O, -124, lEuk2W, 44) / YlHW0dh(86, lEuk2W, mnXBS8O, -65, 74))
-    return lEuk2W < YlHW0dh(44, 106, -36, 96, A0bDem) and 111 / 13
-    YlHW0dh(34, 25, YlHW0dh(121, 53, mnXBS8O, 84, mnXBS8O), lEuk2W, YlHW0dh(Nf, A0bDem, lEuk2W, 66, A0bDem))
-    lEuk2W += 52 and A0bDem * 126
-    if ((lEuk2W))
-      var YhU[103]
-      YlHW0dh(YlHW0dh(lEuk2W, 46, 21, 115, lEuk2W), -YlHW0dh(Nf, 9, 25, mnXBS8O, 79), 52, YlHW0dh(27, Nf, 124, -64, mnXBS8O), 25)
-      while (A0bDem)
-        YlHW0dh(-YlHW0dh(113, Nf, 84, 125, Nf), -A0bDem, 4, 16, -86)
-        if (YhU[YhU[YlHW0dh(48, -mnXBS8O, A0bDem, 79, lEuk2W)]])
-          var NY4XPag[117]
-          if (-51 or YlHW0dh(A0bDem, 96, mnXBS8O, lEuk2W, -A0bDem))
-            YlHW0dh(Nf, Nf, Nf, 99, 115)
-            return  not 51 < -Nf and (Nf)
-            KMqHO3[127] = 26 < 94 - (lEuk2W)
-            YlHW0dh(-37, -46, 37, YlHW0dh(Nf, lEuk2W, -A0bDem, 84, -110), -YlHW0dh(-lEuk2W, lEuk2W, 27, lEuk2W, lEuk2W))
-            if (NY4XPag[Nf < YlHW0dh(-Nf, A0bDem, mnXBS8O, 93, 120)])
-              var AIh3xPX2
-              return KMqHO3[116 > 54]
-              while (YlHW0dh(YlHW0dh(-42, -70, 112, 118, 98), -63, YlHW0dh(lEuk2W, 123, lEuk2W, AIh3xPX2, 76), YlHW0dh(101, A0bDem, A0bDem, 67, -14), 19))
-                var a7V =  not YhU[lEuk2W] == mnXBS8O > YlHW0dh(91, A0bDem, lEuk2W, -Nf, 86)
-                return YlHW0dh(9, lEuk2W, Nf, -YlHW0dh(77, mnXBS8O, a7V, lEuk2W, AIh3xPX2), a7V)
-              end
-            end
-          end
-          return mnXBS8O + YlHW0dh(126, 97, A0bDem, Nf, A0bDem) >= YlHW0dh(mnXBS8O, Nf, A0bDem, lEuk2W, 71) == YlHW0dh(125, 58, 60, 26, A0bDem)
-        end
-        if (69 > -YlHW0dh(-78, -85, mnXBS8O, A0bDem, mnXBS8O) + YlHW0dh(95, lEuk2W, 111, 39, Nf) > 32)
-        end
-        return A0bDem
-      end
-    end
+  A0bDem += -YlHW0dh(Nf, YlHW0dh(A0bDem, 61, 87, A0bDem, "@ "), YlHW0dh(none, A0bDem, 28, 73, A0bDem), YlHW0dh(none, Nf, Nf, A0bDem, A0bDem), Nf)
+  A0bDem = KMqHO3[115 / 20]
+  Nf += YlHW0dh(Nf, A0bDem, -76, "w%JIJV", "e") >= Nf <= Nf
+  return 119
+  if ( not YlHW0dh(-62, Nf, none, 19, "Y:") and Nf + YlHW0dh(2, "", none, 122, A0bDem))
+    YlHW0dh(86, "A?wu", A0bDem, Nf, YlHW0dh(Nf, A0bDem, Nf, none, A0bDem))
+    Nf += "I" and A0bDem * 69
+    KMqHO3[Nf] = 25
+    var Z4h2Abh[2]
   end
-  return 58
-  A0bDem +=  not (Nf or 102)
+  var EKnZ9q5 = Nf == -YlHW0dh(Nf, Nf, A0bDem, Nf, 51) + none
 end
 
-var zVQ
+function G9kpq3o4(SpDLp2hS)
+  var NFITZV[6]
+  Nf += Nf
+  return  not 12
+  var BxmT2 = -(26) / YlHW0dh(none, "", none, "nK1X", -A0bDem)
+  if (-"]M(w")
+    YlHW0dh(-none, "3$u", YlHW0dh(A0bDem, 49, "O", BxmT2, none), A0bDem, BxmT2)
+    if (-NFITZV[-BxmT2 < A0bDem])
+      return BxmT2
+      if (Nf)
+        var fWhhJBQO
+        var xcJ[116]
+        var JnT8o_[50]
+      end
+      var NPwEYxU[31]
+    end
+    SpDLp2hS += NFITZV[-NFITZV[97]]
+  end
+  while (79 >= Nf <  not A0bDem)
+    NFITZV[NFITZV[76] * 0 or -7] = Nf >= G9kpq3o4(BxmT2) > none
+  end
+  var vQ[74]
+  SpDLp2hS = NFITZV[(G9kpq3o4(Nf))]
+end
 
-var olIA_[112]
+var KfHej = none
 

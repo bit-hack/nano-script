@@ -161,6 +161,31 @@ class Generator(object):
     def do_number(self, scope, base=0):
         return str(base + random(128))
 
+    # string ::= [a-zA-Z0-9]*
+    def do_string(self, scope):
+        s = ""
+        l = random(8)
+        for i in range(0, l):
+            s += chr( 32 + random(94) )
+        return '\"' + s + '\"'
+
+    # literal ::= number
+    #           | string
+    #           | none
+    def do_literal(self, scope):
+        while True:
+            try:
+                i = random(3)
+                if i == 0:
+                    return self.do_number(scope)
+                if i == 1:
+                    return self.do_string(scope)
+                if i == 2:
+                    return "none"
+
+            except BacktrackError:
+                pass
+
     # expression ::= identifier
     #              | number
     #              | function_call
@@ -187,7 +212,7 @@ class Generator(object):
                 if i == 0:
                     return umin + scope.vars.find()
                 if i == 1:
-                    return umin + self.do_number(scope)
+                    return umin + self.do_literal(scope)
                 if complexity <= 0:
                     raise BacktrackError()
                 if i == 2:
@@ -235,7 +260,7 @@ class Generator(object):
         out = self.indent() + 'var ' + name
         if chance(50):
             out += ' = '
-            out += self.do_expression(scope) if can_expr else self.do_number(scope)
+            out += self.do_expression(scope) if can_expr else self.do_literal(scope)
         scope.vars.add(name)
         return out
 
@@ -327,7 +352,7 @@ class Generator(object):
     # assign_array_statement ::= identifier '[' expression ']' '=' expression '\n'
     def do_assign_array_statement(self, scope):
         try:
-            return self.indent() + scope.arrays.find() + '[' + self.do_number(scope) + ']' + ' = ' +\
+            return self.indent() + scope.arrays.find() + '[' + self.do_expression(scope) + ']' + ' = ' +\
                    self.do_expression(scope) + '\n'
         except BacktrackError:
             return ''

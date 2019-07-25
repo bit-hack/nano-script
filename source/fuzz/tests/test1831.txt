@@ -1,101 +1,34 @@
 # SEED 13152
 
-var IGO7St36 = 8
+var IGO7St36 = "M?p|N"
 
-function kPl(SEl, Gb18, GIL4sAw, lh)
-  SEl += IGO7St36
-  kPl(21, kPl(IGO7St36, 102, IGO7St36, 34), 44, IGO7St36)
-  if (-63)
-    return (IGO7St36) >= 107 + IGO7St36
-    while (107)
-    end
-    while (77)
-      var tlB2n[31]
-      while (-tlB2n[21])
-        var cs6
-        cs6 = (23 * 90)
-        while (21)
-          var CVYC7F
-          var YrF = 31
-          var XIlRx6[58]
-          return cs6 + -kPl(-10, IGO7St36, cs6, CVYC7F)
-          if (123)
-            while (kPl(CVYC7F, 88, IGO7St36, 14) == IGO7St36 or (kPl(cs6, cs6, CVYC7F, -CVYC7F)))
-              var UlNdmwe =  not 41 < 117 > kPl(-3, 56, CVYC7F, 5) - YrF
-              XIlRx6[95] = tlB2n[CVYC7F == CVYC7F]
-            end
-            if ( not (-103))
-            end
-            lh = tlB2n[4] and (CVYC7F)
-            var fl9exWNf
-            YrF += 26 < YrF
-          end
-        end
-      end
-      var qchuBA6 = tlB2n[121]
-      return  not tlB2n[(-kPl(62, IGO7St36, 64, IGO7St36))]
-    end
-    while ((IGO7St36) and 84)
-      var Xf = 106
-      if (IGO7St36 - -49 <= -123)
-      end
-      if (99 > 34 - IGO7St36 / -kPl(IGO7St36, 21, Xf, -IGO7St36))
-        IGO7St36 += Xf > kPl(Xf, IGO7St36, 16, IGO7St36) >= 12
-        Xf = kPl(kPl(Xf, IGO7St36, Xf, 56), kPl(Xf, Xf, 35, 5), Xf, 127)
-      end
-      Gb18 += (80)
-      kPl(IGO7St36, Xf, 40, 116)
-    end
+function YlKob(gLIL4sA, xshX, b2EvX)
+  while ("7#Es'mf")
+    return IGO7St36 <= YlKob(none, IGO7St36, 120) < "TUNv;72" < IGO7St36
   end
-  if (IGO7St36 * (kPl(-35, 69, IGO7St36, 52)))
-    while (121)
-      var b0niKWv[39]
-      kPl(76, -kPl(IGO7St36, -68, IGO7St36, 47), kPl(30, IGO7St36, IGO7St36, -IGO7St36), IGO7St36)
-      return kPl(IGO7St36, 46, kPl(29, IGO7St36, 25, IGO7St36), IGO7St36)
-      if (IGO7St36 * 78 and kPl(IGO7St36, IGO7St36, 28, IGO7St36))
+  YlKob(IGO7St36, IGO7St36, -YlKob(112, none, 58))
+  IGO7St36 =  not "K3" * none
+  YlKob(YlKob(none, IGO7St36, IGO7St36), IGO7St36, -"\1&#99")
+  if (IGO7St36)
+    var uq9k[106]
+    var v5KR5j[93]
+    while (YlKob(IGO7St36, "7p", IGO7St36) < IGO7St36 or (YlKob(IGO7St36, IGO7St36, IGO7St36)))
+      xshX += none < YlKob(-IGO7St36, -",n-2", IGO7St36) >  not IGO7St36 >= 120
+      if (uq9k[")" == IGO7St36])
       end
-      var oVG8zv[42]
+      var jUyTq
     end
-    while (IGO7St36 or 116 < 110 * kPl(56, IGO7St36, 121, IGO7St36))
-      while (IGO7St36)
-        return IGO7St36
-      end
-      if (IGO7St36 >= kPl(IGO7St36, 121, 20, 95) > 82)
-        var vFAdY
-      end
-      while (-59)
-        while (IGO7St36 - -IGO7St36 == 95)
-        end
-      end
-      lh = 96 - IGO7St36 + kPl(IGO7St36, -IGO7St36, 85, IGO7St36)
-    end
-    lh += (47 or kPl(IGO7St36, IGO7St36, 13, IGO7St36))
-    IGO7St36 = 71
+    var bz
   end
-  return 100
-  kPl(IGO7St36, kPl(94, IGO7St36, 14, IGO7St36), 51, kPl(110, 83, 42, IGO7St36))
-  if (IGO7St36 >= IGO7St36 or 53 == -119)
-    var VG[53]
-    if (VG[VG[IGO7St36]])
-    end
-    while ((-68))
-      var Y7[106]
-      if (IGO7St36)
-        var AUQB4sX5[96]
-        kPl(-kPl(IGO7St36, 74, IGO7St36, -IGO7St36), kPl(IGO7St36, IGO7St36, 110, 99), IGO7St36, kPl(7, IGO7St36, IGO7St36, IGO7St36))
-        IGO7St36 =  not kPl(103, 56, kPl(40, IGO7St36, 91, IGO7St36), 70)
-        AUQB4sX5[53] = 115
-      end
-      var C18HLb9o[99]
-      return IGO7St36
-    end
-    var mcMsVPOW[31]
+  if (IGO7St36)
+    return 25 + IGO7St36 + IGO7St36 < YlKob(none, IGO7St36, none)
   end
-  while ( not 99 or 12 == (78))
+  return  not -( not YlKob(IGO7St36, 118, IGO7St36))
+  if (-"ioGN" * 6 == IGO7St36)
   end
 end
 
-var qn[12]
+var QW_m0I_[38]
 
-var ZhZY1epk[87]
+var Sq[61]
 

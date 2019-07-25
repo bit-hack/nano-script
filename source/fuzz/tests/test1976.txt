@@ -1,80 +1,51 @@
 # SEED 13297
 
-var hVfPUYY = 51
+var hVfPUYY = 106
 
-function ksoS(Ac, Cz, EfZ6)
-  while ( not hVfPUYY >= hVfPUYY == 28 or 3)
-    var k7NnB
-  end
-  if ( not (5) or hVfPUYY < ksoS(46, hVfPUYY, 125))
-  end
-  var Tr
-  var M_ = -hVfPUYY >=  not 71
-  Ac += (M_) * 51
-  Cz += ksoS(82, 60, Tr) + 107 + hVfPUYY
-end
+var coSZ = ""
 
-var hBAS[86]
+var TKffZ[5]
 
-function cP_p4F(TVaTwELN, kF7T7i6)
-  hBAS[92] = hBAS[2] or 117 <= cP_p4F(86, hVfPUYY)
-  while ( not  not cP_p4F(hVfPUYY, hVfPUYY) or ksoS(118, 55, 57) > cP_p4F(99, 92) >= hVfPUYY)
-    hBAS[78] = 121 <= cP_p4F(hVfPUYY, 39) and hVfPUYY
-  end
-  return  not cP_p4F(ksoS(62, hVfPUYY, hVfPUYY), 39)
-  cP_p4F(hVfPUYY, ksoS(hVfPUYY, hVfPUYY, 125))
-  hVfPUYY = hBAS[hBAS[-65]]
-  hBAS[101] = (29) - -cP_p4F(6, 69) == hVfPUYY
-  kF7T7i6 +=  not cP_p4F(-39, 63) * 61 <= (hVfPUYY)
-  return -0 > -hVfPUYY * hVfPUYY > hVfPUYY
-end
-
-var q4CWSCT
-
-var T0JdzSQ
-
-function To(T8yIDN)
-  return T0JdzSQ
-  T0JdzSQ += (-hVfPUYY)
-  var cy
-  hVfPUYY =  not To(T0JdzSQ)
-  T8yIDN += q4CWSCT + 6
-  if (-cP_p4F(hVfPUYY, cy) / q4CWSCT >=  not -hBAS[18])
-    while ( not cy)
-      var I7Vm1M = -T0JdzSQ
-      if (To(I7Vm1M))
-        I7Vm1M = hBAS[cP_p4F(122, 127) == ksoS(32, 52, 83)]
-      end
-      var z7mFh2
-      while (-hVfPUYY - 107 == cP_p4F(94, z7mFh2) - cP_p4F(27, 76))
-        return -I7Vm1M
-        hBAS[80] = 67 <= 104 > 47
-        z7mFh2 += 59 / cP_p4F(T0JdzSQ, 69) > 108
+function j4LFBb_(LO3PUp, FTYaXZbD, bwnQb, hoLI, NYGMJ_Zu)
+  if ((TKffZ[coSZ]))
+    var dpKIra[45]
+    if (dpKIra[j4LFBb_(hVfPUYY, 5, 58, 123, hVfPUYY) + 6])
+      j4LFBb_(20, none, none, j4LFBb_(-126, none, "[j%J%c", none, 24), coSZ)
+      var hBAS
+      while (coSZ == 92 == -j4LFBb_(hVfPUYY, none, -"Q=r", coSZ, "sfb6W$ "))
+        j4LFBb_(-j4LFBb_(coSZ, 28, hBAS, 60, hBAS), j4LFBb_(103, hVfPUYY, hBAS, 95, hVfPUYY), j4LFBb_("S+nO", -"r >z$"", coSZ, 90, coSZ), hVfPUYY, j4LFBb_(coSZ, coSZ, none, hVfPUYY, 0))
+        j4LFBb_(j4LFBb_("Ea2W", coSZ, coSZ, -"ZW9"X10", ""), none, -hVfPUYY, -10, -hVfPUYY)
+        return hBAS > hBAS / hVfPUYY + hVfPUYY
       end
     end
-    var PAI_AHTm[43]
-    cy += (21) - 82
+    if (-TKffZ[hVfPUYY / " h"])
+    end
+    var cy
   end
-  return To(58) / 38 == ksoS(hVfPUYY, -hVfPUYY, q4CWSCT) < 75
-  T8yIDN += To(85) + hVfPUYY <= ksoS(T0JdzSQ, 124, 66)
+  hVfPUYY =  not j4LFBb_(hVfPUYY, coSZ, hVfPUYY, -j4LFBb_(hVfPUYY, coSZ, "w/o!=8c", coSZ, -hVfPUYY), hVfPUYY)
+  var WBMmt[127]
+  j4LFBb_(j4LFBb_(6, hVfPUYY, none, none, 61), hVfPUYY, hVfPUYY, -hVfPUYY, coSZ)
+  WBMmt[(41) / -(j4LFBb_(coSZ, 13, coSZ, none, -hVfPUYY))] = j4LFBb_("", none, none, j4LFBb_(coSZ, hVfPUYY, none, "", -none), 27)
+  var FEZ_w[41]
+  var NUAu = hVfPUYY
+  NYGMJ_Zu += FEZ_w["?g/T#p""]
 end
 
-function PGWRB(Bs0xBOWC, xUpzZP, B4aV, od, Yyw, y1jFUx)
-  PGWRB(85, ksoS(41, T0JdzSQ, T0JdzSQ), 125, T0JdzSQ, q4CWSCT, ksoS(86, 93, 16))
-  return To(41)
-  if (hBAS[q4CWSCT == cP_p4F(T0JdzSQ, T0JdzSQ)])
-    while (T0JdzSQ)
-      PGWRB(hVfPUYY, 92, hVfPUYY, q4CWSCT, 72, -119)
-    end
-    while (q4CWSCT < ksoS(7, q4CWSCT, -72) / 2)
-      hBAS[95] = 79
-      hVfPUYY += 7 * hVfPUYY or ksoS(44, 91, 57)
-    end
+var ZSN = "p1FR;LK"
+
+var hmCS56fF = 38
+
+var tO5pKR0y = "mqg<S"
+
+function GZhhFd(dGwB1b, ExQ)
+  GZhhFd(j4LFBb_(coSZ, "|3", none, "", coSZ), tO5pKR0y)
+  var ipzZ[35]
+  var SaV[37]
+  return (GZhhFd(none, "=;")) or (j4LFBb_(none, hVfPUYY, hmCS56fF, "qh"ynL3", coSZ))
+  GZhhFd(tO5pKR0y, none)
+  if (j4LFBb_(24, j4LFBb_(none, tO5pKR0y, hVfPUYY, coSZ, hVfPUYY), GZhhFd(coSZ, none), tO5pKR0y, ZSN))
   end
-  q4CWSCT += hBAS[ksoS(hVfPUYY, 106, -q4CWSCT)]
-  od += hVfPUYY * To(q4CWSCT) - hBAS[hVfPUYY]
-  var jCJYy[20]
-  Yyw += (45) >= To(hVfPUYY)
-  cP_p4F(hVfPUYY, ksoS(q4CWSCT, 37, 45))
+  TKffZ[SaV[tO5pKR0y] * GZhhFd(coSZ, none)] = tO5pKR0y
+  tO5pKR0y = none
 end
 

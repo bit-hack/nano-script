@@ -3,38 +3,32 @@
 var uZJl[41]
 
 function UU()
-  return uZJl[UU()] * (20)
-  while (UU() > UU() == UU())
-    return UU() ==  not UU()
-    while ( not UU() >= UU() > UU() > 120)
-      return (UU() or UU())
-    end
-  end
-  while (UU())
-    var X0luQP9[111]
-    var Ayi5nqql[54]
-    var M1_YWav[47]
-  end
-  var aS96[65]
-  while (aS96[116 == UU()])
-  end
+  return uZJl[UU()] * (109)
+  var e4w44
   UU()
+  UU()
+  UU()
+  return e4w44 < UU() == -e4w44
 end
 
-var hWfN1 = 55
+var a5RDTY_N
 
-var HAW1TSn = 78
-
-function nK3893D()
-  while (uZJl[nK3893D() / UU()])
-    var bVq
-    nK3893D()
-    return uZJl[HAW1TSn]
-    return (50 < 111)
+function Y5Ef_()
+  return Y5Ef_()
+  uZJl[UU() > none <= uZJl[Y5Ef_()]] = UU()
+  while (none)
   end
-  var N_
-  var qxn_N78 = 55
-  var BLB6[18]
-  nK3893D()
+  return uZJl[none > none]
+  var t908C[129]
+  return uZJl[uZJl[UU()]]
+  while (Y5Ef_() >= a5RDTY_N)
+    while (Y5Ef_())
+      uZJl[a5RDTY_N] =  not none
+      return -t908C[ not a5RDTY_N or Y5Ef_()]
+    end
+    uZJl[none >= a5RDTY_N] = UU()
+  end
 end
+
+var mrVqLl[71]
 

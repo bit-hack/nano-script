@@ -1,18 +1,20 @@
 # SEED 12366
 
 function JspVZ(PM7Nqgz7, Q3pmylgg, CNbI)
-  return 87
-  var l1s4pu
-  var aIEwX
-  if ( not  not JspVZ(l1s4pu, aIEwX, 38) >= 1 or aIEwX >= aIEwX)
-    return 77
-    Q3pmylgg += l1s4pu +  not  not aIEwX
-    var jv10[37]
+  return "h5/"
+  if ("J v" + none >= JspVZ("U(GJ+S>", "x", ""))
+    var bI[128]
   end
-  return ((aIEwX))
-  var e2EnH7
-  if ( not JspVZ(10, e2EnH7, aIEwX) or 98 + 43 + aIEwX)
-    return aIEwX or aIEwX and -l1s4pu + 108
+  JspVZ(none, -JspVZ(77, "?5=Mqa", "gt2B"), 83)
+  return none
+  while (none <= "r(" /  not (JspVZ(-50, 81, "c")))
+    return (none < 122)
+    JspVZ(JspVZ(62, "", none), none, JspVZ(105, none, none))
+    var mhe = (JspVZ(23, none, ""q")) - none and none
+  end
+  JspVZ("", 36, JspVZ(none, "Do*0hH", none))
+  if ( not  not JspVZ("", "1", none) == "_Yz#s" * none)
+    var J7qbsik[104]
   end
 end
 

@@ -1,80 +1,42 @@
 # SEED 12845
 
 function kxR(dRFwMKs, jNJZh7IZ, xfl)
-  if (kxR(32, 75, 16) < kxR(34, 72, 74) >= 114)
-    kxR(68, kxR(6, 22, 17), 21)
+  if (kxR("f^v:"A", none, "eX/") == kxR(34, "d6 0A", "]U") >= (kxR("W?zoZ;{", "", "2z")))
+    kxR(kxR(none, "", 64), kxR("N|:RE", 125, "T"), none)
+    var JQP = kxR(-121, none, 90) + 94 / (kxR(-106, none, "J3"))
   end
-  var dLsvDxn
-  xfl = kxR(dLsvDxn, 16, dLsvDxn) == dLsvDxn + kxR(dLsvDxn, 48, dLsvDxn)
-  var YIKxO8v = 44 == kxR(dLsvDxn, 84, dLsvDxn) * kxR(75, dLsvDxn, 94)
-  if (dLsvDxn)
-    if ( not  not kxR(dLsvDxn, dLsvDxn, -62) <= kxR(74, 36, dLsvDxn) + kxR(47, YIKxO8v, 53) >= 26)
-    end
-    while ( not  not kxR(-YIKxO8v, YIKxO8v, dLsvDxn) >= dLsvDxn)
-      xfl = dLsvDxn
-      var ds[107]
-    end
-    if (dLsvDxn == YIKxO8v and dLsvDxn - -dLsvDxn)
-    end
-    jNJZh7IZ += (-kxR(63, 55, YIKxO8v))
-  end
-  while (kxR(-YIKxO8v, YIKxO8v, -28) > kxR(dLsvDxn, 102, YIKxO8v) >= kxR(dLsvDxn, dLsvDxn, dLsvDxn) + kxR(100, 77, dLsvDxn))
-  end
-  while (kxR(-31, 46, 66))
-    if ( not -127 == kxR(YIKxO8v, dLsvDxn, 37) + dLsvDxn)
-      kxR(-101, kxR(57, YIKxO8v, 70), -111)
-      var dU = -(kxR(YIKxO8v, 22, -91)) and -kxR(dLsvDxn, dLsvDxn, 0)
-    end
-    if (dLsvDxn)
-      while (dLsvDxn > 31 < -78 + kxR(-85, YIKxO8v, 70))
-        kxR(17, dLsvDxn, dLsvDxn)
-        xfl += kxR(-dLsvDxn, YIKxO8v, -dLsvDxn)
-        xfl += YIKxO8v
-        kxR(-35, kxR(56, dLsvDxn, 64), 70)
-      end
-      if (54)
-        kxR(kxR(123, -YIKxO8v, -YIKxO8v), kxR(72, 38, 85), dLsvDxn)
-        jNJZh7IZ += (-dLsvDxn)
-        var kA1040
-        xfl = YIKxO8v
-      end
-      var Iq[12]
-    end
-    while (dLsvDxn * kxR(115, -YIKxO8v, 124) / kxR(30, 102, YIKxO8v) * dLsvDxn)
-      var KJ[34]
-      var N0[53]
-    end
-  end
+  var RH1y
+  jNJZh7IZ = none
+  dRFwMKs +=  not (kxR(none, none, -RH1y) - RH1y)
+  RH1y += kxR(RH1y, RH1y, RH1y) == (RH1y)
+  var ImK5A_q[56]
 end
 
-var GgqP6[60]
+var LUft = none
 
-var xf1_Oeo[4]
+var HdJxZJbY[31]
 
-function z9wh67Wf(JS, MwY, Jg, J1i5)
-  kxR(117, -z9wh67Wf(38, 109, 79, 66), kxR(76, 82, 10))
-  var wu = 0 / z9wh67Wf(31, 4, 27, 62) == (z9wh67Wf(5, 87, 74, 121))
-  if (z9wh67Wf(wu, wu, wu, wu))
-    return (xf1_Oeo[wu])
-    return -37
-    z9wh67Wf(z9wh67Wf(wu, 86, wu, wu), wu, kxR(69, wu, 62), 50)
-    var bQqfRm
-    var me
+var yOvzJqG9[57]
+
+function fyd_Uz(OkOLw7Fp, kdxYH2)
+  HdJxZJbY[LUft * -")$^B+b" == LUft] = "&Lf" < 18 - kxR(LUft, LUft, LUft) + fyd_Uz("\jh[nJ%", none)
+  kdxYH2 = fyd_Uz(kxR(LUft, LUft, -"8QHYNj"), kxR("1", none, -42))
+  var K2nbzAMp[106]
+  while (fyd_Uz(LUft, LUft))
+    if (kxR("m8n|", LUft, none) + fyd_Uz(LUft, LUft) or -"w?hk")
+      LUft += yOvzJqG9[LUft]
+      var FR9C9Q
+    end
   end
-  var EDZtunwl[2]
-  while (xf1_Oeo[z9wh67Wf(-57, 27, wu, 55)] - -30 + z9wh67Wf(103, 9, -wu, 95))
-    xf1_Oeo[41] =  not 62
-  end
-  var qFVYaG[92]
-  JS += 15 or 22 + wu == 85
-  var pV69d[27]
+  return LUft < LUft < LUft
+  var M0
+  var TA5u2oU = K2nbzAMp[-"4T"] or HdJxZJbY[none]
+  K2nbzAMp[(14 >= LUft)] = none
 end
 
-var tXCKTw[118]
+var vHih[111]
 
-var Qr_9 = 78
+var JE[75]
 
-var nohU[122]
-
-var OsJjL33[34]
+var I6 = "pjn"
 

@@ -380,7 +380,14 @@ void thread_t::do_INS_SETG_() {
 void thread_t::do_INS_GETA_() {
   value_t *a = pop();
   value_t *i = pop();
-  assert(a && i);
+  if (!a) {
+    raise_error(thread_error_t::e_bad_array_object);
+    return;
+  }
+  if (!i) {
+    raise_error(thread_error_t::e_bad_array_index);
+    return;
+  }
   if (i->type != val_type_int) {
     raise_error(thread_error_t::e_bad_array_index);
     return;

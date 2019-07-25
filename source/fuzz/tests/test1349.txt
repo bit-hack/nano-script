@@ -1,44 +1,18 @@
 # SEED 12670
 
 function dynZCaYq(iBhn, ZaL, A9hXBHnv)
-  dynZCaYq(dynZCaYq(41, 39, 83), -dynZCaYq(121, 111, 51), 76)
-  if (dynZCaYq(57, 2, dynZCaYq(30, 77, 42)))
-    while ( not dynZCaYq(115, -dynZCaYq(45, 74, 126), dynZCaYq(100, -74, -14)))
-    end
-    return -( not 30 <= 19)
-    var Y0s7MywW
-    var Xg0r[74]
-  end
-  if ( not  not 6 and dynZCaYq(7, 31, 94) or (111))
-    return 7 >= dynZCaYq(111, 45, 103) <  not 116
-    if ( not 50 - dynZCaYq(28, 29, 97) == 111)
-      dynZCaYq(dynZCaYq(60, 83, 65), dynZCaYq(100, -123, 98), 61)
-      var Dn4d3z
+  dynZCaYq(dynZCaYq(none, 54, "h"), 90, dynZCaYq("j", none, "VH@"))
+  while (dynZCaYq(19, dynZCaYq(28, none, 58), dynZCaYq(none, "-", none)))
+    if (dynZCaYq(115, -0, 39) or 13 + dynZCaYq(6, "2", 56) + "}<Uw")
+      return "(F- O" * "" or  not dynZCaYq(none, 38, 26)
     end
   end
-  while (85 / -62 * 47)
-    var Zz7AGzpn
-    if (Zz7AGzpn)
-      while (79)
-        while (-dynZCaYq(22, Zz7AGzpn, dynZCaYq(Zz7AGzpn, 5, Zz7AGzpn)))
-          Zz7AGzpn += 16
-          var IUl2[24]
-        end
-      end
-    end
-    if (Zz7AGzpn)
-    end
-    return  not Zz7AGzpn and Zz7AGzpn <= dynZCaYq(Zz7AGzpn, Zz7AGzpn, Zz7AGzpn)
-  end
-  return 125
-  while (dynZCaYq(11, 3, 75))
-    var osqI
-    iBhn = osqI
-  end
-  var eO[90]
+  return dynZCaYq("l", none, dynZCaYq(123, none, 116))
+  return 53
+  var O9dVJvvB[90]
 end
 
-var FjiaFX[106]
+var bBLI[68]
 
-var PoSV_hsL = 6
+var xQGxTn = none
 

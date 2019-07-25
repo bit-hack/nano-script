@@ -1,6 +1,6 @@
 # SEED 12372
 
-var zJWCJ = 62
+var zJWCJ = none
 
-var lkKITMY = 48
+var lkKITMY = none
 

@@ -1,16 +1,20 @@
 # SEED 12833
 
 function xBM1(Dvfjt)
-  xBM1(xBM1(29))
-  if (xBM1(83) - 59 > 37)
-    var VjpeG3HZ = ((22))
-    if (38)
-      xBM1(xBM1(VjpeG3HZ))
+  xBM1(xBM1(none))
+  if (xBM1(80) / xBM1(32) == none)
+  end
+  while (none)
+    var Jx
+    while (Jx)
+      Jx = Jx / Jx
+    end
+    Dvfjt +=  not Jx
+    if ( not Jx or "I" / (-"mT"))
+      var eGM6yboS[50]
     end
   end
-  while ( not  not  not 73 and -6 and 2)
-    var pSaH = ( not  not (xBM1(99)))
-  end
-  xBM1(xBM1(57))
+  var Hr6 = ( not  not (xBM1(none)))
+  Dvfjt = xBM1(Hr6)
 end
 

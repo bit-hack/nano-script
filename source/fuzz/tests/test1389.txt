@@ -2,30 +2,42 @@
 
 var VdRcotBG
 
-var SsZpg = 20
+var SsZpg = none
 
 var iYZd0j0F[15]
 
 function b_(joB, Zz, tgZatWLb, Jt, KGN7, dqOaS)
-  var hMYftxio = -(99)
-  while (b_(hMYftxio, 113, -115, 98, -VdRcotBG, 23) < 30 > VdRcotBG)
-    b_(-86, hMYftxio, b_(31, 6, -95, VdRcotBG, hMYftxio, VdRcotBG), -b_(59, SsZpg, SsZpg, 120, 109, 15), -87, b_(SsZpg, hMYftxio, VdRcotBG, VdRcotBG, VdRcotBG, VdRcotBG))
+  var hMYftxio = -(7)
+  if (b_(-hMYftxio, hMYftxio, "y%nT[", -none, "6", -VdRcotBG) + b_(hMYftxio, hMYftxio, VdRcotBG, hMYftxio, "f*KGGzu", hMYftxio) == -(-b_("t4bI0", SsZpg, SsZpg, "?]", hMYftxio, "P 9")))
+    b_(none, b_(-"Fmgb", none, hMYftxio, VdRcotBG, VdRcotBG, VdRcotBG), b_(VdRcotBG, -"#", SsZpg, none, 108, 122), 75, "{", -b_("T", "vYs", 24, SsZpg, 76, VdRcotBG))
+    KGN7 = iYZd0j0F[b_(none, VdRcotBG, "v{K", "R", -none, -hMYftxio)] + iYZd0j0F[none]
+    var taoc = (SsZpg >= hMYftxio)
+    taoc += iYZd0j0F[b_(-53, 80, VdRcotBG, hMYftxio, ")=", "6I"jVy")]
+    Zz = taoc
   end
-  b_(hMYftxio, -77, SsZpg, b_(SsZpg, SsZpg, 100, 75, 109, 80), 88, -VdRcotBG)
-  while ( not 45 + VdRcotBG or  not 104 - 16)
+  while (iYZd0j0F[SsZpg > hMYftxio])
+    b_(b_(16, -69, VdRcotBG, 42, VdRcotBG, hMYftxio), -76, none, b_(none, SsZpg, "E", -hMYftxio, 104, none), none, SsZpg)
+    b_(hMYftxio, SsZpg, none, b_(hMYftxio, VdRcotBG, none, "", VdRcotBG, 14), VdRcotBG, 5)
   end
-  b_(hMYftxio, b_(59, 21, VdRcotBG, 118, 107, VdRcotBG), b_(-2, -hMYftxio, 103, VdRcotBG, SsZpg, hMYftxio), 127, -60, b_(hMYftxio, VdRcotBG, 17, VdRcotBG, VdRcotBG, SsZpg))
-  iYZd0j0F[74] = hMYftxio
-  var FJHOKC[10]
-  if (4)
-    while (91 - hMYftxio and 44)
-      Jt = 32 > VdRcotBG and -46 or 10
+  while (iYZd0j0F[iYZd0j0F[b_("x2N>m", VdRcotBG, none, hMYftxio, 81, none)]])
+    if (b_("V", VdRcotBG, SsZpg, 29, SsZpg, hMYftxio) <= none or (hMYftxio))
+      var Ssn[103]
+      var DPz0 = Ssn[""] / (b_(VdRcotBG, "+l", 71, "J", "Ax,a[!.", none))
     end
-    b_(SsZpg, b_(hMYftxio, 114, SsZpg, 124, -hMYftxio, 74), -10, 5, 41, SsZpg)
-    b_(hMYftxio, SsZpg, 10, b_(hMYftxio, VdRcotBG, 26, 49, hMYftxio, VdRcotBG), 27, 13)
-    b_(VdRcotBG, 59, b_(15, VdRcotBG, -SsZpg, SsZpg, 16, hMYftxio), 38, 113, b_(54, 34, VdRcotBG, 4, SsZpg, SsZpg))
+    if ("B-z")
+      var SbE = -"A[v"
+      b_(SbE, b_("xp[", 113, VdRcotBG, -SbE, 55, SsZpg), VdRcotBG, 100, ";CU"e(]", b_("g_", none, "I7T&@", hMYftxio, SsZpg, VdRcotBG))
+    end
+  end
+  while ( not SsZpg)
+  end
+  hMYftxio += iYZd0j0F[")m/" + hMYftxio]
+  SsZpg = none
+  if (hMYftxio == b_(SsZpg, none, 114, "5^`Xg", SsZpg, hMYftxio) and 42 or none)
+    iYZd0j0F[b_(SsZpg, 122, VdRcotBG, hMYftxio, -SsZpg, none) * hMYftxio + 51] = b_(hMYftxio, SsZpg, none, "x}", SsZpg, "*kO*[") <= SsZpg < "'h3ly"
+    iYZd0j0F[none] = "" == b_(none, 57, 59, none, none, 71) == 95
   end
 end
 
-var vw = 29
+var wSQJK = ")"
 

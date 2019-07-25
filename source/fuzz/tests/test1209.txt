@@ -1,52 +1,10 @@
 # SEED 12530
 
-var HTyF9vw = 10
+var HTyF9vw = 0
 
-function laC()
-  var clxn_e = HTyF9vw / HTyF9vw or laC()
-  var L30INHzo[123]
-  var aN_Dwwcq[127]
-  return  not  not 115
-  laC()
-  aN_Dwwcq[17] = -(40)
-  var IgFnad = (45) * 86
-end
+var VC = "d"
 
-var YHw[23]
+var P_eRb = none
 
-function XMgXkJbo(pLeeeAXd, QXe, DLjjKyT)
-  return 96
-  HTyF9vw = YHw[HTyF9vw]
-  laC()
-  while ( not HTyF9vw and HTyF9vw and XMgXkJbo(69, -HTyF9vw, 42))
-    while (80)
-      YHw[93] = YHw[HTyF9vw + HTyF9vw]
-      var UX5oUvkq[23]
-      while (UX5oUvkq[(HTyF9vw)])
-        laC()
-      end
-      pLeeeAXd = 16
-      while (HTyF9vw)
-        HTyF9vw = (laC())
-        while (4 > laC() == XMgXkJbo(-87, HTyF9vw, HTyF9vw))
-          return 46 < -(HTyF9vw)
-          HTyF9vw += -UX5oUvkq[77] >= laC() > HTyF9vw
-          laC()
-        end
-      end
-    end
-    var nVC65r6O[55]
-    var GI73[17]
-    return (-HTyF9vw <= XMgXkJbo(-109, 125, 73))
-    while (114)
-      QXe += HTyF9vw
-      XMgXkJbo(laC(), XMgXkJbo(102, 45, 9), 75)
-      nVC65r6O[65] = -( not  not GI73[laC()])
-    end
-  end
-  YHw[110] = (XMgXkJbo(HTyF9vw, HTyF9vw, 60)) ==  not -YHw[HTyF9vw]
-  QXe = 69 / HTyF9vw or XMgXkJbo(HTyF9vw, 47, HTyF9vw) / HTyF9vw
-  var oHShs
-  QXe = HTyF9vw <= 117 - -XMgXkJbo(14, 95, oHShs)
-end
+var ont
 

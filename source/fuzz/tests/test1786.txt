@@ -1,6 +1,6 @@
 # SEED 13107
 
-var RcsW0oQ2 = 50
+var RcsW0oQ2 = 88
 
-var C1NIEb0g[41]
+var gN = "PQUv@"
 

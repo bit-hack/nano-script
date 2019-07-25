@@ -6,5 +6,5 @@ var Ws[22]
 
 var DmDDdlTH[50]
 
-var NNOx7 = 87
+var NNOx7 = "so|J"
 

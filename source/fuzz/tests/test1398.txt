@@ -1,19 +1,23 @@
 # SEED 12719
 
-var xhOC = 77
+var xhOC = 2
 
-var eotX8_t[46]
-
-function eroh()
-  return 61
-  if ((eroh() / 22))
+function DtX8()
+  while (xhOC < xhOC / xhOC and -DtX8())
+    while ((":") / none)
+      return  not 77 + "bJy>!\" or none and "6zb74//"
+      if (DtX8())
+      end
+      DtX8()
+      var XguSEYx = DtX8()
+      return -XguSEYx / 113 == (105)
+    end
   end
-  var to7nc
-  while (eotX8_t[eotX8_t[0]])
-    var RrKk5ztx[43]
-    var rUFVxdqb
-  end
-  var szBnR_9W
-  eroh()
+  return xhOC
+  return -(84) == (xhOC)
+  return DtX8() + (DtX8())
+  var wV3[96]
 end
+
+var iPhYJp[111]
 

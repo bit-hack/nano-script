@@ -3,33 +3,42 @@
 function bgQ(A9_WA, PxFb8RRx, uFZES, oARsWM, K9, TVqiY2j)
   var c8dGdGOZ[96]
   var D2[99]
-  while ((122 <= 41))
-    if (bgQ(71, 118, 16, 17, 117, 85) - 63 or (bgQ(-47, 44, -37, 57, 27, 108)))
-      if (c8dGdGOZ[bgQ(8, 24, 113, 62, 14, 13) == bgQ(26, 11, 87, 124, 94, 29)])
-        D2[71] =  not c8dGdGOZ[bgQ(5, 119, 53, 93, -10, 27)]
-        var HmUievE = bgQ(10, bgQ(106, 41, 12, 27, -102, 43), bgQ(75, 127, 88, 52, 60, 92), 38, bgQ(8, -77, 122, 54, -104, 46), -43)
-        HmUievE =  not 18
-        return -bgQ(24, HmUievE, 43, HmUievE, 73, HmUievE) >=  not HmUievE or HmUievE
-        while (bgQ(15, bgQ(103, 24, 51, HmUievE, 97, 114), bgQ(HmUievE, 4, 118, -34, 91, HmUievE), 96, 40, HmUievE))
-          return -(bgQ(HmUievE, HmUievE, 113, 40, HmUievE, HmUievE) and HmUievE)
-          if (HmUievE)
-            c8dGdGOZ[40] = (c8dGdGOZ[HmUievE])
-            bgQ(52, HmUievE, bgQ(68, 35, HmUievE, 80, HmUievE, 43), -51, HmUievE, bgQ(HmUievE, 62, HmUievE, 12, 73, 40))
-          end
-          A9_WA += HmUievE
-        end
-      end
-      var buO5 = D2[116] - bgQ(96, 64, 16, 123, 109, 98) + 4
-      D2[68] = c8dGdGOZ[bgQ(116, 65, buO5, 126, 101, buO5) or bgQ(99, buO5, buO5, buO5, buO5, buO5)]
-    end
+  while ((36 > bgQ(67, none, 83, none, none, none)))
+    var XAj
+    bgQ(XAj, bgQ(96, XAj, -"J?#WJE", XAj, XAj, XAj), 75, bgQ(-"R&#H ", 76, XAj, 58, 54, XAj), bgQ(34, 71, XAj, none, -XAj, "*6h."), none)
+    var IIQk4[47]
   end
-  D2[85] = 80 or bgQ(126, -9, 12, 23, -15, 57) / 20
-  c8dGdGOZ[51] = 56
+  var ZQ[88]
+  D2[109] = ZQ[ not bgQ("iQ  ", none, "", none, none, none)]
 end
 
-var yC[65]
+var htC
 
-var _PLL
+var B2i46fOq[46]
 
-var z8[50]
+function UHT3(dXQPLc, ckl, MxXS, kVKbE)
+  B2i46fOq[bgQ(bgQ(none, none, htC, -93, htC, htC), "9", 114, none, -none, none)] = -B2i46fOq[none] > 124 and UHT3(htC, htC, htC, 50)
+  while (htC)
+    bgQ(UHT3(htC, "4$F", htC, 17), "", none, 58, UHT3(117, htC, 119, "(1d &K"), UHT3(htC, htC, htC, htC))
+    if ( not (UHT3(htC, ")CnIr", htC, "#6{")))
+      htC = htC <= htC / bgQ(htC, htC, -104, htC, htC, "u.1JQ")
+      MxXS =  not (-22) >= none <= -UHT3("TivV<", htC, none, htC)
+      B2i46fOq[(B2i46fOq[htC])] =  not none
+    end
+    var oCt7dg
+  end
+  return 51
+  B2i46fOq[B2i46fOq[none]] = htC and "" or "T" + htC
+  B2i46fOq[ not B2i46fOq[none * 50]] = htC
+  B2i46fOq[58 < (none)] = B2i46fOq[-htC] * (33)
+  if (B2i46fOq[bgQ(htC, "5i4", none, -none, 101, htC) > none])
+    B2i46fOq[(htC) / htC] =  not UHT3(htC, htC, "", htC) <= htC > ("y<")
+    var hwq
+    MxXS +=  not hwq and "R" and hwq
+    while (B2i46fOq[(htC)])
+    end
+  end
+  while (none - B2i46fOq[htC])
+  end
+end
 

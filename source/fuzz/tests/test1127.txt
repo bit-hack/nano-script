@@ -1,8 +1,39 @@
 # SEED 12448
 
-var h0f = 95
+var h0f = "vF"
 
-var H5[110]
+var PQhhB[98]
 
-var WhB[98]
+function vr1vYK(_J35u6GB, ou2V, fx0g, rXt, t9AqqB, pmwEJ)
+  var eSc =  not h0f >= 111 or PQhhB[-h0f]
+  vr1vYK(-none, ":4x,#S", "", -vr1vYK(none, h0f, -none, h0f, "", none), vr1vYK("v", 124, none, eSc, 52, eSc), h0f)
+  if ( not (vr1vYK(-h0f, h0f, none, 36, h0f, eSc) + vr1vYK(none, h0f, eSc, h0f, -h0f, none)))
+    while (h0f)
+      return vr1vYK(eSc, "!", "32/>rE", none, 123, 111) <= h0f <= (eSc)
+      var fUO5[80]
+      if ( not -vr1vYK("fa\", h0f, h0f, "^D", h0f, h0f) or h0f * -eSc)
+        var Ze2WRf[30]
+        while ((vr1vYK(8, none, -125, 124, none, "(8")) ==  not -eSc > h0f)
+          pmwEJ += PQhhB[vr1vYK(116, "NX,", 126, none, eSc, 99) / vr1vYK(46, none, ",l{-=", "o5", h0f, -86)]
+          var At = h0f / -eSc == 51
+          fUO5[eSc] = ( not h0f)
+        end
+        while ( not eSc <= -"%#$)" < -vr1vYK(none, "pgB#.", 85, eSc, none, 41) > vr1vYK(eSc, 54, eSc, h0f, h0f, "C ,B"))
+          h0f +=  not  not  not eSc
+          PQhhB[-(fUO5[eSc])] = -vr1vYK(eSc, "p6+", h0f, -h0f, none, eSc) and Ze2WRf[h0f]
+          _J35u6GB =  not (-vr1vYK(118, -h0f, eSc, eSc, eSc, h0f)) + h0f
+          vr1vYK(none, vr1vYK(-eSc, eSc, h0f, 61, 17, 41), 69, "", vr1vYK(42, none, h0f, none, h0f, 108), eSc)
+        end
+      end
+    end
+  end
+  fx0g = eSc >=  not eSc
+  eSc = vr1vYK("p9JV#QB", none, -none, -eSc, eSc, "Py}?[A") < eSc - eSc >= " G$#@n-"
+  while (none)
+  end
+  var LRK = vr1vYK(h0f, 99, eSc, none, "B", h0f) - vr1vYK(61, h0f, "%H>{$}d", eSc, -eSc, 81) and vr1vYK(h0f, eSc, 8, eSc, eSc, none)
+  while ( not "/Gqxk")
+    vr1vYK(none, h0f, vr1vYK(eSc, eSc, 25, "X ", ";.", h0f), LRK, "^o", -vr1vYK(LRK, eSc, 21, eSc, LRK, eSc))
+  end
+end
 

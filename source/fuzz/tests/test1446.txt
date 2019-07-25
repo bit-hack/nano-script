@@ -1,36 +1,41 @@
 # SEED 12767
 
 function Xjo8pQ(PQMOdKH, Pd08)
-  if (9)
-    var kTwkMbD = Xjo8pQ(76, 29) >= Xjo8pQ(50, 83) and 6 / Xjo8pQ(103, 96)
-    if (Xjo8pQ(Xjo8pQ(-109, -21), kTwkMbD))
-      return  not 97
-      kTwkMbD += Xjo8pQ(kTwkMbD, 42) + Xjo8pQ(105, kTwkMbD) - Xjo8pQ(17, kTwkMbD) or Xjo8pQ(kTwkMbD, kTwkMbD)
-      kTwkMbD += 99
+  if (93)
+  end
+  var CkMbDN[19]
+  if (Xjo8pQ(101, none) <= Xjo8pQ(84, 47) or -Xjo8pQ("cNBH", -none))
+    while (Xjo8pQ("[^G", -none) and 124 and 116)
+      var O1S[27]
+      if (Xjo8pQ(Xjo8pQ("PHV", none), Xjo8pQ(none, "qE&>")))
+        Xjo8pQ(Xjo8pQ(14, none), none)
+        return (O1S[Xjo8pQ("", 108)])
+        while (none)
+        end
+        var rtq = O1S[ not (none)]
+        Xjo8pQ(Xjo8pQ(none, rtq), rtq)
+      end
     end
-    Xjo8pQ(21, 50)
-  end
-  return (55)
-  Xjo8pQ(Xjo8pQ(89, 28), -Xjo8pQ(66, 56))
-  var W1tfH4 =  not  not (26) >= Xjo8pQ(99, 82) >= Xjo8pQ(85, 83)
-  var _nRAc
-  var YY5s1[13]
-end
-
-function nyYdJ()
-  var IU[37]
-  IU[77] = -Xjo8pQ(-107, 71)
-  var zNZv[98]
-  if (73)
-  end
-  Xjo8pQ(nyYdJ(), 113)
-  zNZv[17] = Xjo8pQ(68, 57) == Xjo8pQ(58, 111) == 61
-  while (nyYdJ() >= 94 - nyYdJ())
-    if (IU[nyYdJ()] < zNZv[72])
+    return -4
+    Xjo8pQ(Xjo8pQ("feet", none), Xjo8pQ(none, ""))
+    while ( not -Xjo8pQ(-89, none) and "" / none)
     end
   end
-  return ( not Xjo8pQ(-15, 91) - 70)
+  var DhhNc7jN =  not Xjo8pQ(Xjo8pQ(none, none), Xjo8pQ(-none, none))
+  var UC[92]
+  return Xjo8pQ(0, DhhNc7jN)
 end
 
-var tFkpqBH
+var ELEBJNd2 = none
+
+function hs3HB7(dXGoJSSD, LJo4sNN, vvSGhm)
+  ELEBJNd2 += (none - ELEBJNd2)
+  return "\z"
+  vvSGhm += -none
+  dXGoJSSD = none
+  var gNOw[86]
+  LJo4sNN = ELEBJNd2 < hs3HB7(54, none, ELEBJNd2) and Xjo8pQ(ELEBJNd2, ELEBJNd2) == -none
+  return ELEBJNd2 == none < gNOw[ELEBJNd2]
+  gNOw[ not 110 <= ELEBJNd2] =  not Xjo8pQ(ELEBJNd2, -115) and Xjo8pQ("F!p$|?4", "") < -63
+end
 

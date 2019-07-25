@@ -3,18 +3,36 @@
 var H_AVT[56]
 
 function cf(K3ZB9tJ)
-  cf(53)
-  var pjFbnhn
-  var Cl2
-  if (pjFbnhn > pjFbnhn == 76 + cf(42))
-    Cl2 += H_AVT[cf(pjFbnhn) >= cf(26)]
-    H_AVT[7] = Cl2 > 96
-    cf(32)
-    K3ZB9tJ = 38 / 44 >= pjFbnhn
+  cf(86)
+  return none
+  while (none)
+    var Cl2
+    if (Cl2 > Cl2 == "p" * cf("763GE_"))
+    end
+    cf(cf(Cl2))
+    cf(Cl2)
+    if (Cl2)
+      var OZ5
+      if (Cl2)
+        if ((OZ5 > 65))
+        end
+        return (cf(OZ5) < 44)
+        var xJ = cf(OZ5)
+        cf(xJ)
+      end
+      return Cl2 < none == 44
+      var GXvJkn77 = "^E(" * none
+      H_AVT[30 + OZ5] = "CZ%9q"
+    end
   end
-  var e3L1h
-  K3ZB9tJ += pjFbnhn + (cf(Cl2))
-  var QYFAI[49]
-  K3ZB9tJ += H_AVT[20 == 104]
+  if ((cf("kP)<") <= -cf(none)))
+    cf(18)
+    cf(45)
+    return -cf("XuhP[^]") >= 69 < (none)
+  end
+  cf(-cf("Sii7 `"))
+  if (H_AVT[62 <= cf(none)])
+    cf(-none)
+  end
 end
 

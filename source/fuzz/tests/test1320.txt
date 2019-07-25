@@ -1,43 +1,28 @@
 # SEED 12641
 
-var bD6rkI = 49
+var bD6rkI = 13
 
-function M6(LBYyRYE, Dw9, Bm4elEr, n0ZJkSe, mm, r3IKPDFO)
-  M6(M6(bD6rkI, 40, bD6rkI, 119, 95, bD6rkI), bD6rkI, bD6rkI, M6(-50, bD6rkI, -31, -bD6rkI, 3, bD6rkI), bD6rkI, bD6rkI)
-  if (bD6rkI == M6(25, 75, 67, 22, 61, 98) and 94 == 29)
-    r3IKPDFO +=  not bD6rkI and M6(bD6rkI, 14, bD6rkI, 55, 13, 31) >= M6(39, -bD6rkI, 99, 120, bD6rkI, 76)
-  end
-  bD6rkI += (-bD6rkI / bD6rkI)
-  Dw9 = M6(49, bD6rkI, bD6rkI, bD6rkI, bD6rkI, 74) + M6(bD6rkI, bD6rkI, 7, 59, -123, 112)
-  if (42 <= 14 or M6(bD6rkI, 28, bD6rkI, bD6rkI, bD6rkI, bD6rkI))
-    while (M6(bD6rkI, bD6rkI, bD6rkI, -49, 114, bD6rkI) or bD6rkI <= M6(44, 71, bD6rkI, 68, bD6rkI, bD6rkI))
-      while (-(M6(bD6rkI, bD6rkI, bD6rkI, 119, 52, 3)))
-        if (-(42 <= M6(0, 83, -bD6rkI, 101, bD6rkI, bD6rkI)))
-        end
-        if (M6(M6(bD6rkI, bD6rkI, 61, 91, bD6rkI, 93), bD6rkI, M6(bD6rkI, bD6rkI, bD6rkI, 25, 15, bD6rkI), 86, -M6(19, 92, 8, bD6rkI, bD6rkI, 19), M6(115, bD6rkI, 65, 119, 41, -116)))
-        end
-        Bm4elEr = 77 <= 89 * 118
-      end
-    end
-  end
-  M6(M6(-54, 29, bD6rkI, -bD6rkI, bD6rkI, bD6rkI), 105, M6(19, bD6rkI, -0, 45, -bD6rkI, 53), M6(bD6rkI, 91, 68, 82, -bD6rkI, bD6rkI), bD6rkI, 39)
-  M6(28, 77, 79, M6(115, 117, 99, 90, 21, bD6rkI), -5, 23)
-  bD6rkI += 26
+function pGl(Ay, yE4x, kspm, glE, VU0ZJk, KP6mA)
+  return bD6rkI ==  not  not pGl("DEh", -bD6rkI, "l", bD6rkI, 57, -bD6rkI) or pGl(none, bD6rkI, bD6rkI, bD6rkI, "RQ", bD6rkI)
+  var Ytgk0BKO[75]
+  Ytgk0BKO[Ytgk0BKO[Ytgk0BKO[bD6rkI]]] = Ytgk0BKO["Wt" or pGl(21, bD6rkI, bD6rkI, bD6rkI, bD6rkI, bD6rkI)]
+  var DN5i = 103 == none + pGl(none, 46, none, bD6rkI, 15, none) / bD6rkI
+  KP6mA = bD6rkI
+  return -84
+  Ytgk0BKO[ not pGl("-.&!4,", none, none, none, "Dfu?d", -DN5i) / pGl(none, 66, none, 41, -bD6rkI, none) / bD6rkI] =  not DN5i < "U" < ("T+@,6&-")
 end
 
-var afs
-
-var RZ0IRs8G[112]
-
-function Gd(IhKHg8v, Mm2f5FIA, hgSxNsrJ, duU)
-  return Gd(afs, 113, afs, 82) > -27
-  Mm2f5FIA = ((119))
-  M6(Gd(bD6rkI, -57, afs, 12), 37, afs, afs, M6(afs, 5, -bD6rkI, afs, 111, afs), M6(5, 13, afs, -66, bD6rkI, bD6rkI))
-  Mm2f5FIA += bD6rkI / bD6rkI or bD6rkI
-  hgSxNsrJ = M6(bD6rkI, 86, bD6rkI, afs, 10, 33) <= 35
-  if (RZ0IRs8G[17] == 103)
+function PyF(yntA, QJ1VB3N, kN065, EX, a4, A5)
+  pGl(pGl(bD6rkI, bD6rkI, "'Ic", bD6rkI, -"Vmyz7!", bD6rkI), "9ml", "6Eu@xJ", -PyF(-"jNbb", 114, bD6rkI, bD6rkI, bD6rkI, bD6rkI), bD6rkI, PyF(none, bD6rkI, 69, 25, -21, bD6rkI))
+  bD6rkI = (pGl(bD6rkI, none, bD6rkI, bD6rkI, 66, bD6rkI)) == ".sC" - bD6rkI
+  PyF(bD6rkI, none, PyF(bD6rkI, 116, 0, "!K==", "U", bD6rkI), bD6rkI, PyF(bD6rkI, none, bD6rkI, none, 33, bD6rkI), 32)
+  return "h[L"
+  bD6rkI = PyF(PyF(bD6rkI, bD6rkI, none, 63, 104, 105), bD6rkI, pGl(bD6rkI, bD6rkI, bD6rkI, 49, none, bD6rkI), none, -PyF(119, 12, -bD6rkI, 62, 17, 2), bD6rkI)
+  while (bD6rkI)
   end
-  return bD6rkI
-  var OrpJQ
 end
+
+var l6 = none
+
+var HLsQ4[114]
 

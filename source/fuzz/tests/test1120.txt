@@ -1,93 +1,56 @@
 # SEED 12441
 
-var DtP8RBp = 17
+var DtP8RBp = 64
 
-var kQLK2Fo[49]
+var JLK2F
 
-var OYu[65]
+var jAYuZFA[121]
 
-function NI2Pisi9(ywqLFpJk)
-  ywqLFpJk += NI2Pisi9(DtP8RBp)
-  var lhBA[97]
-  if ( not DtP8RBp / DtP8RBp < 83)
-    while (NI2Pisi9(22) and NI2Pisi9(27) >= DtP8RBp)
-      NI2Pisi9(NI2Pisi9(104))
-      if (DtP8RBp + DtP8RBp > NI2Pisi9(18))
-        var PFb_
-      end
+function Oisi9afL(mFpJk, hcQ, EUw)
+  EUw = Oisi9afL(-".}vb0!", 41, 71) and -"Z"{PnDP" or Oisi9afL("Hv+Z5`", JLK2F, JLK2F)
+  var lfFV[37]
+  lfFV[ not -(Oisi9afL(none, 19, DtP8RBp) > Oisi9afL(87, DtP8RBp, JLK2F))] = JLK2F or Oisi9afL(DtP8RBp, "", 83)
+  DtP8RBp += JLK2F - Oisi9afL(96, "wk", DtP8RBp) * Oisi9afL(DtP8RBp, -DtP8RBp, "/!9anp") - -Oisi9afL(none, -DtP8RBp, 62)
+  hcQ = JLK2F
+  DtP8RBp += (DtP8RBp) + DtP8RBp <= "d7i"
+  if (lfFV[JLK2F] >= 83 >= "5h")
+    while (JLK2F / Oisi9afL(DtP8RBp, -"h|6]", -DtP8RBp) <= -JLK2F + JLK2F)
     end
-    var puL
-    puL = ( not (puL))
+    var vhLpc2 = lfFV[(Oisi9afL(DtP8RBp, DtP8RBp, none))]
+    mFpJk += Oisi9afL(vhLpc2, JLK2F, JLK2F) or Oisi9afL(JLK2F, none, 88)
   end
-  ywqLFpJk += DtP8RBp + NI2Pisi9(105) / DtP8RBp > NI2Pisi9(DtP8RBp)
-  var GRh37[121]
-  if (NI2Pisi9(NI2Pisi9(127)))
-  end
-  NI2Pisi9(26)
-  lhBA[37] = DtP8RBp - NI2Pisi9(23) and kQLK2Fo[37]
+  mFpJk = -(101)
 end
 
-function _i(WhwMZT6, TZI_, et1, Qvvc)
-  if (-DtP8RBp == 31 < -_i(46, -DtP8RBp, 117, DtP8RBp) + DtP8RBp)
-    DtP8RBp = 69 + 71
-    if (OYu[DtP8RBp] >= 2 + -29)
-      while ( not (53) * DtP8RBp / _i(DtP8RBp, -79, DtP8RBp, DtP8RBp))
-      end
-      kQLK2Fo[99] = NI2Pisi9(DtP8RBp)
-      kQLK2Fo[108] = NI2Pisi9(DtP8RBp) * DtP8RBp or NI2Pisi9(DtP8RBp)
-      Qvvc = (47)
-    end
-    if (24 or NI2Pisi9(105) <= 60)
-      kQLK2Fo[75] = DtP8RBp
-      _i(NI2Pisi9(82), NI2Pisi9(79), DtP8RBp, 54)
-      if (_i(118, 66, DtP8RBp, DtP8RBp) == NI2Pisi9(101) and _i(122, 34, DtP8RBp, DtP8RBp) / NI2Pisi9(DtP8RBp))
-        var hPE6cbGj
-        while ( not  not -39 < hPE6cbGj > _i(18, DtP8RBp, 59, DtP8RBp) < DtP8RBp)
-          if (DtP8RBp and -93 == hPE6cbGj)
-            if ((-_i(hPE6cbGj, hPE6cbGj, DtP8RBp, -118) - 13))
-            end
-            if (114)
-              while (hPE6cbGj)
-                _i(20, _i(110, DtP8RBp, -50, hPE6cbGj), 9, -_i(hPE6cbGj, 69, hPE6cbGj, DtP8RBp))
-                if (hPE6cbGj)
-                  DtP8RBp += _i(58, hPE6cbGj, NI2Pisi9(87), _i(106, 85, DtP8RBp, hPE6cbGj))
-                  var fB = _i(hPE6cbGj, hPE6cbGj, 66, -DtP8RBp)
-                  var NqNv[36]
-                  TZI_ += _i(124, 95, hPE6cbGj, 25) or hPE6cbGj >= NI2Pisi9(DtP8RBp)
-                end
-                var i4I
-                et1 = 104 - 103 * 35
-                return  not  not NI2Pisi9(DtP8RBp) == _i(79, 76, i4I, 14) == (NI2Pisi9(i4I))
-              end
-            end
-            Qvvc = _i(40, DtP8RBp, DtP8RBp, 119) - DtP8RBp or (DtP8RBp)
-          end
-          return  not  not hPE6cbGj and -81 *  not hPE6cbGj
-          while (NI2Pisi9(127) <= kQLK2Fo[_i(46, 119, -74, hPE6cbGj)])
-            NI2Pisi9(NI2Pisi9(DtP8RBp))
-            var srhc = OYu[hPE6cbGj] or NI2Pisi9(hPE6cbGj) <= 38
-          end
-        end
-        var IfbbgKy[61]
-        Qvvc +=  not (hPE6cbGj) * NI2Pisi9(DtP8RBp) > 34
-      end
-    end
-    TZI_ = -DtP8RBp
+function v6qf0D(k8, tDsWs, p5gz, Su, kO, dH53Uwo, KT)
+  while (("wvEg u`" or v6qf0D(40, JLK2F, DtP8RBp, none, JLK2F, JLK2F, none)))
+    v6qf0D(v6qf0D(JLK2F, JLK2F, JLK2F, JLK2F, JLK2F, DtP8RBp, 38), JLK2F, -"F>CDH", 39, DtP8RBp, DtP8RBp, "")
+    Oisi9afL(Oisi9afL(DtP8RBp, JLK2F, -DtP8RBp), JLK2F, v6qf0D("[", JLK2F, DtP8RBp, -"g", JLK2F, JLK2F, DtP8RBp))
+    DtP8RBp =  not Oisi9afL(JLK2F, 5, 127) *  not jAYuZFA[Oisi9afL(DtP8RBp, JLK2F, 57)]
+    DtP8RBp = (DtP8RBp) + JLK2F
+    var foEopW
   end
-  var rX[17]
-  while (29)
+  KT = (JLK2F)
+  v6qf0D(none, JLK2F, Oisi9afL("bgH", 67, DtP8RBp), DtP8RBp, JLK2F, Oisi9afL(JLK2F, "", JLK2F), v6qf0D(JLK2F, 52, DtP8RBp, none, "$%pkn&@", JLK2F, -DtP8RBp))
+  dH53Uwo = 80 == 24 <= v6qf0D(JLK2F, DtP8RBp, none, "", 45, -DtP8RBp, JLK2F)
+  while (">" / DtP8RBp)
+    DtP8RBp = jAYuZFA[DtP8RBp]
   end
-  Qvvc += _i(16, DtP8RBp, 114, DtP8RBp) > DtP8RBp <= 67 <= NI2Pisi9(50)
-  rX[46] = -rX[-_i(DtP8RBp, -DtP8RBp, DtP8RBp, -71) > 40]
-  var wbyTV[24]
+  var b0I[58]
+  var OYmWgE
+  b0I[ not OYmWgE and -none *  not OYmWgE] = "\Y" + (v6qf0D(none, 125, OYmWgE, "5V", none, JLK2F, 8))
+end
+
+function zPg170t(bzvKYcQ, ns2D, PQB75v, jl, GbbgKyae, Rf2c)
+  ns2D = JLK2F * Oisi9afL(DtP8RBp, -DtP8RBp, none) > "679:,["
+  var z2c5f09z = (none < v6qf0D("oM", DtP8RBp, JLK2F, 6, -DtP8RBp, JLK2F, -113))
+  var rhsxKhp0[21]
+  var xTVJ[49]
+  GbbgKyae =  not none / "@T9ww" > 47
+  var lc
+  jAYuZFA[(xTVJ[98])] = DtP8RBp or none / z2c5f09z - zPg170t(z2c5f09z, "x7", JLK2F, lc, DtP8RBp, lc)
   if (DtP8RBp)
-    OYu[30] = _i(14, DtP8RBp, DtP8RBp, 98)
-    et1 = (DtP8RBp)
-    NI2Pisi9(DtP8RBp)
-    et1 += kQLK2Fo[DtP8RBp]
+    var cr = "R<0wO9" >= (z2c5f09z)
   end
-  rX[74] = -DtP8RBp
 end
-
-var wHEfh6vi[2]
 

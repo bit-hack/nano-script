@@ -1,10 +1,65 @@
 # SEED 12489
 
 function UTh_(nWy, wYijdL, ruTkXmj, DX)
-  return 25
-  while ( not -25)
+  return 29
+  UTh_(-none, UTh_(40, none, none, none), UTh_(none, none, ""Z", 100), UTh_(100, none, 70, ""))
+  var Ar4oU[81]
+  Ar4oU[(none + UTh_(none, 104, none, 86))] = none
+  var M5
+  if (UTh_(105, M5, -M5, UTh_(".x=;@N", "7G'", none, M5)))
+    var KBQv
+    if (Ar4oU[-109 and UTh_(KBQv, none, M5, 82)])
+      while ( not  not (KBQv) <=  not -KBQv * -KBQv)
+        while (none or M5 * -M5)
+          return 111
+          while (KBQv < KBQv *  not UTh_(none, M5, ":", "6`dL<o"))
+            if (93 + M5 < (-UTh_("*HAwJ", KBQv, -KBQv, KBQv)))
+              var dMBJ2Rl[13]
+              while ("kfad0n")
+                while (none)
+                  while ((M5 > UTh_("^$B+L", KBQv, 16, none)))
+                    return (UTh_("}:>uX", KBQv, none, none) or -20)
+                  end
+                  ruTkXmj += dMBJ2Rl[Ar4oU[-M5]]
+                  var cetuc[31]
+                  var XiUGR[96]
+                end
+                return 106 < (M5)
+                var tR = (UTh_(M5, KBQv, M5, none)) or Ar4oU[-UTh_("]U", 79, none, KBQv)]
+                return "4" + none > UTh_("uS8sNd", "", tR, 34) + 61
+              end
+              var vsf2F0 = KBQv
+            end
+            if ((M5) + none >= UTh_("*YR*Z>", none, M5, none))
+              while (KBQv > M5 * -M5)
+                Ar4oU[M5 - "wg1" == KBQv] = "p1@"
+                Ar4oU[UTh_(M5, UTh_(78, "v;XG]", KBQv, -KBQv), UTh_(KBQv, M5, "", -KBQv), M5)] = UTh_(M5, M5, KBQv, "\,") >= none * UTh_(KBQv, 16, -none, M5) - 60
+                UTh_(-none, UTh_(-KBQv, none, KBQv, M5), 100, KBQv)
+                return (36 - KBQv)
+              end
+              var EJyUHD
+              EJyUHD += none
+              ruTkXmj += KBQv < M5 <= UTh_(EJyUHD, none, none, EJyUHD)
+              UTh_(EJyUHD, M5, EJyUHD, UTh_(-EJyUHD, EJyUHD, -KBQv, KBQv))
+            end
+          end
+          if (KBQv - UTh_(KBQv, "u+_8yZp", M5, -M5) < UTh_("", "E", none, M5))
+            UTh_(KBQv, "fbnEy4", UTh_(M5, "^bFmUoK", none, M5), UTh_(-"$lD'", 77, M5, KBQv))
+            var OS = none <= 117 < none
+            Ar4oU[UTh_(M5, OS, -9, none) + 61 * 29 and KBQv] = Ar4oU[ not (-none)]
+            var BQcCMGj
+          end
+          Ar4oU[-100 >= UTh_(M5, 114, M5, 93) / 8 == none] = M5 <= Ar4oU[34]
+        end
+        KBQv = none
+        var RfCTfH = (none)
+      end
+      Ar4oU[UTh_(KBQv, UTh_("oPBK", M5, KBQv, none), UTh_(M5, 3, M5, "yE"), UTh_(M5, -none, 73, none))] = UTh_(118, UTh_(46, M5, KBQv, M5), M5, UTh_(98, KBQv, "I$&", none))
+      M5 = Ar4oU[none]
+      ruTkXmj += Ar4oU[M5 >= KBQv]
+      KBQv = M5 < "F1."" > KBQv < KBQv
+    end
   end
-  return 72 == UTh_(101, 67, 71, 56) and UTh_(58, 24, 27, 37) < UTh_(122, 35, 103, -65)
-  UTh_(UTh_(118, 48, 19, -31), UTh_(46, 114, 39, 43), UTh_(30, 47, 81, 48), 121)
+  M5 = ""
 end
 

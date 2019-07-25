@@ -2,9 +2,9 @@
 
 var a7pTw0qp
 
-var Wtxl = 22
+var Wtxl = none
 
 var YJU[48]
 
-var o4dr = 79
+var o4dr = ""
 

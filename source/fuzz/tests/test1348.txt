@@ -1,56 +1,56 @@
 # SEED 12669
 
 function Cy(FuOjJ1y, gP)
-  return Cy(122, 13) or Cy(97, 102)
-  if ( not Cy(82, 79) < Cy(114, 64) <  not Cy(51, 4) == Cy(57, 52))
+  return Cy(none, none) or Cy(none, 18)
+  return Cy(Cy("u?[]DO>", 45), Cy(65, 66))
+  return (none) / ""
+  if (Cy(85, 64) and Cy(46, -"r_Q[Gd") + Cy(83, 75))
+    return Cy(122, none) - "MGk" >= Cy(none, "") <= -"N-ZME!o"
+    Cy(Cy(none, none), none)
   end
-  if (Cy(11, 25) + -95)
-  end
-end
-
-function m6PK(KxL, y0PtU_, ff, Cwq_, HN8Cm, t3085_j, mKphJkGE)
-  while ((20) and (Cy(60, 44)))
-    var Cow_MCB
-    var XqH[11]
-  end
-  m6PK(38, 93, Cy(25, 109), Cy(60, 101), -54, Cy(22, 1), 20)
   var lV[118]
-  lV[40] = lV[lV[m6PK(-56, 10, 79, 89, 8, 80, 34)]]
-  m6PK(19, Cy(51, 24), 42, -115, Cy(100, 0), 121, Cy(40, 43))
-  var MO7knr = -m6PK(m6PK(4, 80, 122, 87, 21, 107, 47), Cy(103, 114), 15, -42, 46, 72, 97)
+  lV[lV[Cy(-none, "Zg)'mK")] == none <= Cy("y,)"(s", none)] =  not none and Cy("4#!f", 103)
+  lV[Cy(Cy("0{6+", 79), Cy(63, "f"))] = "Xe" + Cy("pnpkPy", 117) * Cy(116, 55) + Cy(80, none)
 end
 
-var _t[126]
-
-function W7pW(LOpkQ6fa, Ab, SYEM2Z, nV, FZDpYJ, m9, xn6VfX)
-  while (_t[108])
+function Zm8SGK(B0nUWy9, B93zdL, QjJn, v0n)
+  var nB38 =  not 68 == 115
+  while ( not (none))
+    nB38 += (nB38)
+    var _hx5W3t[126]
   end
-  while (22)
-    return m6PK(60, m6PK(16, -74, 91, 95, 26, 1, 99), -W7pW(16, 109, 108, 117, 66, 28, -54), m6PK(1, 59, 118, 108, 66, 53, 113), -20, W7pW(116, -46, -76, 90, 105, 84, 89), W7pW(1, 64, 105, 7, 46, 86, 80))
-    var EBkTYiJ
-    return 127 or m6PK(-EBkTYiJ, 34, EBkTYiJ, -EBkTYiJ, EBkTYiJ, 56, 26)
-    _t[43] = _t[W7pW(16, 23, 62, EBkTYiJ, 78, 13, EBkTYiJ)] / W7pW(96, 102, 27, 41, 92, EBkTYiJ, EBkTYiJ) >= m6PK(51, EBkTYiJ, EBkTYiJ, -73, EBkTYiJ, EBkTYiJ, EBkTYiJ)
-  end
-  _t[116] = 103
-  _t[126] = 47 - 0
-  while (_t[7 or Cy(23, 75)])
-    _t[124] =  not -_t[W7pW(14, 90, 91, 73, 34, 52, 63)]
-    while (-_t[72 >= 112])
-    end
-    if ((W7pW(47, 26, 98, 31, 20, 52, 30) or W7pW(19, -64, -48, 77, 76, 27, 22)))
-      var C202I = m6PK(W7pW(69, 94, 15, 75, 91, -115, 34), 51, 103, Cy(7, 9), -82, -m6PK(29, 12, 125, 5, 79, -82, 51), 87)
-      return Cy(-m6PK(119, C202I, C202I, 32, 7, 103, C202I), m6PK(-C202I, C202I, 19, -27, -C202I, C202I, -104))
-      var IiKRxhWz[119]
-      SYEM2Z = C202I <= C202I
-    end
-  end
-  return Cy(13, 51) < W7pW(59, 109, 45, 111, 29, 90, 77) or 24 - 56
-  if ( not (m6PK(71, 35, 79, 20, 21, 59, 95) or m6PK(75, 102, -109, 67, 39, -64, 76)))
-    m6PK(123, m6PK(110, 55, 28, 71, 126, 114, 22), Cy(48, -25), W7pW(107, 126, -63, 37, 13, 69, 73), W7pW(-68, 19, 39, 79, 100, 126, 8), 84, W7pW(37, 69, -34, 72, 20, 125, 127))
-    var v2m = m6PK(57, 83, 20, 69, -27, 77, 5) - -W7pW(43, 71, 80, 41, 22, 13, 121) >= 32 + -W7pW(87, 109, 59, 66, 27, 36, 60)
-    return v2m
-  end
+  nB38 += nB38 / 121 and -nB38 >= "SP"
+  var Gon6VfX3[19]
+  Zm8SGK(nB38, 105, Zm8SGK("=cc>", nB38, none, none), Zm8SGK(nB38, "h+", nB38, nB38))
+  Gon6VfX3[-Zm8SGK(87, "<(t;w", Zm8SGK(nB38, nB38, nB38, nB38), -57)] = Gon6VfX3[nB38 / nB38]
+  Gon6VfX3[-16 -  not  not nB38] = none
 end
 
-var L6H = 61
+function DOaD3Y(gU6Z, WTiw)
+  Cy(-DOaD3Y(none, 55), Cy(none, "tYGAN|{"))
+  var LOuJ8 =  not  not  not (none) - DOaD3Y("FkeA", "iD") and Cy(-"r?;m"", none)
+  var zJ6E[59]
+  return LOuJ8
+  var vDM8 =  not  not zJ6E[zJ6E[LOuJ8]]
+  DOaD3Y(LOuJ8, Cy(LOuJ8, vDM8))
+  while (LOuJ8 + (")4pOk6"))
+    var wGDt = vDM8
+    wGDt =  not -(Cy(vDM8, none))
+  end
+  DOaD3Y(LOuJ8, Cy("[n", vDM8))
+end
+
+function BzzXdNs(B3GlBzsW, VsOfs, bQB, tAaAWS, aGZRR0W, i_tKZ8, i1)
+  if (-Zm8SGK(125, none, none, 31) or Zm8SGK(none, "#e2", 44, "_RN"))
+  end
+  while (Cy("|X", BzzXdNs(none, " |wo", "K\A@'5", none, none, -none, none)))
+    var Ro
+  end
+  var yPnu =  not none == "s>P0M" < DOaD3Y(".mSO;", 119) or 3
+  yPnu += Zm8SGK(yPnu, yPnu, "9>nJJ<", yPnu) >= -none
+  return Cy(DOaD3Y(yPnu, yPnu), yPnu)
+  Cy(24, yPnu)
+end
+
+var jA44H = none
 

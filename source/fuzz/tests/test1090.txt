@@ -3,16 +3,12 @@
 var MUl0sL[60]
 
 function UVq(znZ62MF, g87c1xS, _gsd5X, sel)
-  if ( not -MUl0sL[UVq(123, 94, 64, 105)])
-    var yme8id = MUl0sL[MUl0sL[72]]
-    var sIeDa = UVq(yme8id, 58, 80, UVq(yme8id, yme8id, 8, yme8id))
+  if ( not -MUl0sL[UVq("xMCl"3R", "msK:G", "I", 125)])
+    if ((UVq(1, none, 42, "^7x@K")))
+    end
   end
-  var DN[53]
-  return  not 91 / 105 and -MUl0sL[-UVq(34, 80, 110, 5)]
-  while ( not -3)
-    return  not -98 >= 66 or DN[10]
-    UVq(73, 75, -UVq(68, 64, 23, 62), UVq(52, 125, -101, 127))
-  end
-  var En[66]
+  var KygvaEBF[82]
+  UVq(none, UVq("ZF JG>g", "3l?", "D<[!G", none), 80, -UVq(none, "iFx", none, "64I#B"))
+  return MUl0sL["Y" * 19]
 end
 

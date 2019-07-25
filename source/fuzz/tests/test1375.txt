@@ -1,59 +1,37 @@
 # SEED 12696
 
 function M_hG4L(vswVZT, ES4hVqcS, DSUNsa, L_t)
-  var cwI = ((-M_hG4L(111, 13, 12, 45)))
-  var _olfkP_[7]
-  if (cwI <= cwI + cwI)
-  end
-  cwI =  not -72 or 1 > 7
-  vswVZT +=  not 65 > M_hG4L(cwI, 3, cwI, cwI) < M_hG4L(55, cwI, 45, cwI)
-  if (cwI)
-    M_hG4L(cwI, 51, 91, -M_hG4L(cwI, 66, 81, cwI))
-    while (98 <= 84)
-      var T93ggAE
-    end
-  end
-  cwI += 98 <= 83 == cwI
-  M_hG4L(cwI, M_hG4L(0, cwI, cwI, cwI), -M_hG4L(106, -58, -5, 14), M_hG4L(cwI, 59, cwI, 105))
+  var cwI = ((-M_hG4L(none, "3qE", "Xg*j", 41)))
+  var B4fxK3I =  not cwI
+  B4fxK3I =  not -"WrqK" / none >= none
+  var wXeyrquX = 20 < M_hG4L(91, B4fxK3I, cwI, B4fxK3I) >  not -113
+  ES4hVqcS +=  not wXeyrquX * cwI
+  DSUNsa += cwI
 end
 
-var B9CAnSz[81]
+var vssyG
 
-function gxBNhp(ig7qry, Vv)
-  if (M_hG4L(118, 4, 66, 79) / 66 + gxBNhp(26, 53) >= M_hG4L(45, 44, -66, 127))
+var z_aCXP[12]
+
+var CLDxR = "Y"
+
+var vKzayYO = 124
+
+function sui(Rdsm2D)
+  vKzayYO +=  not vKzayYO + 87 - sui(".")
+  var hu8oQv
+  var Hf
+  M_hG4L(vssyG, M_hG4L("Am,", vssyG, -hu8oQv, Hf), -sui(""), "3")
+  hu8oQv += (")zb2m" - M_hG4L(CLDxR, vKzayYO, 109, 80))
+  return hu8oQv == sui(hu8oQv)
+  var tq = "" - vssyG - vKzayYO
+  if (vKzayYO)
+    Hf = -hu8oQv < "|82o5" == M_hG4L(hu8oQv, 76, CLDxR, vssyG)
+    Rdsm2D += none >= M_hG4L(hu8oQv, vssyG, 70, hu8oQv) and sui(Hf)
   end
-  M_hG4L(gxBNhp(65, 82), 16, M_hG4L(66, 124, 10, 100), 110)
-  while (gxBNhp(gxBNhp(85, 32), 93))
-    B9CAnSz[72] = M_hG4L(M_hG4L(88, 56, -51, 105), M_hG4L(92, 52, 119, 18), -M_hG4L(82, -94, 107, 110), 122)
-    while (B9CAnSz[B9CAnSz[47]])
-    end
-    var jw6B5uOU[24]
-  end
-  if (((-108)))
-    B9CAnSz[14] = M_hG4L(gxBNhp(33, 59), M_hG4L(70, 73, 25, 93), -85, M_hG4L(14, 59, 52, 91))
-    gxBNhp(M_hG4L(66, 118, -2, 81), 85)
-  end
-  return B9CAnSz[gxBNhp(120, 105)] + gxBNhp(115, 97) / 5
-  if (gxBNhp(84, 118) / M_hG4L(59, 47, -74, 111) >= 49)
-    while ( not gxBNhp(38, -55) >= 81 > 47 + gxBNhp(118, 121))
-      gxBNhp(-124, 46)
-      B9CAnSz[61] = gxBNhp(52, 105) / 60 or M_hG4L(28, 42, 115, 27) + M_hG4L(75, 62, 80, 119)
-    end
-    return 116 <= M_hG4L(6, 69, 66, 85) / 36
-    var H82x[70]
-    var N0N[117]
-  end
-  B9CAnSz[91] = M_hG4L(96, 103, gxBNhp(6, 119), 52)
-  M_hG4L(5, 86, 116, M_hG4L(51, 33, 25, -101))
 end
 
-var G3Wfu
+var JYX7X = none
 
-var fSnHw8Oj
-
-var Kahqs5fZ[66]
-
-var C4E = 116
-
-var AE8Wvkf[67]
+var BQrQ = 116
 

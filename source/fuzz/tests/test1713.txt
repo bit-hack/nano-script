@@ -6,22 +6,16 @@ var bOO_pODV[10]
 
 function ZW(MwaY, gg6xyws, YZc_V)
   var XtVw[76]
-  ZW(ZW(wIh, 67, wIh), 37, wIh)
+  ZW(ZW(wIh, 63, 21), none, wIh)
   var YpjM9P1q
-  bOO_pODV[95] = bOO_pODV[ZW(YpjM9P1q, YpjM9P1q, 50)] > (104)
-  wIh = YpjM9P1q
-  ZW(YpjM9P1q, wIh, -YpjM9P1q)
-  bOO_pODV[22] = XtVw[ZW(-YpjM9P1q, 64, YpjM9P1q) == YpjM9P1q]
-  while (ZW(ZW(127, 49, -42), YpjM9P1q, ZW(wIh, 29, 1)))
-    if (ZW(ZW(wIh, YpjM9P1q, wIh), wIh, wIh))
-      var IW4[79]
-      ZW(62, ZW(wIh, -106, 77), wIh)
-      var PxR[92]
-    end
-  end
+  bOO_pODV[YpjM9P1q < ZW(YpjM9P1q, YpjM9P1q, 106) ==  not ZW("}ZQBl", wIh, -YpjM9P1q)] = wIh
+  var oQa
+  ZW(wIh, wIh, "")
+  ZW(ZW(YpjM9P1q, YpjM9P1q, none), 34, none)
+  XtVw[-(oQa) - ZW("V", 59, -none) * wIh] = bOO_pODV[ZW(-94, oQa, YpjM9P1q)] < wIh
 end
 
-var CdkqKAWM[76]
+var gVGYozMx = ""
 
-var cXjcyuch[7]
+var d4YTQv2
 

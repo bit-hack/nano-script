@@ -1,35 +1,98 @@
 # SEED 12706
 
-var SX5SG = 39
+var SX5SG = " vd#"
 
-var DCkII[91]
-
-var UGl = 119
-
-var vFbpcYPS = 44
-
-function pKB6fQ(WhM6, jw2i03i, H8KhZri, AzPxmFNq)
-  var uD3FCn
-  var g4[127]
-  if (DCkII[pKB6fQ(113, uD3FCn, 39, 86) * 86])
-    return pKB6fQ(SX5SG, 71, UGl, 13) == vFbpcYPS
-    var DAN3x = pKB6fQ(-pKB6fQ(12, 93, uD3FCn, 109), -uD3FCn, SX5SG, SX5SG)
-    return -pKB6fQ(-81, 90, -SX5SG, 17) < 117 and DCkII[uD3FCn]
-    vFbpcYPS = (UGl)
-    DCkII[66] = DCkII[UGl * -80]
+function UJ(Sl6MumJF)
+  while ((none + -UJ(none)))
   end
-  pKB6fQ(pKB6fQ(vFbpcYPS, 121, 30, 78), vFbpcYPS, pKB6fQ(56, -UGl, uD3FCn, -59), SX5SG)
-  if ((pKB6fQ(-127, uD3FCn, -41, 4)))
-    pKB6fQ(pKB6fQ(-5, 5, 101, vFbpcYPS), uD3FCn, -103, pKB6fQ(48, 102, UGl, SX5SG))
-    pKB6fQ(pKB6fQ(9, uD3FCn, 69, -3), -pKB6fQ(46, 55, 46, 69), pKB6fQ(SX5SG, 39, 77, UGl), 50)
-  end
-  WhM6 += -80 > pKB6fQ(118, UGl, 46, vFbpcYPS) and pKB6fQ(9, uD3FCn, 58, 95)
-  var eKe = (g4[102])
-  while (60 < eKe <= g4[116])
-    while (pKB6fQ(vFbpcYPS, 120, -pKB6fQ(uD3FCn, eKe, uD3FCn, SX5SG), 56))
+  return UJ(SX5SG) >= SX5SG
+  if ( not SX5SG)
+    if (UJ(67) == SX5SG <= SX5SG)
+      return ""
+      UJ(SX5SG)
     end
+    var X9ijNd = 6
   end
+  if ( not  not SX5SG or  not "")
+    if ( not 102)
+      while (SX5SG)
+        Sl6MumJF = -UJ("eWvfr/F") <=  not UJ(none) and SX5SG
+        while (SX5SG >= UJ(63))
+        end
+        var V73OhdM[109]
+      end
+      return UJ(-SX5SG)
+      Sl6MumJF += UJ(none)
+      Sl6MumJF = SX5SG and UJ(SX5SG)
+    end
+    var enIle0zM =  not  not SX5SG * (-"3q[v[]}")
+  end
+  Sl6MumJF += UJ(SX5SG) - 24 >=  not 29
+  var ilMsziM_[39]
+  UJ(SX5SG)
+  ilMsziM_[(ilMsziM_[UJ(none)])] = SX5SG == SX5SG <= 85
 end
 
-var Wt6FK = 106
+var _LHlPLw[66]
+
+var FpQArruZ = 120
+
+function UrrHmBq2(_VU1y, PR7lO7c, FUNXG, t3g0)
+  var I82Tb[12]
+  while ( not I82Tb[(UJ(FpQArruZ))])
+    PR7lO7c = UrrHmBq2(-35, UJ("LA"), UJ(-"9S4Z|S"), 10)
+    var Pt
+    FUNXG = UJ(SX5SG) / "k" <= I82Tb[50]
+    UJ(Pt)
+    if (Pt + FpQArruZ)
+      var SVCd_[57]
+      if (UJ(94) < UrrHmBq2(FpQArruZ, FpQArruZ, "V("", none) / _LHlPLw[SX5SG])
+        FpQArruZ += none
+        var xGz[53]
+        if ( not -SX5SG - -UrrHmBq2("g;T%U!", none, "1aYDr&", SX5SG) < -FpQArruZ)
+          return FpQArruZ - xGz[UJ(45)]
+          FpQArruZ = ("^(`gH") or 108 / FpQArruZ
+        end
+        var rtviZ3L1 =  not 67 < "" <= "C?bj" and Pt
+        while ((";PR" - rtviZ3L1))
+          UrrHmBq2(none, 83, SX5SG, -UJ(Pt))
+        end
+      end
+      while ( not SX5SG - UJ(SX5SG) >= (UrrHmBq2(FpQArruZ, Pt, SX5SG, Pt)))
+        var Qq
+        var iV[28]
+        iV[UJ(Qq) and UrrHmBq2(Pt, "g", "T", none) <= UrrHmBq2(FpQArruZ, -none, Qq, Qq) >= -"9"] = UJ(Qq) > UJ(18) > UrrHmBq2("g?G/'", -Pt, Qq, none)
+        while (UrrHmBq2(Qq, Pt, -UJ(Pt), UJ(none)))
+          SX5SG +=  not (Qq) and SX5SG
+          FUNXG = Pt >= 66 >= I82Tb[-5]
+        end
+      end
+    end
+  end
+  UrrHmBq2(UJ("a ;<""), -UJ(63), UrrHmBq2(none, 116, FpQArruZ, none), -UJ(FpQArruZ))
+  FpQArruZ += FpQArruZ
+  while ( not none)
+    var kHrVzLcd[46]
+    var ltjq6j[41]
+    _VU1y = UrrHmBq2(-FpQArruZ, SX5SG, -SX5SG, UrrHmBq2(none, FpQArruZ, none, SX5SG))
+    var Ui[40]
+    return 16 and UJ(SX5SG)
+  end
+  while ((-SX5SG) -  not SX5SG)
+    return SX5SG
+    while (UrrHmBq2(SX5SG, 67, "{Ou)a", SX5SG) == UrrHmBq2(105, FpQArruZ, "Xwj=9Ye", -" 6>u") > SX5SG)
+      while (UJ(52) > 35 == SX5SG == UrrHmBq2(FpQArruZ, none, none, " *,"))
+      end
+      var AZYKEp
+    end
+    _LHlPLw[ not SX5SG < SX5SG / FpQArruZ] =  not SX5SG <= UJ(none)
+    t3g0 = "iUoQY" >= UJ("cv") * UJ(FpQArruZ)
+    if (UrrHmBq2(66, -"`n'X`c[", 28, SX5SG) - (-none))
+    end
+  end
+  I82Tb[UJ(SX5SG) > 84 - UrrHmBq2(FpQArruZ, none, none, SX5SG)] = ((UJ("x")))
+  SX5SG +=  not UJ("a+YSS")
+end
+
+var Rm36YA[20]
 

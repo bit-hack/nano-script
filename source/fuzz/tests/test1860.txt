@@ -1,68 +1,73 @@
 # SEED 13181
 
-var xUg = 108
+var xUg = none
 
 var n5[55]
 
 function baA(mAbK, qD86eTru, ynjEzc, Qd, La, nULAF, Gcm_f)
-  return  not n5[xUg] < -37 + baA(-xUg, xUg, 119, xUg, 23, xUg, xUg)
-  baA(baA(121, 23, 67, xUg, xUg, xUg, xUg), 109, 97, -xUg, xUg, 93, 9)
-  return 124
-  qD86eTru = 21
-  qD86eTru += 28
-  var U85e
-  var PW2i0aX[107]
-  while (xUg)
-    return  not xUg == -(77)
-    var eI[35]
-    baA(U85e, 59, xUg, baA(102, 63, 40, 29, U85e, xUg, U85e), baA(xUg, U85e, U85e, -81, 103, 32, U85e), baA(28, 98, 103, 102, U85e, xUg, xUg), baA(121, U85e, xUg, U85e, 54, xUg, U85e))
+  return  not n5[xUg] < -61 + -xUg
+  ynjEzc = none < baA(none, xUg, 9, xUg, 44, xUg, " "2[C") /  not xUg >= xUg
+  nULAF = none + 65 + "*26T"
+  baA(xUg, 76, baA(xUg, "r", "8)", none, xUg, xUg, none), xUg, "/:.", baA(none, xUg, 97, xUg, xUg, xUg, xUg), baA(xUg, xUg, xUg, -";UOso&", "*}", -xUg, xUg))
+  xUg = baA("i", 15, 95, 59, "n", xUg, xUg) < (xUg)
+  while ((n5["6bZ'j$"]))
+    if (baA(xUg, "{v#", xUg, xUg, xUg, xUg, xUg) * xUg > -none)
+      var Vr[41]
+      n5[ not  not xUg] = -none
+      qD86eTru += "G"
+    end
+    ynjEzc += n5[xUg or none]
+    xUg = n5[ not xUg or 106]
+    baA(baA(xUg, none, none, -xUg, xUg, xUg, 123), "3fi6Jl", xUg, "", xUg, xUg, xUg)
+    qD86eTru = baA(69, baA(":0", none, -2, none, xUg, 100, ""), none, xUg, baA(xUg, -none, xUg, "+KU8", 90, none, none), baA("n[q%B", xUg, xUg, "?)g3", xUg, xUg, 98), 80)
   end
+  while (83)
+    var Gm[117]
+    if (Gm[none] == 81 or 124)
+      xUg += "V90R}" <= "" + xUg
+      while (baA(baA(22, -77, -79, none, none, 40, xUg), 114, -xUg, baA(xUg, 36, "zj.@", xUg, none, 110, "h6zG"), baA(-xUg, -"J2Q7@Xw", xUg, xUg, none, -"", 9), xUg, baA(none, -xUg, none, xUg, xUg, -"]ZN&", -"@NsmI-")))
+        nULAF = Gm[n5[xUg]]
+        var _UTdbC = "9IQ" / -(baA(xUg, "_M", none, xUg, ":#", xUg, none))
+        if (_UTdbC)
+          return baA(xUg, 106, _UTdbC, none, _UTdbC, baA(none, xUg, none, -"tTV", none, xUg, 0), _UTdbC)
+        end
+        _UTdbC += (_UTdbC + baA(_UTdbC, "ViB", "ov!yn|", xUg, "2}", "R]B", _UTdbC))
+      end
+      return n5["jf2" + baA(xUg, -")^3O", none, "jyY", 99, xUg, xUg)]
+    end
+  end
+  n5[ not baA(none, xUg, xUg, "X8Uq", "7N:S", xUg, none) and none or  not baA("\I", xUg, xUg, -xUg, xUg, xUg, xUg)] = -xUg
 end
 
-function BgnF(xX2x1RHA)
-  n5[69] = 31
-  while ( not  not n5[-67] - (BgnF(xUg)))
-    var TdKh75_l = (baA(52, 5, 121, xUg, 70, 75, -xUg)) or 31
-    var zse[77]
-    if ( not n5[122 <= xUg])
+var FDnOCJ6[103]
+
+var w3LsRY[78]
+
+var lz = 106
+
+function bM(E0u, BGaI1W, SrtO3E)
+  FDnOCJ6[FDnOCJ6[bM(lz, 118, 7)] * 89 == lz] = FDnOCJ6[bM(none, none, 31)] < bM(xUg, xUg, xUg) + xUg
+  var If8
+  var wLB = bM(xUg, none, -xUg)
+  while (-bM(51, If8, none) * bM(-wLB, wLB, lz) < 0)
+    If8 = -xUg or none < w3LsRY[118]
+    var VU7me[11]
+    FDnOCJ6[w3LsRY[baA(If8, "e,SINP", wLB, lz, If8, wLB, -lz)] >= wLB] = wLB
+  end
+  bM(baA(lz, none, If8, "", wLB, xUg, 95), lz, -11)
+  xUg += lz - none * 34
+  if (xUg)
+    wLB = baA(If8, 55, lz, xUg, "a-", xUg, -none) == lz - bM("", xUg, lz) or bM("", "", 110)
+    var PnIzSgE[116]
+    baA(70, baA(125, none, wLB, -If8, 72, "r/n0", If8), -none, none, none, -xUg, -xUg)
+    if (If8)
+      if (wLB)
+        var OMmeB =  not wLB < none
+      end
+      baA(lz, bM(-wLB, "B/cf33v", lz), -none, xUg, none, baA(none, 85, wLB, none, -none, "FUJ>", lz), "@?%.t")
+      var phHi0z[87]
     end
-    xX2x1RHA += 86
-    n5[41] =  not TdKh75_l and xUg and BgnF(36) >= baA(20, xUg, 117, -86, 7, 68, TdKh75_l)
   end
-  var nCt = (-baA(xUg, -19, xUg, 101, xUg, 1, 32) / 89)
-  if (n5[baA(69, nCt, xUg, 100, xUg, 41, 75) >= baA(nCt, nCt, 91, -29, 70, 89, -xUg)])
-    var MfR[62]
-    if (93)
-    end
-  end
-  if ((BgnF(111)))
-    BgnF(nCt)
-    var Ix = baA(nCt, 97, -100, 36, 53, 86, 32) * nCt > BgnF(-xUg) / BgnF(88)
-    var A5QDm[26]
-  end
-  var OS4Kf
-  return n5[86]
-  n5[109] = (BgnF(83))
-end
-
-var z61fr
-
-var uES = 109
-
-function FZ9(GisvP, MczAG)
-  BgnF(FZ9(xUg, uES))
-  var KBu16CLr[40]
-  var c4S7W = baA(9, 84, 1, uES, 65, z61fr, -uES) + FZ9(112, uES) > 125
-  xUg += 108 and baA(124, c4S7W, z61fr, 116, c4S7W, 97, 118) or 83 * BgnF(41)
-  baA(19, z61fr, 44, baA(xUg, 51, 77, c4S7W, uES, 111, -29), FZ9(xUg, 63), z61fr, BgnF(29))
-  GisvP = KBu16CLr[-uES] >= baA(xUg, 74, c4S7W, -33, z61fr, -73, 51) <= 69
-  while (( not FZ9(81, c4S7W)))
-    return  not  not uES <= 121
-    baA(-BgnF(c4S7W), FZ9(c4S7W, xUg), BgnF(87), uES, z61fr, 103, FZ9(86, xUg))
-    c4S7W = c4S7W
-    var eEiIf9[98]
-    n5[52] = BgnF(z61fr)
-  end
-  xUg = baA(110, uES, -c4S7W, uES, uES, xUg, -z61fr) or c4S7W < (BgnF(z61fr))
+  xUg +=  not If8 and lz < -baA(13, ";Q%MK:R", -wLB, wLB, -71, "^Y", none)
 end
 

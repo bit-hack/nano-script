@@ -1,66 +1,15 @@
 # SEED 12697
 
 function aE0i(wgUxRu, UVcQzrD, l9F_QLV, L0tDtj)
-  aE0i(aE0i(123, 13, 96, 27), 91, aE0i(57, 32, -25, 83), 52)
-  if (52)
-    while (( not 38))
-      if (48)
-        aE0i(110, 35, aE0i(-36, 27, -22, 61), aE0i(10, 73, 12, 3))
-        while (117)
-          var qpnW8x
-          if (aE0i(-qpnW8x, 24, 66, 100))
-            aE0i(qpnW8x, aE0i(33, qpnW8x, qpnW8x, 44), 50, 60)
-            aE0i(qpnW8x, qpnW8x, 25, 33)
-            var as[4]
-          end
-        end
-      end
-      var D3gcZ[56]
-      if ( not aE0i(116, 58, 30, 8) <= aE0i(78, 119, 17, 89) or 60 >= 103)
-        while ( not  not  not 42 <= 23 == -aE0i(32, 4, 115, 31) + aE0i(56, 84, 8, 42))
-          var Cy6 = D3gcZ[aE0i(-39, 1, 61, 113)] or  not 17
-          D3gcZ[77] = aE0i(73, aE0i(Cy6, 121, Cy6, Cy6), -63, 72)
-          return Cy6
-          return aE0i(98, 22, 5, 33) or -Cy6 + Cy6 < 113
-        end
-        var Vm5[57]
-      end
-      D3gcZ[92] = -85 and 31 == 92
-    end
-    aE0i(59, aE0i(96, 118, 78, 31), 117, 124)
-    var hdOMOHhe = aE0i(-64, aE0i(106, 20, 41, 63), 9, 27)
+  aE0i(aE0i(none, none, 51, "lxr"), 97, aE0i(none, 33, -"1#", none), aE0i("", none, none, 28))
+  var J5op[37]
+  var l6YCRs[71]
+  while ( not (-(aE0i(-79, -93, none, 88))))
   end
-  if (43 / -99 >= 11 >= 84)
-    return aE0i(aE0i(63, 123, 66, 8), 96, 126, aE0i(116, 47, 52, 119))
-    var b7b[22]
-    if (b7b[(71)])
-      return 44
-      return  not  not 56 - 12 <= -99 == 42
-      if ((122) == 22)
-        var QUiP[81]
-        var fsnYnGdY[56]
-        var xhaEOw[85]
-      end
-    end
-    if ((aE0i(91, 48, 52, 127)) and  not aE0i(86, 47, 4, 23) / aE0i(51, -77, 106, 99))
-      var ZYf7I[7]
-      while (29 < 101 > ZYf7I[34])
-        var Hpo[41]
-        b7b[84] = 93 and 17 or 29
-      end
-      while (-25 and aE0i(47, 83, -109, 57) - (aE0i(37, 14, 0, -54)))
-        aE0i(75, aE0i(82, 67, 51, 98), -109, -aE0i(50, 86, -116, -48))
-        var sQP = aE0i(-aE0i(108, 22, 3, 16), aE0i(2, 64, 22, 6), -76, aE0i(70, 120, -36, 77))
-        b7b[53] = 35
-      end
-    end
-  end
-  while (-aE0i(122, 54, 64, 33) > (aE0i(33, 13, 66, 100)))
-  end
-  aE0i(-13, 23, aE0i(116, -60, 65, 0), 27)
+  var OFl2qM = "aomptaG"
 end
 
-var dbnu[95]
+var Wvbm
 
-var rE
+var lYY6g[4]
 

@@ -1,58 +1,24 @@
 # SEED 12852
 
 function lgsTk(x5x, OJidOBN1)
-  lgsTk(82, 47)
-  while (lgsTk(121, 9) >= 127 < 33)
-    lgsTk(15, 9)
-    var xK_yj3q7[8]
-    var ptQZ
+  lgsTk(8, 50)
+  var YbTg0t[7]
+  lgsTk(lgsTk("v", "pGT3|b"), 120)
+  var bdzD
+  if ((bdzD) + none)
+    YbTg0t[bdzD - lgsTk("LpzX[", none) or  not none <= none] = YbTg0t[bdzD and bdzD]
+    return  not ("" + none)
+    YbTg0t[lgsTk(bdzD, bdzD)] =  not -lgsTk(87, bdzD) or -lgsTk(102, none) - (lgsTk(29, ".>Pl"))
+    bdzD += YbTg0t[-36 or bdzD]
   end
-  while (21)
+  YbTg0t[49] = YbTg0t[lgsTk(24, "Q<")] or none / lgsTk("Kd$,W{", 4)
+  while (lgsTk(bdzD, "iM)") and bdzD or none - bdzD)
+    YbTg0t[("x WCxI") <  not 104] = (bdzD) + YbTg0t[lgsTk(bdzD, bdzD)]
+    return YbTg0t[ not "Dm}" * "6H?"Y[)"]
   end
-  return 0
-  var _hR16f =  not 43
 end
 
-function JF0(ukHryZu)
-  while (88)
-    var Os0[73]
-  end
-  var ZDEgg[33]
-  while ((24) == (-JF0(32)))
-  end
-  while (ZDEgg[lgsTk(120, 90) / JF0(20)])
-    ZDEgg[76] = ZDEgg[lgsTk(52, 85)] - JF0(75) == 88
-    if (JF0(34))
-    end
-  end
-  var Sv9[116]
-  JF0(4)
-  while (lgsTk(89, 34) >= 34 / JF0(100) - -28)
-  end
-  var yahIDzqI[127]
-end
+var nb00sDBP[62]
 
-function QDjC()
-  JF0(JF0(40))
-  var J5[103]
-  JF0(QDjC())
-  while ( not J5[51] and QDjC())
-    if (J5[-lgsTk(114, 20) and 8])
-      var IFSjrfTR
-      var R3[122]
-    end
-    while (QDjC())
-      return 76 or lgsTk(90, 71) >=  not -7
-      var skZp5GTR = -J5[3 - QDjC()]
-    end
-    if (J5[QDjC() or 53])
-      lgsTk(105, lgsTk(30, 53))
-      while ((-(lgsTk(95, 50))))
-      end
-      var Mo1JE
-    end
-  end
-  QDjC()
-  JF0(43)
-end
+var f9c[110]
 

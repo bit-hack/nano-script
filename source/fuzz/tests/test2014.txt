@@ -5,24 +5,16 @@ var Yas_gM
 var bOfkbiwq
 
 function _DBBsoeN(xbLYGy)
-  while (-118)
+  while (-"")
     bOfkbiwq = _DBBsoeN(Yas_gM)
+    xbLYGy += _DBBsoeN(-_DBBsoeN(bOfkbiwq))
+    bOfkbiwq = (Yas_gM)
   end
-  xbLYGy += _DBBsoeN(-_DBBsoeN(bOfkbiwq))
-  bOfkbiwq = (Yas_gM)
-  while (57 * _DBBsoeN(-Yas_gM) + 81)
-    return 104 * _DBBsoeN(bOfkbiwq) < (4)
+  while ("GI`fUF" * _DBBsoeN("2x") and -Yas_gM)
   end
-  xbLYGy =  not -(28 > Yas_gM)
-  _DBBsoeN(-0)
-  while (Yas_gM)
-    if (_DBBsoeN(_DBBsoeN(Yas_gM)))
-      xbLYGy = bOfkbiwq
-      while (-_DBBsoeN(85))
-        bOfkbiwq = (bOfkbiwq <= Yas_gM)
-        var Us8Z
-      end
-    end
-  end
+  return 91 >= bOfkbiwq < ("JC")
+  var GReCa6 = 68
+  xbLYGy +=  not GReCa6 + _DBBsoeN(Yas_gM) /  not bOfkbiwq == -_DBBsoeN(111)
+  GReCa6 = (Yas_gM <= Yas_gM)
 end
 

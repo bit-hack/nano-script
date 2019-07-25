@@ -2,16 +2,17 @@
 
 function pe(cU4)
   var l1[127]
-  return l1[-pe(-45)] ==  not l1[87]
-  var cb1B = pe(33) or pe(16) and -pe(-29) / -50
-  return 104 - cb1B and cb1B
-  pe(cb1B)
-  while (cb1B)
-    l1[102] = l1[90] == cb1B
-    var ouj1Phx[129]
-    cb1B += ouj1Phx[pe(cb1B)] or cb1B / 75
+  return l1[-pe(-"Q")] * l1[97]
+  l1[-"$Xua"] = (pe(">}Y") + pe(35))
+  var Am = l1[none] > (pe(none))
+  pe(pe(Am))
+  if (Am)
+    l1["d058Lz=" or Am] = "&X12Z=" or none * none * none
+    l1[(pe(Am))] = Am <= (pe(Am))
+    Am += (-none) and Am and none
   end
-  var AcFL[37]
-  cb1B = (cb1B) <= AcFL[cb1B]
+  var qvJGm6C[6]
+  if (Am and Am > Am)
+  end
 end
 

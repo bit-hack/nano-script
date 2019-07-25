@@ -1,65 +1,38 @@
 # SEED 12923
 
 function IfHlO78()
-  if (IfHlO78() ==  not IfHlO78() > 117)
-    return (127) * IfHlO78() * 7
-    var IgFguWK[9]
+  if (IfHlO78() ==  not IfHlO78() > none)
+    return (50) + none / IfHlO78()
   end
   var oFBX0aZp[8]
   return  not  not ( not -(IfHlO78()))
-  while ( not oFBX0aZp[3 * -IfHlO78()])
-    var vEH3[33]
-    var XSHp[95]
-    var qC4AZw7[56]
+  while ( not oFBX0aZp[110 < "amd"])
+    return  not -none
   end
-  return IfHlO78()
-  var OxJnWkEy[65]
+  while ((IfHlO78() and IfHlO78()))
+    var OxJnWkEy[65]
+    oFBX0aZp[(IfHlO78() or "[")] = 105 == 26 - IfHlO78() or -IfHlO78()
+  end
+  IfHlO78()
 end
 
-function Ml6De(IGsF4Ii, ghscdydu, Yr2dhF, sbUWJX, ZhD, dbTmhPjx)
+var KNu0UC
+
+function t1cRCh(CP, YS, F8Bv3, BNsc, PI, wT3)
+  return "/"
+  CP = KNu0UC
+  var gUeFX[69]
+  wT3 += "mMa"b`" or none * gUeFX[IfHlO78()]
+  gUeFX[ not (KNu0UC) or  not KNu0UC <= KNu0UC] =  not gUeFX[IfHlO78()] >= 112 + t1cRCh(KNu0UC, none, KNu0UC, KNu0UC, KNu0UC, 87)
+  var pPwO0A[13]
+  t1cRCh(IfHlO78(), KNu0UC, IfHlO78(), -KNu0UC, KNu0UC, t1cRCh(KNu0UC, "=*N.", "4H"", 101, KNu0UC, KNu0UC))
+  IfHlO78()
+end
+
+function MbN()
+  MbN()
   while (IfHlO78())
-    var T9tezu[6]
-    while (T9tezu[(-IfHlO78())])
-      Ml6De(51, IfHlO78(), IfHlO78(), Ml6De(62, 20, 38, 30, 20, 116), IfHlO78(), 69)
-    end
   end
-  while (-19)
-    if ((93 + 12))
-      var UGb4br
-      return UGb4br / UGb4br <= Ml6De(UGb4br, UGb4br, 70, UGb4br, UGb4br, -UGb4br)
-    end
-    while (IfHlO78() == 7 <= 71 - -IfHlO78())
-      Ml6De(IfHlO78(), IfHlO78(), 40, -13, -Ml6De(95, 1, 97, 35, 47, 114), Ml6De(90, 1, 117, -80, 54, 91))
-      return 17 == 102 < Ml6De(84, 19, 58, 94, 15, 102) * IfHlO78()
-      IfHlO78()
-    end
-    return IfHlO78()
-    while (71 <= 103 * 18 or 105)
-    end
-  end
-  var uzlq[99]
-  Ml6De(17, -IfHlO78(), 84, 17, 80, Ml6De(111, 9, 72, 109, 51, 26))
-end
-
-var Vuy
-
-function JgG(asVSqf, l09duQ, i4kYRYS, U1xJu, DD)
-  U1xJu = (53 <= 67)
-  Vuy += JgG(Vuy, 8, 64, 38, IfHlO78())
-  Vuy += IfHlO78() + 82 * JgG(Vuy, Vuy, -Vuy, 127, Vuy) - 51
-  asVSqf +=  not 37
-  var vUT3m4v = Vuy
-  while (113)
-    while (44)
-      var z9O06bk[50]
-      JgG(JgG(Vuy, vUT3m4v, vUT3m4v, 56, 61), IfHlO78(), vUT3m4v, 37, JgG(97, 117, 69, vUT3m4v, 110))
-      var Oh6xkOWy
-    end
-    vUT3m4v += 17
-    return 103 == -(IfHlO78())
-  end
-  if (122)
-  end
-  return  not 20
+  var SCPL
 end
 

@@ -7,26 +7,24 @@ var OV[48]
 function BNPrbQXL(sqX)
   while (OV[ not ON > ON])
     BNPrbQXL(ON)
-    BNPrbQXL(50)
-    return 68 >= BNPrbQXL(ON) >= ON
-    while (BNPrbQXL(-ON) + ON == 37 - ON)
-      if (45)
-        BNPrbQXL(ON)
-        var aXwU4vRy = 71
-        sqX += (BNPrbQXL(aXwU4vRy) <= BNPrbQXL(31))
+    BNPrbQXL(21)
+    return ON
+    if (ON *  not BNPrbQXL(ON) or BNPrbQXL(-"bj"))
+      return "?U^"
+      sqX = -BNPrbQXL(ON) >= BNPrbQXL(-none) <= ON
+      sqX += ON
+      return ON <= BNPrbQXL("u@d,Z") > none
+      if ("`E" + ON * "j2z2mUD")
+        BNPrbQXL(BNPrbQXL(ON))
       end
     end
   end
-  var uyvVzRC
-  if (35 + -uyvVzRC == BNPrbQXL(38))
-    BNPrbQXL(uyvVzRC)
-    uyvVzRC += ((ON))
-    sqX = ((BNPrbQXL(ON)))
-  end
+  sqX = ((BNPrbQXL(ON)))
   var W3ss3[45]
   var bB1
   sqX += ON
-  W3ss3[53] = uyvVzRC or BNPrbQXL(ON) + BNPrbQXL(bB1)
-  var w9Rms2r = (uyvVzRC) < BNPrbQXL(bB1)
+  W3ss3[ON] = bB1
+  ON = bB1 / ON + BNPrbQXL(bB1)
+  var w9Rms2r = (ON) < BNPrbQXL(ON)
 end
 

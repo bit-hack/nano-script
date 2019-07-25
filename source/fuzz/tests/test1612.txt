@@ -1,64 +1,50 @@
 # SEED 12933
 
 function KxsRZlau(BpE, kprbNezb, KFpOHk1q, OSMnsapz, JxA0kC4h, Lxgu, zN7d)
-  while (-57)
+  while (-none)
     var Ve2w[38]
-    KxsRZlau(KxsRZlau(58, 44, 95, 5, 112, 64, 81), KxsRZlau(33, 68, 35, 125, 69, 87, 90), 50, KxsRZlau(-9, 85, -10, 49, 122, 53, -55), 71, 125, 14)
-    if (KxsRZlau(KxsRZlau(22, -0, 43, 93, 9, 124, 24), 126, KxsRZlau(124, 93, 124, 78, 86, 93, 35), 19, KxsRZlau(27, 51, 112, 74, -68, 54, -11), 4, 62))
-      var sV[118]
-      KxsRZlau(30, KxsRZlau(105, 90, 17, 34, 26, 109, 42), KxsRZlau(80, 24, 92, 81, 8, 124, -4), 116, 49, 51, 76)
-      KxsRZlau(127, KxsRZlau(86, 71, 19, 65, 127, -30, -43), KxsRZlau(73, 82, 43, 1, 51, -21, 49), 108, 3, KxsRZlau(48, 97, 30, 50, -66, 85, 92), KxsRZlau(27, 104, 98, 80, 118, 69, 58))
-      var ivKS95K = sV[ not -(KxsRZlau(14, 116, 112, -24, 38, 44, 27))]
+    KxsRZlau(KxsRZlau("", "DG", 92, 111, "6Y", 120, 79), 92, -none, none, "<J_5", KxsRZlau(122, 78, "v#_31*", -none, "", "c ", "@aE]{zN"), none)
+    while (KxsRZlau(none, KxsRZlau(none, "v-]", 27, 46, "", " h^Q", "faw[<_x"), none, KxsRZlau(none, none, 109, "F-t", "uj<e`'", "of/", "+ "), KxsRZlau("a}!`J$", ":SGqD;Q", 6, 104, 75, "F=lM{Fu", "]0"), "t:A", 90))
     end
-    var PE[30]
+    Ve2w[KxsRZlau(none, -76, "hV", "C", 8, "4\", 63) + 101 == -"0" < ""] = KxsRZlau(65, none, "}", 101, none, none, none) >= KxsRZlau(115, -none, 27, -"-", 49, 36, 8) == none >= KxsRZlau("", 83, 127, -none, -"f/R_", none, "K")
   end
-  return  not KxsRZlau(15, 104, 24, 87, 113, -125, 4) == 18 + 26
-  var Eqtv
+  var rOmT[122]
 end
 
-function SDN(sTBae, CUXSJa, XqmW, tHTFwBU, O1xX, QqsjaO, HhIu_)
-  SDN(-KxsRZlau(-78, 118, 2, 8, 98, 81, 66), 21, -76, SDN(-39, 23, 30, 22, 79, 0, 84), SDN(68, -106, 124, 33, 47, 89, 50), -KxsRZlau(26, 94, 19, 50, 89, 98, 44), 122)
-  SDN(99, -54, -KxsRZlau(70, 26, -17, 79, -72, 21, 7), KxsRZlau(74, 122, 36, 121, 23, 99, 12), 115, SDN(-26, 39, 9, 100, 116, 29, 37), KxsRZlau(11, 102, 56, -12, 61, 48, 25))
-  while ( not 35 or (0))
+function XUi8jcSF(wMoF, eqIs, r5gsgTpM, VZU, wCuS9lDT)
+  var c4Gt2[79]
+  while (KxsRZlau(none, 52, 114, 124, 42, 46, ""lqnb") >= 34 and 75 == KxsRZlau(-none, none, "", 114, 87, none, none))
+    c4Gt2[KxsRZlau(none, 99, "c", 92, none, none, -"6&gz f") < KxsRZlau("<wK=R2N", none, "?Ga", "", none, none, 66)] = none * KxsRZlau(":m", none, "V", none, 27, 111, "Cx{/") <= "qw8`z"
   end
-  KxsRZlau(127, KxsRZlau(16, 95, 18, 116, -71, -126, 32), 49, SDN(5, 101, 7, 43, 91, 119, 11), 62, 123, -76)
-  var plTaAV[13]
-  while (18 < KxsRZlau(-58, 70, 63, 65, 67, -60, 26) >= (SDN(25, 35, 6, 78, 41, 24, 63)))
-    if (SDN(19, 92, 13, 42, 57, 63, 82) - 79 or SDN(124, 43, 103, 35, 37, -98, 97) and -7)
-      var QzzVUgL[89]
-      plTaAV[25] = SDN(SDN(60, -88, 56, 62, 61, 70, 69), KxsRZlau(84, 56, 91, 6, 23, 91, 3), 7, -110, SDN(41, 122, 55, 88, 33, 22, 104), 34, KxsRZlau(21, 15, 70, 67, 89, 35, 109))
+  var dcUBrH9[66]
+  if (XUi8jcSF(none, -"d", 111, "1>,D6", -none) <= "m{" < "AjP!m(d" < none)
+    return -XUi8jcSF("$", none, "8PzZ7])", none, 34) >= 122 > KxsRZlau(11, "V", none, 125, none, "", 50) - KxsRZlau(none, "!C!*a_", 118, "", 40, "Gaq%<)C", 57)
+    if (((42)))
+      if (-KxsRZlau(none, "@*po#;k", -none, none, "lx", "B", 67) / none or -XUi8jcSF(60, "rkb", none, 43, none))
+        var j268_T7[47]
+        var O6FfAWPZ = XUi8jcSF(none, XUi8jcSF(-64, none, 98, none, 17), none, KxsRZlau("y", none, 108, "5", -none, "Y", "^[T0"), 81)
+        j268_T7["&2e'sn" - O6FfAWPZ * O6FfAWPZ] = ("(l") <= XUi8jcSF(none, "w]#]kV>", O6FfAWPZ, O6FfAWPZ, 124) < "I"
+        O6FfAWPZ = XUi8jcSF(XUi8jcSF(-79, O6FfAWPZ, -none, -none, O6FfAWPZ), none, O6FfAWPZ, "}nMtB!", "]")
+        eqIs += -(O6FfAWPZ)
+      end
+      while ("N")
+        XUi8jcSF(-KxsRZlau(125, none, 27, -"", 81, 122, none), KxsRZlau("qg48A", 54, 106, 9, "nv@J", 60, 117), none, ";#:."_", 14)
+        var J6XhFsNv[33]
+      end
     end
-    plTaAV[91] = -SDN(KxsRZlau(13, 58, 36, 42, 52, 98, 117), -102, SDN(-21, 20, -10, 113, 14, 60, 71), 120, KxsRZlau(53, 42, 88, 83, 102, -43, 26), -KxsRZlau(56, 17, 65, 126, 39, 9, 53), KxsRZlau(37, 100, 25, 25, -21, 11, 8))
-    while (plTaAV[47] or KxsRZlau(98, 37, 31, 34, -104, 24, 114))
-      var xI1 = plTaAV[78]
-      var x3l[68]
-      SDN(xI1, xI1, -SDN(57, 81, 58, xI1, 33, xI1, 7), SDN(-xI1, 27, xI1, 35, xI1, xI1, xI1), -xI1, SDN(67, -xI1, -49, 127, xI1, xI1, -xI1), 87)
+    dcUBrH9[none < -KxsRZlau(none, " ,[U", none, none, none, none, "?2") + none == XUi8jcSF(44, none, none, 56, 109)] = c4Gt2[KxsRZlau(122, -"j!", none, "", -34, 54, -none) * XUi8jcSF(92, 1, 91, 30, none)]
+    if (KxsRZlau("(;k[i5", none, 3, "no|5", "=[jV=", "NfwZn9w", "nX>--<}") > KxsRZlau(none, -49, 127, 3, ">", 84, 17) < -c4Gt2[none])
+      return XUi8jcSF(none, "`)j'", none, 123, 121) < 113 == 90
     end
-    var n5e_dgD8[115]
   end
-  var tV[10]
+  if ((dcUBrH9[KxsRZlau(-116, 63, none, "Bx=h5@", "ZqDRN'", 107, "uoIxP")]))
+  end
+  var WrC
 end
 
-function to(fT4vGw, Eeyhi, A_Z, JFUh2a)
-  while (-KxsRZlau(-117, 18, 72, 11, 42, 99, 41) > 47 or 20)
-    var Pnnzb[96]
-    if ( not  not (63 or 104))
-      var C5ECTu_[120]
-    end
-    to(SDN(120, 110, 69, 99, 0, 97, 116), KxsRZlau(30, 98, 66, 14, 87, 18, 41), KxsRZlau(100, 82, 54, -46, 54, 14, 58), to(48, 97, 115, 86))
-  end
-  if (110)
-    KxsRZlau(50, SDN(72, 62, 59, 49, 55, -91, 13), 82, -110, -5, 0, SDN(12, 100, 11, -9, 77, 1, 48))
-    var ui1VW
-    return  not  not to(32, ui1VW, 65, ui1VW) <= to(ui1VW, 115, ui1VW, ui1VW) + (SDN(68, ui1VW, ui1VW, 16, 68, 112, ui1VW))
-    JFUh2a = -( not -ui1VW)
-  end
-  var D03nN6QT
-  D03nN6QT +=  not to(35, 94, to(17, 48, 40, 123), -KxsRZlau(D03nN6QT, D03nN6QT, 83, D03nN6QT, 88, 40, 66))
-  D03nN6QT += (67 + D03nN6QT)
-end
+var fffutQ
 
-var nYMssI5l[127]
+var rkzn4wvM[127]
 
-var HJ_ptUa = 34
+var Rl = 79
 

@@ -1,6 +1,6 @@
 # SEED 13272
 
-var TwK5 = 92
+var TwK5 = none
 
 var WLbMX
 
@@ -13,43 +13,52 @@ function rdq()
   end
   var yq3F
   while ((rdq()))
-    return rdq() or -74 / rdq() >= 7
+    return rdq() or -none / rdq() >= none
     var qs[11]
   end
-  U_tCAX2[15] = 45 + 36 or rdq() * -jEE
-  if (((rdq())))
+  U_tCAX2[rdq() + none >= rdq()] = none or rdq() * -jEE and rdq()
+  if (rdq())
+    var rsLX = rdq()
+    rdq()
+    rdq()
   end
-  if ((58) + 32)
-    rdq()
-    rdq()
-    rdq()
-    var DDp7uW[89]
-  end
-  var Lw3Um[85]
+  rdq()
 end
 
-var K_ropic
-
-function TTD9Td(g67a_2, TT7n, bzb, SgW0XY)
-  var pI7v3o
-  if (TTD9Td(rdq(), WLbMX, jEE, rdq()))
-    rdq()
-    var FH[70]
-    g67a_2 +=  not FH[TwK5] < 84
-    var KZY
-    TT7n = -jEE or 42
-  end
-  return jEE <= (rdq())
-  var yxFu_iA3
-  while (116)
-    return rdq() / TTD9Td(jEE, WLbMX, yxFu_iA3, 102)
-  end
-  TwK5 +=  not -WLbMX == TTD9Td(-jEE, pI7v3o, 81, 42) - -TTD9Td(4, K_ropic, 112, WLbMX)
-  var SDCekG[30]
-  return 59
+function DDp7uW(wtw, xm, dG8_r, lic, WF, oD9Td1yZ, Fa_2b)
+  TwK5 = WLbMX < (DDp7uW(WLbMX, jEE, 100, WLbMX, -WLbMX, TwK5, jEE))
+  rdq()
+  DDp7uW(none, rdq(), DDp7uW(TwK5, jEE, none, -WLbMX, TwK5, WLbMX, 35), TwK5, -DDp7uW("zC", none, WLbMX, jEE, -"sn/", none, 15), "'t;$k]K", 64)
+  var rfAVKp7[54]
+  var REMVg9x = (rdq() * DDp7uW(jEE, none, TwK5, -"G", jEE, "R,`zovQ", jEE))
+  return DDp7uW("-[>v|0", -rdq(), none, rdq(), "}nP", rdq(), none)
 end
 
-var aD
+function phtBc(u1wG8M3, taWqnv)
+  if ((WLbMX - 122))
+    jEE +=  not -none >= none and 0
+  end
+  if (((3)))
+  end
+  rdq()
+  if (-"XF[" and rdq() + WLbMX)
+    WLbMX = (-(jEE))
+    var XBe09GVQ[12]
+    return jEE
+    WLbMX =  not XBe09GVQ[rdq()] / -WLbMX <= none
+  end
+  return DDp7uW("[6j", 8, TwK5, jEE, "JJ/H/E3", WLbMX, none) / -none or TwK5 * TwK5
+  while (("(.") or jEE < TwK5)
+    var qwX[28]
+    rdq()
+    u1wG8M3 = -(rdq()) -  not WLbMX
+    var VkLV
+  end
+  taWqnv +=  not rdq() > WLbMX > jEE / DDp7uW(WLbMX, 110, jEE, 106, jEE, WLbMX, TwK5)
+  var fR8[105]
+end
 
-var diq2PET[11]
+var weROee[92]
+
+var iQL[98]
 

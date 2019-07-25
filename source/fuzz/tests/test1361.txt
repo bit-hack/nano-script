@@ -2,37 +2,9 @@
 
 var bt[36]
 
-var tu = 6
+var tu = 26
 
-function QtjHzlw(Xs_, ZTgZ5L, xw8j5ZY, Rm, uBDrOk, b_LO4r7)
-  bt[48] = QtjHzlw(QtjHzlw(4, tu, 107, tu, -tu, tu), QtjHzlw(52, -tu, 73, 44, 109, 73), tu, 46, -tu, tu)
-  Rm += -(QtjHzlw(tu, tu, 81, tu, tu, 0))
-  return QtjHzlw(20, tu, QtjHzlw(tu, tu, 112, -40, -tu, 61), tu, QtjHzlw(85, 32, 27, 81, tu, 95), QtjHzlw(8, 52, tu, tu, 76, 116))
-  var FHvASl[23]
-  while (tu)
-    return 37 > tu and 20
-    Rm += FHvASl[tu] <= QtjHzlw(-71, -tu, 77, 30, tu, -49)
-    var Yv5W[31]
-    QtjHzlw(tu, tu, tu, 121, 38, -68)
-  end
-  while ( not (-bt[QtjHzlw(44, tu, -tu, tu, tu, -tu)]))
-  end
-  var fp = 28 < tu * tu
-  QtjHzlw(fp, 117, QtjHzlw(tu, fp, 35, 95, fp, 96), 80, tu, QtjHzlw(tu, fp, tu, 110, 65, tu))
-end
+var DjH[78]
 
-function Uv_a3Jn(SHgtl)
-  SHgtl = bt[tu == tu]
-  bt[29] = Uv_a3Jn(47) < 86 >= 58
-  tu =  not tu <= tu < bt[36]
-  if ((Uv_a3Jn(108) >= Uv_a3Jn(tu)))
-  end
-  while ((QtjHzlw(96, 109, tu, tu, tu, -1) < QtjHzlw(90, 103, tu, 106, 52, tu)))
-    SHgtl = tu * tu * 109 > -69
-    var GhRfo = (51 - tu)
-  end
-  tu =  not 85 * tu
-  return bt[ not 121]
-  SHgtl += tu
-end
+var tCYs
 

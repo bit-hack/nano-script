@@ -1,81 +1,28 @@
 # SEED 13007
 
-var DFHZi = 58
+var DFHZi = 93
 
-var ITPdqO = 20
+var bPdq
 
-function tty2lPP(fhE, CNQ0J, ROuB, BatAS, UA6P, JfPjS)
-  return -(tty2lPP(-123, DFHZi, 5, 69, ITPdqO, 22)) * tty2lPP(124, 51, -99, ITPdqO, 93, DFHZi) == ITPdqO
-  var RlaVkvB8 = DFHZi / -tty2lPP(DFHZi, 10, DFHZi, DFHZi, 82, 18) < (tty2lPP(96, ITPdqO, -103, 1, 78, DFHZi))
-  var Ytjf = -((126))
-  if (76)
+var MGPty[85]
+
+var bW
+
+function nZd(HJw, ku, ES, GAS)
+  var H6Pc = "KG>mRJ^"
+  nZd(-H6Pc, 88, none, nZd("@>g8`T", bPdq, none, 113))
+  MGPty[nZd(none, DFHZi, nZd(-18, none, bW, -"}/9rhF"), nZd(bW, DFHZi, none, DFHZi))] = DFHZi == none / nZd(bPdq, "8*", "Qqw&v\", "Q0T[a") > nZd(-91, 98, none, DFHZi)
+  var Ytjf = -((none))
+  if ("i?5n")
+    return MGPty[81]
+    MGPty[(bPdq)] = nZd(DFHZi, H6Pc, DFHZi, none) and 54 and nZd(DFHZi, bPdq, 46, H6Pc)
   end
-  return tty2lPP(tty2lPP(DFHZi, 111, RlaVkvB8, ITPdqO, Ytjf, 26), 23, tty2lPP(ITPdqO, 53, 52, RlaVkvB8, -81, -83), RlaVkvB8, tty2lPP(14, 33, 21, ITPdqO, 80, 22), 110)
-  UA6P +=  not 53 or tty2lPP(115, 105, 9, 112, ITPdqO, RlaVkvB8)
-  ROuB = 35 < 25 == tty2lPP(4, Ytjf, 35, 63, Ytjf, RlaVkvB8) == DFHZi
-  while ((Ytjf))
-    if ( not  not 90 < DFHZi < tty2lPP(18, RlaVkvB8, 10, RlaVkvB8, 123, 55) >= ITPdqO)
-      var KP6d = -tty2lPP(tty2lPP(-ITPdqO, ITPdqO, 47, Ytjf, 122, RlaVkvB8), tty2lPP(96, RlaVkvB8, 8, 27, 27, 41), Ytjf, tty2lPP(98, 58, -84, -ITPdqO, DFHZi, 44), 10, 40)
-      UA6P = DFHZi or -105
-      while (107)
-        if (tty2lPP(tty2lPP(KP6d, DFHZi, KP6d, -28, 42, -RlaVkvB8), Ytjf, 67, tty2lPP(10, 62, 114, RlaVkvB8, 123, KP6d), 6, RlaVkvB8))
-        end
-        JfPjS += DFHZi
-      end
-      while (RlaVkvB8 >= Ytjf == tty2lPP(ITPdqO, 53, DFHZi, 67, 41, Ytjf) == 99)
-      end
-    end
-  end
+  return MGPty[-118 or -126]
+  return -bPdq
+  var woDk[77]
 end
 
-function hb8T(rS, Et, ufmdSP9, KCcnU9, DxGpMss, mExE_cx7)
-  while ( not DFHZi < 15 <= DFHZi)
-  end
-  while (tty2lPP(ITPdqO, 91, DFHZi, 40, ITPdqO, ITPdqO) > 18 or ITPdqO)
-    tty2lPP(ITPdqO, -hb8T(DFHZi, -ITPdqO, 103, DFHZi, 110, 118), tty2lPP(117, 105, 58, ITPdqO, ITPdqO, -60), hb8T(6, DFHZi, 121, 102, 104, ITPdqO), -DFHZi, hb8T(84, 120, 93, DFHZi, ITPdqO, DFHZi))
-    var mUNqyz[4]
-    hb8T(tty2lPP(ITPdqO, 86, ITPdqO, DFHZi, 42, 54), ITPdqO, tty2lPP(DFHZi, -82, 26, DFHZi, ITPdqO, 33), -tty2lPP(DFHZi, -DFHZi, 63, ITPdqO, ITPdqO, 67), hb8T(58, 76, 95, ITPdqO, 100, 26), hb8T(-ITPdqO, 50, ITPdqO, 37, 57, ITPdqO))
-    Et = ITPdqO > (6)
-    while ((tty2lPP(10, -ITPdqO, DFHZi, ITPdqO, 83, DFHZi)) and tty2lPP(ITPdqO, 121, ITPdqO, -88, ITPdqO, DFHZi) > hb8T(-DFHZi, DFHZi, ITPdqO, DFHZi, DFHZi, ITPdqO))
-      Et += (106 + hb8T(ITPdqO, ITPdqO, 38, 14, 73, ITPdqO))
-    end
-  end
-  var sxj = tty2lPP(52, 14, 10, 46, 81, ITPdqO)
-  if ( not ((105)))
-    if (sxj)
-      if (tty2lPP(DFHZi, ITPdqO, DFHZi, -49, DFHZi, ITPdqO) == tty2lPP(39, DFHZi, DFHZi, 119, 28, 42) and 74 == tty2lPP(sxj, 37, -DFHZi, 15, sxj, DFHZi))
-        ITPdqO = -12 < DFHZi
-      end
-      if (-98)
-        var POGP =  not DFHZi + 7 * hb8T(-80, 52, ITPdqO, ITPdqO, 6, sxj) and hb8T(-DFHZi, sxj, 113, DFHZi, sxj, 115)
-        while (DFHZi)
-          while (sxj + POGP and hb8T(ITPdqO, 17, 111, -sxj, POGP, ITPdqO) > DFHZi)
-            KCcnU9 = DFHZi
-          end
-          DFHZi +=  not -tty2lPP(DFHZi, 0, sxj, sxj, POGP, ITPdqO) * ITPdqO and 48 < 84
-          var YUc0dwp = POGP
-        end
-        var jQ
-      end
-      rS = ITPdqO or 121
-      var w4lrdFgy[47]
-    end
-  end
-  if (123)
-    var iSTW[86]
-    if ( not iSTW[tty2lPP(sxj, DFHZi, 103, 48, 109, DFHZi)] >= 3 <= tty2lPP(sxj, 73, 60, ITPdqO, 7, 5))
-      var hRG1cD = -iSTW[53] == 56 >= hb8T(3, 53, 52, DFHZi, 102, ITPdqO)
-      KCcnU9 +=  not 16 >= 42 > hRG1cD
-    end
-  end
-  var Jn2[89]
-  tty2lPP(21, 122, 29, -ITPdqO, tty2lPP(85, 72, ITPdqO, DFHZi, 46, 52), 28)
-  var HwTD[26]
-end
+var MDK0f7n[47]
 
-var e_X[17]
-
-var zSxbTNYE[18]
-
-var b9uKbzlv[129]
+var GN[36]
 

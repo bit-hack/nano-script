@@ -1,182 +1,24 @@
 # SEED 13343
 
-var mx_pObY2 = 58
+var mx_pObY2 = "GK=+JK"
 
-var _I[71]
+var qD
 
-function nIMDd7c(AEPcPJZU)
-  nIMDd7c(mx_pObY2)
-  AEPcPJZU =  not mx_pObY2 <= -35 * 74 or mx_pObY2
-  mx_pObY2 = nIMDd7c(-mx_pObY2) and -mx_pObY2 < nIMDd7c(mx_pObY2)
-  nIMDd7c(mx_pObY2)
-  nIMDd7c(mx_pObY2)
-  return nIMDd7c(85)
-  var eaAN[117]
-  while (nIMDd7c(16) or (nIMDd7c(mx_pObY2)))
-    AEPcPJZU +=  not eaAN[mx_pObY2] * _I[-mx_pObY2]
-    var IBKsgU[27]
-  end
+var MVmEP
+
+var bUD = "p09"
+
+function iuW_YS(CYk9, HTTu, IBX)
+  CYk9 += iuW_YS(1, -qD, qD) < bUD >=  not iuW_YS(bUD, bUD, "rm9'") * iuW_YS("/"`u$E6", MVmEP, mx_pObY2)
+  var vRE = -MVmEP == 125 and (iuW_YS(MVmEP, qD, none))
+  vRE +=  not (bUD) - (vRE)
+  iuW_YS(mx_pObY2, qD, bUD)
+  iuW_YS(MVmEP, vRE, qD)
+  var gO_zTwe[16]
+  HTTu +=  not iuW_YS(112, 16, mx_pObY2) <= " +X$_Cg" / "k]" == none
 end
 
-function tiAFK()
-  while ( not _I[69])
-    nIMDd7c(mx_pObY2)
-  end
-  nIMDd7c(105)
-  nIMDd7c(63)
-  return  not _I[-(mx_pObY2)]
-  while ((mx_pObY2 == 104))
-  end
-  while ((nIMDd7c(57)))
-    _I[24] = mx_pObY2 / nIMDd7c(94) and (mx_pObY2)
-  end
-end
+var Irtrk = "o(fBp"
 
-function KjUalo(Sfb8dM)
-  var Vyny0R_ = 71
-  if ( not Vyny0R_ <= _I[nIMDd7c(126)])
-    if (6 >= 125 * nIMDd7c(mx_pObY2) > Vyny0R_)
-      Vyny0R_ += 2
-      mx_pObY2 = KjUalo(68)
-      mx_pObY2 += (Vyny0R_) >=  not  not 92
-      if (45 - mx_pObY2 / nIMDd7c(Vyny0R_))
-      end
-    end
-    while ( not mx_pObY2)
-      var uKSp
-      _I[11] = _I[105]
-      var pna9Rl42[111]
-    end
-    if ( not nIMDd7c(88) <= 60)
-    end
-    nIMDd7c(mx_pObY2)
-    while (Vyny0R_)
-      KjUalo(98)
-      if (Vyny0R_)
-        return KjUalo(Vyny0R_)
-        return Vyny0R_
-        Vyny0R_ += _I[113] * 66
-        var xh3UD4sz = Vyny0R_ < 35 < -93
-        Sfb8dM += Vyny0R_
-      end
-    end
-  end
-  if ( not ( not tiAFK() >= mx_pObY2))
-    Sfb8dM = -5 * 61 + -KjUalo(5) + mx_pObY2
-    while ( not _I[ not Vyny0R_ - Vyny0R_])
-      return -105 + 96
-      _I[116] = _I[KjUalo(mx_pObY2)] *  not Vyny0R_
-      _I[1] = (-21 or KjUalo(Vyny0R_))
-      var ZdY1[4]
-      while (ZdY1[mx_pObY2 > mx_pObY2])
-      end
-    end
-    return 95
-  end
-  return -tiAFK()
-  var v7x[92]
-  Sfb8dM = 12
-  var NJE
-  var gJr7[67]
-end
-
-function LzKH(hg, QyUR)
-  var ZZx = (-mx_pObY2)
-  while ( not _I[ZZx])
-  end
-  return ZZx
-  var HBkQjKPX[96]
-  _I[124] =  not  not 47 == -nIMDd7c(ZZx) / ZZx * LzKH(ZZx, ZZx)
-  QyUR += ZZx
-  hg += 100
-  return  not -(mx_pObY2) + _I[-ZZx]
-end
-
-function Qfuoyj7T(TDP4, bReKym83, CoMD, w79aDif0)
-  w79aDif0 += tiAFK() and nIMDd7c(-mx_pObY2) + -(mx_pObY2)
-  if (68 > nIMDd7c(mx_pObY2) and mx_pObY2)
-    while (mx_pObY2 > mx_pObY2 / mx_pObY2 / -71)
-      TDP4 += _I[10] * 95
-      var ql[55]
-      mx_pObY2 += nIMDd7c(mx_pObY2)
-      while (mx_pObY2)
-        ql[55] = _I[mx_pObY2] > mx_pObY2 * nIMDd7c(57)
-        if ((75 == LzKH(8, -29)))
-          while (mx_pObY2)
-            Qfuoyj7T(mx_pObY2, Qfuoyj7T(mx_pObY2, 31, 30, -mx_pObY2), nIMDd7c(-99), mx_pObY2)
-            while (LzKH(-113, mx_pObY2) + -56 * mx_pObY2)
-            end
-            var APLyw
-            while ( not mx_pObY2 or 37 >  not LzKH(18, -mx_pObY2))
-              if (91)
-                w79aDif0 = -mx_pObY2 < Qfuoyj7T(APLyw, 66, mx_pObY2, 17) / mx_pObY2
-                var kX[120]
-                while (APLyw > APLyw)
-                  ql[120] = Qfuoyj7T(82, 22, 81, 103) * -(nIMDd7c(27))
-                  TDP4 += -4 >= 68 and -APLyw > -17
-                  return APLyw
-                  while (mx_pObY2 or 48)
-                    var arGWWmv2[10]
-                    var GW685GYj[58]
-                    GW685GYj[19] = GW685GYj[APLyw]
-                  end
-                end
-                if ((KjUalo(43)) < mx_pObY2 == LzKH(mx_pObY2, mx_pObY2))
-                  w79aDif0 += mx_pObY2
-                  bReKym83 = 77 == -APLyw *  not KjUalo(115)
-                end
-                APLyw += -KjUalo(mx_pObY2) + Qfuoyj7T(18, 2, 33, APLyw) >  not ql[mx_pObY2]
-              end
-              while ( not 10)
-                KjUalo(LzKH(117, 81))
-                while (26)
-                  var FI8lP = Qfuoyj7T(38, APLyw, APLyw, 2) <= Qfuoyj7T(mx_pObY2, 119, APLyw, mx_pObY2) <= -ql[mx_pObY2]
-                  nIMDd7c(KjUalo(FI8lP))
-                  var iUH8 = mx_pObY2 < KjUalo(mx_pObY2) <= 100
-                  iUH8 = 27
-                  FI8lP += ql[-tiAFK() and mx_pObY2]
-                end
-              end
-            end
-            while ( not 50 / LzKH(37, APLyw) - APLyw)
-              var WAdMK[70]
-              KjUalo(98)
-            end
-          end
-          TDP4 =  not 88 > mx_pObY2 * -KjUalo(mx_pObY2) == Qfuoyj7T(mx_pObY2, mx_pObY2, 37, 23)
-        end
-        TDP4 += (nIMDd7c(65))
-        var HF59Gki[93]
-      end
-      var ow = mx_pObY2 or LzKH(mx_pObY2, mx_pObY2) + KjUalo(64) + 99
-    end
-  end
-  if (nIMDd7c(mx_pObY2))
-    _I[101] = (mx_pObY2) and -mx_pObY2
-    if (nIMDd7c(-KjUalo(32)))
-    end
-    w79aDif0 += _I[117 and mx_pObY2]
-    while (Qfuoyj7T(mx_pObY2, 106, -74, -74))
-    end
-    CoMD += _I[_I[103]]
-  end
-  mx_pObY2 = KjUalo(mx_pObY2)
-  mx_pObY2 += 39
-  while (Qfuoyj7T(123, mx_pObY2, 6, 69) <= 104 / 25 == nIMDd7c(mx_pObY2))
-    bReKym83 =  not 121
-    mx_pObY2 = ((mx_pObY2))
-    var XVw = tiAFK() and mx_pObY2 / 113
-    var ujKvIuOo[19]
-  end
-  if ((mx_pObY2) + Qfuoyj7T(-47, 124, 126, mx_pObY2) - 19)
-    if ((mx_pObY2) or 6 <= nIMDd7c(62))
-      var rIL6g[49]
-      TDP4 +=  not mx_pObY2 +  not rIL6g[63]
-      if (99 <= Qfuoyj7T(82, 15, -47, mx_pObY2) == mx_pObY2)
-      end
-      mx_pObY2 += 56
-    end
-  end
-  var Pr1u[3]
-end
+var FObZnmH
 

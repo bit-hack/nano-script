@@ -1,49 +1,26 @@
 # SEED 12950
 
-var yH = 36
+var yH = none
 
 function nqc6djr1()
-  while (81 or 117 +  not nqc6djr1() > -yH)
-    while (nqc6djr1())
-      nqc6djr1()
-    end
-    return yH
+  while (none or 111 and "N9^")
   end
-  var uf
-  if ((uf) > -126)
-    if ((44) == uf)
-      return yH > nqc6djr1() * nqc6djr1()
-    end
-  end
-  while ((nqc6djr1()) + -18 - uf)
-    return nqc6djr1() >= -(nqc6djr1())
-    var xh = nqc6djr1()
-  end
-  var dZ394[94]
-  var Vd = dZ394[23]
+  var AL[78]
+  return nqc6djr1() - yH or -nqc6djr1()
+  nqc6djr1()
+  AL[nqc6djr1() - yH] = (yH > -"x"GW<")
+  nqc6djr1()
+  return ""a" >= nqc6djr1() * nqc6djr1()
 end
 
-function tUUdd(OMEn, w7)
-  var K_qx1119[57]
-  K_qx1119[106] = yH * yH *  not -(-nqc6djr1())
-  yH =  not  not 14 - tUUdd(yH, 43) ==  not yH
-  while (tUUdd(107, 50))
-    w7 +=  not yH * 114 >= 42
-    return 63 <= 113 /  not K_qx1119[nqc6djr1()]
-    yH = 26 <= K_qx1119[yH]
-    return -7
-  end
-  while (tUUdd(nqc6djr1(), nqc6djr1()))
-  end
-  while (tUUdd(yH, yH) - 87 + yH)
-    var osYvZz5 = yH
-    nqc6djr1()
-    OMEn += 31
-    w7 += 104 or yH * osYvZz5
-    yH = K_qx1119[osYvZz5] / tUUdd(48, 52) or 59
-  end
-  OMEn += (yH - tUUdd(yH, -yH))
-  if ( not -K_qx1119[123])
-  end
+function u3(vjjssS3, tfTC8Qa)
+  var be
+  yH += yH
+  u3(be, u3(yH, be))
+  var OMEn[37]
+  var x9W_qx
+  return u3("1F", -none) / nqc6djr1() > nqc6djr1()
+  x9W_qx = -(-nqc6djr1() <= nqc6djr1())
+  u3("6 AK", yH)
 end
 

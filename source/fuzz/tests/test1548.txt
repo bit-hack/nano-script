@@ -1,118 +1,99 @@
 # SEED 12869
 
 function VW3c11D(J1x, iV, DN)
-  if ( not  not VW3c11D(VW3c11D(95, 49, 13), VW3c11D(45, 35, 16), 22))
-    VW3c11D(36, -60, VW3c11D(106, 115, 17))
-  end
-  if (VW3c11D(37, 96, 29) >= VW3c11D(27, 26, 13) - 61)
-    while (VW3c11D(VW3c11D(26, 44, -26), VW3c11D(7, -86, 70), 115))
-      return -51
-      var xFuI9F = 30
-      var Awi_m[55]
-      VW3c11D(91, -VW3c11D(92, xFuI9F, 95), xFuI9F)
+  if ( not  not VW3c11D(VW3c11D(none, 28, none), 57, none))
+    if ("1 " and none and "" - "p$M")
     end
-    return (109) + VW3c11D(-35, 100, 111) > 45
+    while (VW3c11D(VW3c11D(87, none, none), none, none))
+    end
   end
-  while (VW3c11D(86, 97, 69) - VW3c11D(5, 30, 71) or 19 <= VW3c11D(126, 72, 29))
+  var h1sn
+  var juIoV[69]
+  VW3c11D(VW3c11D(-",]bWp", 73, none), h1sn, -none)
+  return "WKTF"
+  h1sn = VW3c11D(VW3c11D(h1sn, h1sn, 3), 84, h1sn)
+  while (-(h1sn))
+    juIoV[-".w" and (VW3c11D(none, h1sn, none))] = "Os'6-]k" > h1sn
+    var HFkhYhZO[117]
+    return  not  not h1sn
+    VW3c11D("4VA0RW-", VW3c11D(h1sn, h1sn, "EYAAs&'"), h1sn)
   end
-  while (VW3c11D(48, 40, 111) < 1 + 24)
-  end
-  VW3c11D(VW3c11D(31, 102, 66), VW3c11D(40, 93, 48), VW3c11D(79, 14, 7))
+  DN += (juIoV[h1sn])
 end
 
-var W5AuR
+var O5NAeMSU[123]
 
-function vu6M_x(RDOn, Sb7, SKYN, LnUm3, Gu, KgBr, CNPoaO)
-  while (VW3c11D(vu6M_x(-41, W5AuR, W5AuR, W5AuR, W5AuR, W5AuR, 17), VW3c11D(W5AuR, 83, W5AuR), VW3c11D(42, W5AuR, W5AuR)))
-    if (102 <= VW3c11D(W5AuR, W5AuR, W5AuR) / -vu6M_x(99, -67, 64, 115, 34, W5AuR, 57) + VW3c11D(-106, W5AuR, 61))
-      while ((vu6M_x(57, 7, 35, -W5AuR, 117, 104, 74) + vu6M_x(W5AuR, W5AuR, W5AuR, 30, 69, W5AuR, W5AuR)))
+function eBj()
+  VW3c11D(VW3c11D(" ", none, 14), none, none)
+  while (eBj() * VW3c11D(none, "", ")4<+`q(") and  not (VW3c11D(none, "W_", 53)))
+  end
+  var foqG5[80]
+  return foqG5[124] * 33
+  foqG5["Dm=U&" / eBj()] =  not  not 17 + eBj() >  not none and -eBj()
+  var gUBat1
+  var MAFMQhXV[29]
+end
+
+var h0 = none
+
+function l2G(Vmledf3r, qOpW5, xHty1We, fCjkwcX)
+  while ( not eBj() + h0 < "Qdv")
+    while (VW3c11D(eBj(), l2G(h0, h0, h0, h0), h0))
+      return eBj()
+      O5NAeMSU[""] = O5NAeMSU[(VW3c11D(h0, -"IN", h0))]
+      return  not -(h0 or h0)
+      if (-h0 - h0 > l2G(h0, h0, h0, none) == h0)
+        qOpW5 = (h0) < VW3c11D(-h0, h0, none)
+        O5NAeMSU[ not  not (h0) == none == 41] = VW3c11D(h0, h0, l2G(h0, "Uuvm6A", h0, 60))
+        h0 = 74
       end
-      while (vu6M_x(19, W5AuR, 103, W5AuR, 4, -44, W5AuR) == W5AuR)
-        W5AuR +=  not VW3c11D(W5AuR, 13, W5AuR) < -126
-      end
-      return vu6M_x(VW3c11D(89, -W5AuR, W5AuR), vu6M_x(W5AuR, W5AuR, 105, -40, -W5AuR, -107, W5AuR), 86, 76, 14, VW3c11D(54, W5AuR, W5AuR), W5AuR)
     end
   end
-  while (18 > vu6M_x(23, W5AuR, 17, -W5AuR, 107, 30, 14) >= vu6M_x(60, -W5AuR, 127, W5AuR, W5AuR, 122, 118))
-    W5AuR += W5AuR == W5AuR
-    return  not W5AuR < W5AuR - VW3c11D(37, 73, W5AuR) - 8
+  xHty1We += O5NAeMSU[O5NAeMSU[VW3c11D(h0, -none, h0)]]
+  Vmledf3r = (VW3c11D(h0, h0, h0)) > "gQbIlA" <= VW3c11D(38, h0, h0)
+  VW3c11D(l2G(h0, h0, "S)", none), eBj(), h0)
+  if (-O5NAeMSU[none <= eBj()])
+    h0 += "D"
+    if ( not O5NAeMSU[VW3c11D(h0, h0, h0)])
+      var ri09t[76]
+      h0 += none or h0 * h0
+      ri09t[ not -49 < (none)] = (65)
+      while ((none))
+        fCjkwcX = ri09t[h0 - -" '{"]
+      end
+      while (VW3c11D("L", "Gw3)", -h0) or eBj() or VW3c11D(h0, "c,V0u", h0))
+        if (ri09t[none <= none])
+          qOpW5 = h0
+          Vmledf3r += h0
+          xHty1We = 103
+          var x1u9
+          var DJ1[27]
+        end
+      end
+    end
+    h0 +=  not O5NAeMSU[VW3c11D("yi7", "-`Eb", "") <= h0]
   end
-  var _Vy[26]
-  var Slt = _Vy[VW3c11D(82, W5AuR, -W5AuR)] < VW3c11D(-10, W5AuR, 73) == VW3c11D(123, 102, 100)
-  if (W5AuR)
-    Sb7 = _Vy[Slt * 103]
+  while (h0)
+    return 13
+    return O5NAeMSU[-none]
   end
-  return 123 / W5AuR - W5AuR
-  var xV
-  while (vu6M_x(68, 48, -52, Slt, xV, vu6M_x(xV, Slt, xV, xV, -63, 57, W5AuR), xV))
-    return W5AuR < W5AuR == xV or 3
-    return -((VW3c11D(xV, Slt, W5AuR)))
+  return O5NAeMSU[none]
+  while ( not h0 / -h0 - "")
+    var zEuyOtxP = h0 / -86 >= -h0
+    var cCax[89]
   end
 end
 
-var HxlCEbTP[106]
+var BrM[15]
 
-function AERwshtV(f1h3092K, xPCDWswg, w9PVor, ZeyN8jnG, hT5, pd6P1Fl, jSQo)
-  var blaEbM[4]
-  HxlCEbTP[10] = W5AuR
-  if ((-6))
-    W5AuR += VW3c11D(W5AuR, 49, -W5AuR) * (AERwshtV(122, -13, W5AuR, W5AuR, 22, W5AuR, W5AuR))
-    return 87
-  end
-  ZeyN8jnG = blaEbM[W5AuR] * AERwshtV(95, 111, W5AuR, 80, W5AuR, W5AuR, W5AuR)
-  blaEbM[43] = -45 / W5AuR * W5AuR
-  W5AuR += AERwshtV(W5AuR, 119, 93, 116, -VW3c11D(W5AuR, -W5AuR, 85), W5AuR, W5AuR)
-  if ( not AERwshtV(VW3c11D(-124, -111, 124), AERwshtV(W5AuR, W5AuR, 54, 27, 86, 32, W5AuR), vu6M_x(106, 127, 31, 94, W5AuR, W5AuR, 57), W5AuR, 17, 54, W5AuR))
-    W5AuR = 124
-    while (120)
-      if (W5AuR)
-        w9PVor += AERwshtV(AERwshtV(22, W5AuR, 85, 113, 99, 46, W5AuR), VW3c11D(18, 79, W5AuR), AERwshtV(W5AuR, 15, 6, W5AuR, -121, 104, 112), 87, W5AuR, 69, vu6M_x(-50, 83, 20, 29, W5AuR, 98, 81))
-        var eatoF = VW3c11D(vu6M_x(59, W5AuR, 82, 94, -44, W5AuR, -W5AuR), 73, VW3c11D(15, 52, W5AuR))
-        var xZYmI[24]
-        var V0P70Ql5[30]
-      end
-      pd6P1Fl += AERwshtV(W5AuR, 64, 45, W5AuR, W5AuR, W5AuR, W5AuR) >= (-W5AuR)
-      blaEbM[41] = W5AuR
-    end
-    HxlCEbTP[112] = 116
-    var PCsAp = W5AuR or vu6M_x(126, W5AuR, W5AuR, 76, 107, 29, 127) or AERwshtV(14, W5AuR, 82, W5AuR, W5AuR, W5AuR, -W5AuR)
-    return HxlCEbTP[(W5AuR)]
-  end
-  while (HxlCEbTP[(33)])
-    if (104)
-      HxlCEbTP[93] = blaEbM[W5AuR] < 16 and -41
-    end
-  end
-end
-
-var lM5__[26]
-
-function wu(XcE, cT, dtWSmzP)
-  XcE += lM5__[lM5__[49]]
-  dtWSmzP = -W5AuR - VW3c11D(W5AuR, -W5AuR, W5AuR) >= vu6M_x(W5AuR, W5AuR, W5AuR, W5AuR, -69, 45, 104) + -VW3c11D(38, W5AuR, W5AuR)
-  VW3c11D(AERwshtV(31, -1, W5AuR, 89, W5AuR, 46, W5AuR), 36, wu(48, W5AuR, W5AuR))
-  while ((W5AuR) == W5AuR)
-    cT += lM5__[112] == W5AuR < 1
-    return 12
-    W5AuR = W5AuR
-    var ajHaHRB
-    while ((VW3c11D(ajHaHRB, 112, 6)))
-      XcE += wu(W5AuR, ajHaHRB, W5AuR) < AERwshtV(-W5AuR, -W5AuR, -ajHaHRB, 102, 16, -41, 51)
-      wu(ajHaHRB, -VW3c11D(ajHaHRB, 27, -ajHaHRB), wu(ajHaHRB, 82, ajHaHRB))
-      XcE = ajHaHRB or W5AuR < AERwshtV(W5AuR, W5AuR, W5AuR, W5AuR, W5AuR, ajHaHRB, ajHaHRB)
-      lM5__[23] = AERwshtV(ajHaHRB, vu6M_x(W5AuR, W5AuR, 69, 63, -W5AuR, 50, ajHaHRB), W5AuR, ajHaHRB, 105, -wu(-ajHaHRB, W5AuR, ajHaHRB), 125)
-      XcE += W5AuR < ajHaHRB
-    end
-  end
-  var hEpzh[39]
-  XcE = VW3c11D(W5AuR, 12, wu(W5AuR, 93, 64))
-  W5AuR = AERwshtV(-vu6M_x(W5AuR, 115, W5AuR, -W5AuR, 46, -W5AuR, 118), W5AuR, VW3c11D(10, 0, W5AuR), W5AuR, W5AuR, vu6M_x(W5AuR, 93, W5AuR, W5AuR, W5AuR, 73, W5AuR), -99)
-  if ( not wu(W5AuR, W5AuR, 73))
-    var RaeO3m[68]
-    var ygF
-    W5AuR +=  not  not  not hEpzh[(vu6M_x(25, ygF, 99, 74, ygF, W5AuR, ygF))]
-    ygF += ygF
-    hEpzh[60] = -(AERwshtV(ygF, 79, ygF, W5AuR, ygF, ygF, W5AuR) <= vu6M_x(ygF, 82, 13, W5AuR, W5AuR, 106, 75))
-  end
+function eMEWLn3(ccHH8, AOhBWWsL, ALCBON, EGqytZ, scWdyp, ttIMRINl)
+  h0 += -l2G(h0, h0, h0, 28) * eMEWLn3(-44, h0, h0, "=5EV)O=", -h0, ",WU3") + (eBj())
+  return none <= h0 + h0 / 91
+  BrM[ not "psb<" > eBj() <= "u|VD+'"] = "k[\k@" + l2G(none, h0, h0, h0) * h0
+  var Obx
+  ccHH8 = BrM[-39] or VW3c11D(none, 112, none) < eBj()
+  var PaMi54o
+  var Cx3NTFjp[57]
+  Obx += -VW3c11D(PaMi54o, eMEWLn3(Obx, -h0, none, h0, -none, Obx), none)
 end
 

@@ -7,38 +7,26 @@ var LqVAw9jo[34]
 var C54q7M[90]
 
 function Qq(wI2M, WhqreOQM, SVP, Evn, u29oxGW0)
-  while (0 and 98)
-    if ( not Qq(Qq(33, 109, 60, 9, 81), 68, Qq(67, 126, -109, 29, 4), Qq(17, 34, 26, 69, 115), Qq(9, 102, 31, 15, 117)))
+  while (none and 41)
+    var T2v8GEt = Qq(none, "4r9k", none, none, "r@&0g") >= Qq(40, -45, "", 109, 4) ==  not  not Qq("xx:", none, 42, "XKL9mq", 24) == Qq("oyt", 91, 51, none, -none)
+    Ym[ not  not T2v8GEt] = T2v8GEt
+    return  not T2v8GEt + "ci" > "g<"
+    if (90)
+      Ym["%lk" == 94 > none - "hX"] =  not  not 96 + (41)
+      var wBATxirK = T2v8GEt == T2v8GEt <= Qq(T2v8GEt, -"`,.o", 67, none, T2v8GEt)
     end
-    if ( not Qq(Qq(121, 0, 17, 125, 26), 85, 123, -13, 84))
-      return  not 12 == 53 > 44 <= Qq(51, 24, 99, 66, 105)
-    end
-    var MAT[119]
-    return (-Qq(91, 61, 88, 80, -119))
-    var im = Ym[125] < (Qq(70, 35, 127, 8, 116))
   end
-  if (Qq(73, Qq(60, 7, 90, 66, 98), Qq(74, 124, 104, 28, 94), Qq(125, 56, 112, 19, 43), Qq(67, 104, -32, 127, 17)))
-    var Slxjqz
-    Evn =  not Slxjqz < Slxjqz == Qq(107, 31, 43, Slxjqz, Slxjqz)
+  var xUO4OqN_ = -Ym[Qq(none, 72, none, "lm].aW", none)] and Qq(121, "B4", none, none, none) + Qq(none, 17, none, "l24rH,", ";N1c")
+  return Qq(xUO4OqN_, xUO4OqN_, Qq(xUO4OqN_, "(u", xUO4OqN_, xUO4OqN_, xUO4OqN_), Qq("e<1", none, -xUO4OqN_, none, xUO4OqN_), Qq(none, "", xUO4OqN_, xUO4OqN_, xUO4OqN_))
+  if (-xUO4OqN_)
+    var NsgpFz[8]
+    LqVAw9jo[xUO4OqN_] = LqVAw9jo[Qq(xUO4OqN_, "aLZG", "752$UO#", xUO4OqN_, 35)] / Qq(none, xUO4OqN_, xUO4OqN_, 29, "W./&")
   end
-  while ((29) - 44)
-    if ((Qq(52, 100, 86, 85, 75)))
-      Qq(Qq(3, 74, 52, 83, 71), Qq(99, 77, 61, 97, 30), Qq(122, 37, 42, 32, 124), 6, -Qq(113, -68, 82, 111, 110))
-      Qq(Qq(8, 65, 62, 34, 32), Qq(39, 106, 83, 9, 89), 100, 13, Qq(89, 13, -65, -57, 110))
-      var AmdHHr
-      return C54q7M[1] - 8 == AmdHHr
-      if (AmdHHr)
-        Ym[35] = 112
-      end
-    end
-    var Du[3]
-    var mk
-    Qq(-50, mk, mk, Qq(mk, -mk, 32, 6, mk), mk)
-    return  not 117 <= (Qq(mk, 11, 127, mk, 4))
+  var aR2wb[54]
+  if (-Qq(xUO4OqN_, -Qq(108, none, xUO4OqN_, "^XiY^", 7), Qq("/", none, xUO4OqN_, "-=", xUO4OqN_), Qq(120, xUO4OqN_, xUO4OqN_, xUO4OqN_, xUO4OqN_), Qq(none, 127, 61, 89, 34)))
+    return -xUO4OqN_ / (Qq(0, -none, 77, xUO4OqN_, xUO4OqN_))
+    var fzpd[8]
   end
-  C54q7M[15] = Qq(Qq(17, 115, 81, 29, 116), Qq(113, 112, 95, 37, 64), Qq(84, 25, 54, 60, 1), Qq(3, 45, 44, 109, 33), Qq(101, 7, 69, 73, 31))
-  Qq(Qq(-52, 87, 43, 61, 94), 100, Qq(94, 6, -23, 0, 5), Qq(90, -21, -102, 73, 4), -Qq(106, 82, 47, 60, 34))
-  return 85 - Qq(48, 16, 33, 19, 50) < (Qq(127, -12, 58, 106, 2))
-  return 45 >= -107 < Qq(97, 6, -122, 25, 22) - -83
+  return xUO4OqN_
 end
 

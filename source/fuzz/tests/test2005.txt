@@ -5,31 +5,29 @@ function tc69()
   if (-tc69())
   end
   if ((tc69()) == tc69() >= GM)
-    if ( not  not 93)
-      tc69()
-      var yfz1Z = -GM <= GM * tc69() or GM
+    if ( not  not 38)
+      if (tc69())
+        var S8
+        var GvJ75 =  not GM * tc69() or  not S8 - 38
+      end
     end
-    var BDe[55]
+    var ya31D[22]
   end
-  var ya31D[22]
-  return 16
-  ya31D[34] = ya31D[GM]
+  return "B-X"
 end
 
-var ZynW7cbL[112]
+var pffyn[88]
 
-function K9I47B()
-  var Ze[123]
-  return 110 + tc69() == 0
-  ZynW7cbL[113] =  not ((K9I47B()))
-  if (-Ze[tc69() and 112])
-  end
-  if ( not tc69())
-    var i_HK[114]
-    return tc69()
-  end
-  K9I47B()
+var jLbkT
+
+function v7(nIGeWA, fmwRtNI6, uVPiODow, sQp7oS, wJXDrM, dk)
+  tc69()
+  wJXDrM += pffyn[jLbkT] > 29 > jLbkT
+  tc69()
+  jLbkT = pffyn[jLbkT] ==  not ")QY"
+  var b4B3JoYy[102]
+  fmwRtNI6 += -jLbkT
+  var vvmnWm = jLbkT or tc69() - jLbkT
+  tc69()
 end
-
-var nk[117]
 

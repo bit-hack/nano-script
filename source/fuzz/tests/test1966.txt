@@ -4,7 +4,7 @@ var hmvmFs[120]
 
 var NNq7QU[102]
 
-var gB3tX = 64
+var gB3tX = none
 
 var mrfC[45]
 

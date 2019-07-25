@@ -2,5 +2,5 @@
 
 var PmZe[111]
 
-var Sm99c2x = 25
+var Sm99c2x = 8
 

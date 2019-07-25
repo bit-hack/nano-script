@@ -1,101 +1,72 @@
 # SEED 12500
 
-var kO1HEFq = 58
+var kO1HEFq = "fp,J3"
 
-function aDYSSn7(eYXw44_, KwieKyNu, E7Te, QW)
-  E7Te = 0 * -kO1HEFq < 126 == 0
-  eYXw44_ += 43 - -kO1HEFq * 56 and 101
-  while ((83))
-    while ((kO1HEFq >= kO1HEFq))
-      return 79
-      while (74)
-        var LIKA_5
-        aDYSSn7(61, 52, aDYSSn7(LIKA_5, LIKA_5, 35, 29), 51)
-        aDYSSn7(aDYSSn7(kO1HEFq, -35, 69, kO1HEFq), aDYSSn7(LIKA_5, kO1HEFq, 53, 94), LIKA_5, LIKA_5)
-        return (aDYSSn7(LIKA_5, LIKA_5, kO1HEFq, LIKA_5))
-        if (115 * -kO1HEFq == kO1HEFq)
-          var RP1ylB = -(45 > -71)
-          var iw[110]
-          eYXw44_ += RP1ylB or RP1ylB <= aDYSSn7(22, 67, 123, 67)
-          while (47)
-            return aDYSSn7(21, aDYSSn7(RP1ylB, kO1HEFq, 98, RP1ylB), aDYSSn7(RP1ylB, 125, LIKA_5, kO1HEFq), aDYSSn7(kO1HEFq, LIKA_5, LIKA_5, kO1HEFq))
-            while (iw[47 > aDYSSn7(kO1HEFq, 2, 80, 92)])
-              iw[70] =  not aDYSSn7(32, LIKA_5, 14, 10) <= iw[LIKA_5]
-              var QePrKO[53]
-              while ( not 32 >= 42)
-              end
-              var XKbY
-            end
-          end
-        end
-      end
-      return 10 > kO1HEFq / -aDYSSn7(-101, 55, 97, kO1HEFq)
-      if (115 * -kO1HEFq > 74)
-        while (108 * aDYSSn7(-73, 86, 34, kO1HEFq) and aDYSSn7(kO1HEFq, kO1HEFq, 3, kO1HEFq) > 22)
-          var wgMqIJh[71]
-          var KQ2Qn7 =  not kO1HEFq
-          if (( not 15 + 53))
-            aDYSSn7(32, aDYSSn7(KQ2Qn7, 61, 27, KQ2Qn7), kO1HEFq, 23)
-            E7Te += aDYSSn7(-55, aDYSSn7(39, 12, KQ2Qn7, 80), KQ2Qn7, aDYSSn7(KQ2Qn7, kO1HEFq, 50, KQ2Qn7))
-            aDYSSn7(aDYSSn7(KQ2Qn7, kO1HEFq, 25, 22), 30, KQ2Qn7, kO1HEFq)
-          end
-          if ( not 2)
-            return kO1HEFq < 63 >= aDYSSn7(29, 49, kO1HEFq, 76)
-            if (kO1HEFq)
-            end
-            while ( not aDYSSn7(kO1HEFq, kO1HEFq, kO1HEFq, 127) < kO1HEFq + KQ2Qn7 > 58)
-            end
-            wgMqIJh[121] = (KQ2Qn7) < (aDYSSn7(35, kO1HEFq, 49, KQ2Qn7))
-            var CUpq[4]
-          end
-          KwieKyNu += (aDYSSn7(-KQ2Qn7, 98, KQ2Qn7, 83) / 64)
-        end
-        return ((kO1HEFq))
-        var Fp = (kO1HEFq / aDYSSn7(kO1HEFq, 111, 29, 5))
-      end
+var Fv
+
+function Ww44(KwieKyNu, E7Te, QW, tqxbq)
+  QW +=  not (-Fv == Ww44(none, none, kO1HEFq, -Fv))
+  tqxbq = (Ww44(none, kO1HEFq, Fv, kO1HEFq)) and Ww44(kO1HEFq, kO1HEFq, "KN>:&1", Fv) and none
+  Ww44(Ww44(17, none, kO1HEFq, ""), 109, none, Fv)
+  var NKD
+  Ww44(NKD, Ww44("", "8]D9ZT;", NKD, Fv), NKD, Ww44(NKD, -kO1HEFq, NKD, NKD))
+  QW = Ww44("SjK", -none, none, NKD)
+  Ww44(NKD, NKD, Ww44(NKD, none, 31, "Yh"), none)
+  E7Te += kO1HEFq
+end
+
+var hUC2o6S[94]
+
+var HBS3N98[52]
+
+var Jp0v04h = "_|"
+
+function PmcQXmdc(X8vheEpP, GDUTig, FRpcT_O, rSVdL4S, Jru, jXjzjF, bb)
+  if (-hUC2o6S[Jp0v04h])
+    var HKJvkj8T[13]
+    while (-Ww44(Ww44(Jp0v04h, none, Fv, kO1HEFq), Ww44(kO1HEFq, Fv, Fv, kO1HEFq), 1, Ww44(kO1HEFq, "mn", 18, Jp0v04h)))
+      X8vheEpP = 115 + PmcQXmdc("( y<", Fv, 16, "b:El >", 100, Jp0v04h, -"]") <  not kO1HEFq
+      Jp0v04h = HBS3N98[kO1HEFq or Ww44("P$y", none, -"o<qXalV", none)]
+      Fv = (""rj,**") * PmcQXmdc(kO1HEFq, kO1HEFq, "=x", kO1HEFq, kO1HEFq, -none, 123) + -kO1HEFq
     end
+    var _0zQ[19]
+    var TU =  not Ww44(none, "xT", -Jp0v04h, 66)
   end
-  KwieKyNu += (kO1HEFq) * kO1HEFq * 68
-  kO1HEFq = aDYSSn7(kO1HEFq, kO1HEFq, -100, 23) +  not 32
-end
-
-var sN = 112
-
-var L7BM = 53
-
-function iOhAJSn(qw7WkWi, _aTUd1, bW, BDeUzc, _Tv33Bh)
-  var yluN_3
-  aDYSSn7(-iOhAJSn(L7BM, 48, L7BM, kO1HEFq, 19), iOhAJSn(yluN_3, 98, sN, -sN, L7BM), 65, 119)
-  while ( not iOhAJSn(19, 26, L7BM, 38, L7BM) - iOhAJSn(-109, L7BM, kO1HEFq, yluN_3, yluN_3) or kO1HEFq)
+  if (PmcQXmdc(Jp0v04h, "Q", 72, 27, Jp0v04h, 66, Jp0v04h) * Jp0v04h == -124)
+    while (kO1HEFq)
+      X8vheEpP += none > Jp0v04h + Jp0v04h <= "F"
+      HBS3N98[PmcQXmdc(kO1HEFq, Fv, none, Jp0v04h, none, Fv, kO1HEFq) >= 71 >= "Z0e.\w"] = "HVJYH7"
+    end
+    var C0Al[33]
+    PmcQXmdc(kO1HEFq, PmcQXmdc(51, Fv, kO1HEFq, 113, kO1HEFq, Fv, Fv), 88, Fv, Ww44(none, kO1HEFq, Jp0v04h, 105), kO1HEFq, PmcQXmdc(49, kO1HEFq, none, none, Jp0v04h, "tS", 63))
   end
-  var WIxBxMzN = kO1HEFq + -100 / sN
+  var kw[35]
+  if (Fv)
+    var a_mF[29]
+  end
+  var V7g3msC = Ww44(none, 123, 25, Fv) * 21 >= kO1HEFq
+  while (V7g3msC * none +  not -kw[PmcQXmdc(V7g3msC, -"Ku0N{7i", V7g3msC, 53, kO1HEFq, -V7g3msC, Fv)])
+    PmcQXmdc(kO1HEFq, Fv, V7g3msC, Jp0v04h, none, PmcQXmdc(kO1HEFq, 50, "%\?", "H!", -Fv, Jp0v04h, none), none)
+    while ( not PmcQXmdc("%", 68, none, Jp0v04h, Jp0v04h, kO1HEFq, -88) / Ww44(62, kO1HEFq, V7g3msC, V7g3msC) or kO1HEFq)
+    end
+    var WIxBxMzN = kO1HEFq + kw[Fv]
+    var GqhEvur
+  end
+  var Qnc_s1[91]
   var rr0qhrb
-  var HxWS[56]
-  iOhAJSn(108, 16, iOhAJSn(27, kO1HEFq, 116, 10, rr0qhrb), -rr0qhrb, iOhAJSn(L7BM, rr0qhrb, kO1HEFq, 90, 106))
-  while ((17))
-    sN += 107
-    HxWS[23] =  not aDYSSn7(kO1HEFq, sN, sN, L7BM) == 45
-    return  not iOhAJSn(aDYSSn7(sN, sN, yluN_3, 17), 89, iOhAJSn(rr0qhrb, 81, yluN_3, -rr0qhrb, -rr0qhrb), kO1HEFq, rr0qhrb)
-    aDYSSn7(kO1HEFq, aDYSSn7(rr0qhrb, 117, 83, 42), aDYSSn7(rr0qhrb, -WIxBxMzN, -sN, -120), sN)
-  end
 end
 
-var UohoB[70]
-
-var IrE[121]
-
-function z8UKn84()
-  return 44
-  if (L7BM)
-    IrE[64] = iOhAJSn(55, L7BM, 68, L7BM, L7BM) < z8UKn84() and kO1HEFq * aDYSSn7(56, 38, 71, -sN)
-    var TOzJ2
-    iOhAJSn(iOhAJSn(35, 0, L7BM, sN, kO1HEFq), aDYSSn7(L7BM, kO1HEFq, L7BM, sN), 126, L7BM, TOzJ2)
+function HxWS(KHA, infH_z, PioVkXM, MLTq, QtZwP0UM, _9bGw05)
+  while (none)
+    var LBZhQHTH
+    return kO1HEFq
   end
-  var h6XivS7[71]
-  var zG_X502
-  if ( not 113 and 114 * zG_X502 + kO1HEFq)
-    var n7snXbI[116]
-  end
-  return  not z8UKn84()
+  hUC2o6S[(none - Jp0v04h)] = Ww44(none, "5j", -Jp0v04h, kO1HEFq) or hUC2o6S[PmcQXmdc(none, kO1HEFq, none, none, none, 106, Fv)]
+  return HBS3N98[Ww44(Jp0v04h, "7", 56, kO1HEFq)] >= (kO1HEFq)
+  return kO1HEFq * 35 * hUC2o6S[kO1HEFq]
+  KHA = HBS3N98[(Jp0v04h)]
+  return HBS3N98[none]
+  return HxWS(Fv, 90, kO1HEFq, 19, "1[uU", Jp0v04h) / none / -Fv
+  PmcQXmdc(Ww44(Fv, "&7d-d", "pX'h", 44), none, Jp0v04h, Ww44(Jp0v04h, Jp0v04h, Fv, kO1HEFq), Jp0v04h, none, HxWS(-Fv, kO1HEFq, -kO1HEFq, kO1HEFq, 102, "*.YvtH"))
 end
 

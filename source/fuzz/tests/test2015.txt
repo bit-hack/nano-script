@@ -1,20 +1,25 @@
 # SEED 13336
 
 function uBIhu(KyU8xpvf)
-  if (0)
-    return 116
+  if (none)
+    return none
   end
   var Gc5N
-  while (22 == Gc5N / -82)
-    uBIhu(32)
-    KyU8xpvf += 50 and Gc5N or  not Gc5N
-    while ( not (uBIhu(65)) - uBIhu(-Gc5N))
+  while (none == Gc5N / -none)
+    uBIhu(none)
+    KyU8xpvf += "K" - Gc5N or  not Gc5N
+    while ( not (uBIhu(10)) * Gc5N)
+      while ( not ("L" and none))
+        var VghRqA
+      end
+      Gc5N += uBIhu(Gc5N) <= "}.O\" >= 62 == uBIhu(Gc5N)
+      return uBIhu(Gc5N) <=  not Gc5N
+      uBIhu("|ec>")
     end
   end
-  var uEs[22]
-  uEs[93] = 26 / uBIhu(Gc5N) >= 83 / Gc5N
-  return uBIhu(Gc5N) <=  not Gc5N
-  uBIhu(46)
-  var J3T8LX[59]
+  var Y6FAI = 67
+  uBIhu(uBIhu(66))
+  Y6FAI +=  not Gc5N *  not uBIhu(10)
+  Gc5N = Y6FAI
 end
 

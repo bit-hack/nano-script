@@ -3,83 +3,31 @@
 var xwq[113]
 
 function p03()
-  var VXBhe = 111 == p03() - 79
-  return (3 and VXBhe)
-  if ((VXBhe) < p03() >= p03())
-    return 123 == p03() and VXBhe
-  end
+  var VXBhe = "f8N(Y" - xwq[p03()]
   p03()
-  if (xwq[VXBhe] or 43 >= VXBhe)
-    if (xwq[p03() / p03()])
-      return 13 <= p03() == p03() <= -p03()
-    end
-    p03()
-    var WnVJW[121]
+  return VXBhe > VXBhe < p03() >= p03()
+  var ndtoc
+  return p03() and VXBhe
+end
+
+var fKqeO5P
+
+var vKW_6L[91]
+
+var S2 = 49
+
+function _eP()
+  if (vKW_6L[_eP() / p03()])
+    return 17 == p03() *  not  not fKqeO5P / ">kZ"
   end
+  return  not none
+  vKW_6L[-S2 == S2 - S2 or fKqeO5P] = S2
+  var KYzDcZ6 =  not xwq[(S2)]
   p03()
+  _eP()
 end
 
-function U2fuj5cu(Id5M, qaN)
-  var IgMuY[116]
-  U2fuj5cu(U2fuj5cu(103, 116), -p03())
-  if (xwq[25 == p03()])
-    while (IgMuY[p03() == 125])
-      xwq[92] = 38 - p03() < p03()
-      return IgMuY[p03() or U2fuj5cu(5, 123)]
-      while (IgMuY[U2fuj5cu(35, -95) >= U2fuj5cu(111, 22)])
-      end
-    end
-    while (63 or 3 <= 89 >= 84)
-      while ((52) >=  not p03() * 66)
-      end
-      var NFBD
-      IgMuY[113] = xwq[NFBD] >= (51)
-    end
-    var vCgWwB6t[35]
-    if ( not U2fuj5cu(126, 91) > 95 / vCgWwB6t[U2fuj5cu(51, 100)])
-    end
-  end
-  if (-U2fuj5cu(29, 84) / 13 > U2fuj5cu(126, 109) <= -126)
-    var orK =  not 22 < 69 + 112 >= 72
-    U2fuj5cu(p03(), p03())
-    if ( not p03())
-      var yFgIOsn
-      var v857F
-      return 107 and xwq[v857F]
-    end
-    while (p03() == 122 * U2fuj5cu(99, 62))
-      qaN +=  not orK * p03() >= xwq[orK]
-      p03()
-    end
-    xwq[121] = U2fuj5cu(-U2fuj5cu(75, orK), orK)
-  end
-end
+var uMlKDf = none
 
-var s9LFJ[125]
-
-var N7pJsw = 22
-
-var M8zWHfI = 21
-
-function C4KL6(M54pcyG, gjgu, sHCV72U, Q1oN, Kjzpw0, Lvl)
-  var L8V
-  C4KL6(p03(), L8V, -39, N7pJsw, C4KL6(72, N7pJsw, -L8V, L8V, M8zWHfI, N7pJsw), 20)
-  return 121
-  return L8V <  not U2fuj5cu(M8zWHfI, 90) - 83
-  C4KL6(63, -M8zWHfI, L8V, L8V, 90, -M8zWHfI)
-  var FKMNOG[14]
-  U2fuj5cu(M8zWHfI, N7pJsw)
-  var SwdNp = (25 < C4KL6(N7pJsw, M8zWHfI, 105, M8zWHfI, 114, M8zWHfI))
-end
-
-function k1wsMtVU(QLtfj, vDnu787y, vEkyB6tR, YH, fuLfJkn, mk3Az)
-  s9LFJ[58] = -(N7pJsw > C4KL6(M8zWHfI, 23, 114, 98, 8, 75))
-  N7pJsw += -k1wsMtVU(-N7pJsw, M8zWHfI, 107, 82, N7pJsw, M8zWHfI)
-  var VxICd3Q[116]
-  xwq[109] = (M8zWHfI or p03())
-  return N7pJsw >= M8zWHfI
-  C4KL6(M8zWHfI, M8zWHfI, -U2fuj5cu(M8zWHfI, M8zWHfI), M8zWHfI, k1wsMtVU(104, 112, 63, M8zWHfI, 89, M8zWHfI), 82)
-  U2fuj5cu(109, C4KL6(36, 51, M8zWHfI, N7pJsw, 84, 101))
-  var SS
-end
+var TKd9[106]
 

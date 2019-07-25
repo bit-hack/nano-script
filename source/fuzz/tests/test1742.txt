@@ -1,4 +1,4 @@
 # SEED 13063
 
-var JD0R = 15
+var JD0R = "O&`]"
 

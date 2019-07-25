@@ -1,8 +1,8 @@
 # SEED 12757
 
-var RtX4ci6y = 49
+var RtX4ci6y = "_)oHo"
 
-var GICKg[35]
+var K_hRiR[102]
 
-var IR
+var CuGe = none
 

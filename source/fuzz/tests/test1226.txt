@@ -1,55 +1,34 @@
 # SEED 12547
 
 function FPe(ZvX)
-  var N0sU1y = 21
-  return FPe(12)
-  var X0rztC[52]
-  return X0rztC[53] + FPe(29) < FPe(90)
-  var ng2adcee
-  return FPe(ng2adcee)
-  ng2adcee += FPe(FPe(89))
-  FPe(ng2adcee)
-end
-
-var OFMcd[50]
-
-function LwmT1dDc(Ddu8uoJJ, y0, QZZo7, WaJ, TDq)
-  var f6[25]
-  var oi = OFMcd[ not 86 - FPe(26)]
-  return  not FPe(19) >= FPe(14) * (96)
-  WaJ = oi
-  oi = 25 == 46 +  not LwmT1dDc(27, 35, oi, 114, oi) > 29
-  var iQK0M0c
-  LwmT1dDc(iQK0M0c, 25, -LwmT1dDc(55, oi, iQK0M0c, -oi, 117), LwmT1dDc(17, iQK0M0c, 41, -iQK0M0c, iQK0M0c), iQK0M0c)
-end
-
-var ucIEzRw = 40
-
-function zVejWa(Xx, r8WTjA2r, Cq_KIe, eC8, ux, b_0BQOP, VO7LF4Ud)
-  if (ucIEzRw or 107 or -10)
-    if ((63))
-      ucIEzRw = OFMcd[ucIEzRw] >= -ucIEzRw == ucIEzRw
-      VO7LF4Ud += ucIEzRw <= 76 == ucIEzRw > 50
-      while (LwmT1dDc(ucIEzRw, 17, ucIEzRw, ucIEzRw, ucIEzRw) >= 0 / -OFMcd[11])
-        return  not (OFMcd[ucIEzRw])
-        zVejWa(zVejWa(99, -64, ucIEzRw, ucIEzRw, 107, ucIEzRw, ucIEzRw), 85, 23, 104, 41, 127, -FPe(ucIEzRw))
-        return OFMcd[FPe(ucIEzRw)] <= (LwmT1dDc(ucIEzRw, ucIEzRw, 65, ucIEzRw, ucIEzRw))
-      end
-      zVejWa(FPe(40), 86, LwmT1dDc(97, 64, 120, 95, ucIEzRw), FPe(ucIEzRw), ucIEzRw, ucIEzRw, 26)
+  var N0sU1y = none
+  return FPe("\")
+  var DztC9A[55]
+  FPe(none)
+  var bUt45NUS = DztC9A[-88]
+  FPe(FPe("h"))
+  if (FPe(105))
+    DztC9A[bUt45NUS and FPe(none) - FPe(bUt45NUS)] = DztC9A[FPe(42) - 122]
+    bUt45NUS = (DztC9A["G  A"])
+    FPe(none)
+    if ( not  not FPe("[a9") < FPe(none) >= FPe("L&"v"))
     end
-    OFMcd[34] =  not OFMcd[27]
-    return OFMcd[(LwmT1dDc(119, ucIEzRw, 53, 124, -ucIEzRw))]
-    OFMcd[98] = LwmT1dDc(ucIEzRw, ucIEzRw, ucIEzRw, ucIEzRw, ucIEzRw) == 41
-    LwmT1dDc(ucIEzRw, 122, 40, 42, FPe(ucIEzRw))
   end
-  eC8 += (ucIEzRw) >= ucIEzRw == 96
-  var LB9iCFoH =  not (83) <= OFMcd[ucIEzRw]
-  LwmT1dDc(91, LwmT1dDc(LB9iCFoH, 74, -LB9iCFoH, LB9iCFoH, -120), -LB9iCFoH, 109, 16)
-  zVejWa(124, 69, LB9iCFoH, ucIEzRw, 34, 103, -ucIEzRw)
-  zVejWa(LB9iCFoH, LwmT1dDc(108, ucIEzRw, 55, 125, ucIEzRw), -LB9iCFoH, LB9iCFoH, -FPe(LB9iCFoH), 101, LB9iCFoH)
-  OFMcd[26] = ucIEzRw
-  OFMcd[48] = LB9iCFoH or LB9iCFoH + 55 - ucIEzRw
+  FPe(bUt45NUS)
 end
 
-var KIfjDH = 13
+function CyzC9b(dH, boWNxuel, ybCz4uP4, zS, ca32Mq, IBZ6)
+  CyzC9b(FPe(49), none, FPe("rA("), FPe("w/9H4"), CyzC9b(61, 79, 56, none, none, "_!;"), none)
+  var ux
+  return ux and "mT" < ux
+  return ",!r" - "=g" * "3u#B" == ux
+end
+
+var JJig_MH
+
+var XrnVknvY[80]
+
+var WxnmbZZ[117]
+
+var mzyYAFWf
 

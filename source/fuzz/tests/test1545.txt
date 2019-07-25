@@ -1,14 +1,15 @@
 # SEED 12866
 
 function O6Tk(bQvq43)
-  if ( not O6Tk(12) >= O6Tk(51) or O6Tk(68))
-    O6Tk(52)
+  if ( not O6Tk(none) >= O6Tk(none) or O6Tk(none))
+    O6Tk(4)
+    var p4zfng
   end
-  var Sz[90]
-  while (Sz[120])
-    var yJEwwf
+  if ("h!Dx")
+    while (((O6Tk("m"))))
+    end
   end
-  Sz[43] = 34
-  var XgAJ_E89[84]
+  O6Tk(O6Tk(none))
+  var ERr6b2x
 end
 

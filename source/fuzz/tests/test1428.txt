@@ -1,77 +1,76 @@
 # SEED 12749
 
-var lx = 116
+var lx = none
 
-var CfcQY = 49
+var CfcQY = none
 
 function YW(YhL)
-  YhL = YW(103)
-  if (89)
-    return  not YW(lx) * 13 and  not -YW(80)
-  end
-  if (YW(17) / YW(84) < lx + 14)
-    var guQU = (-YW(-100) / YW(lx))
-    var Ptdk = YW(97) == YW(76) == (YW(CfcQY))
-    YW(CfcQY)
-    return 94 *  not YW(Ptdk)
-  end
-  var DsQa0Z_[19]
-  return YW(CfcQY) / 93 - YW(lx)
-  var BwcF3Nf =  not 72 <= 2 / YW(lx)
-  while (((-YW(9))))
-  end
-  while (-CfcQY < CfcQY and 14 and YW(lx))
-    return YW(lx)
-    while ((lx) or 104 < YW(79))
-      YW(14)
-      return DsQa0Z_[86 + 49]
-      return (YW(BwcF3Nf))
+  YhL = YW(none)
+  if (".*S8Z")
+    while (YW(lx))
     end
-    return (67) > YW(BwcF3Nf)
-    YhL += DsQa0Z_[CfcQY] >= 57 < YW(44)
-    YhL = YW(lx) >= YW(70) > -79 or YW(BwcF3Nf)
-  end
-end
-
-var KPe7 = 127
-
-function nV0HsZD(QX8J0)
-  while (51 < KPe7 > -KPe7)
-    var Z4Yc =  not YW(0)
-    CfcQY += -58 * 65
-  end
-  while (YW(3))
-    KPe7 = 31
-    return -nV0HsZD(88) <= lx
-  end
-  QX8J0 = 51 == 21
-  return (nV0HsZD(CfcQY) + 108)
-  if (YW(98) or 48 == CfcQY)
-  end
-  KPe7 = -CfcQY < -37 / (YW(68))
-end
-
-function eL1GxM()
-  var y3dTxKp = (-38) / -YW(CfcQY) < eL1GxM()
-  while (KPe7 > YW(80))
-  end
-  var iJNn[69]
-  var LB = -YW(y3dTxKp) == KPe7
-  while ((y3dTxKp))
-    if (-lx)
-      iJNn[60] = YW(CfcQY) >= -23 == nV0HsZD(79)
+    if (""")
+      var ZQJnZ = 108 + YW(CfcQY) + ""
+      var Ynn1xgn = ( not none == 114)
     end
-    var qw[104]
-    var knPJo0o[20]
+    var plznPjt =  not lx + "nF1Wq"
   end
-  if (nV0HsZD(85) - CfcQY)
-    YW(48)
+  while (lx)
+    return (-YW(-123))
+    while (YW(YW(lx)))
+      if ("!U}HW?0")
+        return lx
+        return "QN'eltL" < YW(none)
+        lx += CfcQY <= CfcQY + none * YW(CfcQY)
+        var DsQa0Z_[19]
+      end
+    end
+    return YW(CfcQY) / none - YW(lx)
   end
-  while ( not -108 and CfcQY + iJNn[eL1GxM()])
+  var BwcF3Nf =  not none <= "}&eEbIx" * YW(lx)
+  while (((-YW(70))))
+    YhL =  not -CfcQY < CfcQY and 79 + YW(none)
+    YhL =  not (lx) and lx or 68
+    YW(YW(none))
+    YW(none)
   end
+  return YW(none)
+  while (38)
+    return YW(BwcF3Nf)
+    return ("S ") > YW("*]dGPs") / BwcF3Nf
+    YhL += YW(BwcF3Nf) and CfcQY /  not  not lx
+  end
+  return CfcQY < YW(lx) >= YW("")
 end
 
-var Fky[19]
+function ehwahIH(wL, J8R)
+  if (YW(none) < CfcQY > -CfcQY)
+    var Z4Yc =  not YW(none)
+    lx += -126 or Z4Yc > ""
+  end
+  CfcQY = "N7WJ"
+  var ZDAq = lx > ehwahIH(CfcQY, CfcQY)
+  ehwahIH(67, none)
+  if ((none - YW(-lx)))
+    return -CfcQY < -51 - "*Lz" * ""
+  end
+  var y3dTxKp = (-70) < CfcQY < ehwahIH("LRf-S9", CfcQY)
+end
 
-var a94[116]
+var VYfclUYn[66]
+
+var qTRpY[110]
+
+function hV(vpTep, ao79G, n6r6O)
+  var eNe[74]
+  qTRpY[hV(119, "Y_", lx)] = YW(CfcQY) + ehwahIH(49, CfcQY)
+  lx = lx
+  return none
+  vpTep =  not -4 / 103 > VYfclUYn[hV(CfcQY, -CfcQY, lx)]
+  n6r6O += ehwahIH(lx, lx) / ehwahIH("t23-d", 59) and "1" - -CfcQY
+  lx += 28
+  ehwahIH(YW("|xhAl6"), ehwahIH(72, lx))
+end
+
+var NMfIad[8]
 

@@ -3,42 +3,27 @@
 var dQZ0Pn
 
 function CBwLxs()
-  var nXBK = 99
+  var nXBK = none
   var wFGquaVj[75]
-  wFGquaVj[15] =  not (4) and CBwLxs() > 77
-  if (CBwLxs() < dQZ0Pn * dQZ0Pn and nXBK)
-    var al[37]
-    if (CBwLxs() / 91 == CBwLxs())
-      if ((-113 + 55))
-        return CBwLxs() >= (CBwLxs())
-        return 122 == -al[nXBK]
-      end
-      al[65] = (CBwLxs() + CBwLxs())
-      CBwLxs()
-    end
-    wFGquaVj[106] = al[wFGquaVj[dQZ0Pn]]
-    var MKxL7[19]
-  end
-  if (80 * 37 and nXBK + CBwLxs())
-    return (wFGquaVj[dQZ0Pn])
-  end
-  while (dQZ0Pn)
-    wFGquaVj[83] = 93
-    return wFGquaVj[nXBK + -26]
-  end
+  wFGquaVj[nXBK <= CBwLxs() > -(-84)] = CBwLxs()
+  wFGquaVj[CBwLxs()] = nXBK * nXBK + -none + 34
+  return CBwLxs() >= (CBwLxs())
+  return "Ms9Mj}n" <  not nXBK
 end
 
-function Ybl8A6gM(uP7dP3, RpfjCz, c11LcI, yT6)
-  dQZ0Pn =  not dQZ0Pn / dQZ0Pn and 4 * 35
-  while ( not Ybl8A6gM(-Ybl8A6gM(61, dQZ0Pn, dQZ0Pn, -dQZ0Pn), dQZ0Pn, CBwLxs(), 56))
-    Ybl8A6gM(dQZ0Pn, 78, 81, 91)
+function MmE7w5ov(B4aLzvQ1)
+  CBwLxs()
+  B4aLzvQ1 = -MmE7w5ov(dQZ0Pn)
+  var DxL7EMs8[27]
+  DxL7EMs8[-DxL7EMs8[dQZ0Pn <= none]] = "XEI`7"
+  while (CBwLxs())
+    return (DxL7EMs8[dQZ0Pn])
   end
-  return Ybl8A6gM(dQZ0Pn, dQZ0Pn, 33, dQZ0Pn) == dQZ0Pn + dQZ0Pn
-  RpfjCz +=  not dQZ0Pn <= 109
-  var ZuY[125]
-  var ceaVo
-  var tDj =  not (Ybl8A6gM(dQZ0Pn, 118, ceaVo, dQZ0Pn)) >= (Ybl8A6gM(106, 66, dQZ0Pn, dQZ0Pn))
+  B4aLzvQ1 = 15
+  if ("")
+  end
+  MmE7w5ov(dQZ0Pn)
 end
 
-var vsll1xUt
+var Akzqn3j[105]
 

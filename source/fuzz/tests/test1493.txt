@@ -2,5 +2,5 @@
 
 var yRK[75]
 
-var C0rcPq2 = 12
+var C0rcPq2 = none
 

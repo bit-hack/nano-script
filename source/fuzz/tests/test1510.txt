@@ -1,80 +1,60 @@
 # SEED 12831
 
 function rbO4sQC(TY2R, OEyOmrhS, fjz1i, GtnDyhy4)
-  var aSH619A =  not  not 127 >= 17 == rbO4sQC(-102, 84, 111, 92) or rbO4sQC(43, -122, 75, 62)
-  var Vw3Xe = (aSH619A) + aSH619A
-  rbO4sQC(Vw3Xe, rbO4sQC(Vw3Xe, -aSH619A, -Vw3Xe, Vw3Xe), Vw3Xe, rbO4sQC(-24, 122, aSH619A, -Vw3Xe))
-  rbO4sQC(Vw3Xe, 10, aSH619A, aSH619A)
-  if (rbO4sQC(rbO4sQC(29, aSH619A, aSH619A, 28), 17, 14, rbO4sQC(-aSH619A, 17, 73, aSH619A)))
-    Vw3Xe = 76 - 15 /  not 125 + rbO4sQC(21, 48, 75, 76)
-    var LMe32P = aSH619A and (rbO4sQC(aSH619A, 115, aSH619A, 79))
-  end
-  if (9 <= aSH619A > aSH619A == aSH619A)
-    Vw3Xe +=  not aSH619A <= 85
-    GtnDyhy4 = (51)
-    aSH619A += Vw3Xe < 40 / Vw3Xe
-    while (41 and  not 91)
-      var fWqgKWz = rbO4sQC(99, Vw3Xe, 13, rbO4sQC(Vw3Xe, Vw3Xe, 36, 95))
-      return 9
-      var TE4_SC = 107 - -rbO4sQC(28, 23, Vw3Xe, Vw3Xe)
-      rbO4sQC(rbO4sQC(45, -TE4_SC, fWqgKWz, -54), 112, TE4_SC, rbO4sQC(aSH619A, 95, 50, aSH619A))
+  var aSH619A =  not  not 20 == rbO4sQC(none, -"v", none, none) < "I2"
+  var qG = rbO4sQC("'^H<o", aSH619A, rbO4sQC(aSH619A, aSH619A, -none, 58), aSH619A)
+  rbO4sQC(-aSH619A, qG, qG, rbO4sQC(qG, -aSH619A, -qG, qG))
+  if (-"<[R")
+    rbO4sQC(rbO4sQC(-none, 49, -qG, 109), qG, 69, aSH619A)
+    if (rbO4sQC(rbO4sQC(9, -"aXPV|H", qG, "W;_,"), rbO4sQC(aSH619A, none, none, none), aSH619A, "e\AV'"))
+      var L08b[106]
     end
+    var CORHB
+    return  not " " > qG + 56
   end
+  while (rbO4sQC(rbO4sQC(-none, "+S0VH", aSH619A, qG), aSH619A, rbO4sQC(aSH619A, none, aSH619A, none), "IDZiO0"))
+    fjz1i += rbO4sQC(aSH619A, "[R2,\wI", qG, -none) < "mw5A" <= -rbO4sQC(117, "zGxZX", qG, none) > aSH619A
+  end
+  aSH619A = qG <= qG
 end
 
-function HG(gDJ7CFw, S9GFUB, LZRMsa, rm, vXXQ5, leOlbpww)
-  return 45 or (112)
-  return 61
-  while ((rbO4sQC(47, -8, 102, 10)))
-    var IRLrX[75]
-    var EJ0s8l
-    var xUp = 69
-    if (( not  not 6 / HG(47, 10, EJ0s8l, 27, 105, 95)))
-      var F3Rp2O4[129]
-    end
-  end
-  return 83 + 29 and  not -92 <= 29
-  var ZvnG = (rbO4sQC(82, 35, 15, -3) < rbO4sQC(68, 88, 68, 101))
-  ZvnG = HG(-78, 101, ZvnG, ZvnG, ZvnG, 70) and -HG(25, 74, ZvnG, ZvnG, -ZvnG, -15) / 96 or ZvnG
-  while (ZvnG)
-    while (rbO4sQC(26, rbO4sQC(ZvnG, -77, ZvnG, 13), 84, HG(ZvnG, ZvnG, ZvnG, ZvnG, 50, ZvnG)))
-      if ( not HG(43, -ZvnG, ZvnG, 61, ZvnG, ZvnG) + HG(ZvnG, ZvnG, 119, ZvnG, 29, ZvnG) == 96)
-        return 4
-        ZvnG += ZvnG
+function pOE4_(dAZ, zqaQcpz, Hy7vL7, ddhneg6)
+  if (none and rbO4sQC("EU0", none, none, -15))
+    var GHhJyH[24]
+    if (none < pOE4_("]Ym'RV", "g/c(/", none, -none) + (none))
+      if (GHhJyH[rbO4sQC("", none, none, none) or none])
       end
-      var WRLLy1 =  not ZvnG
-      rm += -rbO4sQC(30, -60, WRLLy1, 61) <= WRLLy1
     end
-    HG(HG(ZvnG, 95, 93, 86, 24, ZvnG), ZvnG, HG(ZvnG, 17, 75, ZvnG, 14, ZvnG), 59, -rbO4sQC(ZvnG, ZvnG, 127, ZvnG), ZvnG)
+    return ""
   end
-  while (ZvnG)
-    if (ZvnG + ZvnG + rbO4sQC(-ZvnG, ZvnG, -ZvnG, ZvnG))
+  var WgAM[116]
+  return  not (pOE4_(none, ";DhlZ", "hyNkGZa", none) == -none)
+end
+
+var sU[37]
+
+function IbQDvvn(P8PJim0, rbs0V, Bna50, tjL1oP, H2eFiB6T)
+  if (-none)
+    return  not IbQDvvn(none, none, "Jl", -124, -"`b F") >= IbQDvvn(none, none, none, 107, 101) or sU[IbQDvvn(none, none, 98, -"3Cd;[N", 7)]
+  end
+  return -(none) - 4 == "SQ}+"
+  if (rbO4sQC(5, -none, "", "Cp?)v") * IbQDvvn(97, none, "x%u]^[", none, none) >=  not sU[88])
+  end
+  var K6q5 = (rbO4sQC(72, -"M).=", "FhA ", 13) + "%`0Wk")
+  rbs0V += none - K6q5 <= (K6q5)
+  sU[(IbQDvvn(K6q5, "\yK#]3?", K6q5, K6q5, 123)) or K6q5] =  not  not sU[5]
+  if (none)
+    sU[sU[K6q5] or pOE4_(K6q5, K6q5, 70, K6q5) >= K6q5] = K6q5 + K6q5 + rbO4sQC(-K6q5, K6q5, -K6q5, K6q5)
+    sU[K6q5] =  not IbQDvvn(K6q5, none, K6q5, none, "6") >= ""*OAJj" <= -K6q5
+    sU[(rbO4sQC(none, K6q5, "3a", K6q5)) == 75 == IbQDvvn(-K6q5, K6q5, K6q5, K6q5, K6q5)] = none
+    if (pOE4_(K6q5, K6q5, none, none) > 85 or pOE4_(none, K6q5, none, K6q5) + IbQDvvn(K6q5, -"iJ4:K", none, -K6q5, K6q5))
     end
-    leOlbpww +=  not rbO4sQC(ZvnG, 127, ZvnG, 59) * 9 and rbO4sQC(-27, 49, ZvnG, 76) and rbO4sQC(ZvnG, ZvnG, ZvnG, -ZvnG)
-    while (94 <= -rbO4sQC(ZvnG, ZvnG, ZvnG, ZvnG) or rbO4sQC(ZvnG, 49, 11, ZvnG))
-      HG(40, -19, ZvnG, 127, rbO4sQC(ZvnG, ZvnG, ZvnG, -78), -ZvnG)
-      return HG(ZvnG, -rbO4sQC(ZvnG, ZvnG, 9, ZvnG), HG(ZvnG, 120, -ZvnG, ZvnG, ZvnG, ZvnG), -HG(ZvnG, ZvnG, ZvnG, 79, -ZvnG, ZvnG), ZvnG, 12)
-      var nkk = ZvnG
-    end
-    var qtAt[73]
+    var ax9Ga4X = K6q5
+  end
+  while ((pOE4_(-";;O", K6q5, none, 15)))
+    return (sU[75])
   end
 end
 
-function vpTBp(gvqQFn)
-  if (rbO4sQC(HG(33, 109, 82, 5, 83, 58), 42, 0, 95))
-  end
-  if ( not -(HG(30, 5, 50, 39, 6, 9) or HG(-49, 42, 97, 50, 26, 34)))
-    var KWrjQ_D
-  end
-  while (HG(66, 126, 75, 43, 98, 113) / 73 + rbO4sQC(-33, 58, 11, 31))
-    var TqpKSU = rbO4sQC(120, -105, 117, 54) or 42 or rbO4sQC(118, -79, 113, 43) > 119
-    TqpKSU += vpTBp(TqpKSU) / TqpKSU <= rbO4sQC(TqpKSU, 38, -TqpKSU, TqpKSU) / TqpKSU
-  end
-  vpTBp(-vpTBp(64))
-  rbO4sQC(112, vpTBp(126), vpTBp(72), vpTBp(125))
-end
-
-var R8w0l
-
-var NkO[15]
+var TrijGk[124]
 

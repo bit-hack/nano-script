@@ -4,5 +4,5 @@ var OmVNT[123]
 
 var PFMN
 
-var ALWrJ = 3
+var ALWrJ = 27
 

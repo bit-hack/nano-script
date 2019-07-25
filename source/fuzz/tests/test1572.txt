@@ -13,14 +13,11 @@ var b3
 var HSj5InK[118]
 
 function I6akNKd()
-  HSj5InK[42] = b3
-  if (b3)
-    var iFgb6[88]
-  end
+  HSj5InK[KsAwCnB] = -(b3)
+  var iFgb6[88]
   var iWPjeky = (KsAwCnB / KsAwCnB)
   var gUbKxtA
-  lCCFJx4M[1] = 82
 end
 
-var fN
+var RzWWEVW
 

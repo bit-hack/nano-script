@@ -2,5 +2,5 @@
 
 var QsAu
 
-var eU = 125
+var eU = 50
 

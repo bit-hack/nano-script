@@ -1,41 +1,30 @@
 # SEED 13184
 
-var eF = 62
+var eF = none
 
-var Mz = 57
+var Mz = 98
 
-function fhO(n1IJhvXJ, iypEgffB, vS, D3z, Nsj)
-  while ((-Mz) / fhO(eF, eF, 35, Mz, 70))
-  end
-  return eF or (eF)
-  eF += fhO(-47, -Mz, fhO(8, 106, eF, -39, eF), 107, eF)
-  var AU[40]
-  fhO(Mz, Mz, fhO(122, 127, 78, 63, 15), eF, 5)
-  var IUnn[17]
-  var foD
-  D3z = Mz >= fhO(eF, -63, 84, 31, foD) <=  not Mz <= -eF
-end
+var JOe = ""
 
-function IKCM(Wy3ucp, VQwIcoZl, Ru)
-  var xfR3bT = fhO(64, -2, 14, 14, Mz) or -eF >= 48 + 121
-  Wy3ucp += fhO(Mz, Mz, 92, Mz, xfR3bT) and 5 + (eF)
-  if (IKCM(xfR3bT, fhO(46, xfR3bT, -eF, eF, eF), 19))
-    while ( not 106)
-      var NXJT = xfR3bT
-      if (-122 < xfR3bT and IKCM(12, -64, 71))
-        Wy3ucp = fhO(15, eF, NXJT, Mz, eF) or IKCM(-44, 1, -xfR3bT)
-        var D_1I_DVT
-        xfR3bT += 86 / NXJT > Mz * 39
-        return xfR3bT >= fhO(eF, -8, Mz, 93, 69) * NXJT and NXJT
-      end
+function evX(iypEgffB)
+  var jQV3zQ[127]
+  if (JOe)
+    jQV3zQ[(-Mz / evX(eF))] = evX(101)
+    return Mz - evX(none) > -eF + "[*.%"
+    while ((jQV3zQ[evX(-none)]))
+      evX(Mz)
     end
+    JOe = Mz +  not  not  not Mz
   end
-  return IKCM(98, 119, fhO(xfR3bT, xfR3bT, 107, -Mz, xfR3bT))
-  xfR3bT +=  not IKCM(IKCM(100, eF, 52), fhO(Mz, 95, 93, xfR3bT, Mz), 51)
-  IKCM(56, -Mz, 97)
-  while (fhO(49, Mz, IKCM(69, 95, 33), 114, 68))
+  jQV3zQ[none] = JOe - (eF)
+  return jQV3zQ[JOe > evX(30)]
+  return jQV3zQ["n%" == -evX("")]
+  while (none)
+    return 98
   end
+  jQV3zQ[jQV3zQ[jQV3zQ[eF]]] = "0"
+  var anlZQ3o[81]
 end
 
-var cevZt[129]
+var LX[70]
 

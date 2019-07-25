@@ -5,22 +5,18 @@ var c0p385G[64]
 var jaD
 
 function bPz(Lbe, mEVtky1_)
-  if (57 and bPz(92, jaD) > 97)
-    var qVvRCX4b = 80
-    return jaD and 120 <= 38 >= qVvRCX4b
-    var BDiOd[22]
-    return 17 or 126 - jaD
-    return (bPz(qVvRCX4b, -64) or bPz(qVvRCX4b, qVvRCX4b))
+  if ("## vIo`" and bPz(90, jaD) == bPz(jaD, jaD))
+    return bPz(jaD, none) <= bPz(69, jaD) * (bPz(jaD, -"2"))
+    return jaD + jaD + jaD
+    Lbe += bPz(jaD, bPz(jaD, -jaD))
   end
-  jaD += c0p385G[jaD * jaD]
-  jaD +=  not -bPz(51, 50) - jaD >= jaD
-  if (-bPz(jaD, -jaD))
-    c0p385G[19] = 61 - -74 / 30
-    jaD += c0p385G[jaD]
+  jaD =  not jaD <= jaD < jaD > none
+  c0p385G[(-jaD - bPz(53, 28))] = ("UsGIA&" > jaD)
+  bPz(none, jaD)
+  if (c0p385G[bPz(jaD, jaD)] - jaD < bPz(jaD, 39))
   end
-  bPz(30, bPz(jaD, 100))
-  jaD += jaD + 72 > jaD
-  jaD = jaD
-  var DiTf
+  var tF8WFP[8]
+  jaD +=  not jaD / jaD
+  c0p385G[jaD] =  not (("&?_"))
 end
 

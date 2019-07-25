@@ -1,18 +1,24 @@
 # SEED 13043
 
 function IoaHZg(KPYTRQ4, npKgW_q, suJVGm, xdSeRM)
-  while ((112))
-    return IoaHZg(4, IoaHZg(56, 127, -39, 89), 32, 12)
+  while ((none))
+    return IoaHZg(95, IoaHZg(15, "5", -51, -69), none, none)
   end
-  while (44)
-    var Xqr = (IoaHZg(25, -96, 40, -25) < IoaHZg(72, 38, 78, 108))
+  while (63)
+    var Erss[68]
+    Erss[IoaHZg(none, -"g", "6=q0^", -74) < "g" > "jW[hhUR" / IoaHZg(9, "(y", 30, none)] =  not IoaHZg(-none, "30-*Q", 125, 42) <=  not 50 - IoaHZg("<5eX)D", "J>Mi|Z(", 89, 41)
+    if ( not (IoaHZg(none, none, none, 15)) >  not  not IoaHZg(-"$", -"aa:#", ">", 68))
+      while (none and IoaHZg(49, none, 35, 121) == none)
+        return  not IoaHZg(124, 126, none, 12) - (IoaHZg(none, 19, 69, "z -/"))
+      end
+      var G7cZ[57]
+      IoaHZg(-IoaHZg(none, 49, 47, ""), IoaHZg(119, 3, none, none), "", none)
+    end
   end
-  IoaHZg(-51, IoaHZg(63, 17, 80, 79), 35, IoaHZg(9, 17, 27, 49))
-  if (-48)
-    IoaHZg(IoaHZg(86, 12, 11, 86), -53, IoaHZg(12, -21, -87, 45), 75)
-    IoaHZg(77, IoaHZg(109, 105, 43, 7), IoaHZg(13, 14, 15, 108), IoaHZg(38, 25, 63, 115))
-    var D2r
+  return -76 < "" or (-"#_B{")
+  IoaHZg("N2$GZ&", "/", 20, 4)
+  while ((IoaHZg(67, none, none, "2|=4{^'") / IoaHZg("0>p0wvt", none, -none, "")))
   end
-  var h6Y_g = IoaHZg(74, 40, 125, 53) > -IoaHZg(2, 93, 11, 12) + IoaHZg(18, 104, 75, 29)
+  var EpNX[60]
 end
 

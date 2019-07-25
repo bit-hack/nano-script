@@ -1,93 +1,48 @@
 # SEED 13110
 
 function EYn944(o4vP, yenp8c)
-  if (EYn944(EYn944(97, 56), EYn944(60, 65)))
-    EYn944(98, EYn944(8, 73))
-    var B4E
-    while (EYn944(B4E, B4E) < (B4E))
-      while (B4E > EYn944(B4E, B4E) <= -54)
-      end
-      if ((117 > B4E))
-      end
-      return  not (B4E * B4E)
-      return B4E
-    end
-    yenp8c = B4E
-    while (39)
-      var BWA = EYn944(B4E, B4E) + EYn944(66, 105) or B4E / -EYn944(B4E, 26)
-      B4E = EYn944(-BWA, EYn944(B4E, 13))
-    end
+  if (EYn944(EYn944(35, none), 122))
   end
-  return EYn944(23, 39) > 59 <= EYn944(27, -127)
-  return ((95))
-  EYn944(28, 7)
-  var _hISUgl[100]
-end
-
-var TzsTLYSS
-
-function k3d3H0B(hKXDM0C, A79p_0FG, zGDagzyJ, rP, nU3zt6e, UbW, EwLGAwRs)
-  var kmX2Dw[7]
-  EYn944(TzsTLYSS, -EYn944(-17, -21))
-  nU3zt6e += -((113))
-  k3d3H0B(119, k3d3H0B(92, TzsTLYSS, 51, 17, -61, TzsTLYSS, 90), TzsTLYSS, 58, EYn944(TzsTLYSS, TzsTLYSS), k3d3H0B(TzsTLYSS, 124, TzsTLYSS, 8, 37, 35, 113), 42)
-  while (112 < TzsTLYSS >= 110)
-    nU3zt6e = (kmX2Dw[EYn944(TzsTLYSS, 99)])
-    UbW += k3d3H0B(TzsTLYSS, TzsTLYSS, 83, 24, 114, TzsTLYSS, -37) or k3d3H0B(70, 15, 72, 51, TzsTLYSS, TzsTLYSS, TzsTLYSS) + -EYn944(36, 102) + TzsTLYSS
-    TzsTLYSS += EYn944(TzsTLYSS, TzsTLYSS)
-    if (-k3d3H0B(TzsTLYSS, EYn944(-105, TzsTLYSS), k3d3H0B(53, 21, TzsTLYSS, 90, TzsTLYSS, TzsTLYSS, TzsTLYSS), k3d3H0B(1, 60, TzsTLYSS, TzsTLYSS, 112, 38, 108), 78, k3d3H0B(103, TzsTLYSS, TzsTLYSS, 38, TzsTLYSS, -TzsTLYSS, TzsTLYSS), TzsTLYSS))
-      return TzsTLYSS < TzsTLYSS
-      TzsTLYSS = -34
-      return  not (-TzsTLYSS)
-    end
+  while (EYn944(EYn944(none, none), EYn944("", "")))
   end
-  TzsTLYSS += EYn944(102, k3d3H0B(121, TzsTLYSS, TzsTLYSS, TzsTLYSS, TzsTLYSS, -77, TzsTLYSS))
-  var eOHA1
-  eOHA1 += 0
-end
-
-var nuW = 97
-
-var _3 = 9
-
-function W4nFnw(UL8_GyY, H8bXM, qBSXXD, RzSDAKpQ, _X4, uLk, fN)
-  while (W4nFnw(nuW, 108, 4, -39, _3, 84, 36) * k3d3H0B(_3, _3, 114, _3, 98, 92, nuW) and 25)
-    return k3d3H0B(TzsTLYSS, nuW, nuW, nuW, TzsTLYSS, nuW, 106)
-    while (28)
-      k3d3H0B(_3, -k3d3H0B(_3, TzsTLYSS, nuW, TzsTLYSS, 75, 105, 66), 62, EYn944(_3, -_3), 100, EYn944(24, 4), W4nFnw(_3, 125, _3, -36, 28, 6, TzsTLYSS))
-      RzSDAKpQ += 88
-      while ( not  not 46 or -(k3d3H0B(-78, 103, 81, -TzsTLYSS, 49, 63, 39)))
-        _3 += nuW
-      end
-      var xRuYktUB[6]
-      H8bXM =  not k3d3H0B(TzsTLYSS, 80, 25, 52, TzsTLYSS, TzsTLYSS, 38) >  not 125 > -_3
-    end
-    if (TzsTLYSS)
-      k3d3H0B(-EYn944(94, _3), EYn944(TzsTLYSS, 77), W4nFnw(_3, 82, 19, TzsTLYSS, nuW, nuW, -TzsTLYSS), k3d3H0B(-21, 104, 16, 41, _3, TzsTLYSS, nuW), -3, 66, 56)
-      if (EYn944(TzsTLYSS, nuW))
-        W4nFnw(k3d3H0B(2, nuW, _3, 93, 67, 17, -81), 84, 96, 121, 92, W4nFnw(_3, nuW, TzsTLYSS, -_3, -TzsTLYSS, nuW, 17), TzsTLYSS)
-        var IB1Ya9fJ = TzsTLYSS
-        var xz6c
-      end
-      uLk = -k3d3H0B(TzsTLYSS, _3, k3d3H0B(125, nuW, 117, _3, TzsTLYSS, -19, nuW), EYn944(63, nuW), nuW, 67, -_3)
-    end
-    RzSDAKpQ = 40 + TzsTLYSS or -(-TzsTLYSS)
+  EYn944("", EYn944(-117, "R<WLx>"))
+  while ( not EYn944(-none, 89) - -EYn944(75, "-sq+5s") ==  not 14)
+    return -EYn944(2, "f<8%[{") - EYn944(none, 121) >= EYn944(";r", -"<") and ""zf4g9V"
+    var wK = 15
   end
-  if ( not  not TzsTLYSS >= nuW < EYn944(111, 94))
+  while ( not  not EYn944(-"", 38) < EYn944(61, -none) < none)
   end
-  EYn944(TzsTLYSS, 123)
-  return 117
-  var rQrl[68]
-  H8bXM = -TzsTLYSS
-  RzSDAKpQ = TzsTLYSS <= k3d3H0B(117, nuW, 51, TzsTLYSS, 91, 61, nuW) or (_3)
-  if (10)
-    rQrl[38] =  not 97 < 49 >= -EYn944(50, 88) < 48
-    var Ce[25]
-    while (Ce[nuW < 116])
-      TzsTLYSS =  not EYn944(-_3, 55) / EYn944(29, _3) - Ce[-TzsTLYSS]
-      Ce[55] = (W4nFnw(61, _3, 91, 0, TzsTLYSS, 34, _3)) or k3d3H0B(41, nuW, 63, -TzsTLYSS, TzsTLYSS, nuW, nuW)
-      nuW += _3
-    end
+  while ( not (none) * EYn944(none, none) or EYn944(118, 49))
   end
 end
+
+function o5(E9w, np5, t9X4IY7, Qp7P)
+  var FzQ12f[31]
+  FzQ12f[79 > o5("|", none, 119, 5) > "-4+^f" and -o5("m"st7J", none, none, 91)] = FzQ12f[o5("O^X0=L", 55, none, 118) <= o5(none, "+:X<", none, none)]
+  o5(none, EYn944(110, none), o5(none, "kfC", "yf(;", 103), ":|z2-+")
+  FzQ12f[FzQ12f[none]] = o5(61, none, o5(none, "z", "y1-".", -none), EYn944("0dAWc<", none))
+  o5(none, EYn944(24, -none), EYn944(none, 89), o5("R", 26, none, "Q"))
+  o5(none, EYn944(56, "TQbO(7*"), 8, none)
+end
+
+var L7y[57]
+
+function F6Ep4e(YHh0, VnX2, qrG5)
+  o5(-F6Ep4e(none, "#R", none), EYn944(16, "e"), none, F6Ep4e(none, 70, -none))
+  return ((-F6Ep4e(110, none, "EV$`a^")))
+  F6Ep4e(26, none, 85)
+  o5(o5(65, 119, 9, "RU"), 80, F6Ep4e(none, "(9Ht", -12), none)
+  o5("7Z", 46, none, o5(2, 73, " *L&ak", 16))
+end
+
+function wH(g1Zr, OK, hE8)
+  wH(wH(-none, none, 9), EYn944(-68, "*s"), EYn944("m+P)_^", "(CWX"))
+  var vmBRqmL[44]
+  vmBRqmL[ not o5(none, -F6Ep4e(8, 124, "V-dsG7"), wH(" I}`ac", -none, none), wH(98, none, -"b{S"))] =  not o5(35, 4, 5, none) - "?H:R$o" +  not ":Gc" <= 13
+  vmBRqmL[(106) <= 51 < 102] = vmBRqmL[ not EYn944(none, "lKEE.h") >= EYn944(89, "y]pO>")]
+  return none == EYn944(-none, "u`t") and o5(none, none, none, "")
+  return vmBRqmL["[k.Eon|"] == o5(none, none, "pA$<", "q[bd*&") + -"RwQp"
+end
+
+var mYP1 = none
 

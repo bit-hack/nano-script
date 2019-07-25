@@ -2,38 +2,33 @@
 
 var GuyD[42]
 
-var VMJGxRh = 35
+var VMJGxRh = ",Lc"
 
-function B5RVawye(M5lBzLk, F6)
-  GuyD[114] = GuyD[B5RVawye(VMJGxRh, -96)] or -B5RVawye(VMJGxRh, VMJGxRh) >= B5RVawye(VMJGxRh, VMJGxRh)
-  VMJGxRh += GuyD[1 + B5RVawye(52, VMJGxRh)]
-  return VMJGxRh
-  var VLJwu[58]
-  return 14
-  GuyD[58] = VMJGxRh / 15 - 118 * B5RVawye(44, 64)
-  B5RVawye(-VMJGxRh, B5RVawye(34, -120))
-  while (125 >= VMJGxRh and 13)
-    F6 += B5RVawye(B5RVawye(51, VMJGxRh), VMJGxRh)
+function XwyeyGh5()
+  if (none)
+    while ((VMJGxRh))
+    end
+    var urP0d[74]
+  end
+  GuyD[-VMJGxRh + VMJGxRh >= VMJGxRh or -none] = (VMJGxRh) >= XwyeyGh5()
+  XwyeyGh5()
+  var EIK[104]
+  return -(1) + XwyeyGh5()
+  GuyD[none] = ((XwyeyGh5()))
+  if (VMJGxRh)
+    while (XwyeyGh5())
+    end
+    while (VMJGxRh == -XwyeyGh5())
+    end
+    var un2d
   end
 end
 
-var TEJ[5]
+var NkL
 
-var CPQJcm[104]
+var cj9lYu[83]
 
-var crx[112]
+var tIX[9]
 
-function Ku(QU)
-  B5RVawye(VMJGxRh, 0)
-  TEJ[46] = -crx[TEJ[VMJGxRh]]
-  var Vw6SG19O[63]
-  return GuyD[VMJGxRh - B5RVawye(VMJGxRh, 67)]
-  if ((VMJGxRh) <= Ku(94))
-    Ku(97)
-    var zeIpg[90]
-  end
-  QU =  not Ku(-21) > B5RVawye(VMJGxRh, VMJGxRh) <= Ku(61)
-  VMJGxRh = (B5RVawye(VMJGxRh, VMJGxRh)) - (VMJGxRh)
-  var zMwcX = Vw6SG19O[B5RVawye(110, VMJGxRh)]
-end
+var a9mGjzJ = 109
 

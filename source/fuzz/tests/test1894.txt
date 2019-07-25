@@ -15,19 +15,13 @@ var NYN
 var mTHM[10]
 
 function O5Ttg(wAJlGGw, Wos)
-  wAJlGGw +=  not (O5Ttg(pLr4d, 116))
+  wAJlGGw +=  not (O5Ttg(pLr4d, none))
   var aLHYhfC
-  O5Ttg(pLr4d, 106)
-  pLr4d += -18
-  O5Ttg(pLr4d, O5Ttg(124, 28))
-  while ( not pLr4d)
-    pLr4d = ((NYN))
-    Br4[60] = (71 * NYN)
-    return  not (54)
-  end
-  XVP5sH[32] = 7
-  while ( not NYN)
-    Br4[41] = aLHYhfC and  not 64 / aLHYhfC
-  end
+  O5Ttg(pLr4d, ";\C")
+  return O5Ttg(O5Ttg(none, 67), pLr4d)
+  return NYN + none * NYN + ""
+  aLHYhfC = NYN
+  aLHYhfC += aLHYhfC and none / aLHYhfC
+  aLHYhfC += O5Ttg(NYN, "asR8q") >= "Jq" + -aLHYhfC or "c!E{Pw"
 end
 

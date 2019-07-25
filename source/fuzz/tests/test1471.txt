@@ -1,27 +1,82 @@
 # SEED 12792
 
-var Q80c5J4D = 123
+var Q80c5J4D = 42
 
-var tkp
-
-var bT
+var vpPluqT[73]
 
 var EN[113]
 
 function YG(EHFK, nKG5QHM, Ggf, jCrKJtd)
-  return YG(58, 9, YG(4, -Q80c5J4D, bT, tkp), tkp)
+  return YG(none, "fKH,", YG(Q80c5J4D, "7o<VXs", Q80c5J4D, Q80c5J4D), Q80c5J4D)
   var iYpry9[88]
-  var EC2M1 = 115 and 91 - Q80c5J4D * Q80c5J4D
-  iYpry9[87] = 4 < 38 * bT <= tkp
-  var hsM62nB =  not Q80c5J4D - 12 + 109 == 15
-  iYpry9[30] = EN[75 and 44]
-  tkp = YG(23, EC2M1, hsM62nB, 123)
-  return EN[6] > iYpry9[103]
+  var EC2M1 = none and none - Q80c5J4D * Q80c5J4D
+  vpPluqT[-YG(21, Q80c5J4D, -"/i4`", Q80c5J4D) - none + 38 + none] = YG(Q80c5J4D, none, none, 12)
+  return 9 - Q80c5J4D <= none > EC2M1
+  var BjR2d[105]
+  EC2M1 = none or 46 <= EC2M1 <= YG(EC2M1, EC2M1, "", Q80c5J4D)
+  YG(EC2M1, -9, YG("", EC2M1, Q80c5J4D, Q80c5J4D), EC2M1)
 end
 
-var pVVkcaqx[88]
+function jP7E(VqvIp1gA)
+  return none * jP7E(32) / Q80c5J4D > 39
+  while (EN[jP7E(91)] < none and jP7E(Q80c5J4D))
+    vpPluqT[(Q80c5J4D)] = jP7E(-jP7E(34))
+    vpPluqT[(Q80c5J4D) - (Q80c5J4D)] = "R:"$d" + -Q80c5J4D >= jP7E(none)
+    return YG(Q80c5J4D, 94, Q80c5J4D, Q80c5J4D) >= Q80c5J4D or 35
+    if (YG(jP7E(Q80c5J4D), jP7E(Q80c5J4D), Q80c5J4D, none))
+      while (YG(Q80c5J4D, Q80c5J4D, jP7E(46), Q80c5J4D))
+        Q80c5J4D += 41 >= Q80c5J4D - Q80c5J4D or jP7E("")
+        var OX4ydyj = Q80c5J4D + Q80c5J4D
+        if (83)
+          OX4ydyj = -vpPluqT[-none]
+        end
+        return jP7E(-none) and OX4ydyj < jP7E("} a")
+      end
+      if (-none + Q80c5J4D > (jP7E(none)))
+        var OP6aZ[120]
+      end
+      var h8Ly
+      jP7E(Q80c5J4D)
+    end
+  end
+  return (98)
+  var TMMzb1[23]
+  EN[YG(Q80c5J4D, "6mW", "<x", YG(Q80c5J4D, none, Q80c5J4D, Q80c5J4D))] =  not jP7E(8) >= Q80c5J4D + YG(Q80c5J4D, "<yO&", Q80c5J4D, Q80c5J4D) <= YG(Q80c5J4D, -"Ia?", none, Q80c5J4D)
+  var EU
+  Q80c5J4D += Q80c5J4D < YG(Q80c5J4D, none, "!oy"!c4", none)
+  var Oa2r[64]
+end
 
-var rhMK
+var rZ = 123
 
-var dAQoy
+function L2t0Kr(xPqL481, XTY, JlR, Vq, iFiiB0, Rjzh9T, _mz5J)
+  rZ += -none
+  return  not -(Q80c5J4D)
+  if (jP7E("iDn8H,") or EN[rZ])
+    rZ += rZ
+    vpPluqT[YG(rZ, "$", none, none)] =  not (YG(rZ, -Q80c5J4D, -none, Q80c5J4D))
+  end
+  if (Q80c5J4D / rZ == EN[YG(Q80c5J4D, "9HA"7n", 78, Q80c5J4D)])
+    _mz5J = none
+  end
+  EN[(-jP7E("@=e}"))] = (-rZ) or EN[L2t0Kr(Q80c5J4D, "1", 71, -Q80c5J4D, 16, rZ, rZ)]
+  while (-none)
+    vpPluqT[Q80c5J4D -  not (-Q80c5J4D)] = 83
+    if (vpPluqT[Q80c5J4D])
+      return  not rZ >= 73 < EN["*1w"]
+      Q80c5J4D = 69 < L2t0Kr(none, "", Q80c5J4D, "mvRYv!", Q80c5J4D, rZ, rZ) >= none
+    end
+    while (EN[ not 124 - jP7E(5)])
+      var Au87LVzy
+      var sTsIbohB[118]
+      vpPluqT[L2t0Kr(-none, YG("LNi`", -"f", 52, Au87LVzy), "419>m*", 25, Au87LVzy, L2t0Kr(33, rZ, Q80c5J4D, "4*{Li", Q80c5J4D, 101, 63), "LDPi:=O")] = -"" ==  not  not 79
+      iFiiB0 =  not YG(-Q80c5J4D, Au87LVzy, none, "'Y") + YG(Q80c5J4D, Au87LVzy, rZ, Q80c5J4D) or L2t0Kr(rZ, 127, rZ, none, -rZ, rZ, none) - YG(Au87LVzy, Au87LVzy, Au87LVzy, "1uz1NzJ")
+      var kijaOBz4
+    end
+  end
+  Q80c5J4D = YG("Eto&_>*", ";(`", rZ, -Q80c5J4D) > (Q80c5J4D)
+  jP7E(YG(none, -Q80c5J4D, Q80c5J4D, "u@8JI1="))
+end
+
+var oAPg7N3Z[87]
 

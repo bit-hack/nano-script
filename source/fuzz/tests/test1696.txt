@@ -1,53 +1,56 @@
 # SEED 13017
 
 function CHP(pA34_3, toumoae, Ihp)
-  return 104 + CHP(25, 103, 47) <  not  not 126
-  var Fm = ((CHP(127, 94, 58)))
-  var T_kEYN7f[114]
-  CHP(CHP(62, Fm, Fm), 126, 49)
-  Fm +=  not CHP(Fm, Fm, Fm) or  not 94 + CHP(Fm, Fm, 74)
-  if (Fm)
+  return 52 <= none - -CHP(15, "5{87m", none) > ""
+  return (none == 111)
+  CHP(CHP(53, none, none), 123, CHP(none, 44, -94))
+  return -(107) == CHP(20, "#<S:OGZ", 19)
+  if ((none) >= (CHP(15, -1, 53)))
   end
+  var uJ0zLwHV = none >= (CHP(none, -40, 93))
+  var ttfUM = -uJ0zLwHV
+  CHP(CHP(72, -4, uJ0zLwHV), uJ0zLwHV, uJ0zLwHV)
 end
 
-var Xj_O9[40]
-
-var RFfF = 93
-
-var SBCsQtO = 127
-
-var Tbhk = 123
-
-function WhXSOO9(xzaFufI, ZepUFm, hTNao8_, Kp, F5XmsZ)
-  while (CHP(125, 113, -58) + SBCsQtO and -76)
-    if (58 + SBCsQtO or Tbhk)
-      xzaFufI += CHP(95, 16, 72) >= WhXSOO9(SBCsQtO, -79, 98, SBCsQtO, Tbhk) <  not Tbhk
-      xzaFufI = Tbhk
-      return 56
-      var POtVNO[26]
-      Tbhk += WhXSOO9(CHP(3, -49, Tbhk), Tbhk, Tbhk, RFfF, Tbhk)
-    end
+function Vy(FKKXHgFs, jwUG7)
+  if ((71) > Vy("<3", none))
+    Vy(none, 6)
+    CHP(58, Vy(none, "az,"), "")
   end
-  Xj_O9[17] = -Tbhk
-  return (Xj_O9[SBCsQtO])
-  while (SBCsQtO + WhXSOO9(118, 96, SBCsQtO, 126, RFfF) and SBCsQtO)
-    SBCsQtO += (SBCsQtO <= 99)
-    Xj_O9[7] = Xj_O9[-CHP(59, Tbhk, Tbhk)]
+  if (-CHP(Vy(6, -none), Vy(27, "8\O7_"), none))
   end
-  Xj_O9[93] = -19
-  CHP(WhXSOO9(126, SBCsQtO, SBCsQtO, SBCsQtO, Tbhk), Tbhk, Tbhk)
-  var CWks[115]
-  while ( not 54 and Tbhk + -RFfF > WhXSOO9(44, SBCsQtO, 8, 34, 60))
-    xzaFufI += Tbhk
-    var q4It =  not  not  not 90 - 0 > RFfF
-    if ( not  not CHP(RFfF, 125, q4It) >= q4It <  not 49 and SBCsQtO)
-      while (Xj_O9[(77)])
-        while (Xj_O9[ not -(Tbhk)])
+  while (none > CHP(80, -74, none))
+    while (CHP(2, -none, none))
+      var Dw[24]
+      Dw[ not "" <= none < Vy(none, 81)] = 56 or Vy(47, 66) <=  not 110 or none
+      if ("{H" + -Dw[CHP("dH", -102, none)])
+        if ("1l" > "Hr`zT" - (14))
         end
-        q4It += -(q4It - 110)
+        CHP(Vy(73, none), Vy(10, "-^5G0Qa"), Vy(-69, "Q*]-,6"))
+        Vy(CHP(21, none, none), 125)
       end
-      var bC3nwX
+      var WoG[65]
     end
+    var MS
+  end
+  var Oz3b5M[115]
+  Vy("", CHP(77, 35, ".urOn"))
+  var gzoWo
+end
+
+function A0RH6(qNIv4p, PQeajbw, sFCCbLl)
+  var PO =  not ""
+  Vy(Vy(PO, 64), -32)
+  if (-CHP(PO, none, "") or none or -A0RH6(PO, PO, PO) and -A0RH6(PO, PO, 72))
+    PO += -A0RH6(PO, PO, PO) == PO <= CHP("0Wgy", PO, "7tgw}k&")
+  end
+  if (A0RH6(none, "bh$YqO", Vy(none, PO)))
   end
 end
+
+var Ln[88]
+
+var pseGJvd[118]
+
+var UB[110]
 

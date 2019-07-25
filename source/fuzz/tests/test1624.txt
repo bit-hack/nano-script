@@ -1,4 +1,4 @@
 # SEED 12945
 
-var Nw1ht_W = 67
+var Nw1ht_W = 72
 

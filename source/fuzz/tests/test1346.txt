@@ -1,81 +1,67 @@
 # SEED 12667
 
-var k5w = 100
+var k5w = 102
 
-var Rz6[14]
-
-var tyy_gcY[84]
-
-var Rhn[56]
-
-function gD(tf8e, iwDH, CwAdKT3E)
-  CwAdKT3E += k5w
-  var RYTN[65]
-  if ( not (gD(k5w, 46, k5w)) - 74)
-    if (-116)
-      if (gD(66, -k5w, 64) < (34))
-        gD(gD(103, 112, -k5w), gD(31, 106, 65), gD(k5w, k5w, 126))
-        var N1xyfISQ[16]
-        if (k5w)
-          if ( not -55 / (k5w))
-            CwAdKT3E =  not gD(10, 118, -51) and -k5w > k5w == k5w
-            RYTN[95] = gD(gD(k5w, 44, k5w), gD(k5w, 5, k5w), gD(k5w, 53, k5w))
-            var R7Pi = gD(k5w, gD(73, 71, k5w), 111)
-            var b6Fr7_4[4]
-            var WJt = -gD(k5w, 48, -12) - 43 <= 120
-          end
-          var Zg7Il[104]
-          while (27)
-            k5w = gD(18, k5w, k5w)
-            if ( not N1xyfISQ[gD(k5w, 39, 41) >= gD(84, 110, k5w)])
-              var PMJh22Hn = 118 < 8 <= Rhn[k5w]
-              var AT4b9OY[44]
-              return (k5w - PMJh22Hn)
-              var F6YNHd[4]
-            end
-            gD(-gD(k5w, k5w, k5w), 89, k5w)
-          end
-          var nVc = k5w / k5w
-          while (Rhn[ not 127])
-          end
+function Q66B15yy(gY, Zhi)
+  var eI[56]
+  if (Q66B15yy(k5w, none) * (Q66B15yy(-k5w, -none)))
+    while ((k5w) + k5w - none)
+      if (-none)
+        if (Q66B15yy(none, -k5w) >= "3}" <= Q66B15yy(96, -""))
         end
-        return 70
-        iwDH += -k5w > k5w or -1
+        var nn3jBxgR[32]
       end
-      k5w =  not 28 < gD(27, 21, 117)
+      eI[k5w < Q66B15yy("Z&;9}", 87)] = k5w + 59 / 9 == Q66B15yy("+cD", k5w)
+      if ( not -none / (k5w))
+        gY =  not Q66B15yy("T|&wo", k5w) and k5w * k5w / "fh}`q{v"
+        k5w = Q66B15yy(Q66B15yy(k5w, none), k5w)
+        while (k5w or Q66B15yy("|5$?", none) < "r" + "^B-Z^r*")
+          var PSRYD
+          while (Q66B15yy(Q66B15yy(none, k5w), 71))
+          end
+          PSRYD = Q66B15yy(k5w, 112) <= -eI["yp"]
+          var RK[111]
+          return 120
+        end
+        var Zg7Il[104]
+        while (none)
+          k5w = Q66B15yy(none, k5w)
+          k5w = k5w <  not eI[Q66B15yy(k5w, 49)]
+          eI[Q66B15yy(k5w, "u3G4lH") or none < Q66B15yy(k5w, none)] = k5w * (Q66B15yy(none, k5w))
+        end
+      end
+      Zhi += eI["q"]
     end
-    if (k5w)
-      return  not k5w > k5w
-      if (17 and gD(k5w, 68, k5w) < gD(k5w, 47, 76))
-        var _4TAUf0s[90]
-      end
-      gD(k5w, k5w, 73)
-      if (93 > 44 > 28)
-        iwDH += 80
-        var ap[12]
-        CwAdKT3E += 19 - 23
-        var YfH78 = 104
-        tf8e += YfH78
-      end
-      var iKgP[82]
-    end
-    gD(27, k5w, 89)
-    return (Rhn[k5w])
   end
-  var EkWRh
-  var UBkPY3jF
-  k5w = gD(gD(EkWRh, 24, 108), k5w, UBkPY3jF)
-  k5w += -gD(-gD(78, 107, UBkPY3jF), 30, EkWRh)
-  var Lm = (75)
+  var VpSrcJAg[62]
+  Zhi = -none > "Yh"
+  Q66B15yy(-Q66B15yy(k5w, k5w), k5w)
+  var EjQT9 = -Q66B15yy(none, k5w)
+  k5w += none == -EjQT9 / -k5w > k5w
+  if (-none)
+    EjQT9 =  not k5w + none / Q66B15yy(EjQT9, "SD(g")
+  end
 end
 
-var nm79Kjl0[106]
+var e_T = ""
 
-function ayGru()
-  var L6voJ[46]
-  return (gD(k5w, k5w, 107) - ayGru())
-  Rz6[76] = tyy_gcY[ not nm79Kjl0[ayGru()]]
-  var Re_ = 108 + -ayGru() <= ayGru()
-  return Rz6[-k5w and ayGru()]
+var WuTmCe
+
+var vM3f = "}"
+
+var AcYeR0Q = 94
+
+function VVNg(Tx, J2)
+  var geZ90e9[16]
+  Tx += e_T - AcYeR0Q < VVNg(k5w, 47)
+  while (Q66B15yy(vM3f, WuTmCe) + vM3f or -geZ90e9[99])
+    geZ90e9[WuTmCe] = 105
+    J2 += "<1kJ*X"
+  end
+  return geZ90e9["O"]
+  J2 = (AcYeR0Q)
+  var L5ecKa
+  J2 +=  not ( not Q66B15yy("", 116) + e_T)
+  J2 += -(AcYeR0Q >= VVNg(e_T, 81))
 end
 

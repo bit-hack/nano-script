@@ -1,35 +1,38 @@
 # SEED 12838
 
-var Gt7htyH = 81
+var Gt7htyH = none
 
 function DI4(f1Qw, n5t6, eWR, DMfJtGu, G5Qy, I4gzc1, Fz)
-  if ((50 < Gt7htyH))
-    Gt7htyH += Gt7htyH
-    return Gt7htyH
-    DI4(7, DI4(-Gt7htyH, Gt7htyH, Gt7htyH, 41, Gt7htyH, 12, 56), DI4(Gt7htyH, 83, 44, 53, Gt7htyH, Gt7htyH, -Gt7htyH), Gt7htyH, DI4(Gt7htyH, 64, Gt7htyH, Gt7htyH, 20, 33, 111), 14, DI4(21, 22, 38, Gt7htyH, Gt7htyH, Gt7htyH, Gt7htyH))
-  end
-  var GAT4mMX
-  var Ti8Jn5E
-  DI4(DI4(GAT4mMX, Ti8Jn5E, Gt7htyH, 69, -Gt7htyH, 124, 56), 98, GAT4mMX, Gt7htyH, 78, 120, 50)
-  DMfJtGu += Gt7htyH <= DI4(Gt7htyH, Gt7htyH, Ti8Jn5E, 89, Ti8Jn5E, 75, 39) >= Gt7htyH
-  var kCTsG = 103 > 58
-  if (24)
-    return 108
-    if (((DI4(51, Ti8Jn5E, 61, GAT4mMX, 113, kCTsG, 37))))
-      GAT4mMX +=  not -51 - Ti8Jn5E < 51 and 109
-      while (-(Ti8Jn5E > kCTsG))
-        GAT4mMX += DI4(90, DI4(1, 73, -Ti8Jn5E, 24, kCTsG, -127, GAT4mMX), DI4(kCTsG, Gt7htyH, 114, 107, 46, kCTsG, 55), Ti8Jn5E, DI4(GAT4mMX, kCTsG, 23, 105, 76, -Ti8Jn5E, -64), DI4(Ti8Jn5E, Gt7htyH, 34, -kCTsG, 26, 126, 49), kCTsG)
-        f1Qw =  not DI4(Gt7htyH, Ti8Jn5E, kCTsG, GAT4mMX, 12, 55, 31) == Ti8Jn5E - DI4(92, 45, 2, GAT4mMX, Gt7htyH, GAT4mMX, 44)
-        var a3iaWkJ[94]
-        return Gt7htyH
-        if ((125) >= DI4(GAT4mMX, kCTsG, 74, Ti8Jn5E, GAT4mMX, Ti8Jn5E, 90))
-          DI4(Gt7htyH, DI4(101, 96, 66, 27, GAT4mMX, 19, GAT4mMX), Gt7htyH, 56, DI4(26, GAT4mMX, GAT4mMX, 72, Gt7htyH, 17, 71), DI4(2, kCTsG, Gt7htyH, Ti8Jn5E, 120, kCTsG, -96), 34)
+  if ((38 > DI4(Gt7htyH, none, Gt7htyH, Gt7htyH, none, Gt7htyH, "e:`F+o")))
+    while (-("vj(a)"))
+      while (("=O\") <= none)
+        while (Gt7htyH < Gt7htyH /  not -"G]%")
+        end
+        Gt7htyH = Gt7htyH <= DI4(none, Gt7htyH, Gt7htyH, 14, none, none, "glk")
+        while (Gt7htyH * DI4(Gt7htyH, Gt7htyH, Gt7htyH, "c", Gt7htyH, none, Gt7htyH))
+        end
+      end
+      DI4(DI4("", none, 2, Gt7htyH, Gt7htyH, "? <+6&!", Gt7htyH), Gt7htyH, DI4(Gt7htyH, Gt7htyH, 72, Gt7htyH, Gt7htyH, 87, Gt7htyH), 11, Gt7htyH, 93, 121)
+      while (none > DI4(42, -none, Gt7htyH, ""^", Gt7htyH, 122, Gt7htyH) <= DI4(none, none, -none, 14, 51, 56, 125) or DI4("=a*a>\", "5{x", 18, "`X0&/i", -"lC!u|G;", Gt7htyH, Gt7htyH))
+        f1Qw = 63 and "^^L"
+        f1Qw = Gt7htyH
+        while (Gt7htyH - Gt7htyH)
+          var Dnzza_9[69]
         end
       end
     end
-    Gt7htyH = GAT4mMX
+  end
+  Gt7htyH = 92 - 3 and DI4(-Gt7htyH, -105, none, Gt7htyH, "Jg'", -Gt7htyH, 118)
+  Gt7htyH += none <= 15 * Gt7htyH
+  f1Qw =  not DI4(Gt7htyH, Gt7htyH, Gt7htyH, Gt7htyH, 9, Gt7htyH, none) and none <  not Gt7htyH and none
+  var XhskWatY = "_{7&G"
+  while ((Gt7htyH) and XhskWatY)
+    n5t6 = XhskWatY
+    while (DI4(Gt7htyH, XhskWatY, Gt7htyH, DI4(XhskWatY, "", XhskWatY, Gt7htyH, 109, Gt7htyH, "JRLXNb&"), "", none, Gt7htyH))
+    end
+    return (XhskWatY == XhskWatY)
   end
 end
 
-var Bmf = 31
+var Bbkz_O
 

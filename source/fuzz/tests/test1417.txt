@@ -1,6 +1,6 @@
 # SEED 12738
 
-var c1O4Gf5z = 85
+var c1O4Gf5z = "?$vJ]"
 
-var Xz_x[103]
+var U5L
 

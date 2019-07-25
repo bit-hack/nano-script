@@ -1,16 +1,74 @@
 # SEED 13285
 
-var BZB = 49
+var BZB = 101
 
-var zO9id_i
+var H9[57]
 
-var tj[7]
+var HA[59]
 
-var Kwx0nYiT[126]
+function pvg2()
+  H9[H9[BZB]] = (H9[none])
+  var n5qe[42]
+  if (BZB)
+    if (none)
+      var VMPnB8Ls[4]
+      var AGyqv = (none)
+      if (BZB)
+        var wuAL1
+      end
+    end
+    return pvg2()
+    HA[pvg2()] = (BZB) <= BZB >= BZB
+  end
+  if (BZB)
+    return  not BZB
+    pvg2()
+  end
+end
 
-var f_FbG5[84]
+var uXaRWOv[22]
 
-var RCq[83]
+var ANPWcSht = 15
 
-var CejX[97]
+function Nfe(PTQK, VF3DcVd1)
+  if (none >= 47)
+    H9[Nfe(BZB, pvg2())] = ANPWcSht
+    while ( not (pvg2()))
+      HA[BZB] = pvg2()
+      while (-BZB)
+        PTQK = Nfe(ANPWcSht, -ANPWcSht)
+        PTQK = ANPWcSht < BZB * ANPWcSht
+      end
+    end
+    var JlIPfi
+  end
+  if (pvg2() >= "l.9sotX")
+    if (((ANPWcSht)))
+    end
+    var SirBv[36]
+    Nfe(BZB, 2)
+  end
+  if ( not (Nfe(110, ANPWcSht)) <= BZB or pvg2())
+    while (pvg2())
+      var Ge0zl
+      while (H9[pvg2()] > HA[ANPWcSht])
+        VF3DcVd1 = H9[ANPWcSht]
+        var vdSX0Io[115]
+        VF3DcVd1 =  not vdSX0Io[ANPWcSht]
+        uXaRWOv[ not 41] = ANPWcSht
+      end
+      return uXaRWOv[Ge0zl / pvg2()]
+      PTQK = none and pvg2()
+      Nfe(87, none)
+    end
+    BZB +=  not Nfe(BZB, BZB) or none
+    return 80
+  end
+  uXaRWOv[(BZB / pvg2())] = Nfe(BZB, 26) - ANPWcSht or Nfe(80, ANPWcSht)
+  var Lwpghx[63]
+  Nfe(pvg2(), "yOsx;")
+  return -ANPWcSht and ANPWcSht
+  if (Nfe(none, 46) + ANPWcSht - pvg2() <= ANPWcSht)
+  end
+end
 

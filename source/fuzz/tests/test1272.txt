@@ -1,51 +1,55 @@
 # SEED 12593
 
 function MzhwSgE(Skc, sE8A2v)
-  var EQo = 85
-  while (MzhwSgE(EQo, EQo))
-    if (MzhwSgE(EQo, EQo))
-      EQo += 10
+  var EQo = ""
+  EQo = EQo
+  EQo += none == EQo or (MzhwSgE(EQo, EQo))
+  while (-MzhwSgE("4>", "QuT"))
+    if ((EQo + EQo))
+      MzhwSgE("Ju/MIs", MzhwSgE(none, EQo))
+      var WBn
+      var nuJug[6]
     end
-    while (103)
-      while (82)
-        return -(EQo) + EQo
-        sE8A2v += EQo == 87 and 59
-      end
-      while (MzhwSgE(EQo, 84) / 121)
-        MzhwSgE(MzhwSgE(EQo, 70), MzhwSgE(EQo, EQo))
-        var H_Vc
-        H_Vc =  not 4 and MzhwSgE(1, EQo) and 101 * MzhwSgE(H_Vc, 53)
-      end
-    end
-    MzhwSgE(MzhwSgE(EQo, 26), MzhwSgE(EQo, EQo))
-    if (( not (104)))
-      MzhwSgE(EQo, MzhwSgE(EQo, 56))
-      var G61JL2[48]
-    end
+    MzhwSgE(" gl", "X4"]&'U")
   end
-  var RfrF
-  var isZir
-  Skc += 21 - 87 / MzhwSgE(97, RfrF)
-  if ( not 63 and 23 < MzhwSgE(EQo, 12))
-    return MzhwSgE(12, 2) + 90 >  not  not (-EQo)
-  end
-  if (MzhwSgE(MzhwSgE(54, -RfrF), -MzhwSgE(-42, 4)))
-    if ( not (21) <= MzhwSgE(EQo, 9) >= 99)
-      if (MzhwSgE(EQo, 44) / 89 * 70)
-        var Sp[4]
-        Skc = isZir
-        return EQo >= 56 - EQo
-      end
-      while (MzhwSgE(92, MzhwSgE(116, EQo)))
-      end
-    end
-    return  not 113
-    var UojFT
-  end
-  MzhwSgE(-MzhwSgE(-80, -74), EQo)
+  var p0AI[84]
+  EQo =  not  not MzhwSgE(none, EQo)
+  return 101 / (EQo)
+  p0AI[-("9")] = MzhwSgE(117, EQo)
 end
 
-var _6bu6[61]
+var ZID
 
-var EJxAayP
+function s9WV(YFkN, Qb0cJDm, H5WRI, p_M2vor, F_Qzm6x)
+  while (none and -s9WV(none, ZID, 14, ZID, none) == (none))
+    while (ZID)
+    end
+    while ((ZID))
+      return MzhwSgE(s9WV(none, -51, 7, "&-SnA", "J>Lg"), none)
+      var gN_mAa = "7LXCmt["
+      var j0t4G[48]
+    end
+    var ZqW
+    var het12ZB[14]
+    ZID += MzhwSgE("ve", ZqW) - ZID > s9WV(44, none, "r(", ZID, ZqW) > MzhwSgE(none, 39)
+  end
+  while ( not s9WV(none, s9WV(ZID, ZID, ZID, 6, ZID), -s9WV(ZID, none, ZID, 62, ZID), -s9WV(-27, ZID, 113, ZID, ZID), MzhwSgE(ZID, -59)))
+  end
+  ZID = ZID * ZID > MzhwSgE(ZID, 91)
+  MzhwSgE(none, ZID)
+  return none
+  while (none * -("lR\"))
+    MzhwSgE(ZID, ZID)
+    var Ea = (23) - ZID / -126
+    MzhwSgE(s9WV(Ea, none, Ea, ZID, 36), "`7w")
+    MzhwSgE(s9WV(ZID, none, 28, 9, Ea), Ea)
+    if (-Ea + Ea <= ZID)
+      var p3JlTd[65]
+      while ( not p3JlTd[-ZID])
+        if (-MzhwSgE(ZID, 106) >= p3JlTd[none])
+        end
+      end
+    end
+  end
+end
 

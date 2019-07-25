@@ -4,6 +4,27 @@
 
 namespace ccml {
 
+value_gc_t::value_gc_t() {
+#if 1
+  for (int i = 0; i < 128; ++i) {
+    value_t *v = new value_t;
+    commit_.push_back(v);
+    avail_.push_back(v);
+  }
+#endif
+}
+
+value_gc_t::~value_gc_t() {
+  for (value_t *v : commit_) {
+    delete_(v);
+  }
+  commit_.clear();
+  for (std::string *s : string_pool_) {
+    delete s;
+  }
+  string_pool_.clear();
+}
+
 value_t *value_gc_t::new_int(int32_t value) {
   value_t *v = alloc_();
   v->type = val_type_int;
@@ -15,6 +36,7 @@ value_t *value_gc_t::new_array(int32_t value) {
   value_t *v = alloc_();
   v->type = val_type_array;
   assert(value > 0);
+  // todo: pool these
   v->array_ = new value_t *[size_t(value)];
   assert(v->array_);
   memset(v->array_, 0, size_t(sizeof(value_t *) * value));
@@ -70,8 +92,15 @@ void value_gc_t::visit_(std::unordered_set<const value_t *> &s, const value_t *v
 
 void value_gc_t::collect(value_t **v, size_t num) {
 
+  // currently the grammar doesnt allow us to have cyclic data structures
+  // but be aware we might need to support it when the language evolves.
+
+  // we should collect stats about how many values are alive vs commited
+  // for each collect itteration.
   const size_t reserve = commit_.size() / 2;
 
+  // we could convert this to be a marking bitmap if we reserve all out
+  // value_t's from a contiguous chunk of memory.
   std::unordered_set<const value_t *> alive(reserve);
   for (size_t i = 0; i < num; ++i) {
     value_t *x = v[i];
@@ -79,7 +108,11 @@ void value_gc_t::collect(value_t **v, size_t num) {
       visit_(alive, x);
     }
   }
+
+  // clear available nodes
   avail_.clear();
+  
+  // reclaim from commit list
   for (auto itt = commit_.begin(); itt != commit_.end(); ++itt) {
     if (alive.count(*itt) == 0) {
       value_t *val = *itt;

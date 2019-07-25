@@ -2,5 +2,5 @@
 
 var Qd9
 
-var tGV = 120
+var tGV = 46
 

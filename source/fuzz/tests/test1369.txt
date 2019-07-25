@@ -2,90 +2,38 @@
 
 function TOsq5B0(QCG5zh0w)
   var Zli7[48]
-  while ( not TOsq5B0(35))
-    TOsq5B0(TOsq5B0(76))
-    if ( not (13) >= TOsq5B0(68) <= 62)
+  while ( not TOsq5B0(none))
+    TOsq5B0(TOsq5B0("`?"))
+    while (Zli7["h.bH"] and none <= none)
     end
   end
-  return (TOsq5B0(110)) < -(TOsq5B0(120))
-  Zli7[90] =  not Zli7[TOsq5B0(73)] * TOsq5B0(61) == 120
+  return (TOsq5B0(28)) * 7
+  return (TOsq5B0(none)) < 90
+  TOsq5B0(TOsq5B0(none))
 end
 
-var wPY = 127
+var Y0q[76]
 
-var lP0sRW[93]
+var DBd[96]
 
-function WDUF(iAcEej9Q, kcOGonZg, B2U)
-  wPY = wPY
-  var jWF[36]
-  if (-WDUF(wPY, TOsq5B0(80), 124))
-    return 106 or WDUF(-117, wPY, wPY) == wPY
-    while ( not wPY)
-      if (jWF[wPY] / TOsq5B0(88) > -wPY)
-        while (-( not TOsq5B0(wPY)))
-        end
-      end
-      var n5eo9wU = -jWF[ not wPY]
-      var yP = 92
-      yP += (lP0sRW[TOsq5B0(wPY)])
-      var qree5[114]
-    end
-    if (66 >= TOsq5B0(0) * wPY)
-      wPY = wPY or wPY >= WDUF(wPY, 103, wPY) <= 76
-    end
-    if (wPY)
-      return wPY <= 61
-      jWF[63] = TOsq5B0(45) > wPY * -126 < 72
-    end
-  end
-  iAcEej9Q = 51
-  lP0sRW[2] =  not 97
-  var Tckj[104]
-  B2U = wPY * 78 >= 64
-  var Rh8ed[23]
-end
+var Pjo[12]
 
-function Vmmyt2(p3Mb6Dr, FxYk8, k_dnR)
-  wPY += lP0sRW[TOsq5B0(wPY)]
-  wPY = wPY or -wPY < WDUF(wPY, 29, wPY)
-  while (121 <= 36 or 61 * wPY)
-    p3Mb6Dr = lP0sRW[Vmmyt2(wPY, wPY, 64)] or wPY
-    if (WDUF(WDUF(wPY, 115, wPY), TOsq5B0(118), TOsq5B0(wPY)))
-    end
-    wPY = (84 * Vmmyt2(wPY, 6, wPY))
-  end
-  FxYk8 = 108
-  var ybbkiqiu = TOsq5B0(WDUF(wPY, wPY, 120))
-  while ( not (wPY) and  not TOsq5B0(-62) - 55)
-  end
-  while (lP0sRW[-TOsq5B0(59)])
-    if ((-WDUF(ybbkiqiu, 117, 68)) <= wPY)
-      wPY += lP0sRW[-TOsq5B0(-wPY) or ybbkiqiu]
-      Vmmyt2(Vmmyt2(wPY, ybbkiqiu, ybbkiqiu), 46, TOsq5B0(wPY))
-    end
-    if (45 / TOsq5B0(-79) + 57 + TOsq5B0(-111))
-      var WGZbG[29]
-      p3Mb6Dr = ybbkiqiu
-      var UgQ5FJm[125]
-      p3Mb6Dr = 75 < 73 * 42
-      k_dnR = -TOsq5B0(116) / 72 < 23 + TOsq5B0(ybbkiqiu)
-    end
-    var uwc6tV2 = (14) <= 36 > wPY
-  end
-  TOsq5B0(wPY)
-end
+var e6YI = "*qg<yE"
 
-var R1eCozz[46]
+var _r4Zl = "&7"
 
-function lFqdp()
-  lP0sRW[5] = wPY
-  TOsq5B0(TOsq5B0(wPY))
-  while ( not (wPY) < wPY - -lFqdp())
-    var HeoF
-    var HJ7RmSxz[5]
-    WDUF(Vmmyt2(40, 88, 41), Vmmyt2(110, 4, wPY), wPY)
-    HJ7RmSxz[93] = HeoF >= HeoF
+function wALn0yJi(U20OAI)
+  DBd[Pjo[wALn0yJi(-e6YI)]] =  not  not DBd[wALn0yJi("*g")] / e6YI
+  var yH4f6TBA
+  while ( not Pjo[none == e6YI])
+    _r4Zl = "%" / TOsq5B0(none)
+    var RUFhmA
+    TOsq5B0(RUFhmA)
   end
-  var oPxtcl[104]
+  var kcOGonZg = (yH4f6TBA or yH4f6TBA)
+  var uZ2b = TOsq5B0("Y{^F")
+  U20OAI += DBd[(TOsq5B0(-110))]
+  U20OAI = 55
+  return e6YI
 end
 

@@ -1,18 +1,15 @@
 # SEED 13212
 
 function dY(Su, WtwXtp, xxuRZ, _uG, P1tP)
-  return dY(68, 29, 41, 105, 12) or -dY(-72, 85, -25, 51, 83) -  not  not (dY(15, 51, 102, 97, 11))
-  while (3 - dY(23, 61, -20, 95, -7) <= dY(22, 35, 68, 116, 30))
+  return dY(none, "Znhi)]'", none, -"9i#] *", -"5iPpmm") / "wlKT%l" / "O#-H" == dY(none, "gB", "%@s", none, "Xm8;z5+")
+  return  not 39
+  dY(dY("%H", 112, "@++", -none, "M]KL"), "@|eFo", none, "", none)
+  while (-"c5")
+    var qb[92]
   end
-  if (dY(-64, 90, -69, 111, 25) > dY(103, 106, 84, 4, 93) / -88)
-    var PyqXcc
-    var uyGItRq[76]
-    PyqXcc += (PyqXcc) or uyGItRq[57]
-    return uyGItRq[dY(30, PyqXcc, -PyqXcc, 60, 112) <= PyqXcc]
+  if (dY(-none, none, 78, none, 94) and dY("5A!tU7M", none, none, none, none) <= dY("[", 52, 54, 86, "@\=`"))
   end
-  var xj7Us9E[41]
-  return  not dY(67, 60, 16, 75, 60) >= dY(64, 108, 115, 88, 114) / 90
-  return 23 > 37 or 111 > 77
-  return  not  not xj7Us9E[93]
+  dY("#hmssC", dY(none, "7_K8", none, none, "Q!_P"), "X[yZ", dY(89, none, 83, 118, none), -81)
+  return "a;N" - "Z{!2G" > dY(8, -3, -118, 8, 4) + none
 end
 

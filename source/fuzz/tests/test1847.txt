@@ -1,61 +1,31 @@
 # SEED 13168
 
-var pCp4 = 110
+var pCp4 = 73
 
-function SkXJ(D4GVTK, V_hc, ya2F9Bk, PbmyRm, eHDB, cwKcoF)
-  var Tn2TGwo[46]
-  var euNHgQnL[129]
-  return Tn2TGwo[SkXJ(-pCp4, pCp4, 107, 82, pCp4, 45) or 119]
-  if (-Tn2TGwo[Tn2TGwo[pCp4]])
-    PbmyRm =  not -SkXJ(67, pCp4, 105, 27, 49, 75) or pCp4 and 49 < 95
-    return SkXJ(92, pCp4, pCp4, pCp4, pCp4, 57) * -SkXJ(pCp4, pCp4, pCp4, pCp4, 89, 38) == SkXJ(-28, pCp4, pCp4, pCp4, pCp4, pCp4) and SkXJ(pCp4, 98, pCp4, pCp4, 60, pCp4)
-    eHDB = Tn2TGwo[24] * 119
-    var XpWO[102]
-    V_hc =  not -pCp4 > SkXJ(77, 67, pCp4, pCp4, -pCp4, pCp4) / 65 and 27
+var BXJy[39]
+
+var XVT
+
+var nhcl
+
+var F9BkyBbm[74]
+
+function wLHDBFJw(IF91D, pT, qoWR9tu, cgQnLe, PqdmnWXP, dK, D1e)
+  while ( not 90 == F9BkyBbm[none])
+    var s1gQ[77]
+    return  not pCp4 < wLHDBFJw(34, 66, pCp4, nhcl, pCp4, 109, pCp4) == none + wLHDBFJw(none, none, "W", none, none, "|u2|Z", nhcl)
+    var K3IRG[118]
+    var GCxZ[99]
+    nhcl = 56
   end
-  var CKwdi[115]
-  cwKcoF = CKwdi[SkXJ(pCp4, pCp4, -32, 70, pCp4, 106)]
-  pCp4 = (37 < -119)
-  if (CKwdi[pCp4])
-    CKwdi[112] = (SkXJ(13, pCp4, pCp4, 92, 62, pCp4)) > euNHgQnL[SkXJ(pCp4, pCp4, 29, pCp4, 86, pCp4)]
-    pCp4 += -54
-    SkXJ(pCp4, 115, 64, SkXJ(pCp4, 78, -28, 61, pCp4, 24), SkXJ(pCp4, 53, 90, 82, pCp4, 118), pCp4)
-  end
+  BXJy[-wLHDBFJw(XVT, wLHDBFJw(pCp4, pCp4, XVT, nhcl, none, none, pCp4), wLHDBFJw(-none, pCp4, nhcl, XVT, pCp4, XVT, XVT), none, XVT, nhcl, "hal_i`n")] =  not XVT
+  dK = BXJy[""] + none
+  F9BkyBbm[wLHDBFJw(wLHDBFJw(-pCp4, none, ">'d]Z", pCp4, pCp4, -pCp4, XVT), wLHDBFJw(none, nhcl, 20, -"% m:F", -121, nhcl, "QcOep9"), wLHDBFJw(XVT, "6$7 ", 93, pCp4, pCp4, XVT, 28), wLHDBFJw("ec", pCp4, 71, nhcl, pCp4, -23, "L)"), wLHDBFJw(XVT, "%"1'kzq", pCp4, none, pCp4, XVT, none), "[,[:", pCp4)] = -2
+  var U0o4WF5
+  wLHDBFJw(U0o4WF5, wLHDBFJw(9, none, none, XVT, pCp4, XVT, XVT), 106, wLHDBFJw(none, nhcl, pCp4, "FX", pCp4, pCp4, pCp4), 56, 72, none)
+  var DLcBC85Q = F9BkyBbm[-none]
+  dK = -((wLHDBFJw(U0o4WF5, pCp4, "]xH!", none, pCp4, DLcBC85Q, nhcl)))
 end
 
-var DS[88]
-
-var Bo4WF5VD[83]
-
-var fMUPwo = 102
-
-function ntrb6(srk, dxV_Tgl0)
-  while (125)
-  end
-  SkXJ(28, 102, fMUPwo, pCp4, fMUPwo, -SkXJ(116, 89, pCp4, pCp4, 9, pCp4))
-  return (51 >= SkXJ(pCp4, 79, 32, 0, pCp4, pCp4))
-  fMUPwo = 37
-  return pCp4
-  fMUPwo += ntrb6(pCp4, fMUPwo) < -fMUPwo * 100 + pCp4
-  return 8
-  SkXJ(ntrb6(fMUPwo, -pCp4), pCp4, fMUPwo, fMUPwo, -ntrb6(76, 105), 105)
-end
-
-function w08sp4(C5Bkyxi, VCify_O, tfo3hp8, ucjANz, cHEo0C_, QxiqIaT1, Pn3DlIP)
-  DS[18] = DS[25 and 107]
-  var DBS = (Bo4WF5VD[ntrb6(-fMUPwo, fMUPwo)])
-  Bo4WF5VD[40] = 28 <= 53
-  if (w08sp4(67, 13, 5, 98, pCp4, fMUPwo, 64) or -Bo4WF5VD[SkXJ(114, 28, DBS, pCp4, -80, -fMUPwo)])
-    DS[8] =  not 108 + 123 - fMUPwo + 0
-  end
-  while (pCp4)
-    var zoA = SkXJ(ntrb6(DBS, 94), 56, 19, ntrb6(34, 107), SkXJ(35, 57, 86, pCp4, pCp4, 29), -ntrb6(29, DBS))
-    SkXJ(ntrb6(77, pCp4), pCp4, SkXJ(124, 90, 39, pCp4, zoA, zoA), 51, DBS, fMUPwo)
-    var dolEyuq3[35]
-    SkXJ(fMUPwo, 67, 45, w08sp4(67, 60, 15, 8, DBS, DBS, DBS), 70, -127)
-  end
-  ntrb6(-w08sp4(28, 56, 25, 63, -pCp4, DBS, 62), pCp4)
-  pCp4 += (10 > DBS)
-  var bsscGPyc = -(fMUPwo or fMUPwo)
-end
+var Jl4
 

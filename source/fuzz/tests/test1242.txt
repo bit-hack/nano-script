@@ -2,25 +2,9 @@
 
 var xe
 
-var xi4 = 11
+var xi4 = "psBxY-"
 
-var ec[84]
+var GLE5g
 
-function Vc(J5gt_, C1O6ljv, InPJ, B2XUhM, XJYQ)
-  var Li
-  return xe
-  var FK[54]
-  var NHizav7 = FK[32 >= Li]
-  C1O6ljv += NHizav7
-  return  not ec[-Vc(2, xe, -xi4, NHizav7, 124) >= Li]
-  while (Vc(-xe, 61, -125, 80, NHizav7) and xi4 < (Li))
-    xi4 += xi4
-    while ((Vc(xi4, xi4, xe, Li, xe)) + -79)
-    end
-    while ( not 51 == -103 > -Vc(91, 104, 69, Li, xi4) == 8)
-    end
-    J5gt_ = ec[Vc(-24, 6, xe, -Li, Li)]
-  end
-  var TS
-end
+var C1O6ljv
 

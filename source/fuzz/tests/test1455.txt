@@ -4,23 +4,11 @@ var eIeJXR
 
 var MGL[33]
 
-var KI = 8
+var KI = "R"
 
-var lxZ[36]
+var K1T5L
 
-var r_Pv[111]
+var gUp = none
 
-function iwi4(w_ISInMS, ms5oBEN5, uLU3yA5t, Y1nXEu1, CPbpFd, JYPFdliu, FMO2q)
-  if (eIeJXR + -iwi4(51, eIeJXR, eIeJXR, 117, KI, eIeJXR, 68) - 29)
-    iwi4(KI, iwi4(123, 41, eIeJXR, 118, -79, eIeJXR, 101), iwi4(24, KI, 2, -78, eIeJXR, KI, eIeJXR), 78, KI, -75, KI)
-    return lxZ[66]
-  end
-  return 63 <= 8 or 94
-  var jzTr
-  w_ISInMS += KI
-  eIeJXR = 113
-  var Yre3zH = (23)
-  var LNFK3
-  CPbpFd = r_Pv[6]
-end
+var fH3
 

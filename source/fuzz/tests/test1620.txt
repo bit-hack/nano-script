@@ -5,14 +5,17 @@ var dnuoF[26]
 var F9f[38]
 
 function Vs3Lwkh(hETf, nzjs5, xkGB, OQ0LR, YoJWx7I, aS)
-  return (67 / 84)
-  while (49 - -Vs3Lwkh(95, 97, 112, 116, 34, 78) or Vs3Lwkh(118, 62, 67, 16, -84, 19) - Vs3Lwkh(74, 10, 36, 91, 41, 33))
-    dnuoF[0] = F9f[Vs3Lwkh(-122, 80, 50, -45, 44, 96) > 77]
-    return dnuoF[Vs3Lwkh(116, 8, 22, 17, 67, 65) == 89]
+  return (12 + 34)
+  while (-Vs3Lwkh("cg`1", "W21?O", "O", none, none, "{") <= -"qN2'P3v" <= dnuoF[-Vs3Lwkh(none, "&GAik;", 3, "boy", "", none)])
   end
-  var b2kUDFTG[56]
-  var abHp9
-  var iy
-  return  not (iy - iy)
+  F9f[ not 24] = Vs3Lwkh(none, 97, none, "/G)7B0E", "D?", none) or Vs3Lwkh(none, 33, 16, "gh", "^c", "ndGm@q|")
+  return none
+  return dnuoF[ not Vs3Lwkh(none, "7", none, 70, none, 110)]
+  while ((Vs3Lwkh(116, none, "<0", "5Y", 77, 37)) + Vs3Lwkh(-none, -none, -100, "VYF>", 37, "Ajz]") - 105)
+    return none
+    Vs3Lwkh(Vs3Lwkh("5aQ[;", ","kHM", "9", "%&", none, none), Vs3Lwkh("ik-Z", "|IW .n", none, none, none, none), Vs3Lwkh(none, none, 38, 8, 9, -"a'C"), -102, none, none)
+  end
+  while ( not  not Vs3Lwkh(20, none, -"4Jkwp:", "%>rCq", -66, "$F8") and Vs3Lwkh("y", "|<A_", "rus", "u|", 84, 110) >  not  not -71 or none)
+  end
 end
 

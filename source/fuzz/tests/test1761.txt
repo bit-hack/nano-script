@@ -5,107 +5,27 @@ var Rj[110]
 function iB31LIa()
   iB31LIa()
   var P0cr[36]
-  while (50 <= iB31LIa() + P0cr[iB31LIa()])
-    if ( not iB31LIa() or 89 - (iB31LIa()))
-      return P0cr[P0cr[123]]
-      iB31LIa()
+  while (none <= iB31LIa() + P0cr[iB31LIa()])
+    if ( not iB31LIa() or 8 and P0cr[iB31LIa()])
+      return P0cr[P0cr[">V"]]
     end
-    iB31LIa()
-    return Rj[127] > (-93)
-    if (37)
-      return iB31LIa()
-    end
-    iB31LIa()
-  end
-  return (123 * 121)
-  while (iB31LIa())
-    return  not 86
-  end
-  var RB[128]
-  return RB[-107 - -iB31LIa()]
-  iB31LIa()
-end
-
-var X_
-
-function pLs()
-  var gdAAKpH0[66]
-  return pLs() == X_ <= X_
-  while (X_)
-    Rj[10] =  not pLs()
-    var QSY =  not 107 > 59 and -X_
-    return  not 72 - X_ < -pLs()
-    while (QSY or iB31LIa() - X_)
-    end
-  end
-  gdAAKpH0[45] = X_ and pLs() and pLs()
-  Rj[60] = ((X_))
-  pLs()
-  if (iB31LIa() <= (iB31LIa()))
-    gdAAKpH0[125] = -Rj[37]
-    var nCR[40]
-    var LGSVDu6[52]
-  end
-end
-
-function sYmLcFwR(YwgU, GpZm1R, fm, YE, LPbOiJM, Jo, RE)
-  iB31LIa()
-  if (pLs() and X_)
-    var TCb = (33) or 68
-    return (sYmLcFwR(14, 41, TCb, 29, X_, X_, -X_)) * 89 / 31
-    var EQ[81]
-    while (74)
-      EQ[8] = -( not pLs())
-      var TB2orW = TCb
-      fm += EQ[(-13)]
-      if (iB31LIa() / pLs() + TB2orW - -TB2orW)
-        TCb =  not 127 < -49 * sYmLcFwR(TB2orW, TCb, TB2orW, X_, 52, TB2orW, 18)
-        iB31LIa()
-        var ttg_O
-        return pLs() == (TCb)
-        if (pLs() < -TB2orW * (111))
-          iB31LIa()
-          while ( not 64 >= X_ / iB31LIa() > X_)
-            TCb += EQ[ttg_O] or pLs()
-          end
-          while ( not pLs())
-            var wqIg[25]
-            return TB2orW == sYmLcFwR(77, 118, 78, TCb, -109, 14, -19) and X_
-          end
-          sYmLcFwR(ttg_O, 35, sYmLcFwR(TCb, TB2orW, -TCb, TB2orW, 118, 60, -61), iB31LIa(), 27, -iB31LIa(), 40)
-          TB2orW = -31
-        end
-      end
-    end
-  end
-  return iB31LIa() + 16 / pLs()
-  var ksxZS2s = 8
-  RE += 70 or  not iB31LIa()
-  var W5xdu[52]
-  var dm8MNh[96]
-  while ( not ksxZS2s < Rj[pLs()])
+    return Rj[none] > (-"wKI")
     return iB31LIa()
-    if (X_ and pLs() + pLs() or 57)
-      X_ =  not  not 19 or  not X_ and sYmLcFwR(ksxZS2s, ksxZS2s, -ksxZS2s, 56, 38, ksxZS2s, -ksxZS2s)
-      if (-iB31LIa() >= iB31LIa() / 123 > 14)
-        if (54 - -sYmLcFwR(93, -55, 1, 57, ksxZS2s, 113, 58))
-        end
-        return -49
-        while (dm8MNh[X_] or ksxZS2s)
-        end
-        var qsxwqW2
-        return  not 70 > X_ > 58 + 1
-      end
-      while ((50))
-        YE += (67 + ksxZS2s)
-        Jo += iB31LIa()
-      end
-      sYmLcFwR(ksxZS2s, pLs(), 69, pLs(), X_, 79, iB31LIa())
-      RE = X_
-    end
-    var OJXNEr[2]
+    iB31LIa()
+  end
+  return (" G" == none)
+  var ZrIgfUGR
+  if (Rj[-none] - -iB31LIa())
+    iB31LIa()
+    Rj[(Rj[iB31LIa()])] =  not iB31LIa() == "-9"
   end
 end
 
-var rdvk
+var C0_02[23]
+
+var Aw5GyH[12]
+
+var CCNQ = "J.`[*bU"
+
+var QSY[127]
 

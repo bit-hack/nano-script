@@ -1,20 +1,38 @@
 # SEED 12548
 
-var sjVpe = 38
-
-var HocQA
+var sjVpe = "z_HrBdX"
 
 function kP(rcU, Ztrv, ogCrjm0s, Wt2iqT, ee)
-  var nr = (HocQA) / 96
-  while ((kP(sjVpe, nr, -59, 98, sjVpe)))
+  var nr = (sjVpe) / 48
+  while (kP(-kP(49, 118, 13, -27, sjVpe), "+%ZD/", sjVpe, kP(sjVpe, sjVpe, 31, sjVpe, sjVpe), nr))
+    var uT[47]
+    uT[kP(kP(nr, sjVpe, 17, sjVpe, none), -sjVpe, "s-"", kP("H", 11, sjVpe, nr, 24), 117)] = 64 ==  not -kP(sjVpe, 18, 40, -100, nr) * nr
+    var kyR = none
+    while ((kP(-nr, kyR, -"]$>", "ch", none)))
+      uT[nr or kyR >= -kyR * kP(nr, none, kyR, none, -"/[gN")] = uT[none]
+      Ztrv = (-kP(nr, kyR, none, none, ")8")) * "i["
+      sjVpe +=  not 105
+      while (kP(kP(none, sjVpe, kyR, 2, "^Y"), nr, kP(none, none, kyR, kyR, none), kP(kyR, 99, nr, nr, 24), kyR))
+      end
+    end
+    var sqt[2]
   end
-  return 86 > kP(sjVpe, sjVpe, sjVpe, nr, 114) > nr >= kP(109, 58, 74, nr, nr)
-  nr += sjVpe - kP(-nr, 76, 33, 106, -HocQA) > -(kP(40, nr, sjVpe, 11, HocQA))
-  Ztrv =  not ((23))
-  return  not 18 + 52 and (-kP(90, sjVpe, 69, nr, -13))
-  var We4rLmrZ
-  kP(We4rLmrZ, 59, -nr, HocQA, kP(sjVpe, -We4rLmrZ, sjVpe, -94, 76))
+  sjVpe =  not ""fr"
+  while ( not kP(nr, sjVpe, "l9]*", none, "s'") > nr > kP("H+", nr, sjVpe, ">0vV.C", sjVpe) + kP(none, -nr, nr, nr, sjVpe))
+  end
+  ee = (kP("pG^XD1", sjVpe, sjVpe, nr, 32) or nr)
+  kP(nr, kP("McN", none, 105, none, 68), kP(none, sjVpe, -"e", 70, nr), -nr, "")
+  if (( not  not none >= sjVpe))
+    if ((nr) - "zoZGo" > "'#vKX-}")
+      kP(sjVpe, kP(sjVpe, "+uPpyEX", none, "k)?A4@", nr), kP("dWKD", -"8t,dx", "MWz", none, "]|Tg6r"), -sjVpe, none)
+      sjVpe +=  not  not nr *  not -nr >= nr
+    end
+    return (sjVpe)
+    nr += (sjVpe or kP(none, sjVpe, none, sjVpe, sjVpe))
+  end
 end
 
-var cm = 81
+var DJZIN
+
+var cqsO_a[21]
 

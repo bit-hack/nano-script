@@ -2,20 +2,12 @@
 
 function Dy2(fbPoR98F)
   var RVtqxX[21]
-  RVtqxX[19] = (45) == -Dy2(92) * 113
-  Dy2(52)
-  while (96)
-    while ( not Dy2(60))
-      while ( not RVtqxX[43])
-        Dy2(Dy2(-106))
-        return 46 * RVtqxX[Dy2(119)]
-      end
-      var Pe[54]
-      return  not  not Dy2(64)
-    end
-    Dy2(Dy2(30))
+  RVtqxX[Dy2("<zI'") <= 121 < 58] = Dy2("o$f")
+  Dy2(none)
+  while ("")
+    var n5R[62]
+    Dy2(",g")
   end
-  return RVtqxX[Dy2(52)] * Dy2(41) > Dy2(-78)
-  return  not Dy2(26) - -RVtqxX[49]
+  return RVtqxX[ not RVtqxX[-Dy2("-+4")]]
 end
 

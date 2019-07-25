@@ -2,95 +2,41 @@
 
 function mmnO7(P6qsFvCO, KU, ocR, ORrFhyD8, h61nFp, Myv7l1)
   var H2[2]
-  mmnO7(mmnO7(123, -26, 123, 103, 4, 100), mmnO7(58, 44, 11, 85, 36, 33), mmnO7(-125, 46, 25, 66, 94, 35), 112, mmnO7(-32, 67, 61, 40, -126, -57), mmnO7(105, 66, 39, 93, 115, -74))
-  while (4 <= mmnO7(127, 44, 59, 29, 73, -71) < mmnO7(84, 114, 29, 71, 18, 109) and 127)
-    if (-25)
-      if (mmnO7(89, 33, 82, 67, 91, 69) > mmnO7(105, 15, 9, 16, 120, 67) and -mmnO7(105, 61, 46, 20, 12, 96) or 10)
-      end
-      return mmnO7(57, 49, -96, 120, 64, 122) * mmnO7(96, 75, 57, 44, 12, 102) or 17 + 48
-      mmnO7(mmnO7(126, 52, -92, 96, 55, 98), mmnO7(117, 54, 36, 52, 108, 51), 91, mmnO7(75, 4, 119, 44, 78, 17), mmnO7(33, 51, 69, 117, 8, 115), mmnO7(58, 13, 34, 99, -127, 113))
-      mmnO7(30, 100, 71, 109, mmnO7(39, 66, 99, 101, 65, 0), mmnO7(87, 2, 124, 122, 50, 95))
-    end
-    var JFc = 49
-    if (H2[mmnO7(JFc, JFc, JFc, JFc, 80, JFc)] < mmnO7(JFc, 31, -JFc, 89, 33, JFc) > JFc)
-      while (-36 * JFc + mmnO7(-JFc, -27, 33, 98, JFc, -45))
-        JFc = JFc
-        H2[14] = H2[H2[JFc]]
-      end
-    end
-    var FV3
+  mmnO7(mmnO7(none, -43, 13, none, none, "1s"), 80, 76, 71, -mmnO7(72, 69, 14, -1, -none, none), mmnO7(105, none, "k|*e", 39, "", "2&5p!%^"))
+  while (mmnO7(none, -none, 95, "=h|$xUF", "\s", -"K tXU") / (mmnO7(20, -"", "p4x7", none, -none, "U,k6")))
+    var Ob_w[81]
+    var BqDm0wc[11]
   end
-  var mD
-  mD = 18
-  h61nFp += -mD * mD == mD > mmnO7(mD, mD, 80, mD, 15, mD)
-  if ((mmnO7(mD, 13, -mD, mD, mD, 38)))
-    if (mmnO7(-mmnO7(115, 64, mD, 113, mD, -34), 90, mD, 28, mD, mmnO7(mD, 76, mD, 88, mD, mD)))
-      while (125)
-        mmnO7(53, 15, mD, mD, mmnO7(86, mD, -16, 118, mD, mD), 108)
-      end
-      while (H2[mmnO7(91, 110, mD, mD, 54, 68) or mD])
-        mD += 71
-        H2[47] = mmnO7(mD, mD, mD, mmnO7(mD, mD, 73, mD, mD, -mD), -mD, mmnO7(104, 84, mD, -mD, 54, mD))
-      end
-      var iCHdUCDj =  not mmnO7(mD, 10, -mD, 74, -100, mD) <= (101)
-    end
-    mmnO7(114, mD, 116, mmnO7(-120, mD, mD, mD, mD, 104), mmnO7(mD, mD, mD, 103, mD, -mD), 62)
-    mmnO7(110, 15, 96, mD, mmnO7(27, mD, mD, 35, 51, -97), 20)
-    if (mD)
-      if (25 >= 74 >= 14 < mmnO7(107, mD, mD, 21, 79, mD))
-        KU =  not 39 / 44 - H2[mD]
-        var sDej1mm6
-        while (95)
-        end
-        while (mmnO7(mD, sDej1mm6, mD, -mD, mmnO7(7, mD, 108, 70, sDej1mm6, 121), mmnO7(sDej1mm6, sDej1mm6, 50, sDej1mm6, 96, sDej1mm6)))
-          var SU6Ecz = mmnO7(sDej1mm6, mD, sDej1mm6, 38, 44, mD) / mmnO7(mD, 28, 107, -sDej1mm6, 32, mD) and  not mD - 24
-        end
-        P6qsFvCO += H2[sDej1mm6 / 20]
-      end
-      mD += mD
-      mmnO7(mD, mD, mD, 50, 52, mmnO7(21, mD, mD, 5, mD, 79))
-      mD = mmnO7(90, mD, mmnO7(120, mD, mD, 77, 104, mD), mD, 0, 108)
-      H2[93] = 20
-    end
+  while ( not H2[H2[mmnO7(none, 28, ".7Qd-7*", "", 1, 122)]])
   end
+  var V6e
+  while (mmnO7(V6e, "xP?gMR`", none, "iw", -1, 110))
+    return (-97 >= mmnO7(-V6e, none, -V6e, "O:$a", V6e, V6e))
+    ORrFhyD8 += (mmnO7(V6e, V6e, V6e, none, V6e, 53)) == mmnO7(-V6e, V6e, V6e, V6e, -">zekn/4", V6e) == mmnO7(V6e, "|I", none, V6e, V6e, none)
+    h61nFp += (V6e)
+    H2[ not V6e >= V6e + none] = H2[V6e] > -mmnO7(V6e, V6e, "b_2| di", none, -22, V6e) > -V6e
+  end
+  var Dd[69]
 end
 
-var iNUP[44]
+var iNzdA27V = "z^%."
 
-var IJvHFd
-
-function Wz4zSJ_()
-  var Az9qWvwL[5]
-  iNUP[109] =  not ( not 0 or -mmnO7(-IJvHFd, -72, IJvHFd, IJvHFd, IJvHFd, 5))
-  while (73)
-    var DxLXe[55]
-    Az9qWvwL[82] = mmnO7(IJvHFd, IJvHFd, 0, 87, 112, IJvHFd) >= 116 and mmnO7(IJvHFd, 23, 25, -IJvHFd, 124, 13)
-    var qk[117]
+function Ho7adQPJ(O3I)
+  return "#" - iNzdA27V and iNzdA27V
+  while ( not (iNzdA27V) < iNzdA27V)
   end
-  var LK[28]
-  if ( not mmnO7(Wz4zSJ_(), Wz4zSJ_(), 120, IJvHFd, 106, 83))
-    iNUP[42] = -(Wz4zSJ_()) >= mmnO7(IJvHFd, -IJvHFd, 46, IJvHFd, IJvHFd, -16) or IJvHFd
-    return (-IJvHFd + Wz4zSJ_())
-    while (IJvHFd > IJvHFd > Wz4zSJ_() and Wz4zSJ_())
-      var nVa4 = IJvHFd
-      while (104)
-        Az9qWvwL[36] = (mmnO7(13, -54, 14, IJvHFd, 24, 66))
-      end
-      mmnO7(-mmnO7(84, 102, 72, 81, nVa4, 92), nVa4, 24, 110, 101, -mmnO7(nVa4, IJvHFd, -28, 88, 17, IJvHFd))
-      mmnO7(93, mmnO7(49, 45, 38, 59, IJvHFd, 36), nVa4, Wz4zSJ_(), 33, mmnO7(nVa4, nVa4, IJvHFd, -nVa4, IJvHFd, nVa4))
-    end
+  while ( not Ho7adQPJ(mmnO7(-iNzdA27V, none, iNzdA27V, 110, "u(+]\", "]c0")))
+    var jI
   end
-  var wPg
-  iNUP[35] = 118 * 59 or mmnO7(IJvHFd, 29, IJvHFd, IJvHFd, 9, IJvHFd) > IJvHFd
-  while (wPg * 110 * 39)
-    while (LK[(mmnO7(wPg, wPg, IJvHFd, 35, 62, IJvHFd))])
-    end
-    mmnO7(Wz4zSJ_(), mmnO7(56, 14, IJvHFd, 4, 65, 15), 9, Wz4zSJ_(), 80, wPg)
-    while (-LK[wPg])
-    end
-    var U_pp[3]
+  iNzdA27V += iNzdA27V - iNzdA27V or -"pH;Vw"
+  if ((-iNzdA27V) > iNzdA27V < iNzdA27V)
   end
+  O3I =  not 52
+  return -iNzdA27V and none - -(64)
+  return mmnO7(16, iNzdA27V, "WZ", iNzdA27V, mmnO7(iNzdA27V, 122, "ir", -iNzdA27V, "]o5", iNzdA27V), -Ho7adQPJ(4))
 end
 
-var YkxUQJ = 54
+var Dy9[63]
+
+var JP = "o"
 

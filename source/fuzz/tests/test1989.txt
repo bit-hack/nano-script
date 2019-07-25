@@ -1,31 +1,17 @@
 # SEED 13310
 
-var KOE = 97
+var KOE = "|X==$(n"
 
-function j1TpSI(iC1, gpI, _9P, Rj, hn, V3)
-  var aHb2Z[57]
-  aHb2Z[12] = -(101 < 43)
-  if (77)
-    gpI = (75)
-    KOE += KOE <= 117 <=  not j1TpSI(KOE, KOE, KOE, KOE, KOE, 79) < j1TpSI(KOE, -KOE, 59, KOE, 64, KOE)
-    Rj += (-j1TpSI(KOE, KOE, -11, -KOE, KOE, 0) * j1TpSI(-KOE, KOE, 58, 104, KOE, 114))
-  end
-  return 29
-  var H4[47]
-  return j1TpSI(KOE, j1TpSI(KOE, KOE, KOE, KOE, 81, KOE), -j1TpSI(125, KOE, KOE, 40, 30, 84), KOE, -58, -KOE)
-  return ((j1TpSI(125, KOE, KOE, KOE, KOE, 125)))
-  H4[8] = j1TpSI(-KOE, j1TpSI(KOE, KOE, KOE, 82, KOE, 115), j1TpSI(20, KOE, 75, KOE, KOE, 97), j1TpSI(95, 111, KOE, 69, KOE, 82), j1TpSI(KOE, KOE, KOE, 29, -KOE, KOE), j1TpSI(KOE, KOE, 118, KOE, -72, KOE))
-end
+var iC1[62]
 
-function m9pSQDx(c3Ru, pS, _Xhc, PUO7H)
-  m9pSQDx(-m9pSQDx(97, KOE, 60, 40), 47, 15, -j1TpSI(2, 39, KOE, 48, KOE, 53))
-  KOE = 70 == 101 <= KOE or KOE
-  var y_E0FRx[57]
-  y_E0FRx[42] = KOE
-  var CkDL[41]
-  return CkDL[KOE or m9pSQDx(41, 50, KOE, KOE)]
-  while (KOE)
-  end
-  y_E0FRx[80] = m9pSQDx(-m9pSQDx(KOE, 14, KOE, KOE), 16, m9pSQDx(20, KOE, -KOE, 106), 32)
+function QoR9(Rj, hn, V3, jFHb2Z1P, bzDNRb, YRr5Q8Mu)
+  KOE = none
+  iC1[iC1[none] / QoR9(KOE, KOE, KOE, KOE, KOE, KOE)] = (34) > -none
+  return  not  not  not -(KOE) + QoR9(KOE, "{Zc#", KOE, "6Lg", "+", KOE) <= QoR9(16, KOE, -none, -KOE, KOE, 61)
+  iC1[ not -(KOE) >=  not -KOE] = QoR9("lIBk", -QoR9(KOE, "ua", 92, KOE, KOE, KOE), KOE, "LOE(L%X", KOE, KOE)
+  var UYm
+  return -(UYm / 122)
+  var h1Aquvd = iC1[UYm]
+  jFHb2Z1P = QoR9("'1", -KOE, QoR9(none, KOE, KOE, h1Aquvd, "Q", -UYm), QoR9(UYm, h1Aquvd, UYm, 29, KOE, h1Aquvd), none, QoR9(56, none, UYm, "C\%<_", h1Aquvd, h1Aquvd))
 end
 

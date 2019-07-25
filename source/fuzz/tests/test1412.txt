@@ -1,141 +1,49 @@
 # SEED 12733
 
-var eg = 122
+var eg = 88
 
-var ziopwMrI[126]
-
-function hTmTP(P7LEBVcG, eIHOze, yx1I, YRW, x1VzmxZe)
-  eg += hTmTP(6, eg, eg, eg, 84) or eg or eg
-  return hTmTP(106, 101, eg, hTmTP(5, eg, 78, eg, 29), eg)
-  while (77 or eg * eg >= hTmTP(44, 59, eg, 66, eg))
+function EopwM(zL, hTmTP, Z97LEB)
+  EopwM(eg, 5, eg)
+  zL = none
+  return EopwM("}3|S", eg, eg) > "&}E^" <= EopwM(74, "Ds|", "L")
+  var ii0EaPr[65]
+  var We6b[56]
+  return none / none > EopwM(eg, 9, "LI&US-")
+  while (none or eg * eg >= EopwM(64, eg, ";"))
+    EopwM(eg, eg, none)
+    ii0EaPr[ not We6b[EopwM(eg, 96, -eg) < eg]] = eg
+    var AmT2
+    var CSBR[6]
+    EopwM(eg, eg, EopwM(eg, AmT2, -none))
   end
-  if (ziopwMrI[eg] >= (eg))
-    var snF9UKB[116]
-    var VExNV6[8]
-    x1VzmxZe += VExNV6[snF9UKB[eg]]
-    hTmTP(eg, eg, eg, 0, hTmTP(eg, eg, eg, -25, 8))
-  end
-  while (18 or eg ==  not eg)
-  end
-  var AZF = 45 == eg <= 55
-  YRW = AZF * 110 / -111
-  while (-eg == ziopwMrI[hTmTP(AZF, 88, AZF, AZF, 55)])
-    while (hTmTP(AZF, eg, eg, AZF, eg) <= (hTmTP(14, AZF, eg, eg, eg)))
-      var aQRl = eg
-      var CkLWurJ
-      eg += ziopwMrI[14] + aQRl > 33
-    end
-    var _53i0b
-    var _Smmx = _53i0b
-  end
+  EopwM(-EopwM(-eg, "->{Y", eg), 95, "` @hf")
 end
 
-function vu3EbAz(kvjQp3h, uxU, ck, VLXT, F8jc, JJL, cvFEy)
-  while (ziopwMrI[45 or hTmTP(43, eg, eg, eg, 47)])
-    vu3EbAz(hTmTP(56, 79, eg, 0, 1), eg, eg, 48, eg, hTmTP(75, 109, eg, 27, 41), vu3EbAz(eg, 100, 103, -77, 87, -125, eg))
-    eg += hTmTP(eg, eg, eg, eg, eg) - ziopwMrI[126]
-    if (hTmTP(97, 40, eg, 59, 116) * -37 and vu3EbAz(31, eg, eg, 70, eg, eg, 5))
-      eg += eg * 43 >= 114 + hTmTP(eg, eg, -12, 52, 42)
-      if ((vu3EbAz(eg, -98, 123, eg, 29, eg, eg)))
-        hTmTP(eg, hTmTP(127, 104, 123, eg, 88), hTmTP(95, 99, eg, 34, eg), 11, hTmTP(eg, 109, eg, 106, eg))
-        if (eg)
-          ziopwMrI[14] = -vu3EbAz(hTmTP(eg, -99, 121, eg, -eg), vu3EbAz(-eg, eg, 36, 38, eg, 52, eg), eg, eg, hTmTP(eg, 45, 6, eg, eg), 23, eg)
-        end
-        if (hTmTP(7, eg, 74, 7, 1) + -vu3EbAz(-eg, eg, eg, 26, -24, eg, eg) == vu3EbAz(eg, eg, eg, eg, 115, eg, eg) > 111)
-          eg += ziopwMrI[-39 <= 69]
-          ck += -9 == hTmTP(eg, 29, 121, eg, 76)
-        end
-        var APQ[122]
-        if (38)
-          APQ[121] = APQ[eg]
-          VLXT =  not -7
-          JJL += 74 or 81
-        end
-      end
-      var ii[61]
-      F8jc = -eg
-      var nI[48]
+var LSPUW[10]
+
+function wj8f(BorrX6Q, boV, MF45eC, SryDDXp, LzcEiUw)
+  LSPUW[EopwM(wj8f(none, eg, eg, "la("x", ""!LTN"), eg, eg)] = eg <= EopwM(92, eg, eg) >= eg - eg
+  return (12) * eg
+  return LSPUW[(none)]
+  eg = -(LSPUW[eg])
+  eg += LSPUW[none] + eg > "3"
+  while (68 - eg <= eg < eg)
+    eg += EopwM(none, 29, eg) == 126 <= LSPUW[98]
+    LzcEiUw = "'Y7N&" / eg >= (wj8f(76, -"1.", eg, none, "ak_\"))
+    return -eg
+    if (LSPUW[ not eg])
     end
+    var Oo[109]
   end
-  while (39 < eg / ziopwMrI[-vu3EbAz(-68, eg, 62, eg, eg, eg, 85)])
-    if (-78)
-      var SRDpHJ = ziopwMrI[vu3EbAz(107, 60, 98, eg, eg, -33, 49)] >= vu3EbAz(eg, 57, eg, -eg, -eg, -eg, 1)
-      ziopwMrI[72] = ziopwMrI[24]
-      while ((SRDpHJ) < -vu3EbAz(eg, SRDpHJ, 90, -eg, 22, 89, SRDpHJ))
-        kvjQp3h += 43
-        if (vu3EbAz(vu3EbAz(104, 39, eg, 40, 42, 77, SRDpHJ), eg, 63, 22, eg, 62, 87))
-          return SRDpHJ - 73 * vu3EbAz(eg, 17, SRDpHJ, 3, SRDpHJ, 67, 112)
-          while (hTmTP(111, 55, 83, 112, eg) -  not 31)
-            hTmTP(106, vu3EbAz(eg, 20, SRDpHJ, 93, 99, 72, 45), -SRDpHJ, -117, hTmTP(88, 36, -41, 47, 81))
-            SRDpHJ = SRDpHJ
-            var oZ0WlrtI = 70
-            while ((eg <= 80))
-              return ziopwMrI[SRDpHJ or SRDpHJ]
-              ziopwMrI[106] = ziopwMrI[eg] * eg / 125
-              var dx[41]
-              if (ziopwMrI[18 and -oZ0WlrtI])
-                cvFEy = eg <=  not vu3EbAz(123, oZ0WlrtI, -121, 98, 27, 48, 17)
-                ck = 35 < 17 - ziopwMrI[oZ0WlrtI]
-              end
-            end
-            vu3EbAz(-61, oZ0WlrtI, 45, eg, vu3EbAz(eg, 25, SRDpHJ, oZ0WlrtI, 107, -eg, SRDpHJ), 5, vu3EbAz(18, 52, SRDpHJ, 74, SRDpHJ, -SRDpHJ, 93))
-          end
-          var QwQ[23]
-          SRDpHJ = (1 == 81)
-          if (SRDpHJ + hTmTP(-SRDpHJ, 44, SRDpHJ, eg, eg) and eg >= hTmTP(17, eg, 59, 111, SRDpHJ))
-            if (QwQ[eg <= -eg])
-              if (hTmTP(SRDpHJ, SRDpHJ, 15, eg, 85) and 120 * 33)
-                ziopwMrI[73] = hTmTP(80, eg, vu3EbAz(SRDpHJ, -70, 80, 118, SRDpHJ, eg, 95), eg, hTmTP(23, SRDpHJ, 61, 108, SRDpHJ))
-                ziopwMrI[71] = (-hTmTP(SRDpHJ, 49, eg, -78, 101))
-                return ((107))
-                ziopwMrI[4] = hTmTP(SRDpHJ, 112, 81, 32, 113) == -83
-                var nte1Zjbx
-              end
-            end
-            QwQ[24] = SRDpHJ
-            var SEW
-            var iHK
-            iHK = (vu3EbAz(eg, 63, SEW, eg, SRDpHJ, iHK, eg) < eg)
-          end
-        end
-      end
-      ziopwMrI[76] = 50 == 80 > vu3EbAz(eg, eg, SRDpHJ, SRDpHJ, 92, 124, SRDpHJ) / hTmTP(70, 17, eg, SRDpHJ, eg)
-    end
+  if (LSPUW[EopwM(none, 43, "`") and none])
+    eg =  not ("WcGnytg" + -"Dko}.]u")
   end
-  if (eg)
-    return 125
-    var Wl = hTmTP(vu3EbAz(116, 75, eg, -eg, -eg, eg, 91), hTmTP(eg, eg, eg, eg, 30), hTmTP(eg, -eg, eg, eg, eg), eg, -hTmTP(eg, 105, -88, 42, -94))
-    eg = 53
-    F8jc = Wl or eg * 106 >= 92
-  end
-  var Xg4zcTh
-  return Xg4zcTh
-  var jPi[76]
-  while (ziopwMrI[11] > 37 or eg)
-    eg += Xg4zcTh
-    vu3EbAz(43, 78, eg, -eg, hTmTP(26, 47, Xg4zcTh, 122, Xg4zcTh), vu3EbAz(0, eg, 90, Xg4zcTh, Xg4zcTh, 34, 12), 51)
-    vu3EbAz(hTmTP(124, eg, Xg4zcTh, eg, 25), 127, 88, 101, 27, 66, -hTmTP(46, eg, eg, Xg4zcTh, 57))
-    return 61
-    var HoDOW[49]
-  end
-  while (vu3EbAz(10, 36, 58, 100, 89, 41, Xg4zcTh) > hTmTP(Xg4zcTh, 18, Xg4zcTh, Xg4zcTh, 64) / Xg4zcTh)
-  end
+  LSPUW[eg / eg > eg or "q?c"] = LSPUW[eg or eg]
 end
 
-var J1 = 1
+var vETDqj[82]
 
-var YUnNoW[44]
+var b0dF4l[21]
 
-function SW(WYDwaH, n8, ShBa, FqpwOSW)
-  hTmTP(hTmTP(-eg, eg, 108, 78, 112), J1, 90, eg, SW(eg, -19, J1, 25))
-  if ((hTmTP(110, J1, -92, -J1, J1)) / -hTmTP(J1, eg, J1, J1, eg) <= 103)
-    SW(hTmTP(41, 113, 38, J1, J1), 21, eg, eg)
-  end
-  YUnNoW[55] = (vu3EbAz(eg, 23, 106, 63, 70, eg, J1))
-  return YUnNoW[116 * 94]
-  var LwnqMsn8[76]
-  LwnqMsn8[28] = hTmTP(-SW(eg, 111, 104, eg), SW(J1, J1, 65, 11), 45, eg, vu3EbAz(64, J1, 102, 123, eg, 7, 95))
-  return 39 / SW(eg, 19, J1, 97) > vu3EbAz(eg, 102, eg, eg, eg, 106, J1)
-  var JGXCY = ziopwMrI[eg] or 57
-end
+var EP[60]
 

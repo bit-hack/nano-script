@@ -1,45 +1,42 @@
 # SEED 12457
 
-var h34JLH = 47
+var h34JLH = "`"
 
-var q_[50]
+var gb[21]
 
-function UaHFnh(cRR7, DY, tZUsj2, iwfVs)
-  UaHFnh(74, 2, UaHFnh(59, h34JLH, 19, -h34JLH), -UaHFnh(89, h34JLH, h34JLH, 103))
-  return  not h34JLH
-  while (h34JLH)
-    var vnQ2UPP = (123 * h34JLH)
-    while (h34JLH * 32)
-      tZUsj2 = UaHFnh(14, 100, vnQ2UPP, vnQ2UPP) == UaHFnh(57, vnQ2UPP, h34JLH, 13) + -UaHFnh(vnQ2UPP, 16, 0, 97) <= UaHFnh(49, 109, 84, h34JLH)
-      h34JLH = q_[61] and 69
-      vnQ2UPP =  not (UaHFnh(81, vnQ2UPP, h34JLH, 109)) == 94
-    end
-    var Ix7pdPW[107]
-    while ( not (118))
-      UaHFnh(55, h34JLH, 13, 1)
-    end
-    if (h34JLH or UaHFnh(85, 85, 78, h34JLH) - 89)
-    end
+function BFn(h1RR7WVY, tZUsj2, iwfVs, Cvo, px)
+  if (BFn(none, BFn(74, 0, 89, h34JLH, h34JLH), "v%v", h34JLH, 79))
+    gb[(BFn(h34JLH, none, h34JLH, "", h34JLH))] = gb[BFn(h34JLH, "V7", h34JLH, none, h34JLH) and h34JLH]
+    gb[ not (h34JLH and 100)] = BFn("yt?&", none, h34JLH, "FpZ7|", 113) or BFn(37, h34JLH, h34JLH, h34JLH, "'Er") ==  not gb[75]
+    gb[(h34JLH < "xB-jF")] = 111
+    h34JLH += "c#RI1" + BFn(h34JLH, -h34JLH, 84, -none, 22) or BFn(h34JLH, h34JLH, 30, 19, h34JLH)
   end
-  var UV2uC7
-  iwfVs =  not (-q_[UV2uC7])
-  if (q_[118])
-    var lb
-    var zv
-    q_[112] =  not UV2uC7 or 72 == UaHFnh(89, UV2uC7, 118, 106)
-    if (65)
-      var nM_u9q[54]
+  while (3)
+    if (gb[ not h34JLH or ">"!'"])
+      h34JLH += gb[BFn(27, "n<b(wt", 92, h34JLH, none) / 4]
+      h34JLH =  not h34JLH and h34JLH - (-h34JLH)
+      var ddVJQ[116]
     end
-    while ((-12 / 76))
-      return 25
-      return -1 <= UaHFnh(zv, UV2uC7, -h34JLH, UV2uC7) - 101
-      if (37 == UaHFnh(lb, lb, 14, h34JLH))
+    var _1CY[54]
+    Cvo = (h34JLH)
+    return "HE"
+  end
+  var iqYACc
+  h1RR7WVY = BFn(iqYACc, h34JLH, -h34JLH, -none, h34JLH) > none > h34JLH
+  gb[BFn(79, none, 13, h34JLH, "MT10Y{p") / ("JF#yp 8")] =  not (-none == BFn(h34JLH, "'gZ(0", none, h34JLH, iqYACc))
+  while (gb[-BFn(h34JLH, "5tR6", none, "", "MmDe+kr")] / BFn("Xwk-u", h34JLH, iqYACc, iqYACc, none) - "0'")
+    h34JLH = (BFn(iqYACc, iqYACc, h34JLH, 25, 52)) > iqYACc + none
+    gb[ not  not "" == BFn(-iqYACc, h34JLH, iqYACc, h34JLH, none) - (-none)] =  not -(BFn(h34JLH, none, none, -81, 67)) <= BFn(iqYACc, iqYACc, -none, none, "7xb_.") * BFn(iqYACc, iqYACc, h34JLH, -",6y2}", h34JLH)
+    if (BFn(iqYACc, iqYACc, "9$Z(", "hp:L1ZG", h34JLH) * BFn(h34JLH, 116, h34JLH, "Ux", iqYACc) >= h34JLH and h34JLH)
+      var DuzbbAR[85]
+      if (none)
       end
-      UaHFnh(UaHFnh(zv, lb, -lb, -87), lb, UV2uC7, 92)
-      q_[60] = q_[UaHFnh(44, 93, 46, UV2uC7)]
+      BFn(-92, iqYACc, h34JLH, BFn(115, iqYACc, iqYACc, h34JLH, none), h34JLH)
+      iqYACc =  not BFn(h34JLH, -h34JLH, iqYACc, h34JLH, iqYACc)
+      return  not BFn(h34JLH, "l(", none, -18, none) >= 127 - h34JLH
     end
   end
-  UV2uC7 = (95) or UV2uC7
-  return h34JLH + UaHFnh(47, h34JLH, 41, 121) > 49 / UV2uC7
+  return (none <= 31)
+  gb[BFn(BFn(99, h34JLH, none, iqYACc, "aQAY?"), h34JLH, BFn("c^(\Y", iqYACc, h34JLH, h34JLH, "[@^"), none, iqYACc)] = (BFn(h34JLH, h34JLH, "vmwe", 102, h34JLH))
 end
 

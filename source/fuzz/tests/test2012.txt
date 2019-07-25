@@ -4,9 +4,9 @@ var O5e[82]
 
 var mBdeAgf
 
-var bxC7l74B = 33
+var bxC7l74B = none
 
-var Ydzmnf = 27
+var Ydzmnf = none
 
 var Cm
 

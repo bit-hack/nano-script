@@ -1,31 +1,17 @@
 # SEED 12649
 
 function IFoU(WXVJd, kwsM558)
-  if ( not  not -IFoU(-13, 8) and IFoU(-21, 11) + IFoU(125, 63))
+  if ( not  not -IFoU(-none, "|Z05$r") + IFoU(none, "Z;{?r`6") == "F" >= none)
+    var Db35c[106]
+    return IFoU(11, -none) >= none >= (none)
+    while ( not IFoU(-25, "") * IFoU(none, "3:") * IFoU(none, "O_\") == "T*&Sx")
+    end
   end
-  var F8CP8xN2 = 69
-  var Y5zQ_[57]
-  IFoU(-F8CP8xN2, IFoU(F8CP8xN2, F8CP8xN2))
-  return  not F8CP8xN2
-  WXVJd += F8CP8xN2 > 99 + IFoU(125, 6)
-  var hTmqnw[92]
-  IFoU(F8CP8xN2, 77)
+  IFoU(25, IFoU(46, 10))
+  return -IFoU(none, none) and 119 < IFoU("", none) + -IFoU(none, none)
+  IFoU(IFoU(none, none), IFoU("sA", -none))
+  IFoU("bmcy", 61)
 end
 
-function SwQH28vC(TV, APaStRKA, HzosZ, J84Nd32, WZEBxaV, RyjvaBl, hOm)
-  if (IFoU(43, SwQH28vC(13, 53, 52, 37, 111, 45, 85)))
-  end
-  var aX3RE[41]
-  while (( not SwQH28vC(15, 92, 65, 111, 79, 22, 63) < 15))
-    while (117)
-    end
-    aX3RE[6] = IFoU(-23, 41) > SwQH28vC(12, -111, 111, 62, 65, 50, 54) < (-35)
-    var jp = 45
-    jp = jp
-    SwQH28vC(SwQH28vC(18, 28, 84, jp, 71, jp, jp), 100, -jp, 95, SwQH28vC(jp, jp, jp, 2, 103, jp, -69), 29, SwQH28vC(96, 123, jp, 115, 122, jp, jp))
-  end
-  var dgBE[50]
-  return (IFoU(48, 38) > 47)
-  var Z1gu7Lik[68]
-end
+var eHimb[94]
 

@@ -1,28 +1,38 @@
 # SEED 12507
 
 function rH(oQYkJ, wH5B)
-  if ( not rH(70, -61) <= rH(57, 38) * 107)
-    rH(-29, 80)
-    var kO3LWNB[78]
-    if ( not 40 > -rH(70, 122) < rH(74, 16) < 96)
-      var WM06BPV = kO3LWNB[12 * rH(28, 32)]
-      return rH(77, -WM06BPV)
+  if ( not rH("", "<?3") > "" and -none)
+    var FzaMrf
+    return rH(48, -FzaMrf)
+    var l964D
+  end
+  var Xq = "1,Uw[M{"
+  var mev[117]
+  var hC =  not Xq *  not Xq == -none
+  wH5B += mev["\gS&\" / Xq]
+  if ( not Xq * none > -rH(97, ""))
+    oQYkJ =  not rH(125, 99) >= (rH(hC, none))
+    return 74 or Xq and  not 31
+    if (rH(Xq, Xq) or hC + rH(none, "|M-P3"))
+      mev[(mev[none])] = "P"
+      mev[-Xq] = "L?)"
+      hC += rH(93, none) * "o%O*"
+      while (rH(rH(Xq, none), hC))
+      end
+      mev[rH(Xq, "^\p0>{y") <= hC * -Xq] = rH(Xq, -none)
     end
   end
-  return 119
-  var U3TL[46]
-  while (rH(90, 107))
-    var p9gUPEr1
-  end
+  var mADnPHT
+  mev[mADnPHT <= none == rH(Xq, ")lf-Rt5")] = mev[Xq] * -mADnPHT > mADnPHT
 end
 
-var qH_[20]
+var r9g = none
 
-var RBLf
+var afP
 
-var wytZECr[80]
+var ql[25]
 
-var dC0cm
+var S5pXOwQM = none
 
-var FwU1Fj = 97
+var Q0n
 

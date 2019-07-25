@@ -1,40 +1,20 @@
 # SEED 12631
 
 function dI(lmLI, ddldR, nY)
-  while (126)
-    while (55)
-      var YX[54]
-      dI(-dI(6, 96, -52), 92, dI(10, 9, 85))
-      return dI(87, 53, 126) or -dI(45, 77, 35) or dI(47, 48, 117) < 58
-    end
-    if (dI(10, 25, 39) < 32 <= 25)
-      if (dI(90, 41, 15) <  not (75))
-        dI(21, 49, 75)
-        while ( not  not dI(85, 3, 39) * dI(64, 91, 30) - 35 or dI(91, -16, -31))
-          var TX
-          TX += TX / 115 < 126 == 28
-          var RoPrQ7[39]
-        end
-      end
-    end
-    while (108)
-      var pzrlfum[115]
-      if (dI(122, dI(117, 28, 106), 113))
-        pzrlfum[73] = 75
-      end
-      if (pzrlfum[dI(79, 61, 47)] + 125 - 48)
-        var nNVs
-        while (nNVs + nNVs / dI(nNVs, 28, 111))
-        end
-        var ERG68U = dI(dI(nNVs, nNVs, 47), nNVs, -dI(nNVs, nNVs, nNVs))
-        pzrlfum[27] = dI(ERG68U, -77, nNVs)
-      end
-      var Nrl = 46
-    end
+  while ("ggLam")
+    var Dgd = dI(-dI("rD(MAC", -none, 127), "&sW#", dI(19, "b", "1k.!"))
   end
-  dI(57, -68, 69)
-  var rr4BQ[42]
+  return "CC4" > dI("]Oj1YN", "H(Qo", none) >= dI(87, none, ".P")
+  while (("}+?t8s") * -(44))
+    return dI(78, 27, none) * "]IxZ0" <=  not dI("3m", ""Ytr?.", "MA<CC") * dI("mg*9KW=", 40, "u")
+  end
+  var aPrn
+  while (aPrn)
+    dI(aPrn, 62, -none)
+  end
+  var R0Xgo = aPrn or aPrn - 127
+  return  not 77 and -none < R0Xgo
 end
 
-var gpX[68]
+var cb = 99
 

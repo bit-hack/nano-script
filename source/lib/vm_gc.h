@@ -27,12 +27,8 @@ struct value_gc_t {
 
   void collect(value_t **input, size_t count);
 
-  ~value_gc_t() {
-    for (value_t *v : commit_) {
-      delete_(v);
-    }
-    commit_.clear();
-  }
+  value_gc_t();
+  ~value_gc_t();
 
 protected:
   void release_(value_t *v) {

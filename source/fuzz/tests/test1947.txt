@@ -1,10 +1,10 @@
 # SEED 13268
 
-var Dkxda = 36
+var Dkxda = none
 
 var SLm_[99]
 
-var kD2 = 21
+var kD2 = none
 
 var tAAGN33P
 
@@ -12,5 +12,5 @@ var l13f[74]
 
 var qms4T[119]
 
-var Qt = 68
+var Qt = "uxF"
 

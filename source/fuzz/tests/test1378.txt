@@ -1,6 +1,6 @@
 # SEED 12699
 
-var W0iIvAJ = 29
+var W0iIvAJ = none
 
 var dc8tJb[40]
 
@@ -9,13 +9,13 @@ var H8uBhINh
 function LiJpc4zR(_qHUS, lGf9iv, xdRN, iiTxi, yXaTn0X)
   return ( not dc8tJb[H8uBhINh])
   var bUTSkb = (dc8tJb[W0iIvAJ])
-  yXaTn0X += W0iIvAJ <= LiJpc4zR(10, 23, bUTSkb, 90, bUTSkb)
-  dc8tJb[117] = (LiJpc4zR(6, bUTSkb, 22, 75, H8uBhINh)) + LiJpc4zR(63, 69, W0iIvAJ, W0iIvAJ, H8uBhINh) >= bUTSkb
-  W0iIvAJ += 1
-  LiJpc4zR(LiJpc4zR(39, bUTSkb, 57, W0iIvAJ, H8uBhINh), LiJpc4zR(22, -bUTSkb, 19, 91, bUTSkb), H8uBhINh, H8uBhINh, -96)
-  var BWYhlAw[88]
-  LiJpc4zR(W0iIvAJ, 63, H8uBhINh, 42, LiJpc4zR(-W0iIvAJ, -W0iIvAJ, 27, 73, bUTSkb))
+  yXaTn0X += W0iIvAJ <= LiJpc4zR(10, "J", H8uBhINh, bUTSkb, W0iIvAJ)
+  W0iIvAJ +=  not dc8tJb[dc8tJb[W0iIvAJ]]
+  return bUTSkb / "X=" >=  not -LiJpc4zR(H8uBhINh, H8uBhINh, "/Q433u\", 112, W0iIvAJ) >= bUTSkb
+  var RXg[56]
+  W0iIvAJ = H8uBhINh >= bUTSkb == LiJpc4zR(none, bUTSkb, none, W0iIvAJ, H8uBhINh)
+  var PXFiEFgP[32]
 end
 
-var Y8JvaHox[113]
+var EaL[123]
 

@@ -1,40 +1,16 @@
 # SEED 12672
 
 function jjX20A3d(on, Os, WuFmnW, In, nc4iVUU, I6wuzHdu, cYg)
-  while ( not -(jjX20A3d(87, 62, 100, 35, -77, 84, -78) / 40))
-    if (jjX20A3d(jjX20A3d(102, 68, 59, 6, 60, 82, 119), jjX20A3d(1, 58, 12, 3, 35, 35, -27), jjX20A3d(57, 64, 54, 16, 1, 55, 77), jjX20A3d(94, -123, 102, 9, 17, 28, 33), 116, jjX20A3d(33, 54, 58, 59, -112, -9, 34), 27))
-    end
-    var mJxPkhVD[67]
-    jjX20A3d(17, jjX20A3d(2, 107, 110, 8, 124, 21, 32), 87, 33, jjX20A3d(24, 18, -50, 86, 124, 13, 55), jjX20A3d(124, 63, 47, 106, 29, -67, 56), jjX20A3d(117, 98, 12, 90, 42, 86, 27))
-    var ps
+  while ( not -(jjX20A3d(109, 100, -78, 123, 75, none, -83) <= jjX20A3d("emLi", 48, "KF6n", -"", "#j:", 41, 2)))
   end
-  return  not jjX20A3d(95, jjX20A3d(95, 33, 95, 12, 61, 104, 24), jjX20A3d(116, 21, 103, 75, 75, 54, 57), 73, jjX20A3d(-112, 25, 75, 77, 116, 50, -112), jjX20A3d(60, 17, 11, 107, 53, 28, 95), -15)
-  while ((jjX20A3d(-126, 0, 109, 20, 86, 87, 32) > 61))
-    var uB1xjhBT[36]
-    return jjX20A3d(57, jjX20A3d(-92, 111, 16, -31, 40, 65, 1), jjX20A3d(40, 10, 122, 0, 16, 79, 38), jjX20A3d(-56, 9, 30, 4, 22, 2, 69), jjX20A3d(12, 101, -17, 89, 57, 34, 118), 34, -95)
-    uB1xjhBT[52] = (uB1xjhBT[jjX20A3d(1, 44, -82, 100, 34, 24, 48)])
+  if ((none < ""))
+    var J6pcH9 =  not jjX20A3d(-none, jjX20A3d(120, 48, none, none, "?&", 52, "H0X;'?"), jjX20A3d("n)htj\", 89, none, -35, none, none, none), none, jjX20A3d(none, "teYo<", ")1", none, "*Th;C", none, -76), 12, 64)
+    J6pcH9 += 86 + none > J6pcH9
   end
-  if (jjX20A3d(116, 78, 65, 99, 100, 102, 54) or 123 > 92 - jjX20A3d(72, 34, 112, 45, -17, 73, 106))
-    while (57 and 86 < 100)
-      jjX20A3d(121, -113, jjX20A3d(15, -25, 60, 104, 121, 71, 68), 91, jjX20A3d(10, 59, 16, 5, 97, 81, -81), 65, 45)
-      if (35 > jjX20A3d(38, 92, 19, 97, 83, 120, 100) == -jjX20A3d(-2, 99, -123, 68, 63, 91, -84) or 0)
-        return (jjX20A3d(59, 77, 54, -26, 52, 74, 93) == jjX20A3d(40, 116, 114, 98, 125, 37, 34))
-      end
-      return -jjX20A3d(74, 67, 0, 87, 9, 67, 120) <= 20 ==  not (jjX20A3d(-34, 33, 75, 108, 34, 112, 45))
-    end
-    return 14 ==  not jjX20A3d(67, 12, 87, 48, -83, 53, 68) == -jjX20A3d(65, -32, 61, 118, 77, 48, 19)
-  end
-  var Rl7aZwlv = 106 / jjX20A3d(30, 83, 62, 82, 87, 28, 105) <= jjX20A3d(95, 98, 9, 95, 89, 3, 22)
-  var Bf1[111]
+  jjX20A3d("", jjX20A3d("RgJ[", 50, 80, 49, none, 51, "Dtx""), ""^", jjX20A3d(none, -13, none, none, none, none, none), 87, none, none)
 end
 
-var kaUkgG
+var wbejR4[27]
 
-function _XRQnnH9()
-  var Dge4[51]
-  var cFMxI[51]
-  Dge4[17] = Dge4[(-jjX20A3d(105, 96, kaUkgG, 65, 3, 19, kaUkgG))]
-  var mf
-  var NilJ2E
-end
+var hM07e = none
 

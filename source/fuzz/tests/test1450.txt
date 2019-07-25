@@ -1,6 +1,6 @@
 # SEED 12771
 
-var HOz = 86
+var HOz = none
 
-var Dfrk = 124
+var Dfrk = 107
 

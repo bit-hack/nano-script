@@ -1,34 +1,18 @@
 # SEED 12657
 
-var BFZo = 109
+var BFZo = "!9|oA"
 
-var zqxEc = 7
+var YJ49Xa39 = 66
 
-var qXa = 100
+var Df
 
-var MJ[89]
+var ha[87]
 
-var DMupaWJg
+var xs
 
-var Sn[113]
+var p9[33]
 
-function YCwVH(gNWfX, nKBXuh2, FqmsIJ4a, gn, ZMD, tsJudf1, aQlW_)
-  if (-YCwVH(-112, 104, 34, zqxEc, 3, BFZo, 59) - (123))
-    DMupaWJg += BFZo == YCwVH(qXa, qXa, 4, 87, qXa, qXa, -BFZo) and YCwVH(108, qXa, 6, 49, 95, 30, 41) + YCwVH(19, qXa, zqxEc, 17, DMupaWJg, 115, qXa)
-    return (YCwVH(BFZo, zqxEc, 98, 52, zqxEc, DMupaWJg, qXa))
-  end
-  YCwVH(82, 118, 47, 87, 18, -119, 122)
-  var R4d6o32[93]
-  var RCaJZh2O[104]
-  return Sn[YCwVH(37, 99, qXa, 48, zqxEc, 54, zqxEc)] or -57 / YCwVH(40, zqxEc, qXa, zqxEc, -118, 24, 52)
-  return 123 < 104 or 64
-  if (-33 and YCwVH(37, DMupaWJg, DMupaWJg, 48, qXa, 2, qXa))
-    var JR7gmk[26]
-    aQlW_ = YCwVH(DMupaWJg, 120, -58, BFZo, 38, 45, zqxEc) and Sn[YCwVH(BFZo, qXa, 91, BFZo, zqxEc, 106, 101)]
-    YCwVH(YCwVH(BFZo, 49, DMupaWJg, qXa, BFZo, 88, 76), zqxEc, -BFZo, 121, YCwVH(45, BFZo, 51, qXa, zqxEc, DMupaWJg, 115), -YCwVH(38, qXa, BFZo, 93, zqxEc, zqxEc, DMupaWJg), 55)
-  end
-  var doQ[115]
-end
+var RVH = none
 
-var bN2goE[21]
+var SfXzLK
 

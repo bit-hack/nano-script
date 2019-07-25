@@ -11,39 +11,13 @@ var QBW[13]
 function qm84c(OohQr, JKFKVri, gdd5, rHoY, Pw, IoD7I0, TM_fsL3)
   var Vmc
   var Q0AdD5[25]
-  if (100)
-    if (QBW[qm84c(Vmc, Vmc, 99, Vmc, Vmc, Vmc, 115)] and (Vmc))
-      var eoVxvIny[116]
-    end
-    TM_fsL3 += 102 == 0 < (Vmc)
-    while (vsBh91[Vmc] or -qm84c(Vmc, 87, -Vmc, -Vmc, Vmc, 86, 76) / Vmc)
-      qm84c(qm84c(Vmc, Vmc, 35, Vmc, 112, 111, Vmc), -Vmc, Vmc, qm84c(Vmc, Vmc, 6, Vmc, 45, 43, 121), qm84c(Vmc, Vmc, 124, 86, 73, Vmc, 71), 13, 68)
-      JKFKVri = 32
-      rHoY = rjaB6mW[qm84c(-Vmc, Vmc, Vmc, 105, 47, Vmc, 78) + 121]
-    end
-    return -DXA[qm84c(Vmc, Vmc, -Vmc, Vmc, Vmc, 88, 49) < 125]
-    if ( not Vmc)
-      qm84c(114, 110, qm84c(80, Vmc, Vmc, Vmc, 92, 100, Vmc), qm84c(-85, 88, 43, Vmc, Vmc, 71, Vmc), Vmc, Vmc, qm84c(36, 64, Vmc, Vmc, Vmc, -40, 21))
-      if (qm84c(Vmc, 14, Vmc, -24, 56, Vmc, 9) >= Q0AdD5[Vmc])
-        while ((76) + qm84c(Vmc, -Vmc, Vmc, 50, 5, Vmc, Vmc))
-        end
-      end
-      return ( not qm84c(Vmc, 101, 30, Vmc, -Vmc, 54, 105))
-      var IfR = 67
-      var maDXwg5D[51]
-    end
+  if (67)
+    return qm84c("'.&", qm84c(Vmc, Vmc, none, Vmc, Vmc, Vmc, 19), Vmc, "", "brJ>R", qm84c(none, "0CJ]jc", -Vmc, Vmc, none, 31, Vmc), qm84c(Vmc, Vmc, Vmc, none, Vmc, 16, Vmc))
   end
-  var yKprkW5T[126]
-  while ( not Vmc >= qm84c(Vmc, 95, Vmc, 33, Vmc, -Vmc, Vmc) - 30)
-    vsBh91[117] =  not qm84c(Vmc, Vmc, 43, Vmc, Vmc, Vmc, 116)
-    QBW[1] = (68 / qm84c(62, Vmc, -Vmc, Vmc, Vmc, 108, Vmc))
-    qm84c(qm84c(115, 112, Vmc, 49, 3, 90, Vmc), qm84c(124, Vmc, Vmc, Vmc, -Vmc, -64, 88), qm84c(40, -101, 50, 59, Vmc, 126, Vmc), qm84c(Vmc, Vmc, 106, 91, Vmc, 93, Vmc), Vmc, 125, qm84c(22, Vmc, 93, Vmc, 4, Vmc, 54))
-  end
-  Vmc +=  not vsBh91[46] - vsBh91[-qm84c(50, 38, 22, Vmc, 79, Vmc, Vmc)]
-  if (qm84c(96, 25, qm84c(Vmc, Vmc, 104, -Vmc, 69, 108, Vmc), Vmc, 62, 62, Vmc))
-    Vmc += (qm84c(47, 58, 78, Vmc, Vmc, 64, 120) > 125)
-  end
-  if (Vmc - 113 *  not 14)
-  end
+  var eYFDkNH[72]
+  return Vmc
+  qm84c(qm84c(none, Vmc, none, Vmc, none, 76, none), Vmc, Vmc, 21, -Vmc, qm84c(":2", Vmc, none, "m^R1", Vmc, Vmc, Vmc), qm84c(Vmc, none, 52, none, Vmc, Vmc, Vmc))
+  Vmc += vsBh91[Vmc * qm84c(Vmc, none, none, -Vmc, none, Vmc, Vmc)]
+  OohQr += qm84c(", tgI", "|", Vmc, Vmc, Vmc, none, "i8") > -(qm84c(Vmc, Vmc, Vmc, -59, "abd", "", "@'$\!"))
 end
 

@@ -1,32 +1,53 @@
 # SEED 13001
 
-var PeDv0 = 115
+var PeDv0 = none
 
 function VkjEFz7()
-  if (VkjEFz7() + 82)
-    return (VkjEFz7() < 9)
-    while (VkjEFz7())
-      var PW
-      var cLH[126]
+  if (VkjEFz7() + "l]m]E")
+    if (PeDv0)
+      var G0IafQ[10]
     end
+    return none
+    var Gjynp[23]
+    var x4lLH[126]
   end
-  while (102)
-    return  not -25
-    var bGQ
-    if ( not (25) < bGQ and bGQ)
-      VkjEFz7()
-      var Fqe1G
-      if ( not -bGQ +  not 88 and VkjEFz7())
-      end
+  while ("")
+    var EZaTGQjB[93]
+  end
+  if ((124) or PeDv0 * 68)
+    if ( not -PeDv0 +  not none and VkjEFz7())
     end
-    return bGQ
+    return PeDv0
+    var QXgLqZM[98]
+    VkjEFz7()
   end
-  var QXgLqZM[98]
-  VkjEFz7()
-  return QXgLqZM[VkjEFz7()]
-  QXgLqZM[81] = VkjEFz7() > PeDv0 >= -VkjEFz7()
+  return  not VkjEFz7() > PeDv0 >= -VkjEFz7()
   var Ii6 = VkjEFz7() > -PeDv0 or VkjEFz7()
+  var sav4 = PeDv0
 end
 
-var sav4[109]
+function Qv3g(iLx, Ia7, e3_fH, FWgru4, AhNcQh)
+  while (PeDv0)
+    var syOdxDXm = VkjEFz7() <= PeDv0 > PeDv0 / Qv3g(PeDv0, 33, none, PeDv0, -"H|w:x83")
+    PeDv0 = 30 > VkjEFz7() >= PeDv0 > syOdxDXm
+    var tZb3q5DZ
+    var y9tAEFk = (none)
+    if (-VkjEFz7())
+    end
+  end
+  var WsXv00MP = (PeDv0 < 35)
+  var HSn = Qv3g(-Qv3g(WsXv00MP, 28, WsXv00MP, -none, 95), -VkjEFz7(), PeDv0, WsXv00MP, VkjEFz7())
+  if (Qv3g(VkjEFz7(), 10, PeDv0, Qv3g(49, 62, WsXv00MP, HSn, PeDv0), Qv3g(HSn, PeDv0, PeDv0, PeDv0, PeDv0)))
+    Ia7 += (WsXv00MP)
+  end
+  VkjEFz7()
+  if (VkjEFz7())
+    WsXv00MP += Qv3g(PeDv0, PeDv0, "^N", HSn, -PeDv0) - "CU" or "" == VkjEFz7()
+    if (Qv3g(Qv3g("", 28, "tQ", none, 78), VkjEFz7(), VkjEFz7(), VkjEFz7(), VkjEFz7()))
+      var S_jqJ
+    end
+  end
+  var m9FqrO[84]
+  var tWHX7YVZ[82]
+end
 

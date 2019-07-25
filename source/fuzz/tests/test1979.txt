@@ -1,55 +1,25 @@
 # SEED 13300
 
 function TQF2(qF, GFv, few, S3Sc, uk1vsW)
-  return (TQF2(60, 22, 39, 119, 77)) - 27 >= TQF2(20, 29, 15, 19, 124)
-  while (TQF2(77, 36, 61, 24, 114) > TQF2(103, 39, 30, 5, 116) * (73))
-  end
-  while (52 * TQF2(37, 96, 28, 78, 103))
-    TQF2(TQF2(21, 108, 97, 86, 42), -28, 107, TQF2(101, 77, 22, 52, 77), 117)
-    return 37 +  not 4 == 9
-  end
-  var L152gRQ9[47]
-  var qRKo[32]
-  var QvtbBMC[66]
-end
-
-function CaTM(ByQJ, e9l6, HRrxUQs, l1, ak, Q_tOTqs)
-  return  not 1
-  return 92 <= CaTM(23, -57, 34, 64, -96, 92) == 6
-  while ( not 3)
-    CaTM(CaTM(45, 84, 122, 118, 63, 99), 46, 36, 43, 1, CaTM(-118, -74, 61, 13, 97, 7))
-    while (96 < CaTM(65, 53, 75, 4, 113, 112) and -CaTM(94, 119, -26, -11, 115, 57))
-      while (83)
-        var FqDfSXUx[3]
-        while ((CaTM(29, 46, -111, 113, -123, 76) > CaTM(1, 81, 109, 67, 41, 33)))
-          var IMb5[44]
-          var Qsb = TQF2(-1, 77, 67, 65, 11) < 42 < (CaTM(-72, 30, 88, 6, -71, 36))
-          e9l6 += CaTM(38, Qsb, 29, 107, 122, 113) >= 122 and 75
-        end
-        while (TQF2(CaTM(50, 113, 69, 67, 115, -66), 5, TQF2(-10, 121, 30, 109, -53), CaTM(121, 1, 119, 62, -66, 108), 106))
-          while (-CaTM(47, -7, 49, 27, 68, -83) >= -TQF2(31, 3, 64, 112, 1) or (TQF2(17, 19, 8, 6, 42)))
-            CaTM(60, -26, -121, 105, CaTM(-46, 1, 24, 82, 64, 14), -69)
-            CaTM(32, CaTM(52, 6, 61, 102, 36, 26), CaTM(66, 40, 13, -54, 43, 85), 59, TQF2(52, 5, 40, 0, 48), 115)
-          end
-          CaTM(100, CaTM(105, -95, 72, 70, 9, 53), 102, 22, 82, 31)
-          FqDfSXUx[71] = -(118) or -FqDfSXUx[-CaTM(61, 3, 123, 25, -15, 80)]
-          return 2
-        end
-      end
-      var GxRlvEUu = TQF2(113, -47, 75, 77, -60) <= CaTM(79, 34, 113, 127, 105, 44) <= TQF2(64, 32, 36, -70, 38) <= 118
+  return (TQF2("-C-*9", none, none, 40, ""3")) >=  not ""
+  return TQF2("]", 21, 2, "Nczs3z", 102) + none < "<e*"
+  return TQF2(45, 44, "", "YAo^", 73) >= "rU" * -TQF2(-none, none, none, "PV", none) >= TQF2(none, none, 15, none, none)
+  TQF2(none, -111, TQF2(112, none, "", 109, none), -11, 113)
+  if (TQF2(TQF2(-126, 24, none, "eRXs", "2\ZC"), "sy", 91, none, TQF2(53, -none, none, none, 99)))
+    var d2e
+    d2e += "" > 74 <= "Q,$#"
+    if (TQF2("|<N{Bm", TQF2(-d2e, "l2]", none, -d2e, d2e), TQF2(d2e, d2e, d2e, d2e, d2e), -none, "jB{"))
+      var fTDzcxF = d2e
+      d2e += d2e >= d2e < none
+      S3Sc = TQF2(d2e, 114, 77, "^es Mxg", none) / -TQF2("AIdEPp", fTDzcxF, none, fTDzcxF, fTDzcxF)
     end
   end
-  var RO = (32)
-  ak += TQF2(TQF2(RO, RO, -RO, RO, 32), CaTM(RO, 52, 61, 82, RO, RO), RO, CaTM(105, 24, RO, 71, RO, -95), 32)
-  if ( not 32 > TQF2(RO, RO, RO, 16, -23) or 107)
-    RO += (-CaTM(53, RO, 114, -RO, 34, 111))
-    RO += RO > RO / -RO
-    ByQJ = -RO
-    var R4j[30]
-  end
+  TQF2("s<=,L", TQF2("V_Ri@.,", 85, "!y", -14, none), TQF2(122, none, none, none, 16), TQF2(none, "d", none, 101, "r>dC"), TQF2(-none, none, -none, "", 110))
 end
 
-var FVOh[79]
+var ZuUo[114]
 
-var sFK[108]
+var KFvf3 = "0"
+
+var moxUn4A[99]
 

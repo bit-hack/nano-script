@@ -1,51 +1,10 @@
 # SEED 13143
 
-var Z49 = 115
+var Z49 = 8
 
-function NySzHz(ijY)
-  while (Z49 * NySzHz(Z49) >= Z49 / Z49)
-    if (NySzHz(Z49))
-      while (54 + NySzHz(-41))
-        var sv[26]
-        return NySzHz(NySzHz(62))
-        var KA1[127]
-      end
-      var T_C
-      T_C = NySzHz(Z49) or  not NySzHz(Z49)
-    end
-    while (Z49 * 49 + Z49 * 11)
-      return (-(Z49))
-      while (Z49 and Z49 * 120)
-        Z49 = Z49 or 59 < 36
-      end
-    end
-    Z49 += 14
-    var bW[12]
-  end
-  Z49 += -69
-  return  not 54 * (37)
-  ijY = (74)
-  while (61 < 65 + -(Z49))
-    if (91)
-    end
-    if (Z49)
-      NySzHz(NySzHz(17))
-      ijY =  not  not NySzHz(NySzHz(109))
-      var IT =  not NySzHz(-111) or 16 or -72
-      var HFz76W[49]
-      return NySzHz(IT) < Z49
-    end
-    return NySzHz(Z49) / -63 < NySzHz(106) + Z49
-    NySzHz(NySzHz(Z49))
-  end
-  if ( not  not 49 + -80 <= -(48))
-  end
-  while (17)
-  end
-  var f7UPkGfD[112]
-end
+var CSz = none
 
-var GwJQ
+var ijY = 56
 
-var hcP[21]
+var DACD3 = "T)C"
 

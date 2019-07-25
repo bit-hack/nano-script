@@ -1,51 +1,32 @@
 # SEED 13306
 
 function JKmxpoE(y8)
-  JKmxpoE(JKmxpoE(50))
-  var RmQdx39c
-  var Jh
-  var TFs[77]
-  var CH7e0l = ( not RmQdx39c)
-  while (Jh)
-    return TFs[JKmxpoE(CH7e0l)]
-    if (-(JKmxpoE(81)) <= JKmxpoE(50))
+  JKmxpoE(JKmxpoE("#l_@"))
+  while ( not none > "v3}" - -"Un,\I")
+    return (JKmxpoE(""))
+    if ( not -JKmxpoE("cSLBs"))
+      JKmxpoE(-JKmxpoE(none))
+      var oft[88]
+      var TS = 39
     end
-    if (-TFs[(-RmQdx39c)])
-    end
+    var uLGU4QZQ[7]
   end
-  TFs[5] = RmQdx39c
-  Jh +=  not -JKmxpoE(RmQdx39c) + JKmxpoE(108) / RmQdx39c
+  JKmxpoE(JKmxpoE(-"C=$"))
+  return -JKmxpoE("t_") <= JKmxpoE(121) and JKmxpoE(54) and JKmxpoE(none)
 end
 
-var faRoe5[23]
+var jLCTcmLF
 
-var aNg[98]
+var yqbsx = "5|+"
 
-var IY = 29
+var xppNuR[118]
 
-function at8(ba)
-  faRoe5[86] = at8(88) or 65
-  while (faRoe5[faRoe5[-123]])
-    aNg[64] = at8(-at8(59))
-    while (faRoe5[at8(IY)])
-    end
-    return (JKmxpoE(IY) > 107)
-    return IY > IY / JKmxpoE(109) - JKmxpoE(96)
-    aNg[49] = IY - 104
+function eof5()
+  xppNuR[JKmxpoE(eof5())] = xppNuR[eof5()] + -";"b=VfG" + eof5()
+  return 112 <= -eof5() == jLCTcmLF
+  JKmxpoE(yqbsx)
+  var LC6OQAI[92]
+  while ( not  not 110 + jLCTcmLF > JKmxpoE(0))
   end
-  ba += IY
-  if ( not IY + at8(IY))
-    var cn7FkJE = aNg[-10] and -JKmxpoE(115)
-    return IY <= -at8(cn7FkJE) / cn7FkJE
-    var K_66Dk
-    faRoe5[58] =  not (at8(IY) * at8(31))
-    ba += IY > JKmxpoE(35) + 83
-  end
-  return IY
-  return 30 + 102 >  not JKmxpoE(IY) * 60
-  while (95)
-    var PN[30]
-  end
-  return faRoe5[ not at8(87) and JKmxpoE(109)]
 end
 

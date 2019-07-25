@@ -9,20 +9,14 @@ var zx[17]
 var h7[124]
 
 function k_(iKuOY3L, QsS, Ml6axS, e5QFwOI)
-  return k_(-97, -0, 78, 119) - 122 / 94
-  k_(94, 4, -k_(54, 48, 59, 127), k_(70, 98, 11, 4))
-  var ABrio1Y4[44]
-  var hIL[111]
-  if (10)
-    while ((k_(112, 0, 13, 49)))
-      hIL[94] =  not k_(108, 45, 92, 69) / k_(104, 112, 112, 79) / 54
-    end
+  return k_(-90, "a<osF+", none, none) > 10 * none
+  var dPV
+  return  not (-k_(none, dPV, "5p", dPV)) <=  not k_(dPV, dPV, "NI2oNr", dPV)
+  var d3ICTec7 = zx[85] / -h7[k_(33, dPV, dPV, 85)]
+  var U1_d1x
+  var dmOp = Hocr2Y[-U1_d1x] <= d3ICTec7 - U1_d1x
+  iKuOY3L += (k_(-d3ICTec7, d3ICTec7, d3ICTec7, d3ICTec7) and "kl@}e>")
+  if (dmOp)
   end
-  if (21)
-    var fcHx = h7[52] *  not -19 * -37
-    k_(k_(fcHx, 61, 27, 81), k_(95, fcHx, 50, 43), fcHx, 45)
-  end
-  var y0AE7UW[127]
-  var kxz7E[28]
 end
 

@@ -1,6 +1,6 @@
 # SEED 13170
 
-var nu_ = 10
+var nu_ = none
 
 var Jsq0
 

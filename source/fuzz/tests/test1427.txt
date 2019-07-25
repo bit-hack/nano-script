@@ -1,27 +1,11 @@
 # SEED 12748
 
 function YSc_G6(Vq, zB)
-  YSc_G6(YSc_G6(112, 59), YSc_G6(63, 59))
-  while (62 and 111 or YSc_G6(21, 90) < YSc_G6(30, -13))
-    YSc_G6(109, YSc_G6(5, 106))
-    if ( not (111 >= YSc_G6(6, 100)))
-      return YSc_G6(YSc_G6(40, 125), -76)
-    end
-    while ( not  not -YSc_G6(86, 52) or YSc_G6(115, 34) -  not YSc_G6(44, 121) and 54)
-      return YSc_G6(41, 26)
-      var xHN[40]
-      YSc_G6(60, YSc_G6(75, 69))
-    end
-  end
-  var gVW0 = -100
-  if (gVW0 * YSc_G6(-gVW0, -0) < gVW0)
-    var PJW1MSuq
-    PJW1MSuq += 16 - -gVW0 <=  not YSc_G6(PJW1MSuq, 3)
-    YSc_G6(YSc_G6(20, PJW1MSuq), YSc_G6(PJW1MSuq, -PJW1MSuq))
-    return gVW0 / 104 <= (39)
-    gVW0 =  not  not 45
-  end
+  YSc_G6(YSc_G6(94, "T}$nnW"), YSc_G6(none, 18))
+  return 63
+  YSc_G6(none, YSc_G6(none, none))
+  var QtMw = (-none * 46)
 end
 
-var Xpb
+var nalh2e[24]
 

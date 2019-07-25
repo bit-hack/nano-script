@@ -1,46 +1,27 @@
 # SEED 12626
 
-var kh = 75
+var kh = 11
 
-function wRVyvy(XGon, PNC10, FFXFP, WkvhN, k2L, RIKbNEM, ytOcV)
-  kh = wRVyvy(75, kh, kh, 48, kh, kh, kh) and 50 / kh > kh
-  wRVyvy(kh, -wRVyvy(67, kh, kh, 68, 63, 72, kh), kh, kh, kh, kh, 10)
-  var jq[112]
-  wRVyvy(wRVyvy(101, 44, kh, 15, kh, kh, 9), 123, kh, -kh, 61, wRVyvy(-104, kh, 126, kh, kh, -kh, 114), wRVyvy(79, 91, 123, 95, kh, kh, kh))
-  var gmBfyX8[43]
-  if (wRVyvy(kh, kh, 118, kh, 110, 108, 75) - wRVyvy(kh, 32, 28, kh, kh, -kh, kh) * wRVyvy(82, 116, 75, kh, -kh, 121, 40) == -kh)
-    var SQh9 = (25 * kh)
-    jq[90] = gmBfyX8[wRVyvy(38, SQh9, SQh9, 14, 95, SQh9, -122) == 47]
+var QVyvy = none
+
+var xnSiNC1
+
+var DXFPc
+
+function iNo(MlyIKbNE, lhtOcVW, lWptPq, pPPHl, hCeH, TBEF)
+  var g7gvRT[83]
+  iNo(none, 64, none, kh, iNo(xnSiNC1, xnSiNC1, QVyvy, xnSiNC1, QVyvy, kh), -iNo("-Z15", 70, DXFPc, "u}{-3", QVyvy, xnSiNC1))
+  if (kh)
+    lWptPq += QVyvy
+    var HzV0g[65]
+    var WIDqUu
   end
-  var X4d
-  return kh
+  QVyvy = g7gvRT[g7gvRT[iNo("<bY&$e&", none, DXFPc, xnSiNC1, none, none)]]
+  iNo(DXFPc, -kh, ")Q", "xcBL", iNo(QVyvy, xnSiNC1, -QVyvy, none, 103, QVyvy), none)
+  DXFPc = iNo(-xnSiNC1, 64, QVyvy, QVyvy, QVyvy, kh)
+  pPPHl += iNo(none, 109, iNo(32, QVyvy, "_x<", DXFPc, xnSiNC1, xnSiNC1), iNo(kh, 89, kh, 32, -none, "JD-8"), 55, iNo(QVyvy, none, 90, DXFPc, -QVyvy, none))
+  lhtOcVW += (-QVyvy == iNo(">{+>,", DXFPc, 84, DXFPc, 62, QVyvy))
 end
 
-var qyH
-
-var cfci9x9 = 96
-
-function fpKI(b7jv)
-  var tK9l =  not cfci9x9
-  if (103)
-    b7jv += -(fpKI(tK9l) - wRVyvy(cfci9x9, 74, 115, 50, -kh, 91, tK9l))
-    var oKvwErVt = qyH * wRVyvy(-0, 107, kh, kh, 51, 47, kh) / 103 == cfci9x9
-    oKvwErVt = (53 - fpKI(37))
-    if (oKvwErVt)
-      cfci9x9 += fpKI(qyH) == (73)
-    end
-  end
-  var T7i6Yf[90]
-  fpKI(tK9l)
-  if (cfci9x9)
-    b7jv += qyH
-    T7i6Yf[68] = T7i6Yf[9 >= wRVyvy(qyH, 107, tK9l, kh, tK9l, -45, qyH)]
-  end
-  while ( not cfci9x9)
-  end
-  var ujDnTI[94]
-  b7jv = -T7i6Yf[(kh)]
-end
-
-var V0
+var ke9o2[110]
 

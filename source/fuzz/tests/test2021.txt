@@ -1,23 +1,17 @@
 # SEED 13342
 
 function ZS5CcKo(E0KChY, N5J7ae, OSgDTo, Vc, VNQVp0, OHtyA23)
-  var esLksVc =  not (ZS5CcKo(78, 94, 19, 93, 115, 2)) and ZS5CcKo(36, 29, 26, 112, 103, -87)
-  while (-esLksVc)
-    if ((56 or -ZS5CcKo(74, -esLksVc, esLksVc, esLksVc, esLksVc, 51)))
-      esLksVc =  not  not esLksVc * 60 or 70
-      var GpAya0vb = esLksVc <= ZS5CcKo(62, esLksVc, esLksVc, esLksVc, -esLksVc, esLksVc) / 43
-    end
-    if (esLksVc)
-    end
-    if (esLksVc)
-    end
+  var esLksVc =  not (ZS5CcKo(50, "p", none, 114, 89, 21)) >= ZS5CcKo(34, -61, 123, 36, none, none)
+  if (esLksVc >= ZS5CcKo(esLksVc, esLksVc, esLksVc, esLksVc, 120, esLksVc))
+    esLksVc = none
   end
-  esLksVc += esLksVc - ZS5CcKo(76, 54, 114, esLksVc, 127, 121) < 96 <= ZS5CcKo(esLksVc, 34, 9, -62, esLksVc, esLksVc)
-  return esLksVc >=  not 121 * ZS5CcKo(esLksVc, esLksVc, 117, esLksVc, 22, esLksVc)
-  var e_bAbE2L[15]
-  while (e_bAbE2L[ not 100 == ZS5CcKo(esLksVc, 118, 82, esLksVc, -58, esLksVc)])
+  var dk[76]
+  if (ZS5CcKo(-esLksVc, ZS5CcKo(esLksVc, esLksVc, none, "", 99, esLksVc), "/6!J@el", ZS5CcKo(62, esLksVc, esLksVc, esLksVc, -esLksVc, esLksVc), esLksVc, esLksVc))
   end
-  return 42
-  return ZS5CcKo(ZS5CcKo(esLksVc, esLksVc, 112, 76, 100, esLksVc), -esLksVc, ZS5CcKo(-esLksVc, esLksVc, esLksVc, 78, esLksVc, 18), ZS5CcKo(esLksVc, 74, 71, 27, 64, 26), 106, 68)
+  if (esLksVc)
+  end
+  esLksVc += esLksVc - ZS5CcKo(none, 20, -"Pw,|]<5", ":@'"C", esLksVc, 51) <= 93
+  ZS5CcKo(none, esLksVc, ZS5CcKo(51, esLksVc, esLksVc, esLksVc, esLksVc, none), ZS5CcKo(-esLksVc, esLksVc, "YBJmq", esLksVc, esLksVc, "x4t"), esLksVc, none)
+  ZS5CcKo(none, ZS5CcKo(-none, esLksVc, "xllEV", esLksVc, esLksVc, esLksVc), "mq-`D5u", 43, -ZS5CcKo(-esLksVc, esLksVc, -esLksVc, "[{", esLksVc, esLksVc), ZS5CcKo(esLksVc, "", esLksVc, "{", "ryl(", "4 $"))
 end
 

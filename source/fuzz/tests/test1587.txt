@@ -1,18 +1,25 @@
 # SEED 12908
 
 function gDsks(bjou)
-  if (63 >= 42 or gDsks(64) - -gDsks(14))
+  if (none >= "zH<m&," and none)
+    var KI4juw[102]
   end
-  var Oj10u[116]
-  var tQs = 79 > gDsks(124) - (gDsks(32))
-  var gt2HjV
-  gt2HjV += 121
-  return  not gDsks(tQs) / 0 < tQs
+  var S_fdhUVY =  not  not none - -gDsks(none) * gDsks("w_bq=)") > gDsks(none)
+  bjou += gDsks(S_fdhUVY)
+  S_fdhUVY = S_fdhUVY
+  return gDsks(57)
 end
 
-var F587
+function B2H(G6mLUAC6, yCsQ6O, M_J76c)
+  var MMJKQ[47]
+  var wXFuY
+  yCsQ6O = (-gDsks(78))
+  MMJKQ[""U" - "" == none] = wXFuY
+  var bUTc[43]
+  bUTc[(wXFuY < B2H(112, -wXFuY, "<"))] = gDsks(wXFuY)
+end
 
-var UzHs4[77]
+var HlHE = none
 
-var s8KZI5[38]
+var e4[8]
 

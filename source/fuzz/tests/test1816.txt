@@ -7,12 +7,17 @@ var PyXdm
 var Vo0kD
 
 function JVOA()
-  return Elmej[56] == Elmej[Vo0kD]
+  return Elmej[23] * JVOA()
+  while (46)
+    JVOA()
+    JVOA()
+  end
+  if (PyXdm)
+    JVOA()
+  end
   JVOA()
-  var SNz[51]
-  var j6NrOeNb[103]
-  Elmej[31] = -( not Vo0kD)
+  Elmej[-62] =  not Vo0kD
 end
 
-var SKEiF = 98
+var SKEiF = "*gh"
 

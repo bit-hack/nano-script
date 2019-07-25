@@ -6,12 +6,12 @@ var r2VU7
 
 var CY7
 
-var kj = 37
+var kj = none
 
 var quPyyW
 
 function umTqV()
-  while (35 *  not umTqV() * 102)
+  while (none *  not umTqV() * none)
     var TOU_4Ys0[78]
     var mb8Ph0Wf[17]
   end

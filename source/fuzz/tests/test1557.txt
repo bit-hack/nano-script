@@ -1,45 +1,24 @@
 # SEED 12878
 
-var EOLgk_ = 3
+var EOLgk_ = 87
 
-function _NCVs__(TUHCC, x8x4M, eh3, gmOpLQg)
-  while (((-_NCVs__(81, 53, 119, EOLgk_))))
+var nCVs__o[34]
+
+function xCCcf8x(EDh3zcm)
+  EOLgk_ += EOLgk_
+  var nSi
+  EDh3zcm += -nCVs__o[115] and ("e>Z#")
+  while (nSi)
     var XKgOMR[105]
-    x8x4M += 11 - EOLgk_ < EOLgk_
-    _NCVs__(-82, EOLgk_, 87, 39)
-    TUHCC += 42
-    return 59
+    EDh3zcm += 54 and xCCcf8x(nSi) >= EOLgk_
+    var Fz0isY
+    Fz0isY = nSi
+    return (EOLgk_)
   end
-  if (EOLgk_ >  not 64)
-    return  not  not _NCVs__(EOLgk_, 73, 76, EOLgk_) >= 100
-  end
-  if (53)
+  EOLgk_ += nCVs__o[none] <= xCCcf8x(EOLgk_) - -xCCcf8x(44)
+  EDh3zcm += xCCcf8x(100)
+  if (none)
   end
   var tAsoR6
-  while (86)
-    eh3 = tAsoR6 < _NCVs__(tAsoR6, 104, 81, 5) + _NCVs__(119, 11, EOLgk_, EOLgk_)
-    var Vt05y[92]
-    EOLgk_ = Vt05y[103] * -39 < 111
-  end
-  while (tAsoR6 - (tAsoR6))
-    return _NCVs__(_NCVs__(tAsoR6, EOLgk_, 116, EOLgk_), _NCVs__(EOLgk_, tAsoR6, 60, 17), 108, 52)
-    var y8u_sSwL = (EOLgk_ == tAsoR6)
-    while (_NCVs__(-123, y8u_sSwL, 46, tAsoR6) >= _NCVs__(y8u_sSwL, EOLgk_, 8, 125) + tAsoR6)
-      _NCVs__(49, tAsoR6, y8u_sSwL, 37)
-      if (_NCVs__(EOLgk_, -tAsoR6, _NCVs__(y8u_sSwL, 25, -tAsoR6, 20), _NCVs__(tAsoR6, -101, -72, 110)))
-        if (EOLgk_ <  not tAsoR6 and -21)
-          EOLgk_ = (EOLgk_ > EOLgk_)
-        end
-        return y8u_sSwL < tAsoR6 <= -_NCVs__(-EOLgk_, 23, EOLgk_, y8u_sSwL) < EOLgk_
-      end
-      var xFeu_UoI = EOLgk_ >= 105 and _NCVs__(107, EOLgk_, y8u_sSwL, tAsoR6) or _NCVs__(-92, EOLgk_, EOLgk_, 5)
-    end
-    TUHCC = tAsoR6
-  end
-  return -_NCVs__(tAsoR6, 43, EOLgk_, tAsoR6) < tAsoR6 - _NCVs__(tAsoR6, 111, -tAsoR6, -99) * EOLgk_
-  if (69 and EOLgk_ >= (tAsoR6))
-  end
 end
-
-var MnHc_Dg
 

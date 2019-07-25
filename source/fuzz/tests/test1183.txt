@@ -1,4 +1,4 @@
 # SEED 12504
 
-var A0dyV3 = 45
+var A0dyV3 = none
 

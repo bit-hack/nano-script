@@ -1,86 +1,45 @@
 # SEED 12379
 
-var GBXNuK3q = 80
+var GBXNuK3q = "@8p"
 
-var ZwdPJT[125]
+var UT[125]
 
 function Uf(JBn5, Yplv, n34oi, AZc4f9, OHSlu, br1)
-  var Jh4 = Uf(GBXNuK3q, 25, GBXNuK3q, GBXNuK3q, GBXNuK3q, GBXNuK3q) and 86 >=  not 13 + GBXNuK3q
-  if (Uf(Jh4, GBXNuK3q, 114, 55, GBXNuK3q, Jh4) >= Jh4 <= 61 / Jh4)
-    var N4T = ZwdPJT[-31] / 121 >= GBXNuK3q
-    OHSlu += GBXNuK3q
-    if (103)
-      Uf(Jh4, Uf(8, GBXNuK3q, -N4T, N4T, 27, GBXNuK3q), Uf(Jh4, 49, 19, Jh4, Jh4, 36), -N4T, Jh4, -Uf(106, -GBXNuK3q, GBXNuK3q, GBXNuK3q, Jh4, -Jh4))
-      Uf(Jh4, GBXNuK3q, 84, GBXNuK3q, -74, GBXNuK3q)
-      var C2YaC0E[24]
-    end
-    Uf(22, 53, Uf(5, 10, 6, 51, 90, Jh4), GBXNuK3q, -Jh4, 86)
-  end
-  GBXNuK3q = Uf(126, 124, 97, 50, -110, -87) >= 90 - 61
-  while ((100))
-  end
-  return Uf(GBXNuK3q, GBXNuK3q, GBXNuK3q, Jh4, -57, 16) >= 30 -  not -GBXNuK3q + Uf(14, GBXNuK3q, 97, GBXNuK3q, 91, 15)
-  JBn5 += Uf(-47, 74, GBXNuK3q, 17, -Jh4, Jh4) < GBXNuK3q - ZwdPJT[74]
-  GBXNuK3q = GBXNuK3q
-  while ((Uf(GBXNuK3q, GBXNuK3q, 36, Jh4, 125, 98)) and (-44))
-    Uf(Uf(Jh4, Jh4, Jh4, GBXNuK3q, 20, GBXNuK3q), Uf(Jh4, 51, 28, 99, GBXNuK3q, 58), Uf(66, Jh4, 52, Jh4, Jh4, GBXNuK3q), GBXNuK3q, Uf(Jh4, 112, GBXNuK3q, 30, Jh4, -91), Uf(34, GBXNuK3q, Jh4, GBXNuK3q, 76, 61))
-    while (ZwdPJT[Jh4 >= Uf(80, Jh4, 96, 95, 10, GBXNuK3q)])
-      Jh4 =  not (Jh4 == 49)
-      AZc4f9 =  not ( not GBXNuK3q)
-    end
-    Uf(-78, 118, GBXNuK3q, 21, 18, GBXNuK3q)
-  end
+  var Jh4 = Uf(GBXNuK3q, none, GBXNuK3q, GBXNuK3q, GBXNuK3q, GBXNuK3q) and none >=  not "1e" or GBXNuK3q
+  Yplv += Uf(none, Uf(none, "^JR", GBXNuK3q, Jh4, "4q", "/<>E"), GBXNuK3q, Uf(-none, 83, Jh4, 37, "L N;-p", -91), Uf(none, Jh4, -GBXNuK3q, GBXNuK3q, 64, 84), 125)
+  n34oi = UT[GBXNuK3q]
+  var ou
+  var k68hPuAy = none
+  k68hPuAy += UT[Jh4]
+  return Uf(k68hPuAy, 98, ou, none, ".K", ou) and k68hPuAy > GBXNuK3q
+  Uf(k68hPuAy, 67, "[{ ]", -108, Uf(GBXNuK3q, -12, "'/)p", 38, 83, 90), Uf(none, Jh4, GBXNuK3q, -GBXNuK3q, "hFm'", 8))
 end
 
-var By616uNx
-
-function Y_(df1n)
-  df1n += -ZwdPJT[100 < -By616uNx]
-  if (By616uNx < Uf(By616uNx, 113, GBXNuK3q, GBXNuK3q, 68, 23) * 48)
-    var MOD5YhL =  not ( not (GBXNuK3q))
-  end
-  ZwdPJT[61] = (98)
-  df1n = 23
-  var pEw = 37
-  ZwdPJT[3] =  not 24 >= 110 *  not  not ZwdPJT[Y_(54)]
-  while (By616uNx)
-    var DtGDUw
-  end
-  if (38)
-  end
-end
-
-function liGXWQ8(y3, gMRN3nnN, uXxuNZS, fIe78he)
-  uXxuNZS +=  not GBXNuK3q < 45 <= Uf(GBXNuK3q, GBXNuK3q, GBXNuK3q, GBXNuK3q, By616uNx, GBXNuK3q)
-  By616uNx += -(35 or By616uNx)
-  var rwv = (liGXWQ8(19, By616uNx, 6, 73)) or By616uNx
-  var GL[107]
-  Uf(Uf(rwv, rwv, rwv, GBXNuK3q, rwv, 65), -Y_(119), rwv, -Uf(66, GBXNuK3q, rwv, 61, GBXNuK3q, 62), rwv, GBXNuK3q)
-  rwv = -28
-  while (50)
-  end
-  var EdMx[110]
-end
-
-function a3lN()
-  if (ZwdPJT[76] - 45)
-    ZwdPJT[23] = 56
-    if ( not 117)
-      var YH[20]
-      Uf(GBXNuK3q, 57, a3lN(), By616uNx, Y_(15), 72)
-      var tDh = liGXWQ8(GBXNuK3q, 54, By616uNx, By616uNx) / Y_(54) / GBXNuK3q == -Y_(62)
-      YH[88] = tDh
+function p_mZgSu(yzpVXX7i, EbYYhDw, _l9PT, IGWg_WP, ytKV, qT90p, CeUq)
+  if (p_mZgSu("&NuS", p_mZgSu(GBXNuK3q, 124, none, GBXNuK3q, GBXNuK3q, GBXNuK3q, -none), none, p_mZgSu(-GBXNuK3q, -GBXNuK3q, GBXNuK3q, GBXNuK3q, GBXNuK3q, "Z!bH^H", none), Uf(GBXNuK3q, "L\", none, -"?[", none, GBXNuK3q), none, -GBXNuK3q))
+    if (p_mZgSu("U`", p_mZgSu(GBXNuK3q, "", 21, GBXNuK3q, GBXNuK3q, none, GBXNuK3q), p_mZgSu(none, GBXNuK3q, GBXNuK3q, GBXNuK3q, GBXNuK3q, 35, none), p_mZgSu("U9b", "yQ=#B", GBXNuK3q, -GBXNuK3q, 27, "ie#*7V'", GBXNuK3q), none, GBXNuK3q, GBXNuK3q))
+      var oumwtdD[120]
+      return (p_mZgSu("d""T\0", GBXNuK3q, none, GBXNuK3q, "4L3z", -GBXNuK3q, GBXNuK3q)) - none + p_mZgSu(124, GBXNuK3q, GBXNuK3q, none, none, GBXNuK3q, 89)
+      GBXNuK3q = ( not Uf("T/", 67, GBXNuK3q, GBXNuK3q, GBXNuK3q, none) * p_mZgSu(none, GBXNuK3q, GBXNuK3q, GBXNuK3q, -GBXNuK3q, none, 41))
     end
   end
-  while ((118 > liGXWQ8(89, 17, 114, -76)))
-    var n4O = a3lN() >= a3lN() + ZwdPJT[Uf(-55, By616uNx, 104, 110, By616uNx, By616uNx)]
-    return ZwdPJT[-104] < a3lN() == 62
+  UT[((Uf(125, none, "j#-q!7r", GBXNuK3q, GBXNuK3q, GBXNuK3q)))] = none / p_mZgSu(GBXNuK3q, GBXNuK3q, "vFQce", "T|O", none, GBXNuK3q, ",!3P1=") < none or none
+  p_mZgSu(GBXNuK3q, GBXNuK3q, p_mZgSu(none, GBXNuK3q, -GBXNuK3q, GBXNuK3q, GBXNuK3q, none, GBXNuK3q), GBXNuK3q, GBXNuK3q, GBXNuK3q, GBXNuK3q)
+  EbYYhDw = GBXNuK3q or Uf(GBXNuK3q, GBXNuK3q, GBXNuK3q, "e", "{K:", none)
+  return p_mZgSu(GBXNuK3q, none, "V", none, GBXNuK3q, GBXNuK3q, GBXNuK3q) or GBXNuK3q == 104 == GBXNuK3q
+  var gq[44]
+  p_mZgSu(Uf("Qde", 57, GBXNuK3q, 30, GBXNuK3q, GBXNuK3q), Uf(60, 62, GBXNuK3q, 95, GBXNuK3q, -none), GBXNuK3q, p_mZgSu(4, "3b)elD", -"zuN^", -71, none, 15, GBXNuK3q), p_mZgSu(GBXNuK3q, 31, GBXNuK3q, GBXNuK3q, -none, GBXNuK3q, GBXNuK3q), Uf("wd:8|", "", none, none, "c", -80), GBXNuK3q)
+  while (p_mZgSu(GBXNuK3q, -122, GBXNuK3q, none, 88, GBXNuK3q, GBXNuK3q) + Uf(none, 103, none, "v", "@\#", "sG\z") or 29)
+    Uf(p_mZgSu(none, 114, GBXNuK3q, GBXNuK3q, none, GBXNuK3q, "&f"), -"-z", 108, p_mZgSu(none, -GBXNuK3q, -GBXNuK3q, 62, GBXNuK3q, 62, 53), none, p_mZgSu(-9, "v#/_P&", 3, ",afU/", 91, 2, -GBXNuK3q))
+    qT90p += -("+") - none
+    return 49 - p_mZgSu("3!$", GBXNuK3q, 28, GBXNuK3q, "7e", GBXNuK3q, GBXNuK3q) - GBXNuK3q
+    p_mZgSu(GBXNuK3q, 79, GBXNuK3q, GBXNuK3q, GBXNuK3q, p_mZgSu(-GBXNuK3q, GBXNuK3q, GBXNuK3q, -GBXNuK3q, GBXNuK3q, none, 5), 119)
   end
-  ZwdPJT[63] = GBXNuK3q >=  not By616uNx / -52
-  Uf(-a3lN(), By616uNx, 33, 24, Uf(43, 50, 59, 83, 106, GBXNuK3q), Y_(71))
-  while (GBXNuK3q)
-  end
-  var qeFts[49]
-  var qi94HKn
 end
+
+var hO_oyP9[58]
+
+var Us7qi0W = "Nd^"
+
+var A5UGR[129]
 

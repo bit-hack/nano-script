@@ -2,7 +2,7 @@
 
 var pHR
 
-var puIr = 85
+var puIr = none
 
 var bvH
 

@@ -1,79 +1,18 @@
 # SEED 12677
 
-var mmhG = 99
+var mmhG = "Vv"
 
-function u7Iet()
-  if (126)
-    u7Iet()
-  end
-  return  not (mmhG or 88)
-  return  not mmhG * mmhG * u7Iet()
-  var es2fneF[126]
-  if (75)
-    var gWi0w1 = es2fneF[mmhG]
-  end
-  while (48 * mmhG or (41))
-    u7Iet()
-    var yTE8giA
-    es2fneF[115] = 94 and yTE8giA > 37
-  end
-  if (es2fneF[u7Iet()] <= mmhG > 126)
-    return (87) < u7Iet() + mmhG
-    if (u7Iet() / u7Iet() and es2fneF[99])
-      u7Iet()
-      if ( not es2fneF[u7Iet() and 114])
-        return ((-u7Iet()))
-      end
-    end
-    var yyrkdx
-  end
-  u7Iet()
-end
+var At = ""
 
-function l673O2j(KN, _l0LXX, cKW_GA)
-  mmhG = l673O2j(73, mmhG, 18)
-  var mxW6s[34]
-  var _oLSSA = l673O2j(l673O2j(85, mmhG, mmhG), l673O2j(-8, -38, 23), u7Iet())
-  mxW6s[30] =  not 36 and _oLSSA >= u7Iet() == u7Iet()
-  _l0LXX += u7Iet()
-  var N_Cv
-  mxW6s[114] =  not (_oLSSA)
-  while (-80 * u7Iet() or u7Iet() + 40)
-    mmhG = u7Iet() < mmhG < (-u7Iet())
-    u7Iet()
-    while ( not -mxW6s[(125)])
-      var BZcK = mmhG
-      if (127 <= BZcK <= 47 > -N_Cv)
-      end
-    end
-    KN += 24
-  end
-end
+var g4o1wKu[98]
 
-function UN(R8Z, TEtpTXN, _dpWWFe, PhMBHkb6, JIq, wL, wNPVspT)
-  var UT[6]
-  while (UT[mmhG])
-    while (-121 + UN(mmhG, mmhG, mmhG, mmhG, mmhG, 87, 116) == 26)
-      return -75
-    end
-    if ((mmhG) <  not mmhG)
-      var I0[128]
-      var ToL8e4
-    end
-  end
-  var gP = -13
-  JIq += (u7Iet()) >=  not l673O2j(85, -gP, gP) / 52
-  return UT[u7Iet() or mmhG]
-  UT[101] = u7Iet()
-  var H2owxG = 76
-  gP += -UT[(50)]
-end
+var DQfp
 
-var jvGPYFs
+var xh0[116]
 
-var zXboZ5K[89]
+var lmpP
 
-var fZAVv97[75]
+var p1bm6j
 
-var jnUjTIL[87]
+var n3
 

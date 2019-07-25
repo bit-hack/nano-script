@@ -1,24 +1,10 @@
 # SEED 12651
 
-var Cjd16 = 91
+var Cjd16 = "zBZ"
 
-function kIg(fZeVbYzd, oETzwi5)
-  if (Cjd16 <= -107)
-    var IoR[65]
-    Cjd16 += (Cjd16) > kIg(Cjd16, -47) >= kIg(23, Cjd16)
-    kIg(kIg(34, 54), kIg(Cjd16, 73))
-    IoR[79] = 54
-  end
-  fZeVbYzd = 117 / -6
-  var dzu4lij0 =  not 92
-  var bLHvn[18]
-  var eL = (kIg(68, 121)) * 74
-  kIg(118, dzu4lij0)
-  var Oka_nDW6[19]
-  bLHvn[90] = dzu4lij0
-end
+var wVZeVbY[89]
 
-var NsJQ8N
+var oETzwi5[101]
 
-var Z0l[26]
+var Re[44]
 

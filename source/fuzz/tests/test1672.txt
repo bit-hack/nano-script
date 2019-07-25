@@ -11,75 +11,30 @@ var wjf[109]
 
 function f1U(F1O, I4zJ, QVriz)
   var Tb2[65]
-  while (111 * f1U(8, 58, 122) + jS5u())
-    var dNHdHG[114]
-    f1U(101, f1U(17, 82, 115), jS5u())
-    jS5u()
+  while ("2R8*%jr" and "v,.+e)")
   end
-  if (14 and -(jS5u()))
-    var yakfxt88 = (88 * jS5u())
-    I4zJ += wjf[f1U(44, 16, yakfxt88)] <= wjf[126]
-    var vzu_Dd[104]
-  end
-  while ( not jS5u() >= 52 or 82 + 96)
-    return 36
-    f1U(-103, jS5u(), f1U(83, 13, 50))
-    if ((3) / f1U(29, 33, 71) == jS5u())
-    end
-    while (jS5u())
+  while ( not -Tb2[-jS5u() and jS5u()])
+    if (wjf[none + jS5u()])
+      var dNHdHG[114]
+      f1U(none, f1U(none, none, none), jS5u())
       jS5u()
     end
   end
-  return jS5u() == 69 > 61 == jS5u()
-  if ((Tb2[f1U(86, 61, 13)]))
-    Tb2[102] = 73
+  if ("b2G(^CY" * none + 54)
   end
-  if (f1U(86, 62, 66) * jS5u() + 8 < 59)
-    return 29
-    wjf[30] =  not  not  not wjf[(4)]
+  if (f1U(jS5u(), jS5u(), f1U("7", none, "u8O(")))
+    var Ru_ = f1U(45, "pNnwgTl", none) and "80{*J`M" + (jS5u())
+    return -Ru_
+    return  not wjf[(Ru_)]
+    Tb2[none] = (wjf[5])
   end
-  var gOp[93]
+  var FEe[13]
+  while (((none)))
+    while (117 + f1U("W", none, 71) * Tb2[jS5u()])
+    end
+  end
+  jS5u()
 end
 
-function aUBoXZ(xJL5j2Y8, Bmb7xFxI)
-  var v0316
-  wjf[70] = v0316
-  if (jS5u() + v0316 * -f1U(96, v0316, 126) - aUBoXZ(34, v0316))
-    f1U(v0316, aUBoXZ(12, v0316), v0316)
-  end
-  wjf[17] = 63 - aUBoXZ(-45, 3) or jS5u()
-  var BTA9zt
-  if ( not f1U(-aUBoXZ(v0316, v0316), 67, jS5u()))
-    wjf[92] = -v0316
-    var BPdagLvy
-    return jS5u() - -f1U(v0316, -BTA9zt, BPdagLvy) -  not jS5u() == 97
-    wjf[5] = -wjf[(aUBoXZ(BPdagLvy, BPdagLvy))]
-    while ((BPdagLvy))
-      v0316 = v0316
-      while (f1U(BTA9zt, -13, v0316) and jS5u() - 68)
-        wjf[65] = f1U(99, v0316, jS5u())
-        return (f1U(v0316, 44, -126)) and 101 == f1U(BPdagLvy, 44, v0316)
-      end
-      while (BPdagLvy)
-        var qyk4V0D = (BTA9zt) - 86 * -aUBoXZ(62, BPdagLvy)
-      end
-      while (wjf[95] <= wjf[BTA9zt])
-      end
-    end
-  end
-  return f1U(82, BTA9zt, 2)
-  while (f1U(40, jS5u(), 119))
-    while (((BTA9zt)))
-      f1U(aUBoXZ(75, BTA9zt), BTA9zt, -jS5u())
-      if (BTA9zt)
-        return (-jS5u())
-      end
-      var kw9ykFve[46]
-    end
-    while ((30) >= 80)
-      return wjf[ not jS5u() < v0316]
-      var EXX_WfFk[129]
-    end
-  end
-end
+var uv = "eq)"
 

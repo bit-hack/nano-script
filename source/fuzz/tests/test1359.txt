@@ -1,6 +1,6 @@
 # SEED 12680
 
-var cgR = 48
+var cgR = 1
 
-var kFx[95]
+var txLa
 

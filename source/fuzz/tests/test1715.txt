@@ -1,22 +1,18 @@
 # SEED 13036
 
 function Symfne(ti, lHC, lQ)
-  while (-(Symfne(116, 34, 58)) + Symfne(108, 29, 111) <= 15)
-    Symfne(Symfne(44, 109, 55), Symfne(22, 66, 51), 104)
-    var hdsD
-  end
-  var miLW[12]
-  if (77)
-    if (Symfne(-124, 106, 88) and  not Symfne(103, 32, 64))
-      Symfne(34, Symfne(95, 106, 65), Symfne(109, 83, 34))
-      var gmxE = (-53 * Symfne(58, 36, 69))
+  while (-(Symfne("t", 53, "`,|"_)")) <= "")
+    if (Symfne(none, 90, 15) * Symfne(79, "", "SFHW^") > none)
+      Symfne(Symfne(-67, 53, "h"), "^tyWW", Symfne("", none, none))
+      var GAPdBxd[117]
+      var yyvX31Np[121]
+      var HqGbJ =  not GAPdBxd[Symfne(102, 103, none)]
     end
-    miLW[84] = miLW[120]
-    miLW[46] = -(103) / -79 - Symfne(72, 117, 67)
-    miLW[71] = -(109 <= -4)
   end
-  var W31uhf
+  return (Symfne(21, "<", 59))
+  var rXrc =  not  not none == none or 71
+  Symfne("?fuL4F|", none, Symfne("U", -none, none))
 end
 
-var hrO[46]
+var TeyHg4
 

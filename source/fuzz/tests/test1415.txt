@@ -2,94 +2,32 @@
 
 function wbMip()
   while ((wbMip() <= wbMip()))
-    while ( not 88 * wbMip() * wbMip() / wbMip())
+    while ( not 17 + 46 / wbMip())
     end
   end
+  var T6
+  var RYZq
   var pdpV[126]
   var rglMzW2Y
-  while ((rglMzW2Y))
-    if (68 * 64 + 98)
+  while ((RYZq))
+    if (64 == RYZq)
       wbMip()
-      if (wbMip())
-        var xLFk3q
-        pdpV[113] = pdpV[rglMzW2Y == xLFk3q]
-      end
-      var m9Xy[81]
-      var YeIxmR = wbMip()
+      return (wbMip()) >= none
     end
-    var YUAulA = pdpV[wbMip()] >= wbMip() / 126
-    wbMip()
-  end
-  if (-wbMip())
-  end
-  pdpV[108] = -rglMzW2Y or pdpV[wbMip()]
-  pdpV[63] = rglMzW2Y
-  if (wbMip())
-    pdpV[45] = (wbMip())
+    while (wbMip())
+      wbMip()
+      pdpV[94] = rglMzW2Y == T6 <= pdpV[RYZq]
+    end
+    while ((-pdpV[none]))
+      var HkWUA[36]
+      wbMip()
+    end
   end
 end
 
-var Bqf
+var rmgP[107]
 
-var dL8cTr57[128]
+var Fzfearv[81]
 
-function VEoh(PI, ISV, tvo, OBe, YUeBt7b, DKD_eHJv, Wyq)
-  Wyq += Bqf and wbMip() + Bqf > 52
-  Bqf += Bqf
-  if (dL8cTr57[Bqf * 17])
-    return Bqf < 53 and wbMip()
-    if (Bqf)
-      DKD_eHJv = 13
-      return dL8cTr57[Bqf] <= dL8cTr57[-80]
-    end
-    return dL8cTr57[Bqf]
-  end
-  if (Bqf)
-    OBe =  not dL8cTr57[dL8cTr57[85]]
-    while (Bqf > wbMip() < 89)
-      while (dL8cTr57[Bqf])
-        VEoh(97, Bqf, 123, 43, 28, -Bqf, wbMip())
-        dL8cTr57[113] = (wbMip()) == wbMip() - 55
-        OBe += -Bqf + dL8cTr57[Bqf]
-        PI = 78
-        tvo = Bqf
-      end
-      if ((Bqf <= Bqf))
-        VEoh(8, Bqf, 116, wbMip(), 108, VEoh(Bqf, Bqf, Bqf, 118, Bqf, Bqf, 6), 7)
-        PI = VEoh(Bqf, Bqf, 13, 2, Bqf, 38, 98) + 111 - Bqf
-        while (-VEoh(Bqf, wbMip(), -24, wbMip(), -VEoh(Bqf, 119, 97, Bqf, 121, 20, 116), VEoh(Bqf, -113, Bqf, 81, 33, Bqf, 29), wbMip()))
-          YUeBt7b += 47
-          Bqf = 110
-          Bqf = 12
-          if (9 - VEoh(23, Bqf, 56, Bqf, Bqf, 108, Bqf))
-            dL8cTr57[22] = dL8cTr57[dL8cTr57[-VEoh(Bqf, 57, 17, 86, Bqf, -Bqf, -1)]]
-            Bqf =  not wbMip() == wbMip() + Bqf
-            dL8cTr57[37] = -(wbMip())
-          end
-        end
-        if (Bqf)
-          Bqf = dL8cTr57[38 == Bqf]
-          return Bqf + 127 > Bqf
-          while ( not 117 == Bqf)
-            return dL8cTr57[16] < (wbMip())
-            var g3PbT[126]
-            dL8cTr57[126] =  not 25
-            var J8Pex0C[119]
-          end
-          return 112
-        end
-      end
-      Bqf +=  not  not -(52) <= dL8cTr57[Bqf]
-    end
-    var vo = 6
-    wbMip()
-  end
-  var PjaiTL7Z
-  wbMip()
-  while (PjaiTL7Z or Bqf)
-    wbMip()
-    var _uxpIAWD = VEoh(0, Bqf, -Bqf, Bqf, 124, 2, 44) <=  not 35
-  end
-  PjaiTL7Z += dL8cTr57[wbMip() and -PjaiTL7Z]
-end
+var e300B_
 

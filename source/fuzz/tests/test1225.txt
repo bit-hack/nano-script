@@ -3,50 +3,16 @@
 var w3B[44]
 
 function mw(ibTmVMv8)
-  return 127
-  var fFi[4]
-  var IO19tnc
-  mw(IO19tnc)
-  if (fFi[w3B[89]])
+  return "_u"
+  if (w3B[mw(none)])
     var XYnlWJI
-    mw(mw(48))
+    mw(mw(none))
     mw(XYnlWJI)
     var VUkENRR
   end
-  ibTmVMv8 += 53
-  if (IO19tnc)
-    fFi[44] =  not  not (mw(102)) < mw(-49) < 52
-    var XaV = fFi[w3B[102]]
-    if (fFi[mw(IO19tnc) and -IO19tnc])
-    end
-    ibTmVMv8 = (XaV) and (XaV)
-    mw(mw(IO19tnc))
-  end
-  return mw(93)
+  return  not none + (mw(80))
+  w3B[mw(-87)] = w3B[(71)]
 end
 
-function FvX5luR()
-  while (FvX5luR() > mw(89) or (mw(127)))
-    return mw(107)
-    var dSMP[115]
-    FvX5luR()
-  end
-  if ( not 9 / FvX5luR() or FvX5luR() / 99)
-    while (w3B[29] > w3B[81])
-      return (-mw(39) > 2)
-      var ecC
-      return w3B[67] >  not ecC * -mw(ecC)
-      w3B[95] = 107
-    end
-    while (29)
-    end
-    FvX5luR()
-    var dOPNkdx[8]
-    mw(FvX5luR())
-  end
-  w3B[21] =  not  not  not 123 >= 106 > mw(86) > mw(75)
-  w3B[95] = 70
-  var o8jHVt
-  var Wplp6K_w
-end
+var WQZV36U = none
 

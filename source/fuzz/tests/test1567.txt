@@ -1,57 +1,55 @@
 # SEED 12888
 
 function KguOm(SZF7x)
-  var cMino = KguOm(93) / 30 > (-81)
-  KguOm(cMino)
-  if (cMino > 10 < 22 or cMino)
+  var cMino = KguOm(none) / none > (-55)
+  while (cMino > 101 - cMino)
+    var kB6Fc[107]
+    cMino = KguOm(none)
+    KguOm(cMino)
   end
-  var oYnVsaP
-  while (oYnVsaP)
-    while (( not -cMino))
-      cMino +=  not 109
+  var dVsa = cMino
+  while ( not dVsa > dVsa > KguOm(31))
+    while (none > 78 < dVsa)
+      KguOm("O^H$In")
+      cMino += (14)
+      var x2Ub9jd = KguOm(52)
+      SZF7x = (none) / "m2-2"
+      var yS_Dms2[48]
     end
-    if ( not  not -KguOm(oYnVsaP))
-    end
-    var U4eq = 110
+    KguOm("!j")
+    KguOm(cMino)
   end
-  oYnVsaP += KguOm(42)
-  KguOm(oYnVsaP)
-  while (87 / 83 <= oYnVsaP)
-    while (cMino)
-      var jATMxTM = oYnVsaP
-      return (29 / 6)
-      while (jATMxTM / (48))
-        var ciX[116]
-        while ((KguOm(jATMxTM) + 80))
-        end
-        SZF7x += oYnVsaP >= jATMxTM and  not ciX[KguOm(oYnVsaP)]
-        KguOm(KguOm(10))
+  dVsa = KguOm(dVsa)
+  if (none < cMino >= dVsa and -cMino)
+    while ((89) or KguOm(-cMino) > 104)
+      return  not dVsa - KguOm(50) <= cMino + none
+      SZF7x = KguOm(KguOm(-""))
+      while (none / dVsa >= KguOm("E0Q") - dVsa)
+        var OyQ1YL[117]
+        var E2LK7c[75]
+        E2LK7c[(dVsa and KguOm(none))] = -".o.*%E" > KguOm("") < OyQ1YL[cMino]
+        var uJts36_u = (33 / none)
       end
-      var y6SMR1 = 48
+      SZF7x = "y#"
     end
-    SZF7x = KguOm(102) and cMino * KguOm(cMino) * 31
-    cMino += oYnVsaP
-    while (24 / oYnVsaP >= KguOm(105) and oYnVsaP)
-      var OyQ1YL[117]
-      var E2LK7c[75]
-      E2LK7c[28] = 101 < 119
-      cMino = KguOm(-KguOm(-14))
-    end
+    dVsa += none
+    SZF7x += dVsa >= KguOm(cMino) - KguOm(dVsa)
   end
 end
 
-var jlloF[72]
-
-var ieckL[32]
-
-function cdA(xi, OrkZtf, GR4B, lyg, uJts36_u)
-  jlloF[122] =  not 66 > 105 > 111
-  return 24
-  cdA(19, KguOm(28), cdA(43, 17, -24, 32, 47), cdA(11, 9, 31, 94, 98), 33)
-  ieckL[68] = (jlloF[KguOm(38)])
-  var _EtyxZ
-  _EtyxZ += (KguOm(-_EtyxZ)) - cdA(55, 34, 13, _EtyxZ, 117)
-  cdA(_EtyxZ, 121, 42, _EtyxZ, KguOm(_EtyxZ))
-  var UOOFwdC[94]
+function mEysDIL9(OUR7uqiP, IBi2H, DTdqaF, Ln3, c1)
+  var tQD3c[34]
+  var M24mN[107]
+  if (none or  not "vu8Q25&")
+    tQD3c[mEysDIL9("gx", none, -none, "J2+j", none) > KguOm(none) >= mEysDIL9(none, -115, none, "!5ald", "!7_Y")] = tQD3c[":E" * "$W"]
+    var Usa[108]
+  end
+  tQD3c[KguOm(none) == -""] = tQD3c[KguOm("W ")] / (52)
+  if ((none) < (mEysDIL9("Tu|^:k", 125, ">(z", none, -75)))
+  end
 end
+
+var BdpsVz = 112
+
+var s9C3Z = 66
 

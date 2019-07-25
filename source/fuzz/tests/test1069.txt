@@ -1,8 +1,8 @@
 # SEED 12390
 
-var P66pgR = 1
+var P66pgR = 64
 
-var g1oJpxhi = 75
+var Ao[89]
 
-var j0kjAN[80]
+var ui7kE[74]
 

@@ -1,36 +1,15 @@
 # SEED 12479
 
 function C0(vXo, er7P4I, SokLl, iNViz)
-  if (C0(C0(108, 17, 13, 46), 48, C0(65, 123, 110, 119), C0(120, 76, 15, 125)))
-    return ((C0(10, -118, 52, 82)))
-    if ((C0(103, 5, 12, -105) < -C0(98, 67, 119, 49)))
-    end
+  if (C0(C0("@m##81", 53, none, 44), "%Fc1B+", C0("t'r8", 3, none, 59), -C0(24, none, "=", none)))
   end
+  return  not C0(none, 119, "%z>IR6", 87) < C0(":DZ6{J", 47, "", none) + 52 > -C0(117, 92, none, "![")
   var y2[32]
-  if ( not C0(104, 7, 101, 106) >= C0(106, 22, 44, 19) >= (C0(29, 114, 84, 89)))
-    var y0SaB4Q[122]
-    return y2[-38] < C0(85, 49, 122, 66) + 82
-    C0(C0(59, 7, 96, 92), C0(104, 84, 75, 86), 107, C0(126, 86, 108, 14))
-  end
-  var rk0m_Cm
-  var ipNi2d
 end
 
-var jZrLNT = 72
+var qAeUYP6q[116]
 
-function Q6(Tv8uVfWM, pojCb1, Ijn4K, VZyVSP0, ow7)
-  return jZrLNT + -52
-  var qW5oOnJz[47]
-  VZyVSP0 = C0(jZrLNT, 82, 35, Q6(jZrLNT, 66, jZrLNT, 61, jZrLNT))
-  while (qW5oOnJz[C0(jZrLNT, 33, 63, 110)])
-  end
-  return  not -qW5oOnJz[53 <= 44]
-  jZrLNT +=  not 27
-  jZrLNT = (-jZrLNT) == jZrLNT
-  if ((101))
-    C0(jZrLNT, jZrLNT, jZrLNT, -3)
-  end
-end
+var CT_t = "s`4zzAK"
 
-var fxwpGzD[96]
+var zurAXodx = "U"
 

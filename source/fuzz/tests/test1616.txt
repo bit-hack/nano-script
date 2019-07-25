@@ -1,6 +1,6 @@
 # SEED 12937
 
-var HFKNn6H = 105
+var HFKNn6H = none
 
 var eoi
 

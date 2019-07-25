@@ -1,44 +1,30 @@
 # SEED 12604
 
 function dYwXUI2(o1UE, qvhoIwu, UQ)
-  var Qyzxzm =  not 24 <= dYwXUI2(30, 107, -94) * 30 / dYwXUI2(32, 71, 76)
-  if (16 and dYwXUI2(86, Qyzxzm, -14) > (Qyzxzm))
-    UQ += (dYwXUI2(110, 35, Qyzxzm))
-    Qyzxzm += 37 <= dYwXUI2(Qyzxzm, Qyzxzm, 43) + 89 == Qyzxzm
-  end
-  return (Qyzxzm == Qyzxzm)
-  Qyzxzm += Qyzxzm
-  dYwXUI2(Qyzxzm, dYwXUI2(Qyzxzm, Qyzxzm, -68), dYwXUI2(61, 75, 89))
-  if ( not 49 == dYwXUI2(Qyzxzm, Qyzxzm, 108) > Qyzxzm == Qyzxzm)
-    while (47 >= -Qyzxzm <= (Qyzxzm))
-      var XI = Qyzxzm and Qyzxzm >= dYwXUI2(Qyzxzm, Qyzxzm, 37)
-      while (dYwXUI2(-dYwXUI2(-23, Qyzxzm, XI), XI, XI))
-        var ZwdYC2[32]
-        dYwXUI2(XI, 62, 68)
-        var BdW9ZR[85]
-      end
-      var QW_I = (-XI) < (Qyzxzm)
-    end
-  end
+  var Qyzxzm =  not 90 / "Xfe" == dYwXUI2(80, 9, none)
+  Qyzxzm = dYwXUI2(none, "m71;", none) == dYwXUI2(Qyzxzm, -none, Qyzxzm) / dYwXUI2(-Qyzxzm, -Qyzxzm, none)
+  var l7BmGlX[95]
+  Qyzxzm += dYwXUI2(106, Qyzxzm, Qyzxzm) >= dYwXUI2(";", Qyzxzm, Qyzxzm) / Qyzxzm
+  l7BmGlX[none] = Qyzxzm >=  not l7BmGlX["G>)=:b@"]
+  return Qyzxzm == l7BmGlX[dYwXUI2(Qyzxzm, Qyzxzm, Qyzxzm)]
+  o1UE = (dYwXUI2(81, "$5]-NY@", 56)) / l7BmGlX["""]
+  dYwXUI2(dYwXUI2(Qyzxzm, none, none), Qyzxzm, Qyzxzm)
 end
 
-function nqaZ4d(FgvLH, SLLG, Js8, IB)
-  return ((43))
-  nqaZ4d(nqaZ4d(74, 73, 87, 63), dYwXUI2(64, 119, 61), dYwXUI2(86, 0, -123), 98)
-  return nqaZ4d(dYwXUI2(99, -60, 122), 122, 85, 79)
-  return  not 98 * 48 or dYwXUI2(-103, 9, 52)
-end
+var M2L
 
-function ENJDag(UIO, wS)
-  var r66 = (-118) - dYwXUI2(83, 0, 29) <= -nqaZ4d(45, 52, 121, 28)
-  r66 =  not -r66 - r66 /  not (44)
-  wS = 61
-  var CQm9s5Et = 5 and r66
-  if (32 / nqaZ4d(91, 8, 59, 100))
-    var du1MJ = CQm9s5Et ==  not ENJDag(11, 16)
+function odlx(aWk4e, nTxELGrM, iYuGgnyI, DS8pw6g)
+  iYuGgnyI += dYwXUI2(odlx(M2L, M2L, "kL", M2L), -dYwXUI2(-none, M2L, M2L), M2L)
+  M2L = dYwXUI2(odlx("/% v{", "1uZ7Pw", M2L, -M2L), odlx(M2L, M2L, "xhiH", M2L), odlx("]{sip", 115, M2L, -none))
+  DS8pw6g = M2L / M2L
+  aWk4e = M2L
+  return dYwXUI2(83, M2L, M2L) <= none == M2L
+  if (-odlx(M2L, M2L, M2L, -M2L) or odlx(56, M2L, M2L, M2L) <= odlx(M2L, -none, M2L, 116) and M2L)
   end
-  nqaZ4d(nqaZ4d(CQm9s5Et, 52, 24, CQm9s5Et), 84, nqaZ4d(r66, 70, CQm9s5Et, 8), 36)
-  ENJDag(ENJDag(107, r66), 8)
-  dYwXUI2(-125, CQm9s5Et, ENJDag(121, 63))
+  var ZUn[83]
+  if (dYwXUI2(M2L, -107, 28) - "s|")
+    ZUn[ZUn[M2L] + (none)] = none
+    M2L = none * M2L ==  not (M2L)
+  end
 end
 

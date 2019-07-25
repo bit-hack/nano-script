@@ -1,4 +1,4 @@
 # SEED 12518
 
-var A10kbW2 = 49
+var A10kbW2 = 77
 

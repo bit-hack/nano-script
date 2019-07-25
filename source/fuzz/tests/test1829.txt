@@ -1,42 +1,40 @@
 # SEED 13150
 
 function Z4(hM, NyrHF)
-  Z4(Z4(54, 14), 28)
-  var v2l1KN[127]
-  var uj[103]
-  if (Z4(-83, 8))
-    Z4(101, Z4(50, 122))
-    var EEsQVh[92]
-    while (-v2l1KN[v2l1KN[Z4(31, 20)]])
-      while (Z4(127, 19) / -Z4(81, -87) > -71 * 69)
-        while (98)
-          Z4(Z4(15, 124), Z4(47, 3))
-          uj[26] = Z4(107, 21) * 45 + Z4(13, 58) or 11
-        end
-        Z4(66, -92)
-        var Qe =  not uj[v2l1KN[33]]
-      end
-    end
-    while (EEsQVh[Z4(-6, 122)])
-      while (Z4(108, 26) + 126 < EEsQVh[18])
-        EEsQVh[13] = Z4(124, 122) < 54 * 116 + 104
-        uj[3] = Z4(125, 124) == Z4(77, 77) > Z4(77, 91) or 59
-      end
-    end
+  Z4(Z4(66, none), -"S";`r")
+  var SMLRqhw[85]
+  return none
+  Z4(Z4(none, "#"), Z4(none, "h!z"))
+  if (-Z4("&eX=g", none) / SMLRqhw[Z4(34, -"_'F2P.N")])
+    Z4(-"", "p?Kb")
+    return none
+    SMLRqhw[ not  not none] = Z4("9", "") / SMLRqhw[Z4("+fH2", 51)]
+    Z4("vm?", "xIeisK")
   end
-  return -(Z4(44, 55) - Z4(110, 40))
-  var wl[47]
-  var mw = uj[40] / 33
+  Z4(Z4("Y-{j+&0", 74), -Z4(32, -22))
 end
 
-function _TC(qJ7, daCP, clAPoci)
-  return  not  not _TC(60, -9, 95) + 90 - (_TC(0, -56, 122))
-  var oe0QlCv0[21]
-  _TC(10, 8, 121)
-  return (Z4(54, 64) >= 126)
-  var Ku
-  if (-( not Z4(66, Ku) + 11))
+function HOQYL(gUO_, Qdg3ih, ieqR4p, dsOY9Q, z6)
+  Z4("$q", HOQYL(none, none, none, none, "lS"aOQ"))
+  while (HOQYL(none, none, "", none, 121))
+    var U9fv
+    var c4hLjJ6a = none
+    dsOY9Q = c4hLjJ6a
+    return none / c4hLjJ6a > c4hLjJ6a
   end
-  _TC(Z4(47, 9), 96, _TC(Ku, Ku, 98))
+  var TEnIdD[54]
+  while (TEnIdD["M K,NI" - 100])
+    HOQYL(63, Z4(none, "VDe"), HOQYL("D", "$p7sY", -none, 73, none), HOQYL("y]'W o", 66, -126, 114, none), none)
+    if ( not  not -none or "Mzm>\7" - Z4("nW", none))
+      var udhQ[74]
+      var ATuJBK[62]
+      if (udhQ[HOQYL(120, "e", 1, " i5", none) + none])
+      end
+      HOQYL(Z4(none, "4>mTH|m"), 104, none, HOQYL(-none, "KRYq%,8", "lJ)D.Q", none, "S|d[N"), Z4(65, "]vA@<"))
+    end
+  end
+  var XxXAtt[126]
+  var F7uhmj[117]
+  var Dxnp4u
 end
 

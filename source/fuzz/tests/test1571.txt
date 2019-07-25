@@ -2,44 +2,15 @@
 
 function Dpn(LxL0fLc, bPe, bII, U_X8, gyS4, X3Di, dnhIPuUQ)
   var UlH[64]
-  UlH[1] = 53 == UlH[Dpn(2, 67, 90, 4, 85, 25, -111)]
-  while (73)
+  UlH[ not Dpn(none, 29, 3, -none, -110, 80, none) <= "ClF)" / Dpn("", "\R6=RM", "", 71, 111, none, "gl\Q}*") >= Dpn(3, "NUy2V*`", 46, 73, none, "", 42)] = "hac"
+  while ((-42) * Dpn(-"", "]7Dh", 102, 11, none, "@=|IG.", -123) <= none)
   end
-  if ( not 81 >= -Dpn(8, 102, 105, 34, 61, 26, 43) - Dpn(111, 0, 76, 42, 74, 17, -118))
-    if ( not -Dpn(113, 19, -29, 107, -127, -31, 48) > Dpn(94, 76, 78, 38, 79, 111, 4) / Dpn(42, 44, 21, 96, 35, 74, 2))
-      return  not (Dpn(44, 75, 11, 107, -64, 67, 81)) == Dpn(4, 88, 95, 6, 125, 65, -75)
-      while ( not UlH[Dpn(114, 61, 100, 118, -17, 3, 18)] <= Dpn(99, -106, 51, 52, 38, -99, 6) / Dpn(18, 83, 12, 89, 36, 80, 72))
-      end
-    end
-    var VrNND91[88]
-    return 3
-    Dpn(Dpn(1, 123, 61, 27, 37, 7, 60), Dpn(82, 127, 63, 32, 32, 13, 58), Dpn(112, 32, 94, 118, 78, 19, 81), 60, 93, Dpn(69, 9, 116, 38, 30, 61, 100), Dpn(30, 62, 75, 10, 42, 4, -67))
-    UlH[76] = (87 < 125)
-  end
+  UlH[ not none] = UlH[none]
+  var MO
+  return Dpn(-MO, -Dpn("B", MO, MO, MO, 4, MO, -MO), Dpn("uZT,<", MO, none, "%5(K+Bg", 37, 96, MO), MO, Dpn(none, none, -MO, none, -"%G", ";S!", 4), MO, MO)
 end
 
-function eP(dSOc, WxypFZ, yte8f, aTd, eB4H, rqw, oQe)
-  if (Dpn(91, 39, 8, 113, 79, 62, 35) / 31 - Dpn(45, 120, -56, 34, 108, 33, 68))
-  end
-  while ((116) < (Dpn(80, 99, 95, -95, 64, 19, 50)))
-    if (eP(41, -30, -Dpn(113, -101, -29, 2, 118, 23, 44), Dpn(124, 119, 73, 68, 126, 78, 83), eP(60, -68, -100, 111, 100, 113, -73), Dpn(88, 52, 14, 97, 8, 127, 111), 76))
-      while ((119) / 58 < Dpn(-65, 6, -41, 75, -48, 87, 95))
-        return 82
-        Dpn(eP(31, 40, 11, 102, -55, -99, 112), -27, 73, 9, 20, Dpn(23, 15, 24, 60, 57, 123, 18), Dpn(120, 16, 32, 84, -10, 34, 127))
-        return Dpn(60, 94, 21, Dpn(96, 9, 13, 69, 75, 50, 2), -Dpn(80, -78, 79, 64, 11, 71, 107), Dpn(89, 1, 93, 45, 60, 38, 77), 36)
-        var SFl[105]
-        eP(13, 59, 103, Dpn(55, 6, 6, 42, 64, -24, 51), Dpn(102, 47, 101, 51, 46, 121, 78), 108, 66)
-      end
-      eP(10, -eP(104, 11, 6, 76, 123, 42, 32), -Dpn(50, 116, 31, 30, 101, 78, 6), 9, 96, Dpn(43, 121, 56, -81, 16, 23, 22), 40)
-      eP(57, 101, eP(80, 14, -14, 7, 7, 87, 71), -eP(54, 120, 79, 2, 28, 31, 0), 20, 4, eP(91, 25, -55, 12, 90, 107, 21))
-    end
-  end
-  var JKeqmfyp
-  var skC42qei
-  oQe += 35
-  Dpn(JKeqmfyp, 96, JKeqmfyp, 101, 37, Dpn(29, 13, 20, JKeqmfyp, JKeqmfyp, 55, -skC42qei), 15)
-  rqw +=  not  not 89 < Dpn(JKeqmfyp, 88, skC42qei, -JKeqmfyp, 66, -JKeqmfyp, 116)
-end
+var DlqyI
 
-var X2DyoA2d
+var cfWQCK[89]
 

@@ -4,49 +4,15 @@ var Es[117]
 
 var _6[22]
 
-var pVvaI = 112
+var pVvaI = ""
 
-function atTmlYh(F4at, xJ, Sy)
-  return pVvaI
-  atTmlYh(pVvaI, 8, pVvaI)
-  while ( not Es[atTmlYh(126, -pVvaI, 127)] <= atTmlYh(pVvaI, pVvaI, pVvaI))
-  end
-  var Eo5hUAT[118]
-  atTmlYh(61, pVvaI, 91)
-  while ((-pVvaI == -pVvaI))
-    return  not  not  not pVvaI >  not 11 / -17
-    F4at = Eo5hUAT[atTmlYh(108, 109, pVvaI) < atTmlYh(-120, pVvaI, pVvaI)]
-    var nJ5VPM[39]
-    nJ5VPM[71] = pVvaI * 83
-  end
-  Sy += (-(atTmlYh(pVvaI, pVvaI, pVvaI)))
-  if (Es[pVvaI] >= 70 >= 23)
-    atTmlYh(atTmlYh(pVvaI, -79, -15), pVvaI, atTmlYh(113, pVvaI, 117))
-    atTmlYh(pVvaI, 15, atTmlYh(pVvaI, 2, pVvaI))
-    return Es[atTmlYh(39, pVvaI, pVvaI)] - pVvaI or pVvaI
-    var ybGGf = (39 or atTmlYh(pVvaI, pVvaI, pVvaI))
-    Sy += 103 ==  not ybGGf > atTmlYh(ybGGf, ybGGf, 25)
-  end
-end
+var GTmlYhe
 
-var Oblv74 = 46
+var Ttg[32]
 
-var L2ucZI3K[28]
+var Sy = ""
 
-var ieu6tXI[112]
+var KpgSxzEs[101]
 
-function r6b(mw9zdV0i)
-  if (atTmlYh(atTmlYh(Oblv74, 47, -48), -atTmlYh(Oblv74, pVvaI, 32), 55))
-  end
-  while (105)
-  end
-  var Dr
-  mw9zdV0i = r6b(-Oblv74) >= -atTmlYh(Dr, pVvaI, 118) < 40 <= r6b(Dr)
-  mw9zdV0i = L2ucZI3K[Dr]
-  var ESX0j
-  if (ieu6tXI[r6b(ESX0j) > atTmlYh(ESX0j, ESX0j, -pVvaI)])
-    pVvaI = (-95 and atTmlYh(Dr, pVvaI, Oblv74))
-  end
-  r6b(r6b(Dr))
-end
+var Fw5Y2C = 41
 

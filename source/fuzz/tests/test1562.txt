@@ -1,47 +1,41 @@
 # SEED 12883
 
-var R8 = 127
+var R8 = 77
 
-var a4x[40]
+var Mxj0 = 92
 
-function EyKxHa1(zbtHLN, jrh_, EwjE637, nh0)
-  return EyKxHa1(38, EyKxHa1(R8, 76, R8, R8), 82, R8)
-  R8 =  not 124
-  return EyKxHa1(R8, R8, 0, EyKxHa1(30, 113, R8, R8))
-  var kE[32]
+var Ma1Z0[110]
+
+function sLNYyrh_(MjE637, nh0, vyp, BNh5TOq, RtSVUUAl, xEcViEwX)
+  return sLNYyrh_(Mxj0, Mxj0, none, R8, 64, sLNYyrh_(Mxj0, R8, none, "$Z{1", "", "\2-"))
+  var AYsYIuS[8]
+  var ZmBKRPyE[32]
   return R8
-  while (-(-kE[111]))
-    while (R8)
-      kE[114] = 71
-      if (a4x[EyKxHa1(R8, R8, R8, R8)])
-        a4x[121] = R8
-      end
-      EyKxHa1(-4, -R8, EyKxHa1(R8, R8, 108, R8), EyKxHa1(35, R8, R8, R8))
-      R8 =  not EyKxHa1(R8, 116, R8, 70) < R8
-    end
-    a4x[127] = a4x[EyKxHa1(R8, R8, R8, 11)] <= EyKxHa1(R8, 116, R8, -R8)
-    R8 += kE[EyKxHa1(69, R8, R8, 102)]
+  while (-(-Ma1Z0["4_dpt"]))
+    R8 = none
+    var DdkjoU[97]
+    var Kbr[72]
   end
-  nh0 += R8
-  var wbo637[49]
+  sLNYyrh_(R8, sLNYyrh_(Mxj0, R8, Mxj0, R8, -Mxj0, R8), Mxj0, Mxj0, none, R8)
+  sLNYyrh_(sLNYyrh_("7`*Vze", none, Mxj0, R8, R8, R8), sLNYyrh_(93, Mxj0, "34", none, Mxj0, none), -none, none, R8, sLNYyrh_(R8, -Mxj0, 59, -none, Mxj0, Mxj0))
+  return -(sLNYyrh_(91, Mxj0, Mxj0, "mVr?S", 32, Mxj0) * -none)
 end
 
-var IOQ6U1sg = 7
+var z3PaOMb = none
 
-function fPv2()
-  var OPK = 28 > 93 <= 107
-  a4x[90] = a4x[a4x[R8]]
-  while (EyKxHa1(OPK, IOQ6U1sg, -fPv2(), fPv2()))
+function XH_p(J_AbzaJ, rb1Qa)
+  var nt
+  rb1Qa += 26
+  J_AbzaJ += R8 == sLNYyrh_("Z", none, 80, R8, R8, "") <= XH_p(nt, "Cx2NS") + z3PaOMb
+  Ma1Z0[ not none <= 10 <= 68 <= sLNYyrh_(Mxj0, z3PaOMb, R8, -z3PaOMb, none, nt)] = nt / XH_p(R8, Mxj0) / "q"
+  sLNYyrh_(-R8, R8, Mxj0, -XH_p(none, none), -none, 89)
+  if (-none * -"_"6 "#" < Ma1Z0[R8])
+    Ma1Z0[R8] = XH_p("?%,=+6A", sLNYyrh_(Mxj0, "]7"iO", none, none, -" ", nt))
+    Ma1Z0[none == "g!rRd*'" >= z3PaOMb <= XH_p(-"J'", Mxj0)] = -none + sLNYyrh_(80, Mxj0, -none, nt, R8, z3PaOMb) >= XH_p("QwZx", Mxj0)
+    var SCu3[122]
+    XH_p(Mxj0, R8)
   end
-  if (IOQ6U1sg == EyKxHa1(116, 60, 33, -88))
-  end
-  var L75o[79]
-  if (IOQ6U1sg)
-    if ( not  not 22 / fPv2() <= fPv2())
-    end
-    a4x[98] = (-EyKxHa1(88, OPK, 57, R8)) < 10
-  end
+  XH_p(64, XH_p(z3PaOMb, "@"))
+  J_AbzaJ = XH_p(R8, 96) == z3PaOMb and Ma1Z0[none]
 end
-
-var SGQEJS0K
 

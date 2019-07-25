@@ -2,7 +2,7 @@
 
 var Oo1b43[43]
 
-var DNIHCKDR = 62
+var DNIHCKDR = ""
 
-var QtS1wA[78]
+var wS1wAT = ""
 

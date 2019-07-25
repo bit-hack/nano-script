@@ -5,16 +5,14 @@ var pZ
 var gGnWhl[60]
 
 function ZF(BKf2H3, mJ, p0)
-  gGnWhl[109] = (pZ <= pZ)
-  pZ += 115
-  return pZ
-  var LT[93]
-  pZ += 107 * -pZ /  not 15
-  return ZF(pZ, 91, 30) == ZF(pZ, pZ, 30) <= 107
-  if (ZF(39, pZ, ZF(42, pZ, 82)))
-    gGnWhl[109] = -pZ
-    LT[87] = ((-ZF(25, pZ, 85)))
+  gGnWhl[pZ] =  not pZ <= pZ < ZF(none, none, 48)
+  pZ += gGnWhl[pZ]
+  var sgh6hA[17]
+  return ZF(pZ, 11, pZ) - "u 4," + pZ >= 23
+  var MwHL
+  while (ZF(pZ, pZ, "@r") < -MwHL == -ZF("Z,", MwHL, none) - 68)
   end
-  return (gGnWhl[97])
+  sgh6hA[107 +  not "Co7KU("] =  not none < none
+  return ZF(ZF(pZ, none, none), MwHL, ZF(66, "", MwHL))
 end
 

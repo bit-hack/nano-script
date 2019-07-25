@@ -1,61 +1,8 @@
 # SEED 12534
 
-var kQCydHT = 27
+var kQCydHT = "K6R|I7"
 
-var L7YC1J
+var JE = none
 
-function nel9U(y5AWjGlD, lC)
-  while (10)
-    return 71
-    if (nel9U(nel9U(L7YC1J, L7YC1J), -54))
-    end
-  end
-  return -(24) / nel9U(63, 20) + 61
-  while (12 < nel9U(12, 10) - 29 < L7YC1J)
-    while (15)
-      while (49 == 110)
-        while (105 * 26 >= 120)
-          L7YC1J += nel9U(kQCydHT, nel9U(97, kQCydHT))
-        end
-      end
-      nel9U(93, nel9U(54, 110))
-      y5AWjGlD = (26)
-    end
-    while (-kQCydHT)
-      var RM0t[129]
-      while ((L7YC1J) / nel9U(106, 31))
-        return L7YC1J
-        L7YC1J += RM0t[kQCydHT] <=  not 62
-      end
-    end
-    var aNd2[26]
-    return aNd2[(L7YC1J)]
-  end
-  if (6 <= 119 >= 66)
-  end
-  while ( not 118)
-    while (-nel9U(nel9U(24, kQCydHT), nel9U(42, 51)))
-      return kQCydHT
-    end
-    return (kQCydHT)
-    var lyTBS
-    if ( not lyTBS)
-      var fbiu = (nel9U(97, -36))
-      var s5Yko[86]
-      nel9U(nel9U(31, lyTBS), kQCydHT)
-    end
-    var wcd = L7YC1J
-  end
-  var Op
-  if (-nel9U(86, 16) < Op + nel9U(35, 16))
-    y5AWjGlD = nel9U(L7YC1J, 110) >= kQCydHT or 40
-    while (84)
-      return 69 + -27 == (Op)
-      kQCydHT +=  not ((nel9U(Op, 65)))
-    end
-    while (nel9U(58, Op) <= nel9U(kQCydHT, kQCydHT) == -nel9U(kQCydHT, L7YC1J))
-      y5AWjGlD += Op - nel9U(kQCydHT, 99) <= 122
-    end
-  end
-end
+var TrVa5AWj = 74
 

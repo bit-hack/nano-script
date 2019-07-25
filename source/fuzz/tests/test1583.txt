@@ -1,22 +1,23 @@
 # SEED 12904
 
-var QZv0c8uW = 29
+var QZv0c8uW = none
 
 function y_cpYul(YC, y9k, WVBe, s9N, dqXiqY, gs38, wx_)
-  y_cpYul(-77, y_cpYul(QZv0c8uW, QZv0c8uW, QZv0c8uW, 74, QZv0c8uW, QZv0c8uW, QZv0c8uW), -115, 102, y_cpYul(124, 92, -QZv0c8uW, 31, 87, QZv0c8uW, 67), y_cpYul(QZv0c8uW, QZv0c8uW, 72, QZv0c8uW, QZv0c8uW, 123, QZv0c8uW), y_cpYul(QZv0c8uW, 17, -31, 113, 11, 46, 113))
-  s9N = QZv0c8uW
-  return QZv0c8uW
-  while ( not y_cpYul(QZv0c8uW, 72, 72, 107, -QZv0c8uW, 126, QZv0c8uW) < 97 >= -y_cpYul(QZv0c8uW, -QZv0c8uW, QZv0c8uW, QZv0c8uW, QZv0c8uW, QZv0c8uW, 94))
-    y_cpYul(116, QZv0c8uW, 66, -y_cpYul(-QZv0c8uW, QZv0c8uW, 2, 70, 28, 36, -QZv0c8uW), 64, 50, 58)
+  y_cpYul(-"|PnC=", QZv0c8uW, y_cpYul(111, QZv0c8uW, QZv0c8uW, QZv0c8uW, QZv0c8uW, -"!J", QZv0c8uW), 42, y_cpYul(none, "L|B,6hZ", QZv0c8uW, "F", QZv0c8uW, 74, QZv0c8uW), 127, QZv0c8uW)
+  var qANTSJA[78]
+  QZv0c8uW = qANTSJA[107] or QZv0c8uW
+  while (none)
+    var sYiPCGDX = -125
+    if (QZv0c8uW or 35 <= QZv0c8uW)
+    end
+    qANTSJA[(y_cpYul(QZv0c8uW, sYiPCGDX, none, 123, sYiPCGDX, 12, QZv0c8uW))] = none >= -y_cpYul(QZv0c8uW, -QZv0c8uW, QZv0c8uW, sYiPCGDX, QZv0c8uW, QZv0c8uW, none)
   end
-  var BdEfPe9v
-  while (y_cpYul(QZv0c8uW, 21, -0, BdEfPe9v, BdEfPe9v, QZv0c8uW, QZv0c8uW) and y_cpYul(-88, 38, BdEfPe9v, BdEfPe9v, QZv0c8uW, 11, 73) >= (58))
-  end
-  YC = BdEfPe9v
-  return BdEfPe9v
+  var Wc9HWG
+  var Nuxn[65]
+  var XT = "Ywc$"
 end
 
-var hJQ_nBG5[53]
+var yXHZn[114]
 
-var MC[30]
+var zDaU[115]
 

@@ -2,9 +2,9 @@
 
 var hYLy7[78]
 
-var pt = 5
+var pt = none
 
 var n5V710h[42]
 
-var fIgo = 65
+var fIgo = 100
 

@@ -2,15 +2,17 @@
 
 function tMwbY(B6uir, l2kLXpxu, Iw2, xJEGem, ihc, CetA, aWcLVW3)
   var ai[127]
-  while (ai[ai[27]])
+  while (ai[ai[49]])
+    var ZaIQNU[115]
   end
-  var LIQN
-  var wUvg = LIQN
-  var D96WdpV
-  Iw2 += -LIQN
-  tMwbY(tMwbY(D96WdpV, LIQN, LIQN, 114, D96WdpV, 88, -103), -tMwbY(103, wUvg, LIQN, 105, 11, 68, wUvg), wUvg, D96WdpV, wUvg, tMwbY(49, 16, LIQN, 83, 112, 50, D96WdpV), LIQN)
-  var bo5cFrW[69]
+  while (tMwbY(none, tMwbY("g^", "}h", 64, 89, 115, 40, 117), none, tMwbY(12, 40, none, "xKwT", 52, "Io8 ", 69), none, none, none))
+    ai[ai[88]] = (tMwbY("I8sX=35", 97, none, 97, 50, 53, -none) - "deC$")
+  end
+  var AJmGcN
+  ai[ not tMwbY(AJmGcN, "xo?p6", "!b", AJmGcN, AJmGcN, AJmGcN, "6^5&!V;") - AJmGcN < tMwbY("nYRP", AJmGcN, none, none, 76, -AJmGcN, none)] = 119
+  return 43
+  ihc += none
 end
 
-var RH4O
+var vqmm[7]
 

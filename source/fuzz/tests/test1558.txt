@@ -1,45 +1,60 @@
 # SEED 12879
 
-var SAC4 = 65
+var SAC4 = none
 
-var AWZU9k = 74
+var AWZU9k = 34
 
-var QVotXqVU
-
-var zzT8HL6O[4]
-
-var vvMM6n[38]
-
-var GuaJh[48]
-
-var qYFiSRlK
-
-function ZUUW8Duk()
-  while (-ZUUW8Duk())
-    ZUUW8Duk()
-    ZUUW8Duk()
-    var q2Bh[86]
-  end
-  if ((ZUUW8Duk() + 31))
-    while (-59 - SAC4 or ZUUW8Duk() >= 107)
-      var A8uh9VY = ZUUW8Duk()
-      GuaJh[17] = ZUUW8Duk()
+function fotXq()
+  while ( not SAC4)
+    while (AWZU9k or SAC4)
+      fotXq()
     end
-    return (82 >= -ZUUW8Duk())
+    if (-AWZU9k)
+    end
+    var zVp[120]
   end
-  if (-117 and ZUUW8Duk() >= AWZU9k)
-    return SAC4 - 19 <= ZUUW8Duk() or ZUUW8Duk()
-    return 15 < ZUUW8Duk() or qYFiSRlK
-    ZUUW8Duk()
-    if (-GuaJh[114 < ZUUW8Duk()])
-      var KxlsCy[24]
-      while ((1 == ZUUW8Duk()))
-        var rP[117]
+  return AWZU9k
+  if ( not  not AWZU9k ==  not AWZU9k >= AWZU9k)
+    if (fotXq() + "" <= AWZU9k or none)
+    end
+  end
+  var IB64B = 63 / "N1DAR" + fotXq() <= none
+  var Ao5 = fotXq()
+  fotXq()
+  if (117)
+  end
+end
+
+var pFhmE[63]
+
+var cJbgfBJ[76]
+
+var UPK_BEk[21]
+
+var l2IchL[128]
+
+function mCtZ(Cl)
+  pFhmE["2H"] = (AWZU9k)
+  fotXq()
+  if (-l2IchL[none < fotXq()])
+    var KxlsCy[24]
+    while ((106 == mCtZ("?(c%At1")))
+      while ((mCtZ("`jnBd+") * mCtZ(none)))
+        SAC4 = none <= "j@M" == "Jnqhc" and SAC4
       end
+      mCtZ("CAzJ}9")
+      return KxlsCy["" * mCtZ(SAC4)]
+      var EWAK[26]
     end
   end
-  ZUUW8Duk()
-  ZUUW8Duk()
-  ZUUW8Duk()
+  return "R" == 83 and SAC4 * -mCtZ("")
+  SAC4 = -",Z2m "
+  Cl +=  not (none == mCtZ(AWZU9k))
+  while ( not pFhmE[SAC4] +  not  not (77))
+    pFhmE[AWZU9k == fotXq() / AWZU9k < "Fe?N"] = 56 < SAC4 / AWZU9k or SAC4
+    AWZU9k = (fotXq())
+    AWZU9k = AWZU9k + fotXq() <= none - mCtZ(AWZU9k)
+  end
+  var N6T_R[49]
 end
 
