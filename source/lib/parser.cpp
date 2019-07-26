@@ -99,6 +99,7 @@ void parser_t::parse_lhs_() {
   //    [-] <TOK_IDENT> [ ... ]
   //    [-] <TOK_VAL>
   //    [-] <TOK_STRING>
+  //    [-] <TOK_NONE>
 
   const token_t *neg = stream_.found(TOK_SUB);
   do {
@@ -149,6 +150,13 @@ void parser_t::parse_lhs_() {
     // <TOK_STRING>
     if (const token_t *t = stream_.found(TOK_STRING)) {
       ast_node_t *expr = ast.alloc<ast_exp_lit_str_t>(t);
+      exp_stack_.push_back(expr);
+      break;
+    }
+
+    // <TOK_NONE>
+    if (const token_t *t = stream_.found(TOK_NONE)) {
+      ast_node_t *expr = ast.alloc<ast_exp_none_t>(t);
       exp_stack_.push_back(expr);
       break;
     }

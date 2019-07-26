@@ -58,8 +58,6 @@ bool ccml_t::build(const char *source, error_t &error) {
 
     // collect all garbage
     ast().gc();
-
-//    disassembler().disasm();
   }
   catch (const error_t &e) {
     error = e;

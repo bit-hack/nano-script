@@ -409,7 +409,7 @@ struct opt_com_rotation_t: public ast_visitor_t {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_optimize(ccml_t &ccml) {
-#if 1
+#if 0
   opt_post_ret_t    (ccml).visit(&(ccml.ast().program));
   opt_const_expr_t  (ccml).visit(&(ccml.ast().program));
   opt_if_remove_t   (ccml).visit(&(ccml.ast().program));

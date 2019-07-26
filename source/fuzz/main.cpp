@@ -41,6 +41,9 @@ int main() {
 
   for (int32_t i = 0, e = 0; i < 2048; ++i) {
 
+    fprintf(stdout, "\rtest %d...", i);
+    fflush(stdout);
+
     std::string fname = "tests/" + std::string("test") + std::to_string(i) + ".txt";
     FILE *fd = fopen(fname.c_str(), "r");
     if (!fd) {

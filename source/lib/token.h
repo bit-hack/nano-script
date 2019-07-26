@@ -78,7 +78,12 @@ struct token_t {
 
   // stringify this token
   const char *string() const {
-    return str_.empty() ? token_name(type_) : str_.c_str();
+    if (type_ == TOK_STRING) {
+      return str_.empty() ? "" : str_.c_str();
+    }
+    else {
+      return str_.empty() ? token_name(type_) : str_.c_str();
+    }
   }
 
   bool is_binary_op() const {
