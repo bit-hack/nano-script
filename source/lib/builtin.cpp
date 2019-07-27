@@ -43,7 +43,7 @@ void builtin_min(struct ccml::thread_t &t) {
 void builtin_len(struct ccml::thread_t &t) {
   const ccml::value_t *a = t.pop();
   assert(a);
-  switch (a->type) {
+  switch (a->type()) {
   case val_type_array: {
     const int32_t res = a->array_size_;
     t.push_int(res);

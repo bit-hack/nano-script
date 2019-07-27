@@ -27,14 +27,14 @@ value_gc_t::~value_gc_t() {
 
 value_t *value_gc_t::new_int(int32_t value) {
   value_t *v = alloc_();
-  v->type = val_type_int;
+  v->type_ = val_type_int;
   v->v = value;
   return v;
 }
 
 value_t *value_gc_t::new_array(int32_t value) {
   value_t *v = alloc_();
-  v->type = val_type_array;
+  v->type_ = val_type_array;
   assert(value > 0);
   // todo: pool these
   v->array_ = new value_t *[size_t(value)];
@@ -46,7 +46,7 @@ value_t *value_gc_t::new_array(int32_t value) {
 
 value_t *value_gc_t::new_string(const std::string &value) {
   value_t *v = alloc_();
-  v->type = val_type_string;
+  v->type_ = val_type_string;
   if (string_pool_.empty()) {
     v->s = new std::string(value);
   }
@@ -59,13 +59,17 @@ value_t *value_gc_t::new_string(const std::string &value) {
 }
 
 value_t *value_gc_t::new_none() {
+#if 0
   value_t *v = alloc_();
   v->type = val_type_none;
+#else
+  value_t *v = nullptr;
+#endif
   return v;
 }
 
 value_t *value_gc_t::copy(const value_t &a) {
-  switch (a.type) {
+  switch (a.type()) {
   case val_type_int:
     return new_int(a.v);
   case val_type_string:

@@ -32,45 +32,47 @@ struct value_gc_t {
 
 protected:
   void release_(value_t *v) {
-    assert(v);
-    switch (v->type) {
-    case val_type_array:
-      // todo: pool arrays?
-      assert(v->array_);
-      delete[] v->array_;
-      v->array_ = nullptr;
-      v->array_size_ = 0;
-      break;
-    case val_type_string:
-      string_pool_.push_back(v->s);
-      v->s = nullptr;
-      break;
-    case val_type_none:
-      break;
-    case val_type_unknown:
-      break;
-    case val_type_int:
-      break;
-    default:
-      assert(false);
+    if (v) {
+      switch (v->type()) {
+      case val_type_array:
+        // todo: pool arrays?
+        assert(v->array_);
+        delete[] v->array_;
+        v->array_ = nullptr;
+        v->array_size_ = 0;
+        break;
+      case val_type_string:
+        string_pool_.push_back(v->s);
+        v->s = nullptr;
+        break;
+      case val_type_none:
+        break;
+      case val_type_unknown:
+        break;
+      case val_type_int:
+        break;
+      default:
+        assert(false);
+      }
+      v->type_ = val_type_unknown;
+      avail_.push_back(v);
     }
-    v->type = val_type_unknown;
-    avail_.push_back(v);
   }
 
   void delete_(value_t *v) {
-    assert(v);
-    if (v->type == val_type_array) {
-      // todo: pool arrays?
-      assert(v->array_);
-      delete[] v->array_;
-      v->array_ = nullptr;
+    if (v) {
+      if (v->type() == val_type_array) {
+        // todo: pool arrays?
+        assert(v->array_);
+        delete[] v->array_;
+        v->array_ = nullptr;
+      }
+      if (v->type() == val_type_string) {
+        delete v->s;
+        v->s = nullptr;
+      }
+      delete v;
     }
-    if (v->type == val_type_string) {
-      delete v->s;
-      v->s = nullptr;
-    }
-    delete v;
   }
 
   value_t *alloc_() {

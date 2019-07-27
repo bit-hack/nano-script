@@ -14,37 +14,32 @@ enum value_type_t {
 struct value_t {
 
   value_t()
-    : type(val_type_none)
+    : type_(val_type_none)
   {}
 
   value_t(int32_t int_val)
-    : type(val_type_int)
+    : type_(val_type_int)
     , v(int_val)
   {}
 
   bool is_int() const {
-    return type == val_type_int;
+    return type() == val_type_int;
   }
 
   bool is_string() const {
-    return type == val_type_string;
+    return type() == val_type_string;
   }
 
   bool is_array() const {
-    return type == val_type_array;
+    return type() == val_type_array;
   }
 
   bool is_none() const {
-    if (this == nullptr) {
-      return true;
-    }
-    else {
-      return type == val_type_none;
-    }
+    return type() == val_type_none;
   }
 
   void from_int(int32_t val) {
-    type = val_type_int;
+    type_ = val_type_int;
     v = val;
   }
 
@@ -53,7 +48,13 @@ struct value_t {
     return *s;
   }
 
-  value_type_t type;
+  const value_type_t type() const {
+    return this == nullptr ?
+      value_type_t::val_type_none :
+      type_;
+  }
+
+  value_type_t type_;
 
   union {
     // int type

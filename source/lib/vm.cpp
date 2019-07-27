@@ -247,16 +247,43 @@ void thread_t::do_INS_JMP_() {
 void thread_t::do_INS_TJMP_() {
   const int32_t operand = read_operand_();
   const value_t *o = pop();
-  if (o->v != 0) {
-    pc_ = operand;
+  switch (o->type()) {
+  case value_type_t::val_type_int:
+    if (o->v != 0) {
+      pc_ = operand;
+    }
+    break;
+  case value_type_t::val_type_string:
+    if (!o->s->empty()) {
+      pc_ = operand;
+    }
+    break;
+  case value_type_t::val_type_none:
+    break;
+  default:
+    raise_error(thread_error_t::e_bad_type_operation);
   }
 }
 
 void thread_t::do_INS_FJMP_() {
   const int32_t operand = read_operand_();
   const value_t *o = pop();
-  if (o->v == 0) {
+  switch (o->type()) {
+  case val_type_none:
     pc_ = operand;
+    break;
+  case val_type_int:
+    if (o->v == 0) {
+      pc_ = operand;
+    }
+    break;
+  case val_type_string:
+    if (o->s->empty()) {
+      pc_ = operand;
+    }
+    break;
+  default:
+    raise_error(thread_error_t::e_bad_type_operation);
   }
 }
 
@@ -385,16 +412,12 @@ void thread_t::do_INS_GETA_() {
     raise_error(thread_error_t::e_bad_array_object);
     return;
   }
-  if (!i) {
-    raise_error(thread_error_t::e_bad_array_index);
-    return;
-  }
-  if (i->type != val_type_int) {
+  if (i->type() != val_type_int) {
     raise_error(thread_error_t::e_bad_array_index);
     return;
   }
   const int32_t index = i->v;
-  if (a->type == val_type_array) {
+  if (a->type() == val_type_array) {
     assert(a->array_);
     if (index < 0 || index >= a->array_size_) {
       raise_error(thread_error_t::e_bad_array_bounds);
@@ -404,7 +427,7 @@ void thread_t::do_INS_GETA_() {
     push(out ? out : gc_.new_none());
     return;
   }
-  if (a->type == val_type_string) {
+  if (a->type() == val_type_string) {
     assert(a->s);
     if (index < 0 || index >= (int32_t)a->s->size()) {
       raise_error(thread_error_t::e_bad_array_bounds);
@@ -421,12 +444,11 @@ void thread_t::do_INS_SETA_() {
   value_t *a = pop();
   value_t *i = pop();
   value_t *v = pop();
-  assert(a && i);
-  if (a->type != val_type_array) {
+  if (a->type() != val_type_array) {
     raise_error(thread_error_t::e_bad_array_object);
     return;
   }
-  if (i->type != val_type_int) {
+  if (i->type() != val_type_int) {
     raise_error(thread_error_t::e_bad_array_index);
     return;
   }
@@ -662,7 +684,9 @@ bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
   }
   if (ret) {
     value_t *r = t.return_code();
-    *ret = *r;
+    if (r->is_none()) {
+      ret->type_ = val_type_none;
+    }
     // we cant return array contents as the thread_t will be out of scope
     if (r->is_array()) {
       ret->array_ = nullptr;
@@ -670,6 +694,9 @@ bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
     }
     if (r->is_string()) {
       ret->s = nullptr;
+    }
+    if (r->is_int()) {
+      ret->v = r->v;
     }
   }
   return true;

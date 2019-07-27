@@ -221,11 +221,11 @@ struct codegen_pass_t: ast_visitor_t {
       g.value_.v = 0;
       if (global->expr) {
         if (const auto *expr = global->expr->cast<ast_exp_lit_var_t>()) {
-          g.value_.type = val_type_int;
+          g.value_.type_ = val_type_int;
           g.value_.v = expr->value;
         }
         if (const auto *expr = global->expr->cast<ast_exp_lit_str_t>()) {
-          g.value_.type = val_type_string;
+          g.value_.type_ = val_type_string;
           g.value_.v = strings_.size();
           strings_.push_back(expr->value);
         }
