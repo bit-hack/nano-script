@@ -209,6 +209,7 @@ protected:
     if (value_(o->child, a)) {
       // evaluate operator
       switch (o->op->type_) {
+      // XXX: what about TOK_NEG ?
       case TOK_SUB: v = -a; break;
       case TOK_NOT: v = !a; break;
       default: assert(!"unknown operator");
@@ -409,7 +410,7 @@ struct opt_com_rotation_t: public ast_visitor_t {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_optimize(ccml_t &ccml) {
-#if 0
+#if 1
   opt_post_ret_t    (ccml).visit(&(ccml.ast().program));
   opt_const_expr_t  (ccml).visit(&(ccml.ast().program));
   opt_if_remove_t   (ccml).visit(&(ccml.ast().program));

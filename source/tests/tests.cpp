@@ -16,6 +16,31 @@ int __stdcall IsDebuggerPresent(void);
 
 using namespace ccml;
 
+bool execute(ccml::ccml_t &inst,
+             ccml::function_t &f,
+             int32_t argc,
+             const ccml::value_t *argv,
+             int32_t *res) {
+
+  using namespace ccml;
+  ccml::thread_t t{inst};
+
+  if (!t.prepare(f, argc, argv)) {
+    return false;
+  }
+
+  if (!t.resume(INT_MAX, false)) {
+    return false;
+  }
+
+  if (res) {
+    value_t *ret = t.return_code();
+    *res = ret ? ret->v : 0;
+  }
+
+  return t.finished() && !t.has_error();
+}
+
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 static bool return_value() {
   static const char *prog = R"(

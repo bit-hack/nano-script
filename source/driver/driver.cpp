@@ -141,8 +141,9 @@ int main(int argc, char **argv) {
   ccml.add_function("puts", vm_puts, 1);
   ccml.add_function("gets", vm_gets, 0);
 
-  if (argc <= 1)
+  if (argc <= 1) {
     return -1;
+  }
   const char *source = load_file(argv[1]);
   if (!source) {
     fprintf(stderr, "unable to load input");
@@ -158,35 +159,45 @@ int main(int argc, char **argv) {
   const function_t *func = ccml.find_function("main");
   if (!func) {
     fprintf(stderr, "unable to locate function 'main'\n");
-    exit(1);
+    return -3;
   }
 
-  value_t res;
   ccml::thread_error_t err = ccml::thread_error_t::e_success;
-  if (!ccml.vm().execute(*func, 0, nullptr, &res, false, &err)) {
-    if (err == ccml::thread_error_t::e_success) {
-      fprintf(stderr, "max cycle count reached\n");
+
+  ccml::thread_t thread{ccml};
+  if (!thread.prepare(*func, 0, nullptr)) {
+    fprintf(stderr, "unable to prepare thread\n");
+    return -4;
+  }
+
+  while (!thread.finished() && !thread.has_error()) {
+    if (!thread.resume(1024, false)) {
+      break;
     }
-    else {
-      fprintf(stderr, "%s", error_to_str(err));
-    }
-    exit(1);
+  }
+
+  if (thread.has_error()) {
+    fprintf(stderr, "thread error: %d\n", thread.error());
+    fprintf(stderr, "%s\n", error_to_str(thread.error()));
+    fprintf(stderr, "line: %d\n", thread.source_line());
+    return -5;
   }
   fflush(stdout);
 
-  if (res.is_int()) {
-    printf("exit: %d\n", (int)(res.v));
+  const ccml::value_t *res = thread.return_code();
+
+  if (!res || res->is_none()) {
+    fprintf(stdout, "exit: none\n");
   }
-  if (res.is_string()) {
-    printf("exit: %s\n", res.str().c_str());
+  if (res->is_int()) {
+    fprintf(stdout, "exit: %d\n", (int32_t)(res->v));
   }
-  if (res.is_none()) {
-    printf("exit: none\n");
+  if (res->is_string()) {
+    fprintf(stdout, "exit: \"%s\"\n", res->s->c_str());
   }
-  if (res.is_array()) {
-    printf("exit: array\n");
+  if (res->is_array()) {
+    fprintf(stdout, "exit: array\n");
   }
-//  getchar();
 
   return 0;
 }

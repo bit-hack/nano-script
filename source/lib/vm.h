@@ -101,6 +101,10 @@ struct thread_t {
     return error_ != thread_error_t::e_success;
   }
 
+  const thread_error_t error() const {
+    return error_;
+  }
+
   // return the current source line number
   int32_t source_line() const;
 
@@ -271,8 +275,11 @@ struct vm_t {
   vm_t(ccml_t &c)
     : ccml_(c) {}
 
+#if 1
+  // XXX: remove this function
   bool execute(const function_t &func, int32_t argc, const value_t *argv,
                value_t *ret = nullptr, bool trace = false, thread_error_t *err = nullptr);
+#endif
 
   // reset any stored state
   void reset();

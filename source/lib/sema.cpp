@@ -9,6 +9,125 @@ namespace ccml {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
+// check global var expressions
+//
+struct sema_global_var_t: public ast_visitor_t {
+
+  sema_global_var_t(ccml_t &ccml)
+    : errs_(ccml.errors())
+    , decl_(nullptr)
+    , ast_(ccml.ast())
+  {}
+
+  void visit(ast_decl_var_t *n) override {
+    assert(n->expr);
+    switch (n->expr->type) {
+    case ast_exp_none_e:
+      n->expr = nullptr;
+      break;
+    case ast_exp_bin_op_e:
+    case ast_exp_unary_op_e: {
+      stack.clear();
+      decl_ = n;
+      ast_visitor_t::visit(n);
+      assert(value_.size() == 1);
+      const int32_t val = value_.back();
+      n->expr = ast_.alloc<ast_exp_lit_var_t>(val);
+    } break;
+    case ast_exp_lit_str_e:
+    case ast_exp_lit_var_e:
+      break;
+    default:
+      errs_.global_var_const_expr(*n->name);
+    }
+  }
+
+  void visit(ast_exp_unary_op_t *n) override {
+    decend_(n);
+    const int32_t v = value_.back();
+    int32_t r = 0;
+    value_.pop_back();
+    switch (n->op->type_) {
+    case TOK_NEG: r = -v; break;
+    default: assert(!"unknown operator");
+    }
+    value_.push_back(r);
+  }
+
+  void visit(ast_exp_bin_op_t *n) override {
+    decend_(n);
+    const int32_t r = eval_(*(n->token));
+    value_.push_back(r);
+  }
+
+  void visit(ast_exp_lit_var_t *n) override {
+    value_.push_back(n->value);
+  }
+
+  void visit(ast_program_t *p) override {
+    for (auto *n : p->children) {
+      if (auto *d = n->cast<ast_decl_var_t>()) {
+        if (d->expr) {
+          dispatch(d);
+        }
+      }
+    }
+  }
+
+protected:
+  void decend_(ast_node_t *n) {
+    switch (n->type) {
+    case ast_exp_lit_var_e:
+      ast_visitor_t::visit(n->cast<ast_exp_lit_var_t>());  break;
+    case ast_exp_bin_op_e:
+      ast_visitor_t::visit(n->cast<ast_exp_bin_op_t>());  break;
+    case ast_exp_unary_op_e:
+      ast_visitor_t::visit(n->cast<ast_exp_unary_op_t>());  break;
+    default:
+      errs_.global_var_const_expr(*decl_->name);
+    }
+  }
+
+  int32_t eval_(const token_t &tok) {
+    assert(value_.size() >= 2);
+    const int32_t b = value_.back();
+    value_.pop_back();
+    const int32_t a = value_.back();
+    value_.pop_back();
+      // check for constant division
+    if (b == 0) {
+      if (tok.type_ == TOK_DIV ||
+          tok.type_ == TOK_MOD) {
+        errs_.constant_divie_by_zero(tok);
+      }
+    }
+    // evaluate operator
+    switch (tok.type_) {
+    case TOK_ADD: return a +  b;
+    case TOK_SUB: return a -  b;
+    case TOK_MUL: return a *  b;
+    case TOK_AND: return a && b;
+    case TOK_OR:  return a || b;
+    case TOK_LEQ: return a <= b;
+    case TOK_GEQ: return a >= b;
+    case TOK_LT:  return a <  b;
+    case TOK_GT:  return a >  b;
+    case TOK_EQ:  return a == b;
+    case TOK_DIV: return a /  b;
+    case TOK_MOD: return a %  b;
+    default: assert(!"unknown operator");
+    }
+    return 0;
+  }
+
+  ast_t &ast_;
+  ast_decl_var_t *decl_;
+  std::vector<int32_t> value_;
+  error_manager_t &errs_;
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
 // annotate nodes with a data type where possible to check validity
 //
 struct sema_type_annotation_t: public ast_visitor_t {
@@ -522,12 +641,14 @@ struct sema_array_size_t: public ast_visitor_t {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_sema(ccml_t &ccml) {
-  sema_decl_annotate_t(ccml).visit(&(ccml.ast().program));
-  sema_type_annotation_t(ccml).visit(&(ccml.ast().program));
-  sema_multi_decls_t(ccml).visit(&(ccml.ast().program));
-  sema_num_args_t(ccml).visit(&(ccml.ast().program));
-  sema_type_uses_t(ccml).visit(&(ccml.ast().program));
-  sema_array_size_t(ccml).visit(&(ccml.ast().program));
+  auto *prog = &(ccml.ast().program);
+  sema_global_var_t     (ccml).visit(prog);
+  sema_decl_annotate_t  (ccml).visit(prog);
+  sema_type_annotation_t(ccml).visit(prog);
+  sema_multi_decls_t    (ccml).visit(prog);
+  sema_num_args_t       (ccml).visit(prog);
+  sema_type_uses_t      (ccml).visit(prog);
+  sema_array_size_t     (ccml).visit(prog);
 }
 
 } // namespace ccml

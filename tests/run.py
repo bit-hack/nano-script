@@ -17,16 +17,21 @@ expected = {
     "array002" : "testcase",
     "array003" : "testcase",
     "const001" : "1240",
+    "const002" : "3",
+    "const003" : "13",
+    "const004" : "correct",
     "eol001"   : "1",
     "fib9"     : "34",
     "gcd"      : "9",
     "global001": "9",
     "global002": "9",
     "string001": "101",
+    "string002": "my string",
     "test001"  : "1234",
     "test002"  : "Hello World",
     "test003"  : "Hello World",
     "test004"  : "0123456789",
+    "none001"  : "1",
     }
 
 

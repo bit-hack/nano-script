@@ -574,8 +574,13 @@ ast_node_t* parser_t::parse_global_() {
   else {
     // assign a default value
     if (stream_.found(TOK_ASSIGN)) {
+#if 1
+      decl->expr = parse_expr_();
+      assert(decl->expr);
+#else
       const token_t *value = stream_.pop(TOK_VAL);
       decl->expr = ast.alloc<ast_exp_lit_var_t>(value);
+#endif
     }
   }
   return decl;

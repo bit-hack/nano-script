@@ -133,6 +133,10 @@ struct error_manager_t {
     on_error_(t.line_no_, "constant divide by zero");
   }
 
+  virtual void global_var_const_expr(const token_t &t) {
+    on_error_(t.line_no_, "can only assign constant expressions to globals");
+  }
+
   // token
 
   virtual void unexpected_token(const token_t &t, token_e e) {

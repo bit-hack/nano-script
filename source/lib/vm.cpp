@@ -235,6 +235,7 @@ void thread_t::do_INS_EQ_() {
   // only none == none
   if (l->is_none() || r->is_none()) {
     push(gc_.new_int(l->is_none() && r->is_none() ? 1 : 0));
+    return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
@@ -465,8 +466,15 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
     // reserve this much space for globals
     s_head_ += size;
     for (const auto &g : ccml_.globals()) {
-      s_[g.offset_] = (g.size_ == 1) ? gc_.copy(g.value_) :
-                                       gc_.new_array(g.size_);
+      if (g.value_.is_string()) {
+        const int32_t index = g.value_.v;
+        const std::string &s = ccml_.strings()[index];
+        s_[g.offset_] = gc_.new_string(s);
+      }
+      else {
+        s_[g.offset_] = (g.size_ == 1) ? gc_.copy(g.value_) :
+          gc_.new_array(g.size_);
+      }
     }
   }
 
@@ -626,6 +634,8 @@ bool thread_t::active_vars(std::vector<const identifier_t *> &out) const {
   return ccml_.store().active_vars(pc_, out);
 }
 
+#if 1
+// XXX: remove this function
 bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
                    value_t *ret, bool trace, thread_error_t *err) {
   if (err) {
@@ -658,9 +668,13 @@ bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
       ret->array_ = nullptr;
       ret->array_size_ = 0;
     }
+    if (r->is_string()) {
+      ret->s = nullptr;
+    }
   }
   return true;
 }
+#endif
 
 value_t *thread_t::getv_(int32_t offs) {
   const int32_t index = frame_().sp_ + offs;

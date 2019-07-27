@@ -35,7 +35,12 @@ struct value_t {
   }
 
   bool is_none() const {
-    return type == val_type_none;
+    if (this == nullptr) {
+      return true;
+    }
+    else {
+      return type == val_type_none;
+    }
   }
 
   void from_int(int32_t val) {
