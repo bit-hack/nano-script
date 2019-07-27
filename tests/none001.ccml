@@ -1,0 +1,4 @@
+function main()
+    var a = none
+    return a == none
+end

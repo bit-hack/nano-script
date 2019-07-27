@@ -46,6 +46,7 @@ struct thread_t {
     , cycles_(0)
     , s_head_(0)
     , f_head_(0) {
+    gc_.reset(new value_gc_t());
   }
 
   // peek a stack value
@@ -58,12 +59,16 @@ struct thread_t {
 
   // push integer onto the value stack
   void push_int(const int32_t v) {
-    push_(gc_.new_int(v));
+    push_(gc_->new_int(v));
   }
 
   // push string onto the value stack
   void push_string(const std::string &v) {
-    push_(gc_.new_string(v));
+    const size_t len = v.size();
+    value_t *s = gc_->new_string(len);
+    memcpy(s->string(), v.data(), len);
+    s->string()[len] = '\0';
+    push_(s);
   }
 
   // push onto the value stack
@@ -118,7 +123,7 @@ struct thread_t {
 
   // return garbage collector
   value_gc_t &gc() {
-    return gc_;
+    return *gc_;
   }
 
 protected:
@@ -155,7 +160,7 @@ protected:
 
   int32_t pc_;                        // program counter
 
-  value_gc_t gc_;
+  std::unique_ptr<value_gc_t> gc_;
 
   void gc_collect();
 
@@ -214,7 +219,7 @@ protected:
   value_t* pop_() {
     if (s_head_ <= 0) {
       set_error_(thread_error_t::e_stack_underflow);
-      return gc_.new_int(0);
+      return gc_->new_int(0);
     } else {
       return s_[--s_head_];
     }
@@ -224,7 +229,7 @@ protected:
   void set_error_(thread_error_t error) {
     finished_ = true;
     error_ = error;
-    return_code_ = gc_.new_int(-1);
+    return_code_ = gc_->new_int(-1);
   }
 
   value_t* getv_(int32_t offs);

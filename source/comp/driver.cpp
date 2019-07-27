@@ -1,9 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <cstdio>
 
+#include "../lib/ccml.h"
 #include "../lib/codegen.h"
 #include "../lib/disassembler.h"
-#include "../lib/ccml.h"
 #include "../lib/errors.h"
 #include "../lib/lexer.h"
 #include "../lib/parser.h"

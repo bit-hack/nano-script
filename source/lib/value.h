@@ -43,9 +43,24 @@ struct value_t {
     v = val;
   }
 
-  const std::string &str() const {
-    assert(s);
-    return *s;
+  int32_t integer() const {
+    assert(type() == val_type_int);
+    return (int32_t)v;
+  }
+
+  const char *string() const {
+    assert(type() == val_type_string);
+    return (const char *)(this + 1);
+  }
+
+  char *string() {
+    assert(type() == val_type_string);
+    return (char *)(this + 1);
+  }
+
+  value_t **array() const {
+    assert(type() == val_type_array);
+    return (value_t**)(this + 1);
   }
 
   const value_type_t type() const {
@@ -54,19 +69,22 @@ struct value_t {
       type_;
   }
 
+  int32_t strlen() const {
+    assert(type_ == val_type_string);
+    return v;
+  }
+
+  int32_t array_size() const {
+    assert(type_ == val_type_array);
+    return v;
+  }
+
   value_type_t type_;
 
-  union {
-    // int type
-    int32_t v;
-    // string type
-    std::string *s;
-    // array type
-    struct {
-      value_t** array_;
-      int32_t array_size_;
-    };
-  };
+  // int value
+  // string length if string
+  // array length if array
+  int32_t v;
 };
 
 } // namespace ccml

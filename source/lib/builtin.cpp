@@ -45,12 +45,11 @@ void builtin_len(struct ccml::thread_t &t) {
   assert(a);
   switch (a->type()) {
   case val_type_array: {
-    const int32_t res = a->array_size_;
+    const int32_t res = a->array_size();
     t.push_int(res);
   } break;
   case val_type_string: {
-    assert(a->s);
-    const int32_t res = a->s->size();
+    const int32_t res = a->strlen();
     t.push_int(res);
   } break;
   default:
@@ -86,7 +85,7 @@ void builtin_shr(struct ccml::thread_t &t) {
 void builtin_chr(struct ccml::thread_t &t) {
   const ccml::value_t *v = t.pop();
   if (v && v->is_int()) {
-    char x[2] = { char(v->v), 0 };
+    char x[2] = {char(v->v), 0};
     t.push_string(std::string(x));
     return;
   }

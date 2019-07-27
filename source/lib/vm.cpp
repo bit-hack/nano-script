@@ -72,19 +72,43 @@ void thread_t::do_INS_ADD_() {
   const value_t *r = pop();
   const value_t *l = pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_.new_int(l->v + r->v));
+    push(gc_->new_int(l->v + r->v));
     return;
   }
   if (l->is_string() && r->is_string()) {
-    push(gc_.new_string(l->str() + r->str()));
+    const int32_t len = l->strlen() + r->strlen();
+    value_t *s = gc_->new_string(len);
+    char *dst = s->string();
+    memcpy(dst, l->string(), l->strlen());
+    memcpy(dst + l->strlen(), r->string(), r->strlen());
+    dst[len] = '\0';
+    push(s);
     return;
   }
   if (l->is_int() && r->is_string()) {
-    push(gc_.new_string(std::to_string(l->v) + r->str()));
+    char lbuf[16] = {0};
+    itoa(l->integer(), lbuf, 10);
+    size_t lsize = strlen(lbuf);
+    const int32_t len = lsize + r->strlen();
+    value_t *s = gc_->new_string(len);
+    char *dst = s->string();
+    memcpy(dst, lbuf, lsize);
+    memcpy(dst + lsize, r->string(), r->strlen());
+    dst[len] = '\0';
+    push(s);
     return;
   }
   if (l->is_string() && r->is_int()) {
-    push(gc_.new_string(l->str() + std::to_string(r->v)));
+    char rbuf[16] = {0};
+    itoa(r->integer(), rbuf, 10);
+    size_t rsize = strlen(rbuf);
+    const int32_t len = l->strlen() + rsize;
+    value_t *s = gc_->new_string(len);
+    char *dst = s->string();
+    memcpy(dst, l->string(), l->strlen());
+    memcpy(dst + l->strlen(), rbuf, rsize);
+    dst[len] = '\0';
+    push(s);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -94,7 +118,7 @@ void thread_t::do_INS_SUB_() {
   const value_t *r = pop();
   const value_t *l = pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_.new_int(l->v - r->v));
+    push(gc_->new_int(l->v - r->v));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -104,7 +128,7 @@ void thread_t::do_INS_MUL_() {
   const value_t *r = pop();
   const value_t *l = pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_.new_int(l->v * r->v));
+    push(gc_->new_int(l->v * r->v));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -118,7 +142,7 @@ void thread_t::do_INS_DIV_() {
       set_error_(thread_error_t::e_bad_divide_by_zero);
     } else {
       const int32_t o = l->v / r->v;
-      push(gc_.new_int(o));
+      push(gc_->new_int(o));
     }
     return;
   }
@@ -133,7 +157,7 @@ void thread_t::do_INS_MOD_() {
       set_error_(thread_error_t::e_bad_divide_by_zero);
     } else {
       const int32_t o = l->v % r->v;
-      push(gc_.new_int(o));
+      push(gc_->new_int(o));
     }
     return;
   }
@@ -144,7 +168,7 @@ void thread_t::do_INS_AND_() {
   const value_t *r = pop();
   const value_t *l = pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_.new_int(l->v && r->v));
+    push(gc_->new_int(l->v && r->v));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -154,7 +178,7 @@ void thread_t::do_INS_OR_() {
   const value_t *r = pop();
   const value_t *l = pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_.new_int(l->v || r->v));
+    push(gc_->new_int(l->v || r->v));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -166,7 +190,7 @@ void thread_t::do_INS_NOT_() {
   // convert other types to bool first?
 
   if (l->is_int()) {
-    push(gc_.new_int(!l->v));
+    push(gc_->new_int(!l->v));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -175,7 +199,7 @@ void thread_t::do_INS_NOT_() {
 void thread_t::do_INS_NEG_() {
   const value_t *o = pop();
   if (o->is_int()) {
-    push(gc_.new_int(-o->v));
+    push(gc_->new_int(-o->v));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -185,7 +209,7 @@ void thread_t::do_INS_LT_() {
   const value_t *r = pop();
   const value_t *l = pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_.new_int(l->v < r->v ? 1 : 0));
+    push(gc_->new_int(l->v < r->v ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -195,7 +219,7 @@ void thread_t::do_INS_GT_() {
   const value_t *r = pop();
   const value_t *l = pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_.new_int(l->v > r->v ? 1 : 0));
+    push(gc_->new_int(l->v > r->v ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -205,7 +229,7 @@ void thread_t::do_INS_LEQ_() {
   const value_t *r = pop();
   const value_t *l = pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_.new_int(l->v <= r->v ? 1 : 0));
+    push(gc_->new_int(l->v <= r->v ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -215,7 +239,7 @@ void thread_t::do_INS_GEQ_() {
   const value_t *r = pop();
   const value_t *l = pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_.new_int(l->v >= r->v ? 1 : 0));
+    push(gc_->new_int(l->v >= r->v ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -225,16 +249,22 @@ void thread_t::do_INS_EQ_() {
   const value_t *r = pop();
   const value_t *l = pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_.new_int(l->v == r->v ? 1 : 0));
+    push(gc_->new_int(l->v == r->v ? 1 : 0));
     return;
   }
   if (l->is_string() && r->is_string()) {
-    push(gc_.new_int(l->s == r->s ? 1 : 0));
+    int32_t res = 0;
+    if (l->strlen() == r->strlen()) {
+      if (strcmp(l->string(), r->string()) == 0) {
+        res = 1;
+      }
+    }
+    push(gc_->new_int(res));
     return;
   }
   // only none == none
   if (l->is_none() || r->is_none()) {
-    push(gc_.new_int(l->is_none() && r->is_none() ? 1 : 0));
+    push(gc_->new_int(l->is_none() && r->is_none() ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -254,7 +284,7 @@ void thread_t::do_INS_TJMP_() {
     }
     break;
   case value_type_t::val_type_string:
-    if (!o->s->empty()) {
+    if (o->strlen() != 0) {
       pc_ = operand;
     }
     break;
@@ -278,7 +308,7 @@ void thread_t::do_INS_FJMP_() {
     }
     break;
   case val_type_string:
-    if (o->s->empty()) {
+    if (o->strlen() == 0) {
       pc_ = operand;
     }
     break;
@@ -330,7 +360,7 @@ void thread_t::do_INS_POP_() {
 }
 
 void thread_t::do_INS_NEW_INT_() {
-  value_t *op = gc_.new_int(read_operand_());
+  value_t *op = gc_->new_int(read_operand_());
   push(op);
 }
 
@@ -338,19 +368,17 @@ void thread_t::do_INS_NEW_STR_() {
   const int32_t index = read_operand_();
   const auto &str_tab = ccml_.strings();
   assert(index < (int32_t)str_tab.size());
-  const std::string s = ccml_.strings()[index];
-  push(gc_.new_string(s));
+  const std::string &s = ccml_.strings()[index];
+  push(gc_->new_string(s));
 }
 
 void thread_t::do_INS_NEW_ARY_() {
   const int32_t index = read_operand_();
   assert(index > 0);
-  push(gc_.new_array(index));
+  push(gc_->new_array(index));
 }
 
-void thread_t::do_INS_NEW_NONE_() {
-  push(gc_.new_none());
-}
+void thread_t::do_INS_NEW_NONE_() { push(gc_->new_none()); }
 
 void thread_t::do_INS_LOCALS_() {
   const int32_t operand = read_operand_();
@@ -418,23 +446,21 @@ void thread_t::do_INS_GETA_() {
   }
   const int32_t index = i->v;
   if (a->type() == val_type_array) {
-    assert(a->array_);
-    if (index < 0 || index >= a->array_size_) {
+    if (index < 0 || index >= a->array_size()) {
       raise_error(thread_error_t::e_bad_array_bounds);
       return;
     }
-    value_t *out = a->array_[index];
-    push(out ? out : gc_.new_none());
+    value_t *out = a->array()[index];
+    push(out ? out : gc_->new_none());
     return;
   }
   if (a->type() == val_type_string) {
-    assert(a->s);
-    if (index < 0 || index >= (int32_t)a->s->size()) {
+    if (index < 0 || index >= (int32_t)a->strlen()) {
       raise_error(thread_error_t::e_bad_array_bounds);
       return;
     }
-    uint32_t ch = ((const uint8_t*)(a->s->data()))[index];
-    push(gc_.new_int(ch));
+    const uint32_t ch = (uint8_t)(a->string()[index]);
+    push(gc_->new_int(ch));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -452,13 +478,12 @@ void thread_t::do_INS_SETA_() {
     raise_error(thread_error_t::e_bad_array_index);
     return;
   }
-  const int64_t index = i->v;
-  if (index < 0 || index >= a->array_size_) {
+  const int32_t index = i->v;
+  if (index < 0 || index >= a->array_size()) {
     raise_error(thread_error_t::e_bad_array_bounds);
     return;
   }
-  assert(a->array_);
-  a->array_[index] = gc_.copy(*v);
+  a->array()[index] = gc_->copy(*v);
 }
 
 namespace {
@@ -491,11 +516,10 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
       if (g.value_.is_string()) {
         const int32_t index = g.value_.v;
         const std::string &s = ccml_.strings()[index];
-        s_[g.offset_] = gc_.new_string(s);
-      }
-      else {
-        s_[g.offset_] = (g.size_ == 1) ? gc_.copy(g.value_) :
-          gc_.new_array(g.size_);
+        s_[g.offset_] = gc_->new_string(s);
+      } else {
+        s_[g.offset_] =
+            (g.size_ == 1) ? gc_->copy(g.value_) : gc_->new_array(g.size_);
       }
     }
   }
@@ -503,14 +527,14 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   // save the target pc (entry point)
   pc_ = func.pos_;
   if (func.num_args_ != argc) {
-    return_code_ = gc_.new_int(-1);
+    return_code_ = gc_->new_int(-1);
     error_ = thread_error_t::e_bad_num_args;
     return false;
   }
 
   // push any arguments
   for (int i = 0; i < argc; ++i) {
-    push(gc_.copy(argv[i]));
+    push(gc_->copy(argv[i]));
   }
 
   // push the initial frame
@@ -605,9 +629,7 @@ bool thread_t::step_line() {
   return !has_error();
 }
 
-int32_t thread_t::source_line() const {
-  return ccml_.store().get_line(pc_);
-}
+int32_t thread_t::source_line() const { return ccml_.store().get_line(pc_); }
 
 void thread_t::tick_gc_(int32_t cycles) {
   // XXX: better - when allocated objects are 2x the stack size?
@@ -686,17 +708,12 @@ bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
     value_t *r = t.return_code();
     if (r->is_none()) {
       ret->type_ = val_type_none;
-    }
-    // we cant return array contents as the thread_t will be out of scope
-    if (r->is_array()) {
-      ret->array_ = nullptr;
-      ret->array_size_ = 0;
-    }
-    if (r->is_string()) {
-      ret->s = nullptr;
-    }
-    if (r->is_int()) {
-      ret->v = r->v;
+    } else {
+      if (r->is_int()) {
+        ret->v = r->v;
+      } else {
+        r->v = 0;
+      }
     }
   }
   return true;
@@ -707,10 +724,10 @@ value_t *thread_t::getv_(int32_t offs) {
   const int32_t index = frame_().sp_ + offs;
   if (index < 0 || index >= int32_t(s_head_)) {
     set_error_(thread_error_t::e_bad_getv);
-    return gc_.new_none();
+    return gc_->new_none();
   }
   value_t *v = s_[index];
-  return v ? v : gc_.new_none();
+  return v ? v : gc_->new_none();
 }
 
 void thread_t::setv_(int32_t offs, value_t *val) {
@@ -741,5 +758,5 @@ void vm_t::reset() {
 }
 
 void thread_t::gc_collect() {
-  gc_.collect(s_.data(), s_head_);
+  gc_->collect(s_.data(), s_head_);
 }

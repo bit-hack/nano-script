@@ -1,0 +1,9 @@
+var x = none
+
+function main()
+    if (x == none)
+        puts("correct")
+    else
+        puts("error")
+    end
+end

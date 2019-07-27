@@ -16,6 +16,7 @@ expected = {
     "array001" : "55",
     "array002" : "testcase",
     "array003" : "testcase",
+    "array004" : "1234",
     "const001" : "1240",
     "const002" : "3",
     "const003" : "13",
@@ -27,11 +28,14 @@ expected = {
     "global002": "9",
     "string001": "101",
     "string002": "my string",
+    "string003": "123string",
+    "string004": "string123",
     "test001"  : "1234",
     "test002"  : "Hello World",
     "test003"  : "Hello World",
     "test004"  : "0123456789",
     "none001"  : "1",
+    "sqrt"     : "310",
     }
 
 

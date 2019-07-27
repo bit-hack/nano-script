@@ -1,0 +1,6 @@
+function main()
+    var x = 123
+    var y = "string"
+    puts(x + y)
+    return 0
+end

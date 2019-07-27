@@ -1,9 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <cstdio>
 
+#include "../lib/ccml.h"
 #include "../lib/codegen.h"
 #include "../lib/disassembler.h"
-#include "../lib/ccml.h"
 #include "../lib/errors.h"
 #include "../lib/lexer.h"
 #include "../lib/parser.h"
@@ -73,7 +73,7 @@ void vm_puts(ccml::thread_t &t) {
   if (!s->is_string()) {
     t.raise_error(thread_error_t::e_bad_argument);
   } else {
-    printf("%s\n", s->str().c_str());
+    printf("%s\n", s->string());
     fflush(stdout);
   }
   t.push_int(0);
@@ -193,7 +193,7 @@ int main(int argc, char **argv) {
     fprintf(stdout, "exit: %d\n", (int32_t)(res->v));
   }
   if (res->is_string()) {
-    fprintf(stdout, "exit: \"%s\"\n", res->s->c_str());
+    fprintf(stdout, "exit: \"%s\"\n", res->string());
   }
   if (res->is_array()) {
     fprintf(stdout, "exit: array\n");

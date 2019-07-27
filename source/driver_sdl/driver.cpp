@@ -63,28 +63,26 @@ void vm_rand(ccml::thread_t &t) {
 
 void vm_video(ccml::thread_t &t) {
   using namespace ccml;
-  const value_t* h = t.pop();
-  const value_t* w = t.pop();
+  const value_t *h = t.pop();
+  const value_t *w = t.pop();
   if (w->is_int() && h->is_int()) {
-    global.width_  = (uint32_t)w->v;
+    global.width_ = (uint32_t)w->v;
     global.height_ = (uint32_t)h->v;
     global.video_.reset(new uint32_t[(uint32_t)(w->v * h->v)]);
-    global.screen_ = SDL_SetVideoMode(
-      (uint32_t)(w->v * 3),
-      (uint32_t)(h->v * 3), 32, 0);
+    global.screen_ =
+        SDL_SetVideoMode((uint32_t)(w->v * 3), (uint32_t)(h->v * 3), 32, 0);
     // return value
     t.push(t.gc().new_int(global.screen_ != nullptr));
-  }
-  else {
+  } else {
     t.push(t.gc().new_int(0));
   }
 }
 
 void vm_setrgb(ccml::thread_t &t) {
   using namespace ccml;
-  const value_t* b = t.pop();
-  const value_t* g = t.pop();
-  const value_t* r = t.pop();
+  const value_t *b = t.pop();
+  const value_t *g = t.pop();
+  const value_t *r = t.pop();
   if (r->is_int() && g->is_int() && b->is_int()) {
     global.rgb_ = ((r->v & 0xff) << 16) | ((g->v & 0xff) << 8) | (b->v & 0xff);
   }
@@ -95,8 +93,8 @@ void vm_setrgb(ccml::thread_t &t) {
 void vm_plot(ccml::thread_t &t) {
   using namespace ccml;
 
-  const value_t* y = t.pop();
-  const value_t* x = t.pop();
+  const value_t *y = t.pop();
+  const value_t *x = t.pop();
   // return value
   t.push(t.gc().new_int(0));
 
@@ -127,11 +125,11 @@ void vm_flip(ccml::thread_t &t) {
 
   if (auto *screen = global.screen_) {
 
-    uint32_t *s = (uint32_t*)global.video_.get();
-    uint32_t *d = (uint32_t*)global.screen_->pixels;
+    uint32_t *s = (uint32_t *)global.video_.get();
+    uint32_t *d = (uint32_t *)global.screen_->pixels;
 
     for (uint32_t y = 0; y < h; ++y) {
-      for (uint32_t x = 0, j = 0; x < h; ++x, j +=3) {
+      for (uint32_t x = 0, j = 0; x < h; ++x, j += 3) {
         const uint32_t c = s[x];
         d[j + 0 + p0] = d[j + 1 + p0] = d[j + 2 + p0] = c;
         d[j + 0 + p1] = d[j + 1 + p1] = d[j + 2 + p1] = c;
@@ -178,6 +176,8 @@ int main(int argc, char **argv) {
     return -1;
   }
 
+  SDL_WM_SetCaption(argv[1], nullptr);
+
   ccml::error_t error;
   if (!ccml.build(source, error)) {
     on_error(error);
@@ -208,6 +208,18 @@ int main(int argc, char **argv) {
         break;
       }
     }
+  }
+
+  if (thread.has_error()) {
+    const thread_error_t err = thread.error();
+    if (err != thread_error_t::e_success) {
+      int32_t line = thread.source_line();
+      printf("runtime error %d\n", int32_t(err));
+      printf("source line %d\n", int32_t(line));
+      const std::string &s = ccml.lexer().get_line(line);
+      printf("%s\n", s.c_str());
+    }
+    return 1;
   }
 
   fflush(stdout);

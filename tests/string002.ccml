@@ -1,0 +1,8 @@
+var x = "Hello"
+var y = "my string"
+var z = "wrong"
+
+function main()
+    puts(y)
+    return 1
+end

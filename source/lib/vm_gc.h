@@ -4,10 +4,47 @@
 #include <unordered_set>
 #include <set>
 #include <vector>
+#include <array>
 
 #include "value.h"
 
 namespace ccml {
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
+// simple arena memory allocator
+//
+struct arena_t {
+
+  arena_t()
+    : head_(0) 
+  {}
+
+  template <typename type_t>
+  type_t *alloc(size_t extra) {
+    size_t size = sizeof(type_t);
+    assert(head_ + size < data_.size());
+    type_t *out = (type_t*)(data_.data() + head_);
+    head_ += size + extra;
+    return out;
+  }
+
+  void clear() {
+    head_ = 0;
+  }
+
+  size_t size() const {
+    return head_;
+  }
+
+  size_t capacity() const {
+    return data_.size();
+  }
+
+protected:
+  size_t head_;
+  std::array<uint8_t, 1024 * 1024> data_;
+};
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -21,87 +58,36 @@ struct value_gc_t {
 
   value_t *new_string(const std::string &value);
 
+  value_t *new_string(int32_t length);
+
   value_t *new_none();
 
   value_t *copy(const value_t &v);
 
   void collect(value_t **input, size_t count);
 
-  value_gc_t();
-  ~value_gc_t();
+  value_gc_t()
+    : flipflop_(0)
+  {}
 
 protected:
-  void release_(value_t *v) {
-    if (v) {
-      switch (v->type()) {
-      case val_type_array:
-        // todo: pool arrays?
-        assert(v->array_);
-        delete[] v->array_;
-        v->array_ = nullptr;
-        v->array_size_ = 0;
-        break;
-      case val_type_string:
-        string_pool_.push_back(v->s);
-        v->s = nullptr;
-        break;
-      case val_type_none:
-        break;
-      case val_type_unknown:
-        break;
-      case val_type_int:
-        break;
-      default:
-        assert(false);
-      }
-      v->type_ = val_type_unknown;
-      avail_.push_back(v);
-    }
+
+  void collect_imp_(value_t **list, size_t num);
+
+  arena_t &space_from() {
+    return space_[flipflop_ & 1];
   }
 
-  void delete_(value_t *v) {
-    if (v) {
-      if (v->type() == val_type_array) {
-        // todo: pool arrays?
-        assert(v->array_);
-        delete[] v->array_;
-        v->array_ = nullptr;
-      }
-      if (v->type() == val_type_string) {
-        delete v->s;
-        v->s = nullptr;
-      }
-      delete v;
-    }
+  arena_t &space_to() {
+    return space_[(flipflop_ & 1) ^ 1];
   }
 
-  value_t *alloc_() {
-    value_t *v = nullptr;
-    if (avail_.empty()) {
-      // allocate a new value
-      v = new value_t;
-      assert(v);
-      commit_.push_back(v);
-    }
-    else {
-      // pop from front
-      v = avail_.back();
-      assert(v);
-      avail_.pop_back();
-    }
-    return v;
+  void swap() {
+    flipflop_ ^= 1;
   }
 
-  void visit_(std::unordered_set<const value_t*> &s, const value_t *v);
-
-  // known dead values
-  std::vector<value_t*> avail_;
-  // values that have been given out and may be alive
-  // std::set<value_t*> allocs_;
-  // all values that have been allocated with new
-  std::vector<value_t*> commit_;
-  // free string pool
-  std::vector<std::string*> string_pool_;
+  uint32_t flipflop_;
+  std::array<arena_t, 2> space_;
 };
 
 } // namespce ccml

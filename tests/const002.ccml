@@ -1,0 +1,5 @@
+var x = 9 / 3
+
+function main()
+    return x
+end

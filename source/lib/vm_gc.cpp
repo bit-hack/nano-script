@@ -4,76 +4,61 @@
 
 namespace ccml {
 
-value_gc_t::value_gc_t() {
-#if 1
-  for (int i = 0; i < 128; ++i) {
-    value_t *v = new value_t;
-    commit_.push_back(v);
-    avail_.push_back(v);
-  }
-#endif
-}
-
-value_gc_t::~value_gc_t() {
-  for (value_t *v : commit_) {
-    delete_(v);
-  }
-  commit_.clear();
-  for (std::string *s : string_pool_) {
-    delete s;
-  }
-  string_pool_.clear();
-}
-
 value_t *value_gc_t::new_int(int32_t value) {
-  value_t *v = alloc_();
+  value_t *v = space_to().alloc<value_t>(0);
+  assert(v);
   v->type_ = val_type_int;
   v->v = value;
   return v;
 }
 
 value_t *value_gc_t::new_array(int32_t value) {
-  value_t *v = alloc_();
+  size_t size = value * sizeof(value_t *);
+  value_t *v = space_to().alloc<value_t>(size);
+  assert(v);
   v->type_ = val_type_array;
   assert(value > 0);
-  // todo: pool these
-  v->array_ = new value_t *[size_t(value)];
-  assert(v->array_);
-  memset(v->array_, 0, size_t(sizeof(value_t *) * value));
-  v->array_size_ = int32_t(value);
+  memset(v->array(), 0, size);
+  v->v = int32_t(value);
   return v;
 }
 
 value_t *value_gc_t::new_string(const std::string &value) {
-  value_t *v = alloc_();
+  const size_t size = value.size();
+  value_t *v = space_to().alloc<value_t>(value.size() + 1);
+  assert(v);
   v->type_ = val_type_string;
-  if (string_pool_.empty()) {
-    v->s = new std::string(value);
-  }
-  else {
-    v->s = string_pool_.back();
-    string_pool_.pop_back();
-    *(v->s) = value;
-  }
+  v->v = size;
+  // copy string
+  memcpy((char *)(v + 1), value.data(), size);
+  // insert '\0' terminator
+  v->string()[size] = 0;
+  return v;
+}
+
+value_t *value_gc_t::new_string(int32_t len) {
+  value_t *v = space_to().alloc<value_t>(len + 1);
+  assert(v);
+  v->type_ = val_type_string;
+  v->v = len;
+  v->string()[0] = '\0';
   return v;
 }
 
 value_t *value_gc_t::new_none() {
-#if 0
-  value_t *v = alloc_();
-  v->type = val_type_none;
-#else
-  value_t *v = nullptr;
-#endif
-  return v;
+  return nullptr;
 }
 
 value_t *value_gc_t::copy(const value_t &a) {
   switch (a.type()) {
   case val_type_int:
     return new_int(a.v);
-  case val_type_string:
-    return new_string(a.str());
+  case val_type_string: {
+    value_t *v = new_string(a.strlen());
+    memcpy(v->string(), a.string(), a.strlen());
+    v->string()[a.strlen()] = 0;
+    return v;
+  }
   case val_type_none:
     return new_none();
   default:
@@ -82,46 +67,60 @@ value_t *value_gc_t::copy(const value_t &a) {
   }
 }
 
-void value_gc_t::visit_(std::unordered_set<const value_t *> &s, const value_t *v) {
-  if (v == nullptr) {
-    return;
-  }
-  if (v->is_array()) {
-    for (int i = 0; i < v->array_size_; ++i) {
-      visit_(s, v->array_[i]);
-    }
-  }
-  s.insert(v);
-}
-
-void value_gc_t::collect(value_t **v, size_t num) {
+void value_gc_t::collect(value_t **list, size_t num) {
 
   // currently the grammar doesnt allow us to have cyclic data structures
   // but be aware we might need to support it when the language evolves.
 
-  // we should collect stats about how many values are alive vs commited
-  // for each collect itteration.
-  const size_t reserve = commit_.size() / 2;
+  const int before = space_to().size();
+  swap();
+  space_to().clear();
+  collect_imp_(list, num);
+  const int after = space_to().size();
+  //  printf("%5d %5d\n", before, after);
+}
 
-  // we could convert this to be a marking bitmap if we reserve all out
-  // value_t's from a contiguous chunk of memory.
-  std::unordered_set<const value_t *> alive(reserve);
+void value_gc_t::collect_imp_(value_t **list, size_t num) {
+
+  const arena_t &from = space_from();
+  arena_t &to = space_to();
+
   for (size_t i = 0; i < num; ++i) {
-    value_t *x = v[i];
-    if (x) {
-      visit_(alive, x);
+    value_t *v = list[i];
+    switch (v->type()) {
+    case val_type_none: {
+      break;
     }
-  }
-
-  // clear available nodes
-  avail_.clear();
-  
-  // reclaim from commit list
-  for (auto itt = commit_.begin(); itt != commit_.end(); ++itt) {
-    if (alive.count(*itt) == 0) {
-      value_t *val = *itt;
-      assert(val);
-      release_(val);
+    case val_type_int: {
+      value_t *n = to.alloc<value_t>(0);
+      n->type_ = val_type_int;
+      n->v = v->integer();
+      list[i] = n;
+      break;
+    }
+    case val_type_string: {
+      assert(strlen(v->string()) == v->v);
+      const size_t size = v->v;
+      value_t *n = to.alloc<value_t>(size + 1);
+      n->type_ = val_type_string;
+      n->v = size;
+      memcpy(n->string(), v->string(), size + 1);
+      list[i] = n;
+      break;
+    }
+    case val_type_array: {
+      // collect child elements
+      const size_t size = v->array_size();
+      collect_imp_(v->array(), size);
+      value_t *n = to.alloc<value_t>(size * sizeof(value_t *));
+      n->type_ = val_type_array;
+      n->v = size;
+      memcpy(n->array(), v->array(), size * sizeof(value_t *));
+      list[i] = n;
+      break;
+    }
+    default:
+      assert(!"unknown type");
     }
   }
 }
