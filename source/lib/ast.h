@@ -137,6 +137,7 @@ struct ast_exp_array_t : public ast_node_t {
     : ast_node_t(TYPE)
     , name(name)
     , index(nullptr)
+    , decl(nullptr)
   {}
 
   const token_t *name;
@@ -164,14 +165,14 @@ struct ast_exp_call_t : public ast_node_t {
   ast_exp_call_t(const token_t *name)
     : ast_node_t(TYPE)
     , name(name)
-    , decl(nullptr)
     , is_syscall(false)
+    , decl(nullptr)
   {}
 
   const token_t *name;
   bool is_syscall;
-  std::vector<ast_node_t *> args;
   ast_decl_func_t *decl;
+  std::vector<ast_node_t *> args;
 };
 
 struct ast_exp_bin_op_t : public ast_node_t {
@@ -274,6 +275,7 @@ struct ast_stmt_assign_var_t : public ast_node_t {
     : ast_node_t(TYPE)
     , name(name)
     , expr(nullptr)
+    , decl(nullptr)
   {}
 
   const token_t *name;
@@ -290,6 +292,7 @@ struct ast_stmt_assign_array_t : public ast_node_t {
     , name(name)
     , index(nullptr)
     , expr(nullptr)
+    , decl(nullptr)
   {}
 
   const token_t *name;
@@ -558,7 +561,14 @@ struct ast_printer_t : ast_visitor_t {
 
   void visit(ast_exp_bin_op_t* n) override {
     indent_();
-    fprintf(fd_, "ast_exp_bin_op_t\n");
+    char op = '?';
+    switch (n->op) {
+    case TOK_ADD: op = '+'; break;
+    case TOK_SUB: op = '-'; break;
+    case TOK_MUL: op = '*'; break;
+    case TOK_DIV: op = '/'; break;
+    }
+    fprintf(fd_, "ast_exp_bin_op_t {op: %c}\n", op);
     ast_visitor_t::visit(n);
   }
 

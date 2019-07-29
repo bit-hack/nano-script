@@ -38,6 +38,12 @@ const token_t *token_stream_t::pop() {
   return &stream_[index_++];
 }
 
+const token_t *token_stream_t::peek() const {
+  // return the token
+  assert(index_ < stream_.size());
+  return &stream_[index_];
+}
+
 void token_stream_t::push(const token_t &tok) {
   // check index is zero as it could cause chaos to push to an already pop'd
   // stream which would invalidate token_t* types

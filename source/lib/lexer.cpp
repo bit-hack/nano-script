@@ -169,13 +169,7 @@ bool lexer_t::lex(const char *s) {
       push_(TOK_COMMA);
       continue;
     case '+':
-      if (s[1] == '=') {
-        push_(TOK_ACC);
-        ++s;
-      }
-      else {
-        push_(TOK_ADD);
-      }
+      push_(TOK_ADD);
       continue;
     case '-':
       push_(TOK_SUB);

@@ -272,32 +272,6 @@ ast_node_t* parser_t::parse_assign_(const token_t &name) {
   return stmt;
 }
 
-ast_node_t* parser_t::parse_accumulate_(const token_t &name) {
-  auto &ast = ccml_.ast();
-
-  // format:
-  //
-  //                   V
-  //    <TOK_IDENT> +=   <expr>
-
-  // synthesize:
-  //  assign {
-  //    name,
-  //    op {
-  //      +,
-  //      name,
-  //      expr } }
-
-  auto *stmt = ast.alloc<ast_stmt_assign_var_t>(&name);
-  auto *acc  = ast.alloc<ast_exp_bin_op_t>(&name);
-  acc->left  = ast.alloc<ast_exp_ident_t>(&name);
-  acc->right = parse_expr_();
-  acc->op = TOK_ADD;
-  stmt->expr = acc;
-
-  return stmt;
-}
-
 ast_node_t* parser_t::parse_call_(const token_t &name) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
   auto &ast = ccml_.ast();
@@ -409,6 +383,31 @@ ast_node_t* parser_t::parse_return_(const token_t &t) {
   return node;
 }
 
+// format:
+//    <TOK_IDENT> + = <expr>
+//    <TOK_IDENT> - = <expr>
+//    <TOK_IDENT> * = <expr>
+//    <TOK_IDENT> / = <expr>
+ast_node_t* parser_t::parse_compound_(const token_t &t) {
+  token_stream_t &stream_ = ccml_.lexer().stream_;
+  auto &ast = ccml_.ast();
+
+  const token_t *op = stream_.pop();
+  if (!stream_.found(TOK_ASSIGN)) {
+    ccml_.errors().equals_expected_after_operator(t);
+  }
+
+  auto *assign = ast.alloc<ast_stmt_assign_var_t>(&t);
+  auto *bin_op = ast.alloc<ast_exp_bin_op_t>(op);
+
+  bin_op->op = op->type_;
+  bin_op->left = ast.alloc<ast_exp_ident_t>(&t);
+  bin_op->right = parse_expr_();
+  assign->expr = bin_op;
+
+  return assign;
+}
+
 ast_node_t* parser_t::parse_stmt_() {
   token_stream_t &stream_ = ccml_.lexer().stream_;
   auto &ast = ccml_.ast();
@@ -418,6 +417,8 @@ ast_node_t* parser_t::parse_stmt_() {
   //    var <TOK_IDENT> [ = <expr> ] '\n'
   //    str <TOK_IDENT> [ = <expr> ] '\n'
   //    <TOK_IDENT> ( <expression list> ) '\n'
+  //    <TOK_IDENT> = <expr> '\n'
+  //    <TOK_IDENT> <op> = <expr> '\n'
   //    if ( <expr> ) '\n'
   //    while ( <expr> ) '\n'
   //    return <expr> '\n'
@@ -433,21 +434,35 @@ ast_node_t* parser_t::parse_stmt_() {
     stmt = parse_decl_var_(*t);
   }
   else if (const token_t *var = stream_.found(TOK_IDENT)) {
-    if (stream_.found(TOK_ASSIGN)) {
+
+    switch (stream_.peek()->type_) {
+    case TOK_ADD:
+    case TOK_SUB:
+    case TOK_MUL:
+    case TOK_DIV:
+      stmt = parse_compound_(*var);
+      break;
+    case TOK_ASSIGN:
       // x = ...
+      stream_.pop();
       stmt = parse_assign_(*var);
-    } else if (stream_.found(TOK_ACC)) {
-      stmt = parse_accumulate_(*var);
-    } else if (stream_.found(TOK_LPAREN)) {
+      break;
+    case TOK_LPAREN: {
       // x(
+      stream_.pop();
       ast_node_t *expr = parse_call_(*var);
       stmt = ast.alloc<ast_stmt_call_t>(expr);
-    } else if (stream_.found(TOK_LBRACKET)) {
+      break;
+    }
+    case TOK_LBRACKET:
       // x[
+      stream_.pop();
       stmt = parse_array_set_(*var);
-    } else {
+      break;
+    default:
       ccml_.errors().assign_or_call_expected_after(*var);
     }
+
   } else if (t = stream_.found(TOK_IF)) {
     stmt = parse_if_(*t);
   } else if (t = stream_.found(TOK_WHILE)) {

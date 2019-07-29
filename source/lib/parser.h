@@ -28,7 +28,6 @@ protected:
   std::vector<ast_node_t*> exp_stack_;
 
   // parse specific language constructs
-  ast_node_t* parse_accumulate_(const token_t &t);
   ast_node_t* parse_array_get_(const token_t &name);
   ast_node_t* parse_array_set_(const token_t &name);
   ast_node_t* parse_function_(const token_t &t);
@@ -37,6 +36,7 @@ protected:
   ast_node_t* parse_while_(const token_t &t);
   ast_node_t* parse_if_(const token_t &t);
   ast_node_t* parse_call_(const token_t &name);
+  ast_node_t* parse_compound_(const token_t &t);
   ast_node_t* parse_assign_(const token_t &name);
   ast_node_t* parse_decl_array_(const token_t &name);
   ast_node_t* parse_decl_var_(const token_t &t);

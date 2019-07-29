@@ -143,6 +143,9 @@ struct token_stream_t {
   // pop the next token from the stream
   const token_t *pop();
 
+  // return next token from stream without removing it
+  const token_t *peek() const;
+
   // push a token onto the stream
   // note: this can invalidate all token_t* types
   void push(const token_t &tok);

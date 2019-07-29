@@ -283,12 +283,6 @@ end
   )",
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- globals
   R"(
-var global = 1 + 1
-function look()
-  return global
-end
-  )",
-  R"(
 function look()
   return look
 end
@@ -446,12 +440,6 @@ R"(
 var my_global
 function foo()
   my_global[1] = 123
-end
-)",
-R"(
-var my_global
-function foo()
-  var x = my_global[1]
 end
 )",
 R"(
