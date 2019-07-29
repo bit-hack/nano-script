@@ -1,0 +1,28 @@
+var width  = 128
+var height = 128
+
+function triangle(x, y, length, n)
+  if (n == 0)
+    setrgb(255, 255, 255)
+    plot(x, y)
+  else
+    triangle(x,              y + length, length / 2, n - 1)
+    triangle(x + length,     y,          length / 2, n - 1)
+    triangle(x + length * 2, y + length, length / 2, n - 1)
+  end
+end
+
+function draw()
+  triangle(0, 0, 32, 6)
+end
+
+function main()
+  # open video window
+  video(width, height)
+  # main loop
+  while (1)
+    draw()
+    flip()
+  end
+end
+

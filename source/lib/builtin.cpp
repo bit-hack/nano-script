@@ -40,6 +40,18 @@ void builtin_min(struct ccml::thread_t &t) {
   }
 }
 
+void builtin_bitand(struct ccml::thread_t &t) {
+  const ccml::value_t *a = t.pop();
+  const ccml::value_t *b = t.pop();
+  assert(a && b);
+  if (a->is_int() && b->is_int()) {
+    const int32_t res = a->v & b->v;
+    t.push_int(res);
+  } else {
+    t.raise_error(thread_error_t::e_bad_argument);
+  }
+}
+
 void builtin_len(struct ccml::thread_t &t) {
   const ccml::value_t *a = t.pop();
   assert(a);
@@ -97,6 +109,7 @@ void ccml_t::add_builtins_() {
   add_function("min", builtin_min, 2);
   add_function("max", builtin_max, 2);
   add_function("len", builtin_len, 1);
+  add_function("bitand", builtin_bitand, 2);
 #if 0
   add_function("shl", builtin_shl, 2);
   add_function("shr", builtin_shl, 2);

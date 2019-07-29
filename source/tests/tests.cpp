@@ -1,4 +1,5 @@
 #include <cassert>
+#include <climits>
 
 #include "../lib/codegen.h"
 #include "../lib/disassembler.h"

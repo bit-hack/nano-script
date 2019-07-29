@@ -1,0 +1,25 @@
+var size = 32
+
+function main()
+  var y = size - 1
+  while (y >= 0)
+    var line = ""
+    var i = 0
+    while (i < y)
+      line += " "
+      i += 1
+    end
+    var x = 0
+    while (x + y < size)
+      if (bitand(x, y))
+        line += "  "
+      else
+        line += "* "
+      end
+      x += 1
+    end
+    puts(line)
+    y = y - 1
+  end
+  return 0
+end

@@ -69,6 +69,7 @@ void vm_video(ccml::thread_t &t) {
     global.width_ = (uint32_t)w->v;
     global.height_ = (uint32_t)h->v;
     global.video_.reset(new uint32_t[(uint32_t)(w->v * h->v)]);
+    memset(global.video_.get(), 0, w->v * h->v * sizeof(uint32_t));
     global.screen_ =
         SDL_SetVideoMode((uint32_t)(w->v * 3), (uint32_t)(h->v * 3), 32, 0);
     // return value

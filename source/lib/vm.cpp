@@ -87,7 +87,7 @@ void thread_t::do_INS_ADD_() {
   }
   if (l->is_int() && r->is_string()) {
     char lbuf[16] = {0};
-    itoa(l->integer(), lbuf, 10);
+    snprintf(lbuf, sizeof(lbuf), "%d", l->integer());
     size_t lsize = strlen(lbuf);
     const int32_t len = lsize + r->strlen();
     value_t *s = gc_->new_string(len);
@@ -100,7 +100,7 @@ void thread_t::do_INS_ADD_() {
   }
   if (l->is_string() && r->is_int()) {
     char rbuf[16] = {0};
-    itoa(r->integer(), rbuf, 10);
+    snprintf(rbuf, sizeof(rbuf), "%d", r->integer());
     size_t rsize = strlen(rbuf);
     const int32_t len = l->strlen() + rsize;
     value_t *s = gc_->new_string(len);

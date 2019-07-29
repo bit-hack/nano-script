@@ -4,6 +4,8 @@
 #include <bitset>
 #include <string>
 #include <set>
+#include <string.h>
+#include <stdlib.h>
 
 #include "ccml.h"
 #include "vm_gc.h"

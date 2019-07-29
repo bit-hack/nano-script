@@ -52,6 +52,9 @@ bool lexer_t::lex(const char *s) {
     if (*s == '\r') {
       continue;
     }
+    if (*s == '\t') {
+      continue;
+    }
 
     // consume a string
     if (*s == '"') {
