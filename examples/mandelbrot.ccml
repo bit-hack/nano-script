@@ -1,0 +1,49 @@
+function main()
+
+    # 720
+    var leftEdge   = -420
+    var rightEdge  =  300
+    
+    # 600
+    var topEdge    =  300
+    var bottomEdge = -300
+
+    var xStep      =    7
+    var yStep      =   15
+
+    var maxIter    =  200
+
+    var y0 = topEdge
+    while (y0 > bottomEdge)
+        var line = ""
+        var x0 = leftEdge
+        while (x0 < rightEdge)
+            var theChar = "#"
+            var y = 0
+            var x = 0
+            var i = 0
+            while (i < maxIter)
+                var x_x = (x * x) / 200
+                var y_y = (y * y) / 200
+                if (x_x + y_y > 800)
+                    theChar = " "
+                    if (i > 9)
+                        theChar = "*"
+                    else
+                        if (i > 5)
+                            theChar = "'"
+                        end
+                    end
+                    i = maxIter
+                end
+                y = x * y / 100 + y0
+                x = x_x - y_y + x0
+                i = i + 1
+            end
+            line += theChar
+            x0 += xStep
+        end
+        puts(line)
+        y0 = y0 - yStep
+    end
+end
