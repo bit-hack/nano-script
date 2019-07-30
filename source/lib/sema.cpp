@@ -689,21 +689,28 @@ struct sema_init_t: public ast_visitor_t {
       return;
     }
     if (auto *n = v->expr->cast<ast_array_init_t>()) {
+      int i = 0;
       for (auto *t : n->item) {
-        // XXX: 
+        auto *a = ast_.alloc<ast_stmt_assign_array_t>(v->name);
+        a->decl = v;
+        a->index = ast_.alloc<ast_exp_lit_var_t>(i);
+        assert(t->type_ == TOK_VAL);
+        a->expr = ast_.alloc<ast_exp_lit_var_t>(t->val_);
+        init_->body->add(a);
+        ++i;
       }
+      return;
     }
   }
 
   void visit(ast_program_t *p) override {
-#if 1
     init_ = ccml_.ast().alloc<ast_decl_func_t>("@init");
     for (auto *n : p->children) {
       if (auto *d = n->cast<ast_decl_var_t>()) {
         on_global(d);
       }
     }
-#endif
+    p->children.push_back(init_);
   }
 };
 
