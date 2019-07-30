@@ -671,7 +671,7 @@ struct sema_init_t: public ast_visitor_t {
   {}
 
   void on_global(ast_decl_var_t *v) {
-    if (v->expr) {
+    if (!v->expr) {
       return;
     }
     if (auto *n = v->expr->cast<ast_exp_lit_var_t>()) {
@@ -705,6 +705,7 @@ struct sema_init_t: public ast_visitor_t {
 
   void visit(ast_program_t *p) override {
     init_ = ccml_.ast().alloc<ast_decl_func_t>("@init");
+    init_->body = ccml_.ast().alloc<ast_block_t>();
     for (auto *n : p->children) {
       if (auto *d = n->cast<ast_decl_var_t>()) {
         on_global(d);
