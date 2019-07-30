@@ -291,6 +291,9 @@ end
   if (!ccml.build(prog, error)) {
     return false;
   }
+
+  ccml.ast().dump(stdout);
+
   const function_t *func = ccml.find_function("func_b");
   value_t res(0);
   if (!ccml.vm().execute(*func, 0, nullptr, &res)) {

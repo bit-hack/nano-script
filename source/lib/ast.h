@@ -30,6 +30,7 @@ enum ast_type_t {
   ast_decl_func_e,
   ast_decl_var_e,
   ast_decl_str_e,
+  ast_array_init_e,
 };
 
 struct ast_node_t {
@@ -301,16 +302,35 @@ struct ast_stmt_assign_array_t : public ast_node_t {
   ast_decl_var_t *decl;
 };
 
+struct ast_array_init_t: public ast_node_t {
+  static const ast_type_t TYPE = ast_array_init_e;
+
+  ast_array_init_t()
+    : ast_node_t(TYPE)
+  {}
+
+  std::vector<const token_t *> item;
+};
+
 struct ast_decl_func_t : public ast_node_t {
   static const ast_type_t TYPE = ast_decl_func_e;
 
-  ast_decl_func_t(const token_t *name)
+  ast_decl_func_t(const token_t *n)
     : ast_node_t(TYPE)
-    , name(name)
+    , token(n)
+    , name(n->str_)
     , body(nullptr)
   {}
 
-  const token_t *name;
+  ast_decl_func_t(const std::string &n)
+    : ast_node_t(TYPE)
+    , token(nullptr)
+    , name(n)
+    , body(nullptr)
+  {}
+
+  const token_t *token;
+  const std::string name;
   std::vector<ast_node_t *> args;
   ast_block_t *body;
 };
@@ -356,10 +376,13 @@ struct ast_decl_var_t : public ast_node_t {
   kind_t kind;
 
   const token_t *name;
+
   // if var this could be valid
   ast_node_t *expr;
+
   // if array this will be valid
   const token_t *size;
+
   // 
   bool is_arg_;
 };
@@ -409,6 +432,7 @@ struct ast_visitor_t {
   virtual void visit(ast_exp_lit_var_t* n) {}
   virtual void visit(ast_exp_lit_str_t* n) {}
   virtual void visit(ast_exp_none_t* n) {}
+  virtual void visit(ast_array_init_t* n) {}
 
   virtual void visit(ast_exp_array_t* n) {
     stack.push_back(n);
@@ -622,8 +646,12 @@ struct ast_printer_t : ast_visitor_t {
 
   void visit(ast_decl_func_t* n) override {
     indent_();
-    fprintf(fd_, "ast_decl_func_t {name: %s}\n", n->name->string());
+    fprintf(fd_, "ast_decl_func_t {name: %s}\n", n->name.c_str());
     ast_visitor_t::visit(n);
+  }
+
+  void visit(ast_array_init_t* n) override {
+    // XXX:
   }
 
   void visit(ast_decl_var_t* n) override {

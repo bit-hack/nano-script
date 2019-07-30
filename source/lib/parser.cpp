@@ -30,7 +30,7 @@ bool parser_t::parse(error_t &error) {
         continue;
       }
       if (t = stream_.found(TOK_VAR)) {
-        if (ast_node_t *node = parse_global_()) {
+        if (ast_node_t *node = parse_global_(*t)) {
           program->children.push_back(node);
         }
         continue;
@@ -228,6 +228,30 @@ ast_node_t* parser_t::parse_decl_array_(const token_t &name) {
   auto *decl = ast.alloc<ast_decl_var_t>(&name, ast_decl_var_t::e_local);
   decl->size = size;
   stream_.pop(TOK_RBRACKET);
+
+  // initalization
+  if (stream_.found(TOK_ASSIGN)) {
+
+    auto *init = ast.alloc<ast_array_init_t>();
+    decl->expr = init;
+
+    do {
+      // pop new lines
+      while (stream_.found(TOK_EOL));
+      // pop a value
+      const token_t *num = stream_.pop();
+      switch (num->type_) {
+      case TOK_VAL:
+      case TOK_STRING:
+      case TOK_NONE:
+        init->item.push_back(num);
+        break;
+      default:
+        ccml_.errors().bad_array_init_value(*num);
+        break;
+      }
+    } while (stream_.found(TOK_COMMA));
+  }
 
   return decl;
 }
@@ -563,7 +587,7 @@ ast_node_t* parser_t::parse_array_set_(const token_t &name) {
   return stmt;
 }
 
-ast_node_t* parser_t::parse_global_() {
+ast_node_t* parser_t::parse_global_(const token_t &var) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
   auto &ast = ccml_.ast();
 
@@ -572,31 +596,9 @@ ast_node_t* parser_t::parse_global_() {
   //    var   <TOK_IDENT> = <TOK_VAL>
   //    var   <TOK_IDENT> [ <TOK_VAL> ]
 
-  const token_t *name = stream_.pop(TOK_IDENT);
-  ast_decl_var_t *decl = ast.alloc<ast_decl_var_t>(name, ast_decl_var_t::e_global);
-
-  // parse global array decl
-  if (stream_.found(TOK_LBRACKET)) {
-    const token_t *size = stream_.pop(TOK_VAL);
-    stream_.pop(TOK_RBRACKET);
-    // validate array size
-    if (size->val_ <= 1) {
-      ccml_.errors().array_size_must_be_greater_than(*name);
-    }
-    decl->size = size;
-  }
-  // parse global var decl
-  else {
-    // assign a default value
-    if (stream_.found(TOK_ASSIGN)) {
-#if 1
-      decl->expr = parse_expr_();
-      assert(decl->expr);
-#else
-      const token_t *value = stream_.pop(TOK_VAL);
-      decl->expr = ast.alloc<ast_exp_lit_var_t>(value);
-#endif
-    }
+  ast_node_t *decl = parse_decl_var_(var);
+  if (auto *d = decl->cast<ast_decl_var_t>()) {
+    d->kind = ast_decl_var_t::e_global;
   }
   return decl;
 }

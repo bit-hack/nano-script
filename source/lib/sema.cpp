@@ -19,15 +19,30 @@ struct sema_global_var_t: public ast_visitor_t {
     , ast_(ccml.ast())
   {}
 
+  void visit(ast_array_init_t *n) override {
+    for (auto *t : n->item) {
+      switch (t->type_) {
+      case TOK_VAL:
+      case TOK_NONE:
+      case TOK_STRING:
+        break;
+      default:
+        errs_.bad_array_init_value(*t);
+      }
+    }
+  }
+
   void visit(ast_decl_var_t *n) override {
     assert(n->expr);
     switch (n->expr->type) {
     case ast_exp_none_e:
       n->expr = nullptr;
       break;
+    case ast_array_init_e:
+      break;
     case ast_exp_bin_op_e:
     case ast_exp_unary_op_e: {
-      stack.clear();
+      value_.clear();
       decl_ = n;
       ast_visitor_t::visit(n);
       assert(value_.size() == 1);
@@ -393,7 +408,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
     for (auto s = scope_.rbegin(); s != scope_.rend(); ++s) {
       for (auto d : *s) {
         if (auto *m = d->cast<ast_decl_func_t>()) {
-          if (m->name->str_ == name)
+          if (m->name.c_str() == name)
             return m;
           else
             continue;
@@ -447,10 +462,10 @@ struct sema_multi_decls_t: public ast_visitor_t {
   }
 
   void visit(ast_decl_func_t *func) override {
-    if (is_def_(func->name->str_)) {
-      errs_.function_already_exists(*func->name);
+    if (is_def_(func->name.c_str())) {
+      errs_.function_already_exists(*func->token);
     }
-    add_(func->name->str_);
+    add_(func->name.c_str());
     scope_.emplace_back();
     for (const auto &a : func->args) {
       dispatch(a);
@@ -606,7 +621,7 @@ struct sema_num_args_t: public ast_visitor_t {
     // gather all functions
     for (ast_node_t *n : prog->children) {
       if (auto *f = n->cast<ast_decl_func_t>()) {
-        const std::string &name = f->name->str_;
+        const std::string &name = f->name.c_str();
         funcs_.emplace(name, f);
       }
     }
@@ -621,10 +636,10 @@ struct sema_num_args_t: public ast_visitor_t {
 //
 struct sema_array_size_t: public ast_visitor_t {
 
+  error_manager_t &errs_;
+
   sema_array_size_t(ccml_t &ccml)
     : errs_(ccml.errors()) {}
-
-  error_manager_t &errs_;
 
   void visit(ast_decl_var_t *d) override {
     if (d->is_array()) {
@@ -639,6 +654,59 @@ struct sema_array_size_t: public ast_visitor_t {
   }
 };
 
+//
+//
+//
+//
+struct sema_init_t: public ast_visitor_t {
+
+  ccml_t &ccml_;
+  ast_t &ast_;
+  ast_decl_func_t *init_;
+
+  sema_init_t(ccml_t &ccml)
+    : ccml_(ccml)
+    , ast_(ccml.ast())
+    , init_(nullptr)
+  {}
+
+  void on_global(ast_decl_var_t *v) {
+    if (v->expr) {
+      return;
+    }
+    if (auto *n = v->expr->cast<ast_exp_lit_var_t>()) {
+      auto *a = ast_.alloc<ast_stmt_assign_var_t>(v->name);
+      a->decl = v;
+      a->expr = v->expr;
+      init_->body->add(a);
+      return;
+    }
+    if (auto *n = v->expr->cast<ast_exp_lit_str_t>()) {
+      auto *a = ast_.alloc<ast_stmt_assign_var_t>(v->name);
+      a->decl = v;
+      a->expr = v->expr;
+      init_->body->add(a);
+      return;
+    }
+    if (auto *n = v->expr->cast<ast_array_init_t>()) {
+      for (auto *t : n->item) {
+        // XXX: 
+      }
+    }
+  }
+
+  void visit(ast_program_t *p) override {
+#if 1
+    init_ = ccml_.ast().alloc<ast_decl_func_t>("@init");
+    for (auto *n : p->children) {
+      if (auto *d = n->cast<ast_decl_var_t>()) {
+        on_global(d);
+      }
+    }
+#endif
+  }
+};
+
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_sema(ccml_t &ccml) {
   auto *prog = &(ccml.ast().program);
@@ -649,6 +717,7 @@ void run_sema(ccml_t &ccml) {
   sema_num_args_t       (ccml).visit(prog);
   sema_type_uses_t      (ccml).visit(prog);
   sema_array_size_t     (ccml).visit(prog);
+  sema_init_t           (ccml).visit(prog);
 }
 
 } // namespace ccml

@@ -28,6 +28,7 @@ void ast_visitor_t::dispatch(ast_node_t *n) {
   case ast_decl_var_e:          visit(n->cast<ast_decl_var_t>());          break;
   case ast_block_e:             visit(n->cast<ast_block_t>());             break;
   case ast_exp_none_e:          visit(n->cast<ast_exp_none_t>());          break;
+  case ast_array_init_e:        visit(n->cast<ast_array_init_t>());        break;
   default:
     assert(!"unexpected ast_node_t type");
   }
@@ -37,6 +38,11 @@ struct gc_visitor_t: public ast_visitor_t {
 
   bool found(const ast_node_t *node) const {
     return nodes_.count(node) != 0;
+  }
+
+  void visit(ast_array_init_t* n) override {
+    nodes_.insert(n);
+    ast_visitor_t::visit(n);
   }
 
   void visit(ast_exp_none_t* n) override {

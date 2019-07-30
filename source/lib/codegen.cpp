@@ -436,15 +436,15 @@ struct codegen_pass_t: ast_visitor_t {
   void visit(ast_decl_func_t* n) override {
     stack_pass_.visit(n);
 
-    const function_t handle(n->name->str_, pos(), n->args.size());
+    const function_t handle(n->name.c_str(), pos(), n->args.size());
     funcs_.push_back(handle);
 
     // insert into func map
-    func_map_[n->name->str_] = pos();
+    func_map_[n->name.c_str()] = pos();
     // parse function
     const int32_t space = stack_pass_.get_locals_operand();
     if (space > 0) {
-      emit(INS_LOCALS, space, n->name);
+      emit(INS_LOCALS, space, n->token);
     }
     bool is_return = false;
     dispatch(n->body);

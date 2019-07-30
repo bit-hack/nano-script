@@ -148,6 +148,10 @@ struct error_manager_t {
               token_t::token_name(e));
   }
 
+  virtual void bad_array_init_value(const token_t &t) {
+    on_error_(t.line_no_, "bad array initalizer value '%s'", t.string());
+  }
+
   // assembler
 
   virtual void program_too_large() {

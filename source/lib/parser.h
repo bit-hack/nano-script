@@ -45,7 +45,7 @@ protected:
   // expressions parsing helpers
   void parse_expr_ex_(uint32_t tide);
   void parse_lhs_();
-  ast_node_t* parse_global_();
+  ast_node_t* parse_global_(const token_t &t);
 
   // return true if next token is an operator
   bool is_operator_() const;
