@@ -1,3 +1,5 @@
+#expect 0123456789
+
 function main()
     var x = ""
     var i = 0

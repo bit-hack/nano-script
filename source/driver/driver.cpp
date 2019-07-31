@@ -9,6 +9,9 @@
 #include "../lib/parser.h"
 #include "../lib/vm.h"
 
+#define DUMP_AST 0
+#define DUMP_ASM 0
+
 namespace {
 
 const char *load_file(const char *path) {
@@ -155,6 +158,15 @@ int main(int argc, char **argv) {
     on_error(error);
     return -2;
   }
+
+#if DUMP_AST
+  ccml.ast().dump(stderr);
+#endif
+
+#if DUMP_ASM
+  ccml.disassembler().set_file(stderr);
+  ccml.disassembler().disasm();
+#endif
 
   const function_t *func = ccml.find_function("main");
   if (!func) {

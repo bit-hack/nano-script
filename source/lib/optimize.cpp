@@ -414,7 +414,8 @@ void run_optimize(ccml_t &ccml) {
   opt_post_ret_t    (ccml).visit(&(ccml.ast().program));
   opt_const_expr_t  (ccml).visit(&(ccml.ast().program));
   opt_if_remove_t   (ccml).visit(&(ccml.ast().program));
-  opt_com_rotation_t(ccml).visit(&(ccml.ast().program));
+// disabled as string operations are not commutative
+//  opt_com_rotation_t(ccml).visit(&(ccml.ast().program));
   op_decl_elim_t    (ccml).visit(&(ccml.ast().program));
 #endif
 }

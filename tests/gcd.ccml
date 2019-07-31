@@ -1,3 +1,5 @@
+#expect 9
+
 function main()
 
     var a = 81

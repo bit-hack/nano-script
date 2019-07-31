@@ -1,6 +1,7 @@
+#expect helloworld
+
 var a[2] = "hello", "world"
 
 function main()
     return a[0] + a[1]
 end
-

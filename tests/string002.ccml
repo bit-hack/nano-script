@@ -1,3 +1,5 @@
+#expect my string
+
 var x = "Hello"
 var y = "my string"
 var z = "wrong"

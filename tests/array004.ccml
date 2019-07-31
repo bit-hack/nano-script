@@ -1,3 +1,5 @@
+#expect 1234
+
 function main()
   var my_array[4]
   my_array[2] = 1234

@@ -1,3 +1,5 @@
+#expect 34
+
 function fib(count)
   var a = 0
   var b = 1

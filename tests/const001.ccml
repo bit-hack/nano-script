@@ -1,3 +1,5 @@
+#expect 1240
+
 var x = 1234
 
 function main()

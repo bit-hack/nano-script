@@ -1,3 +1,5 @@
+#expect 1234
+
 function main()
     return 1234
 end

@@ -1,3 +1,5 @@
+#expect 310
+
 #
 # integer only square route algorithm using Newton's method
 #

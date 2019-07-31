@@ -1,3 +1,5 @@
+#expect 123string
+
 function main()
     var x = 123
     var y = "string"

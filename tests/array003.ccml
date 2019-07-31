@@ -1,3 +1,5 @@
+#expect testcase
+
 function main()
   var x[2]
   x[0] = "test"

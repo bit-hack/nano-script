@@ -12,36 +12,16 @@ else:
     DRIVER = '../build/Debug/ccml_driver.exe'
 
 
-expected = {
-    "array001"   : "55",
-    "array002"   : "helloworld",
-    "array003"   : "testcase",
-    "array004"   : "1234",
-    "const001"   : "1240",
-    "const002"   : "3",
-    "const003"   : "13",
-    "const004"   : "correct",
-    "eol001"     : "1",
-    "fib9"       : "34",
-    "gcd"        : "9",
-    "global001"  : "9",
-    "global002"  : "9",
-    "string001"  : "101",
-    "string002"  : "my string",
-    "string003"  : "123string",
-    "string004"  : "string123",
-    "test001"    : "1234",
-    "test002"    : "Hello World",
-    "test003"    : "Hello World",
-    "test004"    : "0123456789",
-    "none001"    : "1",
-    "sqrt"       : "310",
-    "compound001": "22",
-    }
-
-
 tried = set()
 passed = set()
+
+
+def get_expected(path):
+    with open(path, "r") as fd:
+        line = fd.readline()
+    if line.startswith("#expect"):
+        return line[8:].strip()
+    return "--UNKNOWN--"
 
 
 def do_run(base, path):
@@ -59,14 +39,13 @@ def do_run(base, path):
             print '{0} returned error code {1}!'.format(base, ret)
             return
 
-        if base in expected:
-            wanted = expected[base]
-            if wanted in out:
-                passed.add(base)
-            else:
-                print '{0} failed!'.format(base)
-                print 'got ----\n{0}\n--------'.format(out.strip())
-                print 'exp ----\n{0}\n--------'.format(wanted)
+        wanted = get_expected(path)
+        if wanted in out:
+            passed.add(base)
+        else:
+            print '{0} failed!'.format(base)
+            print 'got ----\n{0}\n--------'.format(out.strip())
+            print 'exp ----\n{0}\n--------'.format(wanted)
     except OSError:
         print 'failed to execute {0}'.format(path)
 

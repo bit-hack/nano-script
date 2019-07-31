@@ -1,3 +1,5 @@
+#expect correct
+
 var x = none
 
 function main()
