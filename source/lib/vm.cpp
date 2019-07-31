@@ -488,10 +488,6 @@ void thread_t::do_INS_SETA_() {
 
 namespace {
 
-int32_t global_space(const std::vector<global_t> &globals) {
-  return globals.size();
-}
-
 } // namespace
 
 bool thread_t::prepare(const function_t &func, int32_t argc,
@@ -500,16 +496,17 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   finished_ = true;
   cycles_ = 0;
   halted_ = false;
-  s_head_ = 0;
+//  s_head_ = 0;
 
   if (func.is_syscall()) {
     return false;
   }
 
+#if 0
   // push globals
   if (!ccml_.globals().empty()) {
     //
-    const int32_t size = global_space(ccml_.globals());
+    const int32_t size = ccml_.globals().size();
     // reserve this much space for globals
     s_head_ += size;
     for (const auto &g : ccml_.globals()) {
@@ -523,6 +520,7 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
       }
     }
   }
+#endif
 
   // save the target pc (entry point)
   pc_ = func.pos_;
@@ -759,4 +757,64 @@ void vm_t::reset() {
 
 void thread_t::gc_collect() {
   gc_->collect(s_.data(), s_head_);
+}
+
+bool thread_t::init() {
+  error_ = thread_error_t::e_success;
+  finished_ = true;
+  cycles_ = 0;
+  halted_ = false;
+  s_head_ = 0;
+
+  const function_t *init = ccml_.find_function("@init");
+  if (!init) {
+    return true;
+  }
+
+  // push globals
+  if (!ccml_.globals().empty()) {
+
+    // number of globals
+    const int32_t size = ccml_.globals().size();
+
+    // reserve this much space for globals
+    s_head_ += size;
+    memset(s_.data(), 0, size * sizeof(value_t*));
+
+    for (const auto &g : ccml_.globals()) {
+      if (g.value_.is_string()) {
+        const int32_t index = g.value_.v;
+        const std::string &s = ccml_.strings()[index];
+        s_[g.offset_] = gc_->new_string(s);
+      }
+      if (g.value_.is_int()) {
+        s_[g.offset_] = gc_->new_int(g.value_.integer());
+      }
+      if (g.value_.is_array()) {
+        s_[g.offset_] = gc_->new_array(g.size_);
+      }
+    }
+  }
+
+  // save the target pc (entry point)
+  pc_ = init->pos_;
+
+  // push the initial frame
+  enter_(s_head_, pc_);
+
+  // catch any misc errors
+  if (error_ != thread_error_t::e_success) {
+    return false;
+  }
+
+  // good to go
+  finished_ = false;
+  if (!resume(1024 * 8, false)) {
+    return false;
+  }
+
+  if (!finished()) {
+    return false;
+  }
+  return true;
 }

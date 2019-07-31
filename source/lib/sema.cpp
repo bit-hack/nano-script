@@ -1,9 +1,8 @@
 #include <set>
 
-#include "sema.h"
 #include "ast.h"
 #include "errors.h"
-
+#include "sema.h"
 
 namespace ccml {
 
@@ -11,13 +10,13 @@ namespace ccml {
 //
 // check global var expressions
 //
-struct sema_global_var_t: public ast_visitor_t {
+struct sema_global_var_t : public ast_visitor_t {
 
   sema_global_var_t(ccml_t &ccml)
     : errs_(ccml.errors())
     , decl_(nullptr)
-    , ast_(ccml.ast())
-  {}
+    , ast_(ccml.ast()) {
+  }
 
   void visit(ast_array_init_t *n) override {
     for (auto *t : n->item) {
@@ -63,8 +62,11 @@ struct sema_global_var_t: public ast_visitor_t {
     int32_t r = 0;
     value_.pop_back();
     switch (n->op->type_) {
-    case TOK_NEG: r = -v; break;
-    default: assert(!"unknown operator");
+    case TOK_NEG:
+      r = -v;
+      break;
+    default:
+      assert(!"unknown operator");
     }
     value_.push_back(r);
   }
@@ -93,11 +95,14 @@ protected:
   void decend_(ast_node_t *n) {
     switch (n->type) {
     case ast_exp_lit_var_e:
-      ast_visitor_t::visit(n->cast<ast_exp_lit_var_t>());  break;
+      ast_visitor_t::visit(n->cast<ast_exp_lit_var_t>());
+      break;
     case ast_exp_bin_op_e:
-      ast_visitor_t::visit(n->cast<ast_exp_bin_op_t>());  break;
+      ast_visitor_t::visit(n->cast<ast_exp_bin_op_t>());
+      break;
     case ast_exp_unary_op_e:
-      ast_visitor_t::visit(n->cast<ast_exp_unary_op_t>());  break;
+      ast_visitor_t::visit(n->cast<ast_exp_unary_op_t>());
+      break;
     default:
       errs_.global_var_const_expr(*decl_->name);
     }
@@ -109,28 +114,28 @@ protected:
     value_.pop_back();
     const int32_t a = value_.back();
     value_.pop_back();
-      // check for constant division
+    // check for constant division
     if (b == 0) {
-      if (tok.type_ == TOK_DIV ||
-          tok.type_ == TOK_MOD) {
+      if (tok.type_ == TOK_DIV || tok.type_ == TOK_MOD) {
         errs_.constant_divie_by_zero(tok);
       }
     }
     // evaluate operator
     switch (tok.type_) {
-    case TOK_ADD: return a +  b;
-    case TOK_SUB: return a -  b;
-    case TOK_MUL: return a *  b;
-    case TOK_AND: return a && b;
-    case TOK_OR:  return a || b;
-    case TOK_LEQ: return a <= b;
-    case TOK_GEQ: return a >= b;
-    case TOK_LT:  return a <  b;
-    case TOK_GT:  return a >  b;
-    case TOK_EQ:  return a == b;
-    case TOK_DIV: return a /  b;
-    case TOK_MOD: return a %  b;
-    default: assert(!"unknown operator");
+    case TOK_ADD:     return a + b;
+    case TOK_SUB:     return a - b;
+    case TOK_MUL:     return a * b;
+    case TOK_AND:     return a && b;
+    case TOK_OR:      return a || b;
+    case TOK_LEQ:     return a <= b;
+    case TOK_GEQ:     return a >= b;
+    case TOK_LT:      return a < b;
+    case TOK_GT:      return a > b;
+    case TOK_EQ:      return a == b;
+    case TOK_DIV:     return a / b;
+    case TOK_MOD:     return a % b;
+    default:
+      assert(!"unknown operator");
     }
     return 0;
   }
@@ -145,27 +150,25 @@ protected:
 //
 // annotate nodes with a data type where possible to check validity
 //
-struct sema_type_annotation_t: public ast_visitor_t {
+struct sema_type_annotation_t : public ast_visitor_t {
 
   sema_type_annotation_t(ccml_t &ccml)
-    : errs_(ccml.errors()) {}
+    : errs_(ccml.errors()) {
+  }
 
-  std::map<const ast_node_t*, value_type_t> types_;
+  std::map<const ast_node_t *, value_type_t> types_;
 
   value_type_t type_of(const ast_node_t *n) const {
     assert(n);
     auto itt = types_.find(n);
     if (itt != types_.end()) {
       return itt->second;
-    }
-    else {
+    } else {
       return val_type_unknown;
     }
   }
 
-  void visit(ast_exp_lit_var_t *node) override {
-    types_[node] = val_type_int;
-  }
+  void visit(ast_exp_lit_var_t *node) override { types_[node] = val_type_int; }
 
   void visit(ast_exp_lit_str_t *node) override {
     types_[node] = val_type_string;
@@ -175,7 +178,7 @@ struct sema_type_annotation_t: public ast_visitor_t {
     types_[node] = val_type_none;
   }
 
-  void visit(ast_exp_ident_t* n) override {
+  void visit(ast_exp_ident_t *n) override {
     ast_visitor_t::visit(n);
     if (n->decl) {
       auto itt = types_.find(n->decl);
@@ -185,22 +188,21 @@ struct sema_type_annotation_t: public ast_visitor_t {
     }
   }
 
-  void visit(ast_exp_array_t* n) override {
+  void visit(ast_exp_array_t *n) override {
     ast_visitor_t::visit(n);
   }
 
-  void visit(ast_exp_call_t* n) override {
+  void visit(ast_exp_call_t *n) override {
     ast_visitor_t::visit(n);
   }
 
-  void visit(ast_exp_bin_op_t* n) override {
+  void visit(ast_exp_bin_op_t *n) override {
     ast_visitor_t::visit(n);
     assert(n->left && n->right);
     auto tl = type_of(n->left);
     auto tr = type_of(n->right);
 
-    if (tl == val_type_int &&
-        tr == val_type_int) {
+    if (tl == val_type_int && tr == val_type_int) {
       types_[n] = val_type_int;
       return;
     }
@@ -221,7 +223,7 @@ struct sema_type_annotation_t: public ast_visitor_t {
     }
   }
 
-  void visit(ast_exp_unary_op_t* n) override {
+  void visit(ast_exp_unary_op_t *n) override {
     ast_visitor_t::visit(n);
 
     if (type_of(n->child) == val_type_int) {
@@ -231,7 +233,7 @@ struct sema_type_annotation_t: public ast_visitor_t {
     }
   }
 
-  void visit(ast_decl_var_t* n) override {
+  void visit(ast_decl_var_t *n) override {
     ast_visitor_t::visit(n);
     if (n->expr) {
       switch (type_of(n->expr)) {
@@ -243,9 +245,7 @@ struct sema_type_annotation_t: public ast_visitor_t {
     }
   }
 
-  void visit(ast_program_t *p) override {
-    ast_visitor_t::visit(p);
-  }
+  void visit(ast_program_t *p) override { ast_visitor_t::visit(p); }
 
   error_manager_t &errs_;
 };
@@ -255,12 +255,12 @@ struct sema_type_annotation_t: public ast_visitor_t {
 // annotate nodes with their associated decl node
 // set function `is_syscall` member
 //
-struct sema_decl_annotate_t: public ast_visitor_t {
+struct sema_decl_annotate_t : public ast_visitor_t {
 
   sema_decl_annotate_t(ccml_t &ccml)
-    : errs_(ccml.errors()) 
-    , ccml_(ccml)
-  {}
+    : errs_(ccml.errors())
+    , ccml_(ccml) {
+  }
 
   void visit(ast_program_t *p) override {
     // collect global decls
@@ -279,7 +279,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
     ast_visitor_t::visit(p);
   }
 
-  void visit(ast_stmt_assign_var_t* n) override {
+  void visit(ast_stmt_assign_var_t *n) override {
     ast_visitor_t::visit(n);
     ast_node_t *found = find_decl(n->name->str_);
     if (!found) {
@@ -297,7 +297,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
     }
   }
 
-  void visit(ast_stmt_assign_array_t* n) override {
+  void visit(ast_stmt_assign_array_t *n) override {
     ast_visitor_t::visit(n);
     ast_node_t *found = find_decl(n->name->str_);
     if (!found) {
@@ -309,7 +309,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
     }
   }
 
-  void visit(ast_exp_array_t* n) override {
+  void visit(ast_exp_array_t *n) override {
     ast_visitor_t::visit(n);
     ast_node_t *found = find_decl(n->name->str_);
     if (!found) {
@@ -322,18 +322,17 @@ struct sema_decl_annotate_t: public ast_visitor_t {
         // errs_.variable_is_not_array(*n->name);
       }
       return;
-    }
-    else {
+    } else {
       if (found->cast<ast_decl_func_t>()) {
         errs_.expected_func_call(*n->name);
       } else {
         errs_.unexpected_token((*n->name));
       }
     }
-//    assert(false);
+    //    assert(false);
   }
 
-  void visit(ast_exp_ident_t* n) override {
+  void visit(ast_exp_ident_t *n) override {
     ast_visitor_t::visit(n);
     ast_node_t *found = find_decl(n->name->str_);
     if (!found) {
@@ -347,8 +346,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
       if (v->is_array()) {
         errs_.array_requires_subscript(*n->name);
       }
-    }
-    else {
+    } else {
       if (n->decl->cast<ast_decl_func_t>()) {
         errs_.expected_func_call(*n->name);
       } else {
@@ -357,7 +355,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
     }
   }
 
-  void visit(ast_exp_call_t* n) override {
+  void visit(ast_exp_call_t *n) override {
     ast_visitor_t::visit(n);
     ast_node_t *f = find_decl(n->name->str_);
     if (f) {
@@ -366,8 +364,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
         n->is_syscall = false;
         return;
       }
-    }
-    else {
+    } else {
       // check for extern function
       for (const auto &func : ccml_.functions()) {
         if (func.name_ == n->name->str_) {
@@ -379,30 +376,30 @@ struct sema_decl_annotate_t: public ast_visitor_t {
     errs_.unknown_function(*n->name);
   }
 
-  void visit(ast_decl_func_t* n) override {
+  void visit(ast_decl_func_t *n) override {
     scope_.emplace_back();
     ast_visitor_t::visit(n);
     scope_.pop_back();
   }
 
-  void visit(ast_stmt_if_t* n) override {
+  void visit(ast_stmt_if_t *n) override {
     scope_.emplace_back();
     ast_visitor_t::visit(n);
     scope_.pop_back();
   }
 
-  void visit(ast_stmt_while_t* n) override {
+  void visit(ast_stmt_while_t *n) override {
     scope_.emplace_back();
     ast_visitor_t::visit(n);
     scope_.pop_back();
   }
 
-  void visit(ast_decl_var_t* n) override {
+  void visit(ast_decl_var_t *n) override {
     ast_visitor_t::visit(n);
     scope_.back().insert(n);
   }
 
-  ast_node_t* find_decl(const std::string &name) {
+  ast_node_t *find_decl(const std::string &name) {
     ast_node_t *out = nullptr;
     // move from inner to outer scope
     for (auto s = scope_.rbegin(); s != scope_.rend(); ++s) {
@@ -424,7 +421,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
     return out;
   }
 
-  std::vector<std::set<ast_node_t*>> scope_;
+  std::vector<std::set<ast_node_t *>> scope_;
 
   ast_program_t *prog_;
   ccml_t &ccml_;
@@ -435,7 +432,7 @@ struct sema_decl_annotate_t: public ast_visitor_t {
 //
 // check for multiple declarations with the same name
 //
-struct sema_multi_decls_t: public ast_visitor_t {
+struct sema_multi_decls_t : public ast_visitor_t {
 
   sema_multi_decls_t(ccml_t &ccml)
     : errs_(ccml.errors()) {
@@ -506,7 +503,7 @@ protected:
 //
 // check for valid/compatable type usage for certain operations
 //
-struct sema_type_uses_t: public ast_visitor_t {
+struct sema_type_uses_t : public ast_visitor_t {
 
   sema_type_uses_t(ccml_t &ccml)
     : errs_(ccml.errors()) {
@@ -527,14 +524,6 @@ struct sema_type_uses_t: public ast_visitor_t {
     const ast_decl_var_t *d = get_decl_(v->name->str_);
     if (d && d->is_array()) {
       errs_.ident_is_array_not_var(*d->name);
-    }
-  }
-
-  void visit(ast_exp_array_t *i) override {
-    const ast_decl_var_t *d = get_decl_(i->name->str_);
-    if (d && !d->is_array()) {
-      // now a runtime error as strings are also acceptable
-      // errs_.variable_is_not_array(*d->name);
     }
   }
 
@@ -571,13 +560,13 @@ struct sema_type_uses_t: public ast_visitor_t {
 
 protected:
   error_manager_t &errs_;
-  std::vector<std::set<const ast_decl_var_t*>> scope_;
+  std::vector<std::set<const ast_decl_var_t *>> scope_;
 
   void add_(const ast_decl_var_t *v) {
     scope_.back().insert(v);
   }
 
-  const ast_decl_var_t* get_decl_(const std::string &name) const {
+  const ast_decl_var_t *get_decl_(const std::string &name) const {
     for (const auto &s : scope_) {
       for (const auto &n : s) {
         if (n->name->str_ == name) {
@@ -593,13 +582,14 @@ protected:
 //
 // check call sites use the correct number of arguments
 //
-struct sema_num_args_t: public ast_visitor_t {
+struct sema_num_args_t : public ast_visitor_t {
 
   sema_num_args_t(ccml_t &ccml)
-    : errs_(ccml.errors()) {}
+    : errs_(ccml.errors()) {
+  }
 
   error_manager_t &errs_;
-  std::map<std::string, const ast_decl_func_t*> funcs_;
+  std::map<std::string, const ast_decl_func_t *> funcs_;
 
   void visit(ast_exp_call_t *call) override {
     const auto &name = call->name->str_;
@@ -634,12 +624,13 @@ struct sema_num_args_t: public ast_visitor_t {
 //
 // check for a valid array size
 //
-struct sema_array_size_t: public ast_visitor_t {
+struct sema_array_size_t : public ast_visitor_t {
 
   error_manager_t &errs_;
 
   sema_array_size_t(ccml_t &ccml)
-    : errs_(ccml.errors()) {}
+    : errs_(ccml.errors()) {
+  }
 
   void visit(ast_decl_var_t *d) override {
     if (d->is_array()) {
@@ -654,11 +645,11 @@ struct sema_array_size_t: public ast_visitor_t {
   }
 };
 
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
+// generate an init function
 //
-//
-//
-struct sema_init_t: public ast_visitor_t {
+struct sema_init_t : public ast_visitor_t {
 
   ccml_t &ccml_;
   ast_t &ast_;
@@ -667,8 +658,8 @@ struct sema_init_t: public ast_visitor_t {
   sema_init_t(ccml_t &ccml)
     : ccml_(ccml)
     , ast_(ccml.ast())
-    , init_(nullptr)
-  {}
+    , init_(nullptr) {
+  }
 
   void on_global(ast_decl_var_t *v) {
     if (!v->expr) {
@@ -718,14 +709,14 @@ struct sema_init_t: public ast_visitor_t {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_sema(ccml_t &ccml) {
   auto *prog = &(ccml.ast().program);
-  sema_global_var_t     (ccml).visit(prog);
-  sema_decl_annotate_t  (ccml).visit(prog);
+  sema_global_var_t(ccml).visit(prog);
+  sema_decl_annotate_t(ccml).visit(prog);
   sema_type_annotation_t(ccml).visit(prog);
-  sema_multi_decls_t    (ccml).visit(prog);
-  sema_num_args_t       (ccml).visit(prog);
-  sema_type_uses_t      (ccml).visit(prog);
-  sema_array_size_t     (ccml).visit(prog);
-  sema_init_t           (ccml).visit(prog);
+  sema_multi_decls_t(ccml).visit(prog);
+  sema_num_args_t(ccml).visit(prog);
+  sema_type_uses_t(ccml).visit(prog);
+  sema_array_size_t(ccml).visit(prog);
+  sema_init_t(ccml).visit(prog);
 }
 
 } // namespace ccml

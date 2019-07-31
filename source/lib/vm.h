@@ -128,6 +128,9 @@ struct thread_t {
     return *gc_;
   }
 
+  // execute thread init function
+  bool init();
+
 protected:
 
   void tick_gc_(int32_t cycles);

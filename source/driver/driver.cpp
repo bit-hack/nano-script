@@ -165,6 +165,11 @@ int main(int argc, char **argv) {
   ccml::thread_error_t err = ccml::thread_error_t::e_success;
 
   ccml::thread_t thread{ccml};
+
+  if (thread.init()) {
+    fprintf(stderr, "failed while executing @init\n");
+  }
+
   if (!thread.prepare(*func, 0, nullptr)) {
     fprintf(stderr, "unable to prepare thread\n");
     return -4;
