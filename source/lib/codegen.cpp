@@ -442,7 +442,7 @@ struct codegen_pass_t: ast_visitor_t {
     // insert into func map
     func_map_[n->name.c_str()] = pos();
 
-    // init is handled by a special case
+    // init is handled separately as a special case
     if (n->name == "@init") {
       visit_init(n);
       return;
@@ -624,13 +624,12 @@ bool codegen_t::run(ast_program_t &program, error_t &error) {
     error = e;
     return false;
   }
+
+  //XXX: a symbol table could be good, for both functions and globals
+
   // add functions to ccml
   for (const auto &f : cg.functions()) {
     ccml_.add_(f);
-  }
-  // add globals to ccml
-  for (const auto &g : cg.globals()) {
-    ccml_.add_(g);
   }
   // add strings to ccml
   for (const auto &s : cg.strings()) {

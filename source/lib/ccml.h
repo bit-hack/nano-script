@@ -197,9 +197,9 @@ struct ccml_t {
     return functions_;
   }
 
-  const std::vector<global_t> &globals() const {
-    return globals_;
-  }
+//  const std::vector<global_t> &globals() const {
+//    return globals_;
+//  }
 
   const std::vector<std::string> &strings() const {
     return strings_;
@@ -220,9 +220,9 @@ private:
     functions_.push_back(func);
   }
 
-  void add_(const global_t &ident) {
-    globals_.push_back(ident);
-  }
+//  void add_(const global_t &ident) {
+//    globals_.push_back(ident);
+//  }
 
   void add_(const std::string &string) {
     strings_.push_back(string);
@@ -231,7 +231,7 @@ private:
   // the code store
   code_store_t store_;
   std::vector<function_t> functions_;
-  std::vector<global_t> globals_;
+//  std::vector<global_t> globals_;
   std::vector<std::string> strings_;
 
   std::unique_ptr<error_manager_t> errors_;

@@ -70,7 +70,7 @@ bool ccml_t::build(const char *source, error_t &error) {
 void ccml_t::reset() {
   
   functions_.clear();
-  globals_.clear();
+//  globals_.clear();
   strings_.clear();
 
   lexer_->reset();
