@@ -64,15 +64,15 @@ struct value_gc_t {
 
   value_t *copy(const value_t &v);
 
-  void collect(value_t **input, size_t count);
+  void collect();
+
+  void trace(value_t **input, size_t count);
 
   value_gc_t()
     : flipflop_(0)
   {}
 
 protected:
-
-  void collect_imp_(value_t **list, size_t num);
 
   arena_t &space_from() {
     return space_[flipflop_ & 1];

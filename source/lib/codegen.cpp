@@ -441,6 +441,13 @@ struct codegen_pass_t: ast_visitor_t {
 
     // insert into func map
     func_map_[n->name.c_str()] = pos();
+
+    // init is handled by a special case
+    if (n->name == "@init") {
+      visit_init(n);
+      return;
+    }
+
     // parse function
     const int32_t space = stack_pass_.get_locals_operand();
     if (space > 0) {
@@ -463,11 +470,19 @@ struct codegen_pass_t: ast_visitor_t {
     const int32_t offset = stack_pass_.find_offset(n);
     if (n->is_array()) {
       emit(INS_NEW_ARY, n->size->val_, n->name);
-      emit(INS_SETV, offset, n->name);
+      if (n->is_global()) {
+        emit(INS_SETG, offset, n->name);
+      }
+      if (n->is_local()) {
+        emit(INS_SETV, offset, n->name);
+      }
     }
-    if (n->expr) {
-      dispatch(n->expr);
-      emit(INS_SETV, offset, n->name);
+    else {
+      assert(n->is_local());
+      if (n->expr) {
+        dispatch(n->expr);
+        emit(INS_SETV, offset, n->name);
+      }
     }
   }
 
@@ -497,6 +512,29 @@ protected:
   // return a reference to the last instructions operand
   int32_t *get_fixup() {
     return reinterpret_cast<int32_t *>(stream_.head(-4));
+  }
+
+  void visit_init(ast_decl_func_t* n) {
+
+    int num_globals = 0;
+    for (ast_node_t *n : ccml_.ast().program.children) {
+      num_globals += n->is_a<ast_decl_var_t>() ? 1 : 0;
+    }
+
+    emit(INS_GLOBALS, num_globals, nullptr);
+
+    int32_t offset = 0;
+    for (ast_node_t *n : ccml_.ast().program.children) {
+      if (auto *d = n->cast<ast_decl_var_t>()) {
+        if (d->is_array()) {
+          emit(INS_NEW_ARY, d->size->val_, d->name);
+          emit(INS_SETG, offset, d->name);
+        }
+        ++offset;
+      }
+    }
+
+    ast_visitor_t::visit(n);
   }
 
   std::vector<global_t> globals_;
@@ -552,6 +590,7 @@ void codegen_pass_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   case INS_NEW_INT:
   case INS_NEW_STR:
   case INS_LOCALS:
+  case INS_GLOBALS:
   case INS_ACCV:
   case INS_GETV:
   case INS_SETV:

@@ -685,8 +685,17 @@ struct sema_init_t : public ast_visitor_t {
         auto *a = ast_.alloc<ast_stmt_assign_array_t>(v->name);
         a->decl = v;
         a->index = ast_.alloc<ast_exp_lit_var_t>(i);
-        assert(t->type_ == TOK_VAL);
-        a->expr = ast_.alloc<ast_exp_lit_var_t>(t->val_);
+        switch (t->type_) {
+        case TOK_VAL:
+          a->expr = ast_.alloc<ast_exp_lit_var_t>(t->val_);
+          break;
+        case TOK_STRING:
+          a->expr = ast_.alloc<ast_exp_lit_str_t>(t->str_);
+          break;
+        case TOK_NONE:
+          a->expr = ast_.alloc<ast_exp_none_t>();
+          break;
+        }
         init_->body->add(a);
         ++i;
       }
@@ -697,11 +706,13 @@ struct sema_init_t : public ast_visitor_t {
   void visit(ast_program_t *p) override {
     init_ = ccml_.ast().alloc<ast_decl_func_t>("@init");
     init_->body = ccml_.ast().alloc<ast_block_t>();
+
     for (auto *n : p->children) {
       if (auto *d = n->cast<ast_decl_var_t>()) {
         on_global(d);
       }
     }
+
     p->children.push_back(init_);
   }
 };

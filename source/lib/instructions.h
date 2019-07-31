@@ -95,6 +95,9 @@ enum instruction_e {
   // reserve locals in stack frame
   INS_LOCALS,
 
+  // resize global space
+  INS_GLOBALS,
+
   // accumulate local:
   //    stack[ fp + operand ] += v
   INS_ACCV,

@@ -17,7 +17,8 @@ const char *gMnemonic[] = {
   // branching
   "INS_JMP", "INS_TJMP", "INS_FJMP", "INS_CALL", "INS_RET", "INS_SCALL",
   // stack
-  "INS_POP", "INS_NEW_INT", "INS_NEW_STR", "INS_NEW_ARY", "INS_NEW_NONE", "INS_LOCALS",
+  "INS_POP", "INS_NEW_INT", "INS_NEW_STR", "INS_NEW_ARY", "INS_NEW_NONE",
+  "INS_LOCALS", "INS_GLOBALS",
   // local variables
   "INS_ACCV", "INS_GETV", "INS_SETV", "INS_GETA", "INS_SETA",
   // global variables
@@ -95,6 +96,7 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
   case INS_GETV:
   case INS_SETV:
   case INS_LOCALS:
+  case INS_GLOBALS:
   case INS_GETG:
   case INS_SETG:
     fprintf(fd_, "%-12s %d\n", gMnemonic[op], val);

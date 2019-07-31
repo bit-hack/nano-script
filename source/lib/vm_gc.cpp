@@ -67,20 +67,16 @@ value_t *value_gc_t::copy(const value_t &a) {
   }
 }
 
-void value_gc_t::collect(value_t **list, size_t num) {
+void value_gc_t::collect() {
 
   // currently the grammar doesnt allow us to have cyclic data structures
   // but be aware we might need to support it when the language evolves.
 
-  const int before = space_to().size();
   swap();
   space_to().clear();
-  collect_imp_(list, num);
-  const int after = space_to().size();
-  //  printf("%5d %5d\n", before, after);
 }
 
-void value_gc_t::collect_imp_(value_t **list, size_t num) {
+void value_gc_t::trace(value_t **list, size_t num) {
 
   const arena_t &from = space_from();
   arena_t &to = space_to();
@@ -111,7 +107,7 @@ void value_gc_t::collect_imp_(value_t **list, size_t num) {
     case val_type_array: {
       // collect child elements
       const size_t size = v->array_size();
-      collect_imp_(v->array(), size);
+      trace(v->array(), size);
       value_t *n = to.alloc<value_t>(size * sizeof(value_t *));
       n->type_ = val_type_array;
       n->v = size;

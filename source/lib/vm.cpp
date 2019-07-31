@@ -378,7 +378,17 @@ void thread_t::do_INS_NEW_ARY_() {
   push(gc_->new_array(index));
 }
 
-void thread_t::do_INS_NEW_NONE_() { push(gc_->new_none()); }
+void thread_t::do_INS_NEW_NONE_() {
+  push(gc_->new_none());
+}
+
+void thread_t::do_INS_GLOBALS_() {
+  const int32_t operand = read_operand_();
+  if (operand) {
+    g_.resize(operand);
+    memset(g_.data(), 0, sizeof(value_t*) * operand);
+  }
+}
 
 void thread_t::do_INS_LOCALS_() {
   const int32_t operand = read_operand_();
@@ -417,19 +427,19 @@ void thread_t::do_INS_SETV_() {
 
 void thread_t::do_INS_GETG_() {
   const int32_t operand = read_operand_();
-  if (operand < 0 || operand >= int32_t(s_.size())) {
+  if (operand < 0 || operand >= int32_t(g_.size())) {
     set_error_(thread_error_t::e_bad_get_global);
   } else {
-    push(s_[operand]);
+    push(g_[operand]);
   }
 }
 
 void thread_t::do_INS_SETG_() {
   const int32_t operand = read_operand_();
-  if (operand < 0 || operand >= int32_t(s_.size())) {
+  if (operand < 0 || operand >= int32_t(g_.size())) {
     set_error_(thread_error_t::e_bad_set_global);
   } else {
-    s_[operand] = pop();
+    g_[operand] = pop();
   }
 }
 
@@ -579,6 +589,7 @@ void thread_t::step_imp_() {
   case INS_NEW_STR:  do_INS_NEW_STR_();  break;
   case INS_NEW_NONE: do_INS_NEW_NONE_(); break;
   case INS_LOCALS:   do_INS_LOCALS_();   break;
+  case INS_GLOBALS:  do_INS_GLOBALS_();  break;
   case INS_ACCV:     do_INS_ACCV_();     break;
   case INS_GETV:     do_INS_GETV_();     break;
   case INS_SETV:     do_INS_SETV_();     break;
@@ -756,7 +767,9 @@ void vm_t::reset() {
 }
 
 void thread_t::gc_collect() {
-  gc_->collect(s_.data(), s_head_);
+  gc_->trace(s_.data(), s_head_);
+  gc_->trace(g_.data(), g_.size());
+  gc_->collect();
 }
 
 bool thread_t::init() {
@@ -771,30 +784,28 @@ bool thread_t::init() {
     return true;
   }
 
+#if 0
   // push globals
   if (!ccml_.globals().empty()) {
 
     // number of globals
     const int32_t size = ccml_.globals().size();
 
-    // reserve this much space for globals
-    s_head_ += size;
-    memset(s_.data(), 0, size * sizeof(value_t*));
-
     for (const auto &g : ccml_.globals()) {
       if (g.value_.is_string()) {
         const int32_t index = g.value_.v;
         const std::string &s = ccml_.strings()[index];
-        s_[g.offset_] = gc_->new_string(s);
+        g_[g.offset_] = gc_->new_string(s);
       }
       if (g.value_.is_int()) {
-        s_[g.offset_] = gc_->new_int(g.value_.integer());
+        g_[g.offset_] = gc_->new_int(g.value_.integer());
       }
       if (g.value_.is_array()) {
-        s_[g.offset_] = gc_->new_array(g.size_);
+        g_[g.offset_] = gc_->new_array(g.size_);
       }
     }
   }
+#endif
 
   // save the target pc (entry point)
   pc_ = init->pos_;

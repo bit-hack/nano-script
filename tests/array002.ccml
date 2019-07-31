@@ -1,6 +1,6 @@
-var a = "test"
-var b = "case"
+var a[2] = "hello", "world"
 
 function main()
-    return a + b
+    return a[0] + a[1]
 end
+

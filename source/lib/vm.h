@@ -169,7 +169,7 @@ protected:
 
   void gc_collect();
 
-  // TODO: this should be value_t*
+  std::vector<value_t*> g_;           // globals
   std::array<value_t*, 1024 * 8> s_;  // value stack
   std::array<frame_t, 64> f_;         // frame stack
   uint32_t s_head_;
@@ -270,6 +270,7 @@ protected:
   void do_INS_NEW_ARY_();
   void do_INS_NEW_NONE_();
   void do_INS_LOCALS_();
+  void do_INS_GLOBALS_();
   void do_INS_ACCV_();
   void do_INS_GETV_();
   void do_INS_SETV_();

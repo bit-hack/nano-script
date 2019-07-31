@@ -182,7 +182,7 @@ int main(int argc, char **argv) {
   }
 
   if (thread.has_error()) {
-    fprintf(stderr, "thread error: %d\n", thread.error());
+    fprintf(stderr, "thread error: %d\n", (int)thread.error());
     fprintf(stderr, "%s\n", error_to_str(thread.error()));
     fprintf(stderr, "line: %d\n", thread.source_line());
     return -5;

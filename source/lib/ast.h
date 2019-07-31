@@ -123,6 +123,11 @@ struct ast_exp_lit_var_t: public ast_node_t {
 struct ast_exp_none_t: public ast_node_t {
   static const ast_type_t TYPE = ast_exp_none_e;
 
+  ast_exp_none_t()
+    : ast_node_t(TYPE)
+    , token(nullptr)
+  {}
+
   ast_exp_none_t(const token_t *token)
     : ast_node_t(TYPE)
     , token(token)

@@ -14,7 +14,7 @@ else:
 
 expected = {
     "array001"   : "55",
-    "array002"   : "testcase",
+    "array002"   : "helloworld",
     "array003"   : "testcase",
     "array004"   : "1234",
     "const001"   : "1240",
