@@ -37,6 +37,7 @@ def do_run(base, path):
 
         if ret != 0:
             print '{0} returned error code {1}!'.format(base, ret)
+            print '{0}'.format(err)
             return
 
         wanted = get_expected(path)

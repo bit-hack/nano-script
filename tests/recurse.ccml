@@ -1,0 +1,11 @@
+#expect term is 0
+
+var term = 10
+
+function main()
+    if (not term == 0)
+        term -= 1
+        main()
+    end
+    puts("term is " + term)
+end

@@ -1,0 +1,14 @@
+#expect 26
+
+function sum(a, b)
+    return a + b
+end
+
+function mul(a, b)
+    return a * b
+end
+
+function main()
+    var test = sum(mul(2,3), mul(4,5))
+    puts("" + test)
+end

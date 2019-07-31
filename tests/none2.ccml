@@ -1,0 +1,9 @@
+#expect this is good
+
+function main()
+    if (none)
+        puts("this is bad")
+    else
+        puts("this is good")
+    end
+end

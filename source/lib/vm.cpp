@@ -679,6 +679,11 @@ bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
     *err = thread_error_t::e_success;
   }
   thread_t t{ccml_};
+
+  if (!t.init()) {
+    return false;
+  }
+
   if (!t.prepare(func, argc, argv)) {
     if (err) {
       *err = t.error_;

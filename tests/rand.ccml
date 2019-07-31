@@ -1,0 +1,20 @@
+#expect -1343933481
+
+var seed = 12345
+
+function rand()
+  var c = 12345
+  var m = 1103515245
+  seed = seed * m + c
+  return seed
+end
+
+function main()
+  var x = 0
+  var i = 0
+  while (i < 10)
+    x = rand()
+    i += 1
+  end
+  puts("" + x)
+end

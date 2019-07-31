@@ -1,0 +1,10 @@
+#expect 22
+
+function main()
+    var x = 10  # 10
+    x -= 1      # 9
+    x += 2      # 11
+    x *= 4      # 44
+    x /= 2      # 22
+    return x
+end

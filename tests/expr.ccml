@@ -1,0 +1,42 @@
+#expect success
+
+function main()
+  var res
+  
+  res = 2 * 4 + 1
+  if (not res == 9)
+    return -1
+  end
+  
+  res = 2 * (4 + 1)
+  if (not res == 10)
+    return -2
+  end
+
+  res = 10 / 5 / 2
+  if (not res == 1)
+    return -3
+  end
+
+  res = 2 * 3 * 4
+  if (not res == 24)
+    return -4
+  end
+
+  res = 4 + 4 - 2
+  if (not res == 6)
+    return -5
+  end
+
+  res = (1 + 1) * (2 + 2)
+  if (not res == 8)
+    return -6
+  end
+
+  res = (((1) * (2 + 2) + 3))
+  if (not res == 7)
+    return -7
+  end
+
+  puts("success")
+end

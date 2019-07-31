@@ -1,0 +1,14 @@
+#expect some words this is
+
+var words[4] = "this", "is", "some", "words"
+var index[4] = 2, 3, 0, 1
+
+function main()
+    var out = ""
+    var i = 0
+    while (i < 4)
+        out += words[ index[ i ] ] + " "
+        i += 1
+    end
+    puts(out)
+end
