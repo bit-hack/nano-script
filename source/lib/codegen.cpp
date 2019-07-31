@@ -535,6 +535,10 @@ protected:
     }
 
     ast_visitor_t::visit(n);
+
+    // return
+    emit(INS_NEW_INT, 0, nullptr);
+    emit(INS_RET, stack_pass_.get_ret_operand(), nullptr);
   }
 
   std::vector<global_t> globals_;

@@ -506,31 +506,11 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   finished_ = true;
   cycles_ = 0;
   halted_ = false;
-//  s_head_ = 0;
+  s_head_ = 0;
 
   if (func.is_syscall()) {
     return false;
   }
-
-#if 0
-  // push globals
-  if (!ccml_.globals().empty()) {
-    //
-    const int32_t size = ccml_.globals().size();
-    // reserve this much space for globals
-    s_head_ += size;
-    for (const auto &g : ccml_.globals()) {
-      if (g.value_.is_string()) {
-        const int32_t index = g.value_.v;
-        const std::string &s = ccml_.strings()[index];
-        s_[g.offset_] = gc_->new_string(s);
-      } else {
-        s_[g.offset_] =
-            (g.size_ == 1) ? gc_->copy(g.value_) : gc_->new_array(g.size_);
-      }
-    }
-  }
-#endif
 
   // save the target pc (entry point)
   pc_ = func.pos_;
@@ -652,32 +632,36 @@ bool thread_t::resume(int32_t cycles, bool trace) {
     return false;
   }
   const uint32_t start_cycles = cycles;
-  // while we should keep processing instructions
-  while (cycles > 0 && f_head_) {
 
-    tick_gc_(cycles);
-
-    --cycles;
-    // fetch opcode
-    const uint8_t opcode = peek_opcode_();
-    ++history[opcode];
-    // print an instruction trace
-    if (trace) {
+  if (trace) {
+    // while we should keep processing instructions
+    for (; cycles; --cycles) {
+      tick_gc_(cycles);
+      // print an instruction trace
       const uint8_t *c = ccml_.code();
       ccml_.disassembler().disasm(c + pc_);
+      // dispatch
+      step_imp_();
+      if (finished_ || halted_) {
+        break;
+      }
     }
-    // dispatch
-    step_imp_();
-    if (has_error() || finished_ || halted_) {
-      break;
+  } else {
+    // while we should keep processing instructions
+    for (; cycles; --cycles) {
+      tick_gc_(cycles);
+      step_imp_();
+      if (finished_ || halted_) {
+        break;
+      }
     }
   }
+
   // check for program termination
-  if (!finished_ && !f_head_) {
-    assert(s_head_ > 0);
-    return_code_ = pop_();
-    finished_ = true;
+  if (finished_) {
+    return_code_ = peek_();
   }
+
   // increment the cycle count
   cycles_ += (start_cycles - cycles);
   return !has_error();
@@ -778,54 +762,24 @@ bool thread_t::init() {
   cycles_ = 0;
   halted_ = false;
   s_head_ = 0;
-
+  // search for the init function
   const function_t *init = ccml_.find_function("@init");
   if (!init) {
+    // no init to do?
     return true;
   }
-
-#if 0
-  // push globals
-  if (!ccml_.globals().empty()) {
-
-    // number of globals
-    const int32_t size = ccml_.globals().size();
-
-    for (const auto &g : ccml_.globals()) {
-      if (g.value_.is_string()) {
-        const int32_t index = g.value_.v;
-        const std::string &s = ccml_.strings()[index];
-        g_[g.offset_] = gc_->new_string(s);
-      }
-      if (g.value_.is_int()) {
-        g_[g.offset_] = gc_->new_int(g.value_.integer());
-      }
-      if (g.value_.is_array()) {
-        g_[g.offset_] = gc_->new_array(g.size_);
-      }
-    }
-  }
-#endif
-
   // save the target pc (entry point)
   pc_ = init->pos_;
-
   // push the initial frame
   enter_(s_head_, pc_);
-
   // catch any misc errors
   if (error_ != thread_error_t::e_success) {
     return false;
   }
-
   // good to go
   finished_ = false;
   if (!resume(1024 * 8, false)) {
     return false;
   }
-
-  if (!finished()) {
-    return false;
-  }
-  return true;
+  return finished();
 }

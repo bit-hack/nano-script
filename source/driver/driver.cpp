@@ -166,8 +166,9 @@ int main(int argc, char **argv) {
 
   ccml::thread_t thread{ccml};
 
-  if (thread.init()) {
+  if (!thread.init()) {
     fprintf(stderr, "failed while executing @init\n");
+    return -4;
   }
 
   if (!thread.prepare(*func, 0, nullptr)) {

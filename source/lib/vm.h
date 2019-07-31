@@ -195,6 +195,8 @@ protected:
     else {
       const uint32_t ret_pc = frame_().pc_;
       --f_head_;
+      // check if we have finished
+      finished_ |= (f_head_ == 0);
       return ret_pc;
     }
   }
@@ -217,6 +219,16 @@ protected:
       set_error_(thread_error_t::e_stack_overflow);
     } else {
       s_[s_head_++] = v;
+    }
+  }
+
+  // peek a value on the stack
+  value_t* peek_() {
+    if (s_head_ <= 0) {
+      set_error_(thread_error_t::e_stack_underflow);
+      return gc_->new_int(0);
+    } else {
+      return s_[s_head_ - 1];
     }
   }
 
