@@ -58,13 +58,13 @@ uint32_t xorshift32() {
 void vm_rand(ccml::thread_t &t) {
   const int32_t x = xorshift32();
   // return value
-  t.push(t.gc().new_int(x));
+  t.stack().push(t.gc().new_int(x));
 }
 
 void vm_video(ccml::thread_t &t) {
   using namespace ccml;
-  const value_t *h = t.pop();
-  const value_t *w = t.pop();
+  const value_t *h = t.stack().pop();
+  const value_t *w = t.stack().pop();
   if (w->is_int() && h->is_int()) {
     global.width_ = (uint32_t)w->v;
     global.height_ = (uint32_t)h->v;
@@ -73,31 +73,31 @@ void vm_video(ccml::thread_t &t) {
     global.screen_ =
         SDL_SetVideoMode((uint32_t)(w->v * 3), (uint32_t)(h->v * 3), 32, 0);
     // return value
-    t.push(t.gc().new_int(global.screen_ != nullptr));
+    t.stack().push(t.gc().new_int(global.screen_ != nullptr));
   } else {
-    t.push(t.gc().new_int(0));
+    t.stack().push(t.gc().new_int(0));
   }
 }
 
 void vm_setrgb(ccml::thread_t &t) {
   using namespace ccml;
-  const value_t *b = t.pop();
-  const value_t *g = t.pop();
-  const value_t *r = t.pop();
+  const value_t *b = t.stack().pop();
+  const value_t *g = t.stack().pop();
+  const value_t *r = t.stack().pop();
   if (r->is_int() && g->is_int() && b->is_int()) {
     global.rgb_ = ((r->v & 0xff) << 16) | ((g->v & 0xff) << 8) | (b->v & 0xff);
   }
   // return code
-  t.push(t.gc().new_int(0));
+  t.stack().push(t.gc().new_int(0));
 }
 
 void vm_plot(ccml::thread_t &t) {
   using namespace ccml;
 
-  const value_t *y = t.pop();
-  const value_t *x = t.pop();
+  const value_t *y = t.stack().pop();
+  const value_t *x = t.stack().pop();
   // return value
-  t.push(t.gc().new_int(0));
+  t.stack().push(t.gc().new_int(0));
 
   const int32_t w = global.width_;
   const int32_t h = global.height_;
@@ -143,7 +143,7 @@ void vm_flip(ccml::thread_t &t) {
     SDL_Flip(screen);
   }
   // return value
-  t.push(t.gc().new_int(0));
+  t.stack().push(t.gc().new_int(0));
 }
 
 void on_error(const ccml::error_t &error) {

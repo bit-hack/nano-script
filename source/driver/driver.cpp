@@ -42,12 +42,12 @@ const char *load_file(const char *path) {
 void vm_getc(ccml::thread_t &t) {
   using namespace ccml;
   const int32_t ch = getchar();
-  t.push_int(ch);
+  t.stack().push_int(ch);
 }
 
 void vm_putc(ccml::thread_t &t) {
   using namespace ccml;
-  const value_t *v = t.pop();
+  const value_t *v = t.stack().pop();
   assert(v);
   if (!v->is_int()) {
     t.raise_error(thread_error_t::e_bad_argument);
@@ -55,7 +55,7 @@ void vm_putc(ccml::thread_t &t) {
     putchar((int)(v->v));
     fflush(stdout);
   }
-  t.push_int(0);
+  t.stack().push_int(0);
 }
 
 void vm_gets(ccml::thread_t &t) {
@@ -66,12 +66,12 @@ void vm_gets(ccml::thread_t &t) {
     buffer[i] = (buffer[i] == '\n') ? '\0' : buffer[i];
   }
   buffer[79] = '\0';
-  t.push_string(std::string{buffer});
+  t.stack().push_string(std::string{buffer});
 }
 
 void vm_puts(ccml::thread_t &t) {
   using namespace ccml;
-  value_t *s = t.pop();
+  value_t *s = t.stack().pop();
   assert(s);
   if (!s->is_string()) {
     t.raise_error(thread_error_t::e_bad_argument);
@@ -79,7 +79,7 @@ void vm_puts(ccml::thread_t &t) {
     printf("%s\n", s->string());
     fflush(stdout);
   }
-  t.push_int(0);
+  t.stack().push_int(0);
   return;
 }
 

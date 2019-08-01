@@ -8,6 +8,7 @@
 
 #include "value.h"
 #include "instructions.h"
+#include "thread_error.h"
 
 
 namespace ccml {
@@ -196,10 +197,6 @@ struct ccml_t {
   const std::vector<function_t> &functions() const {
     return functions_;
   }
-
-//  const std::vector<global_t> &globals() const {
-//    return globals_;
-//  }
 
   const std::vector<std::string> &strings() const {
     return strings_;

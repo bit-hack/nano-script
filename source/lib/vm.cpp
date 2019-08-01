@@ -69,10 +69,10 @@ uint8_t thread_t::read_opcode_() {
 }
 
 void thread_t::do_INS_ADD_() {
-  const value_t *r = pop();
-  const value_t *l = pop();
+  const value_t *r = stack_.pop();
+  const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_->new_int(l->v + r->v));
+    stack_.push(gc_->new_int(l->v + r->v));
     return;
   }
   if (l->is_string() && r->is_string()) {
@@ -82,7 +82,7 @@ void thread_t::do_INS_ADD_() {
     memcpy(dst, l->string(), l->strlen());
     memcpy(dst + l->strlen(), r->string(), r->strlen());
     dst[len] = '\0';
-    push(s);
+    stack_.push(s);
     return;
   }
   if (l->is_int() && r->is_string()) {
@@ -95,7 +95,7 @@ void thread_t::do_INS_ADD_() {
     memcpy(dst, lbuf, lsize);
     memcpy(dst + lsize, r->string(), r->strlen());
     dst[len] = '\0';
-    push(s);
+    stack_.push(s);
     return;
   }
   if (l->is_string() && r->is_int()) {
@@ -108,41 +108,41 @@ void thread_t::do_INS_ADD_() {
     memcpy(dst, l->string(), l->strlen());
     memcpy(dst + l->strlen(), rbuf, rsize);
     dst[len] = '\0';
-    push(s);
+    stack_.push(s);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_SUB_() {
-  const value_t *r = pop();
-  const value_t *l = pop();
+  const value_t *r = stack_.pop();
+  const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_->new_int(l->v - r->v));
+    stack_.push(gc_->new_int(l->v - r->v));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_MUL_() {
-  const value_t *r = pop();
-  const value_t *l = pop();
+  const value_t *r = stack_.pop();
+  const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_->new_int(l->v * r->v));
+    stack_.push(gc_->new_int(l->v * r->v));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_DIV_() {
-  const value_t *r = pop();
-  const value_t *l = pop();
+  const value_t *r = stack_.pop();
+  const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
     if (r->v == 0) {
       set_error_(thread_error_t::e_bad_divide_by_zero);
     } else {
       const int32_t o = l->v / r->v;
-      push(gc_->new_int(o));
+      stack_.push(gc_->new_int(o));
     }
     return;
   }
@@ -150,14 +150,14 @@ void thread_t::do_INS_DIV_() {
 }
 
 void thread_t::do_INS_MOD_() {
-  const value_t *r = pop();
-  const value_t *l = pop();
+  const value_t *r = stack_.pop();
+  const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
     if (r->v == 0) {
       set_error_(thread_error_t::e_bad_divide_by_zero);
     } else {
       const int32_t o = l->v % r->v;
-      push(gc_->new_int(o));
+      stack_.push(gc_->new_int(o));
     }
     return;
   }
@@ -165,91 +165,91 @@ void thread_t::do_INS_MOD_() {
 }
 
 void thread_t::do_INS_AND_() {
-  const value_t *r = pop();
-  const value_t *l = pop();
+  const value_t *r = stack_.pop();
+  const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_->new_int(l->v && r->v));
+    stack_.push(gc_->new_int(l->v && r->v));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_OR_() {
-  const value_t *r = pop();
-  const value_t *l = pop();
+  const value_t *r = stack_.pop();
+  const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_->new_int(l->v || r->v));
+    stack_.push(gc_->new_int(l->v || r->v));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_NOT_() {
-  const value_t *l = pop();
+  const value_t *l = stack_.pop();
 
   // convert other types to bool first?
 
   if (l->is_int()) {
-    push(gc_->new_int(!l->v));
+    stack_.push(gc_->new_int(!l->v));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_NEG_() {
-  const value_t *o = pop();
+  const value_t *o = stack_.pop();
   if (o->is_int()) {
-    push(gc_->new_int(-o->v));
+    stack_.push(gc_->new_int(-o->v));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_LT_() {
-  const value_t *r = pop();
-  const value_t *l = pop();
+  const value_t *r = stack_.pop();
+  const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_->new_int(l->v < r->v ? 1 : 0));
+    stack_.push(gc_->new_int(l->v < r->v ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_GT_() {
-  const value_t *r = pop();
-  const value_t *l = pop();
+  const value_t *r = stack_.pop();
+  const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_->new_int(l->v > r->v ? 1 : 0));
+    stack_.push(gc_->new_int(l->v > r->v ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_LEQ_() {
-  const value_t *r = pop();
-  const value_t *l = pop();
+  const value_t *r = stack_.pop();
+  const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_->new_int(l->v <= r->v ? 1 : 0));
+    stack_.push(gc_->new_int(l->v <= r->v ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_GEQ_() {
-  const value_t *r = pop();
-  const value_t *l = pop();
+  const value_t *r = stack_.pop();
+  const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_->new_int(l->v >= r->v ? 1 : 0));
+    stack_.push(gc_->new_int(l->v >= r->v ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_EQ_() {
-  const value_t *r = pop();
-  const value_t *l = pop();
+  const value_t *r = stack_.pop();
+  const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    push(gc_->new_int(l->v == r->v ? 1 : 0));
+    stack_.push(gc_->new_int(l->v == r->v ? 1 : 0));
     return;
   }
   if (l->is_string() && r->is_string()) {
@@ -259,12 +259,12 @@ void thread_t::do_INS_EQ_() {
         res = 1;
       }
     }
-    push(gc_->new_int(res));
+    stack_.push(gc_->new_int(res));
     return;
   }
   // only none == none
   if (l->is_none() || r->is_none()) {
-    push(gc_->new_int(l->is_none() && r->is_none() ? 1 : 0));
+    stack_.push(gc_->new_int(l->is_none() && r->is_none() ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -276,7 +276,7 @@ void thread_t::do_INS_JMP_() {
 
 void thread_t::do_INS_TJMP_() {
   const int32_t operand = read_operand_();
-  const value_t *o = pop();
+  const value_t *o = stack_.pop();
   switch (o->type()) {
   case value_type_t::val_type_int:
     if (o->v != 0) {
@@ -297,7 +297,7 @@ void thread_t::do_INS_TJMP_() {
 
 void thread_t::do_INS_FJMP_() {
   const int32_t operand = read_operand_();
-  const value_t *o = pop();
+  const value_t *o = stack_.pop();
   switch (o->type()) {
   case val_type_none:
     pc_ = operand;
@@ -320,21 +320,21 @@ void thread_t::do_INS_FJMP_() {
 void thread_t::do_INS_CALL_() {
   const int32_t operand = read_operand_();
   // new frame
-  enter_(s_head_, pc_);
+  enter_(stack_.head(), pc_);
   pc_ = operand;
 }
 
 void thread_t::do_INS_RET_() {
   const int32_t operand = read_operand_();
   // pop return value
-  value_t *sval = pop();
+  value_t *sval = stack_.pop();
   // remove arguments and local vars
-  if (int32_t(s_head_) < operand) {
+  if (int32_t(stack_.head()) < operand) {
     set_error_(thread_error_t::e_stack_underflow);
   } else {
-    s_head_ -= operand;
+    stack_.discard(operand);
     // push return value
-    push(sval);
+    stack_.push(sval);
     // return to previous frame
     pc_ = leave_();
   }
@@ -355,13 +355,13 @@ void thread_t::do_INS_SCALL_() {
 void thread_t::do_INS_POP_() {
   const int32_t operand = read_operand_();
   for (int32_t i = 0; i < operand; ++i) {
-    pop();
+    stack_.pop();
   };
 }
 
 void thread_t::do_INS_NEW_INT_() {
   value_t *op = gc_->new_int(read_operand_());
-  push(op);
+  stack_.push(op);
 }
 
 void thread_t::do_INS_NEW_STR_() {
@@ -369,17 +369,17 @@ void thread_t::do_INS_NEW_STR_() {
   const auto &str_tab = ccml_.strings();
   assert(index < (int32_t)str_tab.size());
   const std::string &s = ccml_.strings()[index];
-  push(gc_->new_string(s));
+  stack_.push(gc_->new_string(s));
 }
 
 void thread_t::do_INS_NEW_ARY_() {
   const int32_t index = read_operand_();
   assert(index > 0);
-  push(gc_->new_array(index));
+  stack_.push(gc_->new_array(index));
 }
 
 void thread_t::do_INS_NEW_NONE_() {
-  push(gc_->new_none());
+  stack_.push(gc_->new_none());
 }
 
 void thread_t::do_INS_GLOBALS_() {
@@ -393,26 +393,18 @@ void thread_t::do_INS_GLOBALS_() {
 void thread_t::do_INS_LOCALS_() {
   const int32_t operand = read_operand_();
   if (operand) {
-    if (s_head_ + operand >= s_.size()) {
-      set_error_(thread_error_t::e_stack_overflow);
-      return;
-    }
-    // reserve this many values on the stack
-    for (int i = 0; i < operand; ++i) {
-      s_[s_head_ + i] = nullptr;
-    }
-    s_head_ += operand;
+    stack_.reserve(operand);
   }
 }
 
 void thread_t::do_INS_GETV_() {
   const int32_t operand = read_operand_();
-  push(getv_(operand));
+  stack_.push(getv_(operand));
 }
 
 void thread_t::do_INS_SETV_() {
   const int32_t operand = read_operand_();
-  setv_(operand, pop());
+  setv_(operand, stack_.pop());
 }
 
 void thread_t::do_INS_GETG_() {
@@ -420,7 +412,7 @@ void thread_t::do_INS_GETG_() {
   if (operand < 0 || operand >= int32_t(g_.size())) {
     set_error_(thread_error_t::e_bad_get_global);
   } else {
-    push(g_[operand]);
+    stack_.push(g_[operand]);
   }
 }
 
@@ -429,13 +421,13 @@ void thread_t::do_INS_SETG_() {
   if (operand < 0 || operand >= int32_t(g_.size())) {
     set_error_(thread_error_t::e_bad_set_global);
   } else {
-    g_[operand] = pop();
+    g_[operand] = stack_.pop();
   }
 }
 
 void thread_t::do_INS_GETA_() {
-  value_t *a = pop();
-  value_t *i = pop();
+  value_t *a = stack_.pop();
+  value_t *i = stack_.pop();
   if (!a) {
     raise_error(thread_error_t::e_bad_array_object);
     return;
@@ -451,7 +443,7 @@ void thread_t::do_INS_GETA_() {
       return;
     }
     value_t *out = a->array()[index];
-    push(out ? out : gc_->new_none());
+    stack_.push(out ? out : gc_->new_none());
     return;
   }
   if (a->type() == val_type_string) {
@@ -460,16 +452,16 @@ void thread_t::do_INS_GETA_() {
       return;
     }
     const uint32_t ch = (uint8_t)(a->string()[index]);
-    push(gc_->new_int(ch));
+    stack_.push(gc_->new_int(ch));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_SETA_() {
-  value_t *a = pop();
-  value_t *i = pop();
-  value_t *v = pop();
+  value_t *a = stack_.pop();
+  value_t *i = stack_.pop();
+  value_t *v = stack_.pop();
   if (a->type() != val_type_array) {
     raise_error(thread_error_t::e_bad_array_object);
     return;
@@ -496,7 +488,7 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   finished_ = true;
   cycles_ = 0;
   halted_ = false;
-  s_head_ = 0;
+  stack_.clear();
 
   if (func.is_syscall()) {
     return false;
@@ -512,11 +504,11 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
 
   // push any arguments
   for (int i = 0; i < argc; ++i) {
-    push(gc_->copy(argv[i]));
+    stack_.push(gc_->copy(argv[i]));
   }
 
   // push the initial frame
-  enter_(s_head_, pc_);
+  enter_(stack_.head(), pc_);
 
   // catch any misc errors
   if (error_ != thread_error_t::e_success) {
@@ -602,8 +594,8 @@ bool thread_t::step_inst() {
   step_imp_();
   // check for program termination
   if (!finished_ && !f_head_) {
-    assert(s_head_ > 0);
-    return_code_ = pop_();
+    assert(stack_.head() > 0);
+    return_code_ = stack_.pop();
     finished_ = true;
   }
   return !has_error();
@@ -624,14 +616,16 @@ bool thread_t::step_line() {
   } while (line == source_line());
   // check for program termination
   if (!finished_ && !f_head_) {
-    assert(s_head_ > 0);
-    return_code_ = pop_();
+    assert(stack_.head() > 0);
+    return_code_ = stack_.pop();
     finished_ = true;
   }
   return !has_error();
 }
 
-int32_t thread_t::source_line() const { return ccml_.store().get_line(pc_); }
+int32_t thread_t::source_line() const {
+  return ccml_.store().get_line(pc_);
+}
 
 void thread_t::tick_gc_(int32_t cycles) {
   // XXX: better - when allocated objects are 2x the stack size?
@@ -672,7 +666,7 @@ bool thread_t::resume(int32_t cycles, bool trace) {
 
   // check for program termination
   if (finished_) {
-    return_code_ = peek_();
+    return_code_ = stack_.peek();
   }
 
   // increment the cycle count
@@ -733,35 +727,29 @@ bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
 
 value_t *thread_t::getv_(int32_t offs) {
   const int32_t index = frame_().sp_ + offs;
+#if 1
+  return stack_.get(index);
+#else
   if (index < 0 || index >= int32_t(s_head_)) {
     set_error_(thread_error_t::e_bad_getv);
     return gc_->new_none();
   }
   value_t *v = s_[index];
   return v ? v : gc_->new_none();
+#endif
 }
 
 void thread_t::setv_(int32_t offs, value_t *val) {
   const int32_t index = frame_().sp_ + offs;
-  if (index < 0 || index >= int32_t(s_head_)) {
+#if 1
+  stack_.set(index, val);
+#else
+  if (index < 0 || index >= int32_t(stack_.head())) {
     set_error_(thread_error_t::e_bad_setv);
   } else {
     s_[index] = val;
   }
-}
-
-// peek a stack value
-bool thread_t::peek(int32_t offset, bool absolute, value_t *&out) const {
-  if (out) {
-    if (!absolute) {
-      offset += frame_().sp_;
-    }
-    if (offset >= 0 && offset < int32_t(s_.size())) {
-      out = s_[offset];
-      return true;
-    }
-  }
-  return false;
+#endif
 }
 
 void vm_t::reset() {
@@ -769,7 +757,7 @@ void vm_t::reset() {
 }
 
 void thread_t::gc_collect() {
-  gc_->trace(s_.data(), s_head_);
+  gc_->trace(stack_.data(), stack_.head());
   gc_->trace(g_.data(), g_.size());
   gc_->collect();
 }
@@ -779,7 +767,9 @@ bool thread_t::init() {
   finished_ = true;
   cycles_ = 0;
   halted_ = false;
-  s_head_ = 0;
+
+  stack_.clear();
+
   // search for the init function
   const function_t *init = ccml_.find_function("@init");
   if (!init) {
@@ -789,7 +779,7 @@ bool thread_t::init() {
   // save the target pc (entry point)
   pc_ = init->pos_;
   // push the initial frame
-  enter_(s_head_, pc_);
+  enter_(stack_.head(), pc_);
   // catch any misc errors
   if (error_ != thread_error_t::e_success) {
     return false;

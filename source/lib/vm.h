@@ -14,68 +14,17 @@
 namespace ccml {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-enum class thread_error_t {
-  e_success = 0,
-  e_max_cycle_count,
-  e_bad_getv,
-  e_bad_setv,
-  e_bad_num_args,
-  e_bad_syscall,
-  e_bad_opcode,
-  e_bad_set_global,
-  e_bad_get_global,
-  e_bad_pop,
-  e_bad_divide_by_zero,
-  e_stack_overflow,
-  e_stack_underflow,
-  e_bad_globals_size,
-  e_bad_array_bounds,
-  e_bad_array_index,
-  e_bad_array_object,
-  e_bad_type_operation,
-  e_bad_argument,
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct thread_t {
-
-  // XXXX: as it stands globals are not shared among threads
 
   thread_t(ccml_t &ccml)
     : ccml_(ccml)
     , return_code_(nullptr)
     , finished_(true)
     , cycles_(0)
-    , s_head_(0)
-    , f_head_(0) {
-    gc_.reset(new value_gc_t());
-  }
-
-  // peek a stack value
-  bool peek(int32_t offset, bool absolute, value_t *&out) const;
-
-  // pop from the value stack
-  value_t* pop() {
-    return pop_();
-  }
-
-  // push integer onto the value stack
-  void push_int(const int32_t v) {
-    push_(gc_->new_int(v));
-  }
-
-  // push string onto the value stack
-  void push_string(const std::string &v) {
-    const size_t len = v.size();
-    value_t *s = gc_->new_string(len);
-    memcpy(s->string(), v.data(), len);
-    s->string()[len] = '\0';
-    push_(s);
-  }
-
-  // push onto the value stack
-  void push(value_t* v) {
-    push_(v);
+    , f_head_(0)
+    , gc_(new value_gc_t())
+    , stack_(*this, *gc_)
+  {
   }
 
   // prepare to execute a function
@@ -129,6 +78,11 @@ struct thread_t {
     return *gc_;
   }
 
+  // return the value stack
+  value_stack_t &stack() {
+    return stack_;
+  }
+
   // execute thread init function
   bool init();
 
@@ -170,10 +124,6 @@ protected:
   // XXX: provide a way to share these amongst threads
   std::vector<value_t*> g_;
 
-  // value stack
-  uint32_t s_head_;
-  std::array<value_t *, 1024 * 8> s_;
-
   // frame stack
   struct frame_t {
     int32_t sp_;
@@ -181,6 +131,9 @@ protected:
   };
   uint32_t f_head_;
   std::array<frame_t, 64> f_;
+
+  friend struct value_stack_t;
+  value_stack_t stack_;
 
   // frame control
   void enter_(uint32_t sp, uint32_t pc);
@@ -196,35 +149,6 @@ protected:
   frame_t &frame_() {
     assert(f_head_);
     return f_[f_head_-1];
-  }
-
-  // push value onto stack
-  void push_(value_t *v) {
-    if (s_head_ >= s_.size()) {
-      set_error_(thread_error_t::e_stack_overflow);
-    } else {
-      s_[s_head_++] = v;
-    }
-  }
-
-  // peek a value on the stack
-  value_t* peek_() {
-    if (s_head_ <= 0) {
-      set_error_(thread_error_t::e_stack_underflow);
-      return gc_->new_int(0);
-    } else {
-      return s_[s_head_ - 1];
-    }
-  }
-
-  // pop value from stack
-  value_t* pop_() {
-    if (s_head_ <= 0) {
-      set_error_(thread_error_t::e_stack_underflow);
-      return gc_->new_int(0);
-    } else {
-      return s_[--s_head_];
-    }
   }
 
   // raise an error
