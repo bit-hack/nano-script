@@ -405,16 +405,6 @@ void thread_t::do_INS_LOCALS_() {
   }
 }
 
-void thread_t::do_INS_ACCV_() {
-  const int32_t operand = read_operand_();
-  const value_t *val = pop();
-  if (val->is_int()) {
-    setv_(operand, getv_(operand) + val->v);
-    return;
-  }
-  raise_error(thread_error_t::e_bad_type_operation);
-}
-
 void thread_t::do_INS_GETV_() {
   const int32_t operand = read_operand_();
   push(getv_(operand));
@@ -570,7 +560,6 @@ void thread_t::step_imp_() {
   case INS_NEW_NONE: do_INS_NEW_NONE_(); break;
   case INS_LOCALS:   do_INS_LOCALS_();   break;
   case INS_GLOBALS:  do_INS_GLOBALS_();  break;
-  case INS_ACCV:     do_INS_ACCV_();     break;
   case INS_GETV:     do_INS_GETV_();     break;
   case INS_SETV:     do_INS_SETV_();     break;
   case INS_GETG:     do_INS_GETG_();     break;
@@ -579,6 +568,30 @@ void thread_t::step_imp_() {
   case INS_SETA:     do_INS_SETA_();     break;
   default:
     set_error_(thread_error_t::e_bad_opcode);
+  }
+}
+
+void thread_t::enter_(uint32_t sp, uint32_t pc) {
+  if (f_head_ >= f_.size()) {
+    set_error_(thread_error_t::e_stack_overflow);
+  } else {
+    ++f_head_;
+    frame_().sp_ = sp;
+    frame_().pc_ = pc;
+  }
+}
+
+// return - old PC as return value
+uint32_t thread_t::leave_() {
+  if (f_head_ <= 0) {
+    set_error_(thread_error_t::e_stack_underflow);
+    return 0;
+  } else {
+    const uint32_t ret_pc = frame_().pc_;
+    --f_head_;
+    // check if we have finished
+    finished_ |= (f_head_ == 0);
+    return ret_pc;
   }
 }
 

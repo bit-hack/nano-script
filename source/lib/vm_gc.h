@@ -22,11 +22,13 @@ struct arena_t {
 
   template <typename type_t>
   type_t *alloc(size_t extra) {
-    size_t size = sizeof(type_t);
-    assert(head_ + size < data_.size());
-    type_t *out = (type_t*)(data_.data() + head_);
-    head_ += size + extra;
-    return out;
+    const size_t size = sizeof(type_t);
+    if ((head_ + size + extra) < data_.size()) {
+      type_t *out = (type_t*)(data_.data() + head_);
+      head_ += size + extra;
+      return out;
+    }
+    return nullptr;
   }
 
   void clear() {

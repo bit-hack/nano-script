@@ -98,10 +98,6 @@ enum instruction_e {
   // resize global space
   INS_GLOBALS,
 
-  // accumulate local:
-  //    stack[ fp + operand ] += v
-  INS_ACCV,
-
   // get local:
   //    push( stack[ fp + operand ] )
   INS_GETV,

@@ -15,7 +15,6 @@ bool ins_has_operand(const instruction_e ins) {
   case INS_NEW_STR:
   case INS_LOCALS:
   case INS_GLOBALS:
-  case INS_ACCV:
   case INS_GETV:
   case INS_SETV:
   case INS_GETG:

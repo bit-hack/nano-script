@@ -595,7 +595,6 @@ void codegen_pass_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   case INS_NEW_STR:
   case INS_LOCALS:
   case INS_GLOBALS:
-  case INS_ACCV:
   case INS_GETV:
   case INS_SETV:
   case INS_GETG:

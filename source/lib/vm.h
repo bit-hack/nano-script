@@ -159,48 +159,32 @@ protected:
   // syscalls can set to true to halt execution
   bool halted_;
 
+  // program counter
+  int32_t pc_;
+
+  // garbage collector
+  std::unique_ptr<value_gc_t> gc_;
+  void gc_collect();
+
+  // globals
+  // XXX: provide a way to share these amongst threads
+  std::vector<value_t*> g_;
+
+  // value stack
+  uint32_t s_head_;
+  std::array<value_t *, 1024 * 8> s_;
+
+  // frame stack
   struct frame_t {
     int32_t sp_;
     int32_t pc_;
   };
-
-  int32_t pc_;                        // program counter
-
-  std::unique_ptr<value_gc_t> gc_;
-
-  void gc_collect();
-
-  std::vector<value_t*> g_;           // globals
-  std::array<value_t*, 1024 * 8> s_;  // value stack
-  std::array<frame_t, 64> f_;         // frame stack
-  uint32_t s_head_;
   uint32_t f_head_;
+  std::array<frame_t, 64> f_;
 
-  void enter_(uint32_t sp, uint32_t pc) {
-    if (f_head_ >= f_.size()) {
-      set_error_(thread_error_t::e_stack_overflow);
-    }
-    else {
-      ++f_head_;
-      frame_().sp_ = sp;
-      frame_().pc_ = pc;
-    }
-  }
-
-  // return - old PC as return value
-  uint32_t leave_() {
-    if (f_head_ <= 0) {
-      set_error_(thread_error_t::e_stack_underflow);
-      return 0;
-    }
-    else {
-      const uint32_t ret_pc = frame_().pc_;
-      --f_head_;
-      // check if we have finished
-      finished_ |= (f_head_ == 0);
-      return ret_pc;
-    }
-  }
+  // frame control
+  void enter_(uint32_t sp, uint32_t pc);
+  uint32_t leave_();
 
   // current stack frame
   const frame_t &frame_() const {
@@ -284,7 +268,6 @@ protected:
   void do_INS_NEW_NONE_();
   void do_INS_LOCALS_();
   void do_INS_GLOBALS_();
-  void do_INS_ACCV_();
   void do_INS_GETV_();
   void do_INS_SETV_();
   void do_INS_GETG_();
