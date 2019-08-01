@@ -121,6 +121,7 @@ struct thread_t {
   // raise a thread error
   void raise_error(thread_error_t e) {
     error_ = e;
+    finished_ = true;
   }
 
   // return garbage collector
