@@ -111,56 +111,56 @@ struct value_stack_t {
   void push_string(const std::string &v);
 
   void clear() {
-    s_head_ = 0;
+    head_ = 0;
   }
 
   int32_t head() const {
-    return s_head_;
+    return head_;
   }
 
   void reserve(uint32_t operand) {
-    if (s_head_ + operand >= s_.size()) {
+    if (head_ + operand >= s_.size()) {
       set_error(thread_error_t::e_stack_overflow);
       return;
     }
     // reserve this many values on the stack
     for (uint32_t i = 0; i < operand; ++i) {
-      s_[s_head_ + i] = nullptr;
+      s_[head_ + i] = nullptr;
     }
-    s_head_ += operand;
+    head_ += operand;
   }
 
   void discard(uint32_t num) {
-    assert(s_head_ >= num);
-    s_head_ -= num;
+    assert(head_ >= num);
+    head_ -= num;
   }
 
   // peek a stack value
   value_t* peek() {
-    if (s_head_ <= 0) {
+    if (head_ <= 0) {
       set_error(thread_error_t::e_stack_underflow);
       return nullptr;
     } else {
-      return s_[s_head_ - 1];
+      return s_[head_ - 1];
     }
   }
 
   // pop from the value stack
   value_t* pop() {
-    if (s_head_ <= 0) {
+    if (head_ <= 0) {
       set_error(thread_error_t::e_stack_underflow);
       return nullptr;
     } else {
-      return s_[--s_head_];
+      return s_[--head_];
     }
   }
 
   // push onto the value stack
   void push(value_t *v) {
-    if (s_head_ >= s_.size()) {
+    if (head_ >= s_.size()) {
       set_error(thread_error_t::e_stack_overflow);
     } else {
-      s_[s_head_++] = v;
+      s_[head_++] = v;
     }
   }
 
@@ -191,7 +191,7 @@ struct value_stack_t {
 
 protected:
   // value stack
-  uint32_t s_head_;
+  uint32_t head_;
   std::array<value_t *, SIZE> s_;
 
   struct thread_t &thread_;
