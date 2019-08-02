@@ -4,11 +4,19 @@
 
 namespace ccml {
 
-value_t *value_gc_t::new_int(int32_t value) {
+value_t *value_gc_t::new_int(const int32_t value) {
   value_t *v = space_to().alloc<value_t>(0);
   assert(v);
   v->type_ = val_type_int;
   v->v = value;
+  return v;
+}
+
+value_t *value_gc_t::new_float(const float value) {
+  value_t *v = space_to().alloc<value_t>(0);
+  assert(v);
+  v->type_ = val_type_float;
+  v->f = value;
   return v;
 }
 
@@ -53,6 +61,8 @@ value_t *value_gc_t::copy(const value_t &a) {
   switch (a.type()) {
   case val_type_int:
     return new_int(a.v);
+  case val_type_float:
+    return new_float(a.f);
   case val_type_string: {
     value_t *v = new_string(a.strlen());
     memcpy(v->string(), a.string(), a.strlen());
@@ -103,6 +113,13 @@ void value_gc_t::trace(value_t **list, size_t num) {
       value_t *n = to.alloc<value_t>(0);
       n->type_ = val_type_int;
       n->v = v->integer();
+      list[i] = n;
+      break;
+    }
+    case val_type_float: {
+      value_t *n = to.alloc<value_t>(0);
+      n->type_ = val_type_float;
+      n->v = v->f;
       list[i] = n;
       break;
     }

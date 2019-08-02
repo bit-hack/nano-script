@@ -63,7 +63,9 @@ protected:
 //
 struct value_gc_t {
 
-  value_t *new_int(int32_t value);
+  value_t *new_int(const int32_t value);
+
+  value_t *new_float(const float value);
 
   value_t *new_array(int32_t value);
 

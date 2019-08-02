@@ -13,6 +13,7 @@ bool ins_has_operand(const instruction_e ins) {
   case INS_POP:
   case INS_NEW_INT:
   case INS_NEW_STR:
+  case INS_NEW_FLT:
   case INS_LOCALS:
   case INS_GLOBALS:
   case INS_GETV:

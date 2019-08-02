@@ -92,6 +92,9 @@ enum instruction_e {
   //    push( new none )
   INS_NEW_NONE,
 
+  // create a new float type
+  INS_NEW_FLT,
+
   // reserve locals in stack frame
   INS_LOCALS,
 

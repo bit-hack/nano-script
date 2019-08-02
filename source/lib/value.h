@@ -20,6 +20,7 @@ enum value_type_t {
   val_type_int,
   val_type_string,
   val_type_array,
+  val_type_float,
 };
 
 struct value_t {
@@ -43,6 +44,10 @@ struct value_t {
 
   bool is_array() const {
     return type() == val_type_array;
+  }
+
+  bool is_float() const {
+    return type() == val_type_float;
   }
 
   bool is_none() const {
@@ -90,12 +95,24 @@ struct value_t {
     return v;
   }
 
+  float as_float() const {
+    switch (type_) {
+    case val_type_int:   return float(v);
+    case val_type_float: return float(f);
+    default:             assert(false);
+    }
+  }
+
   value_type_t type_;
 
-  // int value
-  // string length if string
-  // array length if array
-  int32_t v;
+  union {
+    // int value
+    // string length if string
+    // array length if array
+    int32_t v;
+    // floating point value
+    float f;
+  };
 };
 
 struct value_stack_t {
@@ -103,6 +120,9 @@ struct value_stack_t {
   static const size_t SIZE = 1024 * 8;
 
   value_stack_t(thread_t &thread, value_gc_t &gc);
+
+  // push float number onto the value stack
+  void push_float(const float v);
 
   // push integer onto the value stack
   void push_int(const int32_t v);

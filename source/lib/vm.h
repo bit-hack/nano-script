@@ -186,10 +186,10 @@ protected:
   void do_INS_RET_();
   void do_INS_SCALL_();
   void do_INS_POP_();
-  void do_INS_NEW_INT_();
   void do_INS_NEW_STR_();
   void do_INS_NEW_ARY_();
   void do_INS_NEW_NONE_();
+  void do_INS_NEW_INT_();
   void do_INS_LOCALS_();
   void do_INS_GLOBALS_();
   void do_INS_GETV_();

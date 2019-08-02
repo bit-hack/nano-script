@@ -17,6 +17,7 @@ enum token_e {
   TOK_WHILE,
   TOK_VAR,
   TOK_VAL,
+  TOK_VALF,
   TOK_IDENT,
   TOK_LPAREN,
   TOK_RPAREN,
@@ -43,6 +44,7 @@ enum token_e {
   TOK_ACC,
   TOK_STRING,
   TOK_NONE,
+  TOK_CONST,
   // artificial token generated during expression parser
   TOK_NEG,
 };
@@ -68,8 +70,13 @@ struct token_t {
     , val_(0)
     , line_no_(line) {}
 
-  token_t(int32_t v, uint32_t line)
+  token_t(const int32_t &v, uint32_t line)
     : type_(TOK_VAL)
+    , val_(v)
+    , line_no_(line) {}
+
+  token_t(const float &v, uint32_t line)
+    : type_(TOK_VALF)
     , val_(v)
     , line_no_(line) {}
 

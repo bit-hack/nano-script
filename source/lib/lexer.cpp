@@ -7,15 +7,17 @@ using namespace ccml;
 namespace {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-bool is_alpha_numeric(const char t) {
-  return (t >= 'a' && t <= 'z') ||
-         (t >= 'A' && t <= 'Z') ||
-         (t >= '0' && t <= '9') ||
-         (t == '_');
+bool is_alpha(const char t) {
+  return (t >= 'a' && t <= 'z') || (t >= 'A' && t <= 'Z') || (t >= '_');
 }
 
 bool is_numeric(const char t) {
   return (t >= '0' && t <= '9');
+}
+
+bool is_alpha_numeric(const char t) {
+  return is_alpha(t) ||
+         is_numeric(t);
 }
 
 bool munch(const char *&s, const char *string) {
@@ -97,6 +99,11 @@ bool lexer_t::lex(const char *s) {
         continue;
       }
       break;
+    case 'c':
+      if (munch(s, "const")) {
+        push_(TOK_CONST);
+        continue;
+      }
     case 'e':
       if (munch(s, "end")) {
         push_(TOK_END);
@@ -184,12 +191,10 @@ bool lexer_t::lex(const char *s) {
       push_(TOK_MOD);
       continue;
     case '\n':
-    {
       assert(s >= new_line_);
       lines_.push_back(std::string(new_line_, s - new_line_));
       new_line_ = s + 1;
       ++line_no_;
-    }
       push_(TOK_EOL);
       continue;
     case '=':
@@ -219,11 +224,14 @@ bool lexer_t::lex(const char *s) {
     } // switch
 
     // try to parse number
+    if (is_numeric(*s))
     {
       const char *t = s;
-      for (; is_numeric(*t); ++t) {
-        // empty
+      for ( ;is_numeric(*t); ++t);
+      if (*t == '.') {
+        for ( ;is_numeric(*t); ++t);
       }
+
       if (t != s) {
         push_val_(s, t);
         s = t - 1; // (-1 because of ++ in forloop)
@@ -232,6 +240,7 @@ bool lexer_t::lex(const char *s) {
     }
 
     // try to parse identifier
+    if (is_alpha(*s))
     {
       const char *t = s;
       for (; is_alpha_numeric(*t); ++t) {
@@ -269,11 +278,25 @@ void lexer_t::push_string_(const char *start, const char *end) {
 
 void lexer_t::push_val_(const char *s, const char *e) {
   int32_t v = 0;
+  int32_t f = 0;
   for (; s != e; ++s) {
-    assert(is_numeric(*s));
-    v = v * 10 + (*s - '0');
+    if (*s == '.') {
+      assert(f == 0);
+      f = 1;
+    }
+    else {
+      assert(is_numeric(*s));
+      v = v * 10 + (*s - '0');
+      f *= 10;
+    }
   }
-  stream_.push(token_t(v, line_no_));
+  if (f == 0) {
+    stream_.push(token_t(v, line_no_));
+  }
+  else {
+    const float x = float(v) / float(f);
+    stream_.push(token_t(x, line_no_));
+  }
 }
 
 void lexer_t::reset() {

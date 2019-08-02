@@ -14,6 +14,10 @@ void value_stack_t::push_int(const int32_t v) {
   push(gc_.new_int(v));
 }
 
+void value_stack_t::push_float(const float v) {
+  push(gc_.new_float(v));
+}
+
 void value_stack_t::push_string(const std::string &v) {
   const size_t len = v.size();
   value_t *s = gc_.new_string(len);
