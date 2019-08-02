@@ -29,6 +29,27 @@
 
 using namespace ccml;
 
+namespace {
+
+bool to_string(char *buf, size_t size, const value_t *val) {
+  switch (val->type()) {
+  case val_type_float:
+    snprintf(buf, size, "%f", val->f);
+    return true;
+  case val_type_int:
+    snprintf(buf, size, "%i", val->integer());
+    return true;
+  case val_type_string:
+    snprintf(buf, size, "%s", val->string());
+    return true;
+  default:
+    assert(false);
+    return false;
+  }
+}
+
+} // namespace {}
+
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 namespace {
 
@@ -75,38 +96,33 @@ void thread_t::do_INS_ADD_() {
     stack_.push(gc_->new_int(l->v + r->v));
     return;
   }
-  if (l->is_string() && r->is_string()) {
-    const int32_t len = l->strlen() + r->strlen();
-    value_t *s = gc_->new_string(len);
-    char *dst = s->string();
-    memcpy(dst, l->string(), l->strlen());
-    memcpy(dst + l->strlen(), r->string(), r->strlen());
-    dst[len] = '\0';
-    stack_.push(s);
+  if ((l->is_float() || l->is_int()) &&
+      (r->is_float() || r->is_int())) {
+    stack_.push(gc_->new_float(l->as_float() + r->as_float()));
     return;
   }
-  if (l->is_int() && r->is_string()) {
-    char lbuf[16] = {0};
-    snprintf(lbuf, sizeof(lbuf), "%d", l->integer());
-    size_t lsize = strlen(lbuf);
-    const int32_t len = lsize + r->strlen();
-    value_t *s = gc_->new_string(len);
-    char *dst = s->string();
-    memcpy(dst, lbuf, lsize);
-    memcpy(dst + lsize, r->string(), r->strlen());
-    dst[len] = '\0';
-    stack_.push(s);
-    return;
-  }
-  if (l->is_string() && r->is_int()) {
+  if (l->is_string()) {
     char rbuf[16] = {0};
-    snprintf(rbuf, sizeof(rbuf), "%d", r->integer());
+    to_string(rbuf, sizeof(rbuf), r);
     size_t rsize = strlen(rbuf);
     const int32_t len = l->strlen() + rsize;
     value_t *s = gc_->new_string(len);
     char *dst = s->string();
     memcpy(dst, l->string(), l->strlen());
     memcpy(dst + l->strlen(), rbuf, rsize);
+    dst[len] = '\0';
+    stack_.push(s);
+    return;
+  }
+  if (r->is_string()) {
+    char lbuf[16] = {0};
+    to_string(lbuf, sizeof(lbuf), l);
+    size_t lsize = strlen(lbuf);
+    const int32_t len = lsize + r->strlen();
+    value_t *s = gc_->new_string(len);
+    char *dst = s->string();
+    memcpy(dst, lbuf, lsize);
+    memcpy(dst + lsize, r->string(), r->strlen());
     dst[len] = '\0';
     stack_.push(s);
     return;
@@ -121,6 +137,11 @@ void thread_t::do_INS_SUB_() {
     stack_.push(gc_->new_int(l->v - r->v));
     return;
   }
+  if ((l->is_float() || l->is_int()) &&
+      (r->is_float() || r->is_int())) {
+    stack_.push(gc_->new_float(l->as_float() - r->as_float()));
+    return;
+  }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -129,6 +150,11 @@ void thread_t::do_INS_MUL_() {
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
     stack_.push(gc_->new_int(l->v * r->v));
+    return;
+  }
+  if ((l->is_float() || l->is_int()) &&
+      (r->is_float() || r->is_int())) {
+    stack_.push(gc_->new_float(l->as_float() * r->as_float()));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -144,6 +170,11 @@ void thread_t::do_INS_DIV_() {
       const int32_t o = l->v / r->v;
       stack_.push(gc_->new_int(o));
     }
+    return;
+  }
+  if ((l->is_float() || l->is_int()) &&
+      (r->is_float() || r->is_int())) {
+    stack_.push(gc_->new_float(l->as_float() / r->as_float()));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -212,6 +243,12 @@ void thread_t::do_INS_LT_() {
     stack_.push(gc_->new_int(l->v < r->v ? 1 : 0));
     return;
   }
+  if ((l->is_float() || l->is_int()) &&
+      (r->is_float() || r->is_int())) {
+    stack_.push(gc_->new_int(
+      l->as_float() < r->as_float() ? 1 : 0));
+    return;
+  }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -220,6 +257,12 @@ void thread_t::do_INS_GT_() {
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
     stack_.push(gc_->new_int(l->v > r->v ? 1 : 0));
+    return;
+  }
+  if ((l->is_float() || l->is_int()) &&
+      (r->is_float() || r->is_int())) {
+    stack_.push(gc_->new_int(
+      l->as_float() > r->as_float() ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -232,6 +275,12 @@ void thread_t::do_INS_LEQ_() {
     stack_.push(gc_->new_int(l->v <= r->v ? 1 : 0));
     return;
   }
+  if ((l->is_float() || l->is_int()) &&
+      (r->is_float() || r->is_int())) {
+    stack_.push(gc_->new_int(
+      l->as_float() <= r->as_float() ? 1 : 0));
+    return;
+  }
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -240,6 +289,12 @@ void thread_t::do_INS_GEQ_() {
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
     stack_.push(gc_->new_int(l->v >= r->v ? 1 : 0));
+    return;
+  }
+  if ((l->is_float() || l->is_int()) &&
+      (r->is_float() || r->is_int())) {
+    stack_.push(gc_->new_int(
+      l->as_float() >= r->as_float() ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -265,6 +320,13 @@ void thread_t::do_INS_EQ_() {
   // only none == none
   if (l->is_none() || r->is_none()) {
     stack_.push(gc_->new_int(l->is_none() && r->is_none() ? 1 : 0));
+    return;
+  }
+  if ((l->is_float() || l->is_int()) &&
+      (r->is_float() || r->is_int())) {
+    // XXX: use epsilon here?
+    stack_.push(gc_->new_int(
+      l->as_float() == r->as_float() ? 1 : 0));
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -380,6 +442,13 @@ void thread_t::do_INS_NEW_ARY_() {
 
 void thread_t::do_INS_NEW_NONE_() {
   stack_.push(gc_->new_none());
+}
+
+void thread_t::do_INS_NEW_FLT_() {
+  uint32_t bits = read_operand_();
+  float val = *(const float*)(&bits);
+  value_t *op = gc_->new_float(val);
+  stack_.push(op);
 }
 
 void thread_t::do_INS_GLOBALS_() {
@@ -550,6 +619,7 @@ void thread_t::step_imp_() {
   case INS_NEW_INT:  do_INS_NEW_INT_();  break;
   case INS_NEW_STR:  do_INS_NEW_STR_();  break;
   case INS_NEW_NONE: do_INS_NEW_NONE_(); break;
+  case INS_NEW_FLT:  do_INS_NEW_FLT_();  break;
   case INS_LOCALS:   do_INS_LOCALS_();   break;
   case INS_GLOBALS:  do_INS_GLOBALS_();  break;
   case INS_GETV:     do_INS_GETV_();     break;

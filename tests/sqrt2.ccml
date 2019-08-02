@@ -1,0 +1,17 @@
+#expect 111.1080
+
+function sqrt(n)
+    var x = n
+    var y = 1
+    var e = 0.0001
+    while ((x - y) > e)
+        x = (x + y) * 0.5
+        y = n / x
+    end
+    return x
+end
+
+function main()
+    var b = sqrt(12345)
+    puts("" + b)
+end

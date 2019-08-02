@@ -119,7 +119,7 @@ void value_gc_t::trace(value_t **list, size_t num) {
     case val_type_float: {
       value_t *n = to.alloc<value_t>(0);
       n->type_ = val_type_float;
-      n->v = v->f;
+      n->f = v->f;
       list[i] = n;
       break;
     }

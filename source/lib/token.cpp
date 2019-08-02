@@ -66,6 +66,7 @@ const char *token_t::token_name(token_e e) {
   case TOK_WHILE:    return "while";
   case TOK_VAR:      return "var";
   case TOK_VAL:      return "value";
+  case TOK_FLOAT:    return "float";
   case TOK_IDENT:    return "identifier";
   case TOK_LPAREN:   return "(";
   case TOK_RPAREN:   return ")";

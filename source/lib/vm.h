@@ -190,6 +190,7 @@ protected:
   void do_INS_NEW_ARY_();
   void do_INS_NEW_NONE_();
   void do_INS_NEW_INT_();
+  void do_INS_NEW_FLT_();
   void do_INS_LOCALS_();
   void do_INS_GLOBALS_();
   void do_INS_GETV_();

@@ -78,7 +78,7 @@ struct sema_global_var_t : public ast_visitor_t {
   }
 
   void visit(ast_exp_lit_var_t *n) override {
-    value_.push_back(n->value);
+    value_.push_back(n->val);
   }
 
   void visit(ast_program_t *p) override {

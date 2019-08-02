@@ -1,0 +1,49 @@
+#expect -14 -13 -11 -8 -7 -6 -5 -3 -2 -1 0 1 4 6 7 12
+
+var seed = 145
+
+function rand()
+  seed = seed * 1103515245 + 12345
+  return seed
+end
+
+function main()
+
+  var size = 16
+
+  var data[16]
+  var i = 0
+
+  # fill array with random data
+  while (i < size)
+    data[i] = rand() % 16
+    i += 1
+  end
+
+  # do n sort iterations
+  i = 0
+  while (i < size)
+    var j = 0
+    while (j < (size - 1))
+      # sort ascending
+      if (data[j] > data[j + 1])
+        # swap data element
+        var t = data[j]
+        data[j] = data[j + 1]
+        data[j + 1] = t
+      end
+      j += 1
+    end
+    i += 1
+  end
+
+  # check in the sorted array
+  i = 0
+  var out = ""
+  while (i < size)
+    out += data[i] + " "
+    i += 1
+  end
+
+  puts(out)
+end

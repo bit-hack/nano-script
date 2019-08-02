@@ -101,6 +101,7 @@ struct value_t {
     case val_type_float: return float(f);
     default:             assert(false);
     }
+    return 0.0f;
   }
 
   value_type_t type_;

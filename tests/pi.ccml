@@ -1,0 +1,37 @@
+#expect pi is: 3.1450
+
+# okay so its wrong but I think thats the RNG's fault :P
+
+var seed = 12345
+
+function randf()
+  var c = 1442695040888963407
+  var m = 6364136223846793005
+  seed = seed * m + c
+  return 1.0 * (seed % 10000) / 10000.0
+end
+
+
+function main()
+  
+  var count = 20000
+
+  var z = 0.0
+  
+  var i = count
+  while (i > 0)
+
+    var x = randf()
+    var y = randf()
+
+    if (x*x + y*y < 1)
+      z += 1.0
+    end
+    
+    i -= 1
+  end
+  
+  var pi = (z / count) * 4.0
+  puts("pi is: " + pi)
+
+end

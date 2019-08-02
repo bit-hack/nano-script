@@ -229,6 +229,7 @@ bool lexer_t::lex(const char *s) {
       const char *t = s;
       for ( ;is_numeric(*t); ++t);
       if (*t == '.') {
+        ++t;
         for ( ;is_numeric(*t); ++t);
       }
 

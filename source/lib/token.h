@@ -17,7 +17,7 @@ enum token_e {
   TOK_WHILE,
   TOK_VAR,
   TOK_VAL,
-  TOK_VALF,
+  TOK_FLOAT,
   TOK_IDENT,
   TOK_LPAREN,
   TOK_RPAREN,
@@ -76,12 +76,22 @@ struct token_t {
     , line_no_(line) {}
 
   token_t(const float &v, uint32_t line)
-    : type_(TOK_VALF)
-    , val_(v)
+    : type_(TOK_FLOAT)
+    , valf_(v)
     , line_no_(line) {}
 
   // convert a token_e to a token string
   static const char *token_name(token_e e);
+
+  float get_float() const {
+    assert(type_ == TOK_FLOAT);
+    return valf_;
+  }
+
+  int32_t get_int() const {
+    assert(type_ == TOK_VAL);
+    return val_;
+  }
 
   // stringify this token
   const char *string() const {
@@ -129,8 +139,12 @@ struct token_t {
 
   token_e type_;
   std::string str_;
-  int32_t val_;
   uint32_t line_no_;
+
+  union {
+    int32_t val_;
+    float valf_;
+  };
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

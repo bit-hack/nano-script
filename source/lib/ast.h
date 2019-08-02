@@ -11,6 +11,7 @@ enum ast_type_t {
   ast_program_e,
   ast_exp_ident_e,
 
+  ast_exp_lit_float_e,
   ast_exp_lit_var_e,
   ast_exp_lit_str_e,
   ast_exp_none_e,
@@ -101,23 +102,45 @@ struct ast_exp_lit_str_t: public ast_node_t {
   std::string value;
 };
 
+struct ast_exp_lit_float_t: public ast_node_t {
+  static const ast_type_t TYPE = ast_exp_lit_float_e;
+
+  ast_exp_lit_float_t(const token_t *token)
+    : ast_node_t(TYPE)
+    , token(token)
+    , val(token->valf_)
+  {
+  }
+
+  ast_exp_lit_float_t(const float &value)
+    : ast_node_t(TYPE)
+    , token(nullptr)
+    , val(value) {
+  }
+
+  const token_t *token;
+  float val;
+};
+
 struct ast_exp_lit_var_t: public ast_node_t {
   static const ast_type_t TYPE = ast_exp_lit_var_e;
 
-  ast_exp_lit_var_t(const token_t *token)
+  ast_exp_lit_var_t(const token_t *t)
     : ast_node_t(TYPE)
-    , token(token)
-    , value(token->val_)
-  {}
+    , token(t)
+    , val(t->val_)
+  {
+  }
 
-  ast_exp_lit_var_t(const int32_t value)
+  ast_exp_lit_var_t(const int32_t &value)
     : ast_node_t(TYPE)
     , token(nullptr)
-    , value(value)
-  {}
+    , val(value)
+  {
+  }
 
   const token_t *token;
-  int32_t value;
+  int32_t val;
 };
 
 struct ast_exp_none_t: public ast_node_t {
@@ -436,6 +459,7 @@ struct ast_visitor_t {
   virtual void visit(ast_exp_ident_t* n) {}
   virtual void visit(ast_exp_lit_var_t* n) {}
   virtual void visit(ast_exp_lit_str_t* n) {}
+  virtual void visit(ast_exp_lit_float_t *n) {}
   virtual void visit(ast_exp_none_t* n) {}
   virtual void visit(ast_array_init_t* n) {}
 
@@ -558,9 +582,15 @@ struct ast_printer_t : ast_visitor_t {
     ast_visitor_t::visit(n);
   }
 
+  void visit(ast_exp_lit_float_t *n) override {
+    indent_();
+    fprintf(fd_, "ast_exp_lit_var_t {value: %f}\n", n->val);
+    ast_visitor_t::visit(n);
+  }
+
   void visit(ast_exp_lit_var_t* n) override {
     indent_();
-    fprintf(fd_, "ast_exp_lit_var_t {value: %d}\n", n->value);
+    fprintf(fd_, "ast_exp_lit_var_t {value: %d}\n", n->val);
     ast_visitor_t::visit(n);
   }
 

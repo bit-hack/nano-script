@@ -222,7 +222,7 @@ struct codegen_pass_t: ast_visitor_t {
       if (global->expr) {
         if (const auto *expr = global->expr->cast<ast_exp_lit_var_t>()) {
           g.value_.type_ = val_type_int;
-          g.value_.v = expr->value;
+          g.value_.v = expr->val;
         }
         if (const auto *expr = global->expr->cast<ast_exp_lit_str_t>()) {
           g.value_.type_ = val_type_string;
@@ -241,8 +241,13 @@ struct codegen_pass_t: ast_visitor_t {
     emit(INS_NEW_STR, index, n->token);
   }
 
+  void visit(ast_exp_lit_float_t *n) override {
+    const uint32_t out = *(const uint32_t*)(&n->val);
+    emit(INS_NEW_FLT, out, n->token);
+  }
+
   void visit(ast_exp_lit_var_t* n) override {
-    emit(INS_NEW_INT, n->value, n->token);
+    emit(INS_NEW_INT, n->val, n->token);
   }
 
   void visit(ast_exp_none_t *n) override {
@@ -593,6 +598,7 @@ void codegen_pass_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   case INS_NEW_ARY:
   case INS_NEW_INT:
   case INS_NEW_STR:
+  case INS_NEW_FLT:
   case INS_LOCALS:
   case INS_GLOBALS:
   case INS_GETV:

@@ -1,0 +1,7 @@
+#expect 52.29
+
+function main()
+  var x = 12.3
+  var y = 40
+  puts("" + (x + y))
+end

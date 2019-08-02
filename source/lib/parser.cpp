@@ -98,6 +98,7 @@ void parser_t::parse_lhs_() {
   //    [-] <TOK_IDENT> ( ... )
   //    [-] <TOK_IDENT> [ ... ]
   //    [-] <TOK_VAL>
+  //    [-] <TOK_FLOAT>
   //    [-] <TOK_STRING>
   //    [-] <TOK_NONE>
 
@@ -143,6 +144,13 @@ void parser_t::parse_lhs_() {
     // <TOK_VAL>
     if (const token_t *t = stream_.found(TOK_VAL)) {
       ast_node_t *expr = ast.alloc<ast_exp_lit_var_t>(t);
+      exp_stack_.push_back(expr);
+      break;
+    }
+
+    // <TOK_FLOAT>
+    if (const token_t *t = stream_.found(TOK_FLOAT)) {
+      ast_node_t *expr = ast.alloc<ast_exp_lit_float_t>(t);
       exp_stack_.push_back(expr);
       break;
     }

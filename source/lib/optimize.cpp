@@ -192,7 +192,7 @@ protected:
 
   bool value_(const ast_node_t *n, int32_t &v) const {
     if (const auto *e = n->cast<ast_exp_lit_var_t>()) {
-      v = e->value;
+      v = e->val;
       return true;
     }
     auto itt = val_.find(n);
@@ -322,13 +322,13 @@ struct opt_if_remove_t: public ast_visitor_t {
     ast_visitor_t::visit(s);
     if (auto *c = s->expr->cast<ast_exp_lit_var_t>()) {
 
-      if (c->value != 0) {
+      if (c->val != 0) {
         s->else_block = nullptr;
       }
       else {
         s->then_block = s->else_block;
         s->else_block = nullptr;
-        c->value = 1;
+        c->val = 1;
       }
     }
   }
@@ -336,7 +336,7 @@ struct opt_if_remove_t: public ast_visitor_t {
   void visit(ast_stmt_while_t *s) override {
     ast_visitor_t::visit(s);
     if (auto *c = s->expr->cast<ast_exp_lit_var_t>()) {
-      if (c->value == 0) {
+      if (c->val == 0) {
         s->body = nullptr;
       }
     }
