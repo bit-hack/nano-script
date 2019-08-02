@@ -1,0 +1,16 @@
+#expect friday
+
+var name[7] = "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"
+
+function wday(year, month, day)
+ 	var adjustment = (14 - month) / 12
+	var mm = month + 12 * adjustment - 2
+	var yy = year - adjustment
+	return (day + (13 * mm - 1) / 5 + yy + yy / 4 - yy / 100 + yy / 400) % 7
+end
+
+function main()
+  var index = wday(2019, 8, 2)
+  puts(name[ index ])
+end
+
