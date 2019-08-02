@@ -1,0 +1,52 @@
+#expect success!
+
+# this tests a problem I had where GETG would put a global array on the
+# stack.  during garbage collection it would get moved as a global, but
+# the references on the stack would then be moved as a duplicate. thus
+# some updates would go missing.
+#
+# this was fixed using a forwarding list for moved arrays.  it could be
+# avoided by redesigning arrays in the bytecode.
+
+var width  = 64
+var height = 64
+
+var cell[4096]
+
+function draw()
+  var area = width * height
+  var i = 0
+  var failed = 0
+  while (i < area)
+    var x = i % width
+    var y = i / width
+    var c = cell[i]
+    if (c == none)
+      failed = 1
+    end
+    i += 1
+  end
+  if (failed == 0)
+    puts("success!")
+  else
+    puts("failed!")
+  end
+end
+
+function setup()
+  var y = 0
+  while (y < height)
+    var x = 0
+    while (x < width)
+      cell[x + y * width] = 1
+      x += 1
+    end
+    y += 1
+  end
+end
+
+function main()
+  setup()
+  draw()
+end
+

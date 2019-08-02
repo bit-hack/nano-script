@@ -1,10 +1,10 @@
 #pragma once
 #include <cassert>
 #include <string>
-#include <unordered_set>
 #include <set>
 #include <vector>
 #include <array>
+//#include <unordered_map>
 
 #include "value.h"
 
@@ -17,7 +17,9 @@ namespace ccml {
 struct arena_t {
 
   arena_t()
-    : head_(0) 
+    : head_(0)
+    , start_(data_.data())
+    , end_(data_.data() + data_.size())
   {}
 
   template <typename type_t>
@@ -43,9 +45,16 @@ struct arena_t {
     return data_.size();
   }
 
+  bool owns(const value_t *v) const {
+    return v >= start_ && v < end_;
+  }
+
 protected:
   size_t head_;
   std::array<uint8_t, 1024 * 1024> data_;
+
+  const void *const start_;
+  const void *const end_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -87,6 +96,23 @@ protected:
   void swap() {
     flipflop_ ^= 1;
   }
+
+  value_t *find_fowards(const value_t *v) {
+    for (const auto &p : forward_) {
+      if (v == p.first) {
+        return p.second;
+      }
+    }
+    return nullptr;
+  }
+
+  // since getv puts an array on the stack and then geta/seta to set its member
+  // we have to keep a list of already moved arrays.  this could be avoided if
+  // we used different instructions to avoid using getv, and instead looked it
+  // up when we need.
+  //
+  // its assumed forward_ will always be very small
+  std::vector<std::pair<const value_t *, value_t *>> forward_;
 
   uint32_t flipflop_;
   std::array<arena_t, 2> space_;

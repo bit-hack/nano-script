@@ -60,7 +60,7 @@ value_t *value_gc_t::copy(const value_t &a) {
     return v;
   }
   case val_type_none:
-    return new_none();
+    return nullptr;
   default:
     assert(false);
     return nullptr;
@@ -74,15 +74,27 @@ void value_gc_t::collect() {
 
   swap();
   space_to().clear();
+
+  forward_.clear();
 }
 
 void value_gc_t::trace(value_t **list, size_t num) {
 
+  // area data is currently in
   const arena_t &from = space_from();
-  arena_t &to = space_to();
+  // area data should be moved to
+        arena_t &to   = space_to();
 
   for (size_t i = 0; i < num; ++i) {
     value_t *v = list[i];
+
+    // already collected so skip to avoid cyclic loops
+    if (to.owns(v)) {
+      continue;
+    }
+    // if this is not the case something is super messed up
+    assert(v ? from.owns(v) : true);
+
     switch (v->type()) {
     case val_type_none: {
       break;
@@ -105,6 +117,14 @@ void value_gc_t::trace(value_t **list, size_t num) {
       break;
     }
     case val_type_array: {
+
+      // if we have global variables, they might have been relocated at which
+      // point our pointers will point to the wrong half space
+      if (value_t *x = find_fowards(v)) {
+        list[i] = x;
+        continue;
+      }
+
       // collect child elements
       const size_t size = v->array_size();
       trace(v->array(), size);
@@ -112,6 +132,9 @@ void value_gc_t::trace(value_t **list, size_t num) {
       n->type_ = val_type_array;
       n->v = size;
       memcpy(n->array(), v->array(), size * sizeof(value_t *));
+
+      // keep track of forwarded global arrays that may have to move
+      forward_.emplace_back(v, n);
       list[i] = n;
       break;
     }
