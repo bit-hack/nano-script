@@ -1,0 +1,70 @@
+#expect -14 -13 -11 -8 -7 -6 -5 -3 -2 -1 0 1 4 6 7 12
+
+# quick sort!
+
+var seed = 145
+
+function rand()
+  seed = seed * 1103515245 + 12345
+  return seed
+end
+
+var size = 16
+var arr[16]
+
+function swap(a, b)
+    var t = arr[a]
+    arr[a] = arr[b]
+    arr[b] = t
+end
+
+function partition (low, high)  
+    var pivot = arr[high] # pivot  
+    var i = (low - 1) # Index of smaller element
+  
+    var j
+    for (j = low to high)
+      # If current element is smaller than or  
+      # equal to pivot  
+      if (arr[j] <= pivot)  
+            i += 1 # increment index of smaller element  
+            swap(i, j)
+      end  
+    end
+    
+    # swap
+    swap(i + 1, high)
+    
+    return (i + 1) 
+end
+
+function quickSort(low, high)
+  if (low < high)
+    # pi is partitioning index, arr[pi] is now at right place */
+    var pi = partition(low, high) 
+    quickSort(low, pi - 1)   # Before pi
+    quickSort(pi + 1, high)  # After pi
+  end
+end
+
+function main()
+
+  var i
+  var j
+
+  # fill array with random data
+  for (i = 0 to size)
+    arr[i] = rand() % size
+  end
+
+  # sort it
+  quickSort(0, size - 1)
+  
+  # check in the sorted array
+  var out = ""
+  for (i = 0 to size)
+    out += arr[i] + " "
+  end
+
+  puts(out)
+end

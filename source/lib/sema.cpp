@@ -21,9 +21,10 @@ struct sema_global_var_t : public ast_visitor_t {
   void visit(ast_array_init_t *n) override {
     for (auto *t : n->item) {
       switch (t->type_) {
-      case TOK_VAL:
+      case TOK_INT:
       case TOK_NONE:
       case TOK_STRING:
+      case TOK_FLOAT:
         break;
       default:
         errs_.bad_array_init_value(*t);
@@ -260,6 +261,18 @@ struct sema_decl_annotate_t : public ast_visitor_t {
   sema_decl_annotate_t(ccml_t &ccml)
     : errs_(ccml.errors())
     , ccml_(ccml) {
+  }
+
+  void visit(ast_stmt_for_t *p) override {
+    ast_node_t *n = find_decl(p->name->str_);
+    if (n) {
+      if (ast_decl_var_t *d = n->cast<ast_decl_var_t>()) {
+        p->decl = d;
+        ast_visitor_t::visit(p);
+        return;
+      }
+    }
+    errs_.unknown_variable(*p->name);
   }
 
   void visit(ast_program_t *p) override {
@@ -686,11 +699,14 @@ struct sema_init_t : public ast_visitor_t {
         a->decl = v;
         a->index = ast_.alloc<ast_exp_lit_var_t>(i);
         switch (t->type_) {
-        case TOK_VAL:
-          a->expr = ast_.alloc<ast_exp_lit_var_t>(t->val_);
+        case TOK_INT:
+          a->expr = ast_.alloc<ast_exp_lit_var_t>(t->get_int());
+          break;
+        case TOK_FLOAT:
+          a->expr = ast_.alloc<ast_exp_lit_float_t>(t->get_float());
           break;
         case TOK_STRING:
-          a->expr = ast_.alloc<ast_exp_lit_str_t>(t->str_);
+          a->expr = ast_.alloc<ast_exp_lit_str_t>(t->string());
           break;
         case TOK_NONE:
           a->expr = ast_.alloc<ast_exp_none_t>();

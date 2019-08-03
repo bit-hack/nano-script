@@ -24,6 +24,7 @@ enum ast_type_t {
   ast_exp_unary_op_e,
   ast_stmt_if_e,
   ast_stmt_while_e,
+  ast_stmt_for_e,
   ast_stmt_return_e,
   ast_stmt_assign_var_e,
   ast_stmt_assign_array_e,
@@ -284,6 +285,36 @@ struct ast_stmt_while_t : public ast_node_t {
   ast_block_t *body;
 };
 
+struct ast_stmt_for_t : public ast_node_t {
+  static const ast_type_t TYPE = ast_stmt_for_e;
+
+  ast_stmt_for_t(const token_t *token)
+    : ast_node_t(TYPE)
+    , token(token)
+    , name(nullptr)
+    , decl(nullptr)
+    , start(nullptr)
+    , end(nullptr)
+    , body(nullptr)
+  {}
+
+  // the 'for' token
+  const token_t *token;
+
+  // loop variable name
+  const token_t *name;
+
+  // the loop variable
+  ast_decl_var_t *decl;
+
+  // start and end expressions
+  ast_node_t *start;
+  ast_node_t *end;
+
+  // loop body
+  ast_block_t *body;
+};
+
 struct ast_stmt_return_t : public ast_node_t {
   static const ast_type_t TYPE = ast_stmt_return_e;
 
@@ -512,6 +543,14 @@ struct ast_visitor_t {
     stack.pop_back();
   }
 
+  virtual void visit(ast_stmt_for_t* n) {
+    stack.push_back(n);
+    dispatch(n->start);
+    dispatch(n->end);
+    dispatch(n->body);
+    stack.pop_back();
+  }
+
   virtual void visit(ast_stmt_return_t* n) {
     stack.push_back(n);
     dispatch(n->expr);
@@ -652,6 +691,12 @@ struct ast_printer_t : ast_visitor_t {
   void visit(ast_stmt_while_t* n) override {
     indent_();
     fprintf(fd_, "ast_stmt_while_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  void visit(ast_stmt_for_t* n) override {
+    indent_();
+    fprintf(fd_, "ast_stmt_for_t {name=%s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 

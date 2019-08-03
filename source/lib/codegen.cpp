@@ -102,71 +102,70 @@ struct stack_pass_t: ast_visitor_t {
     }
   }
 
-  void visit(ast_program_t *p) override {
-    scope_.clear();
-    scope_.emplace_back();
-    for (ast_node_t *n : p->children) {
-      // collect var decls
-      if (ast_decl_var_t *v = n->cast<ast_decl_var_t>()) {
-        scope_.back().insert(v);
-        // insert into global list
-        offsets_[v] = globals_.size();
-        globals_.insert(v);
-      }
+void visit(ast_program_t *p) override {
+  scope_.clear();
+  scope_.emplace_back();
+  for (ast_node_t *n : p->children) {
+    // collect var decls
+    if (ast_decl_var_t *v = n->cast<ast_decl_var_t>()) {
+      scope_.back().insert(v);
+      // insert into global list
+      offsets_[v] = globals_.size();
+      globals_.insert(v);
     }
   }
+}
 
-  void reset() {
-    size_ = 0;
-    max_size_ = 0;
-    // remove all but globals
-    for (auto itt = offsets_.begin(); itt != offsets_.end();) {
-      if (itt->first->is_global()) {
-        ++itt;
-      }
-      else {
-        itt = offsets_.erase(itt);
-      }
+void reset() {
+  size_ = 0;
+  max_size_ = 0;
+  // remove all but globals
+  for (auto itt = offsets_.begin(); itt != offsets_.end();) {
+    if (itt->first->is_global()) {
+      ++itt;
+    } else {
+      itt = offsets_.erase(itt);
     }
   }
+}
 
-  // find the stack offset for a given decl
-  int32_t find_offset(ast_decl_var_t *decl) {
-    auto itt = offsets_.find(decl);
-    if (itt == offsets_.end()) {
-      assert(!"unknown decl");
-    }
-    return itt->second;
+// find the stack offset for a given decl
+int32_t find_offset(ast_decl_var_t *decl) {
+  auto itt = offsets_.find(decl);
+  if (itt == offsets_.end()) {
+    assert(!"unknown decl");
   }
+  return itt->second;
+}
 
-  // given a use, find its matching decl
-  ast_decl_var_t *find_decl(ast_node_t *use) const {
-    if (auto *n = use->cast<ast_exp_array_t>()) {
-      return n->decl;
-    }
-    if (auto *n = use->cast<ast_exp_ident_t>()) {
-      return n->decl;
-    }
-    if (auto *n = use->cast<ast_stmt_assign_var_t>()) {
-      return n->decl;
-    }
-    if (auto *n = use->cast<ast_stmt_assign_array_t>()) {
-      return n->decl;
-    }
-    return nullptr;
+// given a use, find its matching decl
+ast_decl_var_t *find_decl(ast_node_t *use) const {
+  if (auto *n = use->cast<ast_exp_array_t>()) {
+    return n->decl;
   }
+  if (auto *n = use->cast<ast_exp_ident_t>()) {
+    return n->decl;
+  }
+  if (auto *n = use->cast<ast_stmt_assign_var_t>()) {
+    return n->decl;
+  }
+  if (auto *n = use->cast<ast_stmt_assign_array_t>()) {
+    return n->decl;
+  }
+  return nullptr;
+}
 
-  int32_t get_locals_operand() const {
-    return max_size_;
-  }
+int32_t get_locals_operand() const {
+  return max_size_;
+}
 
-  int32_t get_ret_operand() const {
-    return max_size_ + num_args_();
-  }
+int32_t get_ret_operand() const {
+  return max_size_ + num_args_();
+}
 
-  const std::set<ast_decl_var_t*> &globals() const {
-    return globals_;
-  }
+const std::set<ast_decl_var_t*> &globals() const {
+  return globals_;
+}
 
 protected:
   int32_t num_args_() const {
@@ -198,6 +197,18 @@ struct codegen_pass_t: ast_visitor_t {
     : ccml_(c)
     , stream_(stream)
     , stack_pass_(c) {}
+
+  void set_decl_(ast_decl_var_t *decl, const token_t *t = nullptr) {
+    assert(decl);
+    const int32_t offset = stack_pass_.find_offset(decl);
+    emit(decl->is_global() ? INS_SETG : INS_SETV, offset, t);
+  }
+
+  void get_decl_(ast_decl_var_t *decl, const token_t *t = nullptr) {
+    assert(decl);
+    const int32_t offset = stack_pass_.find_offset(decl);
+    emit(decl->is_global() ? INS_GETG : INS_GETV, offset, t);
+  }
 
   void visit(ast_program_t* n) override {
     stack_pass_.visit(n);
@@ -258,6 +269,8 @@ struct codegen_pass_t: ast_visitor_t {
     ast_decl_var_t *decl = stack_pass_.find_decl(n);
     assert(decl);
     assert(!decl->is_array());
+
+    //XXX: replace with get_decl_(decl);
     const int32_t offset = stack_pass_.find_offset(decl);
     if (decl->is_local() || decl->is_arg()) {
       emit(INS_GETV, offset, n->name);
@@ -391,6 +404,56 @@ struct codegen_pass_t: ast_visitor_t {
     const int32_t L1 = pos();
     // while loop condition
     dispatch(n->expr);
+    // true jump to L0 --->
+    emit(INS_TJMP, 0, n->token);
+    int32_t *to_L0 = get_fixup();
+
+    // apply fixups
+    *to_L0 = L0;
+    *to_L1 = L1;
+  }
+
+  void visit(ast_stmt_for_t* n) override {
+
+    // format:
+    // 
+    // <name> = <start>
+    // jmp ----------------.
+    // L0 <----------------|----.
+    // <body>              |    |
+    // L1 <----------------'    |
+    // <name> += 1              |
+    // if (<name> < <end>) jmp -'
+    //
+
+    assert(n->decl);
+
+    dispatch(n->start);
+    set_decl_(n->decl);
+
+    // initial jump to L1 --->
+    emit(INS_JMP, 0, n->token);
+    int32_t *to_L1 = get_fixup();
+
+    // L0 <---
+    const int32_t L0 = pos();
+    // emit the for loop body
+    dispatch(n->body);
+
+    // L1 <---
+
+    // increment n->decl
+    get_decl_(n->decl, n->token);
+    emit(INS_NEW_INT, 1, n->token);
+    emit(INS_ADD, n->token);
+    set_decl_(n->decl, n->token);
+
+    // check end condition
+    const int32_t L1 = pos();
+    get_decl_(n->decl, n->token);
+    dispatch(n->end);
+    emit(INS_LT, n->token);
+
     // true jump to L0 --->
     emit(INS_TJMP, 0, n->token);
     int32_t *to_L0 = get_fixup();

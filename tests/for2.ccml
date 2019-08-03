@@ -1,0 +1,19 @@
+#expect 2 3 4 5 6
+
+function a(x)
+    return x
+end
+
+function b(x)
+    return x
+end
+
+function main()
+  var i
+  var out = ""
+  for (i = a(2) to b(7))
+    out += i + " "
+  end
+  puts(out)
+  return out
+end

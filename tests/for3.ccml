@@ -1,0 +1,13 @@
+#expect 4 5 6 7 8 9 10
+
+function main()
+  var i
+  var x = 3
+  var y = 5
+  var out = ""
+  for (i = x + 1 to 1 + (5 + y))
+    out += i + " "
+  end
+  puts(out)
+  return out
+end

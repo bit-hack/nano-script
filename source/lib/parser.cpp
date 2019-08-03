@@ -17,7 +17,7 @@ bool parser_t::parse(error_t &error) {
   ast_program_t *program = &ccml_.ast().program;
 
   // format:
-  //    var <TOK_IDENT> [ = <TOK_VAL> ]
+  //    var <TOK_IDENT> [ = <TOK_INT> ]
   //    function <TOK_IDENT> ( [ <TOK_IDENT> [ , <TOK_IDENT> ]+ ] )
 
   try {
@@ -97,7 +97,7 @@ void parser_t::parse_lhs_() {
   //    [-] <TOK_IDENT>
   //    [-] <TOK_IDENT> ( ... )
   //    [-] <TOK_IDENT> [ ... ]
-  //    [-] <TOK_VAL>
+  //    [-] <TOK_INT>
   //    [-] <TOK_FLOAT>
   //    [-] <TOK_STRING>
   //    [-] <TOK_NONE>
@@ -141,8 +141,8 @@ void parser_t::parse_lhs_() {
       }
     }
 
-    // <TOK_VAL>
-    if (const token_t *t = stream_.found(TOK_VAL)) {
+    // <TOK_INT>
+    if (const token_t *t = stream_.found(TOK_INT)) {
       ast_node_t *expr = ast.alloc<ast_exp_lit_var_t>(t);
       exp_stack_.push_back(expr);
       break;
@@ -230,9 +230,9 @@ ast_node_t* parser_t::parse_decl_array_(const token_t &name) {
 
   // format:
   //                        V
-  //    var <TOK_IDENT> '['   <TOK_VAR> ']'
+  //    var <TOK_IDENT> '['   <TOK_INT> ']'
 
-  const token_t *size = stream_.pop(TOK_VAL);
+  const token_t *size = stream_.pop(TOK_INT);
   auto *decl = ast.alloc<ast_decl_var_t>(&name, ast_decl_var_t::e_local);
   decl->size = size;
   stream_.pop(TOK_RBRACKET);
@@ -249,7 +249,8 @@ ast_node_t* parser_t::parse_decl_array_(const token_t &name) {
       // pop a value
       const token_t *num = stream_.pop();
       switch (num->type_) {
-      case TOK_VAL:
+      case TOK_INT:
+      case TOK_FLOAT:
       case TOK_STRING:
       case TOK_NONE:
         init->item.push_back(num);
@@ -274,7 +275,7 @@ ast_node_t* parser_t::parse_decl_var_(const token_t &t) {
 
   const token_t *name = stream_.pop(TOK_IDENT);
 
-  // check for [ <TOK_VAL> ] array declaration
+  // check for [ <TOK_INT> ] array declaration
   if (const token_t *bracket = stream_.found(TOK_LBRACKET)) {
     // pass control to a specialized array decl parser
     return parse_decl_array_(*name);
@@ -401,6 +402,39 @@ ast_node_t* parser_t::parse_while_(const token_t &t) {
   return stmt;
 }
 
+ast_node_t* parser_t::parse_for_(const token_t &t) {
+  token_stream_t &stream_ = ccml_.lexer().stream_;
+  auto &ast = ccml_.ast();
+
+  // format:
+  //        V
+  //    for   ( <TOK_IDENT> = <expr> to <expr> ) '\n'
+  //      <statments>
+  //    end '\n'
+
+  auto *stmt = ast.alloc<ast_stmt_for_t>(&t);
+
+  // FOR initalizer
+  stream_.pop(TOK_LPAREN);
+  stmt->name = stream_.pop(TOK_IDENT);
+  stream_.pop(TOK_ASSIGN);
+  stmt->start = parse_expr_();
+  stream_.pop(TOK_TO);
+  stmt->end = parse_expr_();
+  stream_.pop(TOK_RPAREN);
+  stream_.pop(TOK_EOL);
+
+  // FOR body
+  stmt->body = ast.alloc<ast_block_t>();
+  while (!stream_.found(TOK_END)) {
+    ast_node_t *child = parse_stmt_();
+    stmt->body->add(child);
+  }
+
+  // note: no need to pop newline as parse_stmt() handles that
+  return stmt;
+}
+
 ast_node_t* parser_t::parse_return_(const token_t &t) {
   codegen_t &asm_ = ccml_.codegen();
   auto &ast = ccml_.ast();
@@ -453,6 +487,7 @@ ast_node_t* parser_t::parse_stmt_() {
   //    <TOK_IDENT> <op> = <expr> '\n'
   //    if ( <expr> ) '\n'
   //    while ( <expr> ) '\n'
+  //    for ( <TOK_IDENT> = <expr> to <expr> )
   //    return <expr> '\n'
 
   // consume any blank lines
@@ -499,6 +534,8 @@ ast_node_t* parser_t::parse_stmt_() {
     stmt = parse_if_(*t);
   } else if (t = stream_.found(TOK_WHILE)) {
     stmt = parse_while_(*t);
+  } else if (t = stream_.found(TOK_FOR)) {
+    stmt = parse_for_(*t);
   } else if (t = stream_.found(TOK_RETURN)) {
     stmt = parse_return_(*t);
   } else {
@@ -601,8 +638,8 @@ ast_node_t* parser_t::parse_global_(const token_t &var) {
 
   // format:
   //        V
-  //    var   <TOK_IDENT> = <TOK_VAL>
-  //    var   <TOK_IDENT> [ <TOK_VAL> ]
+  //    var   <TOK_IDENT> = <TOK_INT>
+  //    var   <TOK_IDENT> [ <TOK_INT> ]
 
   ast_node_t *decl = parse_decl_var_(var);
   if (auto *d = decl->cast<ast_decl_var_t>()) {

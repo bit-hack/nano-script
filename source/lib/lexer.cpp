@@ -115,6 +115,10 @@ bool lexer_t::lex(const char *s) {
       }
       break;
     case 'f':
+      if (munch(s, "for")) {
+        push_(TOK_FOR);
+        continue;
+      }
       if (munch(s, "function")) {
         push_(TOK_FUNC);
         continue;
@@ -145,6 +149,12 @@ bool lexer_t::lex(const char *s) {
     case 'r':
       if (munch(s, "return")) {
         push_(TOK_RETURN);
+        continue;
+      }
+      break;
+    case 't':
+      if (munch(s, "to")) {
+        push_(TOK_TO);
         continue;
       }
       break;

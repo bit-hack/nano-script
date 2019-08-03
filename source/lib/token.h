@@ -16,8 +16,10 @@ enum token_e {
   TOK_ELSE,
   TOK_WHILE,
   TOK_VAR,
-  TOK_VAL,
+  TOK_INT,
   TOK_FLOAT,
+  TOK_FOR,
+  TOK_TO,
   TOK_IDENT,
   TOK_LPAREN,
   TOK_RPAREN,
@@ -71,7 +73,7 @@ struct token_t {
     , line_no_(line) {}
 
   token_t(const int32_t &v, uint32_t line)
-    : type_(TOK_VAL)
+    : type_(TOK_INT)
     , val_(v)
     , line_no_(line) {}
 
@@ -89,7 +91,7 @@ struct token_t {
   }
 
   int32_t get_int() const {
-    assert(type_ == TOK_VAL);
+    assert(type_ == TOK_INT);
     return val_;
   }
 

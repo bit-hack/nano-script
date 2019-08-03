@@ -24,6 +24,15 @@ struct op_decl_elim_t: public ast_visitor_t {
   bool removing_;
   ast_decl_var_t *decl_;
 
+  void visit(ast_stmt_for_t *n) override {
+    assert(n->decl);
+    if (!removing_) {
+      // we cant delete a loop itterator
+      uses_.insert(n->decl);
+    }
+    ast_visitor_t::visit(n);
+  }
+
   void visit(ast_block_t *n) override {
     if (removing_) {
       for (auto itt = n->nodes.begin(); itt != n->nodes.end();) {

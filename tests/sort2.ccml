@@ -1,0 +1,44 @@
+#expect -14 -13 -11 -8 -7 -6 -5 -3 -2 -1 0 1 4 6 7 12
+
+# same as sort.ccml just this one uses for loops
+
+var seed = 145
+
+function rand()
+  seed = seed * 1103515245 + 12345
+  return seed
+end
+
+function main()
+
+  var size = 16
+  var data[16]
+  var i
+  var j
+
+  # fill array with random data
+  for (i = 0 to size)
+    data[i] = rand() % size
+  end
+
+  # do n sort iterations
+  for (i = 0 to size)
+    for (j = 0 to size - 1)
+      # sort ascending
+      if (data[j] > data[j + 1])
+        # swap data element
+        var t = data[j]
+        data[j] = data[j + 1]
+        data[j + 1] = t
+      end
+    end
+  end
+
+  # check in the sorted array
+  var out = ""
+  for (i = 0 to size)
+    out += data[i] + " "
+  end
+
+  puts(out)
+end

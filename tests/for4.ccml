@@ -1,0 +1,13 @@
+#expect 16
+
+function main()
+  var i
+  var j
+  var sum = 0
+  for (j = 0 to 4)
+    for (i = 0 to 4)
+      sum += 1
+    end
+  end
+  puts("" + sum)
+end
