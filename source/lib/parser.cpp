@@ -493,53 +493,58 @@ ast_node_t* parser_t::parse_stmt_() {
   // consume any blank lines
   while (stream_.found(TOK_EOL));
 
-  const token_t *t = nullptr;
   ast_node_t *stmt = nullptr;
+  const token_t *t = stream_.pop();
 
-  if (t = stream_.found(TOK_VAR)) {
+  switch (t->type_) {
+  case TOK_VAR:
     // var ...
     stmt = parse_decl_var_(*t);
-  }
-  else if (const token_t *var = stream_.found(TOK_IDENT)) {
-
+    break;
+  case TOK_IDENT:
     switch (stream_.peek()->type_) {
     case TOK_ADD:
     case TOK_SUB:
     case TOK_MUL:
     case TOK_DIV:
-      stmt = parse_compound_(*var);
+      stmt = parse_compound_(*t);
       break;
     case TOK_ASSIGN:
       // x = ...
       stream_.pop();
-      stmt = parse_assign_(*var);
+      stmt = parse_assign_(*t);
       break;
-    case TOK_LPAREN: {
+    case TOK_LPAREN:
+    {
       // x(
       stream_.pop();
-      ast_node_t *expr = parse_call_(*var);
+      ast_node_t *expr = parse_call_(*t);
       stmt = ast.alloc<ast_stmt_call_t>(expr);
       break;
     }
     case TOK_LBRACKET:
       // x[
       stream_.pop();
-      stmt = parse_array_set_(*var);
+      stmt = parse_array_set_(*t);
       break;
     default:
-      ccml_.errors().assign_or_call_expected_after(*var);
+      ccml_.errors().assign_or_call_expected_after(*t);
     }
-
-  } else if (t = stream_.found(TOK_IF)) {
+    break;
+  case TOK_IF:
     stmt = parse_if_(*t);
-  } else if (t = stream_.found(TOK_WHILE)) {
+    break;
+  case TOK_WHILE:
     stmt = parse_while_(*t);
-  } else if (t = stream_.found(TOK_FOR)) {
+    break;
+  case TOK_FOR:
     stmt = parse_for_(*t);
-  } else if (t = stream_.found(TOK_RETURN)) {
+    break;
+  case TOK_RETURN:
     stmt = parse_return_(*t);
-  } else {
-    ccml_.errors().statement_expected();
+    break;
+  default:
+    ccml_.errors().statement_expected(*t);
   }
 
   // all statements should be on their own line so must have one or more EOLs

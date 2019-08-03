@@ -73,6 +73,7 @@ const char *token_t::token_name(token_e e) {
   case TOK_LPAREN:   return "(";
   case TOK_RPAREN:   return ")";
   case TOK_COMMA:    return ",";
+  case TOK_CONST:    return "const";
   case TOK_EOL:      return "new line";
   case TOK_ADD:      return "+";
   case TOK_SUB:      return "-";

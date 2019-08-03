@@ -25,6 +25,7 @@ def get_expected(path):
 
 
 def do_run(base, path):
+    print '{0}'.format(path)
     tried.add(base)
     try:
         proc = subprocess.Popen(
@@ -52,6 +53,7 @@ def do_run(base, path):
 
 
 def main():
+
     # compile all files in here
     for f in os.listdir('.'):
         root, ext = os.path.splitext(f)

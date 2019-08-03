@@ -104,6 +104,7 @@ bool lexer_t::lex(const char *s) {
         push_(TOK_CONST);
         continue;
       }
+      break;
     case 'e':
       if (munch(s, "end")) {
         push_(TOK_END);

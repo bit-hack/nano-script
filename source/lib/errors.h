@@ -47,23 +47,23 @@ struct error_manager_t {
   }
 
   virtual void unknown_function(const token_t &name) {
-    on_error_(line_number_(), "unknown function '%s'", name.str_.c_str());
+    on_error_(line_number_(), "unknown function '%s'", name.string());
   }
 
   virtual void unknown_identifier(const token_t &t) {
-    on_error_(t.line_no_, "unknown identifier '%s'", t.str_.c_str());
+    on_error_(t.line_no_, "unknown identifier '%s'", t.string());
   }
 
   virtual void expected_func_call(const token_t &t) {
-    on_error_(t.line_no_, "expected function call with '%s'", t.str_.c_str());
+    on_error_(t.line_no_, "expected function call with '%s'", t.string());
   }
 
   virtual void unknown_variable(const token_t &t) {
-    on_error_(t.line_no_, "unknown variable '%s'", t.str_.c_str());
+    on_error_(t.line_no_, "unknown variable '%s'", t.string());
   }
 
   virtual void unknown_array(const token_t &t) {
-    on_error_(t.line_no_, "unknown array '%s'", t.str_.c_str());
+    on_error_(t.line_no_, "unknown array '%s'", t.string());
   }
 
   virtual void expecting_lit_or_ident(const token_t &t) {
@@ -74,7 +74,7 @@ struct error_manager_t {
 
   virtual void cant_assign_unknown_var(const token_t &t) {
     on_error_(t.line_no_, "cant assign to unknown variable '%s'",
-              t.str_.c_str());
+              t.string());
   }
 
   virtual void equals_expected_after_operator(const token_t &t) {
@@ -83,54 +83,54 @@ struct error_manager_t {
 
   virtual void assign_or_call_expected_after(const token_t &t) {
     on_error_(line_number_(), "assignment or call expected after '%s'",
-              t.str_.c_str());
+              t.string());
   }
 
-  virtual void statement_expected() {
-    on_error_(line_number_(), "statement expected");
+  virtual void statement_expected(const token_t &t) {
+    on_error_(line_number_(), "statement expected, but got '%s'", t.string());
   }
 
   virtual void function_already_exists(const token_t &t) {
-    on_error_(t.line_no_, "function '%s' already exists", t.str_.c_str());
+    on_error_(t.line_no_, "function '%s' already exists", t.string());
   }
 
   virtual void var_already_exists(const token_t &t) {
-    on_error_(t.line_no_, "var '%s' already exists in this scope", t.str_.c_str());
+    on_error_(t.line_no_, "var '%s' already exists in this scope", t.string());
   }
 
   virtual void global_already_exists(const token_t &t) {
-    on_error_(t.line_no_, "global with name '%s' already exists", t.str_.c_str());
+    on_error_(t.line_no_, "global with name '%s' already exists", t.string());
   }
 
   virtual void use_of_unknown_array(const token_t &t) {
-    on_error_(t.line_no_, "use of unknown array '%s'", t.str_.c_str());
+    on_error_(t.line_no_, "use of unknown array '%s'", t.string());
   }
 
   virtual void assign_to_unknown_array(const token_t &t) {
-    on_error_(t.line_no_, "assignment to unknown array '%s'", t.str_.c_str());
+    on_error_(t.line_no_, "assignment to unknown array '%s'", t.string());
   }
 
   virtual void array_size_must_be_greater_than(const token_t &t) {
-    on_error_(t.line_no_, "size of array '%s' must be >= 2", t.str_.c_str());
+    on_error_(t.line_no_, "size of array '%s' must be >= 2", t.string());
   }
 
   virtual void variable_is_not_array(const token_t &t) {
-    on_error_(t.line_no_, "variable '%s' was not declared as an array", t.str_.c_str());
+    on_error_(t.line_no_, "variable '%s' was not declared as an array", t.string());
   }
 
   virtual void ident_is_array_not_var(const token_t &t) {
-    on_error_(t.line_no_, "identifier '%s' an array type not variable", t.str_.c_str());
+    on_error_(t.line_no_, "identifier '%s' an array type not variable", t.string());
   }
 
   virtual void wrong_number_of_args(const token_t &t, int32_t takes,
                                     int32_t given) {
     on_error_(t.line_no_, "function '%s' takes %d arguments, %d given",
-              t.str_.c_str(), takes, given);
+              t.string(), takes, given);
   }
 
   virtual void assign_to_array_missing_bracket(const token_t &t) {
     on_error_(t.line_no_, "assignment to array '%s' missing brackets, try '%s[...] = ...'",
-              t.str_.c_str(), t.str_.c_str());
+              t.string(), t.string());
   }
 
   virtual void constant_divie_by_zero(const token_t &t) {
