@@ -81,6 +81,9 @@ protected:
   }
 
   int32_t eval_(const token_t &tok) {
+    if (valid_ == false) {
+      return 0;
+    }
     assert(value_.size() >= 2);
     const int32_t b = value_.back();
     value_.pop_back();
