@@ -6,55 +6,12 @@
 
 namespace ccml {
 
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-//
-// check global var expressions
-//
-struct sema_global_var_t : public ast_visitor_t {
+struct eval_t: public ast_visitor_t {
 
-  sema_global_var_t(ccml_t &ccml)
-    : errs_(ccml.errors())
-    , decl_(nullptr)
-    , ast_(ccml.ast()) {
-  }
-
-  void visit(ast_array_init_t *n) override {
-    for (auto *t : n->item) {
-      switch (t->type_) {
-      case TOK_INT:
-      case TOK_NONE:
-      case TOK_STRING:
-      case TOK_FLOAT:
-        break;
-      default:
-        errs_.bad_array_init_value(*t);
-      }
-    }
-  }
-
-  void visit(ast_decl_var_t *n) override {
-    assert(n->expr);
-    switch (n->expr->type) {
-    case ast_exp_none_e:
-      n->expr = nullptr;
-      break;
-    case ast_array_init_e:
-      break;
-    case ast_exp_bin_op_e:
-    case ast_exp_unary_op_e: {
-      value_.clear();
-      decl_ = n;
-      ast_visitor_t::visit(n);
-      assert(value_.size() == 1);
-      const int32_t val = value_.back();
-      n->expr = ast_.alloc<ast_exp_lit_var_t>(val);
-    } break;
-    case ast_exp_lit_str_e:
-    case ast_exp_lit_var_e:
-      break;
-    default:
-      errs_.global_var_const_expr(*n->name);
-    }
+  eval_t(error_manager_t &errs)
+    : errs_(errs)
+    , valid_(false)
+  {
   }
 
   void visit(ast_exp_unary_op_t *n) override {
@@ -82,14 +39,25 @@ struct sema_global_var_t : public ast_visitor_t {
     value_.push_back(n->val);
   }
 
-  void visit(ast_program_t *p) override {
-    for (auto *n : p->children) {
-      if (auto *d = n->cast<ast_decl_var_t>()) {
-        if (d->expr) {
-          dispatch(d);
-        }
+  void visit(ast_exp_ident_t *n) override {
+    assert(n->decl);
+    if (n->decl->is_const) {
+      if (auto *v = n->decl->expr->cast<ast_exp_lit_var_t>()) {
+        value_.push_back(v->val);
+        return;
       }
     }
+    valid_ = false;
+  }
+
+  bool eval(ast_node_t *node, int32_t &result) {
+    valid_ = true;
+    dispatch(node);
+    valid_ &= (value_.size() == 1);
+    if (valid_) {
+      result = value_.front();
+    }
+    return valid_;
   }
 
 protected:
@@ -98,6 +66,9 @@ protected:
     case ast_exp_lit_var_e:
       ast_visitor_t::visit(n->cast<ast_exp_lit_var_t>());
       break;
+    case ast_exp_ident_e:
+      ast_visitor_t::visit(n->cast<ast_exp_ident_t>());
+      break;
     case ast_exp_bin_op_e:
       ast_visitor_t::visit(n->cast<ast_exp_bin_op_t>());
       break;
@@ -105,7 +76,7 @@ protected:
       ast_visitor_t::visit(n->cast<ast_exp_unary_op_t>());
       break;
     default:
-      errs_.global_var_const_expr(*decl_->name);
+      valid_ = false;
     }
   }
 
@@ -118,32 +89,176 @@ protected:
     // check for constant division
     if (b == 0) {
       if (tok.type_ == TOK_DIV || tok.type_ == TOK_MOD) {
+#if 1
         errs_.constant_divie_by_zero(tok);
+#else
+        valid_ = false;
+        return -1;
+#endif
       }
     }
     // evaluate operator
     switch (tok.type_) {
-    case TOK_ADD:     return a + b;
-    case TOK_SUB:     return a - b;
-    case TOK_MUL:     return a * b;
+    case TOK_ADD:     return a +  b;
+    case TOK_SUB:     return a -  b;
+    case TOK_MUL:     return a *  b;
     case TOK_AND:     return a && b;
     case TOK_OR:      return a || b;
     case TOK_LEQ:     return a <= b;
     case TOK_GEQ:     return a >= b;
-    case TOK_LT:      return a < b;
-    case TOK_GT:      return a > b;
+    case TOK_LT:      return a <  b;
+    case TOK_GT:      return a >  b;
     case TOK_EQ:      return a == b;
-    case TOK_DIV:     return a / b;
-    case TOK_MOD:     return a % b;
+    case TOK_DIV:     return a /  b;
+    case TOK_MOD:     return a %  b;
     default:
       assert(!"unknown operator");
     }
     return 0;
   }
 
-  ast_t &ast_;
-  ast_decl_var_t *decl_;
   std::vector<int32_t> value_;
+  error_manager_t &errs_;
+  bool valid_;
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
+// enforce constants are read only and inlined where used
+//
+struct sema_const_t: public ast_visitor_t {
+
+  sema_const_t(ccml_t &ccml)
+    : errs_(ccml.errors())
+  {
+  }
+
+  void visit(ast_exp_ident_t *n) override {
+    if (!n->decl->is_const) {
+      return;
+    }
+    ast_node_t *parent = stack.back();
+    if (n->decl->expr) {
+      auto *var = n->decl->expr->cast<ast_exp_lit_var_t>();
+      assert(var);
+      // XXX: should copy the var node instead
+      parent->replace_child(n, var);
+    }
+  }
+
+  void visit(ast_stmt_assign_var_t *n) override {
+    assert(n->decl);
+    if (n->decl->is_const) {
+      errs_.cant_assign_const(*n->name);
+    }
+    ast_visitor_t::visit(n);
+  }
+
+  void visit(ast_decl_var_t *n) override {
+    ast_visitor_t::visit(n);
+    if (n->is_const) {
+      if (n->is_array()) {
+        errs_.const_array_invalid(*n->name);
+      }
+      if (!n->expr) {
+        errs_.const_needs_init(*n->name);
+      }
+    }
+  }
+
+  void visit(ast_program_t *p) override {
+    ast_visitor_t::visit(p);
+  }
+
+  error_manager_t &errs_;
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
+// check global var expressions
+//
+// this does constant propagation
+//
+struct sema_global_var_t : public ast_visitor_t {
+
+  sema_global_var_t(ccml_t &ccml)
+    : errs_(ccml.errors())
+    , ast_(ccml.ast()) {
+  }
+
+  void visit(ast_array_init_t *n) override {
+    for (auto *t : n->item) {
+      switch (t->type_) {
+      case TOK_INT:
+      case TOK_NONE:
+      case TOK_STRING:
+      case TOK_FLOAT:
+        break;
+      default:
+        errs_.bad_array_init_value(*t);
+      }
+    }
+  }
+
+  void visit(ast_decl_var_t *n) override {
+
+    eval_t eval(errs_);
+
+    assert(n->expr);
+
+    switch (n->expr->type) {
+    case ast_exp_none_e:
+      n->expr = nullptr;
+      break;
+    case ast_array_init_e:
+      break;
+    case ast_exp_bin_op_e:
+    case ast_exp_unary_op_e: {
+      int32_t val = 0;
+      if (eval.eval(n->expr, val)) {
+        change_ = true;
+        n->expr = ast_.alloc<ast_exp_lit_var_t>(val);
+      }
+      else {
+        if (strict_) {
+          errs_.global_var_const_expr(*n->name);
+        }
+      }
+    } break;
+    case ast_exp_lit_str_e:
+    case ast_exp_lit_var_e:
+      break;
+    default:
+      errs_.global_var_const_expr(*n->name);
+    }
+  }
+
+  void visit(ast_program_t *p) override {
+    strict_ = false;
+    do {
+      change_ = false;
+      run_globals_(p);
+    } while (change_);
+    // at this point raise any errors that were not resolved
+    strict_ = true;
+    run_globals_(p);
+  }
+
+protected:
+
+  void run_globals_(ast_program_t *p) {
+    for (auto *n : p->children) {
+      if (auto *d = n->cast<ast_decl_var_t>()) {
+        if (d->expr) {
+          dispatch(d);
+        }
+      }
+    }
+  }
+
+  bool change_;
+  bool strict_;
+  ast_t &ast_;
   error_manager_t &errs_;
 };
 
@@ -640,15 +755,45 @@ struct sema_num_args_t : public ast_visitor_t {
 struct sema_array_size_t : public ast_visitor_t {
 
   error_manager_t &errs_;
+  ast_t &ast_;
 
   sema_array_size_t(ccml_t &ccml)
-    : errs_(ccml.errors()) {
+    : errs_(ccml.errors())
+    , ast_(ccml.ast()) {
   }
 
   void visit(ast_decl_var_t *d) override {
-    if (d->is_array()) {
-      if (d->size->val_ <= 1) {
-        errs_.array_size_must_be_greater_than(*d->name);
+    if (!d->is_array()) {
+      return;
+    }
+    // size should be valid
+    if (d->size == nullptr) {
+      assert(!"ast_decl_var_t array needs size");
+    }
+
+    // ensure size is const expr
+    eval_t eval{errs_};
+    int32_t res = 0;
+    if (!eval.eval(d->size, res)) {
+      errs_.global_var_const_expr(*d->name);
+    }
+
+    // size should be resolved as literal int now
+    if (!d->size->is_a<ast_exp_lit_var_t>()) {
+      d->size = ast_.alloc<ast_exp_lit_var_t>(res);
+    }
+
+    // size should be a valid count
+    if (d->count() <= 1) {
+      errs_.array_size_must_be_greater_than(*d->name);
+    }
+    if (d->expr) {
+      if (auto i = d->expr->cast<ast_array_init_t>()) {
+        const int32_t space = d->count();
+        const int32_t inits = i->item.size();
+        if (space < inits) {
+          errs_.too_many_array_inits(*d->name, inits, space);
+        }
       }
     }
   }
@@ -736,8 +881,9 @@ struct sema_init_t : public ast_visitor_t {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_sema(ccml_t &ccml) {
   auto *prog = &(ccml.ast().program);
-  sema_global_var_t(ccml).visit(prog);
   sema_decl_annotate_t(ccml).visit(prog);
+  sema_global_var_t(ccml).visit(prog);
+  sema_const_t(ccml).visit(prog);
   sema_type_annotation_t(ccml).visit(prog);
   sema_multi_decls_t(ccml).visit(prog);
   sema_num_args_t(ccml).visit(prog);

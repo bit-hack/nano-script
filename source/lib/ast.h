@@ -53,8 +53,13 @@ struct ast_node_t {
 
   template <typename type_t>
   bool is_a() const {
+    if (this == nullptr) {
+      return false;
+    }
     return type == type_t::TYPE;
   }
+
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {}
 
   // node type
   const ast_type_t type;
@@ -66,6 +71,14 @@ struct ast_program_t : public ast_node_t {
   ast_program_t()
     : ast_node_t(TYPE)
   {}
+
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    for (size_t i = 0; i < children.size(); ++i) {
+      if (children[i] == which) {
+        children[i] = with;
+      }
+    }
+  }
 
   std::vector<ast_node_t *> children;
 };
@@ -170,6 +183,10 @@ struct ast_exp_array_t : public ast_node_t {
     , decl(nullptr)
   {}
 
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    index = (which == index) ? with : index;
+  }
+
   const token_t *name;
   // index expression
   ast_node_t *index;
@@ -180,13 +197,20 @@ struct ast_exp_array_t : public ast_node_t {
 struct ast_stmt_call_t : public ast_node_t {
   static const ast_type_t TYPE = ast_stmt_call_e;
 
-  ast_stmt_call_t(ast_node_t *expr)
+  ast_stmt_call_t(ast_exp_call_t *expr)
     : ast_node_t(TYPE)
     , expr(expr)
   {}
 
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    if ((const void*)expr == (const void*)which) {
+      expr = with->cast<ast_exp_call_t>();
+      assert(expr);
+    }
+  }
+
   // an ast_exp_call_t
-  ast_node_t *expr;
+  ast_exp_call_t *expr;
 };
 
 struct ast_exp_call_t : public ast_node_t {
@@ -198,6 +222,14 @@ struct ast_exp_call_t : public ast_node_t {
     , is_syscall(false)
     , decl(nullptr)
   {}
+
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    for (size_t i = 0; i < args.size(); ++i) {
+      if (args[i] == which) {
+        args[i] = with;
+      }
+    }
+  }
 
   const token_t *name;
   bool is_syscall;
@@ -216,6 +248,11 @@ struct ast_exp_bin_op_t : public ast_node_t {
     , right(nullptr)
   {}
 
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    left  = (left  == which) ? with : left;
+    right = (right == which) ? with : right;
+  }
+
   token_e op;
   const token_t *token;
   ast_node_t *left, *right;
@@ -229,6 +266,10 @@ struct ast_exp_unary_op_t : public ast_node_t {
     , op(op)
     , child(nullptr)
   {}
+
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    child = (child  == which) ? with : child;
+  }
 
   const token_t *op;
   ast_node_t *child;
@@ -244,6 +285,18 @@ struct ast_stmt_if_t : public ast_node_t {
     , then_block(nullptr)
     , else_block(nullptr)
   {}
+
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    expr = (expr == which) ? with : expr;
+    if ((const void *)then_block == (const void *)which) {
+      then_block = with->cast<ast_block_t>();
+      assert(then_block);
+    }
+    if ((const void *)else_block == (const void *)which) {
+      else_block = with->cast<ast_block_t>();
+      assert(else_block);
+    }
+  }
 
   const token_t *token;
   ast_node_t *expr;
@@ -267,6 +320,14 @@ struct ast_block_t: public ast_node_t {
     return nodes.empty();
   }
 
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    for (size_t i = 0; i < nodes.size(); ++i) {
+      if (nodes[i] == which) {
+        nodes[i] = with;
+      }
+    }
+  }
+
   std::vector<ast_node_t*> nodes;
 };
 
@@ -279,6 +340,14 @@ struct ast_stmt_while_t : public ast_node_t {
     , expr(nullptr)
     , body(nullptr)
   {}
+
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    expr = (expr == which) ? with : expr;
+    if (which == body) {
+      body = with->cast<ast_block_t>();
+      assert(body);
+    }
+  }
 
   const token_t *token;
   ast_node_t *expr;
@@ -297,6 +366,15 @@ struct ast_stmt_for_t : public ast_node_t {
     , end(nullptr)
     , body(nullptr)
   {}
+
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    start = (start == which) ? with : start;
+    end   = (end   == which) ? with : end;
+    if (which == body) {
+      body = with->cast<ast_block_t>();
+      assert(body);
+    }
+  }
 
   // the 'for' token
   const token_t *token;
@@ -324,6 +402,10 @@ struct ast_stmt_return_t : public ast_node_t {
     , expr(nullptr)
   {}
 
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    expr = (expr == which) ? with : expr;
+  }
+
   const token_t *token;
   ast_node_t *expr;
 };
@@ -337,6 +419,10 @@ struct ast_stmt_assign_var_t : public ast_node_t {
     , expr(nullptr)
     , decl(nullptr)
   {}
+
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    expr = (expr == which) ? with : expr;
+  }
 
   const token_t *name;
   ast_node_t *expr;
@@ -354,6 +440,11 @@ struct ast_stmt_assign_array_t : public ast_node_t {
     , expr(nullptr)
     , decl(nullptr)
   {}
+
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    index = (index == which) ? with : index;
+    expr = (expr == which) ? with : expr;
+  }
 
   const token_t *name;
   ast_node_t *index, *expr;
@@ -388,6 +479,18 @@ struct ast_decl_func_t : public ast_node_t {
     , body(nullptr)
   {}
 
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    for (size_t i = 0; i < args.size(); ++i) {
+      if (args[i] == which) {
+        args[i] = with;
+      }
+    }
+    if (body == which) {
+      body = with->cast<ast_block_t>();
+      assert(body);
+    }
+  }
+
   const token_t *token;
   const std::string name;
   std::vector<ast_node_t *> args;
@@ -397,31 +500,31 @@ struct ast_decl_func_t : public ast_node_t {
 struct ast_decl_var_t : public ast_node_t {
   static const ast_type_t TYPE = ast_decl_var_e;
 
-  enum kind_t {
+  enum scope_t {
     e_local,
     e_global,
-    e_arg
+    e_arg,
   };
 
-  ast_decl_var_t(const token_t *name, kind_t kind)
+  ast_decl_var_t(const token_t *name, scope_t kind)
     : ast_node_t(TYPE)
     , name(name)
     , expr(nullptr)
     , size(nullptr)
-    , is_arg_(false)
-    , kind(kind)
+    , scope(kind)
+    , is_const(false)
   {}
 
   bool is_local() const {
-    return kind == e_local;
+    return scope == e_local;
   }
 
   bool is_arg() const {
-    return kind == e_arg;
+    return scope == e_arg;
   }
 
   bool is_global() const {
-    return kind == e_global;
+    return scope == e_global;
   }
 
   bool is_array() const {
@@ -429,21 +532,30 @@ struct ast_decl_var_t : public ast_node_t {
   }
 
   int32_t count() const {
-    return size ? size->val_ : 1;
+    if (!size) {
+      return 1;
+    }
+    else {
+      const auto *v = size->cast<ast_exp_lit_var_t>();
+      return v->val;
+    }
   }
 
-  kind_t kind;
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    expr = (expr == which) ? with : expr;
+    size = (size == which) ? with : size;
+  }
+
+  scope_t scope;
 
   const token_t *name;
 
   // if var this could be valid
   ast_node_t *expr;
+  // size if array
+  ast_node_t *size;
 
-  // if array this will be valid
-  const token_t *size;
-
-  // 
-  bool is_arg_;
+  bool is_const;
 };
 
 struct ast_t {
@@ -467,7 +579,7 @@ struct ast_t {
 
   void reset();
 
-  // garbace collect
+  // garbage collect
   void gc();
 
   void dump(FILE *fd);
@@ -589,6 +701,9 @@ struct ast_visitor_t {
 
   virtual void visit(ast_decl_var_t* n) {
     stack.push_back(n);
+    if (n->size) {
+      dispatch(n->size);
+    }
     dispatch(n->expr);
     stack.pop_back();
   }
@@ -659,14 +774,22 @@ struct ast_printer_t : ast_visitor_t {
 
   void visit(ast_exp_bin_op_t* n) override {
     indent_();
-    char op = '?';
+    char *op = "?";
     switch (n->op) {
-    case TOK_ADD: op = '+'; break;
-    case TOK_SUB: op = '-'; break;
-    case TOK_MUL: op = '*'; break;
-    case TOK_DIV: op = '/'; break;
+    case TOK_ADD: op = "+";   break;
+    case TOK_SUB: op = "-";   break;
+    case TOK_MUL: op = "*";   break;
+    case TOK_DIV: op = "/";   break;
+    case TOK_MOD: op = "%";   break;
+    case TOK_LT:  op = "<";   break;
+    case TOK_LEQ: op = "<=";  break;
+    case TOK_GT:  op = ">";   break;
+    case TOK_GEQ: op = ">=";  break;
+    case TOK_EQ:  op = "==";  break;
+    case TOK_AND: op = "and"; break;
+    case TOK_OR:  op = "or";  break;
     }
-    fprintf(fd_, "ast_exp_bin_op_t {op: %c}\n", op);
+    fprintf(fd_, "ast_exp_bin_op_t {op: %s}\n", op);
     ast_visitor_t::visit(n);
   }
 

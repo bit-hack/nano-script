@@ -26,6 +26,10 @@ struct error_manager_t {
 
   error_manager_t(ccml_t &ccml): ccml_(ccml) {}
 
+  virtual void cant_assign_const(const token_t &t) {
+    on_error_(t.line_no_, "cant assign to constant variable '%s'", t.string());
+  }
+
   virtual void too_many_args(const token_t &t) {
     on_error_(t.line_no_, "too many arguments given to '%s'", t.string());
   }
@@ -139,6 +143,18 @@ struct error_manager_t {
 
   virtual void global_var_const_expr(const token_t &t) {
     on_error_(t.line_no_, "can only assign constant expressions to globals");
+  }
+
+  virtual void const_needs_init(const token_t &t) {
+    on_error_(t.line_no_, "constant '%s' must be initalized", t.string());
+  }
+
+  virtual void const_array_invalid(const token_t &t) {
+    on_error_(t.line_no_, "constant arrays are not supported");
+  }
+  
+  virtual void too_many_array_inits(const token_t &t, int32_t got, int32_t want) {
+    on_error_(t.line_no_, "too many array initalizers, got %d needs %n");
   }
 
   // token

@@ -96,76 +96,82 @@ struct stack_pass_t: ast_visitor_t {
     ast_visitor_t::visit(n);
     if (!scope_.empty()) {
       scope_.back().insert(n);
-      offsets_[n] = size_;
-      size_ += 1;
-      max_size_ = std::max(size_, max_size_);
+      if (!n->is_const) {
+        offsets_[n] = size_;
+        size_ += 1;
+        max_size_ = std::max(size_, max_size_);
+      }
     }
   }
 
-void visit(ast_program_t *p) override {
-  scope_.clear();
-  scope_.emplace_back();
-  for (ast_node_t *n : p->children) {
-    // collect var decls
-    if (ast_decl_var_t *v = n->cast<ast_decl_var_t>()) {
-      scope_.back().insert(v);
-      // insert into global list
-      offsets_[v] = globals_.size();
-      globals_.insert(v);
+  void visit(ast_program_t *p) override {
+    scope_.clear();
+    scope_.emplace_back();
+    int32_t offs = 0;
+    for (ast_node_t *n : p->children) {
+      // collect var decls
+      if (ast_decl_var_t *v = n->cast<ast_decl_var_t>()) {
+        scope_.back().insert(v);
+        if (!v->is_const) {
+          // insert into global list
+          offsets_[v] = offs;
+          globals_.insert(v);
+          ++offs;
+        }
+      }
     }
   }
-}
 
-void reset() {
-  size_ = 0;
-  max_size_ = 0;
-  // remove all but globals
-  for (auto itt = offsets_.begin(); itt != offsets_.end();) {
-    if (itt->first->is_global()) {
-      ++itt;
-    } else {
-      itt = offsets_.erase(itt);
+  void reset() {
+    size_ = 0;
+    max_size_ = 0;
+    // remove all but globals
+    for (auto itt = offsets_.begin(); itt != offsets_.end();) {
+      if (itt->first->is_global()) {
+        ++itt;
+      } else {
+        itt = offsets_.erase(itt);
+      }
     }
   }
-}
 
-// find the stack offset for a given decl
-int32_t find_offset(ast_decl_var_t *decl) {
-  auto itt = offsets_.find(decl);
-  if (itt == offsets_.end()) {
-    assert(!"unknown decl");
+  // find the stack offset for a given decl
+  int32_t find_offset(ast_decl_var_t *decl) const {
+    auto itt = offsets_.find(decl);
+    if (itt == offsets_.end()) {
+      assert(!"unknown decl");
+    }
+    return itt->second;
   }
-  return itt->second;
-}
 
-// given a use, find its matching decl
-ast_decl_var_t *find_decl(ast_node_t *use) const {
-  if (auto *n = use->cast<ast_exp_array_t>()) {
-    return n->decl;
+  // given a use, find its matching decl
+  ast_decl_var_t *find_decl(ast_node_t *use) const {
+    if (auto *n = use->cast<ast_exp_array_t>()) {
+      return n->decl;
+    }
+    if (auto *n = use->cast<ast_exp_ident_t>()) {
+      return n->decl;
+    }
+    if (auto *n = use->cast<ast_stmt_assign_var_t>()) {
+      return n->decl;
+    }
+    if (auto *n = use->cast<ast_stmt_assign_array_t>()) {
+      return n->decl;
+    }
+    return nullptr;
   }
-  if (auto *n = use->cast<ast_exp_ident_t>()) {
-    return n->decl;
-  }
-  if (auto *n = use->cast<ast_stmt_assign_var_t>()) {
-    return n->decl;
-  }
-  if (auto *n = use->cast<ast_stmt_assign_array_t>()) {
-    return n->decl;
-  }
-  return nullptr;
-}
 
-int32_t get_locals_operand() const {
-  return max_size_;
-}
+  int32_t get_locals_operand() const {
+    return max_size_;
+  }
 
-int32_t get_ret_operand() const {
-  return max_size_ + num_args_();
-}
+  int32_t get_ret_operand() const {
+    return max_size_ + num_args_();
+  }
 
-const std::set<ast_decl_var_t*> &globals() const {
-  return globals_;
-}
+  const std::set<ast_decl_var_t*> &globals() const {
+    return globals_;
+  }
 
 protected:
   int32_t num_args_() const {
@@ -200,12 +206,14 @@ struct codegen_pass_t: ast_visitor_t {
 
   void set_decl_(ast_decl_var_t *decl, const token_t *t = nullptr) {
     assert(decl);
+    assert(!decl->is_const);
     const int32_t offset = stack_pass_.find_offset(decl);
     emit(decl->is_global() ? INS_SETG : INS_SETV, offset, t);
   }
 
   void get_decl_(ast_decl_var_t *decl, const token_t *t = nullptr) {
     assert(decl);
+    assert(!decl->is_const);
     const int32_t offset = stack_pass_.find_offset(decl);
     emit(decl->is_global() ? INS_GETG : INS_GETV, offset, t);
   }
@@ -269,6 +277,7 @@ struct codegen_pass_t: ast_visitor_t {
     ast_decl_var_t *decl = stack_pass_.find_decl(n);
     assert(decl);
     assert(!decl->is_array());
+    assert(!decl->is_const);
 
     //XXX: replace with get_decl_(decl);
     const int32_t offset = stack_pass_.find_offset(decl);
@@ -283,6 +292,7 @@ struct codegen_pass_t: ast_visitor_t {
   void visit(ast_exp_array_t* n) override {
     ast_decl_var_t *decl = stack_pass_.find_decl(n);
     assert(decl);
+    assert(!decl->is_const);
     const int32_t offset = stack_pass_.find_offset(decl);
     // emit the array index
     dispatch(n->index);
@@ -429,7 +439,7 @@ struct codegen_pass_t: ast_visitor_t {
     assert(n->decl);
 
     dispatch(n->start);
-    set_decl_(n->decl);
+    set_decl_(n->decl, n->name);
 
     // initial jump to L1 --->
     emit(INS_JMP, 0, n->token);
@@ -474,6 +484,7 @@ struct codegen_pass_t: ast_visitor_t {
     dispatch(n->expr);
     ast_decl_var_t *d = stack_pass_.find_decl(n);
     assert(d);
+    assert(!d->is_const);
     const int32_t offset = stack_pass_.find_offset(d);
     if (d->is_local() || d->is_arg()) {
       emit(INS_SETV, offset, n->name);
@@ -491,6 +502,7 @@ struct codegen_pass_t: ast_visitor_t {
     dispatch(n->index);
     ast_decl_var_t *d = stack_pass_.find_decl(n);
     assert(d);
+    assert(!d->is_const);
     const int32_t offset = stack_pass_.find_offset(d);
     if (d->is_local() || d->is_arg()) {
       emit(INS_GETV, offset, n->name);
@@ -535,9 +547,13 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_decl_var_t* n) override {
+    if (n->is_const) {
+      // nothing to do for const variables
+      return;
+    }
     const int32_t offset = stack_pass_.find_offset(n);
     if (n->is_array()) {
-      emit(INS_NEW_ARY, n->size->val_, n->name);
+      emit(INS_NEW_ARY, n->count(), n->name);
       if (n->is_global()) {
         emit(INS_SETG, offset, n->name);
       }
@@ -586,7 +602,11 @@ protected:
 
     int num_globals = 0;
     for (ast_node_t *n : ccml_.ast().program.children) {
-      num_globals += n->is_a<ast_decl_var_t>() ? 1 : 0;
+      if (auto *decl = n->cast<ast_decl_var_t>()) {
+        if (!decl->is_const) {
+          num_globals += 1;
+        }
+      }
     }
 
     emit(INS_GLOBALS, num_globals, nullptr);
@@ -594,8 +614,11 @@ protected:
     int32_t offset = 0;
     for (ast_node_t *n : ccml_.ast().program.children) {
       if (auto *d = n->cast<ast_decl_var_t>()) {
+        if (d->is_const) {
+          continue;
+        }
         if (d->is_array()) {
-          emit(INS_NEW_ARY, d->size->val_, d->name);
+          emit(INS_NEW_ARY, d->count(), d->name);
           emit(INS_SETG, offset, d->name);
         }
         ++offset;

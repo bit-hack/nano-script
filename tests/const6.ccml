@@ -1,0 +1,12 @@
+#expect hey hey 3
+
+const size = 10 + 2
+var arr[size + 1]
+
+function main()
+  var i
+  for (i = 0 to size)
+    arr[i] = "hey hey " + i
+  end
+  puts(arr[3])
+end

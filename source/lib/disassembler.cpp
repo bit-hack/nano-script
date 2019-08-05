@@ -138,6 +138,11 @@ int32_t disassembler_t::disasm() {
   // get the code stream
   asm_stream_t &stream = ccml_.store_.stream();
 
+  std::map<int32_t, const ccml::function_t*> funcs;
+  for (const auto &f : ccml_.functions()) {
+    funcs[f.pos_] = &f;
+  }
+
   const uint8_t *start = stream.data();
   const uint8_t *p = stream.data();
   const uint8_t *end = stream.head(0);
@@ -147,8 +152,16 @@ int32_t disassembler_t::disasm() {
     const uint8_t *ptr = p;
     bool print_line = false;
 
+    const int32_t offset = (p - start);
+
+    // find function
+    auto itt = funcs.find(offset);
+    if (itt != funcs.end()) {
+      fprintf(fd_, "\nfunction %s\n", itt->second->name_.c_str());
+    }
+
     // dump line table mapping
-    line_no = ccml_.store_.get_line(p - start);
+    line_no = ccml_.store_.get_line(offset);
 
     if (line_no >= 0 && line_no != old_line) {
       const std::string &line = ccml_.lexer().get_line(line_no);

@@ -1,0 +1,10 @@
+#expect 12
+
+const x = y + 2
+const y = 10
+
+function main()
+  var i[x]
+  i[1] = x
+  return i[1]
+end

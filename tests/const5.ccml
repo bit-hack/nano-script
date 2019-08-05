@@ -1,0 +1,8 @@
+#expect 10
+
+const x = 10
+
+function main()
+  var y = x
+  return y
+end

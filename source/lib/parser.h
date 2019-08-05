@@ -42,11 +42,12 @@ protected:
   ast_node_t* parse_decl_array_(const token_t &name);
   ast_node_t* parse_decl_var_(const token_t &t);
   ast_node_t* parse_expr_();
+  ast_node_t* parse_const_(const token_t &var);
+  ast_node_t* parse_global_(const token_t &t);
 
   // expressions parsing helpers
   void parse_expr_ex_(uint32_t tide);
   void parse_lhs_();
-  ast_node_t* parse_global_(const token_t &t);
 
   // return true if next token is an operator
   bool is_operator_() const;
