@@ -1,0 +1,11 @@
+#expect 13
+
+var x = y - 1
+const y = 3 + 2
+var z = y + 1
+
+function main()
+  x += 1
+  z += 2
+  return x + z
+end
