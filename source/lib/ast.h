@@ -774,7 +774,7 @@ struct ast_printer_t : ast_visitor_t {
 
   void visit(ast_exp_bin_op_t* n) override {
     indent_();
-    char *op = "?";
+    const char *op = "?";
     switch (n->op) {
     case TOK_ADD: op = "+";   break;
     case TOK_SUB: op = "-";   break;
