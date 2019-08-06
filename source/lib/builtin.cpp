@@ -124,18 +124,20 @@ void builtin_chr(struct ccml::thread_t &t) {
 
 void builtin_sin(struct ccml::thread_t &t) {
   const ccml::value_t *v = t.stack().pop();
-  if (v && (v->is_int() || v->is_float())) {
+  if (v && (v->is_number())) {
     const float x = v->as_float();
     t.stack().push_float(sinf(x));
+    return;
   }
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
 void builtin_cos(struct ccml::thread_t &t) {
   const ccml::value_t *v = t.stack().pop();
-  if (v && (v->is_int() || v->is_float())) {
+  if (v && (v->is_number())) {
     const float x = v->as_float();
     t.stack().push_float(cosf(x));
+    return;
   }
   t.raise_error(thread_error_t::e_bad_argument);
 }

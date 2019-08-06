@@ -12,7 +12,7 @@ function circ(xc, yc, x, y)
     plot(xc-y, yc-x)
 end
 
-function circle(xc, yc, r) 
+function draw_circle(xc, yc, r) 
     var x = 0
     var y = r 
     var d = 3 - 2 * r
@@ -36,7 +36,7 @@ function update()
     var y0 = 64 + rand() % 60
     var r  = 20 + rand() % 15
     setrgb(rand(), rand(), rand())
-    circle(x0, y0, r)
+    draw_circle(x0, y0, r)
     i += 1
   end
 end

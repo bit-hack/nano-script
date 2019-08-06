@@ -1,4 +1,4 @@
-var size = 32
+const size = 32
 
 function main()
   var y = size - 1

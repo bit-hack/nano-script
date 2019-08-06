@@ -1,0 +1,37 @@
+var width = 128
+var height = 128
+var i
+var j
+var k
+
+function update()
+
+  i += 0.04
+  j += 0.03123415
+  k += 0.014152
+
+  setrgb(255, 32, 32)
+  var x
+  var y
+  for (y = 0 to (128 / 8))
+    for (x = 0 to (128 / 8))
+      var r = (1 + cos(sin((x / 4.0) + 2 * cos(y / 4.0 + j) + i) + k) * 6
+      circle(4 + x * 8, 4 + y * 8, r)
+    end
+  end
+end
+
+function main()
+  i = 0.0
+  j = 0.0
+  k = 0.0
+  # open video window
+  video(width, height)
+  # main loop
+  while (1)
+    cls()
+    update()
+    flip()
+    sleep(6)
+  end
+end

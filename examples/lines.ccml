@@ -1,0 +1,64 @@
+const width  = 128
+const height = 128
+const count  = 16
+
+var  x[count]
+var  y[count]
+var dx[count]
+var dy[count]
+
+function init()
+  var i
+  for (i = 0 to count)
+    x[i]  = 64 + rand() % width
+    y[i]  = 64 + rand() % height
+    # could be 1 -1 or -3!
+    dx[i] = (rand() % 2) * 2 - 1
+    dy[i] = (rand() % 2) * 2 - 1
+  end
+end
+
+function update()
+  var i
+  for (i = 0 to count)
+    x[i] = x[i] + dx[i]
+    y[i] = y[i] + dy[i]
+ 
+    if (dx[i] > 0)
+      if (x[i] > width)
+        dx[i] = dx[i] * -1
+      end
+    else
+      if (x[i] < 0)
+        dx[i] = dx[i] * -1
+      end
+    end
+    
+    if (dy[i] > 0)
+      if (y[i] > height)
+        dy[i] = dy[i] * -1
+      end
+    else
+      if (y[i] < 0)
+        dy[i] = dy[i] * -1
+      end
+    end
+    
+    circle(x[i], y[i], 4)
+    line( x[i], y[i], x[(i+1) % count], y[(i+1) % count])
+  end
+  
+end
+
+function main()
+  init()
+  # open video window
+  video(width, height)
+  # main loop
+  while (1)
+    cls()
+    update()
+    flip()
+    sleep(10)
+  end
+end

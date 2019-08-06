@@ -34,6 +34,11 @@ struct value_t {
     , v(int_val)
   {}
 
+  bool is_number() const {
+    return type() == val_type_float ||
+           type() == val_type_int;
+  }
+
   bool is_int() const {
     return type() == val_type_int;
   }
@@ -102,6 +107,15 @@ struct value_t {
     default:             assert(false);
     }
     return 0.0f;
+  }
+
+  int32_t as_int() const {
+    switch (type_) {
+    case val_type_int:   return int32_t(v);
+    case val_type_float: return int32_t(f);
+    default:             assert(false);
+    }
+    return 0;
   }
 
   value_type_t type_;

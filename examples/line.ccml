@@ -1,7 +1,7 @@
 var width = 128
 var height = 128
 
-function line(x0, y0, x1, y1)
+function draw_line(x0, y0, x1, y1)
 
   var dx = abs(x1-x0)
   var sx = -1
@@ -43,7 +43,7 @@ function update()
     var x1 = 64 + rand() % 60
     var y1 = 64 + rand() % 60
     setrgb(rand(), rand(), rand())
-    line(x0, y0, x1, y1)
+    draw_line(x0, y0, x1, y1)
     i += 1
   end
 end

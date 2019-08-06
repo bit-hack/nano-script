@@ -1,0 +1,63 @@
+const width = 128
+const height = 128
+
+var radius = 16
+
+var dx = 1
+var dy = 1
+var dr = 1
+
+var x = 32
+var y = 84
+
+function update()
+  x += dx
+  y += dy
+
+  radius += dr
+ 
+  if (dx > 0)
+    if (x > width - radius)
+      dx *= -1
+    end
+  else
+    if (x < radius)
+      dx *= -1
+    end
+  end
+
+  if (dy > 0)
+    if (y > height - radius)
+      dy *= -1
+    end
+  else
+    if (y < radius)
+      dy *= -1
+    end
+  end
+
+  if (dr > 0)
+    if (radius > 17)
+        dr *= -1
+    end
+  else
+    if (radius < 2)
+        dr *= -1
+    end
+  end
+  
+  setrgb(255, 255, 255)
+  circle(x, y, radius)  
+end
+
+function main()
+  # open video window
+  video(width, height)
+  # main loop
+  while (1)
+    cls()
+    update()
+    flip()
+    sleep(10)
+  end
+end
