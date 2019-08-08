@@ -86,6 +86,11 @@ struct thread_t {
   // execute thread init function
   bool init();
 
+  // halt this thread
+  void pause() {
+    halted_ = true;
+  }
+
 protected:
 
   void tick_gc_(int32_t cycles);

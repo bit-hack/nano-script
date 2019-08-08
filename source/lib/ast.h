@@ -470,6 +470,7 @@ struct ast_decl_func_t : public ast_node_t {
     , token(n)
     , name(n->str_)
     , body(nullptr)
+    , stack_size(0)
   {}
 
   ast_decl_func_t(const std::string &n)
@@ -495,6 +496,9 @@ struct ast_decl_func_t : public ast_node_t {
   const std::string name;
   std::vector<ast_node_t *> args;
   ast_block_t *body;
+
+  // 
+  uint32_t stack_size;
 };
 
 struct ast_decl_var_t : public ast_node_t {
@@ -513,6 +517,7 @@ struct ast_decl_var_t : public ast_node_t {
     , size(nullptr)
     , scope(kind)
     , is_const(false)
+    , offset(0)
   {}
 
   bool is_local() const {
@@ -556,6 +561,9 @@ struct ast_decl_var_t : public ast_node_t {
   ast_node_t *size;
 
   bool is_const;
+
+  // global/frame offset for this variable
+  uint32_t offset;
 };
 
 struct ast_t {
@@ -593,10 +601,8 @@ protected:
 struct ast_visitor_t {
 
   virtual void visit(ast_program_t* n) {
-    stack.push_back(n);
     for (auto *c : n->children)
       dispatch(c);
-    stack.pop_back();
   }
 
   virtual void visit(ast_exp_ident_t* n) {}
@@ -607,105 +613,77 @@ struct ast_visitor_t {
   virtual void visit(ast_array_init_t* n) {}
 
   virtual void visit(ast_exp_array_t* n) {
-    stack.push_back(n);
     dispatch(n->index);
-    stack.pop_back();
   }
 
   virtual void visit(ast_stmt_call_t* n) {
-    stack.push_back(n);
     dispatch(n->expr);
-    stack.pop_back();
   }
 
   virtual void visit(ast_exp_call_t* n) {
-    stack.push_back(n);
     for (auto *c : n->args)
       dispatch(c);
-    stack.pop_back();
   }
 
   virtual void visit(ast_exp_bin_op_t* n) {
-    stack.push_back(n);
     dispatch(n->left);
     dispatch(n->right);
-    stack.pop_back();
   }
 
   virtual void visit(ast_exp_unary_op_t* n) {
-    stack.push_back(n);
     dispatch(n->child);
-    stack.pop_back();
   }
 
   virtual void visit(ast_stmt_if_t* n) {
-    stack.push_back(n);
     dispatch(n->expr);
     if (n->then_block)
       dispatch(n->then_block);
     if (n->else_block)
       dispatch(n->else_block);
-    stack.pop_back();
   }
 
   virtual void visit(ast_stmt_while_t* n) {
-    stack.push_back(n);
     dispatch(n->expr);
     dispatch(n->body);
-    stack.pop_back();
   }
 
   virtual void visit(ast_stmt_for_t* n) {
-    stack.push_back(n);
     dispatch(n->start);
     dispatch(n->end);
     dispatch(n->body);
-    stack.pop_back();
   }
 
   virtual void visit(ast_stmt_return_t* n) {
-    stack.push_back(n);
     dispatch(n->expr);
-    stack.pop_back();
   }
 
   virtual void visit(ast_stmt_assign_var_t* n) {
-    stack.push_back(n);
     dispatch(n->expr);
-    stack.pop_back();
   }
 
   virtual void visit(ast_stmt_assign_array_t* n) {
-    stack.push_back(n);
     dispatch(n->index);
     if (n->expr) {
       dispatch(n->expr);
     }
-    stack.pop_back();
   }
 
   virtual void visit(ast_block_t *n) {
-    stack.push_back(n);
     for (auto *a : n->nodes)
       dispatch(a);
-    stack.pop_back();
   }
 
   virtual void visit(ast_decl_func_t* n) {
-    stack.push_back(n);
     for (auto *a : n->args)
       dispatch(a);
     dispatch(n->body);
-    stack.pop_back();
   }
 
   virtual void visit(ast_decl_var_t* n) {
-    stack.push_back(n);
     if (n->size) {
       dispatch(n->size);
     }
     dispatch(n->expr);
-    stack.pop_back();
   }
 
 protected:
@@ -854,7 +832,9 @@ struct ast_printer_t : ast_visitor_t {
   }
 
   void visit(ast_array_init_t* n) override {
-    // XXX:
+    indent_();
+    fprintf(fd_, "ast_array_init_t {size: %d}\n", n->item.size());
+    ast_visitor_t::visit(n);
   }
 
   void visit(ast_decl_var_t* n) override {

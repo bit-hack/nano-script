@@ -2,7 +2,6 @@
 
 #include "ast.h"
 #include "errors.h"
-#include "sema.h"
 
 namespace ccml {
 
@@ -140,7 +139,7 @@ struct sema_const_t: public ast_visitor_t {
     if (!n->decl->is_const) {
       return;
     }
-    ast_node_t *parent = stack.back();
+    ast_node_t *parent = stack.rbegin()[1];
     if (n->decl->expr) {
       auto *var = n->decl->expr->cast<ast_exp_lit_var_t>();
       assert(var);
@@ -460,7 +459,7 @@ struct sema_decl_annotate_t : public ast_visitor_t {
         errs_.unexpected_token((*n->name));
       }
     }
-    //    assert(false);
+    // assert(false);
   }
 
   void visit(ast_exp_ident_t *n) override {

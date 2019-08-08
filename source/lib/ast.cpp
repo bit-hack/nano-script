@@ -9,6 +9,7 @@ void ast_visitor_t::dispatch(ast_node_t *n) {
   if (!n) {
     return;
   }
+  stack.push_back(n);
   switch (n->type) {
   case ast_program_e:           visit(n->cast<ast_program_t>());           break;
   case ast_exp_ident_e:         visit(n->cast<ast_exp_ident_t>());         break;
@@ -34,6 +35,7 @@ void ast_visitor_t::dispatch(ast_node_t *n) {
   default:
     assert(!"unexpected ast_node_t type");
   }
+  stack.pop_back();
 }
 
 struct gc_visitor_t: public ast_visitor_t {

@@ -9,9 +9,7 @@
 #include "codegen.h"
 #include "disassembler.h"
 #include "vm.h"
-#include "sema.h"
-#include "optimize.h"
-
+#include "phases.h"
 
 using namespace ccml;
 
@@ -47,9 +45,10 @@ bool ccml_t::build(const char *source, error_t &error) {
 
     // run semantic checker
     run_sema(*this);
-
     // run optmizer
     run_optimize(*this);
+    // run pre-codegen passes
+    run_pre_codegen(*this);
 
     // kick off the code generator
     if (!codegen_->run(ast_->program, error)) {

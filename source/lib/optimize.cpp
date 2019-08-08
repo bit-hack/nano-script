@@ -1,6 +1,5 @@
 #include <set>
 
-#include "sema.h"
 #include "ast.h"
 #include "errors.h"
 
