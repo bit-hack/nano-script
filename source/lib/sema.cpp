@@ -266,110 +266,6 @@ protected:
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
-// annotate nodes with a data type where possible to check validity
-//
-struct sema_type_annotation_t : public ast_visitor_t {
-
-  sema_type_annotation_t(ccml_t &ccml)
-    : errs_(ccml.errors()) {
-  }
-
-  std::map<const ast_node_t *, value_type_t> types_;
-
-  value_type_t type_of(const ast_node_t *n) const {
-    assert(n);
-    auto itt = types_.find(n);
-    if (itt != types_.end()) {
-      return itt->second;
-    } else {
-      return val_type_unknown;
-    }
-  }
-
-  void visit(ast_exp_lit_var_t *node) override { types_[node] = val_type_int; }
-
-  void visit(ast_exp_lit_str_t *node) override {
-    types_[node] = val_type_string;
-  }
-
-  void visit(ast_exp_none_t *node) override {
-    types_[node] = val_type_none;
-  }
-
-  void visit(ast_exp_ident_t *n) override {
-    ast_visitor_t::visit(n);
-    if (n->decl) {
-      auto itt = types_.find(n->decl);
-      if (itt != types_.end()) {
-        types_[n] = itt->second;
-      }
-    }
-  }
-
-  void visit(ast_exp_array_t *n) override {
-    ast_visitor_t::visit(n);
-  }
-
-  void visit(ast_exp_call_t *n) override {
-    ast_visitor_t::visit(n);
-  }
-
-  void visit(ast_exp_bin_op_t *n) override {
-    ast_visitor_t::visit(n);
-    assert(n->left && n->right);
-    auto tl = type_of(n->left);
-    auto tr = type_of(n->right);
-
-    if (tl == val_type_int && tr == val_type_int) {
-      types_[n] = val_type_int;
-      return;
-    }
-
-    if (n->op == TOK_ADD) {
-      if (tl == val_type_string && tr == val_type_string) {
-        types_[n] = val_type_string;
-        return;
-      }
-      if (tl == val_type_string && tr == val_type_int) {
-        types_[n] = val_type_string;
-        return;
-      }
-      if (tl == val_type_int && tr == val_type_string) {
-        types_[n] = val_type_string;
-        return;
-      }
-    }
-  }
-
-  void visit(ast_exp_unary_op_t *n) override {
-    ast_visitor_t::visit(n);
-
-    if (type_of(n->child) == val_type_int) {
-      types_[n] = val_type_int;
-    } else {
-      // we cant unary a string
-    }
-  }
-
-  void visit(ast_decl_var_t *n) override {
-    ast_visitor_t::visit(n);
-    if (n->expr) {
-      switch (type_of(n->expr)) {
-      case val_type_int:
-        break;
-      default:
-        break;
-      }
-    }
-  }
-
-  void visit(ast_program_t *p) override { ast_visitor_t::visit(p); }
-
-  error_manager_t &errs_;
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-//
 // annotate nodes with their associated decl node
 // set function `is_syscall` member
 //
@@ -806,92 +702,15 @@ struct sema_array_size_t : public ast_visitor_t {
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-//
-// generate an init function
-//
-struct sema_init_t : public ast_visitor_t {
-
-  ccml_t &ccml_;
-  ast_t &ast_;
-  ast_decl_func_t *init_;
-
-  sema_init_t(ccml_t &ccml)
-    : ccml_(ccml)
-    , ast_(ccml.ast())
-    , init_(nullptr) {
-  }
-
-  void on_global(ast_decl_var_t *v) {
-    if (!v->expr) {
-      return;
-    }
-    if (auto *n = v->expr->cast<ast_exp_lit_var_t>()) {
-      auto *a = ast_.alloc<ast_stmt_assign_var_t>(v->name);
-      a->decl = v;
-      a->expr = v->expr;
-      init_->body->add(a);
-      return;
-    }
-    if (auto *n = v->expr->cast<ast_exp_lit_str_t>()) {
-      auto *a = ast_.alloc<ast_stmt_assign_var_t>(v->name);
-      a->decl = v;
-      a->expr = v->expr;
-      init_->body->add(a);
-      return;
-    }
-    if (auto *n = v->expr->cast<ast_array_init_t>()) {
-      int i = 0;
-      for (auto *t : n->item) {
-        auto *a = ast_.alloc<ast_stmt_assign_array_t>(v->name);
-        a->decl = v;
-        a->index = ast_.alloc<ast_exp_lit_var_t>(i);
-        switch (t->type_) {
-        case TOK_INT:
-          a->expr = ast_.alloc<ast_exp_lit_var_t>(t->get_int());
-          break;
-        case TOK_FLOAT:
-          a->expr = ast_.alloc<ast_exp_lit_float_t>(t->get_float());
-          break;
-        case TOK_STRING:
-          a->expr = ast_.alloc<ast_exp_lit_str_t>(t->string());
-          break;
-        case TOK_NONE:
-          a->expr = ast_.alloc<ast_exp_none_t>();
-          break;
-        }
-        init_->body->add(a);
-        ++i;
-      }
-      return;
-    }
-  }
-
-  void visit(ast_program_t *p) override {
-    init_ = ccml_.ast().alloc<ast_decl_func_t>("@init");
-    init_->body = ccml_.ast().alloc<ast_block_t>();
-
-    for (auto *n : p->children) {
-      if (auto *d = n->cast<ast_decl_var_t>()) {
-        on_global(d);
-      }
-    }
-
-    p->children.push_back(init_);
-  }
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_sema(ccml_t &ccml) {
   auto *prog = &(ccml.ast().program);
   sema_decl_annotate_t(ccml).visit(prog);
   sema_global_var_t(ccml).visit(prog);
   sema_const_t(ccml).visit(prog);
-  sema_type_annotation_t(ccml).visit(prog);
   sema_multi_decls_t(ccml).visit(prog);
   sema_num_args_t(ccml).visit(prog);
   sema_type_uses_t(ccml).visit(prog);
   sema_array_size_t(ccml).visit(prog);
-  sema_init_t(ccml).visit(prog);
 }
 
 } // namespace ccml
