@@ -57,8 +57,8 @@ static inline uint32_t xorshift32() {
 
 void vm_cls(ccml::thread_t &t) {
   uint32_t *v = global.video_.get();
-  for (int32_t y = 0; y < global.height_; ++y) {
-    for (int32_t x = 0; x < global.width_; ++x) {
+  for (uint32_t y = 0; y < global.height_; ++y) {
+    for (uint32_t x = 0; x < global.width_; ++x) {
       v[x] = 0x123456;
     }
     v += global.width_;
@@ -216,6 +216,46 @@ void vm_line(ccml::thread_t &t) {
   }
 }
 
+void vm_keydown(ccml::thread_t &t) {
+  using namespace ccml;
+  const value_t *key = t.stack().pop();
+  if (!key->is_string()) {
+    t.stack().push(t.gc().new_none());
+    return;
+  }
+  const uint8_t *keys = SDL_GetKeyState(nullptr);
+  const char *s = key->string();
+  if (strcmp(s, "up") == 0) {
+    const uint8_t state = keys[SDLK_UP];
+    t.stack().push(t.gc().new_int(state ? 1 : 0));
+    return;
+  }
+  if (strcmp(s, "down") == 0) {
+    const uint8_t state = keys[SDLK_DOWN];
+    t.stack().push(t.gc().new_int(state ? 1 : 0));
+    return;
+  }
+  if (strcmp(s, "left") == 0) {
+    const uint8_t state = keys[SDLK_LEFT];
+    t.stack().push(t.gc().new_int(state ? 1 : 0));
+    return;
+  }
+  if (strcmp(s, "right") == 0) {
+    const uint8_t state = keys[SDLK_RIGHT];
+    t.stack().push(t.gc().new_int(state ? 1 : 0));
+    return;
+  }
+  if (strcmp(s, "escape") == 0) {
+    t.stack().push(t.gc().new_int(keys[SDLK_ESCAPE] ? 1 : 0));
+    return;
+  }
+  if (strcmp(s, "space") == 0) {
+    t.stack().push(t.gc().new_int(keys[SDLK_SPACE] ? 1 : 0));
+    return;
+  }
+  t.stack().push(t.gc().new_none());
+}
+
 void vm_plot(ccml::thread_t &t) {
   using namespace ccml;
 
@@ -289,6 +329,7 @@ int main(int argc, char **argv) {
   ccml.add_function("circle", vm_circle, 3);
   ccml.add_function("line", vm_line, 4);
   ccml.add_function("sleep", vm_sleep, 1);
+  ccml.add_function("keydown", vm_keydown, 1);
 
   if (argc <= 1) {
     return -1;

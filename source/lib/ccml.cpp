@@ -68,10 +68,8 @@ bool ccml_t::build(const char *source, error_t &error) {
 }
 
 void ccml_t::reset() {
-  
+
   functions_.clear();
-//  globals_.clear();
-  strings_.clear();
 
   lexer_->reset();
   parser_->reset();
@@ -102,11 +100,6 @@ code_store_t::code_store_t()
 
 void code_store_t::reset() {
   line_table_.clear();
+  strings_.clear();
   stream_.reset(new asm_stream_t(*this));
-}
-
-bool code_store_t::active_vars(const uint32_t pc,
-                               std::vector<const identifier_t *> &out) const {
-  // TODO
-  return true;
 }

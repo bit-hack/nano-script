@@ -231,27 +231,6 @@ struct codegen_pass_t: ast_visitor_t {
       const int32_t offs = func_map_[fixups.first->str_];
       *fixups.second = offs;
     }
-    // process globals
-    for (const auto &global : stack_pass_.globals()) {
-      assert(global);
-      global_t g;
-      g.token_ = global->name;
-      g.offset_ = stack_pass_.find_offset(global);
-      g.value_.v = 0;
-      if (global->expr) {
-        if (const auto *expr = global->expr->cast<ast_exp_lit_var_t>()) {
-          g.value_.type_ = val_type_int;
-          g.value_.v = expr->val;
-        }
-        if (const auto *expr = global->expr->cast<ast_exp_lit_str_t>()) {
-          g.value_.type_ = val_type_string;
-          g.value_.v = strings_.size();
-          strings_.push_back(expr->value);
-        }
-      }
-      g.size_ = global->count();
-      globals_.push_back(g);
-    }
   }
 
   void visit(ast_exp_lit_str_t* n) override {
@@ -574,10 +553,6 @@ struct codegen_pass_t: ast_visitor_t {
     return funcs_;
   }
 
-  const std::vector<global_t> &globals() const {
-    return globals_;
-  }
-
   const std::vector<std::string> &strings() const {
     return strings_;
   }
@@ -632,7 +607,6 @@ protected:
     emit(INS_RET, stack_pass_.get_ret_operand(), nullptr);
   }
 
-  std::vector<global_t> globals_;
   std::vector<function_t> funcs_;
   std::vector<std::string> strings_;
   std::map<std::string, int32_t> func_map_;

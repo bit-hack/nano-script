@@ -57,6 +57,12 @@ value_t *value_gc_t::new_none() {
   return nullptr;
 }
 
+bool value_gc_t::should_collect() const {
+  const int32_t x = (space_to().size() * 100) / space_to().capacity();
+  // collect if over 75%
+  return (x > 75);
+}
+
 value_t *value_gc_t::copy(const value_t &a) {
   switch (a.type()) {
   case val_type_int:

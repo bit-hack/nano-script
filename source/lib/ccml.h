@@ -38,6 +38,7 @@ struct ast_exp_bin_op_t;
 struct ast_exp_unary_op_t;
 struct ast_stmt_if_t;
 struct ast_stmt_while_t;
+struct ast_stmt_for_t;
 struct ast_stmt_return_t;
 struct ast_stmt_assign_var_t;
 struct ast_stmt_assign_array_t;
@@ -51,47 +52,6 @@ struct disassembler_t;
 
 struct thread_t;
 struct vm_t;
-
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-struct global_t {
-  const token_t *token_;
-  int32_t offset_;
-  value_t value_;
-  int32_t size_;
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-struct identifier_t {
-
-  identifier_t()
-    : offset(0)
-    , count(0)
-    , token(nullptr)
-    , is_global(false) {}
-
-  identifier_t(const token_t *t, int32_t o, bool is_glob, int32_t c = 1)
-    : offset(o)
-    , count(c)
-    , token(t)
-    , is_global(is_glob) {}
-
-  bool is_array() const {
-    return count > 1;
-  }
-
-  // start and end valiity range
-  uint32_t start, end;
-
-  // offset from frame pointer
-  int32_t offset;
-  // number of items (> 1 == array)
-  int32_t count;
-  // identifier token
-  const token_t *token;
-  // if this is a global variable
-  bool is_global;
-};
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 typedef void(*ccml_syscall_t)(struct thread_t &thread);
@@ -145,8 +105,13 @@ struct code_store_t {
 
   void reset();
 
-  bool active_vars(const uint32_t pc,
-                   std::vector<const identifier_t *> &out) const;
+  const std::vector<std::string> &strings() const {
+    return strings_;
+  }
+
+  std::vector<std::string> &strings() {
+    return strings_;
+  }
 
 protected:
   friend struct asm_stream_t;
@@ -164,6 +129,8 @@ protected:
 
   // line table [PC -> Line]
   std::map<uint32_t, uint32_t> line_table_;
+
+  std::vector<std::string> strings_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -199,7 +166,7 @@ struct ccml_t {
   }
 
   const std::vector<std::string> &strings() const {
-    return strings_;
+    return store_.strings();
   }
 
 private:
@@ -217,19 +184,13 @@ private:
     functions_.push_back(func);
   }
 
-//  void add_(const global_t &ident) {
-//    globals_.push_back(ident);
-//  }
-
   void add_(const std::string &string) {
-    strings_.push_back(string);
+    store_.strings().push_back(string);
   }
 
   // the code store
   code_store_t store_;
   std::vector<function_t> functions_;
-//  std::vector<global_t> globals_;
-  std::vector<std::string> strings_;
 
   std::unique_ptr<error_manager_t> errors_;
   std::unique_ptr<lexer_t>         lexer_;

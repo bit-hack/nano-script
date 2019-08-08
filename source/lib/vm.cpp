@@ -42,6 +42,9 @@ bool to_string(char *buf, size_t size, const value_t *val) {
   case val_type_string:
     snprintf(buf, size, "%s", val->string());
     return true;
+  case val_type_none:
+    snprintf(buf, size, "none");
+    return true;
   default:
     assert(false);
     return false;
@@ -698,8 +701,7 @@ int32_t thread_t::source_line() const {
 }
 
 void thread_t::tick_gc_(int32_t cycles) {
-  // XXX: better - when allocated objects are 2x the stack size?
-  if ((cycles % 500) == 1) {
+  if (gc().should_collect()) {
     gc_collect();
   }
 }
@@ -742,10 +744,6 @@ bool thread_t::resume(int32_t cycles, bool trace) {
   // increment the cycle count
   cycles_ += (start_cycles - cycles);
   return !has_error();
-}
-
-bool thread_t::active_vars(std::vector<const identifier_t *> &out) const {
-  return ccml_.store().active_vars(pc_, out);
 }
 
 #if 1

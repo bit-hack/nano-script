@@ -84,6 +84,8 @@ struct value_gc_t {
     : flipflop_(0)
   {}
 
+  bool should_collect() const;
+
 protected:
 
   arena_t &space_from() {
@@ -91,6 +93,14 @@ protected:
   }
 
   arena_t &space_to() {
+    return space_[(flipflop_ & 1) ^ 1];
+  }
+
+  const arena_t &space_from() const {
+    return space_[flipflop_ & 1];
+  }
+
+  const arena_t &space_to() const {
     return space_[(flipflop_ & 1) ^ 1];
   }
 
