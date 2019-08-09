@@ -711,7 +711,7 @@ bool thread_t::resume(int32_t cycles, bool trace) {
     return false;
   }
   const uint32_t start_cycles = cycles;
-
+  halted_ = false;
   if (trace) {
     // while we should keep processing instructions
     for (; cycles; --cycles) {
@@ -746,82 +746,14 @@ bool thread_t::resume(int32_t cycles, bool trace) {
   return !has_error();
 }
 
-#if 1
-// XXX: remove this function
-bool vm_t::execute(const function_t &func, int32_t argc, const value_t *argv,
-                   value_t *ret, bool trace, thread_error_t *err) {
-  if (err) {
-    *err = thread_error_t::e_success;
-  }
-  thread_t t{ccml_};
-
-  if (!t.init()) {
-    return false;
-  }
-
-  if (!t.prepare(func, argc, argv)) {
-    if (err) {
-      *err = t.error_;
-    }
-    return false;
-  }
-  if (!t.resume(INT_MAX, trace)) {
-    if (err) {
-      *err = t.error_;
-    }
-    return false;
-  }
-  if (!t.finished()) {
-    if (err) {
-      *err = thread_error_t::e_max_cycle_count;
-    }
-    return false;
-  }
-  if (ret) {
-    value_t *r = t.return_code();
-    if (r->is_none()) {
-      ret->type_ = val_type_none;
-    } else {
-      if (r->is_int()) {
-        ret->v = r->v;
-      } else {
-        r->v = 0;
-      }
-    }
-  }
-  return true;
-}
-#endif
-
 value_t *thread_t::getv_(int32_t offs) {
   const int32_t index = frame_().sp_ + offs;
-#if 1
   return stack_.get(index);
-#else
-  if (index < 0 || index >= int32_t(s_head_)) {
-    set_error_(thread_error_t::e_bad_getv);
-    return gc_->new_none();
-  }
-  value_t *v = s_[index];
-  return v ? v : gc_->new_none();
-#endif
 }
 
 void thread_t::setv_(int32_t offs, value_t *val) {
   const int32_t index = frame_().sp_ + offs;
-#if 1
   stack_.set(index, val);
-#else
-  if (index < 0 || index >= int32_t(stack_.head())) {
-    set_error_(thread_error_t::e_bad_setv);
-  } else {
-    s_[index] = val;
-  }
-#endif
-}
-
-void vm_t::reset() {
-  // nothing to do
 }
 
 void thread_t::gc_collect() {

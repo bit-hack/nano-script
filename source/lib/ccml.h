@@ -51,7 +51,6 @@ struct codegen_t;
 struct disassembler_t;
 
 struct thread_t;
-struct vm_t;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 typedef void(*ccml_syscall_t)(struct thread_t &thread);
@@ -147,7 +146,6 @@ struct ccml_t {
   ast_t           &ast()          { return *ast_; }
   codegen_t       &codegen()      { return *codegen_; }
   disassembler_t  &disassembler() { return *disassembler_; }
-  vm_t            &vm()           { return *vm_; }
 
   bool build(const char *source, error_t &error);
 
@@ -170,7 +168,6 @@ struct ccml_t {
   }
 
 private:
-  friend struct vm_t;
   friend struct lexer_t;
   friend struct parser_t;
   friend struct codegen_t;
@@ -198,7 +195,6 @@ private:
   std::unique_ptr<ast_t>           ast_;
   std::unique_ptr<codegen_t>       codegen_;
   std::unique_ptr<disassembler_t>  disassembler_;
-  std::unique_ptr<vm_t>            vm_;
 };
 
 } // namespace ccml

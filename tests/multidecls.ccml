@@ -1,0 +1,15 @@
+#expect 11
+
+function main()
+    var y = 0
+    var i
+    for (i = 0 to 3)
+        var x = 1
+        y += x
+    end
+    for (i = 0 to 4)
+        var x = 2
+        y += x
+    end
+    return y
+end

@@ -1,0 +1,164 @@
+const width = 128
+const height = 128
+
+const max_segs = 32
+
+var snake_x[max_segs]
+var snake_y[max_segs]
+var head
+var dir
+var grow
+
+var apple_x
+var apple_y
+
+var speed
+
+function update()
+    move()
+    
+    setrgb(192, 192, 192)
+    var i
+    for (i = 0 to head)
+        var x = snake_x[i] * 8
+        var y = snake_y[i] * 8
+        circle(x + 4, y + 4, 4)
+    end
+    setrgb(255, 255, 255)
+    for (i = 0 to head)
+        var x = snake_x[i] * 8
+        var y = snake_y[i] * 8
+        circle(x + 3, y + 3, 2)
+    end
+    
+    setrgb(32, 192, 32)
+    circle(apple_x * 8 + 4, apple_y * 8 + 4, 4)
+    setrgb(84, 255, 84)
+    circle(apple_x * 8 + 3, apple_y * 8 + 3, 2)
+end
+
+function new_apple()
+    apple_x = rand() % (width  / 8)
+    apple_y = rand() % (height / 8)
+end
+
+function reset()
+    grow = 0
+    speed = 750
+    head = 3
+    dir = 1
+
+    snake_x[0] = 8
+    snake_y[0] = 8
+    snake_x[1] = 9
+    snake_y[1] = 8
+    snake_x[2] = 10
+    snake_y[2] = 8
+
+    new_apple()
+end
+
+function new_dir()
+    if (keydown("up") and not dir == 2)
+        dir = 0
+    end
+    if (keydown("right") and not dir == 3)
+        dir = 1
+    end
+    if (keydown("down") and not dir == 0)
+        dir = 2
+    end
+    if (keydown("left") and not dir == 1)
+        dir = 3
+    end
+end
+
+function check_collide()
+    var x = snake_x[head]
+    var y = snake_y[head]
+    
+    var i
+    for (i = 0 to head)
+        if (x == snake_x[i])
+            if (y == snake_y[i])
+                reset()
+                return 1
+            end
+        end
+    end
+
+    if (x < 0 or x >= (width / 8))
+        reset()
+        return 1
+    end
+    
+    if (y < 0 or y >= (height / 8))
+        reset()
+        return 1
+    end
+    
+    return 0
+end
+
+function move()
+
+    # get new direction from user
+    new_dir()
+
+    # get old position
+    var old_x = snake_x[head - 1]
+    var old_y = snake_y[head - 1]
+
+    # new snake head
+    if (dir == 0)
+        snake_x[head] = old_x
+        snake_y[head] = old_y - 1
+    end
+    if (dir == 1)
+        snake_x[head] = old_x + 1
+        snake_y[head] = old_y
+    end
+    if (dir == 2)
+        snake_x[head] = old_x
+        snake_y[head] = old_y + 1
+    end
+    if (dir == 3)
+        snake_x[head] = old_x - 1
+        snake_y[head] = old_y
+    end
+
+    if (check_collide())
+        return
+    end
+    
+    if (snake_x[head] == apple_x and snake_y[head] == apple_y)
+        if (head+1 < max_segs)
+            grow = 1
+        end
+        new_apple()
+        speed *= 0.9
+    end
+    
+    if (not grow)
+        # move segments head to tail
+        var i
+        for (i = 1 to head + 1)
+            snake_x[i - 1] = snake_x[i]
+            snake_y[i - 1] = snake_y[i]
+        end
+    else
+        grow = 0
+        head += 1
+    end
+end
+
+function main()
+    reset()
+    video(width, height)
+    while (not keydown("escape"))
+        cls()
+        update()
+        flip()
+        sleep(speed)
+    end
+end

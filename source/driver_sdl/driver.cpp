@@ -15,6 +15,8 @@
 
 namespace {
 
+uint32_t tick_mark = 0;
+
 struct global_t {
   SDL_Surface *screen_ = nullptr;
   uint32_t rgb_ = 0xffffff;
@@ -70,14 +72,16 @@ void vm_cls(ccml::thread_t &t) {
 void vm_sleep(ccml::thread_t &t) {
   ccml::value_t *val = t.stack().pop();
   if (val->is_number()) {
-    SDL_Delay(val->as_int());
+    tick_mark = SDL_GetTicks() + val->as_int();
+    t.halt();
   }
   // return value
   t.stack().push(t.gc().new_none());
 }
 
 void vm_rand(ccml::thread_t &t) {
-  const int32_t x = xorshift32();
+  // new unsigned int
+  const int32_t x = (xorshift32() & 0x7fffff);
   // return value
   t.stack().push(t.gc().new_int(x));
 }
@@ -367,7 +371,16 @@ int main(int argc, char **argv) {
 
   bool trace = false;
   bool active = true;
-  while (active && thread.resume(1024, trace)) {
+  while (active) {
+
+    if (SDL_GetTicks() > tick_mark) {
+      if (!thread.resume(1024, trace)) {
+        break;
+      }
+    }
+    else {
+      SDL_Delay(1);
+    }
 
     // process SDL events
     SDL_Event event;

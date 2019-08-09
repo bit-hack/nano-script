@@ -55,14 +55,26 @@ struct codegen_pass_t: ast_visitor_t {
 
   void set_decl_(ast_decl_var_t *decl, const token_t *t = nullptr) {
     assert(decl);
+    // const shouldnt even make it into the backend let alone ever be set
     assert(!decl->is_const);
-    emit(decl->is_global() ? INS_SETG : INS_SETV, decl->offset, t);
+    if (decl->is_local() || decl->is_arg()) {
+      emit(INS_SETV, decl->offset, t);
+    }
+    if (decl->is_global()) {
+      emit(INS_SETG, decl->offset, t);
+    }
   }
 
   void get_decl_(ast_decl_var_t *decl, const token_t *t = nullptr) {
     assert(decl);
+    // const shouldnt even make it into the backend
     assert(!decl->is_const);
-    emit(decl->is_global() ? INS_GETG : INS_GETV, decl->offset, t);
+    if (decl->is_local() || decl->is_arg()) {
+      emit(INS_GETV, decl->offset, t);
+    }
+    if (decl->is_global()) {
+      emit(INS_GETG, decl->offset, t);
+    }
   }
 
   void visit(ast_program_t* n) override {
@@ -103,14 +115,7 @@ struct codegen_pass_t: ast_visitor_t {
     assert(decl);
     assert(!decl->is_array());
     assert(!decl->is_const);
-
-    //XXX: replace with get_decl_(decl);
-    if (decl->is_local() || decl->is_arg()) {
-      emit(INS_GETV, decl->offset, n->name);
-    }
-    if (decl->is_global()) {
-      emit(INS_GETG, decl->offset, n->name);
-    }
+    get_decl_(decl, n->name);
   }
 
   void visit(ast_exp_array_t* n) override {
@@ -120,13 +125,7 @@ struct codegen_pass_t: ast_visitor_t {
     // emit the array index
     dispatch(n->index);
     // load the array object
-    if (decl->is_global()) {
-      emit(INS_GETG, decl->offset, n->name);
-    }
-    else {
-      assert(decl->is_local());  // cant have arg arrays yet
-      emit(INS_GETV, decl->offset, n->name);
-    }
+    get_decl_(decl, n->name);
     // index the array
     emit(INS_GETA, n->name);
   }
@@ -182,6 +181,20 @@ struct codegen_pass_t: ast_visitor_t {
     //  if expr contains a call emit it
     //  if expr is const, emit specific body
 
+    // format:
+    //
+    // if (!<expr>) ----.
+    // <expr>           |
+    // L0 <-------------'
+    //
+    //
+    // if (!<expr>) ----.
+    // <expr>           |
+    // jmp -----------. |
+    // L0 <-------------'
+    // <expr>         |
+    // L1 <-----------'
+
     // expr
     dispatch(n->expr);
 
@@ -223,6 +236,14 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_stmt_while_t* n) override {
+
+    // format:
+    //
+    // jmp -----.
+    // L0 <-----|-.
+    // <body>   | |
+    // L1 <-----' |
+    // if <exp> --'
 
     // initial jump to L1 --->
     emit(INS_JMP, 0, n->token);
@@ -297,7 +318,12 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_stmt_return_t *n) override {
-    dispatch(n->expr);
+    if (n->expr) {
+      dispatch(n->expr);
+    }
+    else {
+      emit(INS_NEW_NONE, n->token);
+    }
     const auto *func = stack.front()->cast<ast_decl_func_t>();
     assert(func);
     const int32_t space = func->args.size() + func->stack_size;
@@ -310,12 +336,7 @@ struct codegen_pass_t: ast_visitor_t {
     ast_decl_var_t *d = n->decl;
     assert(d);
     assert(!d->is_const);
-    if (d->is_local() || d->is_arg()) {
-      emit(INS_SETV, d->offset, n->name);
-    }
-    if (d->is_global()) {
-      emit(INS_SETG, d->offset, n->name);
-    }
+    set_decl_(d, n->name);
   }
 
   void visit(ast_stmt_assign_array_t *n) override {
@@ -327,12 +348,7 @@ struct codegen_pass_t: ast_visitor_t {
     ast_decl_var_t *d = n->decl;
     assert(d);
     assert(!d->is_const);
-    if (d->is_local() || d->is_arg()) {
-      emit(INS_GETV, d->offset, n->name);
-    }
-    if (d->is_global()) {
-      emit(INS_GETG, d->offset, n->name);
-    }
+    get_decl_(d, n->name);
     emit(INS_SETA, n->name);
   }
 
@@ -375,12 +391,7 @@ struct codegen_pass_t: ast_visitor_t {
     }
     if (n->is_array()) {
       emit(INS_NEW_ARY, n->count(), n->name);
-      if (n->is_global()) {
-        emit(INS_SETG, n->offset, n->name);
-      }
-      if (n->is_local()) {
-        emit(INS_SETV, n->offset, n->name);
-      }
+      set_decl_(n, n->name);
     }
     else {
       assert(n->is_local());
@@ -411,10 +422,11 @@ protected:
   }
 
   // return a reference to the last instructions operand
-  int32_t *get_fixup() {
+  int32_t *get_fixup() const {
     return reinterpret_cast<int32_t *>(stream_.head(-4));
   }
 
+  // handle @init function as a special case
   void visit_init(ast_decl_func_t* n) {
 
     int num_globals = 0;

@@ -277,11 +277,13 @@ struct sema_decl_annotate_t : public ast_visitor_t {
   }
 
   void visit(ast_stmt_for_t *p) override {
+    scope_.emplace_back();
     ast_node_t *n = find_decl(p->name->str_);
     if (n) {
       if (ast_decl_var_t *d = n->cast<ast_decl_var_t>()) {
         p->decl = d;
         ast_visitor_t::visit(p);
+        scope_.pop_back();
         return;
       }
     }
@@ -479,6 +481,12 @@ struct sema_multi_decls_t : public ast_visitor_t {
   }
 
   void visit(ast_stmt_while_t *stmt) override {
+    scope_.emplace_back();
+    ast_visitor_t::visit(stmt);
+    scope_.pop_back();
+  }
+
+  void visit(ast_stmt_for_t *stmt) override {
     scope_.emplace_back();
     ast_visitor_t::visit(stmt);
     scope_.pop_back();

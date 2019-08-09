@@ -87,7 +87,7 @@ struct thread_t {
   bool init();
 
   // halt this thread
-  void pause() {
+  void halt() {
     halted_ = true;
   }
 
@@ -204,25 +204,6 @@ protected:
   void do_INS_SETG_();
   void do_INS_GETA_();
   void do_INS_SETA_();
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-struct vm_t {
-
-  vm_t(ccml_t &c)
-    : ccml_(c) {}
-
-#if 1
-  // XXX: remove this function
-  bool execute(const function_t &func, int32_t argc, const value_t *argv,
-               value_t *ret = nullptr, bool trace = false, thread_error_t *err = nullptr);
-#endif
-
-  // reset any stored state
-  void reset();
-
-protected:
-  ccml_t &ccml_;
 };
 
 } // namespace ccml

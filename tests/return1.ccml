@@ -1,0 +1,14 @@
+#expect 123
+
+var x = 0
+
+function callee()
+    x = 123
+    return
+    x = 2562
+end
+
+function main()
+    callee()
+    return x
+end

@@ -21,7 +21,6 @@ ccml_t::ccml_t()
   , ast_(new ast_t(*this))
   , codegen_(new codegen_t(*this, store_.stream()))
   , disassembler_(new disassembler_t(*this))
-  , vm_(new vm_t(*this))
   , errors_(new error_manager_t(*this))
 {
   add_builtins_();
@@ -74,7 +73,6 @@ void ccml_t::reset() {
   parser_->reset();
   ast_->reset();
   codegen_->reset();
-  vm_->reset();
   store_.reset();
 }
 

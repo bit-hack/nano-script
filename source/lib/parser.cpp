@@ -440,15 +440,21 @@ ast_node_t* parser_t::parse_for_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_return_(const token_t &t) {
+  token_stream_t &stream_ = ccml_.lexer().stream_;
   codegen_t &asm_ = ccml_.codegen();
   auto &ast = ccml_.ast();
 
   // format:
   //           V
-  //    return   <expr>
+  //    return   [ <expr> ]
 
   auto node = ast.alloc<ast_stmt_return_t>(&t);
-  node->expr = parse_expr_();
+
+  if (stream_.peek()->type_ == TOK_EOL) {
+    node->expr = nullptr;
+  } else {
+    node->expr = parse_expr_();
+  }
 
   return node;
 }
