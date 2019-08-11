@@ -24,5 +24,6 @@ enum class thread_error_t {
   e_bad_argument,
 };
 
-} // namespace ccml
+const char *get_thread_error(const ccml::thread_error_t &err);
 
+} // namespace ccml

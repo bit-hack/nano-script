@@ -39,6 +39,21 @@ const char *load_file(const char *path) {
   return source;
 }
 
+static inline uint32_t xorshift32() {
+  static uint32_t x = 12345;
+  x ^= x << 13;
+  x ^= x >> 17;
+  x ^= x << 5;
+  return x;
+}
+
+void vm_rand(ccml::thread_t &t) {
+  // new unsigned int
+  const int32_t x = (xorshift32() & 0x7fffff);
+  // return value
+  t.stack().push(t.gc().new_int(x));
+}
+
 void vm_getc(ccml::thread_t &t) {
   using namespace ccml;
   const int32_t ch = getchar();
@@ -89,49 +104,6 @@ void on_error(const ccml::error_t &error) {
   exit(1);
 }
 
-const char *error_to_str(const ccml::thread_error_t &err) {
-  using namespace ccml;
-  switch (err) {
-  case thread_error_t::e_success:
-    return "e_success";
-  case thread_error_t::e_max_cycle_count:
-    return "e_max_cycle_count";
-  case thread_error_t::e_bad_getv:
-    return "e_bad_getv";
-  case thread_error_t::e_bad_setv:
-    return "e_bad_setv";
-  case thread_error_t::e_bad_num_args:
-    return "e_bad_num_args";
-  case thread_error_t::e_bad_syscall:
-    return "e_bad_syscall";
-  case thread_error_t::e_bad_opcode:
-    return "e_bad_opcode";
-  case thread_error_t::e_bad_set_global:
-    return "e_bad_set_global";
-  case thread_error_t::e_bad_get_global:
-    return "e_bad_get_global";
-  case thread_error_t::e_bad_pop:
-    return "e_bad_pop";
-  case thread_error_t::e_bad_divide_by_zero:
-    return "e_bad_divide_by_zero";
-  case thread_error_t::e_stack_overflow:
-    return "e_stack_overflow";
-  case thread_error_t::e_stack_underflow:
-    return "e_stack_underflow";
-  case thread_error_t::e_bad_globals_size:
-    return "e_bad_globals_size";
-  case thread_error_t::e_bad_array_bounds:
-    return "e_bad_array_bounds";
-  case thread_error_t::e_bad_type_operation:
-    return "e_bad_type_operation";
-  case thread_error_t::e_bad_argument:
-    return "e_bad_argument";
-  default:
-    assert(false);
-    return "";
-  }
-}
-
 }; // namespace
 
 int main(int argc, char **argv) {
@@ -143,6 +115,7 @@ int main(int argc, char **argv) {
   ccml.add_function("getc", vm_getc, 0);
   ccml.add_function("puts", vm_puts, 1);
   ccml.add_function("gets", vm_gets, 0);
+  ccml.add_function("rand", vm_rand, 0);
 
   if (argc <= 1) {
     return -1;
@@ -196,7 +169,7 @@ int main(int argc, char **argv) {
 
   if (thread.has_error()) {
     fprintf(stderr, "thread error: %d\n", (int)thread.error());
-    fprintf(stderr, "%s\n", error_to_str(thread.error()));
+    fprintf(stderr, "%s\n", get_thread_error(thread.error()));
     fprintf(stderr, "line: %d\n", thread.source_line());
     return -5;
   }

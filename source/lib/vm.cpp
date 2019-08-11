@@ -227,6 +227,7 @@ void thread_t::do_INS_NOT_() {
     stack_.push(gc_->new_int(!l->v));
     return;
   }
+
   raise_error(thread_error_t::e_bad_type_operation);
 }
 

@@ -1,5 +1,5 @@
-var width = 128
-var height = 128
+const width = 128
+const height = 128
 
 function run()
   var area = width * height

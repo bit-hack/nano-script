@@ -32,9 +32,9 @@ end
 function update()
   var i = 0
   while (i < 64)
-    var x0 = 64 + rand() % 60
-    var y0 = 64 + rand() % 60
-    var r  = 20 + rand() % 15
+    var x0 = rand() % 128
+    var y0 = rand() % 128
+    var r  = 1 + rand() % 32
     setrgb(rand(), rand(), rand())
     draw_circle(x0, y0, r)
     i += 1

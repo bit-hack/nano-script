@@ -64,9 +64,6 @@ struct thread_t {
   // return the current source line number
   int32_t source_line() const;
 
-  // collect all currently active variables
-  bool active_vars(std::vector<const identifier_t *> &out) const;
-
   // raise a thread error
   void raise_error(thread_error_t e) {
     error_ = e;
@@ -135,7 +132,7 @@ protected:
     int32_t pc_;
   };
   uint32_t f_head_;
-  std::array<frame_t, 64> f_;
+  std::array<frame_t, 512> f_;
 
   friend struct value_stack_t;
   value_stack_t stack_;

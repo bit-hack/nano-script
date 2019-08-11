@@ -57,11 +57,18 @@ static inline uint32_t xorshift32() {
   return x;
 }
 
+void vm_rand(ccml::thread_t &t) {
+  // new unsigned int
+  const int32_t x = (xorshift32() & 0x7fffff);
+  // return value
+  t.stack().push(t.gc().new_int(x));
+}
+
 void vm_cls(ccml::thread_t &t) {
   uint32_t *v = global.video_.get();
   for (uint32_t y = 0; y < global.height_; ++y) {
     for (uint32_t x = 0; x < global.width_; ++x) {
-      v[x] = 0x123456;
+      v[x] = 0x0;
     }
     v += global.width_;
   }
@@ -77,13 +84,6 @@ void vm_sleep(ccml::thread_t &t) {
   }
   // return value
   t.stack().push(t.gc().new_none());
-}
-
-void vm_rand(ccml::thread_t &t) {
-  // new unsigned int
-  const int32_t x = (xorshift32() & 0x7fffff);
-  // return value
-  t.stack().push(t.gc().new_int(x));
 }
 
 void vm_video(ccml::thread_t &t) {
@@ -109,8 +109,11 @@ void vm_setrgb(ccml::thread_t &t) {
   const value_t *b = t.stack().pop();
   const value_t *g = t.stack().pop();
   const value_t *r = t.stack().pop();
-  if (r->is_int() && g->is_int() && b->is_int()) {
-    global.rgb_ = ((r->v & 0xff) << 16) | ((g->v & 0xff) << 8) | (b->v & 0xff);
+  if (r->is_number() && g->is_number() && b->is_number()) {
+    const int32_t ir = r->as_int();
+    const int32_t ig = g->as_int();
+    const int32_t ib = b->as_int();
+    global.rgb_ = ((ir & 0xff) << 16) | ((ig & 0xff) << 8) | (ib & 0xff);
   }
   // return code
   t.stack().push(t.gc().new_none());
@@ -397,6 +400,7 @@ int main(int argc, char **argv) {
     if (err != thread_error_t::e_success) {
       int32_t line = thread.source_line();
       printf("runtime error %d\n", int32_t(err));
+      fprintf(stderr, "%s\n", get_thread_error(thread.error()));
       printf("source line %d\n", int32_t(line));
       const std::string &s = ccml.lexer().get_line(line);
       printf("%s\n", s.c_str());

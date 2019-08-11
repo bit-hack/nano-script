@@ -10,8 +10,8 @@ var dy[count]
 function init()
   var i
   for (i = 0 to count)
-    x[i]  = 64 + rand() % width
-    y[i]  = 64 + rand() % height
+    x[i]  = rand() % width
+    y[i]  = rand() % height
     # could be 1 -1 or -3!
     dx[i] = (rand() % 2) * 2 - 1
     dy[i] = (rand() % 2) * 2 - 1

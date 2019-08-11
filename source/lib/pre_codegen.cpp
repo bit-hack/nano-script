@@ -18,11 +18,28 @@ struct pregen_offset_t: public ast_visitor_t {
 
   void visit(ast_decl_var_t *n) override {
     if (n->is_local()) {
+      assert(!n->is_arg());
+      assert(!n->is_global());
       if (!n->is_const) {
         n->offset = offset_.back();
         offset_.back()++;
         stack_size_ = std::max<int32_t>(stack_size_, offset_.back());
       }
+    }
+  }
+
+  void visit(ast_stmt_if_t *n) override {
+    dispatch(n->expr);
+    const int32_t val = offset_.back();
+    if (n->then_block) {
+      offset_.emplace_back(val);
+      dispatch(n->then_block);
+      offset_.pop_back();
+    }
+    if (n->else_block) {
+      offset_.emplace_back(val);
+      dispatch(n->else_block);
+      offset_.pop_back();
     }
   }
 

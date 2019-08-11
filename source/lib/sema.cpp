@@ -475,20 +475,31 @@ struct sema_multi_decls_t : public ast_visitor_t {
   }
 
   void visit(ast_stmt_if_t *stmt) override {
-    scope_.emplace_back();
-    ast_visitor_t::visit(stmt);
-    scope_.pop_back();
+    dispatch(stmt->expr);
+    if (stmt->then_block) {
+      scope_.emplace_back();
+      dispatch(stmt->then_block);
+      scope_.pop_back();
+    }
+    if (stmt->else_block) {
+      scope_.emplace_back();
+      dispatch(stmt->else_block);
+      scope_.pop_back();
+    }
   }
 
   void visit(ast_stmt_while_t *stmt) override {
+    dispatch(stmt->expr);
     scope_.emplace_back();
-    ast_visitor_t::visit(stmt);
+    dispatch(stmt->body);
     scope_.pop_back();
   }
 
   void visit(ast_stmt_for_t *stmt) override {
+    dispatch(stmt->start);
+    dispatch(stmt->end);
     scope_.emplace_back();
-    ast_visitor_t::visit(stmt);
+    dispatch(stmt->body);
     scope_.pop_back();
   }
 
