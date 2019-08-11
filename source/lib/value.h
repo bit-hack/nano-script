@@ -118,6 +118,8 @@ struct value_t {
     return 0;
   }
 
+  std::string to_string() const;
+
   value_type_t type_;
 
   union {

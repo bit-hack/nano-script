@@ -30,4 +30,21 @@ void value_stack_t::set_error(thread_error_t error) {
   thread_.raise_error(error);
 }
 
+std::string value_t::to_string() const {
+  switch (type_) {
+  case val_type_int:
+    return std::to_string(v);
+  case val_type_float:
+    return std::to_string(f);
+  case val_type_string:
+    return string();
+  case val_type_array:
+    return "array";
+  case val_type_none:
+    return "none";
+  default:
+    assert(!"unknown");
+  }
+}
+
 } // namespace ccml

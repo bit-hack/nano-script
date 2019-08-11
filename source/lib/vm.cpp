@@ -384,10 +384,9 @@ void thread_t::do_INS_FJMP_() {
 }
 
 void thread_t::do_INS_CALL_() {
-  const int32_t operand = read_operand_();
+  const int32_t callee = read_operand_();
   // new frame
-  enter_(stack_.head(), pc_);
-  pc_ = operand;
+  enter_(stack_.head(), pc_, callee);
 }
 
 void thread_t::do_INS_RET_() {
@@ -551,9 +550,15 @@ void thread_t::do_INS_SETA_() {
   a->array()[index] = gc_->copy(*v);
 }
 
-namespace {
-
-} // namespace
+void thread_t::reset() {
+  error_ = thread_error_t::e_success;
+  stack_.clear();
+  f_head_ = 0;
+  halted_ = false;
+  finished_ = false;
+  return_code_ = nullptr;
+  gc_->reset();
+}
 
 bool thread_t::prepare(const function_t &func, int32_t argc,
                        const value_t *argv) {
@@ -561,14 +566,18 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   finished_ = true;
   cycles_ = 0;
   halted_ = false;
-  stack_.clear();
+  return_code_ = nullptr;
 
   if (func.is_syscall()) {
     return false;
   }
 
-  // save the target pc (entry point)
+  stack_.clear();
+
+  // load the target pc (entry point)
   pc_ = func.pos_;
+
+  // verify num arguments
   if (func.num_args_ != argc) {
     return_code_ = gc_->new_int(-1);
     error_ = thread_error_t::e_bad_num_args;
@@ -581,7 +590,8 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   }
 
   // push the initial frame
-  enter_(stack_.head(), pc_);
+  enter_(stack_.head(), pc_, func.pos_);
+  frame_().terminal_ = true;
 
   // catch any misc errors
   if (error_ != thread_error_t::e_success) {
@@ -637,13 +647,16 @@ void thread_t::step_imp_() {
   }
 }
 
-void thread_t::enter_(uint32_t sp, uint32_t pc) {
+void thread_t::enter_(uint32_t sp, uint32_t pc, uint32_t callee) {
   if (f_head_ >= f_.size()) {
     set_error_(thread_error_t::e_stack_overflow);
   } else {
     ++f_head_;
     frame_().sp_ = sp;
-    frame_().pc_ = pc;
+    frame_().return_ = pc;
+    frame_().terminal_ = false;
+    frame_().callee_ = callee;
+    pc_ = callee;
   }
 }
 
@@ -653,9 +666,13 @@ uint32_t thread_t::leave_() {
     set_error_(thread_error_t::e_stack_underflow);
     return 0;
   } else {
-    const uint32_t ret_pc = frame_().pc_;
+    const uint32_t ret_pc = frame_().return_;
+    if (frame_().terminal_) {
+      // XXX: should set a status so caller know we finished
+      finished_ = true;
+    }
     --f_head_;
-    // check if we have finished
+    // check if we have more frames
     finished_ |= (f_head_ == 0);
     return ret_pc;
   }
@@ -780,7 +797,8 @@ bool thread_t::init() {
   // save the target pc (entry point)
   pc_ = init->pos_;
   // push the initial frame
-  enter_(stack_.head(), pc_);
+  enter_(stack_.head(), pc_, init->pos_);
+  frame_().terminal_ = true;
   // catch any misc errors
   if (error_ != thread_error_t::e_success) {
     return false;
@@ -791,4 +809,39 @@ bool thread_t::init() {
     return false;
   }
   return finished();
+}
+
+void thread_t::unwind() {
+
+  int32_t i = 0;
+
+  for (int32_t f = f_head_ - 1; f >= 0; --f) {
+    const auto &frame = f_[f];
+
+    const function_t *func = ccml_.find_function(frame.callee_);
+
+    fprintf(stderr, "%2d> %s\n", i, func->name_.c_str());
+
+    for (const auto &a : func->args_) {
+      fprintf(stderr, "  - %9s: ", a.name_.c_str());
+      const int32_t index = frame.sp_ + a.offset_;
+      const value_t *v = stack().get(index);
+      fprintf(stderr, "%s\n", v->to_string().c_str());
+    }
+
+    for (const auto &l : func->locals_) {
+      fprintf(stderr, "  - %9s: ", l.name_.c_str());
+      const int32_t index = frame.sp_ + l.offset_;
+      const value_t *v = stack().get(index);
+      fprintf(stderr, "%s\n", v->to_string().c_str());
+    }
+
+    if (frame.terminal_) {
+      break;
+    }
+
+    ++i;
+  }
+
+  fprintf(stderr, "end of unwind\n");
 }

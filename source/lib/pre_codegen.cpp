@@ -94,6 +94,65 @@ protected:
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
+// compute a function list and move into ccml master object
+//
+struct pregen_functions_t: public ast_visitor_t {
+
+  pregen_functions_t(ccml_t &ccml)
+    : ccml_(ccml)
+    , f_(nullptr)
+  {}
+
+  void visit(ast_decl_var_t *n) override {
+    if (f_ == nullptr) {
+      // do globals
+    }
+    else {
+      if (n->is_local()) {
+        f_->locals_.emplace_back();
+        auto &l = f_->locals_.back();
+        l.name_ = n->name->string();
+        l.offset_ = n->offset;
+      }
+    }
+  }
+
+  void visit(ast_decl_func_t *n) override {
+    funcs_.emplace_back();
+    f_ = &funcs_.back();
+    f_->num_args_ = n->args.size();
+    f_->name_ = n->name;
+
+    // this will be set during the codegen phase
+    f_->pos_ = 0;
+
+    for (const auto &arg : n->args) {
+      f_->args_.emplace_back();
+      auto &a = f_->args_.back();
+      a.name_ = arg->name->string();
+      a.offset_ = arg->offset;
+    }
+
+    ast_visitor_t::visit(n);
+
+    f_ = nullptr;
+  }
+
+  void visit(ast_program_t *n) override {
+    ast_visitor_t::visit(n);
+
+    // set the global functions from here
+    ccml_.functions_.insert(ccml_.functions_.end(), funcs_.begin(),
+                            funcs_.end());
+  }
+
+  ccml_t &ccml_;
+  function_t *f_;
+  std::vector<function_t> funcs_;
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
 // generate an init function
 //
 struct pregen_init_t : public ast_visitor_t {
@@ -175,8 +234,10 @@ struct pregen_init_t : public ast_visitor_t {
 void run_pre_codegen(ccml_t &ccml) {
   auto *prog = &(ccml.ast().program);
   pregen_init_t(ccml).visit(prog);
-  // must be the last pass
+  // passes after this must NOT modify the AST
   pregen_offset_t(ccml).visit(prog);
+  // this must come after the offsets have been set
+  pregen_functions_t(ccml).visit(prog);
 }
 
 } // namespace ccml

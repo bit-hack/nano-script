@@ -46,12 +46,14 @@ void asm_stream_t::set_line(lexer_t &lexer, const token_t *t) {
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+
+namespace ccml {
+
 struct codegen_pass_t: ast_visitor_t {
 
   codegen_pass_t(ccml_t &c, asm_stream_t &stream)
     : ccml_(c)
-    , stream_(stream)
-  {}
+    , stream_(stream) {}
 
   void set_decl_(ast_decl_var_t *decl, const token_t *t = nullptr) {
     assert(decl);
@@ -135,22 +137,22 @@ struct codegen_pass_t: ast_visitor_t {
       dispatch(c);
     }
     // find syscall
-    int32_t index = 0;
+    int32_t index = -1;
     for (const auto &f : ccml_.functions()) {
+      ++index;
+      if (!f.is_syscall()) {
+        continue;
+      }
       if (f.name_ == n->name->str_) {
         emit(INS_SCALL, index, n->name);
-        index = -1;
-        break;
+        return;
       }
-      ++index;
     }
     // emit regular call
-    if (index != -1) {
-      emit(INS_CALL, 0, n->name);
-      int32_t *operand = get_fixup();
-      // insert addr into map
-      call_fixups_.emplace_back(n->name, operand);
-    }
+    emit(INS_CALL, 0, n->name);
+    int32_t *operand = get_fixup();
+    // insert addr into map
+    call_fixups_.emplace_back(n->name, operand);
   }
 
   void visit(ast_stmt_call_t *n) override {
@@ -320,8 +322,7 @@ struct codegen_pass_t: ast_visitor_t {
   void visit(ast_stmt_return_t *n) override {
     if (n->expr) {
       dispatch(n->expr);
-    }
-    else {
+    } else {
       emit(INS_NEW_NONE, n->token);
     }
     const auto *func = stack.front()->cast<ast_decl_func_t>();
@@ -353,8 +354,11 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_decl_func_t* n) override {
-    const function_t handle(n->name.c_str(), pos(), n->args.size());
-    funcs_.push_back(handle);
+
+    function_t *func = ccml_.find_function(n->name);
+    assert(func);
+    func->pos_ = pos();
+    func->code_start_ = pos();
 
     // insert into func map
     func_map_[n->name.c_str()] = pos();
@@ -382,6 +386,8 @@ struct codegen_pass_t: ast_visitor_t {
       const int32_t operand = func->args.size() + func->stack_size;
       emit(INS_RET, operand, nullptr);
     }
+
+    func->code_end_ = pos();
   }
 
   void visit(ast_decl_var_t* n) override {
@@ -392,8 +398,7 @@ struct codegen_pass_t: ast_visitor_t {
     if (n->is_array()) {
       emit(INS_NEW_ARY, n->count(), n->name);
       set_decl_(n, n->name);
-    }
-    else {
+    } else {
       assert(n->is_local());
       if (n->expr) {
         dispatch(n->expr);
@@ -527,6 +532,8 @@ void codegen_pass_t::emit(instruction_e ins, int32_t v, const token_t *t) {
     assert(!"unknown instruction");
   }
 }
+
+} // namespace ccml
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 codegen_t::codegen_t(ccml_t &c, asm_stream_t &s)

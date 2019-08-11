@@ -25,6 +25,7 @@ struct thread_t {
     , gc_(new value_gc_t())
     , stack_(*this, *gc_)
   {
+    reset();
   }
 
   // prepare to execute a function
@@ -88,8 +89,12 @@ struct thread_t {
     halted_ = true;
   }
 
-protected:
+  void reset();
 
+  // unwind the stack
+  void unwind();
+
+protected:
   void tick_gc_(int32_t cycles);
 
   friend struct vm_t;
@@ -129,7 +134,9 @@ protected:
   // frame stack
   struct frame_t {
     int32_t sp_;
-    int32_t pc_;
+    int32_t return_;
+    int32_t callee_;
+    bool terminal_;
   };
   uint32_t f_head_;
   std::array<frame_t, 512> f_;
@@ -138,7 +145,7 @@ protected:
   value_stack_t stack_;
 
   // frame control
-  void enter_(uint32_t sp, uint32_t pc);
+  void enter_(uint32_t sp, uint32_t ret, uint32_t callee);
   uint32_t leave_();
 
   // current stack frame

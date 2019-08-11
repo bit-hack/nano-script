@@ -104,6 +104,22 @@ void on_error(const ccml::error_t &error) {
   exit(1);
 }
 
+void on_runtime_error(ccml::ccml_t &ccml, ccml::thread_t &thread) {
+  using namespace ccml;
+  const thread_error_t err = thread.error();
+  if (err == thread_error_t::e_success) {
+    return;
+  }
+  const int32_t line = thread.source_line();
+  printf("runtime error %d\n", int32_t(err));
+  fprintf(stderr, "%s\n", get_thread_error(thread.error()));
+  printf("source line %d\n", int32_t(line));
+  const std::string &s = ccml.lexer().get_line(line);
+  printf("%s\n", s.c_str());
+
+  thread.unwind();
+}
+
 }; // namespace
 
 int main(int argc, char **argv) {
@@ -168,9 +184,10 @@ int main(int argc, char **argv) {
   }
 
   if (thread.has_error()) {
-    fprintf(stderr, "thread error: %d\n", (int)thread.error());
-    fprintf(stderr, "%s\n", get_thread_error(thread.error()));
-    fprintf(stderr, "line: %d\n", thread.source_line());
+    const thread_error_t err = thread.error();
+    if (err != thread_error_t::e_success) {
+      on_runtime_error(ccml, thread);
+    }
     return -5;
   }
   fflush(stdout);

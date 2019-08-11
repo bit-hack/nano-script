@@ -56,14 +56,38 @@ struct thread_t;
 typedef void(*ccml_syscall_t)(struct thread_t &thread);
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+
+struct identifier_t {
+  std::string name_;
+  int32_t offset_;
+};
+
+// But we need a PC for each function
 struct function_t {
   std::string name_;
-  int32_t pos_;
   ccml_syscall_t sys_;
+
+  // XXX: REMOVE ME
+  int32_t pos_;
   uint32_t num_args_;
+
+  uint32_t code_start_;
+  uint32_t code_end_;
+
+  std::vector<identifier_t> locals_;
+  std::vector<identifier_t> args_;
 
   bool is_syscall() const {
     return sys_ != nullptr;
+  }
+
+  function_t()
+    : sys_(nullptr)
+    , pos_(0)
+    , num_args_(0)
+    , code_start_(0)
+    , code_end_(0)
+  {
   }
 
   function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args)
@@ -123,13 +147,29 @@ protected:
     line_table_[pc] = line;
   }
 
+  struct pc_range_t {
+    uint32_t pc_start_;
+    uint32_t pc_end_;
+    ast_decl_func_t *f_;
+  };
+
+  // pc to function mapping
+  std::vector<pc_range_t> pc_range_;
+
+  // bytecode array
   std::array<uint8_t, 1024 * 8> code_;
+
+  // assembly streamer
   std::unique_ptr<asm_stream_t> stream_;
 
   // line table [PC -> Line]
   std::map<uint32_t, uint32_t> line_table_;
 
+  // string table
   std::vector<std::string> strings_;
+
+  // function to pc mapping
+  // std::map<const ast_decl_func_t, uint32_t> funcs_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -156,6 +196,8 @@ struct ccml_t {
   }
 
   const function_t *find_function(const std::string &name) const;
+  const function_t *find_function(const uint32_t pc) const;
+  function_t *find_function(const std::string &name);
 
   void add_function(const std::string &name, ccml_syscall_t sys, int32_t num_args);
 
@@ -167,13 +209,15 @@ struct ccml_t {
     return store_.strings();
   }
 
-private:
+protected:
   friend struct lexer_t;
   friend struct parser_t;
   friend struct codegen_t;
   friend struct disassembler_t;
   friend struct token_stream_t;
   friend struct error_manager_t;
+  friend struct pregen_functions_t;
+  friend struct codegen_pass_t;
 
   void add_builtins_();
 

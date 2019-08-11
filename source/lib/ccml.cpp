@@ -76,9 +76,27 @@ void ccml_t::reset() {
   store_.reset();
 }
 
+function_t *ccml_t::find_function(const std::string &name) {
+  for (auto &f : functions_) {
+    if (f.name_ == name) {
+      return &f;
+    }
+  }
+  return nullptr;
+}
+
 const function_t *ccml_t::find_function(const std::string &name) const {
   for (const auto &f : functions_) {
     if (f.name_ == name) {
+      return &f;
+    }
+  }
+  return nullptr;
+}
+
+const function_t *ccml_t::find_function(const uint32_t pc) const {
+  for (const auto &f : functions_) {
+    if (pc >= f.code_start_ && pc < f.code_end_) {
       return &f;
     }
   }

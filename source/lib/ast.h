@@ -235,6 +235,9 @@ struct ast_exp_call_t : public ast_node_t {
   bool is_syscall;
   ast_decl_func_t *decl;
   std::vector<ast_node_t *> args;
+
+  // local frame variables
+  std::vector<ast_decl_var_t *> locals;
 };
 
 struct ast_exp_bin_op_t : public ast_node_t {
@@ -481,9 +484,11 @@ struct ast_decl_func_t : public ast_node_t {
   {}
 
   virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    auto *w = with->cast<ast_decl_var_t>();
+    assert(w);
     for (size_t i = 0; i < args.size(); ++i) {
-      if (args[i] == which) {
-        args[i] = with;
+      if (args[i] == w) {
+        args[i] = w;
       }
     }
     if (body == which) {
@@ -494,10 +499,13 @@ struct ast_decl_func_t : public ast_node_t {
 
   const token_t *token;
   const std::string name;
-  std::vector<ast_node_t *> args;
+  std::vector<ast_decl_var_t *> args;
   ast_block_t *body;
 
-  // 
+  // populated during codegen
+  std::vector<ast_decl_var_t*> locals;
+
+  // number of locals
   uint32_t stack_size;
 };
 

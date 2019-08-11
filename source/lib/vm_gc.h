@@ -86,6 +86,13 @@ struct value_gc_t {
 
   bool should_collect() const;
 
+  void reset() {
+    space_from().clear();
+    space_to().clear();
+    forward_.clear();
+    flipflop_ = 0;
+  }
+
 protected:
 
   arena_t &space_from() {
