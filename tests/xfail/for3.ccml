@@ -1,0 +1,4 @@
+function main()
+    for main = 0 to 10
+    end
+end
