@@ -1,0 +1,6 @@
+const x = 10
+const x = 10
+
+function main()
+    return x
+end

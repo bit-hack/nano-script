@@ -1,0 +1,8 @@
+  function look()
+
+  var while = 1
+
+  while (while)
+  end
+
+  end

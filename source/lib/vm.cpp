@@ -812,36 +812,30 @@ bool thread_t::init() {
 }
 
 void thread_t::unwind() {
-
   int32_t i = 0;
-
   for (int32_t f = f_head_ - 1; f >= 0; --f) {
     const auto &frame = f_[f];
-
     const function_t *func = ccml_.find_function(frame.callee_);
-
-    fprintf(stderr, "%2d> %s\n", i, func->name_.c_str());
-
+    assert(func);
+    fprintf(stderr, "%2d> function %s\n", i, func->name_.c_str());
+    // print function arguments
     for (const auto &a : func->args_) {
-      fprintf(stderr, "  - %9s: ", a.name_.c_str());
+      fprintf(stderr, "  - %4s: ", a.name_.c_str());
       const int32_t index = frame.sp_ + a.offset_;
       const value_t *v = stack().get(index);
       fprintf(stderr, "%s\n", v->to_string().c_str());
     }
-
+    // print local variables
     for (const auto &l : func->locals_) {
-      fprintf(stderr, "  - %9s: ", l.name_.c_str());
+      fprintf(stderr, "  - %4s: ", l.name_.c_str());
       const int32_t index = frame.sp_ + l.offset_;
       const value_t *v = stack().get(index);
       fprintf(stderr, "%s\n", v->to_string().c_str());
     }
-
+    // exit on terminal frame
     if (frame.terminal_) {
       break;
     }
-
     ++i;
   }
-
-  fprintf(stderr, "end of unwind\n");
 }

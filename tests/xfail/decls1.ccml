@@ -1,0 +1,4 @@
+  function look()
+  # cant reference something before its fully declared
+  var x = x
+end

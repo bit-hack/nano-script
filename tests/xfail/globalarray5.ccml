@@ -1,0 +1,4 @@
+var my_global[4]
+function foo()
+  my_global = 1
+end

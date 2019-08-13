@@ -1,0 +1,4 @@
+  function look()
+  var x = y
+  var y
+end

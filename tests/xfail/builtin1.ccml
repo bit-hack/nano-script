@@ -1,0 +1,3 @@
+function main()
+    return abs(1, 2)
+end

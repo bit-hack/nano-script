@@ -1,0 +1,5 @@
+
+function f(size)
+  var my_array[2]
+  my_array = 3
+end

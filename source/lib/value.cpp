@@ -37,13 +37,14 @@ std::string value_t::to_string() const {
   case val_type_float:
     return std::to_string(f);
   case val_type_string:
-    return string();
+    return "\"" + std::string(string()) + "\"";
   case val_type_array:
     return "array";
   case val_type_none:
     return "none";
   default:
     assert(!"unknown");
+    return "";
   }
 }
 

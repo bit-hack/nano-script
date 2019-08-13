@@ -359,71 +359,11 @@ protected:
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-//
-// commutative tree rotation
-//
-struct opt_com_rotation_t: public ast_visitor_t {
-
-  opt_com_rotation_t(ccml_t &ccml)
-    : ccml_(ccml)
-  {}
-
-  void visit(ast_exp_lit_var_t *n) override {
-    depth_ = 0;    // terminal node
-  }
-
-  void visit(ast_exp_lit_str_t *n) override {
-    depth_ = 0;    // terminal node
-  }
-
-  void visit(ast_exp_call_t *n) override {
-    depth_ = 0;    // terminal node
-  }
-
-  void visit(ast_exp_bin_op_t *o) override {
-    assert(o->left || o->right);
-    // depth of both subtrees
-    const int32_t dl = depth_;
-    dispatch(o->left);
-    const int32_t dr = depth_;
-    dispatch(o->right);
-    // if its a commutative operator
-    switch (o->op) {
-    case TOK_ADD:
-    case TOK_MUL:
-    case TOK_AND:
-    case TOK_OR:
-      if (dr > dl) {
-        std::swap(o->left, o->right);
-      }
-      break;
-    default:
-      break;
-    }
-    ++depth_;
-  }
-
-  void visit(ast_exp_unary_op_t *o) override {
-    dispatch(o->child);
-    ++depth_;
-  }
-
-  void visit(ast_program_t *p) override {
-    ast_visitor_t::visit(p);
-  }
-
-  int32_t depth_;
-  ccml_t &ccml_;
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_optimize(ccml_t &ccml) {
 #if 1
   opt_post_ret_t    (ccml).visit(&(ccml.ast().program));
   opt_const_expr_t  (ccml).visit(&(ccml.ast().program));
   opt_if_remove_t   (ccml).visit(&(ccml.ast().program));
-// disabled as string operations are not commutative
-//  opt_com_rotation_t(ccml).visit(&(ccml.ast().program));
   op_decl_elim_t    (ccml).visit(&(ccml.ast().program));
 #endif
 }

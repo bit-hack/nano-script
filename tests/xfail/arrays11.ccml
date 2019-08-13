@@ -1,0 +1,6 @@
+function f(x)
+end
+function g()
+  var my_array[10]
+  f(my_array)
+end

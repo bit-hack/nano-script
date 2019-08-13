@@ -1,0 +1,6 @@
+function main()
+    if (1)
+        var x = 10
+    end
+    puts("" + x)
+end

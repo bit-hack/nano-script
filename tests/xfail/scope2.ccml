@@ -1,0 +1,6 @@
+function main()
+    while (i == 0)
+        puts("test")
+    end
+    var i = 0
+end

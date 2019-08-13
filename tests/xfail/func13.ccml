@@ -1,0 +1,5 @@
+  function v()
+end
+function boo()
+  return 1 + v
+end

@@ -1,0 +1,4 @@
+  function look()
+  if (1)
+  else end
+end

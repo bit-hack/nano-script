@@ -1,0 +1,6 @@
+# global use of definition during initalization
+
+  var global = global
+function look()
+  return global
+end

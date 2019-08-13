@@ -1,0 +1,4 @@
+
+function f(size)
+  var my_array[size]
+end

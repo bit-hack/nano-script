@@ -1,0 +1,4 @@
+function f(size)
+  var x = 10
+  x[0] = 10
+end

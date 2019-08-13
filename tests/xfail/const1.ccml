@@ -1,0 +1,6 @@
+const x = y
+const y = x
+
+function main()
+    return x
+end

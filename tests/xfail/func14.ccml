@@ -1,0 +1,7 @@
+
+  function v()
+end
+function boo()
+  return 1 + v[12]
+end
+

@@ -1,0 +1,11 @@
+var x = 10
+
+function main()
+    if (x)
+        puts("baz")
+    else
+        puts("foo")
+    else
+        puts("bar")
+    end
+end

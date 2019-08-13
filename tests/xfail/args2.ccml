@@ -1,0 +1,5 @@
+  function f(a, b, c)
+end
+function g()
+  f(1, 2)
+end

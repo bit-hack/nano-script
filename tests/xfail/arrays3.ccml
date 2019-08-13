@@ -1,0 +1,5 @@
+var size = 10
+
+function f()
+  var my_array[size]
+end

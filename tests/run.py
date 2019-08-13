@@ -24,7 +24,7 @@ def get_expected(path):
     return "--UNKNOWN--"
 
 
-def do_run(base, path):
+def do_xpass(base, path):
     print '{0}'.format(path)
     tried.add(base)
     try:
@@ -51,14 +51,38 @@ def do_run(base, path):
     except OSError:
         print 'failed to execute {0}'.format(path)
 
+        
+def do_xfail(base, path):
+    print '{0}'.format(path)
+    tried.add(base)
+    try:
+        proc = subprocess.Popen(
+            [DRIVER, path],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE)
+
+        out, err = proc.communicate()
+        ret = proc.returncode
+
+        if ret != 0:
+            passed.add(base)
+            return
+        else:
+            print '{0} unexpected pass!'.format(base)
+    except OSError:
+        print 'failed to execute {0}'.format(path)
+
 
 def main():
-
-    # compile all files in here
-    for f in os.listdir('.'):
+    for f in os.listdir('./xpass'):
         root, ext = os.path.splitext(f)
         if ext == '.ccml':
-            do_run(root, f)
+            do_xpass(root, os.path.join('./xpass', f))
+
+    for f in os.listdir('./xfail'):
+        root, ext = os.path.splitext(f)
+        if ext == '.ccml':
+            do_xfail(root, os.path.join('./xfail', f))
 
     print '{0} of {1} passed'.format(len(passed), len(tried))
 
@@ -70,6 +94,7 @@ def main():
         exit(1)
     else:
         exit(0)
+
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,5 @@
+  function look()
+  var if = 1
+  if (if)
+  end
+end

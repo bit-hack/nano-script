@@ -1,0 +1,6 @@
+var y[12]
+function x(input)
+end
+function main()
+  x(y)
+end

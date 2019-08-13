@@ -1,0 +1,4 @@
+function f()
+  # one element doesnt make much sense
+  var my_array[1]
+end

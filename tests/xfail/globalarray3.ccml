@@ -1,0 +1,5 @@
+
+var my_global
+function foo()
+  my_global[1] = 123
+end
