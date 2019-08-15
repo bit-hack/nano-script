@@ -26,7 +26,7 @@ def get_expected(path):
 
 def do_xpass(base, path):
     print '{0}'.format(path)
-    tried.add(base)
+    tried.add(path)
     try:
         proc = subprocess.Popen(
             [DRIVER, path],
@@ -43,7 +43,7 @@ def do_xpass(base, path):
 
         wanted = get_expected(path)
         if wanted in out:
-            passed.add(base)
+            passed.add(path)
         else:
             print '{0} failed!'.format(base)
             print 'got ----\n{0}\n--------'.format(out.strip())
@@ -54,7 +54,7 @@ def do_xpass(base, path):
         
 def do_xfail(base, path):
     print '{0}'.format(path)
-    tried.add(base)
+    tried.add(path)
     try:
         proc = subprocess.Popen(
             [DRIVER, path],
@@ -65,7 +65,7 @@ def do_xfail(base, path):
         ret = proc.returncode
 
         if ret != 0:
-            passed.add(base)
+            passed.add(path)
             return
         else:
             print '{0} unexpected pass!'.format(base)

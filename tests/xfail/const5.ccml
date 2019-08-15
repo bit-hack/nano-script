@@ -1,0 +1,5 @@
+const x = 1.2
+
+function main()
+    return x
+end

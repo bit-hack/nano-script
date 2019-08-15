@@ -14,6 +14,12 @@ struct eval_t: public ast_visitor_t {
   }
 
   void visit(ast_exp_unary_op_t *n) override {
+
+    if (!is_supported(n->child)) {
+      valid_ = false;
+      return;
+    }
+
     decend_(n);
     const int32_t v = value_.back();
     int32_t r = 0;
@@ -31,6 +37,12 @@ struct eval_t: public ast_visitor_t {
   }
 
   void visit(ast_exp_bin_op_t *n) override {
+
+    if (!is_supported(n->left) || !is_supported(n->right)) {
+      valid_ = false;
+      return;
+    }
+
     decend_(n);
     const int32_t r = eval_(*(n->token));
     value_.push_back(r);
@@ -62,6 +74,18 @@ struct eval_t: public ast_visitor_t {
   }
 
 protected:
+  bool is_supported(const ast_node_t *n) const {
+    switch (n->type) {
+    case ast_exp_lit_var_e:
+    case ast_exp_bin_op_e:
+    case ast_exp_unary_op_e:
+    case ast_exp_ident_e:
+      return true;
+    default:
+      return false;
+    }
+  }
+
   void decend_(ast_node_t *n) {
     switch (n->type) {
     case ast_exp_lit_var_e:
@@ -143,10 +167,17 @@ struct sema_const_t: public ast_visitor_t {
     }
     ast_node_t *parent = stack.rbegin()[1];
     if (n->decl->expr) {
-      auto *var = n->decl->expr->cast<ast_exp_lit_var_t>();
-      assert(var);
-      // XXX: should copy the var node instead
-      parent->replace_child(n, var);
+      ast_node_t *e = n->decl->expr;
+      switch (e->type) {
+      case ast_exp_lit_var_e:
+      case ast_exp_lit_str_e:
+      case ast_exp_lit_float_e:
+      case ast_exp_none_e:
+        parent->replace_child(n, e);
+        break;
+      default:
+        errs_.cant_evaluate_constant(*n->name);
+      }
     }
   }
 
