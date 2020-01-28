@@ -1,6 +1,0 @@
-# SEED 13117
-
-var oHNc[6]
-
-var lFRNd
-

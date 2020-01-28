@@ -1,6 +1,0 @@
-# SEED 13225
-
-var AzAf = "v"
-
-var JG3IbXH[65]
-

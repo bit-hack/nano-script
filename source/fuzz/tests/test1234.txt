@@ -1,4 +1,0 @@
-# SEED 12555
-
-var wJj
-

@@ -1,4 +1,0 @@
-# SEED 12916
-
-var KKALz[39]
-

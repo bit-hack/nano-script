@@ -1,8 +1,0 @@
-# SEED 13136
-
-var wy = ""
-
-var ZE[53]
-
-var JWor1R
-

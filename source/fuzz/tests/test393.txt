@@ -1,6 +1,0 @@
-# SEED 12738
-
-var c1O4Gf5z = 85
-
-var Xz_x[103]
-

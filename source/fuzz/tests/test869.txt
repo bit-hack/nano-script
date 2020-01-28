@@ -1,8 +1,0 @@
-# SEED 13214
-
-var mM = 66
-
-var _FmJUt[17]
-
-var QU0ER = 49
-

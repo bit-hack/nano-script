@@ -1,6 +1,0 @@
-# SEED 13259
-
-var S_UwJp7Y = 39
-
-var HP0PuIzA
-

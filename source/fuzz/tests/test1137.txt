@@ -1,6 +1,0 @@
-# SEED 12458
-
-var mCpc = "%U5"
-
-var KdjJzLFE[13]
-

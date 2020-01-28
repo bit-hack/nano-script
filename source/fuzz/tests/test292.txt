@@ -1,8 +1,0 @@
-# SEED 12637
-
-var mhp[83]
-
-var aGFw4
-
-var Hm = 69
-

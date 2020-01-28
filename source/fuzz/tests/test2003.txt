@@ -1,6 +1,0 @@
-# SEED 13324
-
-var g8kSq3E[58]
-
-var Lws[19]
-

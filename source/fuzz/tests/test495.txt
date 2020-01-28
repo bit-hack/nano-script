@@ -1,8 +1,0 @@
-# SEED 12840
-
-var iSfV = 55
-
-var cRO[102]
-
-var Wptu[17]
-

@@ -1,4 +1,0 @@
-# SEED 12609
-
-var aCOo1
-

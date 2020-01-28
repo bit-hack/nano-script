@@ -1,6 +1,0 @@
-# SEED 12995
-
-var Qd9
-
-var tGV = 46
-

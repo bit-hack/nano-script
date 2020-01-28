@@ -1,8 +1,0 @@
-# SEED 12589
-
-var MmGZCg = 4
-
-var rhK = 123
-
-var HWxO0d5a[56]
-

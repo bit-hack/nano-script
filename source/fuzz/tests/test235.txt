@@ -1,4 +1,0 @@
-# SEED 12580
-
-var jJOu_Un = 91
-

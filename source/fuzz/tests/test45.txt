@@ -1,8 +1,0 @@
-# SEED 12390
-
-var P66pgR = 1
-
-var g1oJpxhi = 75
-
-var j0kjAN[80]
-

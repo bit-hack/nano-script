@@ -1,8 +1,0 @@
-# SEED 12775
-
-var m1_1j = 60
-
-var Rq5Lu
-
-var yjfH8B[60]
-

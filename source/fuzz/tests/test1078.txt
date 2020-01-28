@@ -1,4 +1,0 @@
-# SEED 12399
-
-var hrp1y_
-

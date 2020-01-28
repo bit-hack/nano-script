@@ -1,6 +1,0 @@
-# SEED 13261
-
-var gTr[48]
-
-var xBybji[109]
-

@@ -1,6 +1,0 @@
-# SEED 12477
-
-var H6_B0[7]
-
-var gelCgxL[34]
-

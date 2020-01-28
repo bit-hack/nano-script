@@ -1,6 +1,0 @@
-# SEED 13102
-
-var xA0Z[9]
-
-var zN5J[64]
-

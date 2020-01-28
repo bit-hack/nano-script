@@ -1,6 +1,0 @@
-# SEED 13107
-
-var RcsW0oQ2 = 88
-
-var gN = "PQUv@"
-

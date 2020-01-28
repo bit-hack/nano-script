@@ -1,4 +1,0 @@
-# SEED 12931
-
-var O6u8c = none
-

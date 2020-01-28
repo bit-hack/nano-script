@@ -1,8 +1,0 @@
-# SEED 13074
-
-var c4
-
-var Ig51TT8 = 76
-
-var Ev0ivP[20]
-

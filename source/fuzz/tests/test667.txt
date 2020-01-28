@@ -1,6 +1,0 @@
-# SEED 13012
-
-var f_m301N6[118]
-
-var WZjddJsR
-

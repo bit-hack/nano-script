@@ -1,6 +1,0 @@
-# SEED 13208
-
-var IvD2p7c
-
-var ogke_bdp[116]
-

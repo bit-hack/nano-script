@@ -1,8 +1,0 @@
-# SEED 12493
-
-var OmVNT[123]
-
-var PFMN
-
-var ALWrJ = 3
-

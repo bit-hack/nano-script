@@ -1,8 +1,0 @@
-# SEED 13121
-
-var WY_KmD[82]
-
-var UpDrooG[10]
-
-var W6B6
-

@@ -1,4 +1,0 @@
-# SEED 12839
-
-var MaV
-

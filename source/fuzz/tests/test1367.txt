@@ -1,6 +1,0 @@
-# SEED 12688
-
-var YjS6k
-
-var hb6_[12]
-

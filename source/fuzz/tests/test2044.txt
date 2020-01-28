@@ -1,6 +1,0 @@
-# SEED 13365
-
-var ur[89]
-
-var kRK[18]
-

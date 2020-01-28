@@ -1,6 +1,0 @@
-# SEED 13069
-
-var QsAu
-
-var eU = 125
-

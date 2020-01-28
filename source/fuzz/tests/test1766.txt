@@ -1,6 +1,0 @@
-# SEED 13087
-
-var PmZe[111]
-
-var Sm99c2x = 8
-

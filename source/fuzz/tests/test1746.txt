@@ -1,8 +1,0 @@
-# SEED 13067
-
-var r5F8[32]
-
-var kRMD4x = none
-
-var FGCa
-

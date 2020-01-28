@@ -1,8 +1,0 @@
-# SEED 13199
-
-var P_nRpD
-
-var rBa = 69
-
-var Hwillefk[113]
-

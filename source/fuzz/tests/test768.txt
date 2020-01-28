@@ -1,4 +1,0 @@
-# SEED 13113
-
-var wrDvm[72]
-

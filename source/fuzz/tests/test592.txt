@@ -1,6 +1,0 @@
-# SEED 12937
-
-var HFKNn6H = 105
-
-var eoi
-

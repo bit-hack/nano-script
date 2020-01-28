@@ -1,6 +1,0 @@
-# SEED 12680
-
-var cgR = 48
-
-var kFx[95]
-

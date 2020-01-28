@@ -24,9 +24,3 @@ FILE(GLOB FILE_DRIVER_SDL_CPP "source/driver_sdl/*.cpp")
 FILE(GLOB FILE_DRIVER_SDL_H "source/driver_sdl/*.h")
 add_executable(ccml_driver_sdl ${FILE_DRIVER_SDL_CPP} ${FILE_DRIVER_SDL_H})
 target_link_libraries(ccml_driver_sdl ccml_lib ${SDL_LIBRARY_TEMP})
-
-FILE(GLOB FILE_FUZZ_CPP "source/fuzz/*.cpp")
-FILE(GLOB FILE_FUZZ_H "source/fuzz/*.h")
-add_executable(ccml_fuzz  ${FILE_FUZZ_CPP} ${FILE_FUZZ_H})
-target_link_libraries(ccml_fuzz ccml_lib)
-

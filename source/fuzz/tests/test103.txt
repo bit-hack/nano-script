@@ -1,8 +1,0 @@
-# SEED 12448
-
-var h0f = 95
-
-var H5[110]
-
-var WhB[98]
-

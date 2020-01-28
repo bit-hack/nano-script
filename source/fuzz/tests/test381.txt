@@ -1,6 +1,0 @@
-# SEED 12726
-
-var vwXH
-
-var tg
-

@@ -1,8 +1,0 @@
-# SEED 12757
-
-var RtX4ci6y = 49
-
-var GICKg[35]
-
-var IR
-

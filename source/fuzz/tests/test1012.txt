@@ -1,6 +1,0 @@
-# SEED 13357
-
-var fTcv = 51
-
-var x96Og98 = 124
-

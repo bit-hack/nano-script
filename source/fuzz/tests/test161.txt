@@ -1,8 +1,0 @@
-# SEED 12506
-
-var kt9fchZ[102]
-
-var ff[78]
-
-var NVS
-

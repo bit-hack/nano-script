@@ -1,8 +1,0 @@
-# SEED 13174
-
-var Rse[63]
-
-var HGdz = 119
-
-var EskHk6XF
-

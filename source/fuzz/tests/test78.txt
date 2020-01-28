@@ -1,4 +1,0 @@
-# SEED 12423
-
-var bbzpO = 99
-

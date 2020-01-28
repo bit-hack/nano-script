@@ -1,8 +1,0 @@
-# SEED 12623
-
-var uprTc4a[80]
-
-var qJY_J[47]
-
-var sKdi[42]
-

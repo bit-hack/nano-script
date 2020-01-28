@@ -1,4 +1,0 @@
-# SEED 12808
-
-var PlW4knFs = 92
-

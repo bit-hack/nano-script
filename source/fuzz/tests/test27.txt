@@ -1,6 +1,0 @@
-# SEED 12372
-
-var zJWCJ = 62
-
-var lkKITMY = 48
-
