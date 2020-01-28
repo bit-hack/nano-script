@@ -16,7 +16,7 @@ var speed
 
 function update()
     move()
-    
+
     setrgb(192, 192, 192)
     var i
     for (i = 0 to head)
@@ -91,7 +91,7 @@ function check_collide()
         reset()
         return 1
     end
-    
+
     if (y < 0 or y >= (height / 8))
         reset()
         return 1
@@ -130,7 +130,7 @@ function move()
     if (check_collide())
         return
     end
-    
+
     if (snake_x[head] == apple_x and snake_y[head] == apple_y)
         if (head+1 < max_segs)
             grow = 1
@@ -138,7 +138,7 @@ function move()
         new_apple()
         speed *= 0.9
     end
-    
+
     if (not grow)
         # move segments head to tail
         var i
