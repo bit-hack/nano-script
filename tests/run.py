@@ -1,3 +1,5 @@
+
+from __future__ import print_function
 import os
 import subprocess
 import sys
@@ -10,6 +12,7 @@ if is_linux:
     DRIVER = '../build/ccml_driver'
 else:
     DRIVER = '../build/Debug/ccml_driver.exe'
+    COMP = "../build/Debug/ccml_comp.exe"
 
 
 tried = set()
@@ -24,8 +27,29 @@ def get_expected(path):
     return "--UNKNOWN--"
 
 
+def do_comp(base, path):
+    print('{0}'.format(path))
+    tried.add(path)
+    try:
+        proc = subprocess.Popen(
+            [COMP, path],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE)
+
+        out, err = proc.communicate()
+        ret = proc.returncode
+
+        if ret == 0:
+            passed.add(path)
+            return
+        else:
+            print('{0} unable to compile!'.format(base))
+    except OSError:
+        print('failed to execute {0}'.format(path))
+
+
 def do_xpass(base, path):
-    print '{0}'.format(path)
+    print('{0}'.format(path))
     tried.add(path)
     try:
         proc = subprocess.Popen(
@@ -37,23 +61,23 @@ def do_xpass(base, path):
         ret = proc.returncode
 
         if ret != 0:
-            print '{0} returned error code {1}!'.format(base, ret)
-            print '{0}'.format(err)
+            print('{0} returned error code {1}!'.format(base, ret))
+            print('{0}'.format(err))
             return
 
         wanted = get_expected(path)
         if wanted in out:
             passed.add(path)
         else:
-            print '{0} failed!'.format(base)
-            print 'got ----\n{0}\n--------'.format(out.strip())
-            print 'exp ----\n{0}\n--------'.format(wanted)
+            print('{0} failed!'.format(base))
+            print('got ----\n{0}\n--------'.format(out.strip()))
+            print('exp ----\n{0}\n--------'.format(wanted))
     except OSError:
-        print 'failed to execute {0}'.format(path)
+        print('failed to execute {0}'.format(path))
 
-        
+
 def do_xfail(base, path):
-    print '{0}'.format(path)
+    print('{0}'.format(path))
     tried.add(path)
     try:
         proc = subprocess.Popen(
@@ -68,9 +92,9 @@ def do_xfail(base, path):
             passed.add(path)
             return
         else:
-            print '{0} unexpected pass!'.format(base)
+            print('{0} unexpected pass!'.format(base))
     except OSError:
-        print 'failed to execute {0}'.format(path)
+        print('failed to execute {0}'.format(path))
 
 
 def main():
@@ -84,13 +108,18 @@ def main():
         if ext == '.ccml':
             do_xfail(root, os.path.join('./xfail', f))
 
-    print '{0} of {1} passed'.format(len(passed), len(tried))
+    for f in os.listdir('./fuzz'):
+        root, ext = os.path.splitext(f)
+        if ext == '.ccml':
+            do_comp(root, os.path.join('./fuzz', f))
+
+    print('{0} of {1} passed'.format(len(passed), len(tried)))
 
     if len(passed) != len(tried):
-        print 'failed:'
+        print('failed:')
         for x in tried:
             if x not in passed:
-                print '   {0}'.format(x)
+                print('   {0}'.format(x))
         exit(1)
     else:
         exit(0)
