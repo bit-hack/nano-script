@@ -1,0 +1,45 @@
+const width = 128
+const height = 128
+
+const type = 1
+
+function update()
+  var i
+  if (type == 0)
+    for (i = 0 to 64)
+      var x0 = rand() % width
+      var y0 = rand() % height
+      var r  = rand() % 32
+      setrgb(rand(), rand(), rand())
+      circle(x0, y0, r)
+    end
+  end
+  if (type == 1)
+    for (i = 0 to 64)
+      var x0 = rand() % width
+      var y0 = rand() % height
+      var x1 = rand() % width
+      var y1 = rand() % height
+      setrgb(rand(), rand(), rand())
+      line(x0, y0, x1, y1)
+    end
+  end
+  if (type == 2)
+    for (i = 0 to 64)
+      var x0 = rand() % width
+      var y0 = rand() % height
+      setrgb(rand(), rand(), rand())
+      plot(x0, y0)
+    end
+  end
+end
+
+function main()
+  # open video window
+  video(width, height)
+  # main loop
+  while (1)
+    update()
+    flip()
+  end
+end

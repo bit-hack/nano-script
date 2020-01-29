@@ -1,0 +1,74 @@
+var width = 128
+var height = 128
+
+const size = 16
+
+var maze[size * size]
+
+function get_cell(x, y)
+    return maze[x + y * size]
+end
+
+function set_cell(x, y, val)
+    maze[x + y * size] = val
+end
+
+function visit(x, y)
+    set_cell(x, y, 1)
+
+    var d[4]
+    d[0] = 0
+    d[1] = 1
+    d[2] = 2
+    d[3] = 3
+
+    var i
+    for (i = 0 to 4)
+        var j = rand() % 4
+        var t = d[j]
+        d[j] = d[i]
+        d[i] = t
+    end
+
+    for (i = 0 to 4)
+        var r = d[i]
+        if (r == 0 and x > 0)
+            if (get_cell(x - 1, y) == none)
+                line(x * 8 + 4, y * 8 + 4, (x - 1) * 8 + 4, y * 8 + 4)
+                visit(x - 1, y)
+            end
+        end
+        if (r == 1 and x < size - 1)
+            if (get_cell(x + 1, y) == none)
+                line(x * 8 + 4, y * 8 + 4, (x + 1) * 8 + 4, y * 8 + 4)
+                visit(x + 1, y)
+            end
+        end
+        if (r == 2 and y > 0)
+            if (get_cell(x, y - 1) == none)
+                line(x * 8 + 4, y * 8 + 4, x * 8 + 4, (y - 1) * 8 + 4)
+                visit(x, y - 1)
+            end
+        end
+        if (r == 3 and y < size - 1)
+            if (get_cell(x, y + 1) == none)
+                line(x * 8 + 4, y * 8 + 4, x * 8 + 4, (y + 1) * 8 + 4)
+                visit(x, y + 1)
+            end
+        end
+    end
+end
+
+function main()
+  # open video window
+  video(width, height)
+  # do the work
+  cls()
+  setrgb(255, 255, 255)
+  visit(rand() % size, rand() % size)
+  flip()
+  # main loop
+  while (1)
+    sleep(10)
+  end  
+end

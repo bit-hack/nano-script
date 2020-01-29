@@ -1,0 +1,17 @@
+var array[16]
+
+function recurse(x)
+    var c = x * 2
+    var test = "x is " + x
+    puts(test)
+    abs(c)
+    if (x == 0)
+        array[-1] = 1
+        abs(array[-1])
+    end
+    recurse(x-1)
+end
+
+function main()
+    recurse(2)
+end

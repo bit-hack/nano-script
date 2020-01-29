@@ -1,0 +1,51 @@
+const width = 128
+const height = 128
+
+const num = 128
+
+var star_x[num]
+var star_y[num]
+var star_z[num]
+
+function init()
+  var i
+  for (i = 0 to num)
+    star_x[i] = (rand() % width ) - (width / 2)
+    star_y[i] = (rand() % height) - (height / 2)
+    star_z[i] = (1 + (rand() % 1000) / 2.0)
+  end
+end
+
+function update()
+  var i
+  for (i = 0 to num)
+    var z = star_z[i]
+    var x = star_x[i] / z
+    var y = star_y[i] / z
+    star_z[i] = z * 0.99
+    var c = max(0, 255 - z * 20)
+    setrgb(c, c, c)
+    plot(64 + x, 64 + y)
+    
+    if (x < -width or x > width)
+        if (y < -width or y > height)
+            star_x[i] = rand() % width - (width / 2)
+            star_y[i] = rand() % height - (height / 2)
+            star_z[i] = 1 + (rand() % 1000) / 1.0
+        end
+    end
+  end
+end
+
+function main()
+  init()
+  # open video window
+  video(width, height)
+  # main loop
+  while (1)
+    cls()
+    update()
+    flip()
+    sleep(10)
+  end
+end
