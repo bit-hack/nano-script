@@ -15,11 +15,11 @@ using namespace ccml;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 ccml_t::ccml_t()
-  : store_()
+  : program_()
   , lexer_(new lexer_t(*this))
   , parser_(new parser_t(*this))
   , ast_(new ast_t(*this))
-  , codegen_(new codegen_t(*this, store_.stream()))
+  , codegen_(new codegen_t(*this, program_.stream()))
   , disassembler_(new disassembler_t(*this))
   , errors_(new error_manager_t(*this))
   , optimize(true)
@@ -71,7 +71,7 @@ void ccml_t::reset() {
   parser_->reset();
   ast_->reset();
   codegen_->reset();
-  store_.reset();
+  program_.reset();
 }
 
 function_t *ccml_t::find_function(const std::string &name) {
@@ -104,15 +104,4 @@ const function_t *ccml_t::find_function(const uint32_t pc) const {
 void ccml_t::add_function(const std::string &name, ccml_syscall_t sys, int32_t num_args) {
   const function_t fn{name, sys, num_args};
   functions_.push_back(fn);
-}
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-code_store_t::code_store_t()
-  : stream_(new asm_stream_t{*this}) {
-}
-
-void code_store_t::reset() {
-  line_table_.clear();
-  strings_.clear();
-  stream_.reset(new asm_stream_t(*this));
 }

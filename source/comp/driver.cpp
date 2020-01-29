@@ -116,8 +116,8 @@ int main(int argc, char **argv) {
   }
 
   if (fd_bin) {
-    const uint8_t *data = ccml.store().data();
-    fwrite(data, 1, ccml.store().size(), fd_bin);
+    const uint8_t *data = ccml.program().data();
+    fwrite(data, 1, ccml.program().size(), fd_bin);
   }
 
   return 0;

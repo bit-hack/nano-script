@@ -357,7 +357,6 @@ struct codegen_pass_t: ast_visitor_t {
 
     function_t *func = ccml_.find_function(n->name);
     assert(func);
-    func->pos_ = pos();
     func->code_start_ = pos();
 
     // insert into func map

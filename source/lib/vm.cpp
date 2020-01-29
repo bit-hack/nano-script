@@ -575,7 +575,7 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   stack_.clear();
 
   // load the target pc (entry point)
-  pc_ = func.pos_;
+  pc_ = func.code_start_;
 
   // verify num arguments
   if (func.num_args_ != argc) {
@@ -590,7 +590,7 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   }
 
   // push the initial frame
-  enter_(stack_.head(), pc_, func.pos_);
+  enter_(stack_.head(), pc_, func.code_start_);
   frame_().terminal_ = true;
 
   // catch any misc errors
@@ -715,7 +715,7 @@ bool thread_t::step_line() {
 }
 
 int32_t thread_t::source_line() const {
-  return ccml_.store().get_line(pc_);
+  return ccml_.program().get_line(pc_);
 }
 
 void thread_t::tick_gc_(int32_t cycles) {
@@ -795,9 +795,9 @@ bool thread_t::init() {
     return true;
   }
   // save the target pc (entry point)
-  pc_ = init->pos_;
+  pc_ = init->code_start_;
   // push the initial frame
-  enter_(stack_.head(), pc_, init->pos_);
+  enter_(stack_.head(), pc_, init->code_start_);
   frame_().terminal_ = true;
   // catch any misc errors
   if (error_ != thread_error_t::e_success) {

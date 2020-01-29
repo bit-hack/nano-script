@@ -16,7 +16,7 @@ namespace ccml {
 // the asm stream bridges the assembler and the code store
 struct asm_stream_t {
 
-  asm_stream_t(code_store_t &store)
+  asm_stream_t(program_t &store)
     : store_(store)
     , end(store.end())
     , start(store.data())
@@ -73,7 +73,7 @@ struct asm_stream_t {
   void set_line(lexer_t &lexer, const token_t *line);
 
 protected:
-  code_store_t &store_;
+  program_t &store_;
   std::map<const uint8_t *, uint32_t> line_table_;
 
   const uint8_t *end;

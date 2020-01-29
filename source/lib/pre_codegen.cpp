@@ -124,7 +124,8 @@ struct pregen_functions_t: public ast_visitor_t {
     f_->name_ = n->name;
 
     // this will be set during the codegen phase
-    f_->pos_ = 0;
+    f_->code_start_ = 0;
+    f_->code_end_ = 0;
 
     for (const auto &arg : n->args) {
       f_->args_.emplace_back();
