@@ -1,0 +1,10 @@
+#expect 4
+
+function test(a)
+    a = a + 2
+    return a
+end
+
+function main()
+    return test(2)
+end

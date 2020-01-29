@@ -1,0 +1,8 @@
+#expect 3
+
+function main()
+  var x = 0
+  x += 1
+  x += 2
+  return x
+end

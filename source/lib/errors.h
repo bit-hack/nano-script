@@ -126,6 +126,10 @@ struct error_manager_t {
     on_error_(t.line_no_, "identifier '%s' an array type not variable", t.string());
   }
 
+  virtual void cant_assign_arg(const token_t &t) {
+    on_error_(t.line_no_, "cant assign to argument '%s'", t.string());
+  }
+
   virtual void wrong_number_of_args(const token_t &t, int32_t takes,
                                     int32_t given) {
     on_error_(t.line_no_, "function '%s' takes %d arguments, %d given",

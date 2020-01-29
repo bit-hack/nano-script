@@ -98,6 +98,8 @@ def do_xfail(base, path):
 
 
 def main():
+    arg_fast = ('-fast' in sys.argv)
+
     for f in os.listdir('./xpass'):
         root, ext = os.path.splitext(f)
         if ext == '.ccml':
@@ -108,10 +110,11 @@ def main():
         if ext == '.ccml':
             do_xfail(root, os.path.join('./xfail', f))
 
-    for f in os.listdir('./fuzz'):
-        root, ext = os.path.splitext(f)
-        if ext == '.ccml':
-            do_comp(root, os.path.join('./fuzz', f))
+    if not arg_fast:
+        for f in os.listdir('./fuzz'):
+            root, ext = os.path.splitext(f)
+            if ext == '.ccml':
+                do_comp(root, os.path.join('./fuzz', f))
 
     print('{0} of {1} passed'.format(len(passed), len(tried)))
 

@@ -1,7 +1,0 @@
-function test(a)
-    a = 2
-end
-
-function main()
-    test(1)
-end

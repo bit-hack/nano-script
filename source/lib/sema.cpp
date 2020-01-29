@@ -352,9 +352,6 @@ struct sema_decl_annotate_t : public ast_visitor_t {
     if (n->decl->is_array()) {
       errs_.ident_is_array_not_var(*n->name);
     }
-    if (n->decl->is_arg()) {
-      //XXX: can you assign to an argument?
-    }
   }
 
   void visit(ast_stmt_assign_array_t *n) override {
@@ -662,25 +659,36 @@ protected:
 struct sema_num_args_t : public ast_visitor_t {
 
   sema_num_args_t(ccml_t &ccml)
-    : errs_(ccml.errors()) {
+    : ccml_(ccml)
+    , errs_(ccml.errors()) {
   }
 
+  ccml_t &ccml_;
   error_manager_t &errs_;
   std::map<std::string, const ast_decl_func_t *> funcs_;
 
   void visit(ast_exp_call_t *call) override {
     const auto &name = call->name->str_;
-    auto itt = funcs_.find(name);
-    if (itt == funcs_.end()) {
-      // its likely a builtin or syscall
-      return;
+    if (call->is_syscall) {
+      function_t *func = ccml_.find_function(name);
+      assert(func);
+      if (call->args.size() > func->num_args_) {
+        errs_.too_many_args(*call->name);
+      }
+      if (call->args.size() < func->num_args_) {
+        errs_.not_enought_args(*call->name);
+      }
     }
-    const ast_decl_func_t *func = itt->second;
-    if (call->args.size() > func->args.size()) {
-      errs_.too_many_args(*call->name);
-    }
-    if (call->args.size() < func->args.size()) {
-      errs_.not_enought_args(*call->name);
+    else {
+      auto itt = funcs_.find(name);
+      assert(itt != funcs_.end());
+      const ast_decl_func_t *func = itt->second;
+      if (call->args.size() > func->args.size()) {
+        errs_.too_many_args(*call->name);
+      }
+      if (call->args.size() < func->args.size()) {
+        errs_.not_enought_args(*call->name);
+      }
     }
   }
 
