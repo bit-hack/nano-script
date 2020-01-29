@@ -50,22 +50,34 @@ FILE *fd_open(const char *base, const char *ext) {
   return fopen(buf, "wb");
 }
 
+void usage(const char *path) {
+printf(R"(usage: %s file.ccml [-n -a -d -b]
+  -n  disable codegen optimizations
+  -a  emit ast
+  -d  emit disassembly
+  -b  emit binary
+)", path);
+}
+
 int main(int argc, char **argv) {
 
-  using namespace ccml;
-
-  ccml_t ccml;
-
-  if (argc <= 1)
+  if (argc <= 1) {
+    usage(argv[0]);
     return -1;
+  }
+
   const char *source = load_file(argv[1]);
   if (!source) {
     fprintf(stderr, "unable to load input");
     return -1;
   }
 
+  using namespace ccml;
+  ccml_t ccml;
+
   FILE *fd_ast = nullptr;
   FILE *fd_dis = nullptr;
+  FILE *fd_bin = nullptr;
 
   for (int i = 2; i < argc; ++i) {
     const char *arg = argv[i];
@@ -78,6 +90,12 @@ int main(int argc, char **argv) {
       break;
     case 'd':
       fd_dis = fd_open(argv[1], ".dis");
+      break;
+    case 'b':
+      fd_bin = fd_open(argv[1], ".bin");
+      break;
+    case 'n':
+      ccml.optimize = false;
       break;
     }
   }
@@ -95,6 +113,11 @@ int main(int argc, char **argv) {
   if (fd_dis) {
     ccml.disassembler().set_file(fd_dis);
     ccml.disassembler().disasm();
+  }
+
+  if (fd_bin) {
+    const uint8_t *data = ccml.store().data();
+    fwrite(data, 1, ccml.store().size(), fd_bin);
   }
 
   return 0;

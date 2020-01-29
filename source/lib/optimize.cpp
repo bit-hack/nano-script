@@ -360,12 +360,12 @@ protected:
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_optimize(ccml_t &ccml) {
-#if 1
-  opt_post_ret_t    (ccml).visit(&(ccml.ast().program));
-  opt_const_expr_t  (ccml).visit(&(ccml.ast().program));
-  opt_if_remove_t   (ccml).visit(&(ccml.ast().program));
-  op_decl_elim_t    (ccml).visit(&(ccml.ast().program));
-#endif
+  if (ccml.optimize) {
+    opt_post_ret_t    (ccml).visit(&(ccml.ast().program));
+    opt_const_expr_t  (ccml).visit(&(ccml.ast().program));
+    opt_if_remove_t   (ccml).visit(&(ccml.ast().program));
+    op_decl_elim_t    (ccml).visit(&(ccml.ast().program));
+  }
 }
 
 } // namespace ccml

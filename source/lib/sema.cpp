@@ -280,7 +280,6 @@ struct sema_global_var_t : public ast_visitor_t {
   }
 
 protected:
-
   void run_globals_(ast_program_t *p) {
     for (auto *n : p->children) {
       if (auto *d = n->cast<ast_decl_var_t>()) {
@@ -354,7 +353,7 @@ struct sema_decl_annotate_t : public ast_visitor_t {
       errs_.ident_is_array_not_var(*n->name);
     }
     if (n->decl->is_arg()) {
-      // can you assign to an argument?
+      //XXX: can you assign to an argument?
     }
   }
 

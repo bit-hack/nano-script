@@ -138,7 +138,7 @@ int main(int argc, char **argv) {
   }
   const char *source = load_file(argv[1]);
   if (!source) {
-    fprintf(stderr, "unable to load input");
+    fprintf(stderr, "unable to load input\n");
     return -1;
   }
 

@@ -22,11 +22,9 @@ ccml_t::ccml_t()
   , codegen_(new codegen_t(*this, store_.stream()))
   , disassembler_(new disassembler_t(*this))
   , errors_(new error_manager_t(*this))
+  , optimize(true)
 {
   add_builtins_();
-}
-
-ccml_t::~ccml_t() {
 }
 
 bool ccml_t::build(const char *source, error_t &error) {

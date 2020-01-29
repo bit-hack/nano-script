@@ -106,6 +106,14 @@ struct code_store_t {
     return code_.data();
   }
 
+  uint8_t *data() {
+    return code_.data();
+  }
+
+  const size_t size() const {
+    return code_.size();
+  }
+
   const uint8_t *end() const {
     return code_.data() + code_.size();
   }
@@ -138,10 +146,6 @@ struct code_store_t {
 
 protected:
   friend struct asm_stream_t;
-
-  uint8_t *data() {
-    return code_.data();
-  }
 
   void add_line(uint32_t pc, uint32_t line) {
     line_table_[pc] = line;
@@ -176,7 +180,6 @@ protected:
 struct ccml_t {
 
   ccml_t();
-  ~ccml_t();
 
   // accessors
   error_manager_t &errors()       { return *errors_; }
@@ -208,6 +211,9 @@ struct ccml_t {
   const std::vector<std::string> &strings() const {
     return store_.strings();
   }
+
+  // enable codegen optimizations
+  bool optimize;
 
 protected:
   friend struct lexer_t;
