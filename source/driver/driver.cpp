@@ -20,7 +20,7 @@ const char *load_file(const char *path) {
     return nullptr;
 
   fseek(fd, 0, SEEK_END);
-  long size = ftell(fd);
+  size_t size = size_t(ftell(fd));
   fseek(fd, 0, SEEK_SET);
   if (size <= 0) {
     fclose(fd);
@@ -184,8 +184,6 @@ int main(int argc, char **argv) {
     return -3;
   }
 
-  ccml::thread_error_t err = ccml::thread_error_t::e_success;
-
   ccml::thread_t thread{ccml};
 
   if (!thread.init()) {
@@ -205,8 +203,7 @@ int main(int argc, char **argv) {
   }
 
   if (thread.has_error()) {
-    const thread_error_t err = thread.error();
-    if (err != thread_error_t::e_success) {
+    if (thread.error() != thread_error_t::e_success) {
       on_runtime_error(ccml, thread);
     }
     return -5;

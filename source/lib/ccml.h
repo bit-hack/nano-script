@@ -46,12 +46,12 @@ struct function_t {
   }
 
   function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args)
-      : name_(name), sys_(sys), num_args_(num_args), code_start_(-1),
-        code_end_(-1) {}
+      : name_(name), sys_(sys), num_args_(num_args), code_start_(~0u),
+        code_end_(~0u) {}
 
   function_t(const std::string &name, int32_t pos, int32_t num_args)
       : name_(name), sys_(nullptr), num_args_(num_args), code_start_(pos),
-        code_end_(-1) {}
+        code_end_(~0u) {}
 };
 
 

@@ -50,8 +50,8 @@ struct pregen_offset_t: public ast_visitor_t {
     offset_.pop_back();
   }
 
-  void visit(ast_program_t *n) override {
-    for (auto &f : n->children) {
+  void visit(ast_program_t *a) override {
+    for (auto &f : a->children) {
       // collect global offsets
       if (auto *n = f->cast<ast_decl_var_t>()) {
         assert(n->is_global());

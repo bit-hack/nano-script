@@ -381,8 +381,8 @@ struct codegen_pass_t: ast_visitor_t {
     }
     if (!is_return) {
       emit(INS_NEW_INT, 0, nullptr);
-      const auto *func = stack.front()->cast<ast_decl_func_t>();
-      const int32_t operand = func->args.size() + func->stack_size;
+      const auto *f = stack.front()->cast<ast_decl_func_t>();
+      const int32_t operand = f->args.size() + f->stack_size;
       emit(INS_RET, operand, nullptr);
     }
 
@@ -431,7 +431,7 @@ protected:
   }
 
   // handle @init function as a special case
-  void visit_init(ast_decl_func_t* n) {
+  void visit_init(ast_decl_func_t* a) {
 
     int num_globals = 0;
     for (ast_node_t *n : ccml_.ast().program.children) {
@@ -458,7 +458,7 @@ protected:
       }
     }
 
-    ast_visitor_t::visit(n);
+    ast_visitor_t::visit(a);
 
     // return
     emit(INS_NEW_INT, 0, nullptr);
@@ -496,7 +496,7 @@ void codegen_pass_t::emit(instruction_e ins, const token_t *t) {
   case INS_SETA:
   case INS_GETA:
   case INS_NEW_NONE:
-    stream_.write8(uint32_t(ins));
+    stream_.write8(uint8_t(ins));
     break;
   default:
     assert(!"unknown instruction");

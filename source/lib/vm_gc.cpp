@@ -130,7 +130,7 @@ void value_gc_t::trace(value_t **list, size_t num) {
       break;
     }
     case val_type_string: {
-      assert(strlen(v->string()) == v->v);
+      assert(int32_t(strlen(v->string())) == v->v);
       const size_t size = v->v;
       value_t *n = to.alloc<value_t>(size + 1);
       n->type_ = val_type_string;

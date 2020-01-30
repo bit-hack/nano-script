@@ -30,7 +30,7 @@ const char *load_file(const char *path) {
     return nullptr;
 
   fseek(fd, 0, SEEK_END);
-  long size = ftell(fd);
+  size_t size = size_t(ftell(fd));
   fseek(fd, 0, SEEK_SET);
   if (size <= 0) {
     fclose(fd);

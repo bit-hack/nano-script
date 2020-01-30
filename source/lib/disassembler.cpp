@@ -149,9 +149,6 @@ int32_t disassembler_t::disasm() {
 
   for (; p < end; ++count) {
 
-    const uint8_t *ptr = p;
-    bool print_line = false;
-
     const int32_t offset = (p - start);
 
     // find function

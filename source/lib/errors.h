@@ -82,6 +82,7 @@ struct error_manager_t {
   }
 
   virtual void equals_expected_after_operator(const token_t &t) {
+    (void)t;
     on_error_(line_number_(), "equals expected after operator for compound assignment");
   }
 

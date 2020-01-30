@@ -68,7 +68,7 @@ bool lexer_t::lex(const char *s) {
         if (*s == '\n' || *s == '\0') {
           // raise an error
           lines_.push_back(std::string(new_line_, (s+1) - new_line_));
-          ccml_.errors().string_quote_mismatch(line_no_, *s);
+          ccml_.errors().string_quote_mismatch(line_no_);
           return false;
         }
       }

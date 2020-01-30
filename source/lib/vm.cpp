@@ -80,14 +80,14 @@ int32_t thread_t::read_operand_() {
 uint8_t thread_t::peek_opcode_() {
   const uint8_t *c = ccml_.code();
   // XXX: range check for c
-  const int32_t val = *(uint8_t *)(c + pc_);
+  const int8_t val = *(uint8_t *)(c + pc_);
   return val;
 }
 
 uint8_t thread_t::read_opcode_() {
   const uint8_t *c = ccml_.code();
   // XXX: range check for c
-  const int32_t val = *(uint8_t *)(c + pc_);
+  const int8_t val = *(uint8_t *)(c + pc_);
   pc_ += sizeof(uint8_t);
   return val;
 }
@@ -578,7 +578,7 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   pc_ = func.code_start_;
 
   // verify num arguments
-  if (func.num_args_ != argc) {
+  if (int32_t(func.num_args_) != argc) {
     return_code_ = gc_->new_int(-1);
     error_ = thread_error_t::e_bad_num_args;
     return false;
@@ -697,7 +697,7 @@ bool thread_t::step_line() {
     return false;
   }
   // get the current source line
-  const uint32_t line = source_line();
+  const int32_t line = source_line();
   // step until the source line changes
   do {
     step_imp_();
@@ -719,6 +719,7 @@ int32_t thread_t::source_line() const {
 }
 
 void thread_t::tick_gc_(int32_t cycles) {
+  (void)cycles;
   if (gc().should_collect()) {
     gc_collect();
   }
