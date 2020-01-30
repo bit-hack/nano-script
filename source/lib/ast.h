@@ -41,6 +41,8 @@ struct ast_node_t {
     : type(t) {
   }
 
+  virtual ~ast_node_t() {}
+
   template <typename type_t>
   type_t *cast() {
     return is_a<type_t>() ? static_cast<type_t *>(this) : nullptr;
@@ -59,7 +61,10 @@ struct ast_node_t {
     return type == type_t::TYPE;
   }
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {}
+  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+    (void)which;
+    (void)with;
+  }
 
   // node type
   const ast_type_t type;
@@ -520,10 +525,10 @@ struct ast_decl_var_t : public ast_node_t {
 
   ast_decl_var_t(const token_t *name, scope_t kind)
     : ast_node_t(TYPE)
+    , scope(kind)
     , name(name)
     , expr(nullptr)
     , size(nullptr)
-    , scope(kind)
     , is_const(false)
     , offset(0)
   {}
@@ -613,12 +618,12 @@ struct ast_visitor_t {
       dispatch(c);
   }
 
-  virtual void visit(ast_exp_ident_t* n) {}
-  virtual void visit(ast_exp_lit_var_t* n) {}
-  virtual void visit(ast_exp_lit_str_t* n) {}
-  virtual void visit(ast_exp_lit_float_t *n) {}
-  virtual void visit(ast_exp_none_t* n) {}
-  virtual void visit(ast_array_init_t* n) {}
+  virtual void visit(ast_exp_ident_t* n) { (void)n; }
+  virtual void visit(ast_exp_lit_var_t* n) { (void)n; }
+  virtual void visit(ast_exp_lit_str_t* n) { (void)n; }
+  virtual void visit(ast_exp_lit_float_t *n) { (void)n; }
+  virtual void visit(ast_exp_none_t* n) { (void)n; }
+  virtual void visit(ast_array_init_t* n) { (void)n; }
 
   virtual void visit(ast_exp_array_t* n) {
     dispatch(n->index);
@@ -774,6 +779,8 @@ struct ast_printer_t : ast_visitor_t {
     case TOK_EQ:  op = "==";  break;
     case TOK_AND: op = "and"; break;
     case TOK_OR:  op = "or";  break;
+    default:
+      break;
     }
     fprintf(fd_, "ast_exp_bin_op_t {op: %s}\n", op);
     ast_visitor_t::visit(n);
@@ -841,13 +848,13 @@ struct ast_printer_t : ast_visitor_t {
 
   void visit(ast_array_init_t* n) override {
     indent_();
-    fprintf(fd_, "ast_array_init_t {size: %d}\n", n->item.size());
+    fprintf(fd_, "ast_array_init_t {size: %d}\n", int(n->item.size()));
     ast_visitor_t::visit(n);
   }
 
   void visit(ast_decl_var_t* n) override {
     indent_();
-    fprintf(fd_, "ast_decl_var_t {name: %s, size:%d}\n", n->name->string(), n->count());
+    fprintf(fd_, "ast_decl_var_t {name: %s, size:%d}\n", n->name->string(), int(n->count()));
     ast_visitor_t::visit(n);
   }
 

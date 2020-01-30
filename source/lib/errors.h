@@ -158,7 +158,7 @@ struct error_manager_t {
   }
   
   virtual void too_many_array_inits(const token_t &t, int32_t got, int32_t want) {
-    on_error_(t.line_no_, "too many array initalizers, got %d needs %n");
+    on_error_(t.line_no_, "too many array initalizers, got %d needs %n", got, want);
   }
   
   virtual void cant_evaluate_constant(const token_t &t) {
@@ -188,7 +188,7 @@ struct error_manager_t {
     on_error_(line, "unexpected character '%c' in source", ch);
   }
 
-  virtual void string_quote_mismatch(const uint32_t line, const char ch) {
+  virtual void string_quote_mismatch(const uint32_t line) {
     on_error_(line, "string missing closing quote \"");
   }
 

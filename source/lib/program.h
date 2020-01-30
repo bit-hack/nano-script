@@ -23,7 +23,7 @@ struct program_t {
     return code_.data();
   }
 
-  const size_t size() const {
+  size_t size() const {
     return code_.size();
   }
 

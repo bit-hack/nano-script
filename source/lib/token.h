@@ -57,30 +57,30 @@ struct token_t {
   token_t(token_e t, uint32_t line)
     : type_(t)
     , str_()
-    , val_(0)
-    , line_no_(line) {}
+    , line_no_(line)
+    , val_(0) {}
 
   token_t(token_e tok, const char *s, uint32_t line)
     : type_(tok)
     , str_(s)
-    , val_(0)
-    , line_no_(line) {}
+    , line_no_(line)
+    , val_(0) {}
 
   token_t(token_e tok, const std::string &s, uint32_t line)
     : type_(tok)
     , str_(s)
-    , val_(0)
-    , line_no_(line) {}
+    , line_no_(line)
+    , val_(0) {}
 
   token_t(const int32_t &v, uint32_t line)
     : type_(TOK_INT)
-    , val_(v)
-    , line_no_(line) {}
+    , line_no_(line)
+    , val_(v) {}
 
   token_t(const float &v, uint32_t line)
     : type_(TOK_FLOAT)
-    , valf_(v)
-    , line_no_(line) {}
+    , line_no_(line)
+    , valf_(v) {}
 
   // convert a token_e to a token string
   static const char *token_name(token_e e);

@@ -19,10 +19,12 @@ struct thread_t {
   thread_t(ccml_t &ccml)
     : ccml_(ccml)
     , return_code_(nullptr)
-    , finished_(true)
     , cycles_(0)
-    , f_head_(0)
+    , finished_(true)
+    , halted_(false)
+    , pc_(0)
     , gc_(new value_gc_t())
+    , f_head_(0)
     , stack_(*this, *gc_)
   {
     reset();
@@ -58,7 +60,7 @@ struct thread_t {
     return error_ != thread_error_t::e_success;
   }
 
-  const thread_error_t error() const {
+  thread_error_t error() const {
     return error_;
   }
 

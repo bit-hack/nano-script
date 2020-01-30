@@ -3,7 +3,7 @@
 
 namespace ccml {
 
-enum instruction_e;
+//enum instruction_e;
 struct instruction_t;
 
 struct error_manager_t;

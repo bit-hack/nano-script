@@ -84,7 +84,7 @@ struct value_t {
     return (value_t**)(this + 1);
   }
 
-  const value_type_t type() const {
+  value_type_t type() const {
     return this == nullptr ?
       value_type_t::val_type_none :
       type_;

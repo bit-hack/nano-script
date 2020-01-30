@@ -15,14 +15,15 @@ using namespace ccml;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 ccml_t::ccml_t()
-  : program_()
+  : optimize(true)
+  , program_()
+  , errors_(new error_manager_t(*this))
   , lexer_(new lexer_t(*this))
   , parser_(new parser_t(*this))
   , ast_(new ast_t(*this))
   , codegen_(new codegen_t(*this, program_.stream()))
   , disassembler_(new disassembler_t(*this))
-  , errors_(new error_manager_t(*this))
-  , optimize(true)
+  
 {
   add_builtins_();
 }

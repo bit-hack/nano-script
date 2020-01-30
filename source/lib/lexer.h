@@ -9,8 +9,8 @@ namespace ccml {
 struct lexer_t {
 
   lexer_t(ccml_t &c)
-    : ccml_(c)
-    , stream_(c)
+    : stream_(c)
+    , ccml_(c)
     , line_no_(0) {}
 
   // lex input sourcecode

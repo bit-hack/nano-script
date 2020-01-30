@@ -4,7 +4,11 @@ project(ccml)
 find_package(SDL REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR})
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+if(MSVC)
+  add_compile_options("/W4" "/WX")
+else()
+  add_compile_options("-std=c++11" "-Wall" "-Wextra" "-pedantic" "-Werror" "-Wno-error=nonnull-compare")
+endif()
 
 FILE(GLOB FILE_LIB_CPP "source/lib/*.cpp")
 FILE(GLOB FILE_LIB_H "source/lib/*.h")
