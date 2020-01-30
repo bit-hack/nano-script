@@ -1,0 +1,6 @@
+#expect 10
+
+function main()
+    var x = "string" + "word"
+    return len(x)
+end

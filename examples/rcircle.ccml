@@ -1,0 +1,26 @@
+const width = 128
+const height = 128
+
+function update()
+  setrgb(rand() % 255, rand() % 255, rand() % 255)
+  plot(64, 64)
+  var i = 0
+  for (i = 0 to 64)
+    var x = 64 - rand() % 128
+    var y = 64 - rand() % 128
+    var dist = x * x + y * y
+    if (dist < 64 * 64)
+      plot(64 + x, 64 + y)
+    end
+  end
+end
+
+function main()
+  # open video window
+  video(width, height)
+  # main loop
+  while (1)
+    update()
+    flip()
+  end
+end

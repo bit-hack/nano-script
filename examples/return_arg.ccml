@@ -1,7 +1,0 @@
-function func(x)
-  return x
-end
-
-function main()
-  return func(1234)
-end

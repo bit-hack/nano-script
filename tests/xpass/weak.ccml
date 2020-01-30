@@ -1,3 +1,4 @@
+#expect Hello World
 function main()
   var f[16]
   f[1] = "Hello World"

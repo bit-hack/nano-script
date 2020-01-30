@@ -120,6 +120,27 @@ void on_runtime_error(ccml::ccml_t &ccml, ccml::thread_t &thread) {
   thread.unwind();
 }
 
+void print_result(const ccml::value_t *res) {
+  FILE *fd = stdout;
+  fprintf(fd, "exit: ");
+  if (!res || res->is_none()) {
+    fprintf(fd, "none\n");
+  }
+  if (res->is_int()) {
+    fprintf(fd, "%d", int32_t(res->v));
+  }
+  if (res->is_string()) {
+    fprintf(fd, "\"%s\"", res->string());
+  }
+  if (res->is_array()) {
+    fprintf(fd, "array");
+  }
+  if (res->is_float()) {
+    fprintf(fd, "%f", res->as_float());
+  }
+  fprintf(fd, "\n");
+}
+
 }; // namespace
 
 int main(int argc, char **argv) {
@@ -193,19 +214,7 @@ int main(int argc, char **argv) {
   fflush(stdout);
 
   const ccml::value_t *res = thread.return_code();
-
-  if (!res || res->is_none()) {
-    fprintf(stdout, "exit: none\n");
-  }
-  if (res->is_int()) {
-    fprintf(stdout, "exit: %d\n", (int32_t)(res->v));
-  }
-  if (res->is_string()) {
-    fprintf(stdout, "exit: \"%s\"\n", res->string());
-  }
-  if (res->is_array()) {
-    fprintf(stdout, "exit: array\n");
-  }
+  print_result(res);
 
   return 0;
 }

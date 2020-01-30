@@ -1,8 +1,0 @@
-const x = 1
-
-function main()
-
-    var y[x]
-
-    gets()
-end

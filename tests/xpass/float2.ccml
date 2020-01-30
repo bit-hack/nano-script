@@ -1,0 +1,9 @@
+#expect 3.6
+
+function bleep(a, b)
+  return a + b
+end
+
+function main()
+  return bleep(1.2, 2.4)
+end
