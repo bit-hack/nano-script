@@ -121,6 +121,7 @@ void vm_setrgb(ccml::thread_t &t) {
 
 static inline void plot(int32_t x, int32_t y) {
   if (auto *s = global.screen_) {
+    (void)s;
     if (x >= 0 && x < (int32_t)global.width_) {
       if (y >= 0 && y < (int32_t)global.height_) {
         uint32_t *v = (uint32_t *)global.video_.get();
@@ -134,6 +135,7 @@ static inline void plot(int32_t x, int32_t y) {
 
 static inline void span(int32_t x0, int32_t x1, int32_t y0) {
   if (auto *s = global.screen_) {
+    (void)s;
     if (y0 < 0 || y0 >= (int32_t)global.height_) {
       return;
     }
@@ -270,10 +272,6 @@ void vm_plot(ccml::thread_t &t) {
   const value_t *x = t.stack().pop();
   // return value
   t.stack().push(t.gc().new_none());
-
-  const int32_t w = global.width_;
-  const int32_t h = global.height_;
-
   if (x->is_number() && y->is_number()) {
     plot(x->as_int(), y->as_int());
   }
@@ -316,8 +314,7 @@ void on_error(const ccml::error_t &error) {
   fflush(stderr);
   exit(1);
 }
-
-}; // namespace
+} // namespace
 
 int main(int argc, char **argv) {
   using namespace ccml;

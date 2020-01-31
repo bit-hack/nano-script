@@ -46,6 +46,8 @@ bool parser_t::parse(error_t &error) {
         program->children.push_back(func);
         continue;
       }
+      default:
+        break;
       }
       const token_t *tok = stream_.pop();
       assert(tok);
@@ -281,6 +283,7 @@ ast_node_t* parser_t::parse_decl_var_(const token_t &t) {
 
   // check for [ <TOK_INT> ] array declaration
   if (const token_t *bracket = stream_.found(TOK_LBRACKET)) {
+    (void)bracket;
     // pass control to a specialized array decl parser
     return parse_decl_array_(*name);
   }
@@ -289,6 +292,7 @@ ast_node_t* parser_t::parse_decl_var_(const token_t &t) {
 
   // parse assignment expression
   if (const token_t *assign = stream_.found(TOK_ASSIGN)) {
+    (void)assign;
     ast_node_t *expr = parse_expr_();
     decl->expr = expr;
   }

@@ -41,8 +41,7 @@ void on_error(const ccml::error_t &error) {
   fflush(stderr);
   exit(1);
 }
-
-}; // namespace
+} // namespace
 
 FILE *fd_open(const char *base, const char *ext) {
   char buf[1024];

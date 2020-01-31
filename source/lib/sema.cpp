@@ -218,7 +218,9 @@ struct sema_global_var_t : public ast_visitor_t {
 
   sema_global_var_t(ccml_t &ccml)
     : errs_(ccml.errors())
-    , ast_(ccml.ast()) {
+    , ast_(ccml.ast())
+    , change_(false)
+    , strict_(false) {
   }
 
   void visit(ast_array_init_t *n) override {
@@ -290,10 +292,10 @@ protected:
     }
   }
 
+  error_manager_t &errs_;
+  ast_t &ast_;
   bool change_;
   bool strict_;
-  ast_t &ast_;
-  error_manager_t &errs_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -305,7 +307,8 @@ struct sema_decl_annotate_t : public ast_visitor_t {
 
   sema_decl_annotate_t(ccml_t &ccml)
     : errs_(ccml.errors())
-    , ccml_(ccml) {
+    , ccml_(ccml)
+    , prog_(nullptr) {
   }
 
   void visit(ast_stmt_for_t *p) override {
@@ -480,9 +483,9 @@ struct sema_decl_annotate_t : public ast_visitor_t {
 
   std::vector<std::set<ast_node_t *>> scope_;
 
-  ast_program_t *prog_;
-  ccml_t &ccml_;
   error_manager_t &errs_;
+  ccml_t &ccml_;
+  ast_program_t *prog_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

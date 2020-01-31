@@ -4,10 +4,14 @@ project(ccml)
 find_package(SDL REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR})
 
-if(MSVC)
-  add_compile_options("/W4" "/WX")
-else()
-  add_compile_options("-std=c++11" "-Wall" "-Wextra" "-pedantic" "-Werror" "-Wno-error=nonnull-compare")
+set(CCML_STRICTCOMPILER false CACHE BOOL "Enable strict compiler flags")
+
+if (CCML_STRICTCOMPILER)
+  if(MSVC)
+    add_compile_options("/W4" "/WX")
+  else()
+    add_compile_options("-std=c++11" "-Wall" "-Wextra" "-pedantic" "-Werror" "-Wno-error=nonnull-compare")
+  endif()
 endif()
 
 FILE(GLOB FILE_LIB_CPP "source/lib/*.cpp")

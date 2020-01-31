@@ -467,12 +467,12 @@ protected:
     emit(INS_RET, operand, nullptr);
   }
 
+  ccml_t &ccml_;
+  asm_stream_t &stream_;
   std::vector<function_t> funcs_;
   std::vector<std::string> strings_;
   std::map<std::string, int32_t> func_map_;
   std::vector<std::pair<const token_t *, int32_t *>> call_fixups_;
-  asm_stream_t &stream_;
-  ccml_t &ccml_;
 };
 
 void codegen_pass_t::emit(instruction_e ins, const token_t *t) {

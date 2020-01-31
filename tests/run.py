@@ -1,3 +1,4 @@
+#! /usr/bin/python
 
 from __future__ import print_function
 import os
@@ -10,6 +11,7 @@ is_linux = (sys.platform == "linux" or sys.platform == "linux2")
 
 if is_linux:
     DRIVER = '../build/ccml_driver'
+    COMP = "../build/ccml_comp"
 else:
     DRIVER = '../build/Debug/ccml_driver.exe'
     COMP = "../build/Debug/ccml_comp.exe"

@@ -77,7 +77,7 @@ void vm_gets(ccml::thread_t &t) {
   using namespace ccml;
   char buffer[80];
   fgets(buffer, sizeof(buffer), stdin);
-  for (int i = 0; i < sizeof(buffer); ++i) {
+  for (size_t i = 0; i < sizeof(buffer); ++i) {
     buffer[i] = (buffer[i] == '\n') ? '\0' : buffer[i];
   }
   buffer[79] = '\0';
@@ -140,8 +140,7 @@ void print_result(const ccml::value_t *res) {
   }
   fprintf(fd, "\n");
 }
-
-}; // namespace
+} // namespace
 
 int main(int argc, char **argv) {
 

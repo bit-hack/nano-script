@@ -19,10 +19,6 @@ struct op_decl_elim_t: public ast_visitor_t {
     , decl_(nullptr)
   {}
 
-  std::set<const ast_decl_var_t*> uses_;
-  bool removing_;
-  ast_decl_var_t *decl_;
-
   void visit(ast_stmt_for_t *n) override {
     assert(n->decl);
     if (!removing_) {
@@ -123,6 +119,9 @@ struct op_decl_elim_t: public ast_visitor_t {
 
   error_manager_t &errs_;
   ast_t &ast_;
+  std::set<const ast_decl_var_t*> uses_;
+  bool removing_;
+  ast_decl_var_t *decl_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

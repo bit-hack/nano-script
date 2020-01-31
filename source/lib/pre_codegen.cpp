@@ -85,9 +85,9 @@ struct pregen_offset_t: public ast_visitor_t {
   }
 
 protected:
-  int32_t stack_size_;
-  int32_t global_offset_;
   error_manager_t &errs_;
+  int32_t global_offset_;
+  int32_t stack_size_;
 
   std::vector<int32_t> offset_;
 };
@@ -177,6 +177,7 @@ struct pregen_init_t : public ast_visitor_t {
     }
     assert(v->is_global());
     if (auto *n = v->expr->cast<ast_exp_lit_var_t>()) {
+      (void)n;
       auto *a = ast_.alloc<ast_stmt_assign_var_t>(v->name);
       a->decl = v;
       a->expr = v->expr;
@@ -184,6 +185,7 @@ struct pregen_init_t : public ast_visitor_t {
       return;
     }
     if (auto *n = v->expr->cast<ast_exp_lit_str_t>()) {
+      (void)n;
       auto *a = ast_.alloc<ast_stmt_assign_var_t>(v->name);
       a->decl = v;
       a->expr = v->expr;
@@ -191,6 +193,7 @@ struct pregen_init_t : public ast_visitor_t {
       return;
     }
     if (auto *n = v->expr->cast<ast_array_init_t>()) {
+      (void)n;
       int i = 0;
       for (auto *t : n->item) {
         auto *a = ast_.alloc<ast_stmt_assign_array_t>(v->name);
@@ -208,6 +211,8 @@ struct pregen_init_t : public ast_visitor_t {
           break;
         case TOK_NONE:
           a->expr = ast_.alloc<ast_exp_none_t>();
+          break;
+        default:
           break;
         }
         init_->body->add(a);
