@@ -110,11 +110,9 @@ protected:
     functions_.push_back(func);
   }
 
-  void add_(const std::string &string) {
-    program_.strings().push_back(string);
-  }
-
   program_t program_;
+
+  //XXX: should live with the program?
   std::vector<function_t> functions_;
 
   std::unique_ptr<error_manager_t> errors_;

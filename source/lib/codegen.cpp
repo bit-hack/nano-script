@@ -38,22 +38,23 @@ static instruction_e tok_to_ins_(token_e op) {
 }
 } // namespace {}
 
+namespace ccml {
+
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void asm_stream_t::set_line(lexer_t &lexer, const token_t *t) {
-  const uint32_t pc = pos();
+  const uint32_t pc = head();
   const uint32_t line = t ? t->line_no_ : lexer.stream_.line_number();
   store_.add_line(pc, line);
 }
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-
-namespace ccml {
-
 struct codegen_pass_t: ast_visitor_t {
 
   codegen_pass_t(ccml_t &c, asm_stream_t &stream)
     : ccml_(c)
-    , stream_(stream) {}
+    , stream_(stream)
+    , funcs_(c.functions_)
+    , strings_(c.program_.strings()) {}
 
   void set_decl_(ast_decl_var_t *decl, const token_t *t = nullptr) {
     assert(decl);
@@ -89,7 +90,7 @@ struct codegen_pass_t: ast_visitor_t {
     // process call fixups
     for (const auto &fixups : call_fixups_) {
       const int32_t offs = func_map_[fixups.first->str_];
-      *fixups.second = offs;
+      stream_.apply_fixup(fixups.second, offs);
     }
   }
 
@@ -150,7 +151,7 @@ struct codegen_pass_t: ast_visitor_t {
     }
     // emit regular call
     emit(INS_CALL, 0, n->name);
-    int32_t *operand = get_fixup();
+    uint32_t operand = get_fixup();
     // insert addr into map
     call_fixups_.emplace_back(n->name, operand);
   }
@@ -202,20 +203,20 @@ struct codegen_pass_t: ast_visitor_t {
 
     // false jump to L0 (else)
     emit(INS_FJMP, 0, n->token); // ---> LO
-    int32_t *to_L0 = get_fixup();
+    uint32_t to_L0 = get_fixup();
 
     // then
     dispatch(n->then_block);
 
     // if there is no else
     if (!n->else_block) {
-      *to_L0 = pos();
+      stream_.apply_fixup(to_L0, pos());
       return;
     }
 
     // unconditional jump to end
     emit(INS_JMP, 0); // ---> L1
-    int32_t *to_L1 = get_fixup();
+    uint32_t to_L1 = get_fixup();
 
     // else
     // L0 <---
@@ -227,8 +228,8 @@ struct codegen_pass_t: ast_visitor_t {
     const int32_t L1 = pos();
 
     // apply fixups
-    *to_L0 = L0;
-    *to_L1 = L1;
+    stream_.apply_fixup(to_L0, L0);
+    stream_.apply_fixup(to_L1, L1);
   }
 
   void visit(ast_block_t* n) override {
@@ -249,7 +250,7 @@ struct codegen_pass_t: ast_visitor_t {
 
     // initial jump to L1 --->
     emit(INS_JMP, 0, n->token);
-    int32_t *to_L1 = get_fixup();
+    uint32_t to_L1 = get_fixup();
 
     // L0 <---
     const int32_t L0 = pos();
@@ -262,11 +263,11 @@ struct codegen_pass_t: ast_visitor_t {
     dispatch(n->expr);
     // true jump to L0 --->
     emit(INS_TJMP, 0, n->token);
-    int32_t *to_L0 = get_fixup();
+    uint32_t to_L0 = get_fixup();
 
     // apply fixups
-    *to_L0 = L0;
-    *to_L1 = L1;
+    stream_.apply_fixup(to_L0, L0);
+    stream_.apply_fixup(to_L1, L1);
   }
 
   void visit(ast_stmt_for_t* n) override {
@@ -289,7 +290,7 @@ struct codegen_pass_t: ast_visitor_t {
 
     // initial jump to L1 --->
     emit(INS_JMP, 0, n->token);
-    int32_t *to_L1 = get_fixup();
+    uint32_t to_L1 = get_fixup();
 
     // L0 <---
     const int32_t L0 = pos();
@@ -312,11 +313,11 @@ struct codegen_pass_t: ast_visitor_t {
 
     // true jump to L0 --->
     emit(INS_TJMP, 0, n->token);
-    int32_t *to_L0 = get_fixup();
+    uint32_t to_L0 = get_fixup();
 
     // apply fixups
-    *to_L0 = L0;
-    *to_L1 = L1;
+    stream_.apply_fixup(to_L0, L0);
+    stream_.apply_fixup(to_L1, L1);
   }
 
   void visit(ast_stmt_return_t *n) override {
@@ -422,12 +423,12 @@ protected:
 
   // return the current output head
   int32_t pos() const {
-    return stream_.pos();
+    return stream_.head();
   }
 
-  // return a reference to the last instructions operand
-  int32_t *get_fixup() const {
-    return reinterpret_cast<int32_t *>(stream_.head(-4));
+  // return a index of the last instructions operand
+  uint32_t get_fixup() const {
+    return stream_.head(-4);
   }
 
   // handle @init function as a special case
@@ -469,10 +470,10 @@ protected:
 
   ccml_t &ccml_;
   asm_stream_t &stream_;
-  std::vector<function_t> funcs_;
-  std::vector<std::string> strings_;
+  std::vector<function_t> &funcs_;
+  std::vector<std::string> &strings_;
   std::map<std::string, int32_t> func_map_;
-  std::vector<std::pair<const token_t *, int32_t *>> call_fixups_;
+  std::vector<std::pair<const token_t *, uint32_t>> call_fixups_;
 };
 
 void codegen_pass_t::emit(instruction_e ins, const token_t *t) {
@@ -552,15 +553,6 @@ bool codegen_t::run(ast_program_t &program, error_t &error) {
   }
 
   //XXX: a symbol table could be good, for both functions and globals
-
-  // add functions to ccml
-  for (const auto &f : cg.functions()) {
-    ccml_.add_(f);
-  }
-  // add strings to ccml
-  for (const auto &s : cg.strings()) {
-    ccml_.add_(s);
-  }
 
   return true;
 }

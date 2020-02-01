@@ -14,58 +14,41 @@ namespace ccml {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 // the asm stream bridges the assembler and the code store
+
+// XXX: rename to code_stream_t
 struct asm_stream_t {
 
   asm_stream_t(program_t &store)
     : store_(store)
-    , end(store.end())
-    , start(store.data())
-    , ptr(store.data())
+    , data_(store.code_)
   {
+    data_.reserve(1024);
   }
 
-  bool write8(const uint8_t data) {
-    if (end - ptr > 1) {
-      *ptr = data;
-      ptr += 1;
-      return true;
-    }
-    return false;
+  void write8(const uint8_t data) {
+    data_.push_back(data);
   }
 
-  bool write32(const uint32_t data) {
-    if (end - ptr > 4) {
-      memcpy(ptr, &data, 4);
-      ptr += 4;
-      return true;
-    }
-    return false;
-  }
-
-  const uint8_t *tail() const {
-    return end;
-  }
-
-  size_t written() const {
-    return ptr - start;
+  void write32(const uint32_t data) {
+    data_.push_back((data >> 0 ) & 0xff);
+    data_.push_back((data >> 8 ) & 0xff);
+    data_.push_back((data >> 16) & 0xff);
+    data_.push_back((data >> 24) & 0xff);
   }
 
   const uint8_t *data() const {
-    return start;
+    return data_.data();
   }
 
-  size_t size() const {
-    return end - start;
+  uint32_t head(int32_t adjust = 0) const {
+    assert(adjust <= 0);
+    assert(data_.size() + adjust >= 0);
+    return data_.size() + adjust;
   }
 
-  uint32_t pos() const {
-    return ptr - start;
-  }
-
-  uint8_t *head(int32_t adjust) const {
-    uint8_t *p = ptr + adjust;
-    assert(p < end && p >= start);
-    return p;
+  void apply_fixup(uint32_t index, int32_t value) {
+    int32_t* d = (int32_t*)(data_.data() + index);
+    *d = value;
   }
 
   // set the line number for the current pc
@@ -74,11 +57,9 @@ struct asm_stream_t {
 
 protected:
   program_t &store_;
-  std::map<const uint8_t *, uint32_t> line_table_;
 
-  const uint8_t *end;
-  uint8_t *start;
-  uint8_t *ptr;
+  // this comes from the program_t
+  std::vector<uint8_t> &data_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

@@ -112,9 +112,8 @@ bool disassembler_t::disasm(int32_t &index, instruction_t &out) const {
   asm_stream_t &stream = ccml_.program_.stream();
   const uint8_t *start = stream.data();
   const uint8_t *p = stream.data() + index;
-  const uint8_t *end = stream.head(0);
 
-  if (p < start || (p+1) >= end) {
+  if (p < start || index > int32_t(stream.head())) {
     return false;
   }
 
@@ -145,7 +144,7 @@ int32_t disassembler_t::disasm() {
 
   const uint8_t *start = stream.data();
   const uint8_t *p = stream.data();
-  const uint8_t *end = stream.head(0);
+  const uint8_t *end = stream.data() + stream.head();
 
   for (; p < end; ++count) {
 

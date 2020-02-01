@@ -13,13 +13,11 @@ namespace ccml {
 
 struct program_t {
 
+  typedef std::map<uint32_t, uint32_t> linetable_t;
+
   program_t();
 
   const uint8_t *data() const {
-    return code_.data();
-  }
-
-  uint8_t *data() {
     return code_.data();
   }
 
@@ -35,7 +33,7 @@ struct program_t {
     return *stream_;
   }
 
-  const std::map<uint32_t, uint32_t> &line_table() const {
+  const linetable_t &line_table() const {
     return line_table_;
   }
 
@@ -74,19 +72,16 @@ protected:
   std::vector<pc_range_t> pc_range_;
 
   // bytecode array
-  std::array<uint8_t, 1024 * 8> code_;
+  std::vector<uint8_t> code_;
 
   // assembly streamer
   std::unique_ptr<asm_stream_t> stream_;
 
   // line table [PC -> Line]
-  std::map<uint32_t, uint32_t> line_table_;
+  linetable_t line_table_;
 
   // string table
   std::vector<std::string> strings_;
-
-  // function to pc mapping
-  // std::map<const ast_decl_func_t, uint32_t> funcs_;
 };
 
 } // namespace ccml
