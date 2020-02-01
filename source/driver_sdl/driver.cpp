@@ -358,7 +358,8 @@ int main(int argc, char **argv) {
     exit(1);
   }
 
-  ccml::thread_t thread{ccml};
+  ccml::vm_t vm{ccml};
+  ccml::thread_t thread{ccml, vm};
 
   if (!thread.init()) {
     fprintf(stderr, "failed while executing @init\n");

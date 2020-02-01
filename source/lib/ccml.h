@@ -21,9 +21,14 @@ struct identifier_t {
 };
 
 struct function_t {
+
+  // name of the function
   std::string name_;
+
+  // syscall callback or nullptr
   ccml_syscall_t sys_;
 
+  // number of arguments this funcion takes
   uint32_t num_args_;
 
   // code address range
@@ -45,10 +50,12 @@ struct function_t {
   {
   }
 
+  // syscal constructor
   function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args)
       : name_(name), sys_(sys), num_args_(num_args), code_start_(~0u),
         code_end_(~0u) {}
 
+  // compiled function constructor
   function_t(const std::string &name, int32_t pos, int32_t num_args)
       : name_(name), sys_(nullptr), num_args_(num_args), code_start_(pos),
         code_end_(~0u) {}
@@ -73,18 +80,15 @@ struct ccml_t {
 
   void reset();
 
-  const uint8_t *code() const {
-    return program_.data();
-  }
-
   const function_t *find_function(const std::string &name) const;
+        function_t *find_function(const std::string &name);
+
   const function_t *find_function(const uint32_t pc) const;
-  function_t *find_function(const std::string &name);
 
   void add_function(const std::string &name, ccml_syscall_t sys, int32_t num_args);
 
   const std::vector<function_t> &functions() const {
-    return functions_;
+    return program_.functions();
   }
 
   const std::vector<std::string> &strings() const {
@@ -107,13 +111,10 @@ protected:
   void add_builtins_();
 
   void add_(const function_t &func) {
-    functions_.push_back(func);
+    program_.functions().push_back(func);
   }
 
   program_t program_;
-
-  //XXX: should live with the program?
-  std::vector<function_t> functions_;
 
   std::unique_ptr<error_manager_t> errors_;
   std::unique_ptr<lexer_t>         lexer_;

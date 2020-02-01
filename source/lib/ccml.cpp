@@ -65,9 +65,6 @@ bool ccml_t::build(const char *source, error_t &error) {
 }
 
 void ccml_t::reset() {
-
-  functions_.clear();
-
   lexer_->reset();
   parser_->reset();
   ast_->reset();
@@ -76,7 +73,7 @@ void ccml_t::reset() {
 }
 
 function_t *ccml_t::find_function(const std::string &name) {
-  for (auto &f : functions_) {
+  for (auto &f : program_.functions()) {
     if (f.name_ == name) {
       return &f;
     }
@@ -85,7 +82,7 @@ function_t *ccml_t::find_function(const std::string &name) {
 }
 
 const function_t *ccml_t::find_function(const std::string &name) const {
-  for (const auto &f : functions_) {
+  for (const auto &f : program_.functions()) {
     if (f.name_ == name) {
       return &f;
     }
@@ -94,7 +91,7 @@ const function_t *ccml_t::find_function(const std::string &name) const {
 }
 
 const function_t *ccml_t::find_function(const uint32_t pc) const {
-  for (const auto &f : functions_) {
+  for (const auto &f : program_.functions()) {
     if (pc >= f.code_start_ && pc < f.code_end_) {
       return &f;
     }
@@ -104,5 +101,5 @@ const function_t *ccml_t::find_function(const uint32_t pc) const {
 
 void ccml_t::add_function(const std::string &name, ccml_syscall_t sys, int32_t num_args) {
   const function_t fn{name, sys, num_args};
-  functions_.push_back(fn);
+  program_.functions().push_back(fn);
 }

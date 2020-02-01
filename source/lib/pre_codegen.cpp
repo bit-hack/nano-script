@@ -142,8 +142,10 @@ struct pregen_functions_t: public ast_visitor_t {
   void visit(ast_program_t *n) override {
     ast_visitor_t::visit(n);
 
+    auto &pfunc = ccml_.program_.functions();
+
     // set the global functions from here
-    ccml_.functions_.insert(ccml_.functions_.end(), funcs_.begin(),
+    pfunc.insert(pfunc.end(), funcs_.begin(),
                             funcs_.end());
   }
 

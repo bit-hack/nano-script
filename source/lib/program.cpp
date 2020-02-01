@@ -10,6 +10,7 @@ void program_t::reset() {
   line_table_.clear();
   strings_.clear();
   stream_.reset(new asm_stream_t(*this));
+  functions_.clear();
 }
 
 } // namespace ccml

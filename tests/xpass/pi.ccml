@@ -13,7 +13,7 @@ end
 
 
 function main()
-  
+
   var count = 20000
 
   var z = 0.0
@@ -27,10 +27,10 @@ function main()
     if (x*x + y*y < 1)
       z += 1.0
     end
-    
+
     i -= 1
   end
-  
+
   var pi = (z / count) * 4.0
   puts("pi is: " + pi)
 

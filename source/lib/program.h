@@ -55,6 +55,14 @@ struct program_t {
     return strings_;
   }
 
+  const std::vector<function_t> &functions() const {
+    return functions_;
+  }
+
+  std::vector<function_t> &functions() {
+    return functions_;
+  }
+
 protected:
   friend struct asm_stream_t;
 
@@ -67,6 +75,9 @@ protected:
     uint32_t pc_end_;
     ast_decl_func_t *f_;
   };
+
+  // function descriptors
+  std::vector<function_t> functions_;
 
   // pc to function mapping
   std::vector<pc_range_t> pc_range_;

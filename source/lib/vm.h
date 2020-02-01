@@ -13,22 +13,13 @@
 
 namespace ccml {
 
+struct vm_t;
+
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct thread_t {
 
-  thread_t(ccml_t &ccml)
-    : ccml_(ccml)
-    , return_code_(nullptr)
-    , cycles_(0)
-    , finished_(true)
-    , halted_(false)
-    , pc_(0)
-    , gc_(new value_gc_t())
-    , f_head_(0)
-    , stack_(*this, *gc_)
-  {
-    reset();
-  }
+  thread_t(ccml_t &ccml, vm_t &vm);
+  ~thread_t();
 
   // prepare to execute a function
   bool prepare(const function_t &func, int32_t argc, const value_t *argv);
@@ -75,7 +66,7 @@ struct thread_t {
 
   // return garbage collector
   value_gc_t &gc() {
-    return *gc_;
+    return gc_;
   }
 
   // return the value stack
@@ -125,13 +116,11 @@ protected:
   // program counter
   int32_t pc_;
 
-  // garbage collector
-  std::unique_ptr<value_gc_t> gc_;
-  void gc_collect();
+  // parent virtual machine
+  vm_t &vm_;
 
-  // globals
-  // XXX: provide a way to share these amongst threads
-  std::vector<value_t*> g_;
+  // garbage collector from parent vm
+  value_gc_t &gc_;
 
   // frame stack
   struct frame_t {
@@ -166,7 +155,7 @@ protected:
   void set_error_(thread_error_t error) {
     finished_ = true;
     error_ = error;
-    return_code_ = gc_->new_int(-1);
+    return_code_ = gc_.new_int(-1);
   }
 
   value_t* getv_(int32_t offs);
@@ -210,6 +199,26 @@ protected:
   void do_INS_SETG_();
   void do_INS_GETA_();
   void do_INS_SETA_();
+};
+
+struct vm_t {
+
+  vm_t(ccml_t &ccml);
+
+  void reset();
+
+  // garbage collector
+  std::unique_ptr<value_gc_t> gc_;
+  void gc_collect();
+
+  // globals
+  std::vector<value_t*> g_;
+
+  // threads
+  std::set<thread_t *> threads_;
+
+  //
+  ccml_t &ccml_;
 };
 
 } // namespace ccml

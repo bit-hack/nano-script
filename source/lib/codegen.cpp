@@ -53,7 +53,7 @@ struct codegen_pass_t: ast_visitor_t {
   codegen_pass_t(ccml_t &c, asm_stream_t &stream)
     : ccml_(c)
     , stream_(stream)
-    , funcs_(c.functions_)
+    , funcs_(c.program_.functions())
     , strings_(c.program_.strings()) {}
 
   void set_decl_(ast_decl_var_t *decl, const token_t *t = nullptr) {
