@@ -76,8 +76,6 @@ struct codegen_t {
 
   bool run(ast_program_t &program, error_t &error);
 
-  void reset();
-
 protected:
   ccml_t &ccml_;
   asm_stream_t &stream_;

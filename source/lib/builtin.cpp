@@ -5,7 +5,8 @@
 
 namespace ccml {
 
-void builtin_abs(struct ccml::thread_t &t) {
+void builtin_abs(struct ccml::thread_t &t, int32_t nargs) {
+  (void)nargs;
   const ccml::value_t *v = t.stack().pop();
   assert(v);
   switch (v->type()) {
@@ -22,7 +23,9 @@ void builtin_abs(struct ccml::thread_t &t) {
   }
 }
 
-void builtin_max(struct ccml::thread_t &t) {
+// XXX: support variable arg count
+void builtin_max(struct ccml::thread_t &t, int32_t nargs) {
+  (void)nargs;
   const ccml::value_t *a = t.stack().pop();
   const ccml::value_t *b = t.stack().pop();
   assert(a && b);
@@ -41,7 +44,9 @@ void builtin_max(struct ccml::thread_t &t) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_min(struct ccml::thread_t &t) {
+// XXX: support variable arg count
+void builtin_min(struct ccml::thread_t &t, int32_t nargs) {
+  (void)nargs;
   const ccml::value_t *a = t.stack().pop();
   const ccml::value_t *b = t.stack().pop();
   assert(a && b);
@@ -60,7 +65,8 @@ void builtin_min(struct ccml::thread_t &t) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_bitand(struct ccml::thread_t &t) {
+void builtin_bitand(struct ccml::thread_t &t, int32_t nargs) {
+  (void)nargs;
   const ccml::value_t *a = t.stack().pop();
   const ccml::value_t *b = t.stack().pop();
   assert(a && b);
@@ -72,7 +78,8 @@ void builtin_bitand(struct ccml::thread_t &t) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_len(struct ccml::thread_t &t) {
+void builtin_len(struct ccml::thread_t &t, int32_t nargs) {
+  (void)nargs;
   const ccml::value_t *a = t.stack().pop();
   assert(a);
   switch (a->type()) {
@@ -90,7 +97,8 @@ void builtin_len(struct ccml::thread_t &t) {
   }
 }
 
-void builtin_shl(struct ccml::thread_t &t) {
+void builtin_shl(struct ccml::thread_t &t, int32_t nargs) {
+  (void)nargs;
   const ccml::value_t *i = t.stack().pop();
   const ccml::value_t *v = t.stack().pop();
   if (i && v) {
@@ -102,7 +110,8 @@ void builtin_shl(struct ccml::thread_t &t) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_shr(struct ccml::thread_t &t) {
+void builtin_shr(struct ccml::thread_t &t, int32_t nargs) {
+  (void)nargs;
   const ccml::value_t *i = t.stack().pop();
   const ccml::value_t *v = t.stack().pop();
   if (i && v) {
@@ -114,7 +123,8 @@ void builtin_shr(struct ccml::thread_t &t) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_chr(struct ccml::thread_t &t) {
+void builtin_chr(struct ccml::thread_t &t, int32_t nargs) {
+  (void)nargs;
   const ccml::value_t *v = t.stack().pop();
   if (v && v->is_int()) {
     char x[2] = {char(v->v), 0};
@@ -124,7 +134,8 @@ void builtin_chr(struct ccml::thread_t &t) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_sin(struct ccml::thread_t &t) {
+void builtin_sin(struct ccml::thread_t &t, int32_t nargs) {
+  (void)nargs;
   const ccml::value_t *v = t.stack().pop();
   if (v && (v->is_number())) {
     const float x = v->as_float();
@@ -134,7 +145,8 @@ void builtin_sin(struct ccml::thread_t &t) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_cos(struct ccml::thread_t &t) {
+void builtin_cos(struct ccml::thread_t &t, int32_t nargs) {
+  (void)nargs;
   const ccml::value_t *v = t.stack().pop();
   if (v && (v->is_number())) {
     const float x = v->as_float();

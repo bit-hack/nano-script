@@ -675,6 +675,10 @@ struct sema_num_args_t : public ast_visitor_t {
     if (call->is_syscall) {
       function_t *func = ccml_.find_function(name);
       assert(func);
+      if (func->num_args_ == ~0u) {
+        // it can take var args so its fine
+        return;
+      }
       if (call->args.size() > func->num_args_) {
         errs_.too_many_args(*call->name);
       }

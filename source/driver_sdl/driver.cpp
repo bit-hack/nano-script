@@ -57,14 +57,14 @@ static inline uint32_t xorshift32() {
   return x;
 }
 
-void vm_rand(ccml::thread_t &t) {
+void vm_rand(ccml::thread_t &t, int32_t) {
   // new unsigned int
   const int32_t x = (xorshift32() & 0x7fffff);
   // return value
   t.stack().push(t.gc().new_int(x));
 }
 
-void vm_cls(ccml::thread_t &t) {
+void vm_cls(ccml::thread_t &t, int32_t) {
   uint32_t *v = global.video_.get();
   for (uint32_t y = 0; y < global.height_; ++y) {
     for (uint32_t x = 0; x < global.width_; ++x) {
@@ -76,7 +76,7 @@ void vm_cls(ccml::thread_t &t) {
   t.stack().push(t.gc().new_none());
 }
 
-void vm_sleep(ccml::thread_t &t) {
+void vm_sleep(ccml::thread_t &t, int32_t) {
   ccml::value_t *val = t.stack().pop();
   if (val->is_number()) {
     tick_mark = SDL_GetTicks() + val->as_int();
@@ -86,7 +86,7 @@ void vm_sleep(ccml::thread_t &t) {
   t.stack().push(t.gc().new_none());
 }
 
-void vm_video(ccml::thread_t &t) {
+void vm_video(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   const value_t *h = t.stack().pop();
   const value_t *w = t.stack().pop();
@@ -104,7 +104,7 @@ void vm_video(ccml::thread_t &t) {
   }
 }
 
-void vm_setrgb(ccml::thread_t &t) {
+void vm_setrgb(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   const value_t *b = t.stack().pop();
   const value_t *g = t.stack().pop();
@@ -151,7 +151,7 @@ static inline void span(int32_t x0, int32_t x1, int32_t y0) {
   }
 }
 
-void vm_circle(ccml::thread_t &t) {
+void vm_circle(ccml::thread_t &t, int32_t) {
   using namespace ccml;
 
   const value_t *r = t.stack().pop();
@@ -213,7 +213,7 @@ static inline void line(int32_t x0, int32_t y0, int32_t x1, int32_t y1) {
   }
 }
 
-void vm_line(ccml::thread_t &t) {
+void vm_line(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   const value_t *y1 = t.stack().pop();
   const value_t *x1 = t.stack().pop();
@@ -225,7 +225,7 @@ void vm_line(ccml::thread_t &t) {
   }
 }
 
-void vm_keydown(ccml::thread_t &t) {
+void vm_keydown(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   const value_t *key = t.stack().pop();
   if (!key->is_string()) {
@@ -265,7 +265,7 @@ void vm_keydown(ccml::thread_t &t) {
   t.stack().push(t.gc().new_none());
 }
 
-void vm_plot(ccml::thread_t &t) {
+void vm_plot(ccml::thread_t &t, int32_t) {
   using namespace ccml;
 
   const value_t *y = t.stack().pop();
@@ -277,7 +277,7 @@ void vm_plot(ccml::thread_t &t) {
   }
 }
 
-void vm_flip(ccml::thread_t &t) {
+void vm_flip(ccml::thread_t &t, int32_t) {
   using namespace ccml;
 
   const uint32_t w = global.width_;

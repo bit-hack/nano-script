@@ -93,7 +93,7 @@ thread_t::~thread_t() {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 int32_t thread_t::read_operand_() {
   const uint8_t *c = ccml_.program().data();
-  // XXX: range check for c
+  assert(sizeof(pc_) < ccml_.program().size());
   const int32_t val = *(int32_t *)(c + pc_);
   pc_ += sizeof(int32_t);
   return val;
@@ -101,14 +101,14 @@ int32_t thread_t::read_operand_() {
 
 uint8_t thread_t::peek_opcode_() {
   const uint8_t *c = ccml_.program().data();
-  // XXX: range check for c
+  assert(sizeof(pc_) < ccml_.program().size());
   const int8_t val = *(uint8_t *)(c + pc_);
   return val;
 }
 
 uint8_t thread_t::read_opcode_() {
   const uint8_t *c = ccml_.program().data();
-  // XXX: range check for c
+  assert(sizeof(pc_) < ccml_.program().size());
   const int8_t val = *(uint8_t *)(c + pc_);
   pc_ += sizeof(uint8_t);
   return val;
@@ -406,6 +406,7 @@ void thread_t::do_INS_FJMP_() {
 }
 
 void thread_t::do_INS_CALL_() {
+  const int32_t num_args = read_operand_();
   const int32_t callee = read_operand_();
   // new frame
   enter_(stack_.head(), pc_, callee);
@@ -428,6 +429,7 @@ void thread_t::do_INS_RET_() {
 }
 
 void thread_t::do_INS_SCALL_() {
+  const int32_t num_args = read_operand_();
   const int32_t operand = read_operand_();
 
   const auto &funcs = ccml_.functions();
@@ -435,7 +437,7 @@ void thread_t::do_INS_SCALL_() {
     set_error_(thread_error_t::e_bad_syscall);
   } else {
     const function_t *func = &ccml_.functions()[operand];
-    func->sys_(*this);
+    func->sys_(*this, num_args);
   }
 }
 

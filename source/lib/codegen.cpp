@@ -134,6 +134,8 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_exp_call_t* n) override {
+    const size_t num_args = n->args.size();
+    // visit all of the arguments
     for (ast_node_t *c : n->args) {
       dispatch(c);
     }
@@ -145,12 +147,12 @@ struct codegen_pass_t: ast_visitor_t {
         continue;
       }
       if (f.name_ == n->name->str_) {
-        emit(INS_SCALL, index, n->name);
+        emit(INS_SCALL, int32_t(num_args), index, n->name);
         return;
       }
     }
     // emit regular call
-    emit(INS_CALL, 0, n->name);
+    emit(INS_CALL, int32_t(num_args), 0, n->name);
     uint32_t operand = get_fixup();
     // insert addr into map
     call_fixups_.emplace_back(n->name, operand);
@@ -419,7 +421,8 @@ protected:
 
   // emit into the code stream
   void emit(instruction_e ins, const token_t *t = nullptr);
-  void emit(instruction_e ins, int32_t v, const token_t *t = nullptr);
+  void emit(instruction_e ins, int32_t o1, const token_t *t = nullptr);
+  void emit(instruction_e ins, int32_t o1, int32_t o2, const token_t *t = nullptr);
 
   // return the current output head
   int32_t pos() const {
@@ -504,16 +507,14 @@ void codegen_pass_t::emit(instruction_e ins, const token_t *t) {
   }
 }
 
-void codegen_pass_t::emit(instruction_e ins, int32_t v, const token_t *t) {
+void codegen_pass_t::emit(instruction_e ins, int32_t o1, const token_t *t) {
   stream_.set_line(ccml_.lexer(), t);
   // encode this instruction
   switch (ins) {
   case INS_JMP:
   case INS_FJMP:
   case INS_TJMP:
-  case INS_CALL:
   case INS_RET:
-  case INS_SCALL:
   case INS_POP:
   case INS_NEW_ARY:
   case INS_NEW_INT:
@@ -526,7 +527,22 @@ void codegen_pass_t::emit(instruction_e ins, int32_t v, const token_t *t) {
   case INS_GETG:
   case INS_SETG:
     stream_.write8(uint8_t(ins));
-    stream_.write32(v);
+    stream_.write32(o1);
+    break;
+  default:
+    assert(!"unknown instruction");
+  }
+}
+
+void codegen_pass_t::emit(instruction_e ins, int32_t o1, int32_t o2, const token_t *t) {
+  stream_.set_line(ccml_.lexer(), t);
+  // encode this instruction
+  switch (ins) {
+  case INS_SCALL:
+  case INS_CALL:
+    stream_.write8(uint8_t(ins));
+    stream_.write32(o1);  // num args
+    stream_.write32(o2);  // target
     break;
   default:
     assert(!"unknown instruction");
@@ -551,11 +567,5 @@ bool codegen_t::run(ast_program_t &program, error_t &error) {
     error = e;
     return false;
   }
-
-  //XXX: a symbol table could be good, for both functions and globals
-
   return true;
-}
-
-void codegen_t::reset() {
 }

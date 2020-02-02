@@ -68,7 +68,6 @@ void ccml_t::reset() {
   lexer_->reset();
   parser_->reset();
   ast_->reset();
-  codegen_->reset();
   program_.reset();
 }
 

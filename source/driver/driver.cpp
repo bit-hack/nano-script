@@ -47,20 +47,20 @@ static inline uint32_t xorshift32() {
   return x;
 }
 
-void vm_rand(ccml::thread_t &t) {
+void vm_rand(ccml::thread_t &t, int32_t) {
   // new unsigned int
   const int32_t x = (xorshift32() & 0x7fffff);
   // return value
   t.stack().push(t.gc().new_int(x));
 }
 
-void vm_getc(ccml::thread_t &t) {
+void vm_getc(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   const int32_t ch = getchar();
   t.stack().push_int(ch);
 }
 
-void vm_putc(ccml::thread_t &t) {
+void vm_putc(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   const value_t *v = t.stack().pop();
   assert(v);
@@ -73,7 +73,7 @@ void vm_putc(ccml::thread_t &t) {
   t.stack().push_int(0);
 }
 
-void vm_gets(ccml::thread_t &t) {
+void vm_gets(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   char buffer[80];
   fgets(buffer, sizeof(buffer), stdin);
@@ -84,7 +84,7 @@ void vm_gets(ccml::thread_t &t) {
   t.stack().push_string(std::string{buffer});
 }
 
-void vm_puts(ccml::thread_t &t) {
+void vm_puts(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   value_t *s = t.stack().pop();
   assert(s);
