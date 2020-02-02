@@ -129,8 +129,7 @@ protected:
     int32_t callee_;
     bool terminal_;
   };
-  uint32_t f_head_;
-  std::array<frame_t, 512> f_;
+  std::vector<frame_t> f_;
 
   friend struct value_stack_t;
   value_stack_t stack_;
@@ -141,14 +140,14 @@ protected:
 
   // current stack frame
   const frame_t &frame_() const {
-    assert(f_head_);
-    return f_[f_head_-1];
+    assert(!f_.empty());
+    return f_.back();
   }
 
   // current stack frame
   frame_t &frame_() {
-    assert(f_head_);
-    return f_[f_head_-1];
+    assert(!f_.empty());
+    return f_.back();
   }
 
   // raise an error

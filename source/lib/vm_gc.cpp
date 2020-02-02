@@ -98,6 +98,7 @@ void value_gc_t::trace(value_t **list, size_t num) {
 
   // area data is currently in
   const arena_t &from = space_from();
+  (void)from;
   // area data should be moved to
         arena_t &to   = space_to();
 

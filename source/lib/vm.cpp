@@ -77,9 +77,9 @@ thread_t::thread_t(ccml_t &ccml, vm_t &vm)
   , pc_(0)
   , vm_(vm)
   , gc_(*(vm.gc_))
-  , f_head_(0)
   , stack_(*this, *(vm.gc_))
 {
+  f_.reserve(16);
   vm_.threads_.insert(this);
   reset();
 }
@@ -456,6 +456,7 @@ void thread_t::do_INS_NEW_INT_() {
 void thread_t::do_INS_NEW_STR_() {
   const int32_t index = read_operand_();
   const auto &str_tab = ccml_.strings();
+  (void)str_tab;
   assert(index < (int32_t)str_tab.size());
   const std::string &s = ccml_.strings()[index];
   stack_.push(gc_.new_string(s));
@@ -577,7 +578,7 @@ void thread_t::do_INS_SETA_() {
 void thread_t::reset() {
   error_ = thread_error_t::e_success;
   stack_.clear();
-  f_head_ = 0;
+  f_.clear();
   halted_ = false;
   finished_ = false;
   return_code_ = nullptr;
@@ -602,7 +603,7 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   pc_ = func.code_start_;
 
   // verify num arguments
-  if (int32_t(func.num_args_) != argc) {
+  if (int32_t(func.num_args()) != argc) {
     return_code_ = gc_.new_int(-1);
     error_ = thread_error_t::e_bad_num_args;
     return false;
@@ -672,21 +673,17 @@ void thread_t::step_imp_() {
 }
 
 void thread_t::enter_(uint32_t sp, uint32_t pc, uint32_t callee) {
-  if (f_head_ >= f_.size()) {
-    set_error_(thread_error_t::e_stack_overflow);
-  } else {
-    ++f_head_;
-    frame_().sp_ = sp;
-    frame_().return_ = pc;
-    frame_().terminal_ = false;
-    frame_().callee_ = callee;
-    pc_ = callee;
-  }
+  f_.emplace_back();
+  frame_().sp_ = sp;
+  frame_().return_ = pc;
+  frame_().terminal_ = false;
+  frame_().callee_ = callee;
+  pc_ = callee;
 }
 
 // return - old PC as return value
 uint32_t thread_t::leave_() {
-  if (f_head_ <= 0) {
+  if (f_.empty()) {
     set_error_(thread_error_t::e_stack_underflow);
     return 0;
   } else {
@@ -695,9 +692,9 @@ uint32_t thread_t::leave_() {
       // XXX: should set a status so caller know we finished
       finished_ = true;
     }
-    --f_head_;
+    f_.pop_back();
     // check if we have more frames
-    finished_ |= (f_head_ == 0);
+    finished_ |= f_.empty();
     return ret_pc;
   }
 }
@@ -708,7 +705,7 @@ bool thread_t::step_inst() {
   }
   step_imp_();
   // check for program termination
-  if (!finished_ && !f_head_) {
+  if (!finished_ && !f_.empty()) {
     assert(stack_.head() > 0);
     return_code_ = stack_.pop();
     finished_ = true;
@@ -725,12 +722,12 @@ bool thread_t::step_line() {
   // step until the source line changes
   do {
     step_imp_();
-    if (finished_ || !f_head_ || has_error()) {
+    if (finished_ || !f_.empty() || has_error()) {
       break;
     }
   } while (line == source_line());
   // check for program termination
-  if (!finished_ && !f_head_) {
+  if (!finished_ && !f_.empty()) {
     assert(stack_.head() > 0);
     return_code_ = stack_.pop();
     finished_ = true;
@@ -832,8 +829,8 @@ bool thread_t::init() {
 
 void thread_t::unwind() {
   int32_t i = 0;
-  for (int32_t f = f_head_ - 1; f >= 0; --f) {
-    const auto &frame = f_[f];
+  for (auto itt = f_.rbegin(); itt != f_.rend(); ++itt) {
+    const auto &frame = *itt;
     const function_t *func = ccml_.find_function(frame.callee_);
     assert(func);
     fprintf(stderr, "%2d> function %s\n", i, func->name_.c_str());

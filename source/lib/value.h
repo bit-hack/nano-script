@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 #include <string>
-#include <array>
+#include <vector>
 
 #include "thread_error.h"
 
@@ -134,8 +134,6 @@ struct value_t {
 
 struct value_stack_t {
 
-  static const size_t SIZE = 1024 * 8;
-
   value_stack_t(thread_t &thread, value_gc_t &gc);
 
   // push float number onto the value stack
@@ -148,62 +146,49 @@ struct value_stack_t {
   void push_string(const std::string &v);
 
   void clear() {
-    head_ = 0;
+    stack_.clear();
   }
 
   int32_t head() const {
-    return head_;
+    return stack_.size();
   }
 
   void reserve(uint32_t operand) {
-    if (head_ + operand >= s_.size()) {
-      set_error(thread_error_t::e_stack_overflow);
-      return;
-    }
-    // reserve this many values on the stack
     for (uint32_t i = 0; i < operand; ++i) {
-      s_[head_ + i] = nullptr;
+      stack_.emplace_back(nullptr);
     }
-    head_ += operand;
   }
 
   void discard(uint32_t num) {
-    assert(head_ >= num);
-    head_ -= num;
+    for (uint32_t i = 0; i < num; ++i) {
+      assert(!stack_.empty());
+      stack_.pop_back();
+    }
   }
 
   // peek a stack value
   value_t* peek() {
-    if (head_ <= 0) {
-      set_error(thread_error_t::e_stack_underflow);
-      return nullptr;
-    } else {
-      return s_[head_ - 1];
-    }
+    assert(!stack_.empty());
+    value_t *out = stack_.back();
+    return out;
   }
 
   // pop from the value stack
   value_t* pop() {
-    if (head_ <= 0) {
-      set_error(thread_error_t::e_stack_underflow);
-      return nullptr;
-    } else {
-      return s_[--head_];
-    }
+    assert(!stack_.empty());
+    value_t *out = stack_.back();
+    stack_.pop_back();
+    return out;
   }
 
   // push onto the value stack
   void push(value_t *v) {
-    if (head_ >= s_.size()) {
-      set_error(thread_error_t::e_stack_overflow);
-    } else {
-      s_[head_++] = v;
-    }
+    stack_.emplace_back(v);
   }
 
   value_t *get(const int32_t index) {
     if (index >= 0 && index < head()) {
-      return s_[index];
+      return stack_[index];
     }
     else {
       set_error(thread_error_t::e_bad_getv);
@@ -213,7 +198,7 @@ struct value_stack_t {
 
   void set(const int32_t index, value_t *val) {
     if (index >= 0 && index < head()) {
-      s_[index] = val;
+      stack_[index] = val;
     }
     else {
       set_error(thread_error_t::e_bad_setv);
@@ -221,15 +206,13 @@ struct value_stack_t {
   }
 
   value_t **data() {
-    return s_.data();
+    return stack_.data();
   }
 
   void set_error(thread_error_t error);
 
 protected:
-  // value stack
-  uint32_t head_;
-  std::array<value_t *, SIZE> s_;
+  std::vector<value_t *> stack_;
 
   struct thread_t &thread_;
   struct value_gc_t &gc_;

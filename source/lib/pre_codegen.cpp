@@ -120,7 +120,6 @@ struct pregen_functions_t: public ast_visitor_t {
   void visit(ast_decl_func_t *n) override {
     funcs_.emplace_back();
     f_ = &funcs_.back();
-    f_->num_args_ = n->args.size();
     f_->name_ = n->name;
 
     // this will be set during the codegen phase

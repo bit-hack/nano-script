@@ -28,15 +28,18 @@ struct function_t {
   // syscall callback or nullptr
   ccml_syscall_t sys_;
 
-  // number of arguments this funcion takes
-  uint32_t num_args_;
+  // number of arguments syscall takes
+  uint32_t sys_num_args_;
 
   // code address range
-  uint32_t code_start_;
-  uint32_t code_end_;
+  uint32_t code_start_, code_end_;
 
   std::vector<identifier_t> locals_;
   std::vector<identifier_t> args_;
+
+  uint32_t num_args() const {
+    return is_syscall() ? sys_num_args_ : args_.size();
+  }
 
   bool is_syscall() const {
     return sys_ != nullptr;
@@ -44,21 +47,24 @@ struct function_t {
 
   function_t()
     : sys_(nullptr)
-    , num_args_(0)
     , code_start_(0)
     , code_end_(0)
   {
   }
 
-  // syscal constructor
+  // syscall constructor
   function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args)
-      : name_(name), sys_(sys), num_args_(num_args), code_start_(~0u),
-        code_end_(~0u) {}
+      : name_(name)
+      , sys_(sys)
+      , sys_num_args_(num_args) {
+  }
 
   // compiled function constructor
-  function_t(const std::string &name, int32_t pos, int32_t num_args)
-      : name_(name), sys_(nullptr), num_args_(num_args), code_start_(pos),
-        code_end_(~0u) {}
+  function_t(const std::string &name, int32_t pos)
+      : name_(name)
+      , sys_(nullptr)
+      , code_start_(pos)
+      , code_end_(pos) {}
 };
 
 

@@ -4,10 +4,10 @@
 namespace ccml {
 
 value_stack_t::value_stack_t(thread_t &thread, value_gc_t &gc)
-  : head_(0)
-  , thread_(thread)
+  : thread_(thread)
   , gc_(gc)
 {
+  stack_.reserve(128);
 }
 
 void value_stack_t::push_int(const int32_t v) {
