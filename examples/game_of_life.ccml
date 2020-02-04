@@ -1,15 +1,17 @@
-var width = 64
-var height = 64
+const width = 64
+const height = 64
+const area = width * height
 
-var cell[4096]
+var toggle = 0
+var cell[area * 2]
 
 function draw()
-  var area = width * height
   var i = 0
+  var base = toggle * area
   while (i < area)
     var x = i % width
     var y = i / height
-    var c = cell[i]
+    var c = cell[base + i]
     if (c)
       setrgb(255, 255, 255)
     else
@@ -21,28 +23,49 @@ function draw()
 end
 
 function setup()
-  var area = width * height
-  var y = 1
-  while (y < height - 1)
-    var x = 1
-    while (x < width - 1)
-      cell[x + y * width] = rand() % 2
-      x += 1
+  var i = 0
+  while (i < area * 2)
+    var x = (i % area) % width
+    var y = (i % area) / width
+    if (x == 0 or x == (width-1) or y == 0 or y == (height-1))
+      cell[i] = 0
+    else
+      cell[i] = rand() % 2
     end
-    y += 1
+    i += 1
   end
 end
 
 function update()
-  var area = width * height
   var y = 1
+  var base1 = toggle * area
+  toggle = 1 - toggle
+  var base2 = toggle * area
   while (y < height - 1)
     var x = 1
     while (x < width - 1)
-
-      var c = 0
-      c += cell[  ]
-
+      var i = x + y * width
+      var s = 0
+      s += cell[i + base1 - 1 - width]
+      s += cell[i + base1     - width] * 3
+      s += cell[i + base1 + 1 - width]
+      s += cell[i + base1 - 1        ] * 3
+#     s += cell[i + base1            ]
+      s += cell[i + base1 + 1        ] * 3
+      s += cell[i + base1 - 1 + width]
+      s += cell[i + base1     + width] * 3
+      s += cell[i + base1 + 1 + width]
+      if (s >= 6)
+        # overpopulation
+        cell[i + base2] = 0
+      else
+        if (s <= 3)
+          # isolation
+          cell[i + base2] = 0
+        else
+          cell[i + base2] = 1
+        end
+      end
       x += 1
     end
     y += 1
@@ -56,6 +79,8 @@ function main()
   setup()
   while (1)
     draw()
+    update()
+    sleep(30)
     flip()
   end  
 end
