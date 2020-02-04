@@ -1,0 +1,6 @@
+function main()
+  var b[3]
+  b[0] = 1
+  b[0] += 3
+  return b[0]
+end

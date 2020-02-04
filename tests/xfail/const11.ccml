@@ -1,0 +1,5 @@
+const x = 3 / 0
+
+function main()
+  return x
+end

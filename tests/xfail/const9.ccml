@@ -1,0 +1,9 @@
+function blah()
+  return 2
+end
+
+const x = blah()
+
+function main()
+  return x
+end

@@ -1,0 +1,8 @@
+#expect 0
+
+function test()
+end
+
+function main()
+  return test()
+end

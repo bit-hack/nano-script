@@ -1,0 +1,5 @@
+const x = "Hello" + " World"
+
+function main()
+  return x
+end
