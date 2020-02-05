@@ -397,13 +397,9 @@ struct sema_decl_annotate_t : public ast_visitor_t {
 
   void visit(ast_exp_ident_t *n) override {
     ast_visitor_t::visit(n);
-    ast_node_t *found = find_decl(n->name->str_);
-    if (!found) {
-      errs_.unknown_identifier(*n->name);
-    }
-    n->decl = found->cast<ast_decl_var_t>();
+    assert(!n->decl);
+    n->decl = find_decl(n->name->str_);
     if (!n->decl) {
-      // XXX: remove this
       errs_.unknown_identifier(*n->name);
     }
     if (const auto *v = n->decl->cast<ast_decl_var_t>()) {
