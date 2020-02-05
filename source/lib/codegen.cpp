@@ -113,7 +113,7 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_exp_ident_t* n) override {
-    ast_decl_var_t *decl = n->decl;
+    ast_decl_var_t *decl = n->decl->cast<ast_decl_var_t>();
     assert(decl);
     assert(!decl->is_array());
     assert(!decl->is_const);

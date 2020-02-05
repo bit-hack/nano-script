@@ -52,8 +52,10 @@ struct eval_t: public ast_visitor_t {
 
   void visit(ast_exp_ident_t *n) override {
     assert(n->decl);
-    if (n->decl->is_const) {
-      if (auto *v = n->decl->expr->cast<ast_exp_lit_var_t>()) {
+    ast_decl_var_t *decl = n->decl->cast<ast_decl_var_t>();
+    assert(decl);
+    if (decl->is_const) {
+      if (auto *v = decl->expr->cast<ast_exp_lit_var_t>()) {
         value_.push_back(v->val);
         return;
       }
@@ -160,12 +162,14 @@ struct sema_const_t: public ast_visitor_t {
   }
 
   void visit(ast_exp_ident_t *n) override {
-    if (!n->decl->is_const) {
+    ast_decl_var_t *decl = n->decl->cast<ast_decl_var_t>();
+    assert(decl);
+    if (!decl->is_const) {
       return;
     }
     ast_node_t *parent = stack.rbegin()[1];
-    if (n->decl->expr) {
-      ast_node_t *e = n->decl->expr;
+    if (decl->expr) {
+      ast_node_t *e = decl->expr;
       switch (e->type) {
       case ast_exp_lit_var_e:
       case ast_exp_lit_str_e:
@@ -399,6 +403,7 @@ struct sema_decl_annotate_t : public ast_visitor_t {
     }
     n->decl = found->cast<ast_decl_var_t>();
     if (!n->decl) {
+      // XXX: remove this
       errs_.unknown_identifier(*n->name);
     }
     if (const auto *v = n->decl->cast<ast_decl_var_t>()) {
