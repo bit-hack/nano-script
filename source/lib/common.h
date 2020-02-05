@@ -35,7 +35,7 @@ struct ast_stmt_assign_array_t;
 struct ast_decl_func_t;
 struct ast_decl_var_t;
 
-struct asm_stream_t;
+struct program_stream_t;
 struct codegen_t;
 struct program_t;
 

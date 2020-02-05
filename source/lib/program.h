@@ -29,7 +29,7 @@ struct program_t {
     return code_.data() + code_.size();
   }
 
-  asm_stream_t &stream() const {
+  program_stream_t &stream() const {
     return *stream_;
   }
 
@@ -64,7 +64,7 @@ struct program_t {
   }
 
 protected:
-  friend struct asm_stream_t;
+  friend struct program_stream_t;
 
   void add_line(uint32_t pc, uint32_t line) {
     line_table_[pc] = line;
@@ -86,7 +86,7 @@ protected:
   std::vector<uint8_t> code_;
 
   // assembly streamer
-  std::unique_ptr<asm_stream_t> stream_;
+  std::unique_ptr<program_stream_t> stream_;
 
   // line table [PC -> Line]
   linetable_t line_table_;

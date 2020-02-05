@@ -109,7 +109,7 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
 
 bool disassembler_t::disasm(int32_t &index, instruction_t &out) const {
 
-  asm_stream_t &stream = ccml_.program_.stream();
+  program_stream_t &stream = ccml_.program_.stream();
   const uint8_t *start = stream.data();
   const uint8_t *p = stream.data() + index;
 
@@ -135,7 +135,7 @@ int32_t disassembler_t::disasm() {
   int32_t line_no = -1, old_line = -1;
 
   // get the code stream
-  asm_stream_t &stream = ccml_.program_.stream();
+  program_stream_t &stream = ccml_.program_.stream();
 
   std::map<int32_t, const ccml::function_t*> funcs;
   for (const auto &f : ccml_.functions()) {

@@ -218,9 +218,6 @@ struct vm_t {
 
   // threads
   std::set<thread_t *> threads_;
-
-  //
-  ccml_t &ccml_;
 };
 
 } // namespace ccml

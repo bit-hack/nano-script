@@ -15,10 +15,9 @@ namespace ccml {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 // the asm stream bridges the assembler and the code store
 
-// XXX: rename to code_stream_t
-struct asm_stream_t {
+struct program_stream_t {
 
-  asm_stream_t(program_t &store)
+  program_stream_t(program_t &store)
     : store_(store)
     , data_(store.code_)
   {
@@ -72,13 +71,13 @@ struct instruction_t {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct codegen_t {
 
-  codegen_t(ccml_t &c, asm_stream_t &stream);
+  codegen_t(ccml_t &c, program_stream_t &stream);
 
   bool run(ast_program_t &program, error_t &error);
 
 protected:
   ccml_t &ccml_;
-  asm_stream_t &stream_;
+  program_stream_t &stream_;
 };
 
 } // namespace ccml
