@@ -206,6 +206,9 @@ struct vm_t {
 
   void reset();
 
+  //
+  ccml_t &ccml_;
+
   // garbage collector
   std::unique_ptr<value_gc_t> gc_;
   void gc_collect();

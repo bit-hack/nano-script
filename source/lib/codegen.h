@@ -42,7 +42,7 @@ struct asm_stream_t {
 
   uint32_t head(int32_t adjust = 0) const {
     assert(adjust <= 0);
-    assert(data_.size() + adjust >= 0);
+    assert(int32_t(data_.size()) + adjust >= 0);
     return data_.size() + adjust;
   }
 

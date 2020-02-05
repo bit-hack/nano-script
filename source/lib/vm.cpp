@@ -407,6 +407,7 @@ void thread_t::do_INS_FJMP_() {
 
 void thread_t::do_INS_CALL_() {
   const int32_t num_args = read_operand_();
+  (void)num_args;
   const int32_t callee = read_operand_();
   // new frame
   enter_(stack_.head(), pc_, callee);
