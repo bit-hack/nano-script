@@ -1,0 +1,10 @@
+#expect 25
+
+function x(a)
+  return a * a
+end
+
+function y()
+  var foo = x
+  return foo(5)
+end
