@@ -1,5 +1,6 @@
+#expect 1.2
 const x = 1.2
 
 function main()
-    return x
+  return x
 end

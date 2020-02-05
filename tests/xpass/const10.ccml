@@ -1,3 +1,4 @@
+#expect Hello
 const x = "Hello"
 
 function main()

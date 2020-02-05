@@ -262,6 +262,7 @@ struct sema_global_var_t : public ast_visitor_t {
     } break;
     case ast_exp_lit_str_e:
     case ast_exp_lit_var_e:
+    case ast_exp_lit_float_e:
       break;
     default:
       errs_.global_var_const_expr(*n->name);

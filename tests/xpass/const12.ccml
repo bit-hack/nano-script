@@ -1,0 +1,6 @@
+#expect Hello World
+const x = "Hello World"
+
+function main()
+  return x
+end
