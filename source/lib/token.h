@@ -47,8 +47,6 @@ enum token_e {
   TOK_STRING,
   TOK_NONE,
   TOK_CONST,
-  // artificial token generated during expression parser
-  TOK_NEG,
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -128,7 +126,6 @@ struct token_t {
   bool is_unary_op() const {
     switch (type_) {
     case TOK_NOT:
-    case TOK_NEG:
       return true;
     default:
       return false;

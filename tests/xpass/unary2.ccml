@@ -1,0 +1,5 @@
+#expect 1
+function main()
+  var x = -3 * -2
+  return x == 6
+end

@@ -25,8 +25,6 @@ struct eval_t: public ast_visitor_t {
     int32_t r = 0;
     value_.pop_back();
     switch (n->op->type_) {
-    // XXX: unify these please
-    case TOK_NEG:
     case TOK_SUB:
       r = -v;
       break;

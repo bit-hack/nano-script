@@ -1,0 +1,6 @@
+#expect 1
+function main()
+  var x = -10
+  var y = 0 - 10
+  return x == y
+end

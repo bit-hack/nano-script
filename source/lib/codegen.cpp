@@ -25,7 +25,6 @@ static instruction_e tok_to_ins_(token_e op) {
   case TOK_AND: return INS_AND;
   case TOK_OR:  return INS_OR ;
   case TOK_NOT: return INS_NOT;
-  case TOK_NEG: return INS_NEG;
   case TOK_EQ:  return INS_EQ ;
   case TOK_LT:  return INS_LT ;
   case TOK_GT:  return INS_GT ;

@@ -216,7 +216,6 @@ protected:
     if (value_(o->child, a)) {
       // evaluate operator
       switch (o->op->type_) {
-      // XXX: what about TOK_NEG ?
       case TOK_SUB: v = -a; break;
       case TOK_NOT: v = !a; break;
       default: assert(!"unknown operator");
