@@ -104,10 +104,8 @@ struct pregen_functions_t: public ast_visitor_t {
   {}
 
   void visit(ast_decl_var_t *n) override {
-    if (f_ == nullptr) {
-      // do globals
-    }
-    else {
+    // if we have a function
+    if (f_) {
       if (n->is_local()) {
         f_->locals_.emplace_back();
         auto &l = f_->locals_.back();
