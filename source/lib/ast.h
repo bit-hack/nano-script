@@ -225,6 +225,7 @@ struct ast_exp_call_t : public ast_node_t {
     : ast_node_t(TYPE)
     , name(name)
     , is_syscall(false)
+    , is_indirect(false)
     , decl(nullptr)
   {}
 
@@ -238,7 +239,8 @@ struct ast_exp_call_t : public ast_node_t {
 
   const token_t *name;
   bool is_syscall;
-  ast_decl_func_t *decl;
+  bool is_indirect;
+  ast_node_t *decl;
   std::vector<ast_node_t *> args;
 
   // local frame variables

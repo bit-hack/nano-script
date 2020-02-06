@@ -163,7 +163,9 @@ struct sema_const_t: public ast_visitor_t {
 
   void visit(ast_exp_ident_t *n) override {
     ast_decl_var_t *decl = n->decl->cast<ast_decl_var_t>();
-    assert(decl);
+    if (!decl) {
+      return;
+    }
     if (!decl->is_const) {
       return;
     }
@@ -408,7 +410,7 @@ struct sema_decl_annotate_t : public ast_visitor_t {
       }
     } else {
       if (n->decl->cast<ast_decl_func_t>()) {
-        errs_.expected_func_call(*n->name);
+        // this is fine
       } else {
         errs_.unexpected_token((*n->name));
       }
@@ -419,12 +421,18 @@ struct sema_decl_annotate_t : public ast_visitor_t {
     ast_visitor_t::visit(n);
     ast_node_t *f = find_decl(n->name->str_);
     if (f) {
-      n->decl = f->cast<ast_decl_func_t>();
-      if (n->decl) {
-        n->is_syscall = false;
+      n->decl = f;
+      n->is_syscall = false;
+      if (ast_decl_func_t *func = f->cast<ast_decl_func_t>()) {
+        n->is_indirect = false;
+        return;
+      }
+      if (ast_decl_var_t *var = f->cast<ast_decl_var_t>()) {
+        n->is_indirect = true;
         return;
       }
     } else {
+      // XXX: remove this when we add syscalls to the AST
       // check for extern function
       for (const auto &func : ccml_.functions()) {
         if (func.name_ == n->name->str_) {
@@ -671,6 +679,10 @@ struct sema_num_args_t : public ast_visitor_t {
   std::map<std::string, const ast_decl_func_t *> funcs_;
 
   void visit(ast_exp_call_t *call) override {
+    if (call->is_indirect) {
+      // indirect calls must be checked at runtime
+      return;
+    }
     const auto &name = call->name->str_;
     if (call->is_syscall) {
       function_t *func = ccml_.find_function(name);
