@@ -410,6 +410,9 @@ void thread_t::do_INS_FJMP_() {
       pc_ = operand;
     }
     break;
+  case value_type_t::val_type_func:
+    // functions are truthy
+    break;
   case val_type_string:
     if (o->strlen() == 0) {
       pc_ = operand;
@@ -786,6 +789,7 @@ void thread_t::tick_gc_(int32_t cycles) {
 }
 
 bool thread_t::resume(int32_t cycles, bool trace) {
+  trace = true;
   if (finished_) {
     return false;
   }

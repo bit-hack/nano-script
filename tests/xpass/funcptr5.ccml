@@ -1,0 +1,11 @@
+#expect 1
+var g
+
+function main()
+  g = test
+  return g()
+end
+
+function test()
+  return 1234
+end

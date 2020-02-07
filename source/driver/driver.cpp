@@ -9,8 +9,8 @@
 #include "../lib/parser.h"
 #include "../lib/vm.h"
 
-#define DUMP_AST 0
-#define DUMP_ASM 0
+#define DUMP_AST 1
+#define DUMP_ASM 1
 
 namespace {
 

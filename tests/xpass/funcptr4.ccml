@@ -1,9 +1,9 @@
 #expect 1
 function main()
   var f = main
-  if (f)
-    return 1
-  else
+  if (not f)
     return 0
+  else
+    return 1
   end
 end

@@ -1,0 +1,17 @@
+#expect 30
+var g = test1
+
+function main()
+  var x = g()
+  x += g()
+  return x
+end
+
+function test1()
+  g = test2
+  return 10
+end
+
+function test2()
+  return 20
+end

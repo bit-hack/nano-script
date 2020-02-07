@@ -81,9 +81,10 @@ struct codegen_pass_t: ast_visitor_t {
 
   void get_func_(ast_decl_func_t *func, const token_t *t = nullptr) {
     assert(func);
-    function_t *f = ccml_.find_function(func->name);
-    const uint32_t addr = f->code_start_;
-    emit(INS_NEW_FUNC, addr, t);
+    emit(INS_NEW_FUNC, 0, t);
+    uint32_t operand = get_fixup();
+    // insert addr into map
+    call_fixups_.emplace_back(func->token, operand);
   }
 
   void visit(ast_program_t* n) override {
