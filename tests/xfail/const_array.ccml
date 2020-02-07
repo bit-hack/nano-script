@@ -1,0 +1,6 @@
+const ln = 0
+
+function main()
+  var arr[ln]
+  return arr[0]
+end

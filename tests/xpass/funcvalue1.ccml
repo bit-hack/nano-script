@@ -1,0 +1,16 @@
+#expect 10
+function f0(a, b)
+  return a * b
+end
+
+function f1(a, b)
+  return a * b
+end
+
+function main()
+  var f = f0
+  var x = f(3, 2)
+  f = f1
+  x += f(4, 1)
+  return x
+end

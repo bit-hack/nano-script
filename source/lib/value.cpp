@@ -10,6 +10,14 @@ value_stack_t::value_stack_t(thread_t &thread, value_gc_t &gc)
   stack_.reserve(128);
 }
 
+void value_stack_t::push_none() {
+  push(gc_.new_none());
+}
+
+void value_stack_t::push_func(const int32_t address) {
+  push(gc_.new_func(address));
+}
+
 void value_stack_t::push_int(const int32_t v) {
   push(gc_.new_int(v));
 }
@@ -42,6 +50,8 @@ std::string value_t::to_string() const {
     return "array";
   case val_type_none:
     return "none";
+  case val_type_func:
+    return "function@" + std::to_string(v);
   default:
     assert(!"unknown");
     return "";

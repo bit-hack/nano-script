@@ -16,10 +16,11 @@ const char *gMnemonic[] = {
   "INS_LT", "INS_GT", "INS_LEQ", "INS_GEQ", "INS_EQ",
   // branching
   "INS_JMP", "INS_TJMP", "INS_FJMP", "INS_CALL", "INS_RET", "INS_SCALL",
+  "INS_ICALL",
   // stack
   "INS_POP",
   "INS_NEW_INT", "INS_NEW_STR", "INS_NEW_ARY", "INS_NEW_NONE", "INS_NEW_FLT",
-  "INS_LOCALS", "INS_GLOBALS",
+  "INS_NEW_FUNC", "INS_LOCALS", "INS_GLOBALS",
   // local variables
   "INS_GETV", "INS_SETV", "INS_GETA", "INS_SETA",
   // global variables
@@ -80,27 +81,39 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
   }
 
   // instruction with integer operand
-  const int32_t val = *(int32_t *)(ptr + i);
+  const int32_t val1 = *(int32_t *)(ptr + i);
   i += 4;
 
   switch (op) {
   case INS_JMP:
   case INS_TJMP:
   case INS_FJMP:
-  case INS_CALL:
   case INS_RET:
   case INS_POP:
   case INS_NEW_ARY:
   case INS_NEW_INT:
   case INS_NEW_STR:
   case INS_NEW_FLT:
+  case INS_NEW_FUNC:
   case INS_GETV:
   case INS_SETV:
   case INS_LOCALS:
   case INS_GLOBALS:
   case INS_GETG:
   case INS_SETG:
-    fprintf(fd_, "%-12s %d\n", gMnemonic[op], val);
+  case INS_ICALL:
+    fprintf(fd_, "%-12s %d\n", gMnemonic[op], val1);
+    return i;
+  }
+
+  // instruction with second integer operand
+  const int32_t val2 = *(int32_t *)(ptr + i);
+  i += 4;
+
+  switch (op) {
+  case INS_SCALL:
+  case INS_CALL:
+    fprintf(fd_, "%-12s %d %d\n", gMnemonic[op], val1, val2);
     return i;
   }
 

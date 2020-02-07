@@ -45,6 +45,9 @@ bool to_string(char *buf, size_t size, const value_t *val) {
   case val_type_none:
     snprintf(buf, size, "none");
     return true;
+  case val_type_func:
+    snprintf(buf, size, "function@%d", val->v);
+    return true;
   default:
     assert(false);
     return false;
@@ -118,12 +121,12 @@ void thread_t::do_INS_ADD_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    stack_.push(gc_.new_int(l->v + r->v));
+    stack_.push_int(l->v + r->v);
     return;
   }
   if ((l->is_float() || l->is_int()) &&
       (r->is_float() || r->is_int())) {
-    stack_.push(gc_.new_float(l->as_float() + r->as_float()));
+    stack_.push_float(l->as_float() + r->as_float());
     return;
   }
   if (l->is_string()) {
@@ -159,12 +162,12 @@ void thread_t::do_INS_SUB_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    stack_.push(gc_.new_int(l->v - r->v));
+    stack_.push_int(l->v - r->v);
     return;
   }
   if ((l->is_float() || l->is_int()) &&
       (r->is_float() || r->is_int())) {
-    stack_.push(gc_.new_float(l->as_float() - r->as_float()));
+    stack_.push_float(l->as_float() - r->as_float());
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -174,12 +177,12 @@ void thread_t::do_INS_MUL_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    stack_.push(gc_.new_int(l->v * r->v));
+    stack_.push_int(l->v * r->v);
     return;
   }
   if ((l->is_float() || l->is_int()) &&
       (r->is_float() || r->is_int())) {
-    stack_.push(gc_.new_float(l->as_float() * r->as_float()));
+    stack_.push_float(l->as_float() * r->as_float());
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -193,13 +196,13 @@ void thread_t::do_INS_DIV_() {
       set_error_(thread_error_t::e_bad_divide_by_zero);
     } else {
       const int32_t o = l->v / r->v;
-      stack_.push(gc_.new_int(o));
+      stack_.push_int(o);
     }
     return;
   }
   if ((l->is_float() || l->is_int()) &&
       (r->is_float() || r->is_int())) {
-    stack_.push(gc_.new_float(l->as_float() / r->as_float()));
+    stack_.push_float(l->as_float() / r->as_float());
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -213,7 +216,7 @@ void thread_t::do_INS_MOD_() {
       set_error_(thread_error_t::e_bad_divide_by_zero);
     } else {
       const int32_t o = l->v % r->v;
-      stack_.push(gc_.new_int(o));
+      stack_.push_int(o);
     }
     return;
   }
@@ -224,7 +227,7 @@ void thread_t::do_INS_AND_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    stack_.push(gc_.new_int(l->v && r->v));
+    stack_.push_int(l->v && r->v);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -234,7 +237,7 @@ void thread_t::do_INS_OR_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    stack_.push(gc_.new_int(l->v || r->v));
+    stack_.push_int(l->v || r->v);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -242,11 +245,16 @@ void thread_t::do_INS_OR_() {
 
 void thread_t::do_INS_NOT_() {
   const value_t *l = stack_.pop();
-
-  // convert other types to bool first?
-
+  if (l->is_func()) {
+    stack_.push_int(0);
+    return;
+  }
+  if (l->is_none()) {
+    stack_.push_int(1);
+    return;
+  }
   if (l->is_int()) {
-    stack_.push(gc_.new_int(!l->v));
+    stack_.push_int(!l->v);
     return;
   }
 
@@ -256,7 +264,7 @@ void thread_t::do_INS_NOT_() {
 void thread_t::do_INS_NEG_() {
   const value_t *o = stack_.pop();
   if (o->is_int()) {
-    stack_.push(gc_.new_int(-o->v));
+    stack_.push_int(-o->v);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -266,13 +274,13 @@ void thread_t::do_INS_LT_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    stack_.push(gc_.new_int(l->v < r->v ? 1 : 0));
+    stack_.push_int(l->v < r->v ? 1 : 0);
     return;
   }
   if ((l->is_float() || l->is_int()) &&
       (r->is_float() || r->is_int())) {
-    stack_.push(gc_.new_int(
-      l->as_float() < r->as_float() ? 1 : 0));
+    stack_.push_int(
+      l->as_float() < r->as_float() ? 1 : 0);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -282,13 +290,13 @@ void thread_t::do_INS_GT_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    stack_.push(gc_.new_int(l->v > r->v ? 1 : 0));
+    stack_.push_int(l->v > r->v ? 1 : 0);
     return;
   }
   if ((l->is_float() || l->is_int()) &&
       (r->is_float() || r->is_int())) {
-    stack_.push(gc_.new_int(
-      l->as_float() > r->as_float() ? 1 : 0));
+    stack_.push_int(
+      l->as_float() > r->as_float() ? 1 : 0);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -298,13 +306,13 @@ void thread_t::do_INS_LEQ_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    stack_.push(gc_.new_int(l->v <= r->v ? 1 : 0));
+    stack_.push_int(l->v <= r->v ? 1 : 0);
     return;
   }
   if ((l->is_float() || l->is_int()) &&
       (r->is_float() || r->is_int())) {
-    stack_.push(gc_.new_int(
-      l->as_float() <= r->as_float() ? 1 : 0));
+    stack_.push_int(
+      l->as_float() <= r->as_float() ? 1 : 0);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -314,13 +322,13 @@ void thread_t::do_INS_GEQ_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    stack_.push(gc_.new_int(l->v >= r->v ? 1 : 0));
+    stack_.push_int(l->v >= r->v ? 1 : 0);
     return;
   }
   if ((l->is_float() || l->is_int()) &&
       (r->is_float() || r->is_int())) {
-    stack_.push(gc_.new_int(
-      l->as_float() >= r->as_float() ? 1 : 0));
+    stack_.push_int(
+      l->as_float() >= r->as_float() ? 1 : 0);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -330,7 +338,7 @@ void thread_t::do_INS_EQ_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   if (l->is_int() && r->is_int()) {
-    stack_.push(gc_.new_int(l->v == r->v ? 1 : 0));
+    stack_.push_int(l->v == r->v ? 1 : 0);
     return;
   }
   if (l->is_string() && r->is_string()) {
@@ -340,19 +348,23 @@ void thread_t::do_INS_EQ_() {
         res = 1;
       }
     }
-    stack_.push(gc_.new_int(res));
+    stack_.push_int(res);
+    return;
+  }
+  if (l->is_func() && r->is_func()) {
+    stack_.push_int((l->v == r->v) ? 1 : 0);
     return;
   }
   // only none == none
   if (l->is_none() || r->is_none()) {
-    stack_.push(gc_.new_int(l->is_none() && r->is_none() ? 1 : 0));
+    stack_.push_int(l->is_none() && r->is_none() ? 1 : 0);
     return;
   }
   if ((l->is_float() || l->is_int()) &&
       (r->is_float() || r->is_int())) {
     // XXX: use epsilon here?
-    stack_.push(gc_.new_int(
-      l->as_float() == r->as_float() ? 1 : 0));
+    stack_.push_int(
+      l->as_float() == r->as_float() ? 1 : 0);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -375,6 +387,9 @@ void thread_t::do_INS_TJMP_() {
     if (o->strlen() != 0) {
       pc_ = operand;
     }
+    break;
+  case value_type_t::val_type_func:
+    pc_ = operand;
     break;
   case value_type_t::val_type_none:
     break;
@@ -442,6 +457,21 @@ void thread_t::do_INS_SCALL_() {
   }
 }
 
+void thread_t::do_INS_ICALL_() {
+  const int32_t num_args = read_operand_();
+  value_t *offset = stack_.pop();
+  assert(offset);
+  if (!offset->is_func()) {
+    set_error_(thread_error_t::e_bad_type_operation);
+  }
+  const int32_t callee = offset->v;
+
+  // todo: verify num args
+
+  // new frame
+  enter_(stack_.head(), pc_, callee);
+}
+
 void thread_t::do_INS_POP_() {
   const int32_t operand = read_operand_();
   for (int32_t i = 0; i < operand; ++i) {
@@ -460,7 +490,7 @@ void thread_t::do_INS_NEW_STR_() {
   (void)str_tab;
   assert(index < (int32_t)str_tab.size());
   const std::string &s = ccml_.strings()[index];
-  stack_.push(gc_.new_string(s));
+  stack_.push_string(s);
 }
 
 void thread_t::do_INS_NEW_ARY_() {
@@ -470,7 +500,7 @@ void thread_t::do_INS_NEW_ARY_() {
 }
 
 void thread_t::do_INS_NEW_NONE_() {
-  stack_.push(gc_.new_none());
+  stack_.push_none();
 }
 
 void thread_t::do_INS_NEW_FLT_() {
@@ -478,6 +508,12 @@ void thread_t::do_INS_NEW_FLT_() {
   float val = *(const float*)(&bits);
   value_t *op = gc_.new_float(val);
   stack_.push(op);
+}
+
+void thread_t::do_INS_NEW_FUNC_() {
+  const int32_t index = read_operand_();
+  assert(index >= 0);
+  stack_.push_func(index);
 }
 
 void thread_t::do_INS_GLOBALS_() {
@@ -550,7 +586,7 @@ void thread_t::do_INS_GETA_() {
       return;
     }
     const uint32_t ch = (uint8_t)(a->string()[index]);
-    stack_.push(gc_.new_int(ch));
+    stack_.push_int(ch);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -654,12 +690,14 @@ void thread_t::step_imp_() {
   case INS_CALL:     do_INS_CALL_();     break;
   case INS_RET:      do_INS_RET_();      break;
   case INS_SCALL:    do_INS_SCALL_();    break;
+  case INS_ICALL:    do_INS_ICALL_();    break;
   case INS_POP:      do_INS_POP_();      break;
   case INS_NEW_ARY:  do_INS_NEW_ARY_();  break;
   case INS_NEW_INT:  do_INS_NEW_INT_();  break;
   case INS_NEW_STR:  do_INS_NEW_STR_();  break;
   case INS_NEW_NONE: do_INS_NEW_NONE_(); break;
   case INS_NEW_FLT:  do_INS_NEW_FLT_();  break;
+  case INS_NEW_FUNC: do_INS_NEW_FUNC_(); break;
   case INS_LOCALS:   do_INS_LOCALS_();   break;
   case INS_GLOBALS:  do_INS_GLOBALS_();  break;
   case INS_GETV:     do_INS_GETV_();     break;

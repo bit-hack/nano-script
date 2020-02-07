@@ -138,6 +138,9 @@ void print_result(const ccml::value_t *res) {
   if (res->is_float()) {
     fprintf(fd, "%f", res->as_float());
   }
+  if (res->is_func()) {
+    fprintf(fd, "function");
+  }
   fprintf(fd, "\n");
 }
 } // namespace

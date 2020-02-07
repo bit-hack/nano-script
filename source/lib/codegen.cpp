@@ -79,6 +79,13 @@ struct codegen_pass_t: ast_visitor_t {
     }
   }
 
+  void get_func_(ast_decl_func_t *func, const token_t *t = nullptr) {
+    assert(func);
+    function_t *f = ccml_.find_function(func->name);
+    const uint32_t addr = f->code_start_;
+    emit(INS_NEW_FUNC, addr, t);
+  }
+
   void visit(ast_program_t* n) override {
     // visit all constructs
     for (ast_node_t *c : n->children) {
@@ -113,11 +120,17 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_exp_ident_t* n) override {
-    ast_decl_var_t *decl = n->decl->cast<ast_decl_var_t>();
-    assert(decl);
-    assert(!decl->is_array());
-    assert(!decl->is_const);
-    get_decl_(decl, n->name);
+    if (ast_decl_var_t *decl = n->decl->cast<ast_decl_var_t>()) {
+      assert(!decl->is_array());
+      assert(!decl->is_const);
+      get_decl_(decl, n->name);
+      return;
+    }
+    if (ast_decl_func_t *func = n->decl->cast<ast_decl_func_t>()) {
+      get_func_(func, n->name);
+      return;
+    }
+    assert(!"unknown decl type");
   }
 
   void visit(ast_exp_array_t* n) override {
@@ -138,23 +151,35 @@ struct codegen_pass_t: ast_visitor_t {
     for (ast_node_t *c : n->args) {
       dispatch(c);
     }
-    // find syscall
-    int32_t index = -1;
-    for (const auto &f : ccml_.functions()) {
-      ++index;
-      if (!f.is_syscall()) {
-        continue;
-      }
-      if (f.name_ == n->name->str_) {
-        emit(INS_SCALL, int32_t(num_args), index, n->name);
-        return;
+    if (ast_decl_var_t *decl = n->decl->cast<ast_decl_var_t>()) {
+      // emit indirect call
+      get_decl_(decl, n->name);
+      emit(INS_ICALL, int32_t(num_args), n->name);
+      return;
+    }
+    if (n->decl->cast<ast_decl_func_t>()) {
+      // emit regular call
+      emit(INS_CALL, int32_t(num_args), 0, n->name);
+      uint32_t operand = get_fixup();
+      // insert addr into map
+      call_fixups_.emplace_back(n->name, operand);
+      return;
+    }
+    if (n->decl == nullptr) {
+      // find syscall
+      int32_t index = -1;
+      for (const auto &f : ccml_.functions()) {
+        ++index;
+        if (!f.is_syscall()) {
+          continue;
+        }
+        if (f.name_ == n->name->str_) {
+          emit(INS_SCALL, int32_t(num_args), index, n->name);
+          return;
+        }
       }
     }
-    // emit regular call
-    emit(INS_CALL, int32_t(num_args), 0, n->name);
-    uint32_t operand = get_fixup();
-    // insert addr into map
-    call_fixups_.emplace_back(n->name, operand);
+    assert(!"Unknown function call");
   }
 
   void visit(ast_stmt_call_t *n) override {
@@ -519,12 +544,14 @@ void codegen_pass_t::emit(instruction_e ins, int32_t o1, const token_t *t) {
   case INS_NEW_INT:
   case INS_NEW_STR:
   case INS_NEW_FLT:
+  case INS_NEW_FUNC:
   case INS_LOCALS:
   case INS_GLOBALS:
   case INS_GETV:
   case INS_SETV:
   case INS_GETG:
   case INS_SETG:
+  case INS_ICALL:
     stream_.write8(uint8_t(ins));
     stream_.write32(o1);
     break;

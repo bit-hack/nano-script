@@ -74,6 +74,8 @@ struct value_gc_t {
 
   value_t *new_none();
 
+  value_t *new_func(uint32_t offset);
+
   value_t *copy(const value_t &v);
 
   void collect();

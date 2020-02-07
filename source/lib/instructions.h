@@ -71,6 +71,9 @@ enum instruction_e {
   // system call
   INS_SCALL,
 
+  // indirect call
+  INS_ICALL,
+
   // pop constant:
   //    pop()
   INS_POP,
@@ -94,6 +97,9 @@ enum instruction_e {
 
   // create a new float type
   INS_NEW_FLT,
+
+  // create a function reference
+  INS_NEW_FUNC,
 
   // reserve locals in stack frame
   INS_LOCALS,

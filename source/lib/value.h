@@ -21,6 +21,7 @@ enum value_type_t {
   val_type_string,
   val_type_array,
   val_type_float,
+  val_type_func,
 };
 
 struct value_t {
@@ -57,6 +58,10 @@ struct value_t {
 
   bool is_none() const {
     return type() == val_type_none;
+  }
+
+  bool is_func() const {
+    return type() == val_type_func;
   }
 
   void from_int(int32_t val) {
@@ -136,6 +141,9 @@ struct value_stack_t {
 
   value_stack_t(thread_t &thread, value_gc_t &gc);
 
+  // push a none value
+  void push_none();
+
   // push float number onto the value stack
   void push_float(const float v);
 
@@ -144,6 +152,9 @@ struct value_stack_t {
 
   // push string onto the value stack
   void push_string(const std::string &v);
+
+  // push a new function
+  void push_func(const int32_t address);
 
   void clear() {
     stack_.clear();

@@ -1,0 +1,4 @@
+#expect function
+function main()
+    return main
+end

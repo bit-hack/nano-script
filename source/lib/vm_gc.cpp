@@ -57,6 +57,14 @@ value_t *value_gc_t::new_none() {
   return nullptr;
 }
 
+value_t *value_gc_t::new_func(uint32_t offset) {
+  value_t *v = space_to().alloc<value_t>(0);
+  assert(v);
+  v->type_ = val_type_func;
+  v->v = offset;
+  return v;
+}
+
 bool value_gc_t::should_collect() const {
   const int32_t x = (space_to().size() * 100) / space_to().capacity();
   // collect if over 75%
@@ -75,6 +83,8 @@ value_t *value_gc_t::copy(const value_t &a) {
     v->string()[a.strlen()] = 0;
     return v;
   }
+  case val_type_func:
+    return new_func(a.v);
   case val_type_none:
     return nullptr;
   default:
@@ -114,7 +124,14 @@ void value_gc_t::trace(value_t **list, size_t num) {
 
     switch (v->type()) {
     case val_type_none: {
+      // list[i] = nullptr;
       break;
+    }
+    case val_type_func: {
+      value_t *n = to.alloc<value_t>(0);
+      n->type_ = val_type_func;
+      n->v = v->v;
+      list[i] = n;  // *v = n;
     }
     case val_type_int: {
       value_t *n = to.alloc<value_t>(0);
