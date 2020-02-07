@@ -470,6 +470,7 @@ void thread_t::do_INS_ICALL_() {
   const int32_t callee = offset->v;
 
   // todo: verify num args
+  (void)num_args;
 
   // new frame
   enter_(stack_.head(), pc_, callee);
@@ -789,7 +790,6 @@ void thread_t::tick_gc_(int32_t cycles) {
 }
 
 bool thread_t::resume(int32_t cycles, bool trace) {
-  trace = true;
   if (finished_) {
     return false;
   }

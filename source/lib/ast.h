@@ -237,6 +237,8 @@ struct ast_exp_call_t : public ast_node_t {
     }
   }
 
+  // XXX: ast_node_t *callee
+
   const token_t *name;
   bool is_syscall;
   bool is_indirect;

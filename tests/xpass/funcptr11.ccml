@@ -1,0 +1,10 @@
+#expect 3
+
+function main()
+  var f = x
+  return f(1, 2, 3)
+end
+
+function x(a, b)
+  return a + b
+end

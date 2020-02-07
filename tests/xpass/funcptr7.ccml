@@ -1,0 +1,14 @@
+#expect 33
+
+function main()
+  return test1(y) + 1
+end
+
+function y()
+  return 16
+end
+
+function test1(x)
+  return x() * 2
+end
+

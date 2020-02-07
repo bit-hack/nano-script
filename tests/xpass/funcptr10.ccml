@@ -1,0 +1,16 @@
+#expect 5
+
+function main()
+  var f = x
+  return f(1)
+end
+
+function x(a, b)
+
+  if (b == none)
+    b = 4  # should get here
+  else
+    b = 1234
+  end
+  return a + b
+end

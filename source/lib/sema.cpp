@@ -424,10 +424,12 @@ struct sema_decl_annotate_t : public ast_visitor_t {
       n->decl = f;
       n->is_syscall = false;
       if (ast_decl_func_t *func = f->cast<ast_decl_func_t>()) {
+        (void)func;
         n->is_indirect = false;
         return;
       }
       if (ast_decl_var_t *var = f->cast<ast_decl_var_t>()) {
+        (void)var;
         n->is_indirect = true;
         return;
       }

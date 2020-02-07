@@ -1,0 +1,31 @@
+#expect 1234
+
+function main()
+  var vx = x
+  var vy = y
+  var vz = z
+
+  if (not vx)
+    return -1
+  end
+  if (vx == vz)
+    return -2
+  end
+  if (vx == x)
+    return 1234
+  end
+  return -3
+end
+
+function x()
+  return 1
+end
+
+function y()
+  return 2
+end
+
+function z()
+  return 3
+end
+

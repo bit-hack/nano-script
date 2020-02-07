@@ -1,7 +1,8 @@
 #expect 30
-var g = test1
+var g
 
 function main()
+  g = test1
   var x = g()
   x += g()
   return x

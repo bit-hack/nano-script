@@ -113,7 +113,7 @@ void value_gc_t::trace(value_t **list, size_t num) {
         arena_t &to   = space_to();
 
   for (size_t i = 0; i < num; ++i) {
-    value_t *v = list[i];
+    value_t *&v = list[i];
 
     // already collected so skip to avoid cyclic loops
     if (to.owns(v)) {
@@ -131,7 +131,8 @@ void value_gc_t::trace(value_t **list, size_t num) {
       value_t *n = to.alloc<value_t>(0);
       n->type_ = val_type_func;
       n->v = v->v;
-      list[i] = n;  // *v = n;
+      list[i] = n;
+      break;
     }
     case val_type_int: {
       value_t *n = to.alloc<value_t>(0);

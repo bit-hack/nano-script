@@ -204,6 +204,9 @@ void parser_t::parse_expr_ex_(uint32_t tide) {
   }
   else {
     parse_lhs_();
+
+    // XXX: if '(' we have a function call
+
     if (is_operator_()) {
       const token_t *op = stream_.pop();
       op_push_(op, tide);
