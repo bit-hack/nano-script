@@ -50,6 +50,12 @@ struct program_stream_t {
     *d = value;
   }
 
+  uint32_t add_syscall(ccml_syscall_t syscall) {
+    uint32_t index = store_.syscalls_.size();
+    store_.syscalls_.push_back(syscall);
+    return index;
+  }
+
   // set the line number for the current pc
   // if line is nullptr then current lexer line is used
   void set_line(lexer_t &lexer, const token_t *line);

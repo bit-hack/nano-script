@@ -306,7 +306,6 @@ protected:
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
 // annotate nodes with their associated decl node
-// set function `is_syscall` member
 //
 struct sema_decl_annotate_t : public ast_visitor_t {
 
@@ -422,7 +421,6 @@ struct sema_decl_annotate_t : public ast_visitor_t {
     ast_node_t *f = find_decl(n->name->str_);
     if (f) {
       n->decl = f;
-      n->is_syscall = false;
       if (ast_decl_func_t *func = f->cast<ast_decl_func_t>()) {
         (void)func;
         n->is_indirect = false;
@@ -432,15 +430,6 @@ struct sema_decl_annotate_t : public ast_visitor_t {
         (void)var;
         n->is_indirect = true;
         return;
-      }
-    } else {
-      // XXX: remove this when we add syscalls to the AST
-      // check for extern function
-      for (const auto &func : ccml_.functions()) {
-        if (func.name_ == n->name->str_) {
-          n->is_syscall = true;
-          return;
-        }
       }
     }
     errs_.unknown_function(*n->name);
@@ -686,30 +675,14 @@ struct sema_num_args_t : public ast_visitor_t {
       return;
     }
     const auto &name = call->name->str_;
-    if (call->is_syscall) {
-      function_t *func = ccml_.find_function(name);
-      assert(func);
-      if (func->num_args() == ~0u) {
-        // it can take var args so its fine
-        return;
-      }
-      if (call->args.size() > func->num_args()) {
-        errs_.too_many_args(*call->name);
-      }
-      if (call->args.size() < func->num_args()) {
-        errs_.not_enought_args(*call->name);
-      }
+    auto itt = funcs_.find(name);
+    assert(itt != funcs_.end());
+    const ast_decl_func_t *func = itt->second;
+    if (call->args.size() > func->args.size()) {
+      errs_.too_many_args(*call->name);
     }
-    else {
-      auto itt = funcs_.find(name);
-      assert(itt != funcs_.end());
-      const ast_decl_func_t *func = itt->second;
-      if (call->args.size() > func->args.size()) {
-        errs_.too_many_args(*call->name);
-      }
-      if (call->args.size() < func->args.size()) {
-        errs_.not_enought_args(*call->name);
-      }
+    if (call->args.size() < func->args.size()) {
+      errs_.not_enought_args(*call->name);
     }
   }
 

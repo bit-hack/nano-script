@@ -224,7 +224,6 @@ struct ast_exp_call_t : public ast_node_t {
   ast_exp_call_t(const token_t *name)
     : ast_node_t(TYPE)
     , name(name)
-    , is_syscall(false)
     , is_indirect(false)
     , decl(nullptr)
   {}
@@ -240,7 +239,6 @@ struct ast_exp_call_t : public ast_node_t {
   // XXX: ast_node_t *callee
 
   const token_t *name;
-  bool is_syscall;
   bool is_indirect;
   ast_node_t *decl;
   std::vector<ast_node_t *> args;
@@ -480,6 +478,7 @@ struct ast_decl_func_t : public ast_node_t {
   ast_decl_func_t(const token_t *n)
     : ast_node_t(TYPE)
     , token(n)
+    , syscall(nullptr)
     , name(n->str_)
     , body(nullptr)
     , stack_size(0)
@@ -488,8 +487,10 @@ struct ast_decl_func_t : public ast_node_t {
   ast_decl_func_t(const std::string &n)
     : ast_node_t(TYPE)
     , token(nullptr)
+    , syscall(nullptr)
     , name(n)
     , body(nullptr)
+    , stack_size(0)
   {}
 
   virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
@@ -507,6 +508,9 @@ struct ast_decl_func_t : public ast_node_t {
   }
 
   const token_t *token;
+
+  ccml_syscall_t syscall;
+
   const std::string name;
   std::vector<ast_decl_var_t *> args;
   ast_block_t *body;

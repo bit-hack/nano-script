@@ -4,7 +4,7 @@
 
 var seed = 145
 
-function rand()
+function rng()
   seed = seed * 1103515245 + 12345
   return seed
 end
@@ -54,7 +54,7 @@ function main()
 
   # fill array with random data
   for (i = 0 to size)
-    arr[i] = rand() % size
+    arr[i] = rng() % size
   end
 
   # sort it

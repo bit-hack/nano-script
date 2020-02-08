@@ -63,6 +63,10 @@ struct program_t {
     return functions_;
   }
 
+  const std::vector<ccml_syscall_t> &syscall() const {
+    return syscalls_;
+  }
+
 protected:
   friend struct program_stream_t;
 
@@ -75,6 +79,9 @@ protected:
     uint32_t pc_end_;
     ast_decl_func_t *f_;
   };
+
+  // 
+  std::vector<ccml_syscall_t> syscalls_;
 
   // function descriptors
   std::vector<function_t> functions_;
