@@ -203,9 +203,33 @@ void parser_t::parse_expr_ex_(uint32_t tide) {
     op_push_(n, tide);
   }
   else {
+
+#if 0
+    // do unary minus
+    const token_t *neg = stream_.found(TOK_SUB);
+#endif
+
     parse_lhs_();
 
-    // XXX: if '(' we have a function call
+#if 0
+    // if '(' we have a function call
+    if (const token_t *t = stream_.found(TOK_LPAREN)) {
+      // call function
+      ast_node_t *expr = parse_call_(*t);
+      exp_stack_.push_back(expr);
+    }
+#endif
+
+#if 0
+    // place unary minus in here
+    if (neg) {
+      ast_node_t *back = exp_stack_.back();
+      exp_stack_.pop_back();
+      auto *op = ast.alloc<ast_exp_unary_op_t>(neg);
+      op->child = back;
+      exp_stack_.push_back(op);
+    }
+#endif
 
     if (is_operator_()) {
       const token_t *op = stream_.pop();
