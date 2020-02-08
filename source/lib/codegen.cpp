@@ -158,27 +158,20 @@ struct codegen_pass_t: ast_visitor_t {
       emit(INS_ICALL, int32_t(num_args), n->name);
       return;
     }
-    if (n->decl->cast<ast_decl_func_t>()) {
-      // emit regular call
-      emit(INS_CALL, int32_t(num_args), 0, n->name);
-      uint32_t operand = get_fixup();
-      // insert addr into map
-      call_fixups_.emplace_back(n->name, operand);
-      return;
-    }
-    if (n->decl == nullptr) {
-      // find syscall
-      int32_t index = -1;
-      for (const auto &f : ccml_.functions()) {
-        ++index;
-        if (!f.is_syscall()) {
-          continue;
-        }
-        if (f.name_ == n->name->str_) {
-          emit(INS_SCALL, int32_t(num_args), index, n->name);
-          return;
-        }
+    if (ast_decl_func_t *func = n->decl->cast<ast_decl_func_t>()) {
+      if (func->syscall) {
+        // emit a syscall
+        uint32_t index = stream_.add_syscall(func->syscall);
+        emit(INS_SCALL, int32_t(num_args), index, n->name);
       }
+      else {
+        // emit regular call
+        emit(INS_CALL, int32_t(num_args), 0, n->name);
+        uint32_t operand = get_fixup();
+        // insert addr into map
+        call_fixups_.emplace_back(n->name, operand);
+      }
+      return;
     }
     assert(!"Unknown function call");
   }
@@ -382,6 +375,10 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_decl_func_t* n) override {
+    // syscalls dont get emitted
+    if (n->syscall) {
+      return;
+    }
 
     function_t *func = ccml_.find_function(n->name);
     assert(func);

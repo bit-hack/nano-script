@@ -451,13 +451,11 @@ void thread_t::do_INS_SCALL_() {
   const int32_t num_args = read_operand_();
   const int32_t operand = read_operand_();
 
-  const auto &funcs = ccml_.functions();
-  if (operand < 0 || operand >= int32_t(funcs.size())) {
-    set_error_(thread_error_t::e_bad_syscall);
-  } else {
-    const function_t *func = &ccml_.functions()[operand];
-    func->sys_(*this, num_args);
-  }
+  const auto &calls = ccml_.program().syscall();
+  assert(operand >= 0 && operand < int32_t(calls.size()));
+  ccml_syscall_t sys = calls[operand];
+  assert(sys);
+  sys(*this, num_args);
 }
 
 void thread_t::do_INS_ICALL_() {

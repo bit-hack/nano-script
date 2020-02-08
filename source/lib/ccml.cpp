@@ -100,6 +100,11 @@ const function_t *ccml_t::find_function(const uint32_t pc) const {
 }
 
 void ccml_t::add_function(const std::string &name, ccml_syscall_t sys, int32_t num_args) {
-  const function_t fn{name, sys, num_args};
-  program_.functions().push_back(fn);
+  ast_decl_func_t *func = ast_->alloc<ast_decl_func_t>(name);
+  func->syscall = sys;
+  for (int32_t i = 0; i < num_args; ++i) {
+    func->args.emplace_back(nullptr);
+  }
+  auto &prog = ast_->program;
+  prog.children.push_back(func);
 }

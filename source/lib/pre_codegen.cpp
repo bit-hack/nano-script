@@ -68,6 +68,9 @@ struct pregen_offset_t: public ast_visitor_t {
   }
 
   void visit(ast_decl_func_t *n) override {
+    if (n->syscall) {
+      return;
+    }
     // set argument offsets
     int32_t i = -1;
     auto &args = n->args;
@@ -116,6 +119,11 @@ struct pregen_functions_t: public ast_visitor_t {
   }
 
   void visit(ast_decl_func_t *n) override {
+
+    if (n->syscall) {
+      return;
+    }
+
     funcs_.emplace_back();
     f_ = &funcs_.back();
     f_->name_ = n->name;
