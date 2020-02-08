@@ -90,6 +90,7 @@ const function_t *ccml_t::find_function(const std::string &name) const {
 }
 
 const function_t *ccml_t::find_function(const uint32_t pc) const {
+  // XXX: accelerate this with a map later please!
   for (const auto &f : program_.functions()) {
     if (pc >= f.code_start_ && pc < f.code_end_) {
       return &f;

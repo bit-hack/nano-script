@@ -468,10 +468,11 @@ void thread_t::do_INS_ICALL_() {
     set_error_(thread_error_t::e_bad_type_operation);
   }
   const int32_t callee = offset->v;
-
-  // todo: verify num args
-  (void)num_args;
-
+  // check number of arguments given to a function
+  const function_t * func = vm_.ccml_.find_function(callee);
+  if (int32_t(func->num_args()) != num_args) {
+    set_error_(thread_error_t::e_bad_num_args);
+  }
   // new frame
   enter_(stack_.head(), pc_, callee);
 }
