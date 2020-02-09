@@ -128,7 +128,13 @@ struct codegen_pass_t: ast_visitor_t {
       return;
     }
     if (ast_decl_func_t *func = n->decl->cast<ast_decl_func_t>()) {
-      get_func_(func, n->name);
+      if (func->syscall) {
+        // eek we cant to this yet
+        assert(!"Help!");
+      }
+      else {
+        get_func_(func, n->name);
+      }
       return;
     }
     assert(!"unknown decl type");
@@ -147,36 +153,40 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_exp_call_t* n) override {
-    (void)n;
-#if 0
+    assert(n && n->callee);
+
     const size_t num_args = n->args.size();
     // visit all of the arguments
     for (ast_node_t *c : n->args) {
       dispatch(c);
     }
-    if (ast_decl_var_t *decl = n->decl->cast<ast_decl_var_t>()) {
-      // emit indirect call
-      get_decl_(decl, n->name);
-      emit(INS_ICALL, int32_t(num_args), n->name);
-      return;
-    }
-    if (ast_decl_func_t *func = n->decl->cast<ast_decl_func_t>()) {
-      if (func->syscall) {
-        // emit a syscall
-        uint32_t index = stream_.add_syscall(func->syscall);
-        emit(INS_SCALL, int32_t(num_args), index, n->name);
+
+    // emit direct calls when we can
+    if (ast_exp_ident_t *ident = n->callee->cast<ast_exp_ident_t>()) {
+      if (ast_decl_func_t *func = ident->decl->cast<ast_decl_func_t>()) {
+
+        // this should have been checked beforehand
+        assert(func->args.size() == num_args);
+
+        if (func->syscall) {
+          // emit a syscall
+          uint32_t index = stream_.add_syscall(func->syscall);
+          emit(INS_SCALL, int32_t(num_args), index, func->token);
+        }
+        else {
+          // emit regular call
+          emit(INS_CALL, int32_t(num_args), 0, n->token);
+          uint32_t operand = get_fixup();
+          // insert addr into map
+          call_fixups_.emplace_back(func->token, operand);
+        }
+        return;
       }
-      else {
-        // emit regular call
-        emit(INS_CALL, int32_t(num_args), 0, n->name);
-        uint32_t operand = get_fixup();
-        // insert addr into map
-        call_fixups_.emplace_back(n->name, operand);
-      }
-      return;
     }
-#endif
-    assert(!"Unknown function call");
+
+    // emit an indirect call in the worst case
+    dispatch(n->callee);
+    emit(INS_ICALL, int32_t(num_args), n->token);
   }
 
   void visit(ast_stmt_call_t *n) override {

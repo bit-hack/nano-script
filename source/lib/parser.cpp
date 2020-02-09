@@ -199,14 +199,17 @@ void parser_t::parse_expr_ex_(uint32_t tide) {
 
   parse_lhs_();
 
-#if 1
   // <EXPR> ( ... )
   if (const token_t *t = stream_.found(TOK_LPAREN)) {
     // call function
-    ast_node_t *expr = parse_call_(*t);
-    exp_stack_.push_back(expr);
+    ast_exp_call_t *call = parse_call_(*t);
+    // pop the callee
+    assert(!exp_stack_.empty());
+    call->callee = exp_stack_.back();
+    exp_stack_.pop_back();
+    // push the call
+    exp_stack_.push_back(call);
   }
-#endif
 
   if (is_operator_()) {
     const token_t *op = stream_.pop();
@@ -316,7 +319,7 @@ ast_node_t* parser_t::parse_assign_(const token_t &name) {
   return stmt;
 }
 
-ast_node_t* parser_t::parse_call_(const token_t &t) {
+ast_exp_call_t* parser_t::parse_call_(const token_t &t) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
   auto &ast = ccml_.ast();
 
