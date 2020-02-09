@@ -672,24 +672,19 @@ struct sema_num_args_t : public ast_visitor_t {
   std::map<std::string, const ast_decl_func_t *> funcs_;
 
   void visit(ast_exp_call_t *call) override {
-    (void)call;
-    assert("do something herer?");
-#if 0
-    if (call->is_indirect) {
-      // indirect calls must be checked at runtime
-      return;
+    assert(call->callee);
+    dispatch(call->callee);
+    // if this can be lowered to a direct call
+    if (ast_exp_ident_t *ident = call->callee->cast<ast_exp_ident_t>()) {
+      if (ast_decl_func_t *callee = ident->decl->cast<ast_decl_func_t>()) {
+        if (call->args.size() > callee->args.size()) {
+          errs_.too_many_args(*call->token);
+        }
+        if (call->args.size() < callee->args.size()) {
+          errs_.not_enought_args(*call->token);
+        }
+      }
     }
-    const auto &name = call->name->str_;
-    auto itt = funcs_.find(name);
-    assert(itt != funcs_.end());
-    const ast_decl_func_t *func = itt->second;
-    if (call->args.size() > func->args.size()) {
-      errs_.too_many_args(*call->name);
-    }
-    if (call->args.size() < func->args.size()) {
-      errs_.not_enought_args(*call->name);
-    }
-#endif
   }
 
   void visit(ast_program_t *prog) override {

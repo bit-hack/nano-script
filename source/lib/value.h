@@ -161,7 +161,7 @@ struct value_stack_t {
   }
 
   int32_t head() const {
-    return stack_.size();
+    return int32_t(stack_.size());
   }
 
   void reserve(uint32_t operand) {
