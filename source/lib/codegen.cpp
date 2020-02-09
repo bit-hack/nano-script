@@ -147,6 +147,8 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_exp_call_t* n) override {
+    (void)n;
+#if 0
     const size_t num_args = n->args.size();
     // visit all of the arguments
     for (ast_node_t *c : n->args) {
@@ -173,6 +175,7 @@ struct codegen_pass_t: ast_visitor_t {
       }
       return;
     }
+#endif
     assert(!"Unknown function call");
   }
 

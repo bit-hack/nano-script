@@ -418,6 +418,7 @@ struct sema_decl_annotate_t : public ast_visitor_t {
 
   void visit(ast_exp_call_t *n) override {
     ast_visitor_t::visit(n);
+#if 0
     ast_node_t *f = find_decl(n->name->str_);
     if (f) {
       n->decl = f;
@@ -433,6 +434,7 @@ struct sema_decl_annotate_t : public ast_visitor_t {
       }
     }
     errs_.unknown_function(*n->name);
+#endif
   }
 
   void visit(ast_decl_func_t *n) override {
@@ -670,6 +672,9 @@ struct sema_num_args_t : public ast_visitor_t {
   std::map<std::string, const ast_decl_func_t *> funcs_;
 
   void visit(ast_exp_call_t *call) override {
+    (void)call;
+    assert("do something herer?");
+#if 0
     if (call->is_indirect) {
       // indirect calls must be checked at runtime
       return;
@@ -684,6 +689,7 @@ struct sema_num_args_t : public ast_visitor_t {
     if (call->args.size() < func->args.size()) {
       errs_.not_enought_args(*call->name);
     }
+#endif
   }
 
   void visit(ast_program_t *prog) override {

@@ -221,11 +221,10 @@ struct ast_stmt_call_t : public ast_node_t {
 struct ast_exp_call_t : public ast_node_t {
   static const ast_type_t TYPE = ast_exp_call_e;
 
-  ast_exp_call_t(const token_t *name)
-    : ast_node_t(TYPE)
-    , name(name)
-    , is_indirect(false)
-    , decl(nullptr)
+  ast_exp_call_t(const token_t *tok)
+    : token(tok)
+    , callee(nullptr)
+    , ast_node_t(TYPE)
   {}
 
   virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
@@ -236,11 +235,9 @@ struct ast_exp_call_t : public ast_node_t {
     }
   }
 
-  // XXX: ast_node_t *callee
+  const token_t *token;
+  ast_node_t *callee;
 
-  const token_t *name;
-  bool is_indirect;
-  ast_node_t *decl;
   std::vector<ast_node_t *> args;
 
   // local frame variables
@@ -644,6 +641,7 @@ struct ast_visitor_t {
   virtual void visit(ast_exp_call_t* n) {
     for (auto *c : n->args)
       dispatch(c);
+    dispatch(n->callee);
   }
 
   virtual void visit(ast_exp_bin_op_t* n) {
@@ -767,7 +765,7 @@ struct ast_printer_t : ast_visitor_t {
 
   void visit(ast_exp_call_t* n) override {
     indent_();
-    fprintf(fd_, "ast_exp_call_t {name: %s}\n", n->name->string());
+    fprintf(fd_, "ast_exp_call_t\n");
     ast_visitor_t::visit(n);
   }
 

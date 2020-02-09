@@ -99,16 +99,15 @@ void parser_t::parse_lhs_() {
   auto &ast = ccml_.ast();
 
   // format:
-  //    [-] ( <expr> )
-  //    [-] <TOK_IDENT>
-  //    [-] <TOK_IDENT> ( ... )
-  //    [-] <TOK_IDENT> [ ... ]
-  //    [-] <TOK_INT>
-  //    [-] <TOK_FLOAT>
-  //    [-] <TOK_STRING>
-  //    [-] <TOK_NONE>
+  //    ( <expr> )
+  //    <TOK_IDENT>
+  //    <TOK_IDENT> ( ... )
+  //    <TOK_IDENT> [ ... ]
+  //    <TOK_INT>
+  //    <TOK_FLOAT>
+  //    <TOK_STRING>
+  //    <TOK_NONE>
 
-  const token_t *neg = stream_.found(TOK_SUB);
   do {
 
     // ( <expr> )
@@ -121,15 +120,8 @@ void parser_t::parse_lhs_() {
 
     if (const token_t *t = stream_.found(TOK_IDENT)) {
 
-      // <TOK_IDENT> ( ... )
-      if (stream_.found(TOK_LPAREN)) {
-        // call function
-        ast_node_t *expr = parse_call_(*t);
-        exp_stack_.push_back(expr);
-        break;
-
       // <TOK_IDENT> [ ... ]
-      } else if (stream_.found(TOK_LBRACKET)) {
+      if (stream_.found(TOK_LBRACKET)) {
         // array access
         ast_exp_array_t *expr = ast.alloc<ast_exp_array_t>(t);
         expr->index = parse_expr_();
@@ -178,64 +170,48 @@ void parser_t::parse_lhs_() {
     ccml_.errors().expecting_lit_or_ident(*stream_.pop());
 
   } while (false);
-
-  // insert unary minus operator
-  if (neg) {
-    ast_node_t *back = exp_stack_.back();
-    exp_stack_.pop_back();
-    auto *op = ast.alloc<ast_exp_unary_op_t>(neg);
-    op->child = back;
-    exp_stack_.push_back(op);
-  }
 }
 
 void parser_t::parse_expr_ex_(uint32_t tide) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   // format:
-  //    <lhs>
-  //    <lhs> <op> <expr_ex>
-  //    'not' <lhs> <op> <expr_ex>
-  //    'not' <lhs>
+  //    ['not'] [-] <lhs>
+  //    ['not'] [-] <lhs> <op> <expr_ex>
 
+  // not
   if (const token_t *n = stream_.found(TOK_NOT)) {
     parse_expr_ex_(tide);
     op_push_(n, tide);
+    return;
   }
-  else {
 
-#if 0
-    // do unary minus
-    const token_t *neg = stream_.found(TOK_SUB);
+  // unary minus
+  if (const token_t *n = stream_.found(TOK_SUB)) {
+    parse_expr_ex_(tide);
+    ast_node_t *back = exp_stack_.back();
+    exp_stack_.pop_back();
+    auto *op = ccml_.ast().alloc<ast_exp_unary_op_t>(n);
+    op->child = back;
+    exp_stack_.push_back(op);
+    return;
+  }
+
+  parse_lhs_();
+
+#if 1
+  // <EXPR> ( ... )
+  if (const token_t *t = stream_.found(TOK_LPAREN)) {
+    // call function
+    ast_node_t *expr = parse_call_(*t);
+    exp_stack_.push_back(expr);
+  }
 #endif
 
-    parse_lhs_();
-
-#if 0
-    // if '(' we have a function call
-    if (const token_t *t = stream_.found(TOK_LPAREN)) {
-      // call function
-      ast_node_t *expr = parse_call_(*t);
-      exp_stack_.push_back(expr);
-    }
-#endif
-
-#if 0
-    // place unary minus in here
-    if (neg) {
-      ast_node_t *back = exp_stack_.back();
-      exp_stack_.pop_back();
-      auto *op = ast.alloc<ast_exp_unary_op_t>(neg);
-      op->child = back;
-      exp_stack_.push_back(op);
-    }
-#endif
-
-    if (is_operator_()) {
-      const token_t *op = stream_.pop();
-      op_push_(op, tide);
-      parse_expr_ex_(tide);
-    }
+  if (is_operator_()) {
+    const token_t *op = stream_.pop();
+    op_push_(op, tide);
+    parse_expr_ex_(tide);
   }
 }
 
@@ -340,15 +316,15 @@ ast_node_t* parser_t::parse_assign_(const token_t &name) {
   return stmt;
 }
 
-ast_node_t* parser_t::parse_call_(const token_t &name) {
+ast_node_t* parser_t::parse_call_(const token_t &t) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
   auto &ast = ccml_.ast();
 
   // format:
   //                  V
-  //    <TOK_IDENT> (   <expr> [ , <expr> ]* )
+  //    <expr> (   <expr> [ , <expr> ]* )
 
-  auto *expr = ast.alloc<ast_exp_call_t>(&name);
+  auto *expr = ast.alloc<ast_exp_call_t>(&t);
 
   // parse argument
   if (!stream_.found(TOK_RPAREN)) {
@@ -556,11 +532,13 @@ ast_node_t* parser_t::parse_stmt_() {
       break;
     case TOK_LPAREN:
     {
-      // x(
-      stream_.pop();
-      ast_node_t *expr = parse_call_(*t);
-      assert(expr->is_a<ast_exp_call_t>());
-      stmt = ast.alloc<ast_stmt_call_t>(expr->cast<ast_exp_call_t>());
+      // x( 
+      const token_t *c = stream_.pop();
+      ast_node_t *expr = parse_call_(*c);
+      ast_exp_call_t *call = expr->cast<ast_exp_call_t>();
+      ast_node_t *callee = ast.alloc<ast_exp_ident_t>(t);
+      call->callee = callee;
+      stmt = ast.alloc<ast_stmt_call_t>(call);
       break;
     }
     case TOK_LBRACKET:

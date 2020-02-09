@@ -42,6 +42,7 @@ struct op_decl_elim_t: public ast_visitor_t {
   }
 
   void visit(ast_exp_call_t *n) override {
+#if 0
     if (ast_decl_var_t *d = n->decl->cast<ast_decl_var_t>()) {
       // if this is an indirect call we cant remove it
       uses_.insert(d);
@@ -50,6 +51,7 @@ struct op_decl_elim_t: public ast_visitor_t {
     if (decl_ && !removing_) {
       uses_.insert(decl_);
     }
+#endif
     ast_visitor_t::visit(n);
   }
 
