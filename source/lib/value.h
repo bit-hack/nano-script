@@ -22,6 +22,9 @@ enum value_type_t {
   val_type_array,
   val_type_float,
   val_type_func,
+  val_type_syscall,
+
+  val_type_user = 0x100,
 };
 
 struct value_t {
@@ -35,33 +38,14 @@ struct value_t {
     , v(int_val)
   {}
 
+  template <value_type_t type>
+  bool is_a() const {
+    return this ? (type_ == type) : (type == val_type_none);
+  }
+
   bool is_number() const {
     return type() == val_type_float ||
            type() == val_type_int;
-  }
-
-  bool is_int() const {
-    return type() == val_type_int;
-  }
-
-  bool is_string() const {
-    return type() == val_type_string;
-  }
-
-  bool is_array() const {
-    return type() == val_type_array;
-  }
-
-  bool is_float() const {
-    return type() == val_type_float;
-  }
-
-  bool is_none() const {
-    return type() == val_type_none;
-  }
-
-  bool is_func() const {
-    return type() == val_type_func;
   }
 
   void from_int(int32_t val) {

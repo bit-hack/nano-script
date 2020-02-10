@@ -64,7 +64,7 @@ void vm_putc(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   const value_t *v = t.stack().pop();
   assert(v);
-  if (!v->is_int()) {
+  if (!v->is_a<val_type_int>()) {
     t.raise_error(thread_error_t::e_bad_argument);
   } else {
     putchar((int)(v->v));
@@ -88,7 +88,7 @@ void vm_puts(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   value_t *s = t.stack().pop();
   assert(s);
-  if (!s->is_string()) {
+  if (!s->is_a<val_type_string>()) {
     t.raise_error(thread_error_t::e_bad_argument);
   } else {
     printf("%s\n", s->string());
@@ -121,24 +121,27 @@ void on_runtime_error(ccml::ccml_t &ccml, ccml::thread_t &thread) {
 }
 
 void print_result(const ccml::value_t *res) {
+
+  using namespace ccml;
+
   FILE *fd = stdout;
   fprintf(fd, "exit: ");
-  if (!res || res->is_none()) {
+  if (!res || res->is_a<val_type_none>()) {
     fprintf(fd, "none\n");
   }
-  if (res->is_int()) {
+  if (res->is_a<val_type_int>()) {
     fprintf(fd, "%d", int32_t(res->v));
   }
-  if (res->is_string()) {
+  if (res->is_a<val_type_string>()) {
     fprintf(fd, "\"%s\"", res->string());
   }
-  if (res->is_array()) {
+  if (res->is_a<val_type_array>()) {
     fprintf(fd, "array");
   }
-  if (res->is_float()) {
+  if (res->is_a<val_type_float>()) {
     fprintf(fd, "%f", res->as_float());
   }
-  if (res->is_func()) {
+  if (res->is_a<val_type_func>()) {
     fprintf(fd, "function");
   }
   fprintf(fd, "\n");
