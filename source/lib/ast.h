@@ -222,9 +222,9 @@ struct ast_exp_call_t : public ast_node_t {
   static const ast_type_t TYPE = ast_exp_call_e;
 
   ast_exp_call_t(const token_t *tok)
-    : token(tok)
+    : ast_node_t(TYPE)
+    , token(tok)
     , callee(nullptr)
-    , ast_node_t(TYPE)
   {}
 
   virtual void replace_child(const ast_node_t *which, ast_node_t *with) {

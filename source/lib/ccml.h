@@ -5,6 +5,7 @@
 #include <vector>
 #include <array>
 #include <map>
+#include <list>
 
 #include "common.h"
 #include "program.h"
@@ -114,6 +115,8 @@ protected:
   friend struct pregen_functions_t;
   friend struct codegen_pass_t;
 
+  bool load_source(const char *path, std::string &out);
+
   void add_builtins_();
 
   void add_(const function_t &func) {
@@ -121,6 +124,9 @@ protected:
   }
 
   program_t program_;
+
+  std::list<std::string>           source_;
+  std::list<std::string>           pending_includes_;
 
   std::unique_ptr<error_manager_t> errors_;
   std::unique_ptr<lexer_t>         lexer_;

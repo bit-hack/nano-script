@@ -1,4 +1,5 @@
 #include <cstdarg>
+#include <memory>
 
 #include "ccml.h"
 
@@ -29,16 +30,40 @@ ccml_t::ccml_t()
 }
 
 bool ccml_t::build(const char *source, error_t &error) {
+
+  // store the input program internaly
+  source_.emplace_back(source);
+  const std::string *input = &source_.back();
+
   // clear the error
   error.clear();
   // lex into tokens
   try {
-    if (!lexer_->lex(source)) {
-      return false;
-    }
-    // parse into instructions
-    if (!parser_->parse(error)) {
-      return false;
+
+    for (;;) {
+
+      // lex the input into tokens
+      if (!lexer_->lex(input->c_str())) {
+        return false;
+      }
+      // parse into instructions
+      if (!parser_->parse(error)) {
+        return false;
+      }
+      // break if there are no includes to process
+      if (pending_includes_.empty()) {
+        break;
+      }
+
+      // lookup the next include file
+      const std::string &path = pending_includes_.back();
+      source_.emplace_back();
+      if (!load_source(path.c_str(), source_.back())) {
+        // XXX: set error status to say its an include failure
+        return false;
+      }
+      input = &source_.back();
+      pending_includes_.pop_back();
     }
 
     // run semantic checker
@@ -107,4 +132,33 @@ void ccml_t::add_function(const std::string &name, ccml_syscall_t sys, int32_t n
   }
   auto &prog = ast_->program;
   prog.children.push_back(func);
+}
+
+bool ccml_t::load_source(const char *path, std::string &out) {
+
+  FILE *fd = fopen(path, "rb");
+  if (!fd) {
+    return false;
+  }
+
+  fseek(fd, 0, SEEK_END);
+  size_t size = size_t(ftell(fd));
+  fseek(fd, 0, SEEK_SET);
+  if (size <= 0) {
+    fclose(fd);
+    return false;
+  }
+
+  out.resize(size + 1);
+  auto temp = std::make_unique<char[]>( size + 1 );
+  if (fread(temp.get(), 1, size, fd) != size) {
+    fclose(fd);
+    return false;
+  }
+  temp.get()[size] = '\0';
+
+  out = temp.get();
+
+  fclose(fd);
+  return true;
 }
