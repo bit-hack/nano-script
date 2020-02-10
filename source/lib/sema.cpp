@@ -418,23 +418,6 @@ struct sema_decl_annotate_t : public ast_visitor_t {
 
   void visit(ast_exp_call_t *n) override {
     ast_visitor_t::visit(n);
-#if 0
-    ast_node_t *f = find_decl(n->name->str_);
-    if (f) {
-      n->decl = f;
-      if (ast_decl_func_t *func = f->cast<ast_decl_func_t>()) {
-        (void)func;
-        n->is_indirect = false;
-        return;
-      }
-      if (ast_decl_var_t *var = f->cast<ast_decl_var_t>()) {
-        (void)var;
-        n->is_indirect = true;
-        return;
-      }
-    }
-    errs_.unknown_function(*n->name);
-#endif
   }
 
   void visit(ast_decl_func_t *n) override {

@@ -80,7 +80,7 @@ protected:
     ast_decl_func_t *f_;
   };
 
-  // 
+  // table of system calls
   std::vector<ccml_syscall_t> syscalls_;
 
   // function descriptors

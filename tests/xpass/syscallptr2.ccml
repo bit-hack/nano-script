@@ -1,0 +1,17 @@
+#expect 1141
+
+function test(a, b, c)
+  if (not b)
+    return a + b
+  end
+  return 1141
+end
+
+function main()
+  var x = abs
+  if (x)
+    return test(1, x, 2)
+  else
+    return 0
+  end
+end

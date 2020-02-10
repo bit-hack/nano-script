@@ -81,10 +81,22 @@ struct codegen_pass_t: ast_visitor_t {
 
   void get_func_(ast_decl_func_t *func, const token_t *t = nullptr) {
     assert(func);
-    emit(INS_NEW_FUNC, 0, t);
-    uint32_t operand = get_fixup();
-    // insert addr into map
-    call_fixups_.emplace_back(func->token, operand);
+    if (func->syscall) {
+      const auto &syscalls = ccml_.program().syscall();
+      for (size_t i = 0; i < syscalls.size(); ++i) {
+        if (syscalls[i] == func->syscall) {
+          emit(INS_NEW_SCALL, i, t);
+          return;
+        }
+      }
+      assert(!"syscall not in table");
+    }
+    else {
+      emit(INS_NEW_FUNC, 0, t);
+      uint32_t operand = get_fixup();
+      // insert addr into map
+      call_fixups_.emplace_back(func->token, operand);
+    }
   }
 
   void visit(ast_program_t* n) override {
@@ -128,13 +140,7 @@ struct codegen_pass_t: ast_visitor_t {
       return;
     }
     if (ast_decl_func_t *func = n->decl->cast<ast_decl_func_t>()) {
-      if (func->syscall) {
-        // eek we cant to this yet
-        assert(!"Help!");
-      }
-      else {
-        get_func_(func, n->name);
-      }
+      get_func_(func, n->name);
       return;
     }
     assert(!"unknown decl type");
@@ -164,14 +170,12 @@ struct codegen_pass_t: ast_visitor_t {
     // emit direct calls when we can
     if (ast_exp_ident_t *ident = n->callee->cast<ast_exp_ident_t>()) {
       if (ast_decl_func_t *func = ident->decl->cast<ast_decl_func_t>()) {
-
         // this should have been checked beforehand
         assert(func->args.size() == num_args);
-
         if (func->syscall) {
           // emit a syscall
           uint32_t index = stream_.add_syscall(func->syscall);
-          emit(INS_SCALL, int32_t(num_args), index, func->token);
+          emit(INS_SCALL, int32_t(num_args), index, ident->name);
         }
         else {
           // emit regular call
@@ -556,6 +560,7 @@ void codegen_pass_t::emit(instruction_e ins, int32_t o1, const token_t *t) {
   case INS_NEW_STR:
   case INS_NEW_FLT:
   case INS_NEW_FUNC:
+  case INS_NEW_SCALL:
   case INS_LOCALS:
   case INS_GLOBALS:
   case INS_GETV:

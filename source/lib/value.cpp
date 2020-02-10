@@ -18,6 +18,10 @@ void value_stack_t::push_func(const int32_t address) {
   push(gc_.new_func(address));
 }
 
+void value_stack_t::push_syscall(const int32_t index) {
+  push(gc_.new_syscall(index));
+}
+
 void value_stack_t::push_int(const int32_t v) {
   push(gc_.new_int(v));
 }
@@ -39,7 +43,7 @@ void value_stack_t::set_error(thread_error_t error) {
 }
 
 std::string value_t::to_string() const {
-  switch (type_) {
+  switch (this ? type_ : val_type_none) {
   case val_type_int:
     return std::to_string(v);
   case val_type_float:
@@ -52,6 +56,8 @@ std::string value_t::to_string() const {
     return "none";
   case val_type_func:
     return "function@" + std::to_string(v);
+  case val_type_syscall:
+    return "syscall@" + std::to_string(v);
   default:
     assert(!"unknown");
     return "";

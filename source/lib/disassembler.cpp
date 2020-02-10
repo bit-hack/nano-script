@@ -20,7 +20,7 @@ const char *gMnemonic[] = {
   // stack
   "INS_POP",
   "INS_NEW_INT", "INS_NEW_STR", "INS_NEW_ARY", "INS_NEW_NONE", "INS_NEW_FLT",
-  "INS_NEW_FUNC", "INS_LOCALS", "INS_GLOBALS",
+  "INS_NEW_FUNC", "INS_NEW_SYSCALL", "INS_LOCALS", "INS_GLOBALS",
   // local variables
   "INS_GETV", "INS_SETV", "INS_GETA", "INS_SETA",
   // global variables
@@ -71,15 +71,6 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
     return i;
   }
 
-  // syscall
-  if (op == INS_SCALL) {
-    void *call = 0;
-    memcpy(&call, ptr + i, sizeof(void *));
-    i += sizeof(void *);
-    fprintf(fd_, "%-12s %p\n", "INS_SCALL", call);
-    return i;
-  }
-
   // instruction with integer operand
   const int32_t val1 = *(int32_t *)(ptr + i);
   i += 4;
@@ -95,6 +86,7 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
   case INS_NEW_STR:
   case INS_NEW_FLT:
   case INS_NEW_FUNC:
+  case INS_NEW_SCALL:
   case INS_GETV:
   case INS_SETV:
   case INS_LOCALS:

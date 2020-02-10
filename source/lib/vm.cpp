@@ -120,7 +120,8 @@ uint8_t thread_t::read_opcode_() {
 void thread_t::do_INS_ADD_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
+  if (l->is_a<val_type_int>() &&
+      r->is_a<val_type_int>()) {
     stack_.push_int(l->v + r->v);
     return;
   }
@@ -161,7 +162,8 @@ void thread_t::do_INS_ADD_() {
 void thread_t::do_INS_SUB_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
+  if (l->is_a<val_type_int>() &&
+      r->is_a<val_type_int>()) {
     stack_.push_int(l->v - r->v);
     return;
   }
@@ -191,7 +193,8 @@ void thread_t::do_INS_MUL_() {
 void thread_t::do_INS_DIV_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
+  if (l->is_a<val_type_int>() &&
+      r->is_a<val_type_int>()) {
     if (r->v == 0) {
       set_error_(thread_error_t::e_bad_divide_by_zero);
     } else {
@@ -211,7 +214,8 @@ void thread_t::do_INS_DIV_() {
 void thread_t::do_INS_MOD_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
+  if (l->is_a<val_type_int>() &&
+      r->is_a<val_type_int>()) {
     if (r->v == 0) {
       set_error_(thread_error_t::e_bad_divide_by_zero);
     } else {
@@ -226,7 +230,8 @@ void thread_t::do_INS_MOD_() {
 void thread_t::do_INS_AND_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
+  if (l->as_bool() &&
+      r->as_bool()) {
     stack_.push_int(l->v && r->v);
     return;
   }
@@ -236,7 +241,8 @@ void thread_t::do_INS_AND_() {
 void thread_t::do_INS_OR_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
+  if (l->as_bool() &&
+      r->as_bool()) {
     stack_.push_int(l->v || r->v);
     return;
   }
@@ -245,20 +251,7 @@ void thread_t::do_INS_OR_() {
 
 void thread_t::do_INS_NOT_() {
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_func>()) {
-    stack_.push_int(0);
-    return;
-  }
-  if (l->is_a<val_type_none>()) {
-    stack_.push_int(1);
-    return;
-  }
-  if (l->is_a<val_type_int>()) {
-    stack_.push_int(!l->v);
-    return;
-  }
-
-  raise_error(thread_error_t::e_bad_type_operation);
+  stack_.push_int(!l->as_bool());
 }
 
 void thread_t::do_INS_NEG_() {
@@ -273,7 +266,8 @@ void thread_t::do_INS_NEG_() {
 void thread_t::do_INS_LT_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
+  if (l->is_a<val_type_int>() &&
+      r->is_a<val_type_int>()) {
     stack_.push_int(l->v < r->v ? 1 : 0);
     return;
   }
@@ -289,7 +283,8 @@ void thread_t::do_INS_LT_() {
 void thread_t::do_INS_GT_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
+  if (l->is_a<val_type_int>() &&
+      r->is_a<val_type_int>()) {
     stack_.push_int(l->v > r->v ? 1 : 0);
     return;
   }
@@ -305,7 +300,8 @@ void thread_t::do_INS_GT_() {
 void thread_t::do_INS_LEQ_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
+  if (l->is_a<val_type_int>() &&
+      r->is_a<val_type_int>()) {
     stack_.push_int(l->v <= r->v ? 1 : 0);
     return;
   }
@@ -321,7 +317,8 @@ void thread_t::do_INS_LEQ_() {
 void thread_t::do_INS_GEQ_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
+  if (l->is_a<val_type_int>() &&
+      r->is_a<val_type_int>()) {
     stack_.push_int(l->v >= r->v ? 1 : 0);
     return;
   }
@@ -359,8 +356,10 @@ void thread_t::do_INS_EQ_() {
     return;
   }
   // only none == none
-  if (l->is_a<val_type_none>() || r->is_a<val_type_none>()) {
-    stack_.push_int(l->is_a<val_type_none>() && r->is_a<val_type_none>() ? 1 : 0);
+  if (l->is_a<val_type_none>() ||
+      r->is_a<val_type_none>()) {
+    stack_.push_int(l->is_a<val_type_none>() &&
+                    r->is_a<val_type_none>() ? 1 : 0);
     return;
   }
   if ((l->is_a<val_type_float>() || l->is_a<val_type_int>()) &&
@@ -380,49 +379,16 @@ void thread_t::do_INS_JMP_() {
 void thread_t::do_INS_TJMP_() {
   const int32_t operand = read_operand_();
   const value_t *o = stack_.pop();
-  switch (o->type()) {
-  case value_type_t::val_type_int:
-    if (o->v != 0) {
-      pc_ = operand;
-    }
-    break;
-  case value_type_t::val_type_string:
-    if (o->strlen() != 0) {
-      pc_ = operand;
-    }
-    break;
-  case value_type_t::val_type_func:
+  if (o->as_bool()) {
     pc_ = operand;
-    break;
-  case value_type_t::val_type_none:
-    break;
-  default:
-    raise_error(thread_error_t::e_bad_type_operation);
   }
 }
 
 void thread_t::do_INS_FJMP_() {
   const int32_t operand = read_operand_();
   const value_t *o = stack_.pop();
-  switch (o->type()) {
-  case val_type_none:
+  if (!o->as_bool()) {
     pc_ = operand;
-    break;
-  case val_type_int:
-    if (o->v == 0) {
-      pc_ = operand;
-    }
-    break;
-  case value_type_t::val_type_func:
-    // functions are truthy
-    break;
-  case val_type_string:
-    if (o->strlen() == 0) {
-      pc_ = operand;
-    }
-    break;
-  default:
-    raise_error(thread_error_t::e_bad_type_operation);
   }
 }
 
@@ -450,10 +416,7 @@ void thread_t::do_INS_RET_() {
   }
 }
 
-void thread_t::do_INS_SCALL_() {
-  const int32_t num_args = read_operand_();
-  const int32_t operand = read_operand_();
-
+void thread_t::do_syscall_(int32_t operand, int32_t num_args) {
   const auto &calls = ccml_.program().syscall();
   assert(operand >= 0 && operand < int32_t(calls.size()));
   ccml_syscall_t sys = calls[operand];
@@ -461,21 +424,33 @@ void thread_t::do_INS_SCALL_() {
   sys(*this, num_args);
 }
 
+void thread_t::do_INS_SCALL_() {
+  const int32_t num_args = read_operand_();
+  const int32_t operand = read_operand_();
+  do_syscall_(operand, num_args);
+}
+
 void thread_t::do_INS_ICALL_() {
   const int32_t num_args = read_operand_();
-  value_t *offset = stack_.pop();
-  assert(offset);
-  if (!offset->is_a<val_type_func>()) {
-    set_error_(thread_error_t::e_bad_type_operation);
+  value_t *callee = stack_.pop();
+  assert(callee);
+  if (callee->is_a<val_type_syscall>()) {
+    const int32_t operand = callee->v;
+    do_syscall_(operand, num_args);
+    return;
   }
-  const int32_t callee = offset->v;
-  // check number of arguments given to a function
-  const function_t * func = vm_.ccml_.find_function(callee);
-  if (int32_t(func->num_args()) != num_args) {
-    set_error_(thread_error_t::e_bad_num_args);
+  if (callee->is_a<val_type_func>()) {
+    const int32_t addr = callee->v;
+    // check number of arguments given to a function
+    const function_t * func = vm_.ccml_.find_function(addr);
+    if (int32_t(func->num_args()) != num_args) {
+      set_error_(thread_error_t::e_bad_num_args);
+    }
+    // new frame
+    enter_(stack_.head(), pc_, addr);
+    return;
   }
-  // new frame
-  enter_(stack_.head(), pc_, callee);
+  set_error_(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_POP_() {
@@ -520,6 +495,12 @@ void thread_t::do_INS_NEW_FUNC_() {
   const int32_t index = read_operand_();
   assert(index >= 0);
   stack_.push_func(index);
+}
+
+void thread_t::do_INS_NEW_SCALL_() {
+  const int32_t index = read_operand_();
+  assert(index >= 0);
+  stack_.push_syscall(index);
 }
 
 void thread_t::do_INS_GLOBALS_() {
@@ -676,42 +657,43 @@ void thread_t::step_imp_() {
   const uint8_t opcode = read_opcode_();
   // dispatch
   switch (opcode) {
-  case INS_ADD:      do_INS_ADD_();      break;
-  case INS_SUB:      do_INS_SUB_();      break;
-  case INS_MUL:      do_INS_MUL_();      break;
-  case INS_DIV:      do_INS_DIV_();      break;
-  case INS_MOD:      do_INS_MOD_();      break;
-  case INS_AND:      do_INS_AND_();      break;
-  case INS_OR:       do_INS_OR_();       break;
-  case INS_NOT:      do_INS_NOT_();      break;
-  case INS_NEG:      do_INS_NEG_();      break;
-  case INS_LT:       do_INS_LT_();       break;
-  case INS_GT:       do_INS_GT_();       break;
-  case INS_LEQ:      do_INS_LEQ_();      break;
-  case INS_GEQ:      do_INS_GEQ_();      break;
-  case INS_EQ:       do_INS_EQ_();       break;
-  case INS_JMP:      do_INS_JMP_();      break;
-  case INS_TJMP:     do_INS_TJMP_();     break;
-  case INS_FJMP:     do_INS_FJMP_();     break;
-  case INS_CALL:     do_INS_CALL_();     break;
-  case INS_RET:      do_INS_RET_();      break;
-  case INS_SCALL:    do_INS_SCALL_();    break;
-  case INS_ICALL:    do_INS_ICALL_();    break;
-  case INS_POP:      do_INS_POP_();      break;
-  case INS_NEW_ARY:  do_INS_NEW_ARY_();  break;
-  case INS_NEW_INT:  do_INS_NEW_INT_();  break;
-  case INS_NEW_STR:  do_INS_NEW_STR_();  break;
-  case INS_NEW_NONE: do_INS_NEW_NONE_(); break;
-  case INS_NEW_FLT:  do_INS_NEW_FLT_();  break;
-  case INS_NEW_FUNC: do_INS_NEW_FUNC_(); break;
-  case INS_LOCALS:   do_INS_LOCALS_();   break;
-  case INS_GLOBALS:  do_INS_GLOBALS_();  break;
-  case INS_GETV:     do_INS_GETV_();     break;
-  case INS_SETV:     do_INS_SETV_();     break;
-  case INS_GETG:     do_INS_GETG_();     break;
-  case INS_SETG:     do_INS_SETG_();     break;
-  case INS_GETA:     do_INS_GETA_();     break;
-  case INS_SETA:     do_INS_SETA_();     break;
+  case INS_ADD:      do_INS_ADD_();        break;
+  case INS_SUB:      do_INS_SUB_();        break;
+  case INS_MUL:      do_INS_MUL_();        break;
+  case INS_DIV:      do_INS_DIV_();        break;
+  case INS_MOD:      do_INS_MOD_();        break;
+  case INS_AND:      do_INS_AND_();        break;
+  case INS_OR:       do_INS_OR_();         break;
+  case INS_NOT:      do_INS_NOT_();        break;
+  case INS_NEG:      do_INS_NEG_();        break;
+  case INS_LT:       do_INS_LT_();         break;
+  case INS_GT:       do_INS_GT_();         break;
+  case INS_LEQ:      do_INS_LEQ_();        break;
+  case INS_GEQ:      do_INS_GEQ_();        break;
+  case INS_EQ:       do_INS_EQ_();         break;
+  case INS_JMP:      do_INS_JMP_();        break;
+  case INS_TJMP:     do_INS_TJMP_();       break;
+  case INS_FJMP:     do_INS_FJMP_();       break;
+  case INS_CALL:     do_INS_CALL_();       break;
+  case INS_RET:      do_INS_RET_();        break;
+  case INS_SCALL:    do_INS_SCALL_();      break;
+  case INS_ICALL:    do_INS_ICALL_();      break;
+  case INS_POP:      do_INS_POP_();        break;
+  case INS_NEW_ARY:  do_INS_NEW_ARY_();    break;
+  case INS_NEW_INT:  do_INS_NEW_INT_();    break;
+  case INS_NEW_STR:  do_INS_NEW_STR_();    break;
+  case INS_NEW_NONE: do_INS_NEW_NONE_();   break;
+  case INS_NEW_FLT:  do_INS_NEW_FLT_();    break;
+  case INS_NEW_FUNC: do_INS_NEW_FUNC_();   break;
+  case INS_NEW_SCALL: do_INS_NEW_SCALL_(); break;
+  case INS_LOCALS:   do_INS_LOCALS_();     break;
+  case INS_GLOBALS:  do_INS_GLOBALS_();    break;
+  case INS_GETV:     do_INS_GETV_();       break;
+  case INS_SETV:     do_INS_SETV_();       break;
+  case INS_GETG:     do_INS_GETG_();       break;
+  case INS_SETG:     do_INS_SETG_();       break;
+  case INS_GETA:     do_INS_GETA_();       break;
+  case INS_SETA:     do_INS_SETA_();       break;
   default:
     set_error_(thread_error_t::e_bad_opcode);
   }

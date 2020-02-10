@@ -40,7 +40,8 @@ struct value_t {
 
   template <value_type_t type>
   bool is_a() const {
-    return this ? (type_ == type) : (type == val_type_none);
+    return this ? (type_ == type) :
+                  (type == val_type_none);
   }
 
   bool is_number() const {
@@ -49,6 +50,7 @@ struct value_t {
   }
 
   void from_int(int32_t val) {
+    assert(this);
     type_ = val_type_int;
     v = val;
   }
@@ -80,17 +82,18 @@ struct value_t {
   }
 
   int32_t strlen() const {
-    assert(type_ == val_type_string);
+    assert(type() == val_type_string);
     return v;
   }
 
   int32_t array_size() const {
-    assert(type_ == val_type_array);
+    assert(type() == val_type_array);
     return v;
   }
 
   float as_float() const {
-    switch (type_) {
+    assert(this);
+    switch (type()) {
     case val_type_int:   return float(v);
     case val_type_float: return float(f);
     default:             assert(false);
@@ -99,7 +102,8 @@ struct value_t {
   }
 
   int32_t as_int() const {
-    switch (type_) {
+    assert(this);
+    switch (type()) {
     case val_type_int:   return int32_t(v);
     case val_type_float: return int32_t(f);
     default:             assert(false);
@@ -107,8 +111,24 @@ struct value_t {
     return 0;
   }
 
+  int32_t as_bool() const {
+    switch (type()) {
+    case val_type_array:
+    case val_type_func:
+    case val_type_syscall: return true;
+    case val_type_none:    return false;
+    case val_type_string:  return v != 0;
+    case val_type_float:   return f != 0.f;
+    case val_type_int:     return v != 0;
+    default:               assert(false);
+    }
+    return 0;
+  }
+
   std::string to_string() const;
 
+  // note: dont check this directly, please use type() instead as 'this' ptr
+  //       can be nullptr
   value_type_t type_;
 
   union {
@@ -139,6 +159,9 @@ struct value_stack_t {
 
   // push a new function
   void push_func(const int32_t address);
+
+  // push a new syscall
+  void push_syscall(const int32_t number);
 
   void clear() {
     stack_.clear();

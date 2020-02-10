@@ -138,6 +138,9 @@ protected:
   void enter_(uint32_t sp, uint32_t ret, uint32_t callee);
   uint32_t leave_();
 
+  // syscall helper
+  void do_syscall_(int32_t index, int32_t num_args);
+
   // current stack frame
   const frame_t &frame_() const {
     assert(!f_.empty());
@@ -192,6 +195,7 @@ protected:
   void do_INS_NEW_INT_();
   void do_INS_NEW_FLT_();
   void do_INS_NEW_FUNC_();
+  void do_INS_NEW_SCALL_();
   void do_INS_LOCALS_();
   void do_INS_GLOBALS_();
   void do_INS_GETV_();

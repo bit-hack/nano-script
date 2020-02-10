@@ -101,6 +101,9 @@ enum instruction_e {
   // create a function reference
   INS_NEW_FUNC,
 
+  // create a new syscall reference
+  INS_NEW_SCALL,
+
   // reserve locals in stack frame
   INS_LOCALS,
 

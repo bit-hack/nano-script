@@ -1,5 +1,6 @@
 #include "ast.h"
 #include "errors.h"
+#include "codegen.h"
 
 namespace ccml {
 
@@ -71,20 +72,22 @@ struct pregen_offset_t: public ast_visitor_t {
     if (n->syscall) {
       return;
     }
-    // set argument offsets
-    int32_t i = -1;
-    auto &args = n->args;
-    for (auto itt = args.rbegin(); itt != args.rend(); ++itt) {
-      auto *arg = (*itt)->cast<ast_decl_var_t>();
-      arg->offset = i;
-      --i;
+    else {
+      // set argument offsets
+      int32_t i = -1;
+      auto &args = n->args;
+      for (auto itt = args.rbegin(); itt != args.rend(); ++itt) {
+        auto *arg = (*itt)->cast<ast_decl_var_t>();
+        arg->offset = i;
+        --i;
+      }
+      // set local offsets
+      offset_.clear();
+      offset_.push_back(0);
+      stack_size_ = 0;
+      ast_visitor_t::visit(n);
+      n->stack_size = stack_size_;
     }
-    // set local offsets
-    offset_.clear();
-    offset_.push_back(0);
-    stack_size_ = 0;
-    ast_visitor_t::visit(n);
-    n->stack_size = stack_size_;
   }
 
 protected:
@@ -121,6 +124,8 @@ struct pregen_functions_t: public ast_visitor_t {
   void visit(ast_decl_func_t *n) override {
 
     if (n->syscall) {
+      // add syscall to the syscall table
+      ccml_.program_.stream().add_syscall(n->syscall);
       return;
     }
 
