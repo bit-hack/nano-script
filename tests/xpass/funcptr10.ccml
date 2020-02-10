@@ -1,0 +1,15 @@
+#expect 1234
+
+function a()
+  return 1234
+end
+
+function b()
+  return a
+end
+
+function main()
+  var x[2]
+  x[0] = b()
+  return x[0]()
+end

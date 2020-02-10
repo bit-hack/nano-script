@@ -1,0 +1,6 @@
+#expect 6
+
+function main()
+  var x = abs
+  return x(-6)
+end

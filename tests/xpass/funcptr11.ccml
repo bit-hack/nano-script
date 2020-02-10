@@ -1,0 +1,13 @@
+#expect 1234
+
+function a()
+  return 1234
+end
+
+function b()
+  return a
+end
+
+function main()
+  return b()()
+end
