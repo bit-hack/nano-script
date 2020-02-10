@@ -101,7 +101,6 @@ void parser_t::parse_lhs_() {
   // format:
   //    ( <expr> )
   //    <TOK_IDENT>
-  //    <TOK_IDENT> ( ... )
   //    <TOK_IDENT> [ ... ]
   //    <TOK_INT>
   //    <TOK_FLOAT>
@@ -122,6 +121,9 @@ void parser_t::parse_lhs_() {
 
       // <TOK_IDENT> [ ... ]
       if (stream_.found(TOK_LBRACKET)) {
+
+        // XXX: move out of here
+
         // array access
         ast_exp_array_t *expr = ast.alloc<ast_exp_array_t>(t);
         expr->index = parse_expr_();
@@ -176,8 +178,8 @@ void parser_t::parse_expr_ex_(uint32_t tide) {
   token_stream_t &stream_ = ccml_.lexer().stream_;
 
   // format:
-  //    ['not'] [-] <lhs>
-  //    ['not'] [-] <lhs> <op> <expr_ex>
+  //    ['not'] [-] <lhs> [ '(' <expr> ')' ]
+  //    ['not'] [-] <lhs> [ '(' <expr> ')' ] <op> <expr_ex>
 
   // not
   if (const token_t *n = stream_.found(TOK_NOT)) {
@@ -199,16 +201,24 @@ void parser_t::parse_expr_ex_(uint32_t tide) {
 
   parse_lhs_();
 
-  // <EXPR> ( ... )
-  if (const token_t *t = stream_.found(TOK_LPAREN)) {
-    // call function
-    ast_exp_call_t *call = parse_call_(*t);
-    // pop the callee
-    assert(!exp_stack_.empty());
-    call->callee = exp_stack_.back();
-    exp_stack_.pop_back();
-    // push the call
-    exp_stack_.push_back(call);
+  while (true) {
+
+    // XXX: parse [] here
+
+    // <EXPR> ( ... )
+    if (const token_t *t = stream_.found(TOK_LPAREN)) {
+      // call function
+      ast_exp_call_t *call = parse_call_(*t);
+      // pop the callee
+      assert(!exp_stack_.empty());
+      call->callee = exp_stack_.back();
+      exp_stack_.pop_back();
+      // push the call
+      exp_stack_.push_back(call);
+      continue;
+    }
+
+    break;
   }
 
   if (is_operator_()) {
