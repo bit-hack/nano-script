@@ -216,11 +216,6 @@ struct codegen_pass_t: ast_visitor_t {
 
   void visit(ast_stmt_if_t* n) override {
 
-    // XXX:
-    //  if both blocks are empty
-    //  if expr contains a call emit it
-    //  if expr is const, emit specific body
-
     // format:
     //
     // if (!<expr>) ----.
