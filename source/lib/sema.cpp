@@ -656,18 +656,19 @@ struct sema_num_args_t : public ast_visitor_t {
 
   void visit(ast_exp_call_t *call) override {
     assert(call->callee);
-    dispatch(call->callee);
     // if this can be lowered to a direct call
     if (ast_exp_ident_t *ident = call->callee->cast<ast_exp_ident_t>()) {
       if (ast_decl_func_t *callee = ident->decl->cast<ast_decl_func_t>()) {
         if (call->args.size() > callee->args.size()) {
-          errs_.too_many_args(*call->token);
+          errs_.too_many_args(*ident->name);
         }
         if (call->args.size() < callee->args.size()) {
-          errs_.not_enought_args(*call->token);
+          errs_.not_enought_args(*ident->name);
         }
       }
     }
+    // dispatch
+    ast_visitor_t::visit(call);
   }
 
   void visit(ast_program_t *prog) override {

@@ -401,8 +401,25 @@ class Generator(object):
                 pass
 
 
+def mangle(input):
+    s = list(input)
+
+    chars = 'abcfef0123456789_.()[]#*+-/ \n'
+
+    num = 1 + _random() % 16
+    for i in range(0, num):
+        index = _random() % len(s)
+        s[index] = chars[_random() % len(chars)]
+
+    return ''.join(s)
+
+
 def main():
     global _seed
+
+    dir = 'fuzzfail'
+    add_fails = True
+
     base = 0
     for i in range(0, 1024):
         _seed = 12345 + i
@@ -410,7 +427,10 @@ def main():
         out = '# SEED {0}\n\n'.format(_seed)
         out += gen.do_program()
 
-        with open('fuzz/test{0}.ccml'.format(base + i), 'w') as fd:
+        if add_fails:
+            out = mangle(out)
+
+        with open(dir + '/test{0}.ccml'.format(base + i), 'w') as fd:
             fd.write(out)
 
 

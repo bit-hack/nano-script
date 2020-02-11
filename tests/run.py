@@ -29,6 +29,20 @@ def get_expected(path):
     return "--UNKNOWN--"
 
 
+def try_comp(base, path):
+    print('{0}'.format(path))
+    tried.add(path)
+    try:
+        proc = subprocess.Popen(
+            [COMP, path],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE)
+        out, err = proc.communicate()
+        ret = proc.returncode
+    except OSError:
+        print('failed to execute {0}'.format(path))
+
+
 def do_comp(base, path):
     print('{0}'.format(path))
     tried.add(path)
@@ -117,6 +131,12 @@ def main():
             root, ext = os.path.splitext(f)
             if ext == '.ccml':
                 do_comp(root, os.path.join('./fuzz', f))
+
+    if not arg_fast:
+        for f in os.listdir('./fuzzfail'):
+            root, ext = os.path.splitext(f)
+            if ext == '.ccml':
+                try_comp(root, os.path.join('./fuzzfail', f))
 
     print('{0} of {1} passed'.format(len(passed), len(tried)))
 
