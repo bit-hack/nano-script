@@ -14,16 +14,15 @@
 using namespace ccml;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-ccml_t::ccml_t()
+ccml_t::ccml_t(program_t &prog)
   : optimize(true)
-  , program_()
+  , program_(prog)
   , errors_(new error_manager_t(*this))
   , lexer_(new lexer_t(*this))
   , parser_(new parser_t(*this))
   , ast_(new ast_t(*this))
-  , codegen_(new codegen_t(*this, program_.stream()))
+  , codegen_(new codegen_t(*this, program_.builder()))
   , disassembler_(new disassembler_t(*this))
-  
 {
   add_builtins_();
 }
@@ -69,34 +68,6 @@ void ccml_t::reset() {
   parser_->reset();
   ast_->reset();
   program_.reset();
-}
-
-function_t *ccml_t::find_function(const std::string &name) {
-  for (auto &f : program_.functions()) {
-    if (f.name_ == name) {
-      return &f;
-    }
-  }
-  return nullptr;
-}
-
-const function_t *ccml_t::find_function(const std::string &name) const {
-  for (const auto &f : program_.functions()) {
-    if (f.name_ == name) {
-      return &f;
-    }
-  }
-  return nullptr;
-}
-
-const function_t *ccml_t::find_function(const uint32_t pc) const {
-  // XXX: accelerate this with a map later please!
-  for (const auto &f : program_.functions()) {
-    if (pc >= f.code_start_ && pc < f.code_end_) {
-      return &f;
-    }
-  }
-  return nullptr;
 }
 
 void ccml_t::add_function(const std::string &name, ccml_syscall_t sys, int32_t num_args) {

@@ -125,7 +125,7 @@ struct pregen_functions_t: public ast_visitor_t {
 
     if (n->syscall) {
       // add syscall to the syscall table
-      ccml_.program_.stream().add_syscall(n->syscall);
+      ccml_.program_.builder().add_syscall(n->syscall);
       return;
     }
 

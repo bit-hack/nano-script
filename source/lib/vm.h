@@ -18,7 +18,7 @@ struct vm_t;
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct thread_t {
 
-  thread_t(ccml_t &ccml, vm_t &vm);
+  thread_t(vm_t &vm);
   ~thread_t();
 
   // prepare to execute a function
@@ -94,9 +94,6 @@ protected:
 
   // step a single instruction (internal)
   void step_imp_();
-
-  // ccml service locator
-  ccml_t &ccml_;
 
   // the return value of the thread function
   value_t* return_code_;
@@ -208,12 +205,12 @@ protected:
 
 struct vm_t {
 
-  vm_t(ccml_t &ccml);
+  vm_t(program_t &program);
 
   void reset();
 
   //
-  ccml_t &ccml_;
+  program_t &program_;
 
   // garbage collector
   std::unique_ptr<value_gc_t> gc_;

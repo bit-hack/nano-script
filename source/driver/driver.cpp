@@ -152,7 +152,9 @@ int main(int argc, char **argv) {
 
   using namespace ccml;
 
-  ccml_t ccml;
+  ccml::program_t program;
+
+  ccml_t ccml{program};
   ccml.add_function("putc", vm_putc, 1);
   ccml.add_function("getc", vm_getc, 0);
   ccml.add_function("puts", vm_puts, 1);
@@ -183,14 +185,15 @@ int main(int argc, char **argv) {
   ccml.disassembler().disasm();
 #endif
 
-  const function_t *func = ccml.find_function("main");
+  const function_t *func = program.function_find("main");
   if (!func) {
     fprintf(stderr, "unable to locate function 'main'\n");
     return -3;
   }
 
-  ccml::vm_t vm{ccml};
-  ccml::thread_t thread{ccml, vm};
+  // this should take just the program
+  ccml::vm_t vm{program};
+  ccml::thread_t thread{vm};
 
   if (!thread.init()) {
     fprintf(stderr, "failed while executing @init\n");

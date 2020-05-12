@@ -9,10 +9,13 @@
 
 #include "common.h"
 
+
 namespace ccml {
 
 struct program_t {
 
+  // map instruction to line number
+  // XXX: this should also account for file path
   typedef std::map<uint32_t, uint32_t> linetable_t;
 
   program_t();
@@ -29,8 +32,8 @@ struct program_t {
     return code_.data() + code_.size();
   }
 
-  program_stream_t &stream() const {
-    return *stream_;
+  program_builder_t &builder() const {
+    return *builder_;
   }
 
   const linetable_t &line_table() const {
@@ -67,8 +70,12 @@ struct program_t {
     return syscalls_;
   }
 
+  const function_t *function_find(const std::string &name) const;
+        function_t *function_find(const std::string &name);
+        function_t *function_find(uint32_t pc);
+
 protected:
-  friend struct program_stream_t;
+  friend struct program_builder_t;
 
   void add_line(uint32_t pc, uint32_t line) {
     line_table_[pc] = line;
@@ -77,7 +84,7 @@ protected:
   struct pc_range_t {
     uint32_t pc_start_;
     uint32_t pc_end_;
-    ast_decl_func_t *f_;
+    ast_decl_func_t *f_;  // XXX: should not be any AST refs here
   };
 
   // table of system calls
@@ -92,8 +99,8 @@ protected:
   // bytecode array
   std::vector<uint8_t> code_;
 
-  // assembly streamer
-  std::unique_ptr<program_stream_t> stream_;
+  // program builder
+  std::unique_ptr<program_builder_t> builder_;
 
   // line table [PC -> Line]
   linetable_t line_table_;

@@ -3,7 +3,6 @@
 
 namespace ccml {
 
-//enum instruction_e;
 struct instruction_t;
 
 struct error_manager_t;
@@ -35,9 +34,10 @@ struct ast_stmt_assign_array_t;
 struct ast_decl_func_t;
 struct ast_decl_var_t;
 
-struct program_stream_t;
-struct codegen_t;
 struct program_t;
+struct program_builder_t;
+
+struct codegen_t;
 
 struct disassembler_t;
 

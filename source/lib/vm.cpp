@@ -71,9 +71,8 @@ void print_history() {
   }
 }
 
-thread_t::thread_t(ccml_t &ccml, vm_t &vm)
-  : ccml_(ccml)
-  , return_code_(nullptr)
+thread_t::thread_t(vm_t &vm)
+  : return_code_(nullptr)
   , cycles_(0)
   , finished_(true)
   , halted_(false)
@@ -95,23 +94,23 @@ thread_t::~thread_t() {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 int32_t thread_t::read_operand_() {
-  const uint8_t *c = ccml_.program().data();
-  assert(sizeof(pc_) < ccml_.program().size());
+  const uint8_t *c = vm_.program_.data();
+  assert(sizeof(pc_) < vm_.program_.size());
   const int32_t val = *(int32_t *)(c + pc_);
   pc_ += sizeof(int32_t);
   return val;
 }
 
 uint8_t thread_t::peek_opcode_() {
-  const uint8_t *c = ccml_.program().data();
-  assert(sizeof(pc_) < ccml_.program().size());
+  const uint8_t *c = vm_.program_.data();
+  assert(sizeof(pc_) < vm_.program_.size());
   const int8_t val = *(uint8_t *)(c + pc_);
   return val;
 }
 
 uint8_t thread_t::read_opcode_() {
-  const uint8_t *c = ccml_.program().data();
-  assert(sizeof(pc_) < ccml_.program().size());
+  const uint8_t *c = vm_.program_.data();
+  assert(sizeof(pc_) < vm_.program_.size());
   const int8_t val = *(uint8_t *)(c + pc_);
   pc_ += sizeof(uint8_t);
   return val;
@@ -417,7 +416,7 @@ void thread_t::do_INS_RET_() {
 }
 
 void thread_t::do_syscall_(int32_t operand, int32_t num_args) {
-  const auto &calls = ccml_.program().syscall();
+  const auto &calls = vm_.program_.syscall();
   assert(operand >= 0 && operand < int32_t(calls.size()));
   ccml_syscall_t sys = calls[operand];
   assert(sys);
@@ -442,7 +441,8 @@ void thread_t::do_INS_ICALL_() {
   if (callee->is_a<val_type_func>()) {
     const int32_t addr = callee->v;
     // check number of arguments given to a function
-    const function_t * func = vm_.ccml_.find_function(addr);
+    const function_t *func = vm_.program_.function_find(addr);
+    assert(func);
     if (int32_t(func->num_args()) != num_args) {
       set_error_(thread_error_t::e_bad_num_args);
     }
@@ -467,10 +467,10 @@ void thread_t::do_INS_NEW_INT_() {
 
 void thread_t::do_INS_NEW_STR_() {
   const int32_t index = read_operand_();
-  const auto &str_tab = ccml_.strings();
+  const auto &str_tab = vm_.program_.strings();
   (void)str_tab;
   assert(index < (int32_t)str_tab.size());
-  const std::string &s = ccml_.strings()[index];
+  const std::string &s = str_tab[index];
   stack_.push_string(s);
 }
 
@@ -763,7 +763,7 @@ bool thread_t::step_line() {
 }
 
 int32_t thread_t::source_line() const {
-  return ccml_.program().get_line(pc_);
+  return vm_.program_.get_line(pc_);
 }
 
 void thread_t::tick_gc_(int32_t cycles) {
@@ -780,11 +780,13 @@ bool thread_t::resume(int32_t cycles, bool trace) {
   const uint32_t start_cycles = cycles;
   halted_ = false;
   if (trace) {
+    // XXX: user should provide a disassembler
+#if 0
     // while we should keep processing instructions
     for (; cycles; --cycles) {
       tick_gc_(cycles);
       // print an instruction trace
-      const uint8_t *c = ccml_.program().data();
+      const uint8_t *c = vm_.program_.data();
       ccml_.disassembler().disasm(c + pc_);
       // dispatch
       step_imp_();
@@ -792,6 +794,7 @@ bool thread_t::resume(int32_t cycles, bool trace) {
         break;
       }
     }
+#endif
   } else {
     // while we should keep processing instructions
     for (; cycles; --cycles) {
@@ -832,7 +835,7 @@ bool thread_t::init() {
   stack_.clear();
 
   // search for the init function
-  const function_t *init = ccml_.find_function("@init");
+  const function_t *init = vm_.program_.function_find("@init");
   if (!init) {
     // no init to do?
     return true;
@@ -858,7 +861,7 @@ void thread_t::unwind() {
   int32_t i = 0;
   for (auto itt = f_.rbegin(); itt != f_.rend(); ++itt) {
     const auto &frame = *itt;
-    const function_t *func = ccml_.find_function(frame.callee_);
+    const function_t *func = vm_.program_.function_find(frame.callee_);
     assert(func);
     fprintf(stderr, "%2d> function %s\n", i, func->name_.c_str());
     // print function arguments
@@ -883,8 +886,8 @@ void thread_t::unwind() {
   }
 }
 
-vm_t::vm_t(ccml_t &ccml)
-  : ccml_(ccml)
+vm_t::vm_t(program_t &program)
+  : program_(program)
   , gc_(new value_gc_t) {
 }
 

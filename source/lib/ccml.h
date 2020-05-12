@@ -11,67 +11,14 @@
 #include "value.h"
 #include "instructions.h"
 #include "thread_error.h"
+#include "types.h"
 
 
 namespace ccml {
 
-struct identifier_t {
-  std::string name_;
-  int32_t offset_;
-};
-
-struct function_t {
-
-  // name of the function
-  std::string name_;
-
-  // syscall callback or nullptr
-  ccml_syscall_t sys_;
-
-  // number of arguments syscall takes
-  uint32_t sys_num_args_;
-
-  // code address range
-  uint32_t code_start_, code_end_;
-
-  std::vector<identifier_t> locals_;
-  std::vector<identifier_t> args_;
-
-  uint32_t num_args() const {
-    return is_syscall() ? sys_num_args_ : args_.size();
-  }
-
-  bool is_syscall() const {
-    return sys_ != nullptr;
-  }
-
-  function_t()
-    : sys_(nullptr)
-    , code_start_(0)
-    , code_end_(0)
-  {
-  }
-
-  // syscall constructor
-  function_t(const std::string &name, ccml_syscall_t sys, int32_t num_args)
-      : name_(name)
-      , sys_(sys)
-      , sys_num_args_(num_args) {
-  }
-
-  // compiled function constructor
-  function_t(const std::string &name, int32_t pos)
-      : name_(name)
-      , sys_(nullptr)
-      , code_start_(pos)
-      , code_end_(pos) {}
-};
-
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct ccml_t {
 
-  ccml_t();
+  ccml_t(program_t &prog);
 
   // accessors
   error_manager_t &errors()       { return *errors_; }
@@ -86,20 +33,8 @@ struct ccml_t {
 
   void reset();
 
-  const function_t *find_function(const std::string &name) const;
-        function_t *find_function(const std::string &name);
-
-  const function_t *find_function(const uint32_t pc) const;
-
+  // XXX: this will need to be abstracted somehow
   void add_function(const std::string &name, ccml_syscall_t sys, int32_t num_args);
-
-  const std::vector<function_t> &functions() const {
-    return program_.functions();
-  }
-
-  const std::vector<std::string> &strings() const {
-    return program_.strings();
-  }
 
   // enable codegen optimizations
   bool optimize;
@@ -120,8 +55,10 @@ protected:
     program_.functions().push_back(func);
   }
 
-  program_t program_;
+  // the current program we are building
+  program_t &program_;
 
+  // objects used while compiling
   std::unique_ptr<error_manager_t> errors_;
   std::unique_ptr<lexer_t>         lexer_;
   std::unique_ptr<parser_t>        parser_;

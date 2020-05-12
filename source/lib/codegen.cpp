@@ -40,7 +40,7 @@ static instruction_e tok_to_ins_(token_e op) {
 namespace ccml {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-void program_stream_t::set_line(lexer_t &lexer, const token_t *t) {
+void program_builder_t::set_line(lexer_t &lexer, const token_t *t) {
   const uint32_t pc = head();
   const uint32_t line = t ? t->line_no_ : lexer.stream_.line_number();
   store_.add_line(pc, line);
@@ -49,7 +49,7 @@ void program_stream_t::set_line(lexer_t &lexer, const token_t *t) {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct codegen_pass_t: ast_visitor_t {
 
-  codegen_pass_t(ccml_t &c, program_stream_t &stream)
+  codegen_pass_t(ccml_t &c, program_builder_t &stream)
     : ccml_(c)
     , stream_(stream)
     , funcs_(c.program_.functions())
@@ -392,7 +392,7 @@ struct codegen_pass_t: ast_visitor_t {
       return;
     }
 
-    function_t *func = ccml_.find_function(n->name);
+    function_t *func = ccml_.program_.function_find(n->name);
     assert(func);
     func->code_start_ = pos();
 
@@ -506,7 +506,7 @@ protected:
   }
 
   ccml_t &ccml_;
-  program_stream_t &stream_;
+  program_builder_t &stream_;
   std::vector<function_t> &funcs_;
   std::vector<std::string> &strings_;
   std::map<std::string, int32_t> func_map_;
@@ -589,7 +589,7 @@ void codegen_pass_t::emit(instruction_e ins, int32_t o1, int32_t o2, const token
 } // namespace ccml
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-codegen_t::codegen_t(ccml_t &c, program_stream_t &s)
+codegen_t::codegen_t(ccml_t &c, program_builder_t &s)
   : ccml_(c)
   , stream_(s)
 {

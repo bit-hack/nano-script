@@ -71,8 +71,10 @@ int main(int argc, char **argv) {
     return -1;
   }
 
+  ccml::program_t program;
+
   using namespace ccml;
-  ccml_t ccml;
+  ccml_t ccml{program};
 
   FILE *fd_ast = nullptr;
   FILE *fd_dis = nullptr;
