@@ -183,6 +183,8 @@ protected:
 
   uint32_t index_;
   uint32_t line_no_;
+
+  // XXX: replace this with a pool allocator so that pushed tokens will not become invalidated
   std::vector<token_t> stream_;
 };
 
