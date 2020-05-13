@@ -68,13 +68,6 @@ protected:
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-struct instruction_t {
-  instruction_e opcode;
-  int32_t operand;
-  const token_t *token;
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct codegen_t {
 
   codegen_t(ccml_t &c, program_builder_t &stream);

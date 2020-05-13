@@ -395,13 +395,14 @@ struct codegen_pass_t: ast_visitor_t {
     function_t *func = ccml_.program_.function_find(n->name);
     assert(func);
     func->code_start_ = pos();
+    func->code_end_ = pos();
 
     // insert into func map
     func_map_[n->name.c_str()] = pos();
 
     // init is handled separately as a special case
     if (n->name == "@init") {
-      visit_init(n);
+      visit_init(n, func);
       return;
     }
 
@@ -469,7 +470,7 @@ protected:
   }
 
   // handle @init function as a special case
-  void visit_init(ast_decl_func_t* a) {
+  void visit_init(ast_decl_func_t* a, function_t *func) {
 
     int num_globals = 0;
     for (ast_node_t *n : ccml_.ast().program.children) {
@@ -500,9 +501,11 @@ protected:
 
     // return
     emit(INS_NEW_INT, 0, nullptr);
-    const auto *func = stack.front()->cast<ast_decl_func_t>();
-    const int32_t operand = func->args.size() + func->stack_size;
+    const auto *ast_func = stack.front()->cast<ast_decl_func_t>();
+    const int32_t operand = ast_func->args.size() + ast_func->stack_size;
     emit(INS_RET, operand, nullptr);
+
+    func->code_end_ = pos();
   }
 
   ccml_t &ccml_;

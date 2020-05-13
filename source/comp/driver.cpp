@@ -113,10 +113,7 @@ int main(int argc, char **argv) {
   }
 
   if (fd_dis) {
-    disasm.set_file(fd_dis);
-
-    // XXX: FIX ME!!
-//    disasm.disasm(program);
+    disasm.dump(program, fd_dis);
   }
 
   if (fd_bin) {

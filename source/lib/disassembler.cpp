@@ -42,11 +42,13 @@ const char *disassembler_t::get_mnemonic(const instruction_e e) {
 }
 
 // disassemble a code stream
-int32_t disassembler_t::disasm(const uint8_t *ptr) const {
+int32_t disassembler_t::disasm(const uint8_t *ptr, std::string &out) const {
     // extract opcode
   uint32_t i = 0;
   const uint8_t op = ptr[i];
   i += 1;
+
+  out.clear();
 
   // instructions with no operand
   switch (op) {
@@ -67,7 +69,7 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
   case INS_SETA:
   case INS_GETA:
   case INS_NEW_NONE:
-    fprintf(fd_, "%s\n", gMnemonic[op]);
+    out = gMnemonic[op];
     return i;
   }
 
@@ -94,7 +96,9 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
   case INS_GETG:
   case INS_SETG:
   case INS_ICALL:
-    fprintf(fd_, "%-12s %d\n", gMnemonic[op], val1);
+    out = gMnemonic[op];
+    out += " ";
+    out += std::to_string(val1);
     return i;
   }
 
@@ -105,33 +109,44 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
   switch (op) {
   case INS_SCALL:
   case INS_CALL:
-    fprintf(fd_, "%-12s %d %d\n", gMnemonic[op], val1, val2);
+    out = gMnemonic[op];
+    out += " ";
+    out += std::to_string(val1);
+    out += " ";
+    out += std::to_string(val2);
     return i;
   }
 
   return 0;
 }
 
-bool disassembler_t::disasm(program_t &prog, int32_t &index, instruction_t &out) const {
+void disassembler_t::dump(program_t &prog, FILE *fd) {
 
-  const uint8_t *start = prog.data();
-  const uint8_t *p     = prog.data() + index;
+  const uint8_t *p   = prog.data();
+  const uint8_t *end = prog.end();
+  int offs = 0;
+  std::string out;
+  function_t *func = nullptr;
 
-  if (p < start || p >= prog.end()) {
-    return false;
+  while (p < end) {
+    int i = disasm(p, out);
+    assert(i > 0);
+
+    function_t *f = prog.function_find(offs);
+    assert(f);
+    if (f != func) {
+      if (offs != 0) {
+        fprintf(fd, "\n");
+      }
+      fprintf(fd, "# %s\n", f->name().c_str());
+      func = f;
+    }
+
+    fprintf(fd, "%s\n", out.c_str());
+
+    offs += i;
+    p += i;
   }
-
-  out.token = nullptr;
-  out.operand = 0;
-
-  out.opcode = (instruction_e)(p[0]);
-  index += 1;
-  if (ins_has_operand(out.opcode)) {
-    out.operand = *(int32_t*)(p + 1);
-    index += 4;
-  }
-
-  return true;
 }
 
 } // namespace ccml

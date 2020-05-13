@@ -3,8 +3,6 @@
 
 namespace ccml {
 
-struct instruction_t;
-
 struct error_manager_t;
 struct error_t;
 
