@@ -5,7 +5,6 @@
 
 namespace ccml {
 
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct lexer_t {
 
   lexer_t(ccml_t &c)
@@ -20,19 +19,24 @@ struct lexer_t {
   void reset();
 
   // return a parse source line
-  const std::string &get_line(int32_t no) const {
+  const std::string &get_line(line_t no) const {
+    const auto line = no.line;
     static const std::string empty;
-    if (no >= 0 && no < int32_t(lines_.size())) {
-      return lines_.at(no);
+    if (line >= 0 && line < int32_t(lines_.size())) {
+      return lines_.at(line);
     }
     return empty;
   }
 
-  // stream of parsed tokens
-  token_stream_t stream_;
+  token_stream_t &stream() {
+    return stream_;
+  }
 
 protected:
   ccml_t &ccml_;
+
+  // stream of parsed tokens
+  token_stream_t stream_;
 
   // current line number being parsed
   uint32_t line_no_;

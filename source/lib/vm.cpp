@@ -229,23 +229,13 @@ void thread_t::do_INS_MOD_() {
 void thread_t::do_INS_AND_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->as_bool() &&
-      r->as_bool()) {
-    stack_.push_int(l->v && r->v);
-    return;
-  }
-  raise_error(thread_error_t::e_bad_type_operation);
+  stack_.push_int(l->as_bool() && r->as_bool());
 }
 
 void thread_t::do_INS_OR_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->as_bool() &&
-      r->as_bool()) {
-    stack_.push_int(l->v || r->v);
-    return;
-  }
-  raise_error(thread_error_t::e_bad_type_operation);
+  stack_.push_int(l->as_bool() || r->as_bool());
 }
 
 void thread_t::do_INS_NOT_() {
@@ -745,7 +735,7 @@ bool thread_t::step_line() {
     return false;
   }
   // get the current source line
-  const int32_t line = source_line();
+  const line_t line = source_line();
   // step until the source line changes
   do {
     step_imp_();
@@ -762,7 +752,7 @@ bool thread_t::step_line() {
   return !has_error();
 }
 
-int32_t thread_t::source_line() const {
+line_t thread_t::source_line() const {
   return vm_.program_.get_line(pc_);
 }
 
@@ -773,36 +763,19 @@ void thread_t::tick_gc_(int32_t cycles) {
   }
 }
 
-bool thread_t::resume(int32_t cycles, bool trace) {
+bool thread_t::resume(int32_t cycles) {
   if (finished_) {
     return false;
   }
   const uint32_t start_cycles = cycles;
   halted_ = false;
-  if (trace) {
-    // XXX: user should provide a disassembler
-#if 0
-    // while we should keep processing instructions
-    for (; cycles; --cycles) {
-      tick_gc_(cycles);
-      // print an instruction trace
-      const uint8_t *c = vm_.program_.data();
-      ccml_.disassembler().disasm(c + pc_);
-      // dispatch
-      step_imp_();
-      if (finished_ || halted_) {
-        break;
-      }
-    }
-#endif
-  } else {
-    // while we should keep processing instructions
-    for (; cycles; --cycles) {
-      tick_gc_(cycles);
-      step_imp_();
-      if (finished_ || halted_) {
-        break;
-      }
+
+  // while we should keep processing instructions
+  for (; cycles; --cycles) {
+    tick_gc_(cycles);
+    step_imp_();
+    if (finished_ || halted_) {
+      break;
     }
   }
 
@@ -851,7 +824,7 @@ bool thread_t::init() {
   }
   // good to go
   finished_ = false;
-  if (!resume(1024 * 8, false)) {
+  if (!resume(1024 * 8)) {
     return false;
   }
   return finished();

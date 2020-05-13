@@ -112,13 +112,12 @@ int32_t disassembler_t::disasm(const uint8_t *ptr) const {
   return 0;
 }
 
-bool disassembler_t::disasm(int32_t &index, instruction_t &out) const {
+bool disassembler_t::disasm(program_t &prog, int32_t &index, instruction_t &out) const {
 
-  program_builder_t &stream = ccml_.program_.builder();
-  const uint8_t *start = stream.data();
-  const uint8_t *p = stream.data() + index;
+  const uint8_t *start = prog.data();
+  const uint8_t *p     = prog.data() + index;
 
-  if (p < start || index > int32_t(stream.head())) {
+  if (p < start || p >= prog.end()) {
     return false;
   }
 
@@ -133,51 +132,6 @@ bool disassembler_t::disasm(int32_t &index, instruction_t &out) const {
   }
 
   return true;
-}
-
-int32_t disassembler_t::disasm() {
-  uint32_t count = 0;
-  int32_t line_no = -1, old_line = -1;
-
-  // get the code stream
-  program_builder_t &stream = ccml_.program_.builder();
-
-  std::map<int32_t, const ccml::function_t*> funcs;
-  for (const auto &f : ccml_.program_.functions()) {
-    funcs[f.code_start_] = &f;
-  }
-
-  const uint8_t *start = stream.data();
-  const uint8_t *p = stream.data();
-  const uint8_t *end = stream.data() + stream.head();
-
-  for (; p < end; ++count) {
-
-    const int32_t offset = (p - start);
-
-    // find function
-    auto itt = funcs.find(offset);
-    if (itt != funcs.end()) {
-      fprintf(fd_, "\nfunction %s\n", itt->second->name_.c_str());
-    }
-
-    // dump line table mapping
-    line_no = ccml_.program_.get_line(offset);
-
-    if (line_no >= 0 && line_no != old_line) {
-      const std::string &line = ccml_.lexer().get_line(line_no);
-      fprintf(fd_, "  %02d -- %s\n", line_no, line.c_str());
-      old_line = line_no;
-    }
-
-    fprintf(fd_, "%04d ", int32_t(p - start));
-    const int32_t nb = disasm(p);
-    if (nb <= 0) {
-      assert(!"unknown opcode");
-    }
-    p += nb;
-  }
-  return count;
 }
 
 } // namespace ccml

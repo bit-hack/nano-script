@@ -4,10 +4,12 @@
 #include <bitset>
 #include <string>
 #include <set>
-#include <string.h>
-#include <stdlib.h>
+#include <cstring>
+#include <cstdlib>
+#include <memory>
 
-#include "ccml.h"
+#include "common.h"
+#include "types.h"
 #include "vm_gc.h"
 
 
@@ -15,7 +17,6 @@ namespace ccml {
 
 struct vm_t;
 
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct thread_t {
 
   thread_t(vm_t &vm);
@@ -25,7 +26,7 @@ struct thread_t {
   bool prepare(const function_t &func, int32_t argc, const value_t *argv);
 
   // run for a number of clock cycles
-  bool resume(int32_t cycles, bool trace);
+  bool resume(int32_t cycles);
 
   // step a single instruction
   bool step_inst();
@@ -56,7 +57,7 @@ struct thread_t {
   }
 
   // return the current source line number
-  int32_t source_line() const;
+  line_t source_line() const;
 
   // raise a thread error
   void raise_error(thread_error_t e) {
@@ -101,7 +102,7 @@ protected:
   // set when a thread raises and error
   thread_error_t error_;
 
-  // total cycle count for thread execution
+  // total elapsed cycle count for thread execution
   uint32_t cycles_;
 
   // true when a thread has finished executing
@@ -209,7 +210,10 @@ struct vm_t {
 
   void reset();
 
-  //
+  // execute a single function
+  bool call_once(const function_t &func, int32_t argc, const value_t *argv, thread_error_t &error);
+
+  // the currently bound program
   program_t &program_;
 
   // garbage collector

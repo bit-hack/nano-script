@@ -12,18 +12,30 @@
 
 namespace ccml {
 
+struct line_t {
+  int32_t file;
+  int32_t line;
+
+  bool operator == (const line_t &rhs) const {
+    return file == rhs.file && line == rhs.line;
+  }
+};
+
 struct program_t {
+
 
   // map instruction to line number
   // XXX: this should also account for file path
-  typedef std::map<uint32_t, uint32_t> linetable_t;
+  typedef std::map<uint32_t, line_t> linetable_t;
 
   program_t();
 
+  // access the raw opcodes
   const uint8_t *data() const {
     return code_.data();
   }
 
+  // size of the raw opcodes
   size_t size() const {
     return code_.size();
   }
@@ -40,12 +52,13 @@ struct program_t {
     return line_table_;
   }
 
-  int32_t get_line(uint32_t pc) const {
+  line_t get_line(uint32_t pc) const {
     auto itt = line_table_.find(pc);
     if (itt != line_table_.end()) {
       return itt->second;
     }
-    return -1;
+    // no line found
+    return line_t{ -1, -1 };
   }
 
   void reset();
@@ -77,24 +90,25 @@ struct program_t {
 protected:
   friend struct program_builder_t;
 
-  void add_line(uint32_t pc, uint32_t line) {
-    line_table_[pc] = line;
+  // add a line to the line table
+  void add_line(uint32_t pc, int32_t line) {
+    int32_t file = file_table_.size();
+    line_table_[pc] = line_t{ file, line};
   }
 
-  struct pc_range_t {
-    uint32_t pc_start_;
-    uint32_t pc_end_;
-    ast_decl_func_t *f_;  // XXX: should not be any AST refs here
-  };
+  // add a file to the file table
+  void add_file(std::string &file) {
+    file_table_.push_back(file);
+  }
+
+  // source files used to compile this program
+  std::vector<std::string> file_table_;
 
   // table of system calls
   std::vector<ccml_syscall_t> syscalls_;
 
   // function descriptors
   std::vector<function_t> functions_;
-
-  // pc to function mapping
-  std::vector<pc_range_t> pc_range_;
 
   // bytecode array
   std::vector<uint8_t> code_;

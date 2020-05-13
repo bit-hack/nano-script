@@ -1,0 +1,10 @@
+#expect 0
+
+function main()
+  var a = 0
+  var b = 0
+  if (a and b)
+    return 1
+  end
+  return 0
+end

@@ -195,7 +195,7 @@ struct error_manager_t {
 
 protected:
   uint32_t line_number_() const {
-    return ccml_.lexer().stream_.line_number();
+    return ccml_.lexer().stream().line_number();
   }
 
   void on_error_(uint32_t line, const char *fmt, ...);

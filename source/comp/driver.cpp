@@ -72,6 +72,7 @@ int main(int argc, char **argv) {
   }
 
   ccml::program_t program;
+  ccml::disassembler_t disasm;
 
   using namespace ccml;
   ccml_t ccml{program};
@@ -112,13 +113,15 @@ int main(int argc, char **argv) {
   }
 
   if (fd_dis) {
-    ccml.disassembler().set_file(fd_dis);
-    ccml.disassembler().disasm();
+    disasm.set_file(fd_dis);
+
+    // XXX: FIX ME!!
+//    disasm.disasm(program);
   }
 
   if (fd_bin) {
-    const uint8_t *data = ccml.program().data();
-    fwrite(data, 1, ccml.program().size(), fd_bin);
+    const uint8_t *data = program.data();
+    fwrite(data, 1, program.size(), fd_bin);
   }
 
   return 0;

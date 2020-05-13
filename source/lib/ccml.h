@@ -21,13 +21,11 @@ struct ccml_t {
   ccml_t(program_t &prog);
 
   // accessors
-  error_manager_t &errors()       { return *errors_; }
-  program_t       &program()      { return program_; }
-  lexer_t         &lexer()        { return *lexer_; }
-  parser_t        &parser()       { return *parser_; }
-  ast_t           &ast()          { return *ast_; }
+  error_manager_t &errors()       { return *errors_;  }
+  lexer_t         &lexer()        { return *lexer_;   }
+  parser_t        &parser()       { return *parser_;  }
+  ast_t           &ast()          { return *ast_;     }
   codegen_t       &codegen()      { return *codegen_; }
-  disassembler_t  &disassembler() { return *disassembler_; }
 
   bool build(const char *source, error_t &error);
 
@@ -43,7 +41,6 @@ protected:
   friend struct lexer_t;
   friend struct parser_t;
   friend struct codegen_t;
-  friend struct disassembler_t;
   friend struct token_stream_t;
   friend struct error_manager_t;
   friend struct pregen_functions_t;
@@ -51,20 +48,18 @@ protected:
 
   void add_builtins_();
 
-  void add_(const function_t &func) {
-    program_.functions().push_back(func);
-  }
-
   // the current program we are building
   program_t &program_;
 
   // objects used while compiling
   std::unique_ptr<error_manager_t> errors_;
+
+  //XXX: have one lexer per source file?
   std::unique_ptr<lexer_t>         lexer_;
+
   std::unique_ptr<parser_t>        parser_;
   std::unique_ptr<ast_t>           ast_;
   std::unique_ptr<codegen_t>       codegen_;
-  std::unique_ptr<disassembler_t>  disassembler_;
 };
 
 } // namespace ccml

@@ -121,6 +121,11 @@ def main():
         if ext == '.ccml':
             do_xpass(root, os.path.join('./xpass', f))
 
+    for f in os.listdir('./regression'):
+        root, ext = os.path.splitext(f)
+        if ext == '.ccml':
+            do_xpass(root, os.path.join('./regression', f))
+
     for f in os.listdir('./xfail'):
         root, ext = os.path.splitext(f)
         if ext == '.ccml':

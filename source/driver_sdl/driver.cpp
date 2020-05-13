@@ -90,7 +90,7 @@ void vm_video(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   const value_t *h = t.stack().pop();
   const value_t *w = t.stack().pop();
-  if (w->is_int() && h->is_int()) {
+  if (w->is_a<val_type_int>() && h->is_a<val_type_int>()) {
     global.width_ = (uint32_t)w->v;
     global.height_ = (uint32_t)h->v;
     global.video_.reset(new uint32_t[(uint32_t)(w->v * h->v)]);
@@ -220,7 +220,10 @@ void vm_line(ccml::thread_t &t, int32_t) {
   const value_t *y0 = t.stack().pop();
   const value_t *x0 = t.stack().pop();
   t.stack().push(t.gc().new_none());
-  if (x0->is_int() && y0->is_int() && x1->is_int() && y1->is_int()) {
+  if (x0->is_a<val_type_int>() &&
+      y0->is_a<val_type_int>() &&
+      x1->is_a<val_type_int>() &&
+      y1->is_a<val_type_int>()) {
     line(x0->integer(), y0->integer(), x1->integer(), y1->integer());
   }
 }
@@ -228,7 +231,7 @@ void vm_line(ccml::thread_t &t, int32_t) {
 void vm_keydown(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   const value_t *key = t.stack().pop();
-  if (!key->is_string()) {
+  if (!key->is_a<val_type_string>()) {
     t.stack().push(t.gc().new_none());
     return;
   }
@@ -323,7 +326,9 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  ccml_t ccml;
+  program_t program;
+
+  ccml_t ccml(program);
   ccml.add_function("cls", vm_cls, 0);
   ccml.add_function("rand", vm_rand, 0);
   ccml.add_function("video", vm_video, 2);
@@ -352,14 +357,14 @@ int main(int argc, char **argv) {
     return -2;
   }
 
-  const function_t *func = ccml.find_function("main");
+  const function_t *func = program.function_find("main");
   if (!func) {
     fprintf(stderr, "unable to locate function 'main'\n");
     exit(1);
   }
 
-  ccml::vm_t vm{ccml};
-  ccml::thread_t thread{ccml, vm};
+  ccml::vm_t vm(program);
+  ccml::thread_t thread(vm);
 
   if (!thread.init()) {
     fprintf(stderr, "failed while executing @init\n");
@@ -370,12 +375,11 @@ int main(int argc, char **argv) {
     exit(1);
   }
 
-  bool trace = false;
   bool active = true;
   while (active) {
 
     if (SDL_GetTicks() > tick_mark) {
-      if (!thread.resume(1024, trace)) {
+      if (!thread.resume(1024)) {
         break;
       }
     }
@@ -396,10 +400,10 @@ int main(int argc, char **argv) {
   if (thread.has_error()) {
     const thread_error_t err = thread.error();
     if (err != thread_error_t::e_success) {
-      int32_t line = thread.source_line();
+      line_t line = thread.source_line();
       printf("runtime error %d\n", int32_t(err));
       fprintf(stderr, "%s\n", get_thread_error(thread.error()));
-      printf("source line %d\n", int32_t(line));
+      printf("source line %d\n", int32_t(line.line));
       const std::string &s = ccml.lexer().get_line(line);
       printf("%s\n", s.c_str());
     }

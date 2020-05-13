@@ -36,12 +36,14 @@ struct ast_decl_var_t;
 
 struct program_t;
 struct program_builder_t;
+struct line_t;
 
 struct codegen_t;
 
 struct disassembler_t;
 
 struct thread_t;
+
 
 typedef void(*ccml_syscall_t)(struct thread_t &thread, int32_t num_args);
 

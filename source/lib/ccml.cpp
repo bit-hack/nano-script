@@ -22,7 +22,6 @@ ccml_t::ccml_t(program_t &prog)
   , parser_(new parser_t(*this))
   , ast_(new ast_t(*this))
   , codegen_(new codegen_t(*this, program_.builder()))
-  , disassembler_(new disassembler_t(*this))
 {
   add_builtins_();
 }
@@ -67,6 +66,8 @@ void ccml_t::reset() {
   lexer_->reset();
   parser_->reset();
   ast_->reset();
+
+  // XXX: do we want to do this now?
   program_.reset();
 }
 

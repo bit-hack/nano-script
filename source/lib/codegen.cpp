@@ -42,7 +42,7 @@ namespace ccml {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void program_builder_t::set_line(lexer_t &lexer, const token_t *t) {
   const uint32_t pc = head();
-  const uint32_t line = t ? t->line_no_ : lexer.stream_.line_number();
+  const uint32_t line = t ? t->line_no_ : lexer.stream().line_number();
   store_.add_line(pc, line);
 }
 
@@ -82,7 +82,7 @@ struct codegen_pass_t: ast_visitor_t {
   void get_func_(ast_decl_func_t *func, const token_t *t = nullptr) {
     assert(func);
     if (func->syscall) {
-      const auto &syscalls = ccml_.program().syscall();
+      const auto &syscalls = ccml_.program_.syscall();
       for (size_t i = 0; i < syscalls.size(); ++i) {
         if (syscalls[i] == func->syscall) {
           emit(INS_NEW_SCALL, i, t);

@@ -110,10 +110,10 @@ void on_runtime_error(ccml::ccml_t &ccml, ccml::thread_t &thread) {
   if (err == thread_error_t::e_success) {
     return;
   }
-  const int32_t line = thread.source_line();
+  const line_t line = thread.source_line();
   printf("runtime error %d\n", int32_t(err));
   fprintf(stderr, "%s\n", get_thread_error(thread.error()));
-  printf("source line %d\n", int32_t(line));
+  printf("source line %d\n", int32_t(line.line));
   const std::string &s = ccml.lexer().get_line(line);
   printf("%s\n", s.c_str());
 
@@ -167,13 +167,13 @@ int main(int argc, char **argv) {
   const char *source = load_file(argv[1]);
   if (!source) {
     fprintf(stderr, "unable to load input\n");
-    return -1;
+    return -2;
   }
 
   ccml::error_t error;
   if (!ccml.build(source, error)) {
     on_error(error);
-    return -2;
+    return -3;
   }
 
 #if DUMP_AST
@@ -181,14 +181,15 @@ int main(int argc, char **argv) {
 #endif
 
 #if DUMP_ASM
-  ccml.disassembler().set_file(stderr);
-  ccml.disassembler().disasm();
+  disassembler_t disasm;
+  disasm.set_file(stderr);
+  disasm.disasm(program);
 #endif
 
   const function_t *func = program.function_find("main");
   if (!func) {
     fprintf(stderr, "unable to locate function 'main'\n");
-    return -3;
+    return -4;
   }
 
   // this should take just the program
@@ -197,16 +198,16 @@ int main(int argc, char **argv) {
 
   if (!thread.init()) {
     fprintf(stderr, "failed while executing @init\n");
-    return -4;
+    return -5;
   }
 
   if (!thread.prepare(*func, 0, nullptr)) {
     fprintf(stderr, "unable to prepare thread\n");
-    return -4;
+    return -6;
   }
 
   while (!thread.finished() && !thread.has_error()) {
-    if (!thread.resume(1024, false)) {
+    if (!thread.resume(1024)) {
       break;
     }
   }
@@ -215,7 +216,7 @@ int main(int argc, char **argv) {
     if (thread.error() != thread_error_t::e_success) {
       on_runtime_error(ccml, thread);
     }
-    return -5;
+    return -7;
   }
   fflush(stdout);
 

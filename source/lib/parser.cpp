@@ -11,7 +11,7 @@ using namespace ccml;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 bool parser_t::parse(error_t &error) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
 
   ast_program_t *program = &ccml_.ast().program;
 
@@ -90,12 +90,12 @@ int32_t parser_t::op_type_(token_e type) const {
 }
 
 bool parser_t::is_operator_() const {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   return op_type_(stream_.type()) > 0;
 }
 
 void parser_t::parse_lhs_() {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   // format:
@@ -175,7 +175,7 @@ void parser_t::parse_lhs_() {
 }
 
 void parser_t::parse_expr_ex_(uint32_t tide) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
 
   // format:
   //    ['not'] [-] <lhs> [ '(' <expr> ')' ]
@@ -245,7 +245,7 @@ ast_node_t* parser_t::parse_expr_() {
 }
 
 ast_node_t* parser_t::parse_decl_array_(const token_t &name) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   // format:
@@ -288,7 +288,7 @@ ast_node_t* parser_t::parse_decl_array_(const token_t &name) {
 
 ast_node_t* parser_t::parse_decl_var_(const token_t &t) {
   (void)t;
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   // format:
@@ -330,7 +330,7 @@ ast_node_t* parser_t::parse_assign_(const token_t &name) {
 }
 
 ast_exp_call_t* parser_t::parse_call_(const token_t &t) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   // format:
@@ -352,7 +352,7 @@ ast_exp_call_t* parser_t::parse_call_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_if_(const token_t &t) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   // format:
@@ -397,7 +397,7 @@ ast_node_t* parser_t::parse_if_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_while_(const token_t &t) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   // format:
@@ -427,7 +427,7 @@ ast_node_t* parser_t::parse_while_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_for_(const token_t &t) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   // format:
@@ -460,7 +460,7 @@ ast_node_t* parser_t::parse_for_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_return_(const token_t &t) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   // format:
@@ -484,7 +484,7 @@ ast_node_t* parser_t::parse_return_(const token_t &t) {
 //    <TOK_IDENT> * = <expr>
 //    <TOK_IDENT> / = <expr>
 ast_node_t* parser_t::parse_compound_(const token_t &t) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   const token_t *op = stream_.pop();
@@ -504,7 +504,7 @@ ast_node_t* parser_t::parse_compound_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_stmt_() {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   // format:
@@ -589,7 +589,7 @@ ast_node_t* parser_t::parse_stmt_() {
 
 ast_node_t* parser_t::parse_function_(const token_t &t) {
   (void)t;
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   // format:
@@ -632,7 +632,7 @@ ast_node_t* parser_t::parse_function_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_array_get_(const token_t &name) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   // format:
@@ -649,7 +649,7 @@ ast_node_t* parser_t::parse_array_get_(const token_t &name) {
 }
 
 ast_node_t* parser_t::parse_array_set_(const token_t &name) {
-  token_stream_t &stream_ = ccml_.lexer().stream_;
+  token_stream_t &stream_ = ccml_.lexer().stream();
   auto &ast = ccml_.ast();
 
   // format:
