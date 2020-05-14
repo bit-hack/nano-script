@@ -44,21 +44,20 @@ int main(int argc, char **argv) {
     return -1;
   }
 
-  // load the source
   if (argc <= 1) {
     return -1;
   }
   source_manager_t sources;
-  if (!sources.load(argv[1])) {
-    fprintf(stderr, "unable to load input\n");
-    return -2;
-  }
 
   bool optimize = true;
 
   for (int i = 2; i < argc; ++i) {
     const char *arg = argv[i];
     if (arg[0] != '-') {
+      if (!sources.load(arg)) {
+        fprintf(stderr, "unable to load input '%s'\n", arg);
+        return -2;
+      }
       continue;
     }
     switch (arg[1]) {

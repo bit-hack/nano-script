@@ -127,13 +127,16 @@ int main(int argc, char **argv) {
   bool dump_dis = false;
 
   // load the source
-  if (argc <= 1) {
-    return -1;
-  }
   source_manager_t sources;
-  if (!sources.load(argv[1])) {
-    fprintf(stderr, "unable to load input\n");
-    return -2;
+  for (int i = 1; i < argc; ++i) {
+    if (!sources.load(argv[i])) {
+      fprintf(stderr, "unable to load input '%s'\n", argv[i]);
+      return -2;
+    }
+  }
+  if (sources.count() == 0) {
+    fprintf(stderr, "no source files provided\n");
+    return -1;
   }
 
   // program to compile into
