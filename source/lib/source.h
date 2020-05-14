@@ -94,16 +94,7 @@ protected:
 
 struct source_manager_t {
 
-  bool load(const char *path) {
-    for (const auto &s : sources_) {
-      // file already loaded so return
-      if (s->file_path() == path) {
-        return true;
-      }
-    }
-    sources_.emplace_back(new source_t);
-    return sources_.back()->load_from_file(path);
-  }
+  bool load(const char *path);
 
   const source_t &get_source(int32_t index) const {
     assert(index >= 0 && index < int32_t(sources_.size()));
