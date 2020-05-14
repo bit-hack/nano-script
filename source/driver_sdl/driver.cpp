@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <cstdio>
 #include <memory>
 
@@ -23,31 +22,6 @@ struct global_t {
   uint32_t width_, height_;
   std::unique_ptr<uint32_t[]> video_;
 } global;
-
-const char *load_file(const char *path) {
-  FILE *fd = fopen(path, "rb");
-  if (!fd)
-    return nullptr;
-
-  fseek(fd, 0, SEEK_END);
-  size_t size = size_t(ftell(fd));
-  fseek(fd, 0, SEEK_SET);
-  if (size <= 0) {
-    fclose(fd);
-    return nullptr;
-  }
-
-  char *source = new char[size + 1];
-  if (fread(source, 1, size, fd) != size) {
-    fclose(fd);
-    delete[] source;
-    return nullptr;
-  }
-  source[size] = '\0';
-
-  fclose(fd);
-  return source;
-}
 
 static inline uint32_t xorshift32() {
   static uint32_t x = 12345;
@@ -325,36 +299,39 @@ int main(int argc, char **argv) {
   if (SDL_Init(SDL_INIT_VIDEO)) {
     return 1;
   }
+  SDL_WM_SetCaption(argv[1], nullptr);
 
-  program_t program;
-
-  ccml_t ccml(program);
-  ccml.add_function("cls", vm_cls, 0);
-  ccml.add_function("rand", vm_rand, 0);
-  ccml.add_function("video", vm_video, 2);
-  ccml.add_function("plot", vm_plot, 2);
-  ccml.add_function("flip", vm_flip, 0);
-  ccml.add_function("setrgb", vm_setrgb, 3);
-  ccml.add_function("circle", vm_circle, 3);
-  ccml.add_function("line", vm_line, 4);
-  ccml.add_function("sleep", vm_sleep, 1);
-  ccml.add_function("keydown", vm_keydown, 1);
-
+  // load the source
   if (argc <= 1) {
     return -1;
   }
-  const char *source = load_file(argv[1]);
-  if (!source) {
-    fprintf(stderr, "unable to load input");
-    return -1;
+  source_manager_t sources;
+  if (!sources.load(argv[1])) {
+    fprintf(stderr, "unable to load input\n");
+    return -2;
   }
 
-  SDL_WM_SetCaption(argv[1], nullptr);
+  program_t program;
 
-  ccml::error_t error;
-  if (!ccml.build(source, error)) {
-    on_error(error);
-    return -2;
+  // compile
+  {
+    ccml_t ccml(program);
+    ccml.add_function("cls", vm_cls, 0);
+    ccml.add_function("rand", vm_rand, 0);
+    ccml.add_function("video", vm_video, 2);
+    ccml.add_function("plot", vm_plot, 2);
+    ccml.add_function("flip", vm_flip, 0);
+    ccml.add_function("setrgb", vm_setrgb, 3);
+    ccml.add_function("circle", vm_circle, 3);
+    ccml.add_function("line", vm_line, 4);
+    ccml.add_function("sleep", vm_sleep, 1);
+    ccml.add_function("keydown", vm_keydown, 1);
+
+    ccml::error_t error;
+    if (!ccml.build(sources, error)) {
+      on_error(error);
+      return -2;
+    }
   }
 
   const function_t *func = program.function_find("main");
@@ -366,7 +343,7 @@ int main(int argc, char **argv) {
   ccml::vm_t vm(program);
   ccml::thread_t thread(vm);
 
-  if (!thread.init()) {
+  if (!vm.call_init()) {
     fprintf(stderr, "failed while executing @init\n");
   }
 
@@ -404,7 +381,7 @@ int main(int argc, char **argv) {
       printf("runtime error %d\n", int32_t(err));
       fprintf(stderr, "%s\n", get_thread_error(thread.error()));
       printf("source line %d\n", int32_t(line.line));
-      const std::string &s = ccml.lexer().get_line(line);
+      const std::string &s = sources.get_line(line);
       printf("%s\n", s.c_str());
     }
     return 1;

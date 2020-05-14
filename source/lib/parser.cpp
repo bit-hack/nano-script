@@ -46,6 +46,10 @@ bool parser_t::parse(error_t &error) {
         program->children.push_back(func);
         continue;
       }
+      case TOK_IMPORT: {
+        parse_import_(*t);
+        continue;
+      }
       default:
         break;
       }
@@ -58,6 +62,21 @@ bool parser_t::parse(error_t &error) {
     return false;
   }
 
+  return true;
+}
+
+bool parser_t::parse_import_(const token_t &t) {
+  (void)t;
+  token_stream_t &stream_ = ccml_.lexer().stream();
+  const token_t *s = stream_.pop(TOK_STRING);
+  assert(ccml_.sources_ && ccml_.source_);
+  std::string path = s->string();
+  // convert to a relative path
+  ccml_.sources_->imported_path(*ccml_.source_, path);
+  if (!ccml_.sources_->load(path.c_str())) {
+    ccml_.errors().bad_import(*s);
+    return false;
+  }
   return true;
 }
 

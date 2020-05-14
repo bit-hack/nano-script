@@ -1,0 +1,7 @@
+#expect 9873
+
+import "imported.ccml.inc"
+
+function main()
+  return imported()
+end

@@ -3,6 +3,8 @@ project(ccml)
 
 set(CCML_STRICTCOMPILER false CACHE BOOL "Enable strict compiler flags")
 
+add_definitions("-D_CRT_SECURE_NO_WARNINGS")
+
 if (CCML_STRICTCOMPILER)
   if(MSVC)
     add_compile_options("/W4" "/WX")

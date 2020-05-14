@@ -32,6 +32,9 @@ struct ast_stmt_assign_array_t;
 struct ast_decl_func_t;
 struct ast_decl_var_t;
 
+struct source_t;
+struct source_manager_t;
+
 struct program_t;
 struct program_builder_t;
 struct line_t;

@@ -75,9 +75,6 @@ struct thread_t {
     return stack_;
   }
 
-  // execute thread init function
-  bool init();
-
   // halt this thread
   void halt() {
     halted_ = true;
@@ -89,12 +86,8 @@ struct thread_t {
   void unwind();
 
 protected:
-  void tick_gc_(int32_t cycles);
 
   friend struct vm_t;
-
-  // step a single instruction (internal)
-  void step_imp_();
 
   // the return value of the thread function
   value_t* return_code_;
@@ -131,6 +124,15 @@ protected:
 
   friend struct value_stack_t;
   value_stack_t stack_;
+
+  // execute thread init function which will initalize any globals
+  bool call_init_();
+
+  // tick the garbage collector
+  void tick_gc_(int32_t cycles);
+
+  // step a single instruction (internal)
+  void step_imp_();
 
   // frame control
   void enter_(uint32_t sp, uint32_t ret, uint32_t callee);
@@ -210,8 +212,15 @@ struct vm_t {
 
   void reset();
 
+  // call the init function
+  bool call_init();
+
   // execute a single function
-  bool call_once(const function_t &func, int32_t argc, const value_t *argv, thread_error_t &error);
+  bool call_once(const function_t &func,
+                 int32_t argc,
+                 const value_t *argv,
+                 value_t* &return_code,
+                 thread_error_t &error);
 
   // the currently bound program
   program_t &program_;

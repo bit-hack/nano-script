@@ -43,7 +43,7 @@ bool munch(const char *&s, const char *string) {
 bool lexer_t::lex(const char *s) {
 
   const char *new_line_ = s;
-  line_no_ = 0;
+  line_no_ = 1;
 
   for (; *s; ++s) {
 
@@ -67,7 +67,6 @@ bool lexer_t::lex(const char *s) {
         }
         if (*s == '\n' || *s == '\0') {
           // raise an error
-          lines_.push_back(std::string(new_line_, (s+1) - new_line_));
           ccml_.errors().string_quote_mismatch(line_no_);
           return false;
         }
@@ -83,7 +82,6 @@ bool lexer_t::lex(const char *s) {
       }
       {
         assert(s >= new_line_);
-        lines_.push_back(std::string(new_line_, s - new_line_));
         new_line_ = s + 1;
         ++line_no_;
       }
@@ -128,6 +126,10 @@ bool lexer_t::lex(const char *s) {
     case 'i':
       if (munch(s, "if")) {
         push_(TOK_IF);
+        continue;
+      }
+      if (munch(s, "import")) {
+        push_(TOK_IMPORT);
         continue;
       }
       break;
@@ -203,7 +205,6 @@ bool lexer_t::lex(const char *s) {
       continue;
     case '\n':
       assert(s >= new_line_);
-      lines_.push_back(std::string(new_line_, s - new_line_));
       new_line_ = s + 1;
       ++line_no_;
       push_(TOK_EOL);
@@ -266,12 +267,10 @@ bool lexer_t::lex(const char *s) {
     }
 
     // raise an error
-    lines_.push_back(std::string(new_line_, (s+1) - new_line_));
     ccml_.errors().unexpected_character(line_no_, *s);
 
   } // while
 
-  lines_.push_back(std::string(new_line_, (s - new_line_)));
   stream_.push(token_t{TOK_EOF, line_no_});
   return true;
 }
@@ -313,4 +312,5 @@ void lexer_t::push_val_(const char *s, const char *e) {
 
 void lexer_t::reset() {
   stream_.reset();
+  line_no_ = 1;
 }

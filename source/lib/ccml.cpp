@@ -10,15 +10,16 @@
 #include "disassembler.h"
 #include "vm.h"
 #include "phases.h"
+#include "source.h"
 
 using namespace ccml;
 
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 ccml_t::ccml_t(program_t &prog)
   : optimize(true)
   , program_(prog)
+  , sources_(nullptr)
+  , source_(nullptr)
   , errors_(new error_manager_t(*this))
-  , lexer_(new lexer_t(*this))
   , parser_(new parser_t(*this))
   , ast_(new ast_t(*this))
   , codegen_(new codegen_t(*this, program_.builder()))
@@ -26,17 +27,31 @@ ccml_t::ccml_t(program_t &prog)
   add_builtins_();
 }
 
-bool ccml_t::build(const char *source, error_t &error) {
+bool ccml_t::build(source_manager_t &sources, error_t &error) {
+
+  // store the source manager for now so we can import into it
+  sources_ = &sources;
+
   // clear the error
   error.clear();
-  // lex into tokens
   try {
-    if (!lexer_->lex(source)) {
-      return false;
-    }
-    // parse into instructions
-    if (!parser_->parse(error)) {
-      return false;
+
+    // lex and parse all provided sources
+    int32_t index = 0;
+    for (; index < sources.count(); ++index) {
+      // find the next uncompiled source
+      const source_t &src = sources.get_source(index);
+      source_ = &src;
+      // create a lexer for this file
+      lexer_.emplace_back(new lexer_t(*this));
+      // lex this source file into tokens
+      if (!lexer().lex(src.data())) {
+        return false;
+      }
+      // parse into instructions
+      if (!parser_->parse(error)) {
+        return false;
+      }
     }
 
     // run semantic checker
@@ -45,12 +60,10 @@ bool ccml_t::build(const char *source, error_t &error) {
     run_optimize(*this);
     // run pre-codegen passes
     run_pre_codegen(*this);
-
     // kick off the code generator
     if (!codegen_->run(ast_->program, error)) {
       return false;
     }
-
     // collect all garbage
     ast().gc();
   }
@@ -63,11 +76,9 @@ bool ccml_t::build(const char *source, error_t &error) {
 }
 
 void ccml_t::reset() {
-  lexer_->reset();
+  lexer_.clear();
   parser_->reset();
   ast_->reset();
-
-  // XXX: do we want to do this now?
   program_.reset();
 }
 

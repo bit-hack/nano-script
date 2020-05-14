@@ -799,7 +799,7 @@ void thread_t::setv_(int32_t offs, value_t *val) {
   stack_.set(index, val);
 }
 
-bool thread_t::init() {
+bool thread_t::call_init_() {
   error_ = thread_error_t::e_success;
   finished_ = true;
   cycles_ = 0;
@@ -876,13 +876,45 @@ void vm_t::gc_collect() {
 }
 
 void vm_t::reset() {
-
   // reset the garbage collector
   gc_->reset();
-
   // delete all threads
   for (thread_t *t : threads_) {
     delete t;
   }
   threads_.clear();
+}
+
+bool vm_t::call_init() {
+  thread_t thread(*this);
+  return thread.call_init_();
+}
+
+bool vm_t::call_once(const function_t &func,
+                     int32_t argc,
+                     const value_t *argv,
+                     value_t* &return_code,
+                     thread_error_t &error) {
+  return_code = nullptr;
+  thread_t thread(*this);
+  gc_collect();
+  if (!thread.prepare(func, argc, argv)) {
+    error = thread_error_t::e_bad_prepare;
+    return false;
+  }
+  while (!thread.finished() && !thread.has_error()) {
+    if (!thread.resume(128 * 1024)) {
+      break;
+    }
+  }
+  if (!thread.finished()) {
+    // something went wrong
+    return false;
+  }
+  if (thread.has_error()) {
+    error = thread.error();
+    return false;
+  }
+  return_code = thread.return_code();
+  return true;
 }

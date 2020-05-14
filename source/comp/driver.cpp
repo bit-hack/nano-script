@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <cstdio>
 
 #include "../lib/ccml.h"
@@ -10,32 +9,6 @@
 #include "../lib/vm.h"
 
 namespace {
-
-const char *load_file(const char *path) {
-  FILE *fd = fopen(path, "rb");
-  if (!fd)
-    return nullptr;
-
-  fseek(fd, 0, SEEK_END);
-  size_t size = size_t(ftell(fd));
-  fseek(fd, 0, SEEK_SET);
-  if (size <= 0) {
-    fclose(fd);
-    return nullptr;
-  }
-
-  char *source = new char[size + 1];
-  if (fread(source, 1, size, fd) != size) {
-    fclose(fd);
-    delete[] source;
-    return nullptr;
-  }
-  source[size] = '\0';
-
-  fclose(fd);
-  return source;
-}
-
 void on_error(const ccml::error_t &error) {
   fprintf(stderr, "line:%d - %s\n", error.line, error.error.c_str());
   fflush(stderr);
@@ -60,26 +33,28 @@ printf(R"(usage: %s file.ccml [-n -a -d -b]
 
 int main(int argc, char **argv) {
 
+  using namespace ccml;
+
+  FILE *fd_ast = nullptr;
+  FILE *fd_dis = nullptr;
+  FILE *fd_bin = nullptr;
+
   if (argc <= 1) {
     usage(argv[0]);
     return -1;
   }
 
-  const char *source = load_file(argv[1]);
-  if (!source) {
-    fprintf(stderr, "unable to load input");
+  // load the source
+  if (argc <= 1) {
     return -1;
   }
+  source_manager_t sources;
+  if (!sources.load(argv[1])) {
+    fprintf(stderr, "unable to load input\n");
+    return -2;
+  }
 
-  ccml::program_t program;
-  ccml::disassembler_t disasm;
-
-  using namespace ccml;
-  ccml_t ccml{program};
-
-  FILE *fd_ast = nullptr;
-  FILE *fd_dis = nullptr;
-  FILE *fd_bin = nullptr;
+  bool optimize = true;
 
   for (int i = 2; i < argc; ++i) {
     const char *arg = argv[i];
@@ -97,25 +72,39 @@ int main(int argc, char **argv) {
       fd_bin = fd_open(argv[1], ".bin");
       break;
     case 'n':
-      ccml.optimize = false;
+      optimize = false;
       break;
     }
   }
 
-  ccml::error_t error;
-  if (!ccml.build(source, error)) {
-    on_error(error);
-    return -2;
+  program_t program;
+
+  // compile
+  {
+    // create compile stack
+    ccml_t ccml(program);
+    ccml.optimize = optimize;
+
+    // build the program
+    ccml::error_t error;
+    if (!ccml.build(sources, error)) {
+      on_error(error);
+      return -2;
+    }
+
+    // dump the ast
+    if (fd_ast) {
+      ccml.ast().dump(fd_ast);
+    }
   }
 
-  if (fd_ast) {
-    ccml.ast().dump(fd_ast);
-  }
-
+  // disassemble the program
   if (fd_dis) {
+    disassembler_t disasm;
     disasm.dump(program, fd_dis);
   }
 
+  // dump the binary
   if (fd_bin) {
     const uint8_t *data = program.data();
     fwrite(data, 1, program.size(), fd_bin);

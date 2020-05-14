@@ -9,6 +9,14 @@ namespace ccml {
 // system call interface function
 typedef void(*ccml_syscall_t)(struct thread_t &thread, int32_t num_args);
 
+struct line_t {
+  int32_t file;
+  int32_t line;
+
+  bool operator == (const line_t &rhs) const {
+    return file == rhs.file && line == rhs.line;
+  }
+};
 
 struct identifier_t {
   // identifier name
@@ -16,7 +24,6 @@ struct identifier_t {
   // stack offset
   int32_t offset_;
 };
-
 
 struct function_t {
 

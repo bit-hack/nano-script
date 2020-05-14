@@ -5,6 +5,7 @@ namespace ccml {
 enum class thread_error_t {
   e_success = 0,
   e_max_cycle_count,
+  e_bad_prepare,
   e_bad_getv,
   e_bad_setv,
   e_bad_num_args,

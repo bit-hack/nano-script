@@ -22,11 +22,11 @@ function update()
     var z = star_z[i]
     var x = star_x[i] / z
     var y = star_y[i] / z
-    star_z[i] = z * 0.99
+    star_z[i] = z * 0.999
     var c = max(0, 255 - z * 20)
     setrgb(c, c, c)
     plot(64 + x, 64 + y)
-    
+
     if (x < -width or x > width)
         if (y < -width or y > height)
             star_x[i] = rand() % width - (width / 2)

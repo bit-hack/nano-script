@@ -8,21 +8,12 @@
 
 
 #include "common.h"
+#include "types.h"
 
 
 namespace ccml {
 
-struct line_t {
-  int32_t file;
-  int32_t line;
-
-  bool operator == (const line_t &rhs) const {
-    return file == rhs.file && line == rhs.line;
-  }
-};
-
 struct program_t {
-
 
   // map instruction to line number
   // XXX: this should also account for file path

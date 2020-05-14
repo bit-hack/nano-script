@@ -18,6 +18,8 @@ struct error_t {
   }
 
   std::string error;
+
+  // XXX: update to a line_t
   uint32_t line;
 };
 
@@ -48,6 +50,10 @@ struct error_manager_t {
 
   virtual void unexpected_token(const token_t &t) {
     on_error_(t.line_no_, "unexpected token '%s'", t.string());
+  }
+
+  virtual void bad_import(const token_t &t) {
+    on_error_(t.line_no_, "unable to import '%s'", t.string());
   }
 
   virtual void unknown_function(const token_t &name) {

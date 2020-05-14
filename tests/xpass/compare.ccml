@@ -1,0 +1,34 @@
+#expect 0
+
+function main()
+
+    var a = 1.0
+    var b = 2
+    var c = 2.1
+
+    if (a > b)
+        return 1
+    end
+    
+    if (a < 1.0)
+        return 2
+    end
+    
+    if (not b == 2)
+        return 3
+    end
+    
+    if (c <= b)
+        return 4
+    end
+
+    if (b >= c)
+        return 5
+    end
+
+    if (not b == 2)
+        return 6
+    end
+    
+    return 0
+end

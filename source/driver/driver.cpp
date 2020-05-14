@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <cstdio>
 
 #include "../lib/ccml.h"
@@ -9,35 +8,7 @@
 #include "../lib/parser.h"
 #include "../lib/vm.h"
 
-#define DUMP_AST 0
-#define DUMP_ASM 0
-
 namespace {
-
-const char *load_file(const char *path) {
-  FILE *fd = fopen(path, "rb");
-  if (!fd)
-    return nullptr;
-
-  fseek(fd, 0, SEEK_END);
-  size_t size = size_t(ftell(fd));
-  fseek(fd, 0, SEEK_SET);
-  if (size <= 0) {
-    fclose(fd);
-    return nullptr;
-  }
-
-  char *source = new char[size + 1];
-  if (fread(source, 1, size, fd) != size) {
-    fclose(fd);
-    delete[] source;
-    return nullptr;
-  }
-  source[size] = '\0';
-
-  fclose(fd);
-  return source;
-}
 
 static inline uint32_t xorshift32() {
   static uint32_t x = 12345;
@@ -104,7 +75,7 @@ void on_error(const ccml::error_t &error) {
   exit(1);
 }
 
-void on_runtime_error(ccml::ccml_t &ccml, ccml::thread_t &thread) {
+void on_runtime_error(ccml::thread_t &thread, const ccml::source_manager_t &sources) {
   using namespace ccml;
   const thread_error_t err = thread.error();
   if (err == thread_error_t::e_success) {
@@ -114,7 +85,7 @@ void on_runtime_error(ccml::ccml_t &ccml, ccml::thread_t &thread) {
   printf("runtime error %d\n", int32_t(err));
   fprintf(stderr, "%s\n", get_thread_error(thread.error()));
   printf("source line %d\n", int32_t(line.line));
-  const std::string &s = ccml.lexer().get_line(line);
+  const std::string s = sources.get_line(line);
   printf("%s\n", s.c_str());
 
   thread.unwind();
@@ -152,76 +123,79 @@ int main(int argc, char **argv) {
 
   using namespace ccml;
 
-  ccml::program_t program;
+  bool dump_ast = false;
+  bool dump_dis = false;
 
-  ccml_t ccml{program};
-  ccml.add_function("putc", vm_putc, 1);
-  ccml.add_function("getc", vm_getc, 0);
-  ccml.add_function("puts", vm_puts, 1);
-  ccml.add_function("gets", vm_gets, 0);
-  ccml.add_function("rand", vm_rand, 0);
-
+  // load the source
   if (argc <= 1) {
     return -1;
   }
-  const char *source = load_file(argv[1]);
-  if (!source) {
+  source_manager_t sources;
+  if (!sources.load(argv[1])) {
     fprintf(stderr, "unable to load input\n");
     return -2;
   }
 
-  ccml::error_t error;
-  if (!ccml.build(source, error)) {
-    on_error(error);
-    return -3;
+  // program to compile into
+  ccml::program_t program;
+
+  // compile
+  {
+    // create compile stack
+    ccml_t ccml{program};
+    ccml.add_function("putc", vm_putc, 1);
+    ccml.add_function("getc", vm_getc, 0);
+    ccml.add_function("puts", vm_puts, 1);
+    ccml.add_function("gets", vm_gets, 0);
+    ccml.add_function("rand", vm_rand, 0);
+
+    // build the program
+    ccml::error_t error;
+    if (!ccml.build(sources, error)) {
+      on_error(error);
+      return -3;
+    }
+
+    // dump the ast
+    if (dump_ast) {
+      ccml.ast().dump(stderr);
+    }
   }
 
-#if DUMP_AST
-  ccml.ast().dump(stderr);
-#endif
+  // disassemble the program
+  if (dump_dis) {
+    disassembler_t disasm;
+    disasm.dump(program, stderr);
+  }
 
-#if DUMP_ASM
-  disassembler_t disasm;
-  disasm.set_file(stderr);
-  disasm.disasm(program);
-#endif
-
+  // find the entry point
   const function_t *func = program.function_find("main");
   if (!func) {
     fprintf(stderr, "unable to locate function 'main'\n");
     return -4;
   }
 
-  // this should take just the program
+  // create the vm and a thread
   ccml::vm_t vm{program};
   ccml::thread_t thread{vm};
 
-  if (!thread.init()) {
+  // call the global init function
+  if (!vm.call_init()) {
     fprintf(stderr, "failed while executing @init\n");
     return -5;
   }
 
-  if (!thread.prepare(*func, 0, nullptr)) {
-    fprintf(stderr, "unable to prepare thread\n");
-    return -6;
-  }
-
-  while (!thread.finished() && !thread.has_error()) {
-    if (!thread.resume(1024)) {
-      break;
+  // execution
+  ccml::value_t *res = nullptr;
+  {
+    thread_error_t error = thread_error_t::e_success;
+    if (!vm.call_once(*func, 0, nullptr, res, error)) {
+      on_runtime_error(thread, sources);
+      return -6;
     }
-  }
-
-  if (thread.has_error()) {
-    if (thread.error() != thread_error_t::e_success) {
-      on_runtime_error(ccml, thread);
-    }
-    return -7;
   }
   fflush(stdout);
 
-  const ccml::value_t *res = thread.return_code();
   print_result(res);
-
   return 0;
 }

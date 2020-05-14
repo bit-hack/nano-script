@@ -127,6 +127,7 @@ void disassembler_t::dump(program_t &prog, FILE *fd) {
   int offs = 0;
   std::string out;
   function_t *func = nullptr;
+  int32_t line = -1;
 
   while (p < end) {
     int i = disasm(p, out);
@@ -138,8 +139,14 @@ void disassembler_t::dump(program_t &prog, FILE *fd) {
       if (offs != 0) {
         fprintf(fd, "\n");
       }
-      fprintf(fd, "# %s\n", f->name().c_str());
+      fprintf(fd, "# function: %s\n", f->name().c_str());
       func = f;
+    }
+
+    line_t loc = prog.get_line(offs);
+    if (loc.line != line) {
+      line = loc.line;
+      fprintf(fd, "# line: %d\n", line);
     }
 
     fprintf(fd, "%s\n", out.c_str());
