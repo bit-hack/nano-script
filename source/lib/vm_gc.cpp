@@ -76,7 +76,7 @@ value_t *value_gc_t::new_syscall(uint32_t index) {
 bool value_gc_t::should_collect() const {
   const int32_t x = (space_to().size() * 100) / space_to().capacity();
   // collect if over 75%
-  return (x > 75);
+  return x > 75;
 }
 
 value_t *value_gc_t::copy(const value_t &a) {
@@ -111,16 +111,13 @@ void value_gc_t::collect() {
   swap();
   space_to().clear();
 
-  forward_.clear();
+  forward_clear();
 }
 
 void value_gc_t::trace(value_t **list, size_t num) {
 
-  // area data is currently in
-  const arena_t &from = space_from();
-  (void)from;
   // area data should be moved to
-        arena_t &to   = space_to();
+  arena_t &to = space_to();
 
   for (size_t i = 0; i < num; ++i) {
     value_t *&v = list[i];
@@ -129,12 +126,10 @@ void value_gc_t::trace(value_t **list, size_t num) {
     if (to.owns(v)) {
       continue;
     }
-    // if this is not the case something is super messed up
-    assert(v ? from.owns(v) : true);
 
     switch (v->type()) {
     case val_type_none: {
-      list[i] = nullptr;
+      assert(list[i] == nullptr);
       break;
     }
     case val_type_syscall:
@@ -170,14 +165,12 @@ void value_gc_t::trace(value_t **list, size_t num) {
       break;
     }
     case val_type_array: {
-
       // if we have global variables, they might have been relocated at which
       // point our pointers will point to the wrong half space
-      if (value_t *x = find_fowards(v)) {
+      if (value_t *x = forward_find(v)) {
         list[i] = x;
         continue;
       }
-
       // collect child elements
       const size_t size = v->array_size();
       trace(v->array(), size);
@@ -185,9 +178,8 @@ void value_gc_t::trace(value_t **list, size_t num) {
       n->type_ = val_type_array;
       n->v = size;
       memcpy(n->array(), v->array(), size * sizeof(value_t *));
-
       // keep track of forwarded global arrays that may have to move
-      forward_.emplace_back(v, n);
+      forward_add(v, n);
       list[i] = n;
       break;
     }

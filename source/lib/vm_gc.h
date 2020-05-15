@@ -4,6 +4,7 @@
 #include <set>
 #include <vector>
 #include <array>
+#include <unordered_map>
 
 #include "value.h"
 
@@ -119,12 +120,29 @@ protected:
     flipflop_ ^= 1;
   }
 
-  value_t *find_fowards(const value_t *v) {
+  void forward_clear() {
+    forward_.clear();
+  }
+
+  void forward_add(const value_t *key, value_t *val) {
+#if 0
+    forward_.emplace_back(key, val);
+#else
+    forward_[key] = val;
+#endif
+  }
+
+  value_t *forward_find(const value_t *v) {
+#if 0
     for (const auto &p : forward_) {
       if (v == p.first) {
         return p.second;
       }
     }
+#else
+    auto itt = forward_.find(v);
+    return itt == forward_.end() ? nullptr : itt->second;
+#endif
     return nullptr;
   }
 
@@ -134,7 +152,13 @@ protected:
   // up when we need.
   //
   // its assumed forward_ will always be very small
+  //
+  // XXX: why not use a std::unordered_map?
+#if 0
   std::vector<std::pair<const value_t *, value_t *>> forward_;
+#else
+  std::unordered_map<const value_t *, value_t *> forward_;
+#endif
 
   uint32_t flipflop_;
   std::array<arena_t, 2> space_;
