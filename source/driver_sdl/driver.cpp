@@ -4,13 +4,17 @@
 #define _SDL_main_h
 #include <SDL/SDL.h>
 
-#include "../lib/ccml.h"
-#include "../lib/codegen.h"
-#include "../lib/disassembler.h"
-#include "../lib/errors.h"
-#include "../lib/lexer.h"
-#include "../lib/parser.h"
-#include "../lib/vm.h"
+#include "../lib_compiler/ccml.h"
+#include "../lib_compiler/codegen.h"
+#include "../lib_compiler/disassembler.h"
+#include "../lib_compiler/errors.h"
+#include "../lib_compiler/lexer.h"
+#include "../lib_compiler/parser.h"
+
+#include "../lib_vm/vm.h"
+
+#include "../lib_builtins/builtin.h"
+
 
 namespace {
 
@@ -319,6 +323,7 @@ int main(int argc, char **argv) {
   // compile
   {
     ccml_t ccml(program);
+    add_builtins(ccml);
     ccml.add_function("cls", vm_cls, 0);
     ccml.add_function("rand", vm_rand, 0);
     ccml.add_function("video", vm_video, 2);

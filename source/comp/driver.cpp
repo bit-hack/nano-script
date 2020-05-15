@@ -1,12 +1,13 @@
 #include <cstdio>
 
-#include "../lib/ccml.h"
-#include "../lib/codegen.h"
-#include "../lib/disassembler.h"
-#include "../lib/errors.h"
-#include "../lib/lexer.h"
-#include "../lib/parser.h"
-#include "../lib/vm.h"
+#include "../lib_compiler/ccml.h"
+#include "../lib_compiler/codegen.h"
+#include "../lib_compiler/disassembler.h"
+#include "../lib_compiler/errors.h"
+#include "../lib_compiler/lexer.h"
+#include "../lib_compiler/parser.h"
+#include "../lib_vm/vm.h"
+#include "../lib_builtins/builtin.h"
 
 namespace {
 void on_error(const ccml::error_t &error) {
@@ -82,10 +83,11 @@ int main(int argc, char **argv) {
   {
     // create compile stack
     ccml_t ccml(program);
+//    add_builtins(ccml);
     ccml.optimize = optimize;
 
     // build the program
-    ccml::error_t error;
+    error_t error;
     if (!ccml.build(sources, error)) {
       on_error(error);
       return -2;

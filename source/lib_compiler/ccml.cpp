@@ -8,7 +8,6 @@
 #include "ast.h"
 #include "codegen.h"
 #include "disassembler.h"
-#include "vm.h"
 #include "phases.h"
 #include "source.h"
 
@@ -24,7 +23,6 @@ ccml_t::ccml_t(program_t &prog)
   , ast_(new ast_t(*this))
   , codegen_(new codegen_t(*this, program_.builder()))
 {
-  add_builtins_();
 }
 
 bool ccml_t::build(source_manager_t &sources, error_t &error) {

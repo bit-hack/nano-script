@@ -1,7 +1,12 @@
 #include <math.h>
 
-#include "ccml.h"
-#include "vm.h"
+#include "../lib_compiler/ccml.h"
+
+#include "../lib_vm/thread_error.h"
+#include "../lib_vm/vm.h"
+
+#include "builtin.h"
+
 
 namespace ccml {
 
@@ -163,19 +168,19 @@ void builtin_cos(struct ccml::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void ccml_t::add_builtins_() {
-  add_function("abs", builtin_abs, 1);
-  add_function("min", builtin_min, 2);
-  add_function("max", builtin_max, 2);
-  add_function("len", builtin_len, 1);
-  add_function("bitand", builtin_bitand, 2);
-  add_function("sin", builtin_sin, 1);
-  add_function("cos", builtin_cos, 1);
+void add_builtins(ccml_t &ccml) {
+  ccml.add_function("abs",    builtin_abs,    1);
+  ccml.add_function("min",    builtin_min,    2);
+  ccml.add_function("max",    builtin_max,    2);
+  ccml.add_function("len",    builtin_len,    1);
+  ccml.add_function("bitand", builtin_bitand, 2);
+  ccml.add_function("sin",    builtin_sin,    1);
+  ccml.add_function("cos",    builtin_cos,    1);
 #if 0
-  add_function("shl", builtin_shl, 2);
-  add_function("shr", builtin_shl, 2);
+  ccml.add_function("shl",    builtin_shl,    2);
+  ccml.add_function("shr",    builtin_shl,    2);
 #endif
-  add_function("chr", builtin_chr, 1);
+  ccml.add_function("chr",    builtin_chr,    1);
 }
 
 } // namespace ccml

@@ -1,12 +1,15 @@
 #include <cstdio>
 
-#include "../lib/ccml.h"
-#include "../lib/codegen.h"
-#include "../lib/disassembler.h"
-#include "../lib/errors.h"
-#include "../lib/lexer.h"
-#include "../lib/parser.h"
-#include "../lib/vm.h"
+#include "../lib_compiler/ccml.h"
+#include "../lib_compiler/codegen.h"
+#include "../lib_compiler/disassembler.h"
+#include "../lib_compiler/errors.h"
+#include "../lib_compiler/lexer.h"
+#include "../lib_compiler/parser.h"
+#include "../lib_vm/vm.h"
+
+#include "../lib_builtins/builtin.h"
+
 
 namespace {
 
@@ -146,6 +149,7 @@ int main(int argc, char **argv) {
   {
     // create compile stack
     ccml_t ccml{program};
+    add_builtins(ccml);
     ccml.add_function("putc", vm_putc, 1);
     ccml.add_function("getc", vm_getc, 0);
     ccml.add_function("puts", vm_puts, 1);

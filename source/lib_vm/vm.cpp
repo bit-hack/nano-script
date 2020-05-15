@@ -1,9 +1,9 @@
 #include <climits>
 #include <cstring>
 
-#include "codegen.h"
-#include "disassembler.h"
-#include "parser.h"
+#include "program.h"
+#include "instructions.h"
+
 #include "vm.h"
 
 /*
@@ -55,21 +55,6 @@ bool to_string(char *buf, size_t size, const value_t *val) {
 }
 
 } // namespace {}
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-namespace {
-
-int32_t history[__INS_COUNT__];
-
-} // namespace
-
-void print_history() {
-  printf("histogram:\n");
-  for (int32_t i = 0; i < __INS_COUNT__; ++i) {
-    const char *name = disassembler_t::get_mnemonic((instruction_e)i);
-    printf("  %12s %d\n", name, history[i]);
-  }
-}
 
 thread_t::thread_t(vm_t &vm)
   : return_code_(nullptr)

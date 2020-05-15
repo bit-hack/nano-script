@@ -8,9 +8,7 @@
 
 #include "common.h"
 #include "program.h"
-#include "value.h"
 #include "instructions.h"
-#include "thread_error.h"
 #include "types.h"
 #include "source.h"
 
@@ -47,8 +45,6 @@ protected:
   friend struct pregen_functions_t;
   friend struct codegen_pass_t;
 
-  void add_builtins_();
-
   // the current program we are building
   program_t &program_;
 
@@ -63,9 +59,9 @@ protected:
   // stack of lexers, one per file
   std::vector<std::unique_ptr<lexer_t>> lexer_;
 
-  std::unique_ptr<parser_t>        parser_;
-  std::unique_ptr<ast_t>           ast_;
-  std::unique_ptr<codegen_t>       codegen_;
+  std::unique_ptr<parser_t>  parser_;
+  std::unique_ptr<ast_t>     ast_;
+  std::unique_ptr<codegen_t> codegen_;
 };
 
 } // namespace ccml
