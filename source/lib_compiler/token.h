@@ -53,32 +53,32 @@ enum token_e {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct token_t {
 
-  token_t(token_e t, uint32_t line)
+  token_t(token_e t, line_t line)
     : type_(t)
     , str_()
-    , line_no_(line)
+    , line_(line)
     , val_(0) {}
 
-  token_t(token_e tok, const char *s, uint32_t line)
+  token_t(token_e tok, const char *s, line_t line)
     : type_(tok)
     , str_(s)
-    , line_no_(line)
+    , line_(line)
     , val_(0) {}
 
-  token_t(token_e tok, const std::string &s, uint32_t line)
+  token_t(token_e tok, const std::string &s, line_t line)
     : type_(tok)
     , str_(s)
-    , line_no_(line)
+    , line_(line)
     , val_(0) {}
 
-  token_t(const int32_t &v, uint32_t line)
+  token_t(const int32_t &v, line_t line)
     : type_(TOK_INT)
-    , line_no_(line)
+    , line_(line)
     , val_(v) {}
 
-  token_t(const float &v, uint32_t line)
+  token_t(const float &v, line_t line)
     : type_(TOK_FLOAT)
-    , line_no_(line)
+    , line_(line)
     , valf_(v) {}
 
   // convert a token_e to a token string
@@ -139,7 +139,7 @@ struct token_t {
 
   token_e type_;
   std::string str_;
-  uint32_t line_no_;
+  line_t line_;
 
   union {
     int32_t val_;
@@ -175,15 +175,17 @@ struct token_stream_t {
   void reset();
 
   // return the current line number of the token stream
-  uint32_t line_number() const {
-    return line_no_;
+  line_t line_number() const {
+    return line_;
   }
 
 protected:
   ccml_t &ccml_;
 
   uint32_t index_;
-  uint32_t line_no_;
+
+  // tracks the line of the last token popped from the stream
+  line_t line_;
 
   std::vector<token_t> stream_;
 };

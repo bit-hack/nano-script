@@ -73,7 +73,10 @@ void vm_puts(ccml::thread_t &t, int32_t) {
 }
 
 void on_error(const ccml::error_t &error) {
-  fprintf(stderr, "line:%d - %s\n", error.line, error.error.c_str());
+  fprintf(stderr, "file %d, line:%d - %s\n",
+          error.line.file,
+          error.line.line,
+          error.error.c_str());
   fflush(stderr);
   exit(1);
 }
@@ -168,6 +171,8 @@ int main(int argc, char **argv) {
       ccml.ast().dump(stderr);
     }
   }
+
+  program.serial_save("temp.bin");
 
   // disassemble the program
   if (dump_dis) {

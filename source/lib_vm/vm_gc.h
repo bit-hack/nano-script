@@ -139,11 +139,11 @@ protected:
         return p.second;
       }
     }
+    return nullptr;
 #else
     auto itt = forward_.find(v);
     return itt == forward_.end() ? nullptr : itt->second;
 #endif
-    return nullptr;
   }
 
   // since getv puts an array on the stack and then geta/seta to set its member

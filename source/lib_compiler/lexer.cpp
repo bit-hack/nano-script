@@ -40,10 +40,10 @@ bool munch(const char *&s, const char *string) {
 } // namespace
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-bool lexer_t::lex(const char *s) {
+bool lexer_t::lex(const char *s, int32_t file_no) {
 
   const char *new_line_ = s;
-  line_no_ = 1;
+  line_ = line_t{file_no, 1};
 
   for (; *s; ++s) {
 
@@ -67,7 +67,7 @@ bool lexer_t::lex(const char *s) {
         }
         if (*s == '\n' || *s == '\0') {
           // raise an error
-          ccml_.errors().string_quote_mismatch(line_no_);
+          ccml_.errors().string_quote_mismatch(line_);
           return false;
         }
       }
@@ -83,7 +83,7 @@ bool lexer_t::lex(const char *s) {
       {
         assert(s >= new_line_);
         new_line_ = s + 1;
-        ++line_no_;
+        ++line_.line;
       }
       push_(TOK_EOL);
       continue;
@@ -206,7 +206,7 @@ bool lexer_t::lex(const char *s) {
     case '\n':
       assert(s >= new_line_);
       new_line_ = s + 1;
-      ++line_no_;
+      ++line_.line;
       push_(TOK_EOL);
       continue;
     case '=':
@@ -267,24 +267,24 @@ bool lexer_t::lex(const char *s) {
     }
 
     // raise an error
-    ccml_.errors().unexpected_character(line_no_, *s);
+    ccml_.errors().unexpected_character(line_, *s);
 
   } // while
 
-  stream_.push(token_t{TOK_EOF, line_no_});
+  stream_.push(token_t{TOK_EOF, line_});
   return true;
 }
 
 void lexer_t::push_(token_e tok) {
-  stream_.push(token_t{tok, line_no_});
+  stream_.push(token_t{tok, line_});
 }
 
 void lexer_t::push_ident_(const char *start, const char *end) {
-  stream_.push(token_t(TOK_IDENT, std::string(start, end), line_no_));
+  stream_.push(token_t(TOK_IDENT, std::string(start, end), line_));
 }
 
 void lexer_t::push_string_(const char *start, const char *end) {
-  stream_.push(token_t(TOK_STRING, std::string(start, end), line_no_));
+  stream_.push(token_t(TOK_STRING, std::string(start, end), line_));
 }
 
 void lexer_t::push_val_(const char *s, const char *e) {
@@ -302,15 +302,15 @@ void lexer_t::push_val_(const char *s, const char *e) {
     }
   }
   if (f == 0) {
-    stream_.push(token_t(v, line_no_));
+    stream_.push(token_t(v, line_));
   }
   else {
     const float x = float(v) / float(f);
-    stream_.push(token_t(x, line_no_));
+    stream_.push(token_t(x, line_));
   }
 }
 
 void lexer_t::reset() {
   stream_.reset();
-  line_no_ = 1;
+  line_ = {0, 1};
 }

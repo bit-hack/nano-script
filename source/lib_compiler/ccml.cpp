@@ -27,6 +27,11 @@ ccml_t::ccml_t(program_t &prog)
 
 bool ccml_t::build(source_manager_t &sources, error_t &error) {
 
+  // we need something to compile
+  if (sources.count() == 0) {
+    return false;
+  }
+
   // store the source manager for now so we can import into it
   sources_ = &sources;
 
@@ -43,7 +48,7 @@ bool ccml_t::build(source_manager_t &sources, error_t &error) {
       // create a lexer for this file
       lexer_.emplace_back(new lexer_t(*this));
       // lex this source file into tokens
-      if (!lexer().lex(src.data())) {
+      if (!lexer().lex(src.data(), index)) {
         return false;
       }
       // parse into instructions

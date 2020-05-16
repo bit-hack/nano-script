@@ -9,7 +9,7 @@ using namespace ccml;
 token_stream_t::token_stream_t(ccml_t &ccml)
   : ccml_(ccml)
   , index_(0)
-  , line_no_(0) {
+  , line_{0, 0} {
 }
 
 token_e token_stream_t::type() {
@@ -23,8 +23,11 @@ const token_t *token_stream_t::found(token_e type) {
 }
 
 const token_t *token_stream_t::pop(token_e type) {
-  if (const token_t *t = found(type))
+  if (const token_t *t = found(type)) {
+    // update the current line number
+    line_ = t->line_;
     return t;
+  }
   const auto &tok = stream_[index_];
   ccml_.errors().unexpected_token(tok, type);
   return nullptr;
@@ -32,7 +35,7 @@ const token_t *token_stream_t::pop(token_e type) {
 
 const token_t *token_stream_t::pop() {
   // update the current line number
-  line_no_ = stream_[index_].line_no_;
+  line_ = stream_[index_].line_;
   // return the popped token
   assert(index_ < stream_.size());
   return &stream_[index_++];

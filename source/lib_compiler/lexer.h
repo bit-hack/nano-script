@@ -10,11 +10,11 @@ struct lexer_t {
   lexer_t(ccml_t &c)
     : ccml_(c)
     , stream_(c)
-    , line_no_(1)
+    , line_{0, 1}
   {}
 
   // lex input sourcecode
-  bool lex(const char *source);
+  bool lex(const char *source, int32_t file_no);
 
   // reset any stored state
   void reset();
@@ -29,8 +29,8 @@ protected:
   // stream of parsed tokens
   token_stream_t stream_;
 
-  // current line number being parsed
-  uint32_t line_no_;
+  // current line number at this point in lexing
+  line_t line_;
 
   void push_(token_e);
   void push_ident_(const char *start, const char *end);

@@ -78,22 +78,17 @@ struct program_t {
         function_t *function_find(const std::string &name);
         function_t *function_find(uint32_t pc);
 
+  // serialization functions
+  bool serial_save(const char *path);
+  bool serial_load(const char *path);
+
 protected:
   friend struct program_builder_t;
 
   // add a line to the line table
-  void add_line(uint32_t pc, int32_t line) {
-    int32_t file = file_table_.size();
-    line_table_[pc] = line_t{ file, line};
+  void add_line(uint32_t pc, line_t line) {
+    line_table_[pc] = line;
   }
-
-  // add a file to the file table
-  void add_file(std::string &file) {
-    file_table_.push_back(file);
-  }
-
-  // source files used to compile this program
-  std::vector<std::string> file_table_;
 
   // table of system calls
   std::vector<ccml_syscall_t> syscalls_;
