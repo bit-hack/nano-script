@@ -52,6 +52,13 @@ struct program_builder_t {
     return index;
   }
 
+  void add_global(const std::string &name, int32_t offset) {
+    identifier_t ident;
+    ident.name_ = name;
+    ident.offset_ = offset;
+    store_.globals_.push_back(ident);
+  }
+
   // set the line number for the current pc
   // if line is nullptr then current lexer line is used
   void set_line(lexer_t &lexer, const token_t *line);

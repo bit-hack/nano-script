@@ -97,6 +97,9 @@ struct codegen_pass_t: ast_visitor_t {
       if (c->is_a<ast_decl_func_t>()) {
         dispatch(c);
       }
+      if (c->is_a<ast_decl_var_t>()) {
+        dispatch(c);
+      }
     }
     // process call fixups
     for (const auto &fixups : call_fixups_) {
@@ -420,18 +423,25 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_decl_var_t* n) override {
-    if (n->is_const) {
-      // nothing to do for const variables
-      return;
+    // collect the globals
+    if (n->is_global()) {
+      stream_.add_global(n->name->str_, n->offset);
     }
-    if (n->is_array()) {
-      emit(INS_NEW_ARY, n->count(), n->name);
-      set_decl_(n, n->name);
-    } else {
-      assert(n->is_local());
-      if (n->expr) {
-        dispatch(n->expr);
-        emit(INS_SETV, n->offset, n->name);
+    // must be local
+    else {
+      if (n->is_const) {
+        // nothing to do for const variables
+        return;
+      }
+      if (n->is_array()) {
+        emit(INS_NEW_ARY, n->count(), n->name);
+        set_decl_(n, n->name);
+      } else {
+        assert(n->is_local());
+        if (n->expr) {
+          dispatch(n->expr);
+          emit(INS_SETV, n->offset, n->name);
+        }
       }
     }
   }

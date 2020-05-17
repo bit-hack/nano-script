@@ -880,7 +880,10 @@ bool vm_t::call_once(const function_t &func,
                      const value_t *argv,
                      value_t* &return_code,
                      thread_error_t &error) {
+
+  error = ccml::thread_error_t::e_success;
   return_code = nullptr;
+
   thread_t thread(*this);
   gc_collect();
   if (!thread.prepare(func, argc, argv)) {

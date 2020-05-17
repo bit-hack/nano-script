@@ -106,13 +106,13 @@ bool program_t::serial_load(const char *path) {
   return false;
 }
 
-
 void program_t::reset() {
   syscalls_.clear();
   functions_.clear();
   code_.clear();
   line_table_.clear();
   strings_.clear();
+  globals_.clear();
 }
 
 const function_t *program_t::function_find(const std::string &name) const {

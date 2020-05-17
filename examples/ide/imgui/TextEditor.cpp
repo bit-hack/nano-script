@@ -3166,7 +3166,7 @@ const TextEditor::LanguageDefinition& TextEditor::LanguageDefinition::CCML()
 	if (!inited)
 	{
 		static const char* const keywords[] = {
-			"and", "const", "else", "end", "for", "false", "function", "if", "import", "none", "or", "return", "to", "true", "var", "while"
+			"and", "const", "else", "end", "for", "function", "if", "import", "none", "or", "return", "to", "var", "while"
 		};
 
     langDef.mPreprocChar = '\0';
@@ -3175,7 +3175,7 @@ const TextEditor::LanguageDefinition& TextEditor::LanguageDefinition::CCML()
 			langDef.mKeywords.insert(k);
 
 		static const char* const identifiers[] = {
-			"min", "max", "abs", "rand"
+			"min", "max", "abs", "rand", "print"
 		};
 		for (auto& k : identifiers)
 		{

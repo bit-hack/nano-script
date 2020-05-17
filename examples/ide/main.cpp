@@ -15,6 +15,10 @@
 #include "../lib_compiler/parser.h"
 #include "../lib_compiler/disassembler.h"
 
+#include "../lib_vm/vm.h"
+#include "../lib_vm/thread_error.h"
+
+
 SDL_Window *window = nullptr;
 SDL_GLContext gl_context = nullptr;
 
@@ -22,6 +26,7 @@ TextEditor editor;
 
 std::string text = R"(
 function main()
+  print("Hello World!")
   return 0
 end
 )";
@@ -30,6 +35,23 @@ bool running = true;
 
 ccml::program_t program;
 
+bool will_run = false;
+bool will_compile = false;
+
+std::vector<std::string> run_output;
+
+
+void vm_print(ccml::thread_t &t, int32_t) {
+  using namespace ccml;
+  value_t *s = t.stack().pop();
+  assert(s);
+  if (!s->is_a<val_type_string>()) {
+    t.raise_error(thread_error_t::e_bad_argument);
+  } else {
+    run_output.push_back(s->string());
+  }
+  t.stack().push_int(0);
+}
 
 bool init_sdl() {
 
@@ -73,6 +95,31 @@ void app_setup() {
   editor.SetText(text);
 }
 
+void run() {
+  run_output.push_back("Running program...");
+  ccml::vm_t vm(program);
+  if (!vm.call_init()) {
+    run_output.push_back("Error when calling '@init' function!");
+    return;
+  }
+  const ccml::function_t *func = program.function_find("main");
+  if (!func) {
+    run_output.push_back("Unable to find 'main' function!");
+    return;
+  }
+  ccml::value_t *ret = nullptr;
+  ccml::thread_error_t error = ccml::thread_error_t::e_success;
+  if (!vm.call_once(*func, 0, nullptr, ret, error)) {
+    run_output.push_back("Error when calling 'main' function");
+  }
+  if (error != ccml::thread_error_t::e_success) {
+    run_output.push_back("Error during execution!");
+  }
+  else {
+    run_output.push_back("Run successfull!");
+  }
+}
+
 void compile(std::string &str) {
   using namespace ccml;
 
@@ -84,6 +131,8 @@ void compile(std::string &str) {
 
   source_manager_t sources;
   sources.load_from_string(str.c_str());
+
+  c.add_function("print", vm_print, 1);
 
   error_t error;
   if (!c.build(sources, error)) {
@@ -99,14 +148,64 @@ void compile(std::string &str) {
   editor.SetErrorMarkers(markers);
 }
 
+void visit_run_output() {
+  ImGui::Begin("Output", nullptr, ImGuiWindowFlags_MenuBar);
+  ImGui::SetWindowSize(ImVec2(256, 128), ImGuiCond_FirstUseEver);
+
+  if (ImGui::BeginMenuBar()) {
+    if (ImGui::BeginMenu("Log")) {
+      if (ImGui::MenuItem("Clear")) {
+        run_output.clear();
+      }
+      ImGui::EndMenu();
+    }
+    ImGui::EndMenuBar();
+  }
+
+  for (const auto &l : run_output) {
+    ImGui::Text(l.c_str());
+  }
+
+  ImGui::End();
+}
+
 void visit_program() {
   ImGui::Begin("Program Viewer");
 
+  if (ImGui::CollapsingHeader("Strings")) {
+    ImGui::Indent(16.f);
+    for (const auto &s : program.strings()) {
+      ImGui::PushID(&s);
+      ImGui::Text("%s", s.c_str());
+      ImGui::PopID();
+    }
+    ImGui::Unindent(16.f);
+  }
+
+  if (ImGui::CollapsingHeader("Line Table")) {
+    ImGui::Indent(16.f);
+    for (const auto &l : program.line_table()) {
+      ImGui::PushID(&l);
+      ImGui::Text("%03d -> file:%1d line:%03d", l.first, l.second.file,
+                  l.second.line);
+      ImGui::PopID();
+    }
+    ImGui::Unindent(16.f);
+  }
+
   if (ImGui::CollapsingHeader("Globals")) {
+    ImGui::Indent(16.f);
+    for (const auto &a : program.globals()) {
+      ImGui::PushID(&a);
+      ImGui::Text("%2d: %s", a.offset_, a.name_.c_str());
+      ImGui::PopID();
+    }
+    ImGui::Unindent(16.f);
   }
 
   if (ImGui::CollapsingHeader("Functions")) {
     for (const auto &f : program.functions()) {
+      ImGui::PushID(&f);
       ImGui::Indent(16.f);
 
       if (ImGui::CollapsingHeader(f.name().c_str())) {
@@ -116,8 +215,10 @@ void visit_program() {
           if (ImGui::CollapsingHeader("Arguments")) {
             ImGui::Indent(16.f);
             for (const auto &a : f.args_) {
+              ImGui::PushID(&a);
               ImGui::Indent(2.f);
               ImGui::Text("%2d: %s", a.offset_, a.name_.c_str());
+              ImGui::PopID();
             }
             ImGui::Unindent(16.f);
           }
@@ -127,8 +228,10 @@ void visit_program() {
           if (ImGui::CollapsingHeader("Locals")) {
             ImGui::Indent(16.f);
             for (const auto &a : f.locals_) {
+              ImGui::PushID(&a);
               ImGui::Indent(2.f);
               ImGui::Text("%2d: %s", a.offset_, a.name_.c_str());
+              ImGui::PopID();
             }
             ImGui::Unindent(16.f);
           }
@@ -143,13 +246,17 @@ void visit_program() {
           uint32_t loc = f.code_start_;
 
           for (; loc < f.code_end_;) {
+            ImGui::PushID(loc);
             int offs = dis.disasm(ptr, out);
-            if (offs <= 0) {
+            if (offs > 0) {
+              ImGui::Text("%03d  %s\n", loc, out.c_str());
+              loc += offs;
+              ptr += offs;
+            } else {
+              ImGui::PopID();
               break;
             }
-            loc += offs;
-            ptr += offs;
-            ImGui::Text("%03d  %s\n", loc, out.c_str());
+            ImGui::PopID();
           }
 
           ImGui::Unindent(16.f);
@@ -159,6 +266,7 @@ void visit_program() {
       }
 
       ImGui::Unindent(16.f);
+      ImGui::PopID();
     }
   }
 
@@ -176,11 +284,25 @@ void app_frame() {
   if (ImGui::BeginMenuBar()) {
 
     if (ImGui::BeginMenu("Run")) {
-      if (ImGui::MenuItem("Compile")) {
-        auto code = editor.GetText();
-        compile(code);
+      if (ImGui::MenuItem("Compile", "F7") || will_compile) {
+        will_compile = true;
+      }
+      if (ImGui::MenuItem("Run", "F5") || will_run) {
+        will_run = true;
       }
       ImGui::EndMenu();
+    }
+
+    if (will_compile) {
+      will_compile = false;
+      auto code = editor.GetText();
+      compile(code);
+    }
+    if (will_run) {
+      will_run = false;
+      auto code = editor.GetText();
+      compile(code);
+      run();
     }
 
     if (ImGui::BeginMenu("Edit")) {
@@ -237,6 +359,14 @@ void poll_events() {
     if (event.type == SDL_QUIT) {
       running = false;
     }
+    if (event.type == SDL_KEYDOWN) {
+      if (event.key.keysym.sym == SDLK_F5) {
+        will_run = true;
+      }
+      if (event.key.keysym.sym == SDLK_F7) {
+        will_compile = true;
+      }
+    }
   }
 }
 
@@ -267,6 +397,7 @@ int main(int argc, char **argv) {
 
     app_frame();
     visit_program();
+    visit_run_output();
 
     // Rendering
     ImGui::Render();

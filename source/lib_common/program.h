@@ -56,6 +56,10 @@ struct program_t {
     return strings_;
   }
 
+  const std::vector<identifier_t> &globals() const {
+    return globals_;
+  }
+
   const std::vector<function_t> &functions() const {
     return functions_;
   }
@@ -83,6 +87,9 @@ protected:
   void add_line(uint32_t pc, line_t line) {
     line_table_[pc] = line;
   }
+
+  // global variables
+  std::vector<identifier_t> globals_;
 
   // table of system calls
   std::vector<ccml_syscall_t> syscalls_;
