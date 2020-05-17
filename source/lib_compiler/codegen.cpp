@@ -191,7 +191,7 @@ struct codegen_pass_t: ast_visitor_t {
   void visit(ast_stmt_call_t *n) override {
     dispatch(n->expr);
     // discard return value
-    emit(INS_POP, 1, nullptr);
+    emit(INS_POP, 1, n->expr->token);
   }
 
   void visit(ast_exp_bin_op_t* n) override {

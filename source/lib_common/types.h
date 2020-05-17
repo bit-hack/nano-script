@@ -16,6 +16,10 @@ struct line_t {
   bool operator == (const line_t &rhs) const {
     return file == rhs.file && line == rhs.line;
   }
+
+  bool operator != (const line_t &rhs) const {
+    return file != rhs.file || line != rhs.line;
+  }
 };
 
 struct identifier_t {

@@ -18,6 +18,8 @@
 #include "../lib_vm/vm.h"
 #include "../lib_vm/thread_error.h"
 
+#include "../lib_builtins/builtin.h"
+
 
 SDL_Window *window = nullptr;
 SDL_GLContext gl_context = nullptr;
@@ -126,6 +128,7 @@ void compile(std::string &str) {
   program.reset();
 
   ccml_t c{program};
+  add_builtins(c);
 
   TextEditor::ErrorMarkers markers;
 
@@ -245,10 +248,19 @@ void visit_program() {
           const uint8_t *ptr = program.data() + f.code_start_;
           uint32_t loc = f.code_start_;
 
+          ccml::line_t old_line = {-1, -1};
+
           for (; loc < f.code_end_;) {
             ImGui::PushID(loc);
             int offs = dis.disasm(ptr, out);
             if (offs > 0) {
+
+              ccml::line_t line = program.get_line(loc);
+              if (line != old_line) {
+                ImGui::Text("-- line %d\n", line.line);
+                old_line = line;
+              }
+
               ImGui::Text("%03d  %s\n", loc, out.c_str());
               loc += offs;
               ptr += offs;
