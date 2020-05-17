@@ -39,15 +39,6 @@ static instruction_e tok_to_ins_(token_e op) {
 
 namespace ccml {
 
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-void program_builder_t::set_line(lexer_t &lexer, const token_t *t) {
-  const uint32_t pc = head();
-  // line will either come from the token or the lexer
-  const line_t line = t ? t->line_ : lexer.stream().line_number();
-  store_.add_line(pc, line);
-}
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct codegen_pass_t: ast_visitor_t {
 
   codegen_pass_t(ccml_t &c, program_builder_t &stream)
@@ -593,9 +584,9 @@ void codegen_pass_t::emit(instruction_e ins, int32_t o1, int32_t o2, const token
 } // namespace ccml
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-codegen_t::codegen_t(ccml_t &c, program_builder_t &s)
+codegen_t::codegen_t(ccml_t &c, program_t &prog)
   : ccml_(c)
-  , stream_(s)
+  , stream_(prog)
 {
 }
 

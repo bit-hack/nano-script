@@ -21,7 +21,7 @@ ccml_t::ccml_t(program_t &prog)
   , errors_(new error_manager_t(*this))
   , parser_(new parser_t(*this))
   , ast_(new ast_t(*this))
-  , codegen_(new codegen_t(*this, program_.builder()))
+  , codegen_(new codegen_t(*this, program_))
 {
 }
 

@@ -44,10 +44,16 @@ target_link_libraries(ccml_comp ccml_lib_common ccml_lib_compiler ccml_lib_built
 set(CCML_BUILD_SDL_DRIVER false CACHE BOOL "Build the SDL driver")
 
 if (${CCML_BUILD_SDL_DRIVER})
-  find_package(SDL REQUIRED)
-  include_directories(${SDL2_INCLUDE_DIR})
+  find_package(SDL2 REQUIRED)
+  include_directories(${SDL2_INCLUDE_DIRS})
   FILE(GLOB FILE_DRIVER_SDL_CPP "source/driver_sdl/*.cpp")
   FILE(GLOB FILE_DRIVER_SDL_H "source/driver_sdl/*.h")
   add_executable(ccml_driver_sdl ${FILE_DRIVER_SDL_CPP} ${FILE_DRIVER_SDL_H})
-  target_link_libraries(ccml_driver_sdl ccml_lib_common ccml_lib_compiler ccml_lib_vm ccml_lib_builtin ${SDL_LIBRARY_TEMP})
+  target_link_libraries(ccml_driver_sdl ccml_lib_common ccml_lib_compiler ccml_lib_vm ccml_lib_builtin ${SDL2_LIBRARIES})
+endif()
+
+set(CCML_BUILD_IDE false CACHE BOOL "Build the IDE")
+
+if (${CCML_BUILD_IDE})
+  add_subdirectory("examples/ide")
 endif()

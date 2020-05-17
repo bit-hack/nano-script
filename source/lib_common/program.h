@@ -5,6 +5,7 @@
 #include <string>
 #include <array>
 #include <memory>
+#include <cassert>
 
 
 #include "common.h"
@@ -16,10 +17,7 @@ namespace ccml {
 struct program_t {
 
   // map instruction to line number
-  // XXX: this should also account for file path
   typedef std::map<uint32_t, line_t> linetable_t;
-
-  program_t();
 
   // access the raw opcodes
   const uint8_t *data() const {
@@ -33,10 +31,6 @@ struct program_t {
 
   const uint8_t *end() const {
     return code_.data() + code_.size();
-  }
-
-  program_builder_t &builder() const {
-    return *builder_;
   }
 
   const linetable_t &line_table() const {
@@ -98,9 +92,6 @@ protected:
 
   // bytecode array
   std::vector<uint8_t> code_;
-
-  // program builder
-  std::unique_ptr<program_builder_t> builder_;
 
   // line table [PC -> Line]
   linetable_t line_table_;

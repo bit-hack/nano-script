@@ -96,6 +96,8 @@ struct source_manager_t {
 
   bool load(const char *path);
 
+  bool load_from_string(const char *str);
+
   const source_t &get_source(int32_t index) const {
     assert(index >= 0 && index < int32_t(sources_.size()));
     return *sources_[index];

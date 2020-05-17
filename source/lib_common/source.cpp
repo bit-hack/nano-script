@@ -51,4 +51,9 @@ bool source_manager_t::load(const char *path) {
   return sources_.back()->load_from_file(path);
 }
 
+bool source_manager_t::load_from_string(const char *str) {
+  sources_.emplace_back(new source_t);
+  return sources_.back()->load_from_string(str);
+}
+
 } // namespace ccml
