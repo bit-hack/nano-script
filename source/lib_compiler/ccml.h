@@ -40,7 +40,6 @@ protected:
   friend struct lexer_t;
   friend struct parser_t;
   friend struct codegen_t;
-  friend struct token_stream_t;
   friend struct error_manager_t;
   friend struct pregen_functions_t;
   friend struct codegen_pass_t;

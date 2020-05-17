@@ -12,11 +12,10 @@
 
 namespace ccml {
 
-// bridges the assembler and the code store
 struct program_builder_t {
 
   program_builder_t(program_t &store)
-    : store_(store)
+    : program_(store)
     , data_(store.code_) {
   }
 
@@ -47,8 +46,8 @@ struct program_builder_t {
   }
 
   uint32_t add_syscall(ccml_syscall_t syscall) {
-    uint32_t index = store_.syscalls_.size();
-    store_.syscalls_.push_back(syscall);
+    uint32_t index = program_.syscalls_.size();
+    program_.syscalls_.push_back(syscall);
     return index;
   }
 
@@ -56,15 +55,13 @@ struct program_builder_t {
     identifier_t ident;
     ident.name_ = name;
     ident.offset_ = offset;
-    store_.globals_.push_back(ident);
+    program_.globals_.push_back(ident);
   }
 
-  // set the line number for the current pc
-  // if line is nullptr then current lexer line is used
   void set_line(lexer_t &lexer, const token_t *line);
 
 protected:
-  program_t &store_;
+  program_t &program_;
 
   // this comes from the program_t
   std::vector<uint8_t> &data_;

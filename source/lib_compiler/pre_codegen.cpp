@@ -6,6 +6,24 @@ namespace ccml {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
+// flatten array initalizers
+//
+struct pregen_array_init_t: public ast_visitor_t {
+
+  pregen_array_init_t(ccml_t &ccml)
+    : ccml_(ccml)
+  {
+  }
+
+  void visit(ast_program_t *a) override {
+    // XXX: TODO
+  }
+
+  ccml_t &ccml_;
+};
+
+// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+//
 // compute function stack sizes and decl offsets
 //
 struct pregen_offset_t: public ast_visitor_t {
@@ -252,8 +270,17 @@ struct pregen_init_t : public ast_visitor_t {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_pre_codegen(ccml_t &ccml) {
   auto *prog = &(ccml.ast().program);
+
+  // flatten array initalizers
+  pregen_array_init_t(ccml).visit(prog);
+  // generate an @init function
   pregen_init_t(ccml).visit(prog);
+
+  // 
   // passes after this must NOT modify the AST
+  //
+
+  // solidify variable stack offsets
   pregen_offset_t(ccml).visit(prog);
   // this must come after the offsets have been set
   pregen_functions_t(ccml).visit(prog);

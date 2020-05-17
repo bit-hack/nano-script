@@ -2,6 +2,8 @@
 
 namespace ccml {
 
+// XXX: should add a PC address for a thread error
+
 enum class thread_error_t {
   e_success = 0,
   e_max_cycle_count,
