@@ -37,8 +37,9 @@ ccml::program_t g_program;
 
 bool g_will_run = false;
 bool g_will_compile = false;
+bool g_optimize = true;
 
-// output from a running program
+// output lines from a running program
 std::vector<std::string> g_output;
 
 
@@ -128,6 +129,7 @@ bool lang_compile(std::string &str) {
   ccml_t c{g_program};
   add_builtins(c);
   c.add_function("print", vm_print, 1);
+  c.optimize = g_optimize;
 
   TextEditor::ErrorMarkers markers;
 
@@ -143,8 +145,9 @@ bool lang_compile(std::string &str) {
                       std::to_string(error.line.line) + " " + error.error;
 
     auto pair = std::pair<int, std::string>(error.line.line, err);
-
     markers.insert(pair);
+
+    g_output.push_back("Error: " + err);
   }
 
   g_editor.SetErrorMarkers(markers);
@@ -172,8 +175,15 @@ void gui_output() {
   ImGui::End();
 }
 
-void gui_program_viewer() {
-  ImGui::Begin("Program Viewer");
+void gui_program_inspector() {
+  ImGui::Begin("Program Inspector");
+  ImGui::SetWindowSize(ImVec2(380, 400), ImGuiCond_FirstUseEver);
+
+  if (ImGui::CollapsingHeader("Options")) {
+    ImGui::Indent(16.f);
+    ImGui::Checkbox("Optimize", &g_optimize);
+    ImGui::Unindent(16.f);
+  }
 
   if (ImGui::CollapsingHeader("Strings")) {
     ImGui::Indent(16.f);
@@ -290,8 +300,7 @@ void gui_code_editor() {
   auto cpos = g_editor.GetCursorPosition();
   ImGui::Begin("Code Editor", nullptr,
                ImGuiWindowFlags_HorizontalScrollbar | ImGuiWindowFlags_MenuBar);
-
-  ImGui::SetWindowSize(ImVec2(256, 256), ImGuiCond_FirstUseEver);
+  ImGui::SetWindowSize(ImVec2(380, 400), ImGuiCond_FirstUseEver);
 
   if (ImGui::BeginMenuBar()) {
 
@@ -302,6 +311,7 @@ void gui_code_editor() {
       if (ImGui::MenuItem("Run", "F5")) {
         g_will_run = true;
       }
+
       ImGui::EndMenu();
     }
 
@@ -338,14 +348,6 @@ void gui_code_editor() {
 
     ImGui::EndMenuBar();
   }
-
-#if 0
-  ImGui::Text("%6d/%-6d %6d lines  | %s | %s | %s ", cpos.mLine + 1,
-              cpos.mColumn + 1, g_editor.GetTotalLines(),
-              g_editor.IsOverwrite() ? "Ovr" : "Ins",
-              g_editor.CanUndo() ? "*" : " ",
-              g_editor.GetLanguageDefinition().mName.c_str());
-#endif
 
   g_editor.Render("Code Editor");
 
@@ -396,7 +398,7 @@ int main(int argc, char **argv) {
 
     // update our windows
     gui_code_editor();
-    gui_program_viewer();
+    gui_program_inspector();
     gui_output();
 
     // language
