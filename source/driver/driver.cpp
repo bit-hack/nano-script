@@ -25,18 +25,18 @@ void vm_rand(ccml::thread_t &t, int32_t) {
   // new unsigned int
   const int32_t x = (xorshift32() & 0x7fffff);
   // return value
-  t.stack().push(t.gc().new_int(x));
+  t.get_stack().push(t.gc().new_int(x));
 }
 
 void vm_getc(ccml::thread_t &t, int32_t) {
   using namespace ccml;
   const int32_t ch = getchar();
-  t.stack().push_int(ch);
+  t.get_stack().push_int(ch);
 }
 
 void vm_putc(ccml::thread_t &t, int32_t) {
   using namespace ccml;
-  const value_t *v = t.stack().pop();
+  const value_t *v = t.get_stack().pop();
   assert(v);
   if (!v->is_a<val_type_int>()) {
     t.raise_error(thread_error_t::e_bad_argument);
@@ -44,7 +44,7 @@ void vm_putc(ccml::thread_t &t, int32_t) {
     putchar((int)(v->v));
     fflush(stdout);
   }
-  t.stack().push_int(0);
+  t.get_stack().push_int(0);
 }
 
 void vm_gets(ccml::thread_t &t, int32_t) {
@@ -55,12 +55,12 @@ void vm_gets(ccml::thread_t &t, int32_t) {
     buffer[i] = (buffer[i] == '\n') ? '\0' : buffer[i];
   }
   buffer[79] = '\0';
-  t.stack().push_string(std::string{buffer});
+  t.get_stack().push_string(std::string{buffer});
 }
 
 void vm_puts(ccml::thread_t &t, int32_t) {
   using namespace ccml;
-  value_t *s = t.stack().pop();
+  value_t *s = t.get_stack().pop();
   assert(s);
   if (!s->is_a<val_type_string>()) {
     t.raise_error(thread_error_t::e_bad_argument);
@@ -68,7 +68,7 @@ void vm_puts(ccml::thread_t &t, int32_t) {
     printf("%s\n", s->string());
     fflush(stdout);
   }
-  t.stack().push_int(0);
+  t.get_stack().push_int(0);
   return;
 }
 
@@ -83,13 +83,13 @@ void on_error(const ccml::error_t &error) {
 
 void on_runtime_error(ccml::thread_t &thread, const ccml::source_manager_t &sources) {
   using namespace ccml;
-  const thread_error_t err = thread.error();
+  const thread_error_t err = thread.get_error();
   if (err == thread_error_t::e_success) {
     return;
   }
-  const line_t line = thread.source_line();
+  const line_t line = thread.get_source_line();
   printf("runtime error %d\n", int32_t(err));
-  fprintf(stderr, "%s\n", get_thread_error(thread.error()));
+  fprintf(stderr, "%s\n", get_thread_error(thread.get_error()));
   printf("source line %d\n", int32_t(line.line));
   const std::string s = sources.get_line(line);
   printf("%s\n", s.c_str());

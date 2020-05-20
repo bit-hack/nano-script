@@ -7,6 +7,7 @@
 #include <cstring>
 #include <cstdlib>
 #include <memory>
+#include <set>
 
 #include "common.h"
 #include "types.h"
@@ -17,6 +18,20 @@
 namespace ccml {
 
 struct vm_t;
+
+struct frame_t {
+  // stack pointer
+  int32_t sp_;
+
+  // return address
+  int32_t return_;
+
+  // ?
+  int32_t callee_;
+
+  // ?
+  bool terminal_;
+};
 
 struct thread_t {
 
@@ -40,12 +55,12 @@ struct thread_t {
   }
 
   // return the current error code
-  value_t* return_code() const {
+  value_t* get_return_code() const {
     return finished_ ? return_code_ : nullptr;
   }
 
   // return the total cycle count
-  uint32_t cycle_count() const {
+  uint32_t get_cycle_count() const {
     return cycles_;
   }
 
@@ -53,12 +68,12 @@ struct thread_t {
     return error_ != thread_error_t::e_success;
   }
 
-  thread_error_t error() const {
+  thread_error_t get_error() const {
     return error_;
   }
 
   // return the current source line number
-  line_t source_line() const;
+  line_t get_source_line() const;
 
   // raise a thread error
   void raise_error(thread_error_t e) {
@@ -72,7 +87,7 @@ struct thread_t {
   }
 
   // return the value stack
-  value_stack_t &stack() {
+  value_stack_t &get_stack() {
     return stack_;
   }
 
@@ -86,9 +101,26 @@ struct thread_t {
   // unwind the stack
   void unwind();
 
+  // return the program counter
+  int32_t get_pc() const {
+    return pc_;
+  }
+
+  const std::vector<frame_t> &frames() const {
+    return f_;
+  }
+
+  void breakpoint_add(line_t line);
+  void breakpoint_remove(line_t line);
+  void breakpoint_clear();
+
 protected:
 
   friend struct vm_t;
+
+  // when we resume a thread we must keep track of the previous source line.
+  // we need to do this so we can resume from a breakpoint without hitting it again.
+  line_t last_line_;
 
   // the return value of the thread function
   value_t* return_code_;
@@ -115,16 +147,12 @@ protected:
   value_gc_t &gc_;
 
   // frame stack
-  struct frame_t {
-    int32_t sp_;
-    int32_t return_;
-    int32_t callee_;
-    bool terminal_;
-  };
   std::vector<frame_t> f_;
 
   friend struct value_stack_t;
   value_stack_t stack_;
+
+  std::set<line_t> breakpoints_;
 
   // execute thread init function which will initalize any globals
   bool call_init_();

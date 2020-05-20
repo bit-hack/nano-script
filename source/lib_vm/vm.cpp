@@ -672,6 +672,19 @@ void thread_t::step_imp_() {
   default:
     set_error_(thread_error_t::e_bad_opcode);
   }
+
+  // check for any breakpoints
+  if (!breakpoints_.empty()) {
+    // check if the source line is in our list
+    const line_t l = get_source_line();
+    if (breakpoints_.count(l)) {
+      if (l != last_line_) {
+        halted_ = true;
+      }
+    }
+    // keep track of the last source line we were on
+    last_line_ = l;
+  }
 }
 
 void thread_t::enter_(uint32_t sp, uint32_t pc, uint32_t callee) {
@@ -707,7 +720,8 @@ bool thread_t::step_inst() {
   }
   step_imp_();
   // check for program termination
-  if (!finished_ && !f_.empty()) {
+  if (!finished_ && f_.empty()) {
+    if (f_.empty())
     assert(stack_.head() > 0);
     return_code_ = stack_.pop();
     finished_ = true;
@@ -720,16 +734,16 @@ bool thread_t::step_line() {
     return false;
   }
   // get the current source line
-  const line_t line = source_line();
+  const line_t line = get_source_line();
   // step until the source line changes
   do {
     step_imp_();
-    if (finished_ || !f_.empty() || has_error()) {
+    if (finished_ || f_.empty() || has_error()) {
       break;
     }
-  } while (line == source_line());
+  } while (line == get_source_line());
   // check for program termination
-  if (!finished_ && !f_.empty()) {
+  if (!finished_ && f_.empty()) {
     assert(stack_.head() > 0);
     return_code_ = stack_.pop();
     finished_ = true;
@@ -737,7 +751,7 @@ bool thread_t::step_line() {
   return !has_error();
 }
 
-line_t thread_t::source_line() const {
+line_t thread_t::get_source_line() const {
   return vm_.program_.get_line(pc_);
 }
 
@@ -826,14 +840,14 @@ void thread_t::unwind() {
     for (const auto &a : func->args_) {
       fprintf(stderr, "  - %4s: ", a.name_.c_str());
       const int32_t index = frame.sp_ + a.offset_;
-      const value_t *v = stack().get(index);
+      const value_t *v = get_stack().get(index);
       fprintf(stderr, "%s\n", v->to_string().c_str());
     }
     // print local variables
     for (const auto &l : func->locals_) {
       fprintf(stderr, "  - %4s: ", l.name_.c_str());
       const int32_t index = frame.sp_ + l.offset_;
-      const value_t *v = stack().get(index);
+      const value_t *v = get_stack().get(index);
       fprintf(stderr, "%s\n", v->to_string().c_str());
     }
     // exit on terminal frame
@@ -842,6 +856,21 @@ void thread_t::unwind() {
     }
     ++i;
   }
+}
+
+void thread_t::breakpoint_add(line_t line) {
+  breakpoints_.insert(line);
+}
+
+void thread_t::breakpoint_remove(line_t line) {
+  auto itt = breakpoints_.find(line);
+  if (itt != breakpoints_.end()) {
+    breakpoints_.erase(itt);
+  }
+}
+
+void thread_t::breakpoint_clear() {
+  breakpoints_.clear();
 }
 
 vm_t::vm_t(program_t &program)
@@ -900,9 +929,9 @@ bool vm_t::call_once(const function_t &func,
     return false;
   }
   if (thread.has_error()) {
-    error = thread.error();
+    error = thread.get_error();
     return false;
   }
-  return_code = thread.return_code();
+  return_code = thread.get_return_code();
   return true;
 }

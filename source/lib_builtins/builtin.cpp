@@ -12,16 +12,16 @@ namespace ccml {
 
 void builtin_abs(struct ccml::thread_t &t, int32_t nargs) {
   (void)nargs;
-  const ccml::value_t *v = t.stack().pop();
+  const ccml::value_t *v = t.get_stack().pop();
   assert(v);
   switch (v->type()) {
   case val_type_int: {
     const int32_t res = (v->v < 0) ? (-v->v) : (v->v);
-    t.stack().push_int(res);
+    t.get_stack().push_int(res);
   } break;
   case val_type_float: {
     const float res = (v->f < 0.f) ? (-v->f) : (v->f);
-    t.stack().push_float(res);
+    t.get_stack().push_float(res);
   } break;
   default:
     t.raise_error(thread_error_t::e_bad_argument);
@@ -31,21 +31,21 @@ void builtin_abs(struct ccml::thread_t &t, int32_t nargs) {
 // XXX: support variable arg count
 void builtin_max(struct ccml::thread_t &t, int32_t nargs) {
   (void)nargs;
-  const ccml::value_t *a = t.stack().pop();
-  const ccml::value_t *b = t.stack().pop();
+  const ccml::value_t *a = t.get_stack().pop();
+  const ccml::value_t *b = t.get_stack().pop();
   assert(a && b);
   if (a->is_a<val_type_int>() &&
       b->is_a<val_type_int>()) {
     const int32_t ai = a->v;
     const int32_t bi = b->v;
-    t.stack().push_int(ai > bi ? ai : bi);
+    t.get_stack().push_int(ai > bi ? ai : bi);
     return;
   }
   if (a->is_a<val_type_float>() ||
       b->is_a<val_type_float>()) {
     const float af = a->as_float();
     const float bf = b->as_float();
-    t.stack().push_float(af > bf ? af : bf);
+    t.get_stack().push_float(af > bf ? af : bf);
     return;
   }
   t.raise_error(thread_error_t::e_bad_argument);
@@ -54,21 +54,21 @@ void builtin_max(struct ccml::thread_t &t, int32_t nargs) {
 // XXX: support variable arg count
 void builtin_min(struct ccml::thread_t &t, int32_t nargs) {
   (void)nargs;
-  const ccml::value_t *a = t.stack().pop();
-  const ccml::value_t *b = t.stack().pop();
+  const ccml::value_t *a = t.get_stack().pop();
+  const ccml::value_t *b = t.get_stack().pop();
   assert(a && b);
   if (a->is_a<val_type_int>() &&
       b->is_a<val_type_int>()) {
     const int32_t ai = a->v;
     const int32_t bi = b->v;
-    t.stack().push_int(ai < bi ? ai : bi);
+    t.get_stack().push_int(ai < bi ? ai : bi);
     return;
   }
   if (a->is_a<val_type_float>() ||
       b->is_a<val_type_float>()) {
     const float af = a->as_float();
     const float bf = b->as_float();
-    t.stack().push_float(af < bf ? af : bf);
+    t.get_stack().push_float(af < bf ? af : bf);
     return;
   }
   t.raise_error(thread_error_t::e_bad_argument);
@@ -76,13 +76,13 @@ void builtin_min(struct ccml::thread_t &t, int32_t nargs) {
 
 void builtin_bitand(struct ccml::thread_t &t, int32_t nargs) {
   (void)nargs;
-  const ccml::value_t *a = t.stack().pop();
-  const ccml::value_t *b = t.stack().pop();
+  const ccml::value_t *a = t.get_stack().pop();
+  const ccml::value_t *b = t.get_stack().pop();
   assert(a && b);
   if (a->is_a<val_type_int>() &&
       b->is_a<val_type_int>()) {
     const int32_t res = a->v & b->v;
-    t.stack().push_int(res);
+    t.get_stack().push_int(res);
     return;
   }
   t.raise_error(thread_error_t::e_bad_argument);
@@ -90,16 +90,16 @@ void builtin_bitand(struct ccml::thread_t &t, int32_t nargs) {
 
 void builtin_len(struct ccml::thread_t &t, int32_t nargs) {
   (void)nargs;
-  const ccml::value_t *a = t.stack().pop();
+  const ccml::value_t *a = t.get_stack().pop();
   assert(a);
   switch (a->type()) {
   case val_type_array: {
     const int32_t res = a->array_size();
-    t.stack().push_int(res);
+    t.get_stack().push_int(res);
   } break;
   case val_type_string: {
     const int32_t res = a->strlen();
-    t.stack().push_int(res);
+    t.get_stack().push_int(res);
   } break;
   default:
     t.raise_error(thread_error_t::e_bad_argument);
@@ -109,12 +109,12 @@ void builtin_len(struct ccml::thread_t &t, int32_t nargs) {
 
 void builtin_shl(struct ccml::thread_t &t, int32_t nargs) {
   (void)nargs;
-  const ccml::value_t *i = t.stack().pop();
-  const ccml::value_t *v = t.stack().pop();
+  const ccml::value_t *i = t.get_stack().pop();
+  const ccml::value_t *v = t.get_stack().pop();
   if (i && v) {
     if (v->is_a<val_type_int>() &&
         i->is_a<val_type_int>()) {
-      t.stack().push_int(v->v << i->v);
+      t.get_stack().push_int(v->v << i->v);
       return;
     }
   }
@@ -123,12 +123,12 @@ void builtin_shl(struct ccml::thread_t &t, int32_t nargs) {
 
 void builtin_shr(struct ccml::thread_t &t, int32_t nargs) {
   (void)nargs;
-  const ccml::value_t *i = t.stack().pop();
-  const ccml::value_t *v = t.stack().pop();
+  const ccml::value_t *i = t.get_stack().pop();
+  const ccml::value_t *v = t.get_stack().pop();
   if (i && v) {
     if (v->is_a<val_type_int>() &&
         i->is_a<val_type_int>()) {
-      t.stack().push_int(uint32_t(v->v) >> i->v);
+      t.get_stack().push_int(uint32_t(v->v) >> i->v);
       return;
     }
   }
@@ -137,10 +137,10 @@ void builtin_shr(struct ccml::thread_t &t, int32_t nargs) {
 
 void builtin_chr(struct ccml::thread_t &t, int32_t nargs) {
   (void)nargs;
-  const ccml::value_t *v = t.stack().pop();
+  const ccml::value_t *v = t.get_stack().pop();
   if (v && v->is_a<val_type_int>()) {
     char x[2] = {char(v->v), 0};
-    t.stack().push_string(std::string(x));
+    t.get_stack().push_string(std::string(x));
     return;
   }
   t.raise_error(thread_error_t::e_bad_argument);
@@ -148,10 +148,10 @@ void builtin_chr(struct ccml::thread_t &t, int32_t nargs) {
 
 void builtin_sin(struct ccml::thread_t &t, int32_t nargs) {
   (void)nargs;
-  const ccml::value_t *v = t.stack().pop();
+  const ccml::value_t *v = t.get_stack().pop();
   if (v && (v->is_number())) {
     const float x = v->as_float();
-    t.stack().push_float(sinf(x));
+    t.get_stack().push_float(sinf(x));
     return;
   }
   t.raise_error(thread_error_t::e_bad_argument);
@@ -159,10 +159,10 @@ void builtin_sin(struct ccml::thread_t &t, int32_t nargs) {
 
 void builtin_cos(struct ccml::thread_t &t, int32_t nargs) {
   (void)nargs;
-  const ccml::value_t *v = t.stack().pop();
+  const ccml::value_t *v = t.get_stack().pop();
   if (v && (v->is_number())) {
     const float x = v->as_float();
-    t.stack().push_float(cosf(x));
+    t.get_stack().push_float(cosf(x));
     return;
   }
   t.raise_error(thread_error_t::e_bad_argument);

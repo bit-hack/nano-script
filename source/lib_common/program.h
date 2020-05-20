@@ -43,7 +43,7 @@ struct program_t {
       return itt->second;
     }
     // no line found
-    return line_t{ -1, -1 };
+    return line_t{};
   }
 
   void reset();

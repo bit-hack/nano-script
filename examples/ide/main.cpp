@@ -26,33 +26,73 @@ SDL_GLContext g_glcontext = nullptr;
 TextEditor g_editor;
 bool g_running = true;
 
+#if 0
 std::string g_init_source = R"(
 function main()
   print("Hello World!")
   return 0
 end
 )";
+#else
+std::string g_init_source = R"(
+var seed = 12345
+
+function rand()
+  seed = seed * 1664525 + 1013904223
+  return abs(seed) 
+end
+
+function main()
+    var d[4]
+    d[0] = 0
+    d[1] = 1
+    d[2] = 2
+    d[3] = 3
+    var i
+    for (i = 0 to 4)
+        var j = rand() % 4
+        var t = d[j]
+        d[j] = d[i]
+        d[i] = t
+    end
+    print(d[0] + ", " + d[1] + ", " + d[2] + ", " + d[3])
+end
+)";
+#endif
 
 ccml::program_t g_program;
+std::unique_ptr<ccml::vm_t> g_vm;
+std::unique_ptr<ccml::thread_t> g_thread;
 
-bool g_will_run = false;
-bool g_will_compile = false;
+enum run_option_t {
+  RUN_COMPILE   = 1,
+  RUN_CONTINUE  = 2,
+  RUN_STEP_INST = 4,
+  RUN_STEP_LINE = 8,
+  RUN_STOP      = 16,
+  RUN_RESTART   = 32,
+};
+uint32_t g_run_option = 0;
+
 bool g_optimize = true;
 
 // output lines from a running program
 std::vector<std::string> g_output;
 
+// the list of breakpoints
+std::unordered_set<int> g_breakpoints;
+
 
 void vm_print(ccml::thread_t &t, int32_t) {
   using namespace ccml;
-  value_t *s = t.stack().pop();
+  value_t *s = t.get_stack().pop();
   assert(s);
   if (!s->is_a<val_type_string>()) {
     t.raise_error(thread_error_t::e_bad_argument);
   } else {
     g_output.push_back(s->string());
   }
-  t.stack().push_int(0);
+  t.get_stack().push_int(0);
 }
 
 bool init_sdl() {
@@ -95,10 +135,52 @@ void app_setup() {
   g_editor.SetText(g_init_source);
 }
 
-void lang_run() {
+void gui_highlight_pc() {
+  if (!g_thread) {
+    return;
+  }
+  const int32_t line = g_thread->get_source_line().line;
+  if (line < 0) {
+    return;
+  }
+  if (!g_thread->finished()) {
+    TextEditor::Coordinates c[2];
+    c[0].mLine = line - 1;
+    c[0].mColumn = 0;
+    c[1].mLine = c[0].mLine;
+    c[1].mColumn = 64;
+    g_editor.SetSelection(c[0], c[1]);
+  }
+  if (g_thread->has_error()) {
+    TextEditor::ErrorMarkers markers;
+    const char *str = ccml::get_thread_error(g_thread->get_error());
+    markers[line] = str;
+    g_editor.SetErrorMarkers(markers);
+  }
+}
+
+void lang_prepare() {
+
+  // restart the program if needed
+  if (g_run_option & RUN_RESTART) {
+    g_thread.reset();
+    g_vm.reset();
+  }
+
+  // if we are not going to run then skip this step
+  if (0 == (g_run_option & (RUN_STEP_INST | RUN_STEP_LINE | RUN_CONTINUE))) {
+    return;
+  }
+
+  // if we currently have a thread or a vm then no preparation to do
+  if (g_vm || g_thread) {
+    return;
+  }
+
   g_output.push_back("Launching program");
-  ccml::vm_t vm(g_program);
-  if (!vm.call_init()) {
+  g_vm.reset(new ccml::vm_t{g_program});
+
+  if (!g_vm->call_init()) {
     g_output.push_back("Error when calling '@init' function!");
     return;
   }
@@ -107,23 +189,100 @@ void lang_run() {
     g_output.push_back("Unable to find 'main' function!");
     return;
   }
-  ccml::value_t *ret = nullptr;
-  ccml::thread_error_t error = ccml::thread_error_t::e_success;
-  if (!vm.call_once(*func, 0, nullptr, ret, error)) {
-    g_output.push_back("Error when calling 'main' function");
+
+  g_thread.reset(new ccml::thread_t{*g_vm});
+  if (!g_thread->prepare(*func, 0, nullptr)) {
+    g_output.push_back("Error: unable to prepare function!");
+    return;
   }
-  if (error != ccml::thread_error_t::e_success) {
-    g_output.push_back("Error during execution!");
-  }
-  else {
-    g_output.push_back("Program returned: " + ret->to_string());
-    ret->type();
+
+  // since we are preparing treat this as our first step
+  if (g_run_option & (RUN_STEP_INST | RUN_STEP_LINE)) {
+    g_run_option &= ~(RUN_STEP_INST | RUN_STEP_LINE);
+    gui_highlight_pc();
   }
 }
 
-bool lang_compile(std::string &str) {
+void lang_on_error() {
+  if (g_thread->has_error()) {
+    ccml::thread_error_t error = g_thread->get_error();
+  }
+}
+
+void lang_on_finish() {
+  if (g_thread->finished()) {
+    g_output.push_back("Finished after " + std::to_string(g_thread->get_cycle_count()) + " cycles");
+    const ccml::value_t *ret = g_thread->get_return_code();
+    std::string ret_str = ret->to_string();
+    g_output.push_back("Returned " + ret_str);
+  }
+}
+
+void lang_run() {
+
+  // check we have something to run
+  if (0 == (g_run_option & (RUN_CONTINUE | RUN_STEP_INST | RUN_STEP_LINE))) {
+    return;
+  }
+
+  if (!g_thread || !g_vm) {
+    return;
+  }
+
+  for (const auto &b : g_breakpoints) {
+    g_thread->breakpoint_add(ccml::line_t{0, b});
+  }
+
+  if (g_thread->finished() || g_thread->has_error()) {
+    g_output.push_back("Error: thread has terminated!");
+    return;
+  }
+
+  if (g_run_option & RUN_STEP_INST) {
+    if (!g_thread->step_inst()) {
+      g_output.push_back("Error: thread.step_inst() returned false");
+    }
+  }
+
+  if (g_run_option & RUN_STEP_LINE) {
+    if (!g_thread->step_line()) {
+      g_output.push_back("Error: thread.step_line() returned false");
+    }
+  }
+
+  if (g_run_option & RUN_CONTINUE) {
+    uint32_t max_cycles = 128 * 1024;
+    if (!g_thread->resume(max_cycles)) {
+      g_output.push_back("Error: thread.resume() returned false");
+    }
+  }
+
+  if (g_thread->has_error()) {
+    lang_on_error();
+  }
+
+  if (g_thread->finished()) {
+    lang_on_finish();
+  }
+  else {
+    gui_highlight_pc();
+  }
+}
+
+void lang_compile() {
   using namespace ccml;
 
+  const std::string source = g_editor.GetText();
+
+  if (0 == (g_run_option & RUN_COMPILE)) {
+    return;
+  }
+
+  // clear out the VM before we tear down the program
+  g_thread.reset();
+  g_vm.reset();
+
+  // wipe the program
   g_program.reset();
 
   ccml_t c{g_program};
@@ -134,13 +293,10 @@ bool lang_compile(std::string &str) {
   TextEditor::ErrorMarkers markers;
 
   source_manager_t sources;
-  sources.load_from_string(str.c_str());
-
-  bool result = true;
+  sources.load_from_string(source.c_str());
 
   error_t error;
   if (!c.build(sources, error)) {
-    result = false;
     std::string err = std::to_string(error.line.file) + ":" +
                       std::to_string(error.line.line) + " " + error.error;
 
@@ -149,9 +305,35 @@ bool lang_compile(std::string &str) {
 
     g_output.push_back("Error: " + err);
   }
+  else {
+    g_output.push_back("Compile successful");
+  }
 
   g_editor.SetErrorMarkers(markers);
-  return result;
+}
+
+void gui_toggle_breakpoint() {
+
+  TextEditor::Coordinates coord = g_editor.GetCursorPosition();
+  int line = coord.mLine + 1;
+  auto itt = g_breakpoints.find(line);
+  if (itt == g_breakpoints.end()) {
+    g_breakpoints.insert(line);
+    if (g_thread) {
+      g_thread->breakpoint_add(ccml::line_t{0, line});
+    }
+  }
+  else {
+    if (g_thread) {
+      g_thread->breakpoint_remove(ccml::line_t{0, line});
+    }
+    g_breakpoints.erase(itt);
+  }
+  g_editor.SetBreakpoints(g_breakpoints);
+}
+
+void gui_print_value(const ccml::value_t *v) {
+  ImGui::Text("%s", v->to_string().c_str());
 }
 
 void gui_output() {
@@ -229,7 +411,6 @@ void gui_program_inspector() {
             ImGui::Indent(16.f);
             for (const auto &a : f.args_) {
               ImGui::PushID(&a);
-              ImGui::Indent(2.f);
               ImGui::Text("%2d: %s", a.offset_, a.name_.c_str());
               ImGui::PopID();
             }
@@ -242,7 +423,6 @@ void gui_program_inspector() {
             ImGui::Indent(16.f);
             for (const auto &a : f.locals_) {
               ImGui::PushID(&a);
-              ImGui::Indent(2.f);
               ImGui::Text("%2d: %s", a.offset_, a.name_.c_str());
               ImGui::PopID();
             }
@@ -297,6 +477,13 @@ void gui_program_inspector() {
 
 void gui_code_editor() {
 
+  if (g_thread || g_vm) {
+    g_editor.SetReadOnly(true);
+  }
+  else {
+    g_editor.SetReadOnly(false);
+  }
+
   auto cpos = g_editor.GetCursorPosition();
   ImGui::Begin("Code Editor", nullptr,
                ImGuiWindowFlags_HorizontalScrollbar | ImGuiWindowFlags_MenuBar);
@@ -304,12 +491,9 @@ void gui_code_editor() {
 
   if (ImGui::BeginMenuBar()) {
 
-    if (ImGui::BeginMenu("Run")) {
+    if (ImGui::BeginMenu("Build")) {
       if (ImGui::MenuItem("Compile", "F7")) {
-        g_will_compile = true;
-      }
-      if (ImGui::MenuItem("Run", "F5")) {
-        g_will_run = true;
+        g_run_option |= RUN_COMPILE;
       }
 
       ImGui::EndMenu();
@@ -354,6 +538,99 @@ void gui_code_editor() {
   ImGui::End();
 }
 
+void gui_debug() {
+  ImGui::Begin("Debugger", nullptr);
+  ImGui::SetWindowSize(ImVec2(300, 128), ImGuiCond_FirstUseEver);
+
+  if (ImGui::Button("Continue")) {
+    g_run_option = RUN_CONTINUE;
+  }
+  ImGui::SameLine();
+  if (ImGui::Button("Step Line")) {
+    g_run_option = RUN_STEP_LINE;
+  }
+  ImGui::SameLine();
+  if (ImGui::Button("Step Inst")) {
+    g_run_option = RUN_STEP_INST;
+  }
+  ImGui::SameLine();
+  if (ImGui::Button("Restart")) {
+    g_run_option = RUN_RESTART;
+  }
+  ImGui::SameLine();
+  if (ImGui::Button("Stop")) {
+    g_run_option = RUN_STOP;
+  }
+
+  ImGui::Separator();
+
+  ImGui::Text("PC: %d", g_thread ? g_thread->get_pc() : 0);
+
+  // print the globals
+  if (ImGui::CollapsingHeader("Globals")) {
+    if (g_vm && g_thread) {
+      for (const auto &g : g_program.globals()) {
+        const ccml::value_t *v = g_vm->g_[g.offset_];
+        ImGui::Text("%8s: %s", g.name_.c_str(), v->to_string().c_str());
+      }
+    }
+  }
+
+  // print a stack trace
+  if (ImGui::CollapsingHeader("Value Stack")) {
+    if (g_vm && g_thread) {
+      const auto &vs = g_thread->get_stack();
+      int32_t i = vs.head() - 1;
+      for (; i >= 0; --i) {
+        const ccml::value_t *v = vs.get(i);
+        ImGui::Text("%3d : %s", i, v->to_string().c_str());
+      }
+    }
+  }
+
+  // unwinder
+  if (ImGui::CollapsingHeader("Unwind")) {
+    if (g_vm && g_thread) {
+
+      const auto &frames = g_thread->frames();
+      const auto &stack = g_thread->get_stack();
+
+      int32_t i = 0;
+      for (auto itt = frames.rbegin(); itt != frames.rend(); ++itt, ++i) {
+        const auto &frame = *itt;
+        const ccml::function_t *func = g_vm->program_.function_find(frame.callee_);
+        assert(func);
+
+        ImGui::Text("frame %d: '%s'", i, func->name_.c_str());
+
+        // print function arguments
+        for (const auto &a : func->args_) {
+
+          const int32_t index = frame.sp_ + a.offset_;
+          const ccml::value_t *v = stack.get(index);
+
+          ImGui::Text("%8s: %s", a.name_.c_str(), v->to_string().c_str());
+        }
+        // print local variables
+        for (const auto &l : func->locals_) {
+
+          const int32_t index = frame.sp_ + l.offset_;
+          const ccml::value_t *v = stack.get(index);
+
+          ImGui::Text("%8s: %s", l.name_.c_str(), v->to_string().c_str());
+        }
+
+        // exit on terminal frame
+        if (frame.terminal_) {
+          break;
+        }
+      }
+    }
+  }
+
+  ImGui::End();
+}
+
 void poll_events() {
   SDL_Event event;
   while (SDL_PollEvent(&event)) {
@@ -363,10 +640,19 @@ void poll_events() {
     }
     if (event.type == SDL_KEYDOWN) {
       if (event.key.keysym.sym == SDLK_F5) {
-        g_will_run = true;
+        g_run_option |= RUN_CONTINUE;
       }
       if (event.key.keysym.sym == SDLK_F7) {
-        g_will_compile = true;
+        g_run_option |= RUN_COMPILE;
+      }
+      if (event.key.keysym.sym == SDLK_F10) {
+        g_run_option |= RUN_STEP_INST;
+      }
+      if (event.key.keysym.sym == SDLK_F11) {
+        g_run_option |= RUN_STEP_LINE;
+      }
+      if (event.key.keysym.sym == SDLK_F9) {
+        gui_toggle_breakpoint();
       }
     }
   }
@@ -400,20 +686,19 @@ int main(int argc, char **argv) {
     gui_code_editor();
     gui_program_inspector();
     gui_output();
+    gui_debug();
 
     // language
-    if (g_will_compile || g_will_run) {
-      g_will_compile = false;
-      auto code = g_editor.GetText();
-      if (!lang_compile(code)) {
-        g_will_run = false;
-      }
+    lang_compile();
+    lang_prepare();
+    lang_run();
+
+    if (g_run_option & RUN_STOP) {
+      g_thread.reset();
+      g_vm.reset();
     }
-    if (g_will_run) {
-      g_will_run = false;
-      auto code = g_editor.GetText();
-      lang_run();
-    }
+
+    g_run_option = 0;
 
     // 
     ImGui::Render();

@@ -204,6 +204,15 @@ struct value_stack_t {
     stack_.emplace_back(v);
   }
 
+  const value_t *get(const int32_t index) const {
+    if (index >= 0 && index < head()) {
+      return stack_[index];
+    }
+    else {
+      return nullptr;
+    }
+  }
+
   value_t *get(const int32_t index) {
     if (index >= 0 && index < head()) {
       return stack_[index];

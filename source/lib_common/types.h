@@ -10,8 +10,12 @@ namespace ccml {
 typedef void(*ccml_syscall_t)(struct thread_t &thread, int32_t num_args);
 
 struct line_t {
+
   int32_t file;
   int32_t line;
+
+  line_t() : file(-1), line(-1) {}
+  line_t(int32_t f, int32_t l): file(f), line(l) {}
 
   bool operator == (const line_t &rhs) const {
     return file == rhs.file && line == rhs.line;
@@ -19,6 +23,16 @@ struct line_t {
 
   bool operator != (const line_t &rhs) const {
     return file != rhs.file || line != rhs.line;
+  }
+
+  bool operator < (const line_t &rhs) const {
+    if (file < rhs.file) {
+      return true;
+    }
+    if (file == rhs.file) {
+      return line < rhs.line;
+    }
+    return false;
   }
 };
 

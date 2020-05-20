@@ -163,7 +163,7 @@ struct error_manager_t {
   }
 
   virtual void too_many_array_inits(const token_t &t, int32_t got, int32_t want) {
-    on_error_(t.line_, "too many array initalizers, got %d needs %n", got, want);
+    on_error_(t.line_, "too many array initalizers, got %d expected %d", got, want);
   }
 
   virtual void array_init_in_func(const token_t &t) {

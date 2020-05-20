@@ -739,7 +739,6 @@ struct sema_array_size_t : public ast_visitor_t {
   }
 };
 
-
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
 // check for legal array initalizers
