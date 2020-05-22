@@ -40,6 +40,8 @@ const char *get_thread_error(const ccml::thread_error_t &err) {
     return "e_bad_type_operation";
   case thread_error_t::e_bad_argument:
     return "e_bad_argument";
+  case thread_error_t::e_bad_array_index:
+    return "e_bad_array_index";
   default:
     assert(false);
     return "";

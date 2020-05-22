@@ -135,6 +135,17 @@ void app_setup() {
   g_editor.SetText(g_init_source);
 }
 
+void lang_on_error() {
+  if (g_thread->has_error()) {
+    ccml::thread_error_t error = g_thread->get_error();
+    TextEditor::ErrorMarkers markers;
+    const char *str = ccml::get_thread_error(g_thread->get_error());
+    ccml::line_t line = g_thread->get_source_line();
+    markers[line.line] = str;
+    g_editor.SetErrorMarkers(markers);
+  }
+}
+
 void gui_highlight_pc() {
   if (!g_thread) {
     return;
@@ -152,10 +163,7 @@ void gui_highlight_pc() {
     g_editor.SetSelection(c[0], c[1]);
   }
   if (g_thread->has_error()) {
-    TextEditor::ErrorMarkers markers;
-    const char *str = ccml::get_thread_error(g_thread->get_error());
-    markers[line] = str;
-    g_editor.SetErrorMarkers(markers);
+    lang_on_error();
   }
 }
 
@@ -200,12 +208,6 @@ void lang_prepare() {
   if (g_run_option & (RUN_STEP_INST | RUN_STEP_LINE)) {
     g_run_option &= ~(RUN_STEP_INST | RUN_STEP_LINE);
     gui_highlight_pc();
-  }
-}
-
-void lang_on_error() {
-  if (g_thread->has_error()) {
-    ccml::thread_error_t error = g_thread->get_error();
   }
 }
 

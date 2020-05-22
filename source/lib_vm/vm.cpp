@@ -603,7 +603,7 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
 
   // verify num arguments
   if (int32_t(func.num_args()) != argc) {
-    return_code_ = gc_.new_int(-1);
+    return_code_ = nullptr;
     error_ = thread_error_t::e_bad_num_args;
     return false;
   }
@@ -685,31 +685,38 @@ void thread_t::step_imp_() {
     // keep track of the last source line we were on
     last_line_ = l;
   }
+
+  // increment cycle count
+  ++cycles_;
 }
 
 void thread_t::enter_(uint32_t sp, uint32_t pc, uint32_t callee) {
+  // create a new stack frame
   f_.emplace_back();
   frame_().sp_ = sp;
   frame_().return_ = pc;
   frame_().terminal_ = false;
   frame_().callee_ = callee;
+  // jump to the new function
   pc_ = callee;
 }
 
-// return - old PC as return value
+// return old PC as return value
 uint32_t thread_t::leave_() {
   if (f_.empty()) {
     set_error_(thread_error_t::e_stack_underflow);
     return 0;
   } else {
     const uint32_t ret_pc = frame_().return_;
-    if (frame_().terminal_) {
-      // XXX: should set a status so caller know we finished
-      finished_ = true;
-    }
+    // we have finished if this frame was terminal
+    finished_ = frame_().terminal_;
     f_.pop_back();
-    // check if we have more frames
+    // if we have no more frames then we have reached the end anyway
     finished_ |= f_.empty();
+    if (finished_) {
+      assert(stack_.head() > 0);
+      return_code_ = stack_.peek();
+    }
     return ret_pc;
   }
 }
@@ -719,13 +726,6 @@ bool thread_t::step_inst() {
     return false;
   }
   step_imp_();
-  // check for program termination
-  if (!finished_ && f_.empty()) {
-    if (f_.empty())
-    assert(stack_.head() > 0);
-    return_code_ = stack_.pop();
-    finished_ = true;
-  }
   return !has_error();
 }
 
@@ -738,16 +738,12 @@ bool thread_t::step_line() {
   // step until the source line changes
   do {
     step_imp_();
-    if (finished_ || f_.empty() || has_error()) {
+    if (finished_) {
       break;
     }
+    assert(!f_.empty());
+    assert(!has_error());
   } while (line == get_source_line());
-  // check for program termination
-  if (!finished_ && f_.empty()) {
-    assert(stack_.head() > 0);
-    return_code_ = stack_.pop();
-    finished_ = true;
-  }
   return !has_error();
 }
 
@@ -766,9 +762,7 @@ bool thread_t::resume(int32_t cycles) {
   if (finished_) {
     return false;
   }
-  const uint32_t start_cycles = cycles;
   halted_ = false;
-
   // while we should keep processing instructions
   for (; cycles; --cycles) {
     tick_gc_(cycles);
@@ -777,14 +771,6 @@ bool thread_t::resume(int32_t cycles) {
       break;
     }
   }
-
-  // check for program termination
-  if (finished_) {
-    return_code_ = stack_.peek();
-  }
-
-  // increment the cycle count
-  cycles_ += (start_cycles - cycles);
   return !has_error();
 }
 

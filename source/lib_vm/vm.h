@@ -186,7 +186,7 @@ protected:
   void set_error_(thread_error_t error) {
     finished_ = true;
     error_ = error;
-    return_code_ = gc_.new_int(-1);
+    return_code_ = nullptr;
   }
 
   value_t* getv_(int32_t offs);
