@@ -93,8 +93,6 @@ void on_runtime_error(ccml::thread_t &thread, const ccml::source_manager_t &sour
   printf("source line %d\n", int32_t(line.line));
   const std::string s = sources.get_line(line);
   printf("%s\n", s.c_str());
-
-  thread.unwind();
 }
 
 void print_result(const ccml::value_t *res) {

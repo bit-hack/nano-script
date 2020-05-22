@@ -104,13 +104,14 @@ uint8_t thread_t::read_opcode_() {
 void thread_t::do_INS_ADD_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
+  // int like
   if (l->is_a<val_type_int>() &&
       r->is_a<val_type_int>()) {
     stack_.push_int(l->v + r->v);
     return;
   }
-  if ((l->is_a<val_type_float>() || l->is_a<val_type_int>()) &&
-      (r->is_a<val_type_float>() || r->is_a<val_type_int>())) {
+  // float like
+  if (l->is_number() && r->is_number()) {
     stack_.push_float(l->as_float() + r->as_float());
     return;
   }
@@ -146,13 +147,14 @@ void thread_t::do_INS_ADD_() {
 void thread_t::do_INS_SUB_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
+  // int like
   if (l->is_a<val_type_int>() &&
       r->is_a<val_type_int>()) {
     stack_.push_int(l->v - r->v);
     return;
   }
-  if ((l->is_a<val_type_float>() || l->is_a<val_type_int>()) &&
-      (r->is_a<val_type_float>() || r->is_a<val_type_int>())) {
+  // float like
+  if (l->is_number() && r->is_number()) {
     stack_.push_float(l->as_float() - r->as_float());
     return;
   }
@@ -166,8 +168,8 @@ void thread_t::do_INS_MUL_() {
     stack_.push_int(l->v * r->v);
     return;
   }
-  if ((l->is_a<val_type_float>() || l->is_a<val_type_int>()) &&
-      (r->is_a<val_type_float>() || r->is_a<val_type_int>())) {
+  // float like
+  if (l->is_number() && r->is_number()) {
     stack_.push_float(l->as_float() * r->as_float());
     return;
   }
@@ -187,8 +189,8 @@ void thread_t::do_INS_DIV_() {
     }
     return;
   }
-  if ((l->is_a<val_type_float>() || l->is_a<val_type_int>()) &&
-      (r->is_a<val_type_float>() || r->is_a<val_type_int>())) {
+  // float like divide
+  if (l->is_number() && r->is_number()) {
     stack_.push_float(l->as_float() / r->as_float());
     return;
   }
@@ -240,15 +242,15 @@ void thread_t::do_INS_NEG_() {
 void thread_t::do_INS_LT_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
+  // integer only comparison
   if (l->is_a<val_type_int>() &&
       r->is_a<val_type_int>()) {
     stack_.push_int(l->v < r->v ? 1 : 0);
     return;
   }
-  if ((l->is_a<val_type_float>() || l->is_a<val_type_int>()) &&
-      (r->is_a<val_type_float>() || r->is_a<val_type_int>())) {
-    stack_.push_int(
-      l->as_float() < r->as_float() ? 1 : 0);
+  // float like comparison
+  if (l->is_number() && r->is_number()) {
+    stack_.push_int(l->as_float() < r->as_float() ? 1 : 0);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -262,10 +264,9 @@ void thread_t::do_INS_GT_() {
     stack_.push_int(l->v > r->v ? 1 : 0);
     return;
   }
-  if ((l->is_a<val_type_float>() || l->is_a<val_type_int>()) &&
-      (r->is_a<val_type_float>() || r->is_a<val_type_int>())) {
-    stack_.push_int(
-      l->as_float() > r->as_float() ? 1 : 0);
+  // float like comparison
+  if (l->is_number() && r->is_number()) {
+    stack_.push_int(l->as_float() > r->as_float() ? 1 : 0);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -279,10 +280,9 @@ void thread_t::do_INS_LEQ_() {
     stack_.push_int(l->v <= r->v ? 1 : 0);
     return;
   }
-  if ((l->is_a<val_type_float>() || l->is_a<val_type_int>()) &&
-      (r->is_a<val_type_float>() || r->is_a<val_type_int>())) {
-    stack_.push_int(
-      l->as_float() <= r->as_float() ? 1 : 0);
+  // float like comparison
+  if (l->is_number() && r->is_number()) {
+    stack_.push_int(l->as_float() <= r->as_float() ? 1 : 0);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -336,8 +336,8 @@ void thread_t::do_INS_EQ_() {
                     r->is_a<val_type_none>() ? 1 : 0);
     return;
   }
-  if ((l->is_a<val_type_float>() || l->is_a<val_type_int>()) &&
-      (r->is_a<val_type_float>() || r->is_a<val_type_int>())) {
+  // float like comparison
+  if (l->is_number() && r->is_number()) {
     // XXX: use epsilon here?
     stack_.push_int(
       l->as_float() == r->as_float() ? 1 : 0);
@@ -813,35 +813,6 @@ bool thread_t::call_init_() {
     return false;
   }
   return finished();
-}
-
-void thread_t::unwind() {
-  int32_t i = 0;
-  for (auto itt = f_.rbegin(); itt != f_.rend(); ++itt) {
-    const auto &frame = *itt;
-    const function_t *func = vm_.program_.function_find(frame.callee_);
-    assert(func);
-    fprintf(stderr, "%2d> function %s\n", i, func->name_.c_str());
-    // print function arguments
-    for (const auto &a : func->args_) {
-      fprintf(stderr, "  - %4s: ", a.name_.c_str());
-      const int32_t index = frame.sp_ + a.offset_;
-      const value_t *v = get_stack().get(index);
-      fprintf(stderr, "%s\n", v->to_string().c_str());
-    }
-    // print local variables
-    for (const auto &l : func->locals_) {
-      fprintf(stderr, "  - %4s: ", l.name_.c_str());
-      const int32_t index = frame.sp_ + l.offset_;
-      const value_t *v = get_stack().get(index);
-      fprintf(stderr, "%s\n", v->to_string().c_str());
-    }
-    // exit on terminal frame
-    if (frame.terminal_) {
-      break;
-    }
-    ++i;
-  }
 }
 
 void thread_t::breakpoint_add(line_t line) {

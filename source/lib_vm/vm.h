@@ -98,9 +98,6 @@ struct thread_t {
 
   void reset();
 
-  // unwind the stack
-  void unwind();
-
   // return the program counter
   int32_t get_pc() const {
     return pc_;
