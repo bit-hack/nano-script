@@ -131,12 +131,12 @@ class Generator(object):
         return ' ' * self._indent * 2 if self._indent else ''
 
     # program ::= ( var_decl '\n' | array_decl '\n' | function_decl '\n' )+
-    def do_program(self):
+    def do_program(self, complexity=8):
         while True:
             try:
                 scope = Scope(None)
                 out = ''
-                for _ in range(0, 1 + random(8)):
+                for _ in range(0, 1 + random(complexity)):
                     i = random(3)
                     if i == 0:
                         out += self.do_var_decl(scope, False) + '\n\n'
@@ -158,9 +158,14 @@ class Generator(object):
             return choose(arg, var)
         return arg or var
 
-    # number ::= '-'? [0-9]+
-    def do_number(self, scope, base=0):
-        return str(base + random(128))
+    # number ::= [0-9]+
+    def do_number(self, scope, base=0, force_int=False):
+        #prefix = choose('-', '')
+        if random(2) == 1 or force_int:
+            # base is used as array sizes must start from 2 onward
+            return str(base + random(128))
+        else:
+            return str(random(128)) + '.' + str(random(128))
 
     # string ::= '"' [a-zA-Z0-9]* '"'
     def do_string(self, scope):
@@ -214,19 +219,23 @@ class Generator(object):
                     return umin + scope.vars.find()
                 if i == 1:
                     return umin + self.do_literal(scope)
+                if i == 2:
+                    return scope.functions.find()
                 if complexity <= 0:
                     raise BacktrackError()
-                if i == 2:
+
+                if i == 3:
                     return umin + self.do_function_call(scope, complexity-1)
                 if complexity == 1:
                     raise BacktrackError()
-                if i == 3:
-                    return ' not ' + self.do_expression(scope, complexity)
+
                 if i == 4:
-                    return umin + '(' + self.do_expression(scope, complexity-1) + ')'
+                    return ' not ' + self.do_expression(scope, complexity)
                 if i == 5:
+                    return umin + '(' + self.do_expression(scope, complexity-1) + ')'
+                if i == 6:
                     return umin + scope.arrays.find() + '[' + self.do_expression(scope, complexity-1) + ']'
-                if i >= 6:
+                if i >= 7:
                     return self.do_expression(scope, complexity-1) + ' ' +\
                            choose('+', '-', '*', '/', 'and', 'or', '>', '>=', '<', '<=', '==') + ' ' +\
                            self.do_expression(scope, complexity-1)
@@ -251,7 +260,7 @@ class Generator(object):
     # array_decl ::= 'var' identifier '[' number ']'
     def do_array_decl(self, scope):
         name = scope.arrays.new_name()
-        out = self.indent() + 'var ' + name + '[' + self.do_number(scope, 2) + ']'
+        out = self.indent() + 'var ' + name + '[' + self.do_number(scope, 2, force_int=True) + ']'
         scope.arrays.add(name)
         return out
 
@@ -276,9 +285,13 @@ class Generator(object):
 
     # function_call ::= identifier '(' expression_list? ')'
     def do_function_call(self, scope, complexity=2):
-        name = scope.functions.find()
-        num_args = scope.get_func_sig(name)[0]
-
+        var = self.do_identifier(scope)
+        if chance(75):
+            name = scope.functions.find()
+            num_args = scope.get_func_sig(name)[0]
+        else:
+            name = self.do_identifier(scope)
+            num_args = random(5)
         out = ''
         out += name + '('
         out += self.do_expression_list(scope, num_args, complexity-1)
@@ -287,14 +300,11 @@ class Generator(object):
 
     # function_decl ::= 'function' identifier '(' arg_decl_list? ')' '\n' ( statement )* 'end'
     def do_function_decl(self, scope):
-
         scope.args.clear()
-
         name = scope.functions.new_name()
         num_args = random(8)
         scope.add_func_sig(name, num_args)
         scope.functions.add(name)
-
         out = 'function ' + name + '('
         out += self.do_arg_decl_list(scope, num_args)
         out += ')\n'
@@ -305,7 +315,6 @@ class Generator(object):
         scope.leave()
         self._indent -= 1
         out += 'end'
-
         return out
 
     # if_statement ::= 'if' '(' expression ')' '\n' ( statement )* 'end'
@@ -358,6 +367,7 @@ class Generator(object):
         except BacktrackError:
             return ''
 
+    # function_call ::= identifier '(' arg_list ')'
     def do_function_call_statement(self, scope):
         try:
             return self.indent() + self.do_function_call(scope) + '\n'
@@ -417,15 +427,15 @@ def mangle(input):
 def main():
     global _seed
 
-    dir = 'fuzzfail'
-    add_fails = True
+    dir = 'fuzz'
+    add_fails = False
 
     base = 0
     for i in range(0, 1024):
         _seed = 12345 + i
         gen = Generator()
         out = '# SEED {0}\n\n'.format(_seed)
-        out += gen.do_program()
+        out += gen.do_program(complexity=15)
 
         if add_fails:
             out = mangle(out)
