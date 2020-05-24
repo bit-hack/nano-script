@@ -20,7 +20,7 @@ struct parser_t {
   void reset();
 
 protected:
-  nano_t &ccml_;
+  nano_t &nano_;
 
   // operator stack for expression parsing
   std::vector<const token_t*> op_stack_;

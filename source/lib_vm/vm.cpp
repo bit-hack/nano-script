@@ -390,7 +390,7 @@ void thread_t::do_INS_RET_() {
 void thread_t::do_syscall_(int32_t operand, int32_t num_args) {
   const auto &calls = vm_.program_.syscalls();
   assert(operand >= 0 && operand < int32_t(calls.size()));
-  ccml_syscall_t sys = calls[operand].call_;
+  nano_syscall_t sys = calls[operand].call_;
   assert(sys);
   sys(*this, num_args);
 }

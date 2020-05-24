@@ -67,7 +67,7 @@ bool lexer_t::lex(const char *s, int32_t file_no) {
         }
         if (*s == '\n' || *s == '\0') {
           // raise an error
-          ccml_.errors().string_quote_mismatch(line_);
+          nano_.errors().string_quote_mismatch(line_);
           return false;
         }
       }
@@ -267,7 +267,7 @@ bool lexer_t::lex(const char *s, int32_t file_no) {
     }
 
     // raise an error
-    ccml_.errors().unexpected_character(line_, *s);
+    nano_.errors().unexpected_character(line_, *s);
 
   } // while
 

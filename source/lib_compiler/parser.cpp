@@ -11,9 +11,9 @@ using namespace nano;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 bool parser_t::parse(error_t &error) {
-  token_stream_t &stream_ = ccml_.lexer().stream();
+  token_stream_t &stream_ = nano_.lexer().stream();
 
-  ast_program_t *program = &ccml_.ast().program;
+  ast_program_t *program = &nano_.ast().program;
 
   // format:
   //    var <TOK_IDENT> [ = <TOK_INT> ]
@@ -55,7 +55,7 @@ bool parser_t::parse(error_t &error) {
       }
       const token_t *tok = stream_.pop();
       assert(tok);
-      ccml_.errors().unexpected_token(*tok);
+      nano_.errors().unexpected_token(*tok);
     }
   } catch (const error_t &e) {
     error = e;
@@ -67,14 +67,14 @@ bool parser_t::parse(error_t &error) {
 
 bool parser_t::parse_import_(const token_t &t) {
   (void)t;
-  token_stream_t &stream_ = ccml_.lexer().stream();
+  token_stream_t &stream_ = nano_.lexer().stream();
   const token_t *s = stream_.pop(TOK_STRING);
-  assert(ccml_.sources_ && ccml_.source_);
+  assert(nano_.sources_ && nano_.source_);
   std::string path = s->string();
   // convert to a relative path
-  ccml_.sources_->imported_path(*ccml_.source_, path);
-  if (!ccml_.sources_->load(path.c_str())) {
-    ccml_.errors().bad_import(*s);
+  nano_.sources_->imported_path(*nano_.source_, path);
+  if (!nano_.sources_->load(path.c_str())) {
+    nano_.errors().bad_import(*s);
     return false;
   }
   return true;
@@ -109,13 +109,13 @@ int32_t parser_t::op_type_(token_e type) const {
 }
 
 bool parser_t::is_operator_() const {
-  token_stream_t &stream_ = ccml_.lexer().stream();
+  token_stream_t &stream_ = nano_.lexer().stream();
   return op_type_(stream_.type()) > 0;
 }
 
 void parser_t::parse_lhs_() {
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //    ( <expr> )
@@ -188,13 +188,13 @@ void parser_t::parse_lhs_() {
       break;
     }
 
-    ccml_.errors().expecting_lit_or_ident(*stream_.pop());
+    nano_.errors().expecting_lit_or_ident(*stream_.pop());
 
   } while (false);
 }
 
 void parser_t::parse_expr_ex_(uint32_t tide) {
-  token_stream_t &stream_ = ccml_.lexer().stream();
+  token_stream_t &stream_ = nano_.lexer().stream();
 
   // format:
   //    ['not'] [-] <lhs> [ '(' <expr> ')' ]
@@ -212,7 +212,7 @@ void parser_t::parse_expr_ex_(uint32_t tide) {
     parse_expr_ex_(tide);
     ast_node_t *back = exp_stack_.back();
     exp_stack_.pop_back();
-    auto *op = ccml_.ast().alloc<ast_exp_unary_op_t>(n);
+    auto *op = nano_.ast().alloc<ast_exp_unary_op_t>(n);
     op->child = back;
     exp_stack_.push_back(op);
     return;
@@ -264,8 +264,8 @@ ast_node_t* parser_t::parse_expr_() {
 }
 
 ast_node_t* parser_t::parse_decl_array_(const token_t &name) {
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //                        V
@@ -296,7 +296,7 @@ ast_node_t* parser_t::parse_decl_array_(const token_t &name) {
         init->item.push_back(num);
         break;
       default:
-        ccml_.errors().bad_array_init_value(*num);
+        nano_.errors().bad_array_init_value(*num);
         break;
       }
     } while (stream_.found(TOK_COMMA));
@@ -307,8 +307,8 @@ ast_node_t* parser_t::parse_decl_array_(const token_t &name) {
 
 ast_node_t* parser_t::parse_decl_var_(const token_t &t) {
   (void)t;
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //        V
@@ -336,7 +336,7 @@ ast_node_t* parser_t::parse_decl_var_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_assign_(const token_t &name) {
-  auto &ast = ccml_.ast();
+  auto &ast = nano_.ast();
 
   // format:
   //                  V
@@ -349,8 +349,8 @@ ast_node_t* parser_t::parse_assign_(const token_t &name) {
 }
 
 ast_exp_call_t* parser_t::parse_call_(const token_t &t) {
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //                  V
@@ -371,8 +371,8 @@ ast_exp_call_t* parser_t::parse_call_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_if_(const token_t &t) {
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //       V
@@ -416,8 +416,8 @@ ast_node_t* parser_t::parse_if_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_while_(const token_t &t) {
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //          V
@@ -446,8 +446,8 @@ ast_node_t* parser_t::parse_while_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_for_(const token_t &t) {
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //        V
@@ -479,8 +479,8 @@ ast_node_t* parser_t::parse_for_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_return_(const token_t &t) {
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //           V
@@ -503,12 +503,12 @@ ast_node_t* parser_t::parse_return_(const token_t &t) {
 //    <TOK_IDENT> * = <expr>
 //    <TOK_IDENT> / = <expr>
 ast_node_t* parser_t::parse_compound_(const token_t &t) {
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   const token_t *op = stream_.pop();
   if (!stream_.found(TOK_ASSIGN)) {
-    ccml_.errors().equals_expected_after_operator(t);
+    nano_.errors().equals_expected_after_operator(t);
   }
 
   auto *assign = ast.alloc<ast_stmt_assign_var_t>(&t);
@@ -523,8 +523,8 @@ ast_node_t* parser_t::parse_compound_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_stmt_() {
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //    [ '\n' ]+
@@ -579,7 +579,7 @@ ast_node_t* parser_t::parse_stmt_() {
       stmt = parse_array_set_(*t);
       break;
     default:
-      ccml_.errors().assign_or_call_expected_after(*t);
+      nano_.errors().assign_or_call_expected_after(*t);
     }
     break;
   case TOK_IF:
@@ -595,7 +595,7 @@ ast_node_t* parser_t::parse_stmt_() {
     stmt = parse_return_(*t);
     break;
   default:
-    ccml_.errors().statement_expected(*t);
+    nano_.errors().statement_expected(*t);
   }
 
   // all statements should be on their own line so must have one or more EOLs
@@ -608,8 +608,8 @@ ast_node_t* parser_t::parse_stmt_() {
 
 ast_node_t* parser_t::parse_function_(const token_t &t) {
   (void)t;
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //             V
@@ -651,8 +651,8 @@ ast_node_t* parser_t::parse_function_(const token_t &t) {
 }
 
 ast_node_t* parser_t::parse_array_get_(const token_t &name) {
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //                  V
@@ -668,8 +668,8 @@ ast_node_t* parser_t::parse_array_get_(const token_t &name) {
 }
 
 ast_node_t* parser_t::parse_array_set_(const token_t &name) {
-  token_stream_t &stream_ = ccml_.lexer().stream();
-  auto &ast = ccml_.ast();
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //                  V
@@ -719,7 +719,7 @@ ast_node_t* parser_t::parse_global_(const token_t &var) {
 }
 
 void parser_t::op_reduce_() {
-  auto &ast = ccml_.ast();
+  auto &ast = nano_.ast();
 
   // pop operator
   assert(!op_stack_.empty());
@@ -773,6 +773,6 @@ void parser_t::reset() {
 }
 
 parser_t::parser_t(nano_t &c)
-  : ccml_(c)
+  : nano_(c)
 {
 }

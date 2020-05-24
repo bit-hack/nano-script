@@ -587,7 +587,7 @@ struct ast_decl_var_t : public ast_node_t {
 struct ast_t {
 
   ast_t(nano_t &nano)
-    : ccml_(nano)
+    : nano_(nano)
   {}
 
   ~ast_t();
@@ -611,7 +611,7 @@ struct ast_t {
   void dump(FILE *fd);
 
 protected:
-  nano_t &ccml_;
+  nano_t &nano_;
   std::vector<ast_node_t*> allocs_;
 };
 

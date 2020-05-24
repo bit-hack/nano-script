@@ -8,7 +8,7 @@ namespace nano {
 struct lexer_t {
 
   lexer_t(nano_t &c)
-    : ccml_(c)
+    : nano_(c)
     , stream_(c)
     , line_{0, 1}
   {}
@@ -24,7 +24,7 @@ struct lexer_t {
   }
 
 protected:
-  nano_t &ccml_;
+  nano_t &nano_;
 
   // stream of parsed tokens
   token_stream_t stream_;

@@ -185,7 +185,7 @@ void builtins_register(nano_t &nano) {
 
 void builtins_resolve(program_t &prog) {
 
-  std::map<std::string, ccml_syscall_t> map;
+  std::map<std::string, nano_syscall_t> map;
   map["abs"]    = builtin_abs;
   map["min"]    = builtin_min;
   map["max"]    = builtin_max;

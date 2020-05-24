@@ -7,7 +7,7 @@ using namespace nano;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 token_stream_t::token_stream_t(nano_t &nano)
-  : ccml_(nano)
+  : nano_(nano)
   , index_(0)
   , line_{0, 0} {
 }
@@ -29,7 +29,7 @@ const token_t *token_stream_t::pop(token_e type) {
     return t;
   }
   const auto &tok = stream_[index_];
-  ccml_.errors().unexpected_token(tok, type);
+  nano_.errors().unexpected_token(tok, type);
   return nullptr;
 }
 

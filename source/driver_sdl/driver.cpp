@@ -35,14 +35,14 @@ static inline uint32_t xorshift32() {
   return x;
 }
 
-void vm_rand(ccml::thread_t &t, int32_t) {
+void vm_rand(nano::thread_t &t, int32_t) {
   // new unsigned int
   const int32_t x = (xorshift32() & 0x7fffff);
   // return value
   t.stack().push(t.gc().new_int(x));
 }
 
-void vm_cls(ccml::thread_t &t, int32_t) {
+void vm_cls(nano::thread_t &t, int32_t) {
   uint32_t *v = global.video_.get();
   for (uint32_t y = 0; y < global.height_; ++y) {
     for (uint32_t x = 0; x < global.width_; ++x) {
@@ -54,8 +54,8 @@ void vm_cls(ccml::thread_t &t, int32_t) {
   t.stack().push(t.gc().new_none());
 }
 
-void vm_sleep(ccml::thread_t &t, int32_t) {
-  ccml::value_t *val = t.stack().pop();
+void vm_sleep(nano::thread_t &t, int32_t) {
+  nano::value_t *val = t.stack().pop();
   if (val->is_number()) {
     tick_mark = SDL_GetTicks() + val->as_int();
     t.halt();
@@ -64,8 +64,8 @@ void vm_sleep(ccml::thread_t &t, int32_t) {
   t.stack().push(t.gc().new_none());
 }
 
-void vm_video(ccml::thread_t &t, int32_t) {
-  using namespace ccml;
+void vm_video(nano::thread_t &t, int32_t) {
+  using namespace nano;
   const value_t *h = t.stack().pop();
   const value_t *w = t.stack().pop();
   if (w->is_a<val_type_int>() && h->is_a<val_type_int>()) {
@@ -82,8 +82,8 @@ void vm_video(ccml::thread_t &t, int32_t) {
   }
 }
 
-void vm_setrgb(ccml::thread_t &t, int32_t) {
-  using namespace ccml;
+void vm_setrgb(nano::thread_t &t, int32_t) {
+  using namespace nano;
   const value_t *b = t.stack().pop();
   const value_t *g = t.stack().pop();
   const value_t *r = t.stack().pop();
@@ -129,8 +129,8 @@ static inline void span(int32_t x0, int32_t x1, int32_t y0) {
   }
 }
 
-void vm_circle(ccml::thread_t &t, int32_t) {
-  using namespace ccml;
+void vm_circle(nano::thread_t &t, int32_t) {
+  using namespace nano;
 
   const value_t *r = t.stack().pop();
   const value_t *py = t.stack().pop();
@@ -191,8 +191,8 @@ static inline void line(int32_t x0, int32_t y0, int32_t x1, int32_t y1) {
   }
 }
 
-void vm_line(ccml::thread_t &t, int32_t) {
-  using namespace ccml;
+void vm_line(nano::thread_t &t, int32_t) {
+  using namespace nano;
   const value_t *y1 = t.stack().pop();
   const value_t *x1 = t.stack().pop();
   const value_t *y0 = t.stack().pop();
@@ -206,8 +206,8 @@ void vm_line(ccml::thread_t &t, int32_t) {
   }
 }
 
-void vm_keydown(ccml::thread_t &t, int32_t) {
-  using namespace ccml;
+void vm_keydown(nano::thread_t &t, int32_t) {
+  using namespace nano;
   const value_t *key = t.stack().pop();
   if (!key->is_a<val_type_string>()) {
     t.stack().push(t.gc().new_none());
@@ -246,8 +246,8 @@ void vm_keydown(ccml::thread_t &t, int32_t) {
   t.stack().push(t.gc().new_none());
 }
 
-void vm_plot(ccml::thread_t &t, int32_t) {
-  using namespace ccml;
+void vm_plot(nano::thread_t &t, int32_t) {
+  using namespace nano;
 
   const value_t *y = t.stack().pop();
   const value_t *x = t.stack().pop();
@@ -258,8 +258,8 @@ void vm_plot(ccml::thread_t &t, int32_t) {
   }
 }
 
-void vm_flip(ccml::thread_t &t, int32_t) {
-  using namespace ccml;
+void vm_flip(nano::thread_t &t, int32_t) {
+  using namespace nano;
 
   const uint32_t w = global.width_;
   const uint32_t h = global.height_;
@@ -290,7 +290,7 @@ void vm_flip(ccml::thread_t &t, int32_t) {
   t.stack().push(t.gc().new_none());
 }
 
-void on_error(const ccml::error_t &error) {
+void on_error(const nano::error_t &error) {
   fprintf(stderr, "file %d, line:%d - %s\n",
           error.line.file,
           error.line.line,
@@ -301,7 +301,7 @@ void on_error(const ccml::error_t &error) {
 } // namespace
 
 int main(int argc, char **argv) {
-  using namespace ccml;
+  using namespace nano;
 
   if (SDL_Init(SDL_INIT_VIDEO)) {
     return 1;
@@ -325,21 +325,21 @@ int main(int argc, char **argv) {
 
   // compile
   {
-    ccml_t ccml(program);
-    add_builtins(ccml);
-    ccml.add_function("cls", vm_cls, 0);
-    ccml.add_function("rand", vm_rand, 0);
-    ccml.add_function("video", vm_video, 2);
-    ccml.add_function("plot", vm_plot, 2);
-    ccml.add_function("flip", vm_flip, 0);
-    ccml.add_function("setrgb", vm_setrgb, 3);
-    ccml.add_function("circle", vm_circle, 3);
-    ccml.add_function("line", vm_line, 4);
-    ccml.add_function("sleep", vm_sleep, 1);
-    ccml.add_function("keydown", vm_keydown, 1);
+    nano_t nano(program);
+    add_builtins(nano);
+    nano.add_function("cls", vm_cls, 0);
+    nano.add_function("rand", vm_rand, 0);
+    nano.add_function("video", vm_video, 2);
+    nano.add_function("plot", vm_plot, 2);
+    nano.add_function("flip", vm_flip, 0);
+    nano.add_function("setrgb", vm_setrgb, 3);
+    nano.add_function("circle", vm_circle, 3);
+    nano.add_function("line", vm_line, 4);
+    nano.add_function("sleep", vm_sleep, 1);
+    nano.add_function("keydown", vm_keydown, 1);
 
-    ccml::error_t error;
-    if (!ccml.build(sources, error)) {
+    nano::error_t error;
+    if (!nano.build(sources, error)) {
       on_error(error);
       return -2;
     }
@@ -351,8 +351,8 @@ int main(int argc, char **argv) {
     exit(1);
   }
 
-  ccml::vm_t vm(program);
-  ccml::thread_t thread(vm);
+  nano::vm_t vm(program);
+  nano::thread_t thread(vm);
 
   if (!vm.call_init()) {
     fprintf(stderr, "failed while executing @init\n");

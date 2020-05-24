@@ -42,7 +42,7 @@ namespace nano {
 struct codegen_pass_t: ast_visitor_t {
 
   codegen_pass_t(nano_t &c, program_builder_t &stream)
-    : ccml_(c)
+    : nano_(c)
     , stream_(stream)
     , funcs_(c.program_.functions())
     , strings_(c.program_.strings()) {}
@@ -74,7 +74,7 @@ struct codegen_pass_t: ast_visitor_t {
   void get_func_(ast_decl_func_t *func, const token_t *t = nullptr) {
     assert(func);
     if (func->is_syscall) {
-      const auto &syscalls = ccml_.program_.syscalls();
+      const auto &syscalls = nano_.program_.syscalls();
       for (size_t i = 0; i < syscalls.size(); ++i) {
         if (syscalls[i].name_ == func->name) {
           emit(INS_NEW_SCALL, i, t);
@@ -387,7 +387,7 @@ struct codegen_pass_t: ast_visitor_t {
       return;
     }
 
-    function_t *func = ccml_.program_.function_find(n->name);
+    function_t *func = nano_.program_.function_find(n->name);
     assert(func);
     func->code_start_ = pos();
     func->code_end_ = pos();
@@ -475,7 +475,7 @@ protected:
   void visit_init(ast_decl_func_t* a, function_t *func) {
 
     int num_globals = 0;
-    for (ast_node_t *n : ccml_.ast().program.children) {
+    for (ast_node_t *n : nano_.ast().program.children) {
       if (auto *decl = n->cast<ast_decl_var_t>()) {
         if (!decl->is_const) {
           num_globals += 1;
@@ -486,7 +486,7 @@ protected:
     emit(INS_GLOBALS, num_globals, nullptr);
 
     int32_t offset = 0;
-    for (ast_node_t *n : ccml_.ast().program.children) {
+    for (ast_node_t *n : nano_.ast().program.children) {
       if (auto *d = n->cast<ast_decl_var_t>()) {
         if (d->is_const) {
           continue;
@@ -510,7 +510,7 @@ protected:
     func->code_end_ = pos();
   }
 
-  nano_t &ccml_;
+  nano_t &nano_;
   program_builder_t &stream_;
   std::vector<function_t> &funcs_;
   std::vector<std::string> &strings_;
@@ -519,7 +519,7 @@ protected:
 };
 
 void codegen_pass_t::emit(instruction_e ins, const token_t *t) {
-  stream_.set_line(ccml_.lexer(), t);
+  stream_.set_line(nano_.lexer(), t);
   // encode this instruction
   switch (ins) {
   case INS_ADD:
@@ -547,7 +547,7 @@ void codegen_pass_t::emit(instruction_e ins, const token_t *t) {
 }
 
 void codegen_pass_t::emit(instruction_e ins, int32_t o1, const token_t *t) {
-  stream_.set_line(ccml_.lexer(), t);
+  stream_.set_line(nano_.lexer(), t);
   // encode this instruction
   switch (ins) {
   case INS_JMP:
@@ -577,7 +577,7 @@ void codegen_pass_t::emit(instruction_e ins, int32_t o1, const token_t *t) {
 }
 
 void codegen_pass_t::emit(instruction_e ins, int32_t o1, int32_t o2, const token_t *t) {
-  stream_.set_line(ccml_.lexer(), t);
+  stream_.set_line(nano_.lexer(), t);
   // encode this instruction
   switch (ins) {
   case INS_SCALL:
@@ -595,13 +595,13 @@ void codegen_pass_t::emit(instruction_e ins, int32_t o1, int32_t o2, const token
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 codegen_t::codegen_t(nano_t &c, program_t &prog)
-  : ccml_(c)
+  : nano_(c)
   , stream_(prog)
 {
 }
 
 bool codegen_t::run(ast_program_t &program, error_t &error) {
-  codegen_pass_t cg{ccml_, stream_};
+  codegen_pass_t cg{nano_, stream_};
   try {
     cg.visit(&program);
   }

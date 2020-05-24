@@ -180,7 +180,7 @@ struct token_stream_t {
   }
 
 protected:
-  nano_t &ccml_;
+  nano_t &nano_;
 
   uint32_t index_;
 

@@ -20,7 +20,7 @@ struct codegen_t {
   bool run(ast_program_t &program, error_t &error);
 
 protected:
-  nano_t &ccml_;
+  nano_t &nano_;
   program_builder_t stream_;
 };
 

@@ -419,7 +419,7 @@ TextEditor::Coordinates TextEditor::FindWordEnd(const Coordinates & aFrom) const
 	if (cindex >= (int)line.size())
 		return at;
 
-	bool prevspace = (bool)isspace(line[cindex].mChar);
+	bool prevspace = (0 != isspace(line[cindex].mChar));
 	auto cstart = (PaletteIndex)line[cindex].mColorIndex;
 	while (cindex < (int)line.size())
 	{
@@ -453,7 +453,7 @@ TextEditor::Coordinates TextEditor::FindNextWord(const Coordinates & aFrom) cons
 	if (cindex < (int)mLines[at.mLine].size())
 	{
 		auto& line = mLines[at.mLine];
-		isword = isalnum(line[cindex].mChar);
+		isword = (0 != isalnum(line[cindex].mChar));
 		skip = isword;
 	}
 
@@ -468,7 +468,7 @@ TextEditor::Coordinates TextEditor::FindNextWord(const Coordinates & aFrom) cons
 		auto& line = mLines[at.mLine];
 		if (cindex < (int)line.size())
 		{
-			isword = isalnum(line[cindex].mChar);
+			isword = (0 != isalnum(line[cindex].mChar));
 
 			if (isword && !skip)
 				return Coordinates(at.mLine, GetCharacterColumn(at.mLine, cindex));

@@ -24,7 +24,7 @@ struct error_t {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct error_manager_t {
 
-  error_manager_t(nano_t &nano): ccml_(nano) {}
+  error_manager_t(nano_t &nano): nano_(nano) {}
 
   virtual void cant_assign_const(const token_t &t) {
     on_error_(t.line_, "cant assign to constant variable '%s'", t.string());
@@ -203,12 +203,12 @@ struct error_manager_t {
 
 protected:
   line_t line_number_() const {
-    return ccml_.lexer().stream().line_number();
+    return nano_.lexer().stream().line_number();
   }
 
   void on_error_(line_t line, const char *fmt, ...);
 
-  nano_t &ccml_;
+  nano_t &nano_;
 };
 
 } // namespace nano

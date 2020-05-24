@@ -46,6 +46,6 @@ struct disassembler_t;
 struct thread_t;
 
 
-typedef void(*ccml_syscall_t)(struct thread_t &thread, int32_t num_args);
+typedef void(*nano_syscall_t)(struct thread_t &thread, int32_t num_args);
 
 } // namespace nano

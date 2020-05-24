@@ -311,7 +311,7 @@ struct sema_decl_annotate_t : public ast_visitor_t {
 
   sema_decl_annotate_t(nano_t &nano)
     : errs_(nano.errors())
-    , ccml_(nano)
+    , nano_(nano)
     , prog_(nullptr) {
   }
 
@@ -468,7 +468,7 @@ struct sema_decl_annotate_t : public ast_visitor_t {
   std::vector<std::set<ast_node_t *>> scope_;
 
   error_manager_t &errs_;
-  nano_t &ccml_;
+  nano_t &nano_;
   ast_program_t *prog_;
 };
 
@@ -646,11 +646,11 @@ protected:
 struct sema_num_args_t : public ast_visitor_t {
 
   sema_num_args_t(nano_t &nano)
-    : ccml_(nano)
+    : nano_(nano)
     , errs_(nano.errors()) {
   }
 
-  nano_t &ccml_;
+  nano_t &nano_;
   error_manager_t &errs_;
   std::map<std::string, const ast_decl_func_t *> funcs_;
 

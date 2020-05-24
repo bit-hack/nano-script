@@ -22,7 +22,7 @@ struct program_t {
   // entry in the syscall table
   struct syscall_entry_t {
     std::string name_;
-    ccml_syscall_t call_;
+    nano_syscall_t call_;
   };
 
   // access the raw opcodes
@@ -78,7 +78,7 @@ struct program_t {
     return syscalls_;
   }
 
-  bool syscall_resolve(const std::string &name, ccml_syscall_t syscall);
+  bool syscall_resolve(const std::string &name, nano_syscall_t syscall);
 
   const function_t *function_find(const std::string &name) const;
         function_t *function_find(const std::string &name);

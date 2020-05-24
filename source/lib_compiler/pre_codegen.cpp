@@ -11,7 +11,7 @@ namespace nano {
 struct pregen_array_init_t: public ast_visitor_t {
 
   pregen_array_init_t(nano_t &nano)
-    : ccml_(nano)
+    : nano_(nano)
   {
   }
 
@@ -19,7 +19,7 @@ struct pregen_array_init_t: public ast_visitor_t {
     // XXX: TODO
   }
 
-  nano_t &ccml_;
+  nano_t &nano_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -123,7 +123,7 @@ protected:
 struct pregen_functions_t: public ast_visitor_t {
 
   pregen_functions_t(nano_t &nano)
-    : ccml_(nano)
+    : nano_(nano)
     , f_(nullptr)
   {}
 
@@ -143,7 +143,7 @@ struct pregen_functions_t: public ast_visitor_t {
 
     if (n->is_syscall) {
       // add syscall to the syscall table
-      program_builder_t builder(ccml_.program_);
+      program_builder_t builder(nano_.program_);
       builder.add_syscall(n->name);
       return;
     }
@@ -171,14 +171,14 @@ struct pregen_functions_t: public ast_visitor_t {
   void visit(ast_program_t *n) override {
     ast_visitor_t::visit(n);
 
-    auto &pfunc = ccml_.program_.functions();
+    auto &pfunc = nano_.program_.functions();
 
     // set the global functions from here
     pfunc.insert(pfunc.end(), funcs_.begin(),
                             funcs_.end());
   }
 
-  nano_t &ccml_;
+  nano_t &nano_;
   function_t *f_;
   std::vector<function_t> funcs_;
 };
@@ -189,12 +189,12 @@ struct pregen_functions_t: public ast_visitor_t {
 //
 struct pregen_init_t : public ast_visitor_t {
 
-  nano_t &ccml_;
+  nano_t &nano_;
   ast_t &ast_;
   ast_decl_func_t *init_;
 
   pregen_init_t(nano_t &nano)
-    : ccml_(nano)
+    : nano_(nano)
     , ast_(nano.ast())
     , init_(nullptr) {
   }
@@ -254,8 +254,8 @@ struct pregen_init_t : public ast_visitor_t {
   }
 
   void visit(ast_program_t *p) override {
-    init_ = ccml_.ast().alloc<ast_decl_func_t>("@init");
-    init_->body = ccml_.ast().alloc<ast_block_t>();
+    init_ = nano_.ast().alloc<ast_decl_func_t>("@init");
+    init_->body = nano_.ast().alloc<ast_block_t>();
 
     for (auto *n : p->children) {
       if (auto *d = n->cast<ast_decl_var_t>()) {

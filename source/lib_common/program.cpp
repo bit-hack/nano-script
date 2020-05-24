@@ -249,7 +249,7 @@ function_t *program_t::function_find(int32_t pc) {
   return nullptr;
 }
 
-bool program_t::syscall_resolve(const std::string &name, ccml_syscall_t syscall) {
+bool program_t::syscall_resolve(const std::string &name, nano_syscall_t syscall) {
   bool res = false;
   for (auto &i : syscalls_) {
     if (i.name_ == name) {

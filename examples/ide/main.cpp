@@ -60,9 +60,9 @@ end
 )";
 #endif
 
-ccml::program_t g_program;
-std::unique_ptr<ccml::vm_t> g_vm;
-std::unique_ptr<ccml::thread_t> g_thread;
+nano::program_t g_program;
+std::unique_ptr<nano::vm_t> g_vm;
+std::unique_ptr<nano::thread_t> g_thread;
 
 enum run_option_t {
   RUN_COMPILE   = 1,
@@ -83,8 +83,8 @@ std::vector<std::string> g_output;
 std::unordered_set<int> g_breakpoints;
 
 
-void vm_print(ccml::thread_t &t, int32_t) {
-  using namespace ccml;
+void vm_print(nano::thread_t &t, int32_t) {
+  using namespace nano;
   value_t *s = t.get_stack().pop();
   assert(s);
   if (!s->is_a<val_type_string>()) {
@@ -112,7 +112,7 @@ bool init_sdl() {
   SDL_WindowFlags window_flags = (SDL_WindowFlags)(
       SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI);
 
-  g_window = SDL_CreateWindow("CCML testbed", SDL_WINDOWPOS_CENTERED,
+  g_window = SDL_CreateWindow("Nano Script Testbed", SDL_WINDOWPOS_CENTERED,
                             SDL_WINDOWPOS_CENTERED, 800, 600, window_flags);
   if (!g_window) {
     return false;
@@ -137,10 +137,10 @@ void app_setup() {
 
 void lang_on_error() {
   if (g_thread->has_error()) {
-    ccml::thread_error_t error = g_thread->get_error();
+    nano::thread_error_t error = g_thread->get_error();
     TextEditor::ErrorMarkers markers;
-    const char *str = ccml::get_thread_error(g_thread->get_error());
-    ccml::line_t line = g_thread->get_source_line();
+    const char *str = nano::get_thread_error(g_thread->get_error());
+    nano::line_t line = g_thread->get_source_line();
     markers[line.line] = str;
     g_editor.SetErrorMarkers(markers);
   }
@@ -186,19 +186,19 @@ void lang_prepare() {
   }
 
   g_output.push_back("Launching program");
-  g_vm.reset(new ccml::vm_t{g_program});
+  g_vm.reset(new nano::vm_t{g_program});
 
   if (!g_vm->call_init()) {
     g_output.push_back("Error when calling '@init' function!");
     return;
   }
-  const ccml::function_t *func = g_program.function_find("main");
+  const nano::function_t *func = g_program.function_find("main");
   if (!func) {
     g_output.push_back("Unable to find 'main' function!");
     return;
   }
 
-  g_thread.reset(new ccml::thread_t{*g_vm});
+  g_thread.reset(new nano::thread_t{*g_vm});
   if (!g_thread->prepare(*func, 0, nullptr)) {
     g_output.push_back("Error: unable to prepare function!");
     return;
@@ -214,7 +214,7 @@ void lang_prepare() {
 void lang_on_finish() {
   if (g_thread->finished()) {
     g_output.push_back("Finished after " + std::to_string(g_thread->get_cycle_count()) + " cycles");
-    const ccml::value_t *ret = g_thread->get_return_code();
+    const nano::value_t *ret = g_thread->get_return_code();
     std::string ret_str = ret->to_string();
     g_output.push_back("Returned " + ret_str);
   }
@@ -232,7 +232,7 @@ void lang_run() {
   }
 
   for (const auto &b : g_breakpoints) {
-    g_thread->breakpoint_add(ccml::line_t{0, b});
+    g_thread->breakpoint_add(nano::line_t{0, b});
   }
 
   if (g_thread->finished() || g_thread->has_error()) {
@@ -272,7 +272,7 @@ void lang_run() {
 }
 
 void lang_compile() {
-  using namespace ccml;
+  using namespace nano;
 
   const std::string source = g_editor.GetText();
 
@@ -287,9 +287,9 @@ void lang_compile() {
   // wipe the program
   g_program.reset();
 
-  ccml_t c{g_program};
-  add_builtins(c);
-  c.add_function("print", vm_print, 1);
+  nano_t c{g_program};
+  builtins_register(c);
+  c.syscall_register("print", 1);
   c.optimize = g_optimize;
 
   TextEditor::ErrorMarkers markers;
@@ -311,6 +311,9 @@ void lang_compile() {
     g_output.push_back("Compile successful");
   }
 
+  builtins_resolve(g_program);
+  g_program.syscall_resolve("print", vm_print);
+
   g_editor.SetErrorMarkers(markers);
 }
 
@@ -322,19 +325,19 @@ void gui_toggle_breakpoint() {
   if (itt == g_breakpoints.end()) {
     g_breakpoints.insert(line);
     if (g_thread) {
-      g_thread->breakpoint_add(ccml::line_t{0, line});
+      g_thread->breakpoint_add(nano::line_t{0, line});
     }
   }
   else {
     if (g_thread) {
-      g_thread->breakpoint_remove(ccml::line_t{0, line});
+      g_thread->breakpoint_remove(nano::line_t{0, line});
     }
     g_breakpoints.erase(itt);
   }
   g_editor.SetBreakpoints(g_breakpoints);
 }
 
-void gui_print_value(const ccml::value_t *v) {
+void gui_print_value(const nano::value_t *v) {
   ImGui::Text("%s", v->to_string().c_str());
 }
 
@@ -434,20 +437,20 @@ void gui_program_inspector() {
 
         if (ImGui::CollapsingHeader("Byte Code")) {
           ImGui::Indent(16.f);
-          ccml::disassembler_t dis;
+          nano::disassembler_t dis;
 
           std::string out;
           const uint8_t *ptr = g_program.data() + f.code_start_;
-          uint32_t loc = f.code_start_;
+          int32_t loc = f.code_start_;
 
-          ccml::line_t old_line = {-1, -1};
+          nano::line_t old_line = {-1, -1};
 
           for (; loc < f.code_end_;) {
             ImGui::PushID(loc);
             int offs = dis.disasm(ptr, out);
             if (offs > 0) {
 
-              ccml::line_t line = g_program.get_line(loc);
+              nano::line_t line = g_program.get_line(loc);
               if (line != old_line) {
                 ImGui::Text("-- line %d\n", line.line);
                 old_line = line;
@@ -492,6 +495,30 @@ void gui_code_editor() {
   ImGui::SetWindowSize(ImVec2(380, 400), ImGuiCond_FirstUseEver);
 
   if (ImGui::BeginMenuBar()) {
+
+    if (ImGui::BeginMenu("File")) {
+      if (ImGui::MenuItem("serialize", "")) {
+        if (g_program.serial_save("save.bin")) {
+          g_output.push_back("serialized program");
+        }
+        else {
+          g_output.push_back("error serializing program");
+        }
+      }
+
+      if (ImGui::MenuItem("deserialize", "")) {
+        if (g_program.serial_load("save.bin")) {
+          g_output.push_back("deserialized program");
+          nano::builtins_resolve(g_program);
+          g_program.syscall_resolve("print", vm_print);
+        }
+        else {
+          g_output.push_back("error deserializing program");
+        }
+      }
+
+      ImGui::EndMenu();
+    }
 
     if (ImGui::BeginMenu("Build")) {
       if (ImGui::MenuItem("Compile", "F7")) {
@@ -572,7 +599,7 @@ void gui_debug() {
   if (ImGui::CollapsingHeader("Globals")) {
     if (g_vm && g_thread) {
       for (const auto &g : g_program.globals()) {
-        const ccml::value_t *v = g_vm->g_[g.offset_];
+        const nano::value_t *v = g_vm->g_[g.offset_];
         ImGui::Text("%8s: %s", g.name_.c_str(), v->to_string().c_str());
       }
     }
@@ -584,7 +611,7 @@ void gui_debug() {
       const auto &vs = g_thread->get_stack();
       int32_t i = vs.head() - 1;
       for (; i >= 0; --i) {
-        const ccml::value_t *v = vs.get(i);
+        const nano::value_t *v = vs.get(i);
         ImGui::Text("%3d : %s", i, v->to_string().c_str());
       }
     }
@@ -600,7 +627,7 @@ void gui_debug() {
       int32_t i = 0;
       for (auto itt = frames.rbegin(); itt != frames.rend(); ++itt, ++i) {
         const auto &frame = *itt;
-        const ccml::function_t *func = g_vm->program_.function_find(frame.callee_);
+        const nano::function_t *func = g_vm->program_.function_find(frame.callee_);
         assert(func);
 
         ImGui::Text("frame %d: '%s'", i, func->name_.c_str());
@@ -609,7 +636,7 @@ void gui_debug() {
         for (const auto &a : func->args_) {
 
           const int32_t index = frame.sp_ + a.offset_;
-          const ccml::value_t *v = stack.get(index);
+          const nano::value_t *v = stack.get(index);
 
           ImGui::Text("%8s: %s", a.name_.c_str(), v->to_string().c_str());
         }
@@ -617,7 +644,7 @@ void gui_debug() {
         for (const auto &l : func->locals_) {
 
           const int32_t index = frame.sp_ + l.offset_;
-          const ccml::value_t *v = stack.get(index);
+          const nano::value_t *v = stack.get(index);
 
           ImGui::Text("%8s: %s", l.name_.c_str(), v->to_string().c_str());
         }
