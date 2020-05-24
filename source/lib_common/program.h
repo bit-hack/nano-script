@@ -12,7 +12,7 @@
 #include "types.h"
 
 
-namespace ccml {
+namespace nano {
 
 struct program_t {
 
@@ -117,4 +117,4 @@ protected:
   std::vector<std::string> strings_;
 };
 
-} // namespace ccml
+} // namespace nano

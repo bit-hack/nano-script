@@ -13,11 +13,11 @@
 #include "source.h"
 
 
-namespace ccml {
+namespace nano {
 
-struct ccml_t {
+struct nano_t {
 
-  ccml_t(program_t &prog);
+  nano_t(program_t &prog);
 
   // accessors
   error_manager_t &errors()       { return *errors_;  }
@@ -62,4 +62,4 @@ protected:
   std::unique_ptr<codegen_t> codegen_;
 };
 
-} // namespace ccml
+} // namespace nano

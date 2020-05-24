@@ -21,7 +21,7 @@ void emit(FILE *fd, const std::string &s) {
   emit(fd, s.data(), s.size());
 }
 
-void emit(FILE *fd, const ccml::function_t &f) {
+void emit(FILE *fd, const nano::function_t &f) {
   // name
   emit(fd, f.name_);
   // emit code range
@@ -41,7 +41,7 @@ void emit(FILE *fd, const ccml::function_t &f) {
   }
 }
 
-void emit(FILE *fd, const ccml::program_t::linetable_t &s) {
+void emit(FILE *fd, const nano::program_t::linetable_t &s) {
   emit(fd, s.size());
   for (auto &pair : s) {
     // code point
@@ -56,7 +56,7 @@ bool consume(FILE *fd, int32_t &val) {
   return 1 == fread(&val, 4, 1, fd);
 }
 
-bool consume(FILE *fd, ccml::program_t::linetable_t &s) {
+bool consume(FILE *fd, nano::program_t::linetable_t &s) {
   int32_t num_lines = 0;
   TRY(consume(fd, num_lines));
   for (int i = 0; i < num_lines; ++i) {
@@ -66,7 +66,7 @@ bool consume(FILE *fd, ccml::program_t::linetable_t &s) {
     TRY(consume(fd, pc));
     TRY(consume(fd, file));
     TRY(consume(fd, line));
-    s[pc] = ccml::line_t{file, line};
+    s[pc] = nano::line_t{file, line};
   }
   return true;
 }
@@ -87,7 +87,7 @@ bool consume(FILE *fd, std::string &string) {
   return true;
 }
 
-bool consume(FILE *fd, ccml::function_t &f) {
+bool consume(FILE *fd, nano::function_t &f) {
   // name
   TRY(consume(fd, f.name_));
   // emit code range
@@ -116,7 +116,7 @@ bool consume(FILE *fd, ccml::function_t &f) {
 
 } // namespace {}
 
-namespace ccml {
+namespace nano {
 
 bool program_t::serial_save(const char *path) {
   // open the output file
@@ -260,4 +260,4 @@ bool program_t::syscall_resolve(const std::string &name, ccml_syscall_t syscall)
   return res;
 }
 
-} // namespace ccml
+} // namespace nano

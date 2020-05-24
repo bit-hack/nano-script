@@ -1,8 +1,8 @@
 #include "../lib_compiler/ccml.h"
 
-namespace ccml {
+namespace nano {
 
-void builtins_register(ccml_t &ccml);
+void builtins_register(nano_t &nano);
 void builtins_resolve(program_t &prog);
 
-} // namespace ccml
+} // namespace nano

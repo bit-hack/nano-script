@@ -4,7 +4,7 @@
 #include <vector>
 
 
-namespace ccml {
+namespace nano {
 
 // system call interface function
 typedef void(*ccml_syscall_t)(struct thread_t &thread, int32_t num_args);
@@ -62,8 +62,8 @@ struct function_t {
   std::vector<identifier_t> args_;
 
   // number of function arguments present
-  uint32_t num_args() const {
-    return args_.size();
+  int32_t num_args() const {
+    return int32_t(args_.size());
   }
 
   // generic constructor
@@ -78,4 +78,4 @@ struct function_t {
   {}
 };
 
-} // namespace ccml
+} // namespace nano

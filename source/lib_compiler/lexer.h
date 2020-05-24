@@ -3,11 +3,11 @@
 #include "token.h"
 
 
-namespace ccml {
+namespace nano {
 
 struct lexer_t {
 
-  lexer_t(ccml_t &c)
+  lexer_t(nano_t &c)
     : ccml_(c)
     , stream_(c)
     , line_{0, 1}
@@ -24,7 +24,7 @@ struct lexer_t {
   }
 
 protected:
-  ccml_t &ccml_;
+  nano_t &ccml_;
 
   // stream of parsed tokens
   token_stream_t stream_;
@@ -38,4 +38,4 @@ protected:
   void push_string_(const char *start, const char *end);
 };
 
-} // namespace ccml
+} // namespace nano

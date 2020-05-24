@@ -2,9 +2,9 @@
 
 #include "thread_error.h"
 
-namespace ccml {
-const char *get_thread_error(const ccml::thread_error_t &err) {
-  using namespace ccml;
+namespace nano {
+const char *get_thread_error(const nano::thread_error_t &err) {
+  using namespace nano;
   switch (err) {
   case thread_error_t::e_success:             return "e_success";
   case thread_error_t::e_max_cycle_count:     return "e_max_cycle_count";
@@ -29,4 +29,4 @@ const char *get_thread_error(const ccml::thread_error_t &err) {
     return "";
   }
 }
-} // namespace ccml
+} // namespace nano

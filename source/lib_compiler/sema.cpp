@@ -3,7 +3,7 @@
 #include "ast.h"
 #include "errors.h"
 
-namespace ccml {
+namespace nano {
 
 struct eval_t: public ast_visitor_t {
 
@@ -156,8 +156,8 @@ protected:
 //
 struct sema_const_t: public ast_visitor_t {
 
-  sema_const_t(ccml_t &ccml)
-    : errs_(ccml.errors())
+  sema_const_t(nano_t &nano)
+    : errs_(nano.errors())
   {
   }
 
@@ -220,9 +220,9 @@ struct sema_const_t: public ast_visitor_t {
 //
 struct sema_global_var_t : public ast_visitor_t {
 
-  sema_global_var_t(ccml_t &ccml)
-    : errs_(ccml.errors())
-    , ast_(ccml.ast())
+  sema_global_var_t(nano_t &nano)
+    : errs_(nano.errors())
+    , ast_(nano.ast())
     , change_(false)
     , strict_(false) {
   }
@@ -309,9 +309,9 @@ protected:
 //
 struct sema_decl_annotate_t : public ast_visitor_t {
 
-  sema_decl_annotate_t(ccml_t &ccml)
-    : errs_(ccml.errors())
-    , ccml_(ccml)
+  sema_decl_annotate_t(nano_t &nano)
+    : errs_(nano.errors())
+    , ccml_(nano)
     , prog_(nullptr) {
   }
 
@@ -468,7 +468,7 @@ struct sema_decl_annotate_t : public ast_visitor_t {
   std::vector<std::set<ast_node_t *>> scope_;
 
   error_manager_t &errs_;
-  ccml_t &ccml_;
+  nano_t &ccml_;
   ast_program_t *prog_;
 };
 
@@ -478,8 +478,8 @@ struct sema_decl_annotate_t : public ast_visitor_t {
 //
 struct sema_multi_decls_t : public ast_visitor_t {
 
-  sema_multi_decls_t(ccml_t &ccml)
-    : errs_(ccml.errors()) {
+  sema_multi_decls_t(nano_t &nano)
+    : errs_(nano.errors()) {
   }
 
   void visit(ast_decl_var_t *var) override {
@@ -566,8 +566,8 @@ protected:
 //
 struct sema_type_uses_t : public ast_visitor_t {
 
-  sema_type_uses_t(ccml_t &ccml)
-    : errs_(ccml.errors()) {
+  sema_type_uses_t(nano_t &nano)
+    : errs_(nano.errors()) {
   }
 
   void visit(ast_decl_var_t *var) override {
@@ -645,12 +645,12 @@ protected:
 //
 struct sema_num_args_t : public ast_visitor_t {
 
-  sema_num_args_t(ccml_t &ccml)
-    : ccml_(ccml)
-    , errs_(ccml.errors()) {
+  sema_num_args_t(nano_t &nano)
+    : ccml_(nano)
+    , errs_(nano.errors()) {
   }
 
-  ccml_t &ccml_;
+  nano_t &ccml_;
   error_manager_t &errs_;
   std::map<std::string, const ast_decl_func_t *> funcs_;
 
@@ -693,9 +693,9 @@ struct sema_array_size_t : public ast_visitor_t {
   error_manager_t &errs_;
   ast_t &ast_;
 
-  sema_array_size_t(ccml_t &ccml)
-    : errs_(ccml.errors())
-    , ast_(ccml.ast()) {
+  sema_array_size_t(nano_t &nano)
+    : errs_(nano.errors())
+    , ast_(nano.ast()) {
   }
 
   void visit(ast_decl_var_t *d) override {
@@ -749,8 +749,8 @@ struct sema_array_init_t : public ast_visitor_t {
 
   error_manager_t &errs_;
 
-  sema_array_init_t(ccml_t &ccml)
-    : errs_(ccml.errors())
+  sema_array_init_t(nano_t &nano)
+    : errs_(nano.errors())
   {
   }
 
@@ -772,16 +772,16 @@ struct sema_array_init_t : public ast_visitor_t {
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-void run_sema(ccml_t &ccml) {
-  auto *prog = &(ccml.ast().program);
-  sema_decl_annotate_t(ccml).visit(prog);
-  sema_global_var_t(ccml).visit(prog);
-  sema_const_t(ccml).visit(prog);
-  sema_multi_decls_t(ccml).visit(prog);
-  sema_num_args_t(ccml).visit(prog);
-  sema_type_uses_t(ccml).visit(prog);
-  sema_array_size_t(ccml).visit(prog);
-  sema_array_init_t(ccml).visit(prog);
+void run_sema(nano_t &nano) {
+  auto *prog = &(nano.ast().program);
+  sema_decl_annotate_t(nano).visit(prog);
+  sema_global_var_t(nano).visit(prog);
+  sema_const_t(nano).visit(prog);
+  sema_multi_decls_t(nano).visit(prog);
+  sema_num_args_t(nano).visit(prog);
+  sema_type_uses_t(nano).visit(prog);
+  sema_array_size_t(nano).visit(prog);
+  sema_array_init_t(nano).visit(prog);
 }
 
-} // namespace ccml
+} // namespace nano

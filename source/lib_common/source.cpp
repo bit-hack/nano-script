@@ -33,7 +33,7 @@ bool path_cmp(const char *x, const char *y) {
 
 } // namespace {}
 
-namespace ccml {
+namespace nano {
 
 void source_manager_t::imported_path(const source_t &s, std::string &in_out) {
   std::string base = base_path(s.file_path());
@@ -56,4 +56,4 @@ bool source_manager_t::load_from_string(const char *str) {
   return sources_.back()->load_from_string(str);
 }
 
-} // namespace ccml
+} // namespace nano

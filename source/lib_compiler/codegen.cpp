@@ -11,7 +11,7 @@
 #include "parser.h"
 
 
-using namespace ccml;
+using namespace nano;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 namespace {
@@ -37,11 +37,11 @@ static instruction_e tok_to_ins_(token_e op) {
 }
 } // namespace {}
 
-namespace ccml {
+namespace nano {
 
 struct codegen_pass_t: ast_visitor_t {
 
-  codegen_pass_t(ccml_t &c, program_builder_t &stream)
+  codegen_pass_t(nano_t &c, program_builder_t &stream)
     : ccml_(c)
     , stream_(stream)
     , funcs_(c.program_.functions())
@@ -510,7 +510,7 @@ protected:
     func->code_end_ = pos();
   }
 
-  ccml_t &ccml_;
+  nano_t &ccml_;
   program_builder_t &stream_;
   std::vector<function_t> &funcs_;
   std::vector<std::string> &strings_;
@@ -591,10 +591,10 @@ void codegen_pass_t::emit(instruction_e ins, int32_t o1, int32_t o2, const token
   }
 }
 
-} // namespace ccml
+} // namespace nano
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-codegen_t::codegen_t(ccml_t &c, program_t &prog)
+codegen_t::codegen_t(nano_t &c, program_t &prog)
   : ccml_(c)
   , stream_(prog)
 {

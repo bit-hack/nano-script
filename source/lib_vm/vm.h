@@ -15,7 +15,7 @@
 #include "vm_gc.h"
 
 
-namespace ccml {
+namespace nano {
 
 struct vm_t;
 
@@ -262,4 +262,4 @@ struct vm_t {
   std::set<thread_t *> threads_;
 };
 
-} // namespace ccml
+} // namespace nano

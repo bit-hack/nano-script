@@ -1,6 +1,6 @@
 #include "instructions.h"
 
-namespace ccml {
+namespace nano {
 
 bool ins_has_operand(const instruction_e ins) {
   switch (ins) {
@@ -69,4 +69,4 @@ bool ins_is_unary_op(const instruction_e ins) {
   }
 }
 
-} // namespace ccml
+} // namespace nano

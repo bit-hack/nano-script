@@ -7,7 +7,7 @@
 #include "token.h"
 
 
-namespace ccml {
+namespace nano {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct error_t {
@@ -24,7 +24,7 @@ struct error_t {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct error_manager_t {
 
-  error_manager_t(ccml_t &ccml): ccml_(ccml) {}
+  error_manager_t(nano_t &nano): ccml_(nano) {}
 
   virtual void cant_assign_const(const token_t &t) {
     on_error_(t.line_, "cant assign to constant variable '%s'", t.string());
@@ -208,7 +208,7 @@ protected:
 
   void on_error_(line_t line, const char *fmt, ...);
 
-  ccml_t &ccml_;
+  nano_t &ccml_;
 };
 
-} // namespace ccml
+} // namespace nano

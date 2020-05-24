@@ -1,6 +1,6 @@
 #pragma once
 
-namespace ccml {
+namespace nano {
 
 // XXX: should add a PC address for a thread error
 
@@ -27,6 +27,6 @@ enum class thread_error_t {
   e_bad_argument,
 };
 
-const char *get_thread_error(const ccml::thread_error_t &err);
+const char *get_thread_error(const nano::thread_error_t &err);
 
-} // namespace ccml
+} // namespace nano

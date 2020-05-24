@@ -1,7 +1,7 @@
 #pragma once
 
 
-namespace ccml {
+namespace nano {
 
 struct error_manager_t;
 struct error_t;
@@ -48,4 +48,4 @@ struct thread_t;
 
 typedef void(*ccml_syscall_t)(struct thread_t &thread, int32_t num_args);
 
-} // namespace ccml
+} // namespace nano

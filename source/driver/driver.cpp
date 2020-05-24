@@ -21,21 +21,21 @@ static inline uint32_t xorshift32() {
   return x;
 }
 
-void vm_rand(ccml::thread_t &t, int32_t) {
+void vm_rand(nano::thread_t &t, int32_t) {
   // new unsigned int
   const int32_t x = (xorshift32() & 0x7fffff);
   // return value
   t.get_stack().push(t.gc().new_int(x));
 }
 
-void vm_getc(ccml::thread_t &t, int32_t) {
-  using namespace ccml;
+void vm_getc(nano::thread_t &t, int32_t) {
+  using namespace nano;
   const int32_t ch = getchar();
   t.get_stack().push_int(ch);
 }
 
-void vm_putc(ccml::thread_t &t, int32_t) {
-  using namespace ccml;
+void vm_putc(nano::thread_t &t, int32_t) {
+  using namespace nano;
   const value_t *v = t.get_stack().pop();
   assert(v);
   if (!v->is_a<val_type_int>()) {
@@ -47,8 +47,8 @@ void vm_putc(ccml::thread_t &t, int32_t) {
   t.get_stack().push_int(0);
 }
 
-void vm_gets(ccml::thread_t &t, int32_t) {
-  using namespace ccml;
+void vm_gets(nano::thread_t &t, int32_t) {
+  using namespace nano;
   char buffer[80];
   fgets(buffer, sizeof(buffer), stdin);
   for (size_t i = 0; i < sizeof(buffer); ++i) {
@@ -58,8 +58,8 @@ void vm_gets(ccml::thread_t &t, int32_t) {
   t.get_stack().push_string(std::string{buffer});
 }
 
-void vm_puts(ccml::thread_t &t, int32_t) {
-  using namespace ccml;
+void vm_puts(nano::thread_t &t, int32_t) {
+  using namespace nano;
   value_t *s = t.get_stack().pop();
   assert(s);
   if (!s->is_a<val_type_string>()) {
@@ -72,7 +72,7 @@ void vm_puts(ccml::thread_t &t, int32_t) {
   return;
 }
 
-void on_error(const ccml::error_t &error) {
+void on_error(const nano::error_t &error) {
   fprintf(stderr, "file %d, line:%d - %s\n",
           error.line.file,
           error.line.line,
@@ -81,8 +81,8 @@ void on_error(const ccml::error_t &error) {
   exit(1);
 }
 
-void on_runtime_error(ccml::thread_t &thread, const ccml::source_manager_t &sources) {
-  using namespace ccml;
+void on_runtime_error(nano::thread_t &thread, const nano::source_manager_t &sources) {
+  using namespace nano;
   const thread_error_t err = thread.get_error();
   if (err == thread_error_t::e_success) {
     return;
@@ -95,9 +95,9 @@ void on_runtime_error(ccml::thread_t &thread, const ccml::source_manager_t &sour
   printf("%s\n", s.c_str());
 }
 
-void print_result(const ccml::value_t *res) {
+void print_result(const nano::value_t *res) {
 
-  using namespace ccml;
+  using namespace nano;
 
   FILE *fd = stdout;
   fprintf(fd, "exit: ");
@@ -125,7 +125,7 @@ void print_result(const ccml::value_t *res) {
 
 int main(int argc, char **argv) {
 
-  using namespace ccml;
+  using namespace nano;
 
   bool dump_ast = false;
   bool dump_dis = false;
@@ -144,29 +144,29 @@ int main(int argc, char **argv) {
   }
 
   // program to compile into
-  ccml::program_t program;
+  nano::program_t program;
 
   // compile
   {
     // create compile stack
-    ccml_t ccml{program};
-    builtins_register(ccml);
-    ccml.syscall_register("putc", 1);
-    ccml.syscall_register("getc", 0);
-    ccml.syscall_register("puts", 1);
-    ccml.syscall_register("gets", 0);
-    ccml.syscall_register("rand", 0);
+    nano_t nano{program};
+    builtins_register(nano);
+    nano.syscall_register("putc", 1);
+    nano.syscall_register("getc", 0);
+    nano.syscall_register("puts", 1);
+    nano.syscall_register("gets", 0);
+    nano.syscall_register("rand", 0);
 
     // build the program
-    ccml::error_t error;
-    if (!ccml.build(sources, error)) {
+    nano::error_t error;
+    if (!nano.build(sources, error)) {
       on_error(error);
       return -3;
     }
 
     // dump the ast
     if (dump_ast) {
-      ccml.ast().dump(stderr);
+      nano.ast().dump(stderr);
     }
   }
 
@@ -193,8 +193,8 @@ int main(int argc, char **argv) {
   }
 
   // create the vm and a thread
-  ccml::vm_t vm{program};
-  ccml::thread_t thread{vm};
+  nano::vm_t vm{program};
+  nano::thread_t thread{vm};
 
   // call the global init function
   if (!vm.call_init()) {
@@ -203,7 +203,7 @@ int main(int argc, char **argv) {
   }
 
   // execution
-  ccml::value_t *res = nullptr;
+  nano::value_t *res = nullptr;
   {
     thread_error_t error = thread_error_t::e_success;
     if (!vm.call_once(*func, 0, nullptr, res, error)) {

@@ -3,9 +3,9 @@
 
 #include "errors.h"
 
-using namespace ccml;
+using namespace nano;
 
-namespace ccml {
+namespace nano {
 void error_manager_t::on_error_(line_t line, const char *fmt, ...) {
   // generate the error message
   char buffer[1024] = {'\0'};
@@ -18,4 +18,4 @@ void error_manager_t::on_error_(line_t line, const char *fmt, ...) {
   error_t error{buffer, line};
   throw error;
 }
-}  // namespace ccml
+}  // namespace nano

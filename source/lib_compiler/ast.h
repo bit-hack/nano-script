@@ -5,7 +5,7 @@
 #include "ccml.h"
 #include "token.h"
 
-namespace ccml {
+namespace nano {
 
 enum ast_type_t {
   ast_program_e,
@@ -586,8 +586,8 @@ struct ast_decl_var_t : public ast_node_t {
 
 struct ast_t {
 
-  ast_t(ccml_t &ccml)
-    : ccml_(ccml)
+  ast_t(nano_t &nano)
+    : ccml_(nano)
   {}
 
   ~ast_t();
@@ -611,7 +611,7 @@ struct ast_t {
   void dump(FILE *fd);
 
 protected:
-  ccml_t &ccml_;
+  nano_t &ccml_;
   std::vector<ast_node_t*> allocs_;
 };
 
@@ -874,4 +874,4 @@ protected:
   }
 };
 
-} // namespace ccml
+} // namespace nano

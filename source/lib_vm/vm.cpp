@@ -27,7 +27,7 @@
  *        '--------------'
  */
 
-using namespace ccml;
+using namespace nano;
 
 namespace {
 
@@ -117,7 +117,7 @@ void thread_t::do_INS_ADD_() {
   if (l->is_a<val_type_string>()) {
     char rbuf[16] = {0};
     to_string(rbuf, sizeof(rbuf), r);
-    size_t rsize = strlen(rbuf);
+    int32_t rsize = int32_t(strlen(rbuf));
     const int32_t len = l->strlen() + rsize;
     value_t *s = gc_.new_string(len);
     char *dst = s->string();
@@ -130,7 +130,7 @@ void thread_t::do_INS_ADD_() {
   if (r->is_a<val_type_string>()) {
     char lbuf[16] = {0};
     to_string(lbuf, sizeof(lbuf), l);
-    size_t lsize = strlen(lbuf);
+    int32_t lsize = int32_t(strlen(lbuf));
     const int32_t len = lsize + r->strlen();
     value_t *s = gc_.new_string(len);
     char *dst = s->string();
@@ -859,7 +859,7 @@ bool vm_t::call_once(const function_t &func,
                      value_t* &return_code,
                      thread_error_t &error) {
 
-  error = ccml::thread_error_t::e_success;
+  error = nano::thread_error_t::e_success;
   return_code = nullptr;
 
   thread_t thread(*this);

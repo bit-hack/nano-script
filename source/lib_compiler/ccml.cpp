@@ -11,9 +11,9 @@
 #include "phases.h"
 #include "source.h"
 
-using namespace ccml;
+using namespace nano;
 
-ccml_t::ccml_t(program_t &prog)
+nano_t::nano_t(program_t &prog)
   : optimize(true)
   , program_(prog)
   , sources_(nullptr)
@@ -25,7 +25,7 @@ ccml_t::ccml_t(program_t &prog)
 {
 }
 
-bool ccml_t::build(source_manager_t &sources, error_t &error) {
+bool nano_t::build(source_manager_t &sources, error_t &error) {
 
   // we need something to compile
   if (sources.count() == 0) {
@@ -78,14 +78,14 @@ bool ccml_t::build(source_manager_t &sources, error_t &error) {
   return true;
 }
 
-void ccml_t::reset() {
+void nano_t::reset() {
   lexer_.clear();
   parser_->reset();
   ast_->reset();
   program_.reset();
 }
 
-void ccml_t::syscall_register(const std::string &name, int32_t num_args) {
+void nano_t::syscall_register(const std::string &name, int32_t num_args) {
   ast_decl_func_t *func = ast_->alloc<ast_decl_func_t>(name);
   func->is_syscall = true;
   for (int32_t i = 0; i < num_args; ++i) {

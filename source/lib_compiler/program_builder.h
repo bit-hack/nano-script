@@ -10,7 +10,7 @@
 #include "ast.h"
 
 
-namespace ccml {
+namespace nano {
 
 struct program_builder_t {
 
@@ -37,7 +37,7 @@ struct program_builder_t {
   uint32_t head(int32_t adjust = 0) const {
     assert(adjust <= 0);
     assert(int32_t(data_.size()) + adjust >= 0);
-    return data_.size() + adjust;
+    return int32_t(data_.size()) + adjust;
   }
 
   void apply_fixup(uint32_t index, int32_t value) {
@@ -45,17 +45,17 @@ struct program_builder_t {
     *d = value;
   }
 
-  uint32_t add_syscall(const std::string &name) {
+  int32_t add_syscall(const std::string &name) {
     auto &sys = program_.syscalls_;
     // it may already exist
     // XXX: we should change the design so that we dont insert multiple times
-    for (size_t i = 0; i < sys.size(); ++i) {
+    for (int32_t i = 0; i < int32_t(sys.size()); ++i) {
       if (sys[i].name_ == name) {
         return i;
       }
     }
     // insert new syscall
-    uint32_t index = sys.size();
+    int32_t index = int32_t(sys.size());
     sys.push_back({name, nullptr});
     return index;
   }
@@ -76,4 +76,4 @@ protected:
   std::vector<uint8_t> &data_;
 };
 
-} // namespace ccml
+} // namespace nano

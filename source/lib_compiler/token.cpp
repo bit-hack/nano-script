@@ -3,11 +3,11 @@
 #include "errors.h"
 
 
-using namespace ccml;
+using namespace nano;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-token_stream_t::token_stream_t(ccml_t &ccml)
-  : ccml_(ccml)
+token_stream_t::token_stream_t(nano_t &nano)
+  : ccml_(nano)
   , index_(0)
   , line_{0, 0} {
 }

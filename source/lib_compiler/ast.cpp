@@ -3,7 +3,7 @@
 #include "ast.h"
 
 
-namespace ccml {
+namespace nano {
 
 void ast_visitor_t::dispatch(ast_node_t *n) {
   if (!n) {
@@ -187,4 +187,4 @@ void ast_t::dump(FILE *fd) {
   printer.visit(&program);
 }
 
-} // namespace ccml
+} // namespace nano

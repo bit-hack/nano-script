@@ -7,7 +7,7 @@
 #include "instructions.h"
 
 
-using namespace ccml;
+using namespace nano;
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 bool parser_t::parse(error_t &error) {
@@ -772,7 +772,7 @@ void parser_t::reset() {
   op_stack_.clear();
 }
 
-parser_t::parser_t(ccml_t &c)
+parser_t::parser_t(nano_t &c)
   : ccml_(c)
 {
 }

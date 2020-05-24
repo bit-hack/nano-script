@@ -6,7 +6,7 @@
 #include "file.h"
 #include "types.h"
 
-namespace ccml {
+namespace nano {
 
 struct source_t {
 
@@ -104,7 +104,7 @@ struct source_manager_t {
   }
 
   int32_t count() const {
-    return sources_.size();
+    return int32_t(sources_.size());
   }
 
   void clear() {
@@ -124,4 +124,4 @@ protected:
   std::vector<std::unique_ptr<source_t>> sources_;
 };
 
-} // namespace ccml
+} // namespace nano

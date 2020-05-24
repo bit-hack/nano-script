@@ -6,7 +6,7 @@
 #include "ccml.h"
 
 
-namespace ccml {
+namespace nano {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 enum token_e {
@@ -150,7 +150,7 @@ struct token_t {
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct token_stream_t {
 
-  token_stream_t(ccml_t &ccml);
+  token_stream_t(nano_t &nano);
 
   // return the type of the next token in the stream
   token_e type();
@@ -180,7 +180,7 @@ struct token_stream_t {
   }
 
 protected:
-  ccml_t &ccml_;
+  nano_t &ccml_;
 
   uint32_t index_;
 
@@ -190,4 +190,4 @@ protected:
   std::vector<token_t> stream_;
 };
 
-} // namespace ccml
+} // namespace nano

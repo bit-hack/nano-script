@@ -2,7 +2,7 @@
 
 #include "vm_gc.h"
 
-namespace ccml {
+namespace nano {
 
 value_t *value_gc_t::new_int(const int32_t value) {
   value_t *v = space_to().alloc<value_t>(0);
@@ -189,4 +189,4 @@ void value_gc_t::trace(value_t **list, size_t num) {
   }
 }
 
-} // namespace ccml
+} // namespace nano

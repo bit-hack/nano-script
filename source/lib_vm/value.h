@@ -8,7 +8,7 @@
 #include "thread_error.h"
 
 
-namespace ccml {
+namespace nano {
 
 struct thread_t;
 struct value_gc_t;
@@ -245,4 +245,4 @@ protected:
   struct value_gc_t &gc_;
 };
 
-} // namespace ccml
+} // namespace nano

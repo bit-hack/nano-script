@@ -28,13 +28,13 @@ const char *gMnemonic[] = {
 };
 
 // make sure this is kept up to date with the opcode table 'instruction_e'
-static_assert(sizeof(gMnemonic) / sizeof(const char *) == ccml::__INS_COUNT__,
+static_assert(sizeof(gMnemonic) / sizeof(const char *) == nano::__INS_COUNT__,
               "gMnemonic table should match instruction_e enum layout");
 
 } // namespace {}
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-namespace ccml {
+namespace nano {
 
 const char *disassembler_t::get_mnemonic(const instruction_e e) {
   assert(e < __INS_COUNT__);
@@ -156,4 +156,4 @@ void disassembler_t::dump(program_t &prog, FILE *fd) {
   }
 }
 
-} // namespace ccml
+} // namespace nano

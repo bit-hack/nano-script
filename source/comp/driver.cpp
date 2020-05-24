@@ -10,7 +10,7 @@
 #include "../lib_builtins/builtin.h"
 
 namespace {
-void on_error(const ccml::error_t &error) {
+void on_error(const nano::error_t &error) {
   fprintf(stderr, "file %d, line:%d - %s\n",
           error.line.file,
           error.line.line,
@@ -27,7 +27,7 @@ FILE *fd_open(const char *base, const char *ext) {
 }
 
 void usage(const char *path) {
-printf(R"(usage: %s file.ccml [-n -a -d -b]
+printf(R"(usage: %s file.nano [-n -a -d -b]
   -n  disable codegen optimizations
   -a  emit ast
   -d  emit disassembly
@@ -37,7 +37,7 @@ printf(R"(usage: %s file.ccml [-n -a -d -b]
 
 int main(int argc, char **argv) {
 
-  using namespace ccml;
+  using namespace nano;
 
   FILE *fd_ast = nullptr;
   FILE *fd_dis = nullptr;
@@ -85,20 +85,20 @@ int main(int argc, char **argv) {
   // compile
   {
     // create compile stack
-    ccml_t ccml(program);
-//    add_builtins(ccml);
-    ccml.optimize = optimize;
+    nano_t nano(program);
+//    add_builtins(nano);
+    nano.optimize = optimize;
 
     // build the program
     error_t error;
-    if (!ccml.build(sources, error)) {
+    if (!nano.build(sources, error)) {
       on_error(error);
       return -2;
     }
 
     // dump the ast
     if (fd_ast) {
-      ccml.ast().dump(fd_ast);
+      nano.ast().dump(fd_ast);
     }
   }
 

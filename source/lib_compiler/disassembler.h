@@ -4,9 +4,8 @@
 #include "ccml.h"
 
 
-namespace ccml {
+namespace nano {
 
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct disassembler_t {
 
   void dump(program_t &prog, FILE *fd);
@@ -18,4 +17,4 @@ struct disassembler_t {
   static const char *get_mnemonic(const enum instruction_e e);
 };
 
-} // ccml
+} // nano

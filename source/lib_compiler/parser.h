@@ -6,12 +6,12 @@
 #include "token.h"
 
 
-namespace ccml {
+namespace nano {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 struct parser_t {
 
-  parser_t(ccml_t &c);
+  parser_t(nano_t &c);
 
   // parse all tokens stored in the lexer
   bool parse(struct error_t &error);
@@ -20,7 +20,7 @@ struct parser_t {
   void reset();
 
 protected:
-  ccml_t &ccml_;
+  nano_t &ccml_;
 
   // operator stack for expression parsing
   std::vector<const token_t*> op_stack_;
@@ -65,4 +65,4 @@ protected:
   void op_reduce_();
 };
 
-} // namespace ccml
+} // namespace nano

@@ -1,7 +1,7 @@
 #include "value.h"
 #include "vm.h"
 
-namespace ccml {
+namespace nano {
 
 value_stack_t::value_stack_t(thread_t &thread, value_gc_t &gc)
   : thread_(thread)
@@ -57,4 +57,4 @@ std::string value_t::to_string() const {
   }
 }
 
-} // namespace ccml
+} // namespace nano

@@ -2,7 +2,7 @@
 #include "errors.h"
 #include "codegen.h"
 
-namespace ccml {
+namespace nano {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -10,8 +10,8 @@ namespace ccml {
 //
 struct pregen_array_init_t: public ast_visitor_t {
 
-  pregen_array_init_t(ccml_t &ccml)
-    : ccml_(ccml)
+  pregen_array_init_t(nano_t &nano)
+    : ccml_(nano)
   {
   }
 
@@ -19,7 +19,7 @@ struct pregen_array_init_t: public ast_visitor_t {
     // XXX: TODO
   }
 
-  ccml_t &ccml_;
+  nano_t &ccml_;
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -28,8 +28,8 @@ struct pregen_array_init_t: public ast_visitor_t {
 //
 struct pregen_offset_t: public ast_visitor_t {
 
-  pregen_offset_t(ccml_t &ccml)
-    : errs_(ccml.errors())
+  pregen_offset_t(nano_t &nano)
+    : errs_(nano.errors())
     , global_offset_(0)
     , stack_size_(0)
   {
@@ -118,12 +118,12 @@ protected:
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
-// compute a function list and move into ccml master object
+// compute a function list and move into nano master object
 //
 struct pregen_functions_t: public ast_visitor_t {
 
-  pregen_functions_t(ccml_t &ccml)
-    : ccml_(ccml)
+  pregen_functions_t(nano_t &nano)
+    : ccml_(nano)
     , f_(nullptr)
   {}
 
@@ -178,7 +178,7 @@ struct pregen_functions_t: public ast_visitor_t {
                             funcs_.end());
   }
 
-  ccml_t &ccml_;
+  nano_t &ccml_;
   function_t *f_;
   std::vector<function_t> funcs_;
 };
@@ -189,13 +189,13 @@ struct pregen_functions_t: public ast_visitor_t {
 //
 struct pregen_init_t : public ast_visitor_t {
 
-  ccml_t &ccml_;
+  nano_t &ccml_;
   ast_t &ast_;
   ast_decl_func_t *init_;
 
-  pregen_init_t(ccml_t &ccml)
-    : ccml_(ccml)
-    , ast_(ccml.ast())
+  pregen_init_t(nano_t &nano)
+    : ccml_(nano)
+    , ast_(nano.ast())
     , init_(nullptr) {
   }
 
@@ -268,22 +268,22 @@ struct pregen_init_t : public ast_visitor_t {
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-void run_pre_codegen(ccml_t &ccml) {
-  auto *prog = &(ccml.ast().program);
+void run_pre_codegen(nano_t &nano) {
+  auto *prog = &(nano.ast().program);
 
   // flatten array initalizers
-  pregen_array_init_t(ccml).visit(prog);
+  pregen_array_init_t(nano).visit(prog);
   // generate an @init function
-  pregen_init_t(ccml).visit(prog);
+  pregen_init_t(nano).visit(prog);
 
   // 
   // passes after this must NOT modify the AST
   //
 
   // solidify variable stack offsets
-  pregen_offset_t(ccml).visit(prog);
+  pregen_offset_t(nano).visit(prog);
   // this must come after the offsets have been set
-  pregen_functions_t(ccml).visit(prog);
+  pregen_functions_t(nano).visit(prog);
 }
 
-} // namespace ccml
+} // namespace nano

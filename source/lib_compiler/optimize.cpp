@@ -4,7 +4,7 @@
 #include "errors.h"
 
 
-namespace ccml {
+namespace nano {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -12,9 +12,9 @@ namespace ccml {
 //
 struct op_decl_elim_t: public ast_visitor_t {
 
-  op_decl_elim_t(ccml_t &ccml)
-    : errs_(ccml.errors())
-    , ast_(ccml.ast())
+  op_decl_elim_t(nano_t &nano)
+    : errs_(nano.errors())
+    , ast_(nano.ast())
     , removing_(false)
     , decl_(nullptr)
   {}
@@ -126,9 +126,9 @@ struct op_decl_elim_t: public ast_visitor_t {
 //
 struct opt_const_expr_t: public ast_visitor_t {
 
-  opt_const_expr_t(ccml_t &ccml)
-    : errs_(ccml.errors())
-    , ast_(ccml.ast())
+  opt_const_expr_t(nano_t &nano)
+    : errs_(nano.errors())
+    , ast_(nano.ast())
   {}
 
   void visit(ast_exp_bin_op_t *o) override {
@@ -283,8 +283,8 @@ protected:
 //
 struct opt_post_ret_t: public ast_visitor_t {
 
-  opt_post_ret_t(ccml_t &ccml)
-    : errs_(ccml.errors())
+  opt_post_ret_t(nano_t &nano)
+    : errs_(nano.errors())
   {}
 
   void visit(ast_program_t *p) override {
@@ -316,8 +316,8 @@ protected:
 //
 struct opt_if_remove_t: public ast_visitor_t {
 
-  opt_if_remove_t(ccml_t &ccml)
-    : errs_(ccml.errors())
+  opt_if_remove_t(nano_t &nano)
+    : errs_(nano.errors())
   {}
 
   void visit(ast_stmt_if_t *s) override {
@@ -353,13 +353,13 @@ protected:
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-void run_optimize(ccml_t &ccml) {
-  if (ccml.optimize) {
-    opt_post_ret_t    (ccml).visit(&(ccml.ast().program));
-    opt_const_expr_t  (ccml).visit(&(ccml.ast().program));
-    opt_if_remove_t   (ccml).visit(&(ccml.ast().program));
-    op_decl_elim_t    (ccml).visit(&(ccml.ast().program));
+void run_optimize(nano_t &nano) {
+  if (nano.optimize) {
+    opt_post_ret_t    (nano).visit(&(nano.ast().program));
+    opt_const_expr_t  (nano).visit(&(nano.ast().program));
+    opt_if_remove_t   (nano).visit(&(nano.ast().program));
+    op_decl_elim_t    (nano).visit(&(nano.ast().program));
   }
 }
 
-} // namespace ccml
+} // namespace nano
