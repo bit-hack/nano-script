@@ -87,7 +87,7 @@ struct pregen_offset_t: public ast_visitor_t {
   }
 
   void visit(ast_decl_func_t *n) override {
-    if (n->syscall) {
+    if (n->is_syscall) {
       return;
     }
     else {
@@ -141,10 +141,10 @@ struct pregen_functions_t: public ast_visitor_t {
 
   void visit(ast_decl_func_t *n) override {
 
-    if (n->syscall) {
+    if (n->is_syscall) {
       // add syscall to the syscall table
       program_builder_t builder(ccml_.program_);
-      builder.add_syscall(n->syscall);
+      builder.add_syscall(n->name);
       return;
     }
 

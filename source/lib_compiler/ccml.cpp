@@ -85,9 +85,9 @@ void ccml_t::reset() {
   program_.reset();
 }
 
-void ccml_t::add_function(const std::string &name, ccml_syscall_t sys, int32_t num_args) {
+void ccml_t::syscall_register(const std::string &name, int32_t num_args) {
   ast_decl_func_t *func = ast_->alloc<ast_decl_func_t>(name);
-  func->syscall = sys;
+  func->is_syscall = true;
   for (int32_t i = 0; i < num_args; ++i) {
     func->args.emplace_back(nullptr);
   }

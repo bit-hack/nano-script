@@ -73,10 +73,10 @@ struct codegen_pass_t: ast_visitor_t {
 
   void get_func_(ast_decl_func_t *func, const token_t *t = nullptr) {
     assert(func);
-    if (func->syscall) {
-      const auto &syscalls = ccml_.program_.syscall();
+    if (func->is_syscall) {
+      const auto &syscalls = ccml_.program_.syscalls();
       for (size_t i = 0; i < syscalls.size(); ++i) {
-        if (syscalls[i] == func->syscall) {
+        if (syscalls[i].name_ == func->name) {
           emit(INS_NEW_SCALL, i, t);
           return;
         }
@@ -167,9 +167,9 @@ struct codegen_pass_t: ast_visitor_t {
       if (ast_decl_func_t *func = ident->decl->cast<ast_decl_func_t>()) {
         // this should have been checked beforehand
         assert(func->args.size() == num_args);
-        if (func->syscall) {
+        if (func->is_syscall) {
           // emit a syscall
-          uint32_t index = stream_.add_syscall(func->syscall);
+          uint32_t index = stream_.add_syscall(func->name);
           emit(INS_SCALL, int32_t(num_args), index, ident->name);
         }
         else {
@@ -383,7 +383,7 @@ struct codegen_pass_t: ast_visitor_t {
 
   void visit(ast_decl_func_t* n) override {
     // syscalls dont get emitted
-    if (n->syscall) {
+    if (n->is_syscall) {
       return;
     }
 

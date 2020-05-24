@@ -475,7 +475,7 @@ struct ast_decl_func_t : public ast_node_t {
   ast_decl_func_t(const token_t *n)
     : ast_node_t(TYPE)
     , token(n)
-    , syscall(nullptr)
+    , is_syscall(false)
     , name(n->str_)
     , body(nullptr)
     , stack_size(0)
@@ -484,7 +484,7 @@ struct ast_decl_func_t : public ast_node_t {
   ast_decl_func_t(const std::string &n)
     : ast_node_t(TYPE)
     , token(nullptr)
-    , syscall(nullptr)
+    , is_syscall(false)
     , name(n)
     , body(nullptr)
     , stack_size(0)
@@ -506,7 +506,7 @@ struct ast_decl_func_t : public ast_node_t {
 
   const token_t *token;
 
-  ccml_syscall_t syscall;
+  bool is_syscall;
 
   const std::string name;
   std::vector<ast_decl_var_t *> args;

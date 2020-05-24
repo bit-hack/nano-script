@@ -77,7 +77,6 @@ thread_t::~thread_t() {
   vm_.threads_.erase(itt);
 }
 
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 int32_t thread_t::read_operand_() {
   const uint8_t *c = vm_.program_.data();
   assert(sizeof(pc_) < vm_.program_.size());
@@ -296,10 +295,8 @@ void thread_t::do_INS_GEQ_() {
     stack_.push_int(l->v >= r->v ? 1 : 0);
     return;
   }
-  if ((l->is_a<val_type_float>() || l->is_a<val_type_int>()) &&
-      (r->is_a<val_type_float>() || r->is_a<val_type_int>())) {
-    stack_.push_int(
-      l->as_float() >= r->as_float() ? 1 : 0);
+  if (l->is_number() && r->is_number()) {
+    stack_.push_int(l->as_float() >= r->as_float() ? 1 : 0);
     return;
   }
   raise_error(thread_error_t::e_bad_type_operation);
@@ -391,9 +388,9 @@ void thread_t::do_INS_RET_() {
 }
 
 void thread_t::do_syscall_(int32_t operand, int32_t num_args) {
-  const auto &calls = vm_.program_.syscall();
+  const auto &calls = vm_.program_.syscalls();
   assert(operand >= 0 && operand < int32_t(calls.size()));
-  ccml_syscall_t sys = calls[operand];
+  ccml_syscall_t sys = calls[operand].call_;
   assert(sys);
   sys(*this, num_args);
 }
@@ -443,7 +440,6 @@ void thread_t::do_INS_NEW_INT_() {
 void thread_t::do_INS_NEW_STR_() {
   const int32_t index = read_operand_();
   const auto &str_tab = vm_.program_.strings();
-  (void)str_tab;
   assert(index < (int32_t)str_tab.size());
   const std::string &s = str_tab[index];
   stack_.push_string(s);
@@ -591,10 +587,6 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   cycles_ = 0;
   halted_ = false;
   return_code_ = nullptr;
-
-  if (func.is_syscall()) {
-    return false;
-  }
 
   stack_.clear();
 

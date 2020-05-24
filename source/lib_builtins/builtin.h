@@ -2,6 +2,7 @@
 
 namespace ccml {
 
-void add_builtins(ccml_t &ccml);
+void builtins_register(ccml_t &ccml);
+void builtins_resolve(program_t &prog);
 
 } // namespace ccml

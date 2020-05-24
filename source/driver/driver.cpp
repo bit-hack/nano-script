@@ -150,12 +150,12 @@ int main(int argc, char **argv) {
   {
     // create compile stack
     ccml_t ccml{program};
-    add_builtins(ccml);
-    ccml.add_function("putc", vm_putc, 1);
-    ccml.add_function("getc", vm_getc, 0);
-    ccml.add_function("puts", vm_puts, 1);
-    ccml.add_function("gets", vm_gets, 0);
-    ccml.add_function("rand", vm_rand, 0);
+    builtins_register(ccml);
+    ccml.syscall_register("putc", 1);
+    ccml.syscall_register("getc", 0);
+    ccml.syscall_register("puts", 1);
+    ccml.syscall_register("gets", 0);
+    ccml.syscall_register("rand", 0);
 
     // build the program
     ccml::error_t error;
@@ -170,6 +170,13 @@ int main(int argc, char **argv) {
     }
   }
 
+  program.syscall_resolve("putc", vm_putc);
+  program.syscall_resolve("getc", vm_getc);
+  program.syscall_resolve("puts", vm_puts);
+  program.syscall_resolve("gets", vm_gets);
+  program.syscall_resolve("rand", vm_rand);
+
+  builtins_resolve(program);
   program.serial_save("temp.bin");
 
   // disassemble the program

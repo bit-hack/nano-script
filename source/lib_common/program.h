@@ -17,7 +17,13 @@ namespace ccml {
 struct program_t {
 
   // map instruction to line number
-  typedef std::map<uint32_t, line_t> linetable_t;
+  typedef std::map<int32_t, line_t> linetable_t;
+
+  // entry in the syscall table
+  struct syscall_entry_t {
+    std::string name_;
+    ccml_syscall_t call_;
+  };
 
   // access the raw opcodes
   const uint8_t *data() const {
@@ -68,13 +74,15 @@ struct program_t {
     return functions_;
   }
 
-  const std::vector<ccml_syscall_t> &syscall() const {
+  std::vector<syscall_entry_t> &syscalls() {
     return syscalls_;
   }
 
+  bool syscall_resolve(const std::string &name, ccml_syscall_t syscall);
+
   const function_t *function_find(const std::string &name) const;
         function_t *function_find(const std::string &name);
-        function_t *function_find(uint32_t pc);
+        function_t *function_find(int32_t pc);
 
   // serialization functions
   bool serial_save(const char *path);
@@ -83,8 +91,10 @@ struct program_t {
 protected:
   friend struct program_builder_t;
 
+  // XXX: add filetable
+
   // add a line to the line table
-  void add_line(uint32_t pc, line_t line) {
+  void add_line(int32_t pc, line_t line) {
     line_table_[pc] = line;
   }
 
@@ -92,7 +102,7 @@ protected:
   std::vector<identifier_t> globals_;
 
   // table of system calls
-  std::vector<ccml_syscall_t> syscalls_;
+  std::vector<syscall_entry_t> syscalls_;
 
   // function descriptors
   std::vector<function_t> functions_;

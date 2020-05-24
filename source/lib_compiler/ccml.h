@@ -30,8 +30,7 @@ struct ccml_t {
 
   void reset();
 
-  // XXX: this will need to be abstracted somehow
-  void add_function(const std::string &name, ccml_syscall_t sys, int32_t num_args);
+  void syscall_register(const std::string &name, int32_t num_args);
 
   // enable codegen optimizations
   bool optimize;

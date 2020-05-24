@@ -45,9 +45,18 @@ struct program_builder_t {
     *d = value;
   }
 
-  uint32_t add_syscall(ccml_syscall_t syscall) {
-    uint32_t index = program_.syscalls_.size();
-    program_.syscalls_.push_back(syscall);
+  uint32_t add_syscall(const std::string &name) {
+    auto &sys = program_.syscalls_;
+    // it may already exist
+    // XXX: we should change the design so that we dont insert multiple times
+    for (size_t i = 0; i < sys.size(); ++i) {
+      if (sys[i].name_ == name) {
+        return i;
+      }
+    }
+    // insert new syscall
+    uint32_t index = sys.size();
+    sys.push_back({name, nullptr});
     return index;
   }
 
