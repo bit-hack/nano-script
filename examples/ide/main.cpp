@@ -9,13 +9,14 @@
 
 #include "imgui/TextEditor.h"
 
-#include "../lib_compiler/ccml.h"
+#include "../lib_compiler/nano.h"
 #include "../lib_compiler/errors.h"
 #include "../lib_compiler/codegen.h"
 #include "../lib_compiler/parser.h"
 #include "../lib_compiler/disassembler.h"
 
 #include "../lib_vm/vm.h"
+#include "../lib_vm/thread.h"
 #include "../lib_vm/thread_error.h"
 
 #include "../lib_builtins/builtin.h"
@@ -217,6 +218,7 @@ void lang_on_finish() {
     const nano::value_t *ret = g_thread->get_return_code();
     std::string ret_str = ret->to_string();
     g_output.push_back("Returned " + ret_str);
+    g_run_option |= RUN_STOP;
   }
 }
 

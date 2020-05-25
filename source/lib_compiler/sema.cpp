@@ -726,7 +726,7 @@ struct sema_array_size_t : public ast_visitor_t {
     if (d->expr) {
       if (auto i = d->expr->cast<ast_array_init_t>()) {
         const int32_t space = d->count();
-        const int32_t inits = i->item.size();
+        const int32_t inits = int32_t(i->item.size());
         if (space < inits) {
           errs_.too_many_array_inits(*d->name, inits, space);
         }

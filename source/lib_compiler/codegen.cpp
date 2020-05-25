@@ -5,7 +5,7 @@
 #include "codegen.h"
 #include "disassembler.h"
 #include "lexer.h"
-#include "ccml.h"
+#include "nano.h"
 #include "errors.h"
 #include "instructions.h"
 #include "parser.h"
@@ -75,7 +75,7 @@ struct codegen_pass_t: ast_visitor_t {
     assert(func);
     if (func->is_syscall) {
       const auto &syscalls = nano_.program_.syscalls();
-      for (size_t i = 0; i < syscalls.size(); ++i) {
+      for (int32_t i = 0; i < int32_t(syscalls.size()); ++i) {
         if (syscalls[i].name_ == func->name) {
           emit(INS_NEW_SCALL, i, t);
           return;
@@ -109,7 +109,7 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_exp_lit_str_t* n) override {
-    const uint32_t index = strings_.size();
+    const int32_t index = int32_t(strings_.size());
     strings_.push_back(n->value);
     emit(INS_NEW_STR, index, n->token);
   }
@@ -355,7 +355,7 @@ struct codegen_pass_t: ast_visitor_t {
     }
     const auto *func = stack.front()->cast<ast_decl_func_t>();
     assert(func);
-    const int32_t space = func->args.size() + func->stack_size;
+    const int32_t space = int32_t(func->args.size()) + func->stack_size;
     emit(INS_RET, space, n->token);
   }
 
@@ -415,7 +415,7 @@ struct codegen_pass_t: ast_visitor_t {
     if (!is_return) {
       emit(INS_NEW_INT, 0, nullptr);
       const auto *f = stack.front()->cast<ast_decl_func_t>();
-      const int32_t operand = f->args.size() + f->stack_size;
+      const int32_t operand = int32_t(f->args.size()) + f->stack_size;
       emit(INS_RET, operand, nullptr);
     }
 
@@ -504,7 +504,7 @@ protected:
     // return
     emit(INS_NEW_INT, 0, nullptr);
     const auto *ast_func = stack.front()->cast<ast_decl_func_t>();
-    const int32_t operand = ast_func->args.size() + ast_func->stack_size;
+    const int32_t operand = int32_t(ast_func->args.size()) + ast_func->stack_size;
     emit(INS_RET, operand, nullptr);
 
     func->code_end_ = pos();

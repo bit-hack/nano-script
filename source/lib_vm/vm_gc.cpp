@@ -32,7 +32,7 @@ value_t *value_gc_t::new_array(int32_t value) {
 }
 
 value_t *value_gc_t::new_string(const std::string &value) {
-  const size_t size = value.size();
+  const int32_t size = int32_t(value.size());
   value_t *v = space_to().alloc<value_t>(value.size() + 1);
   assert(v);
   v->type_ = val_type_string;
@@ -74,7 +74,7 @@ value_t *value_gc_t::new_syscall(uint32_t index) {
 }
 
 bool value_gc_t::should_collect() const {
-  const int32_t x = (space_to().size() * 100) / space_to().capacity();
+  const size_t x = (space_to().size() * 100) / space_to().capacity();
   // collect if over 75%
   return x > 75;
 }
@@ -156,7 +156,7 @@ void value_gc_t::trace(value_t **list, size_t num) {
     }
     case val_type_string: {
       assert(int32_t(strlen(v->string())) == v->v);
-      const size_t size = v->v;
+      const int32_t size = v->v;
       value_t *n = to.alloc<value_t>(size + 1);
       n->type_ = val_type_string;
       n->v = size;
@@ -172,7 +172,7 @@ void value_gc_t::trace(value_t **list, size_t num) {
         continue;
       }
       // collect child elements
-      const size_t size = v->array_size();
+      const int32_t size = v->array_size();
       trace(v->array(), size);
       value_t *n = to.alloc<value_t>(size * sizeof(value_t *));
       n->type_ = val_type_array;

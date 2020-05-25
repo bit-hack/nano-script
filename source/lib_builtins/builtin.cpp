@@ -1,9 +1,10 @@
 #include <math.h>
 
-#include "../lib_compiler/ccml.h"
+#include "../lib_compiler/nano.h"
 
 #include "../lib_vm/thread_error.h"
 #include "../lib_vm/vm.h"
+#include "../lib_vm/thread.h"
 
 #include "builtin.h"
 

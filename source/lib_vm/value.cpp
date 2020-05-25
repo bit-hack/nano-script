@@ -1,5 +1,6 @@
 #include "value.h"
 #include "vm.h"
+#include "thread.h"
 
 namespace nano {
 
@@ -31,7 +32,7 @@ void value_stack_t::push_float(const float v) {
 }
 
 void value_stack_t::push_string(const std::string &v) {
-  const size_t len = v.size();
+  const int32_t len = int32_t(v.size());
   value_t *s = gc_.new_string(len);
   memcpy(s->string(), v.data(), len);
   s->string()[len] = '\0';

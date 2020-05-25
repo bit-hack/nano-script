@@ -2,7 +2,7 @@
 #include <array>
 #include <vector>
 
-#include "ccml.h"
+#include "nano.h"
 #include "token.h"
 
 namespace nano {
@@ -516,7 +516,7 @@ struct ast_decl_func_t : public ast_node_t {
   std::vector<ast_decl_var_t*> locals;
 
   // number of locals
-  uint32_t stack_size;
+  int32_t stack_size;
 };
 
 struct ast_decl_var_t : public ast_node_t {

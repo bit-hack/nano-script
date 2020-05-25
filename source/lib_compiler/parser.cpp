@@ -252,7 +252,7 @@ ast_node_t* parser_t::parse_expr_() {
   // format:
   //    <expr_ex>
 
-  const uint32_t tide = op_stack_.size();
+  const uint32_t tide = uint32_t(op_stack_.size());
   parse_expr_ex_(tide);
   op_pop_all_(tide);
 

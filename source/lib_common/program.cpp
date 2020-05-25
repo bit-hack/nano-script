@@ -28,13 +28,13 @@ void emit(FILE *fd, const nano::function_t &f) {
   emit(fd, f.code_start_);
   emit(fd, f.code_end_);
   // emit locals
-  emit(fd, f.locals_.size());
+  emit(fd, int32_t(f.locals_.size()));
   for (const auto &i : f.locals_) {
     emit(fd, i.name_);
     emit(fd, i.offset_);
   }
   // emit args
-  emit(fd, f.args_.size());
+  emit(fd, int32_t(f.args_.size()));
   for (const auto &i : f.args_) {
     emit(fd, i.name_);
     emit(fd, i.offset_);
@@ -42,7 +42,7 @@ void emit(FILE *fd, const nano::function_t &f) {
 }
 
 void emit(FILE *fd, const nano::program_t::linetable_t &s) {
-  emit(fd, s.size());
+  emit(fd, int32_t(s.size()));
   for (auto &pair : s) {
     // code point
     emit(fd, pair.first);
@@ -134,22 +134,22 @@ bool program_t::serial_save(const char *path) {
   }
 #endif
   // emit syscalls
-  emit(fd, syscalls_.size());
+  emit(fd, int32_t(syscalls_.size()));
   for (const auto &s : syscalls_) {
     emit(fd, s.name_);
   }
   // emit functions
-  emit(fd, functions_.size());
+  emit(fd, int32_t(functions_.size()));
   for (const auto &f : functions_) {
     emit(fd, f);
   }
   // emit bytecode
-  emit(fd, code_.size());
+  emit(fd, int32_t(code_.size()));
   emit(fd, code_.data(), code_.size());
   // emit the line table
   emit(fd, line_table_);
   // emit the string table
-  emit(fd, strings_.size());
+  emit(fd, int32_t(strings_.size()));
   for (const auto &s : strings_) {
     emit(fd, s);
   }
