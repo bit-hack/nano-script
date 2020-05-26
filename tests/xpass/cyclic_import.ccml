@@ -1,0 +1,7 @@
+#expect 1
+
+import "cyclic_import.ccml"
+
+function main()
+  return 1
+end
