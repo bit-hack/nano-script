@@ -6,9 +6,10 @@
 
 #include "nano.h"
 #include "token.h"
-#include "instructions.h"
 #include "ast.h"
 #include "program_builder.h"
+
+#include "../lib_common/instructions.h"
 
 
 namespace nano {

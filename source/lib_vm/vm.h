@@ -9,8 +9,8 @@
 #include <memory>
 #include <set>
 
-#include "common.h"
-#include "types.h"
+#include "../lib_common/common.h"
+#include "../lib_common/types.h"
 
 #include "vm_gc.h"
 

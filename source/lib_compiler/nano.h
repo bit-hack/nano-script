@@ -6,11 +6,11 @@
 #include <array>
 #include <map>
 
-#include "common.h"
-#include "program.h"
-#include "instructions.h"
-#include "types.h"
-#include "source.h"
+#include "../lib_common/common.h"
+#include "../lib_common/program.h"
+#include "../lib_common/instructions.h"
+#include "../lib_common/types.h"
+#include "../lib_common/source.h"
 
 
 namespace nano {

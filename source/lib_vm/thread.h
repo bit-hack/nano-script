@@ -8,8 +8,8 @@
 #include <string>
 #include <vector>
 
-#include "common.h"
-#include "types.h"
+#include "../lib_common/common.h"
+#include "../lib_common/types.h"
 
 #include "vm_gc.h"
 
@@ -90,6 +90,9 @@ struct thread_t {
   void breakpoint_add(line_t line);
   void breakpoint_remove(line_t line);
   void breakpoint_clear();
+
+  // space for user data
+  void *user_data;
 
 protected:
   friend struct vm_t;
