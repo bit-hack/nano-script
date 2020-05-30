@@ -740,38 +740,6 @@ struct sema_array_size_t : public ast_visitor_t {
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-//
-// check for legal array initalizers
-//
-// XXX: we could relax this restruction with some code changes
-//
-struct sema_array_init_t : public ast_visitor_t {
-
-  error_manager_t &errs_;
-
-  sema_array_init_t(nano_t &nano)
-    : errs_(nano.errors())
-  {
-  }
-
-  void visit(ast_decl_var_t *d) override {
-    if (!d->is_array()) {
-      return;
-    }
-    if (d->is_global()) {
-      return;
-    }
-    if (d->expr) {
-      errs_.array_init_in_func(*d->name);
-    }
-  }
-
-  void visit(ast_program_t *p) override {
-    ast_visitor_t::visit(p);
-  }
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_sema(nano_t &nano) {
   auto *prog = &(nano.ast().program);
   sema_decl_annotate_t(nano).visit(prog);
@@ -781,9 +749,6 @@ void run_sema(nano_t &nano) {
   sema_num_args_t(nano).visit(prog);
   sema_type_uses_t(nano).visit(prog);
   sema_array_size_t(nano).visit(prog);
-#if 0
-  sema_array_init_t(nano).visit(prog);
-#endif
 }
 
 } // namespace nano

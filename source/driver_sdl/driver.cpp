@@ -2,14 +2,9 @@
 #include <memory>
 
 #define _SDL_main_h
-#include <SDL/SDL.h>
+#include <SDL.h>
 
-#include "../lib_compiler/ccml.h"
-#include "../lib_compiler/codegen.h"
-#include "../lib_compiler/disassembler.h"
-#include "../lib_compiler/errors.h"
-#include "../lib_compiler/lexer.h"
-#include "../lib_compiler/parser.h"
+#include "../nanoscript.h"
 
 #include "../lib_vm/vm.h"
 
@@ -21,6 +16,7 @@ namespace {
 uint32_t tick_mark = 0;
 
 struct global_t {
+  SDL_Window *window_ = nullptr;
   SDL_Surface *screen_ = nullptr;
   uint32_t rgb_ = 0xffffff;
   uint32_t width_, height_;
@@ -39,7 +35,7 @@ void vm_rand(nano::thread_t &t, int32_t) {
   // new unsigned int
   const int32_t x = (xorshift32() & 0x7fffff);
   // return value
-  t.stack().push(t.gc().new_int(x));
+  t.get_stack().push(t.gc().new_int(x));
 }
 
 void vm_cls(nano::thread_t &t, int32_t) {
@@ -51,42 +47,49 @@ void vm_cls(nano::thread_t &t, int32_t) {
     v += global.width_;
   }
   // return value
-  t.stack().push(t.gc().new_none());
+  t.get_stack().push(t.gc().new_none());
 }
 
 void vm_sleep(nano::thread_t &t, int32_t) {
-  nano::value_t *val = t.stack().pop();
+  nano::value_t *val = t.get_stack().pop();
   if (val->is_number()) {
     tick_mark = SDL_GetTicks() + val->as_int();
     t.halt();
   }
   // return value
-  t.stack().push(t.gc().new_none());
+  t.get_stack().push(t.gc().new_none());
 }
 
 void vm_video(nano::thread_t &t, int32_t) {
   using namespace nano;
-  const value_t *h = t.stack().pop();
-  const value_t *w = t.stack().pop();
+  const value_t *h = t.get_stack().pop();
+  const value_t *w = t.get_stack().pop();
   if (w->is_a<val_type_int>() && h->is_a<val_type_int>()) {
     global.width_ = (uint32_t)w->v;
     global.height_ = (uint32_t)h->v;
     global.video_.reset(new uint32_t[(uint32_t)(w->v * h->v)]);
     memset(global.video_.get(), 0, w->v * h->v * sizeof(uint32_t));
-    global.screen_ =
-        SDL_SetVideoMode((uint32_t)(w->v * 3), (uint32_t)(h->v * 3), 32, 0);
+
+    global.window_ = SDL_CreateWindow("Nano Script",
+                                      SDL_WINDOWPOS_CENTERED,
+                                      SDL_WINDOWPOS_CENTERED,
+                                      global.width_ * 3,
+                                      global.height_ * 3,
+                                      0);
+    global.screen_ = SDL_GetWindowSurface(global.window_);
+
     // return value
-    t.stack().push(t.gc().new_int(global.screen_ != nullptr));
+    t.get_stack().push(t.gc().new_int(global.screen_ != nullptr));
   } else {
-    t.stack().push(t.gc().new_int(0));
+    t.get_stack().push(t.gc().new_int(0));
   }
 }
 
 void vm_setrgb(nano::thread_t &t, int32_t) {
   using namespace nano;
-  const value_t *b = t.stack().pop();
-  const value_t *g = t.stack().pop();
-  const value_t *r = t.stack().pop();
+  const value_t *b = t.get_stack().pop();
+  const value_t *g = t.get_stack().pop();
+  const value_t *r = t.get_stack().pop();
   if (r->is_number() && g->is_number() && b->is_number()) {
     const int32_t ir = r->as_int();
     const int32_t ig = g->as_int();
@@ -94,7 +97,7 @@ void vm_setrgb(nano::thread_t &t, int32_t) {
     global.rgb_ = ((ir & 0xff) << 16) | ((ig & 0xff) << 8) | (ib & 0xff);
   }
   // return code
-  t.stack().push(t.gc().new_none());
+  t.get_stack().push(t.gc().new_none());
 }
 
 static inline void plot(int32_t x, int32_t y) {
@@ -132,10 +135,10 @@ static inline void span(int32_t x0, int32_t x1, int32_t y0) {
 void vm_circle(nano::thread_t &t, int32_t) {
   using namespace nano;
 
-  const value_t *r = t.stack().pop();
-  const value_t *py = t.stack().pop();
-  const value_t *px = t.stack().pop();
-  t.stack().push(t.gc().new_none());
+  const value_t *r = t.get_stack().pop();
+  const value_t *py = t.get_stack().pop();
+  const value_t *px = t.get_stack().pop();
+  t.get_stack().push(t.gc().new_none());
 
   if (!py->is_number() || !px->is_number() || !r->is_number()) {
     return;
@@ -193,11 +196,11 @@ static inline void line(int32_t x0, int32_t y0, int32_t x1, int32_t y1) {
 
 void vm_line(nano::thread_t &t, int32_t) {
   using namespace nano;
-  const value_t *y1 = t.stack().pop();
-  const value_t *x1 = t.stack().pop();
-  const value_t *y0 = t.stack().pop();
-  const value_t *x0 = t.stack().pop();
-  t.stack().push(t.gc().new_none());
+  const value_t *y1 = t.get_stack().pop();
+  const value_t *x1 = t.get_stack().pop();
+  const value_t *y0 = t.get_stack().pop();
+  const value_t *x0 = t.get_stack().pop();
+  t.get_stack().push(t.gc().new_none());
   if (x0->is_a<val_type_int>() &&
       y0->is_a<val_type_int>() &&
       x1->is_a<val_type_int>() &&
@@ -208,51 +211,52 @@ void vm_line(nano::thread_t &t, int32_t) {
 
 void vm_keydown(nano::thread_t &t, int32_t) {
   using namespace nano;
-  const value_t *key = t.stack().pop();
+  const value_t *key = t.get_stack().pop();
   if (!key->is_a<val_type_string>()) {
-    t.stack().push(t.gc().new_none());
+    t.get_stack().push(t.gc().new_none());
     return;
   }
-  const uint8_t *keys = SDL_GetKeyState(nullptr);
+
+  const uint8_t *keys = SDL_GetKeyboardState(nullptr);
   const char *s = key->string();
   if (strcmp(s, "up") == 0) {
-    const uint8_t state = keys[SDLK_UP];
-    t.stack().push(t.gc().new_int(state ? 1 : 0));
+    const uint8_t state = keys[SDL_SCANCODE_UP];
+    t.get_stack().push(t.gc().new_int(state ? 1 : 0));
     return;
   }
   if (strcmp(s, "down") == 0) {
-    const uint8_t state = keys[SDLK_DOWN];
-    t.stack().push(t.gc().new_int(state ? 1 : 0));
+    const uint8_t state = keys[SDL_SCANCODE_DOWN];
+    t.get_stack().push(t.gc().new_int(state ? 1 : 0));
     return;
   }
   if (strcmp(s, "left") == 0) {
-    const uint8_t state = keys[SDLK_LEFT];
-    t.stack().push(t.gc().new_int(state ? 1 : 0));
+    const uint8_t state = keys[SDL_SCANCODE_LEFT];
+    t.get_stack().push(t.gc().new_int(state ? 1 : 0));
     return;
   }
   if (strcmp(s, "right") == 0) {
-    const uint8_t state = keys[SDLK_RIGHT];
-    t.stack().push(t.gc().new_int(state ? 1 : 0));
+    const uint8_t state = keys[SDL_SCANCODE_RIGHT];
+    t.get_stack().push(t.gc().new_int(state ? 1 : 0));
     return;
   }
   if (strcmp(s, "escape") == 0) {
-    t.stack().push(t.gc().new_int(keys[SDLK_ESCAPE] ? 1 : 0));
+    t.get_stack().push(t.gc().new_int(keys[SDL_SCANCODE_ESCAPE] ? 1 : 0));
     return;
   }
   if (strcmp(s, "space") == 0) {
-    t.stack().push(t.gc().new_int(keys[SDLK_SPACE] ? 1 : 0));
+    t.get_stack().push(t.gc().new_int(keys[SDL_SCANCODE_SPACE] ? 1 : 0));
     return;
   }
-  t.stack().push(t.gc().new_none());
+  t.get_stack().push(t.gc().new_none());
 }
 
 void vm_plot(nano::thread_t &t, int32_t) {
   using namespace nano;
 
-  const value_t *y = t.stack().pop();
-  const value_t *x = t.stack().pop();
+  const value_t *y = t.get_stack().pop();
+  const value_t *x = t.get_stack().pop();
   // return value
-  t.stack().push(t.gc().new_none());
+  t.get_stack().push(t.gc().new_none());
   if (x->is_number() && y->is_number()) {
     plot(x->as_int(), y->as_int());
   }
@@ -284,10 +288,10 @@ void vm_flip(nano::thread_t &t, int32_t) {
       d += p1 * 3;
     }
 
-    SDL_Flip(screen);
+    SDL_UpdateWindowSurface(global.window_);
   }
   // return value
-  t.stack().push(t.gc().new_none());
+  t.get_stack().push(t.gc().new_none());
 }
 
 void on_error(const nano::error_t &error) {
@@ -319,24 +323,23 @@ int main(int argc, char **argv) {
     fprintf(stderr, "no source files provided\n");
     return -1;
   }
-  SDL_WM_SetCaption(sources.get_source(0).file_path().c_str(), nullptr);
 
   program_t program;
 
   // compile
   {
     nano_t nano(program);
-    add_builtins(nano);
-    nano.add_function("cls", vm_cls, 0);
-    nano.add_function("rand", vm_rand, 0);
-    nano.add_function("video", vm_video, 2);
-    nano.add_function("plot", vm_plot, 2);
-    nano.add_function("flip", vm_flip, 0);
-    nano.add_function("setrgb", vm_setrgb, 3);
-    nano.add_function("circle", vm_circle, 3);
-    nano.add_function("line", vm_line, 4);
-    nano.add_function("sleep", vm_sleep, 1);
-    nano.add_function("keydown", vm_keydown, 1);
+    builtins_register(nano);
+    nano.syscall_register("cls", 0);
+    nano.syscall_register("rand", 0);
+    nano.syscall_register("video", 2);
+    nano.syscall_register("plot", 2);
+    nano.syscall_register("flip", 0);
+    nano.syscall_register("setrgb", 3);
+    nano.syscall_register("circle", 3);
+    nano.syscall_register("line", 4);
+    nano.syscall_register("sleep", 1);
+    nano.syscall_register("keydown", 1);
 
     nano::error_t error;
     if (!nano.build(sources, error)) {
@@ -344,6 +347,17 @@ int main(int argc, char **argv) {
       return -2;
     }
   }
+
+  program.syscall_resolve("cls",     vm_cls);
+  program.syscall_resolve("rand",    vm_rand);
+  program.syscall_resolve("video",   vm_video);
+  program.syscall_resolve("plot",    vm_plot);
+  program.syscall_resolve("flip",    vm_flip);
+  program.syscall_resolve("setrgb",  vm_setrgb);
+  program.syscall_resolve("circle",  vm_circle);
+  program.syscall_resolve("line",    vm_line);
+  program.syscall_resolve("sleep",   vm_sleep);
+  program.syscall_resolve("keydown", vm_keydown);
 
   const function_t *func = program.function_find("main");
   if (!func) {
@@ -386,11 +400,11 @@ int main(int argc, char **argv) {
   }
 
   if (thread.has_error()) {
-    const thread_error_t err = thread.error();
+    const thread_error_t err = thread.get_error();
     if (err != thread_error_t::e_success) {
-      line_t line = thread.source_line();
+      line_t line = thread.get_source_line();
       printf("runtime error %d\n", int32_t(err));
-      fprintf(stderr, "%s\n", get_thread_error(thread.error()));
+      fprintf(stderr, "%s\n", get_thread_error(thread.get_error()));
       printf("source line %d\n", int32_t(line.line));
       const std::string &s = sources.get_line(line);
       printf("%s\n", s.c_str());

@@ -200,14 +200,13 @@ void builtins_register(nano_t &nano) {
   nano.syscall_register("min", 2);
   nano.syscall_register("max", 2);
 
-  nano.syscall_register("len", 1);
-
   nano.syscall_register("bitand", 2);
 
   nano.syscall_register("sin", 1);
   nano.syscall_register("cos", 1);
   nano.syscall_register("tan", 1);
 
+  nano.syscall_register("len", 1);
   nano.syscall_register("chr", 1);
 
   nano.syscall_register("round", 1);
@@ -223,13 +222,14 @@ void builtins_resolve(program_t &prog) {
   map["abs"]    = builtin_abs;
   map["min"]    = builtin_min;
   map["max"]    = builtin_max;
-  map["len"]    = builtin_len;
+
   map["bitand"] = builtin_bitand;
 
   map["sin"]    = builtin_sin;
   map["cos"]    = builtin_cos;
   map["tan"]    = builtin_tan;
 
+  map["len"]    = builtin_len;
   map["chr"]    = builtin_chr;
 
   map["round"] = builtin_round;
