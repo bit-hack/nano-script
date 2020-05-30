@@ -64,6 +64,9 @@ void vm_video(nano::thread_t &t, int32_t) {
   using namespace nano;
   const value_t *h = t.get_stack().pop();
   const value_t *w = t.get_stack().pop();
+
+  bool ok = false;
+
   if (w->is_a<val_type_int>() && h->is_a<val_type_int>()) {
     global.width_ = (uint32_t)w->v;
     global.height_ = (uint32_t)h->v;
@@ -76,13 +79,16 @@ void vm_video(nano::thread_t &t, int32_t) {
                                       global.width_ * 3,
                                       global.height_ * 3,
                                       0);
-    global.screen_ = SDL_GetWindowSurface(global.window_);
-
-    // return value
-    t.get_stack().push(t.gc().new_int(global.screen_ != nullptr));
-  } else {
-    t.get_stack().push(t.gc().new_int(0));
+    if (global.window_) {
+      global.screen_ = SDL_GetWindowSurface(global.window_);
+    }
+    if (!global.window_ || !global.screen_) {
+      ok = true;
+    }
   }
+
+  // return value
+  t.get_stack().push(t.gc().new_int(ok ? 1 : 0));
 }
 
 void vm_setrgb(nano::thread_t &t, int32_t) {
