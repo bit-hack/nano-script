@@ -11,7 +11,7 @@
 
 namespace nano {
 
-void builtin_abs(struct nano::thread_t &t, int32_t nargs) {
+static void builtin_abs(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *v = t.get_stack().pop();
   assert(v);
@@ -29,8 +29,7 @@ void builtin_abs(struct nano::thread_t &t, int32_t nargs) {
   }
 }
 
-// XXX: support variable arg count
-void builtin_max(struct nano::thread_t &t, int32_t nargs) {
+static void builtin_max(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *a = t.get_stack().pop();
   const nano::value_t *b = t.get_stack().pop();
@@ -52,8 +51,7 @@ void builtin_max(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-// XXX: support variable arg count
-void builtin_min(struct nano::thread_t &t, int32_t nargs) {
+static void builtin_min(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *a = t.get_stack().pop();
   const nano::value_t *b = t.get_stack().pop();
@@ -75,7 +73,7 @@ void builtin_min(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_bitand(struct nano::thread_t &t, int32_t nargs) {
+static void builtin_bitand(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *a = t.get_stack().pop();
   const nano::value_t *b = t.get_stack().pop();
@@ -89,7 +87,7 @@ void builtin_bitand(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_len(struct nano::thread_t &t, int32_t nargs) {
+static void builtin_len(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *a = t.get_stack().pop();
   assert(a);
@@ -108,35 +106,7 @@ void builtin_len(struct nano::thread_t &t, int32_t nargs) {
   }
 }
 
-void builtin_shl(struct nano::thread_t &t, int32_t nargs) {
-  (void)nargs;
-  const nano::value_t *i = t.get_stack().pop();
-  const nano::value_t *v = t.get_stack().pop();
-  if (i && v) {
-    if (v->is_a<val_type_int>() &&
-        i->is_a<val_type_int>()) {
-      t.get_stack().push_int(v->v << i->v);
-      return;
-    }
-  }
-  t.raise_error(thread_error_t::e_bad_argument);
-}
-
-void builtin_shr(struct nano::thread_t &t, int32_t nargs) {
-  (void)nargs;
-  const nano::value_t *i = t.get_stack().pop();
-  const nano::value_t *v = t.get_stack().pop();
-  if (i && v) {
-    if (v->is_a<val_type_int>() &&
-        i->is_a<val_type_int>()) {
-      t.get_stack().push_int(uint32_t(v->v) >> i->v);
-      return;
-    }
-  }
-  t.raise_error(thread_error_t::e_bad_argument);
-}
-
-void builtin_chr(struct nano::thread_t &t, int32_t nargs) {
+static void builtin_chr(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *v = t.get_stack().pop();
   if (v && v->is_a<val_type_int>()) {
@@ -147,7 +117,7 @@ void builtin_chr(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_sin(struct nano::thread_t &t, int32_t nargs) {
+static void builtin_sin(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *v = t.get_stack().pop();
   if (v && (v->is_number())) {
@@ -158,7 +128,7 @@ void builtin_sin(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_cos(struct nano::thread_t &t, int32_t nargs) {
+static void builtin_cos(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *v = t.get_stack().pop();
   if (v && (v->is_number())) {
@@ -169,7 +139,7 @@ void builtin_cos(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_tan(struct nano::thread_t &t, int32_t nargs) {
+static void builtin_tan(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *v = t.get_stack().pop();
   if (v && (v->is_number())) {
@@ -180,7 +150,7 @@ void builtin_tan(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_round(struct nano::thread_t &t, int32_t nargs) {
+static void builtin_round(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *v = t.get_stack().pop();
   if (v && (v->is_number())) {
@@ -191,7 +161,7 @@ void builtin_round(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_floor(struct nano::thread_t &t, int32_t nargs) {
+static void builtin_floor(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *v = t.get_stack().pop();
   if (v && (v->is_number())) {
@@ -202,7 +172,7 @@ void builtin_floor(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
-void builtin_ceil(struct nano::thread_t &t, int32_t nargs) {
+static void builtin_ceil(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *v = t.get_stack().pop();
   if (v && (v->is_number())) {
@@ -213,24 +183,38 @@ void builtin_ceil(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
+static void builtin_sqrt(struct nano::thread_t &t, int32_t nargs) {
+  (void)nargs;
+  const nano::value_t *v = t.get_stack().pop();
+  if (v && (v->is_number())) {
+    const float x = v->as_float();
+    t.get_stack().push_float(sqrtf(x));
+    return;
+  }
+  t.raise_error(thread_error_t::e_bad_argument);
+}
+
 void builtins_register(nano_t &nano) {
+
   nano.syscall_register("abs", 1);
   nano.syscall_register("min", 2);
   nano.syscall_register("max", 2);
+
   nano.syscall_register("len", 1);
+
   nano.syscall_register("bitand", 2);
+
   nano.syscall_register("sin", 1);
   nano.syscall_register("cos", 1);
   nano.syscall_register("tan", 1);
-#if 0
-  nano.add_function("shl",     2);
-  nano.add_function("shr",     2);
-#endif
+
   nano.syscall_register("chr", 1);
 
   nano.syscall_register("round", 1);
   nano.syscall_register("ceil",  1);
   nano.syscall_register("floor", 1);
+
+  nano.syscall_register("sqrt", 1);
 }
 
 void builtins_resolve(program_t &prog) {
@@ -251,6 +235,8 @@ void builtins_resolve(program_t &prog) {
   map["round"] = builtin_round;
   map["ceil"]  = builtin_ceil;
   map["floor"] = builtin_floor;
+
+  map["sqrt"]  = builtin_sqrt;
 
   for (auto &itt : prog.syscalls()) {
     auto i = map.find(itt.name_);

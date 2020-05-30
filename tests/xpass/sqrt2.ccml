@@ -1,6 +1,6 @@
 #expect 111.1080
 
-function sqrt(n)
+function _sqrt(n)
     var x = n
     var y = 1
     var e = 0.0001
@@ -12,6 +12,6 @@ function sqrt(n)
 end
 
 function main()
-    var b = sqrt(12345)
+    var b = _sqrt(12345)
     puts("" + b)
 end

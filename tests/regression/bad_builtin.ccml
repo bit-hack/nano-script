@@ -1,0 +1,9 @@
+#expect 1
+
+function main()
+  var a = max(none, 1.1)
+  var b = min(none, 1.1)
+  var c = abs(none)
+  var d = len(none)
+  return 1
+end

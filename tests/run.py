@@ -10,11 +10,11 @@ is_linux = (sys.platform == "linux" or sys.platform == "linux2")
 
 
 if is_linux:
-    DRIVER = '../build/ccml_driver'
-    COMP = "../build/ccml_comp"
+    DRIVER = '../build/nano_driver'
+    COMP = "../build/nano_comp"
 else:
-    DRIVER = '../build/Debug/ccml_driver.exe'
-    COMP = "../build/Debug/ccml_comp.exe"
+    DRIVER = '../build/Debug/nano_driver.exe'
+    COMP = "../build/Debug/nano_comp.exe"
 
 
 tried = set()

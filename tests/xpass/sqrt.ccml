@@ -3,7 +3,7 @@
 #
 # integer only square route algorithm using Newton's method
 #
-function sqrt(n)
+function _sqrt(n)
     var xk = n
     var i = 0
     while (i < 100)
@@ -16,5 +16,5 @@ end
 
 
 function main()
-    return sqrt(96452)
+    return _sqrt(96452)
 end

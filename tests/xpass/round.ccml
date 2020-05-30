@@ -1,0 +1,22 @@
+#expect 1
+
+function main()
+
+  if (not round(3.3) == 3)
+    return 0
+  end
+
+  if (not ceil(1.1) == 2)
+    return 0
+  end
+  
+  if (not floor(4.8) == 4)
+    return 0
+  end
+  
+  if (not round(4.5) == 5)
+    return 0
+  end
+  
+  return 1
+end

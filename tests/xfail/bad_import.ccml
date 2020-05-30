@@ -1,0 +1,5 @@
+import "fictional.ccml"
+
+function main()
+  return 1234
+end
