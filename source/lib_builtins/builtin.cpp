@@ -169,6 +169,50 @@ void builtin_cos(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
+void builtin_tan(struct nano::thread_t &t, int32_t nargs) {
+  (void)nargs;
+  const nano::value_t *v = t.get_stack().pop();
+  if (v && (v->is_number())) {
+    const float x = v->as_float();
+    t.get_stack().push_float(tanf(x));
+    return;
+  }
+  t.raise_error(thread_error_t::e_bad_argument);
+}
+
+void builtin_round(struct nano::thread_t &t, int32_t nargs) {
+  (void)nargs;
+  const nano::value_t *v = t.get_stack().pop();
+  if (v && (v->is_number())) {
+    const float x = v->as_float();
+    t.get_stack().push_float(roundf(x));
+    return;
+  }
+  t.raise_error(thread_error_t::e_bad_argument);
+}
+
+void builtin_floor(struct nano::thread_t &t, int32_t nargs) {
+  (void)nargs;
+  const nano::value_t *v = t.get_stack().pop();
+  if (v && (v->is_number())) {
+    const float x = v->as_float();
+    t.get_stack().push_float(floorf(x));
+    return;
+  }
+  t.raise_error(thread_error_t::e_bad_argument);
+}
+
+void builtin_ceil(struct nano::thread_t &t, int32_t nargs) {
+  (void)nargs;
+  const nano::value_t *v = t.get_stack().pop();
+  if (v && (v->is_number())) {
+    const float x = v->as_float();
+    t.get_stack().push_float(ceilf(x));
+    return;
+  }
+  t.raise_error(thread_error_t::e_bad_argument);
+}
+
 void builtins_register(nano_t &nano) {
   nano.syscall_register("abs", 1);
   nano.syscall_register("min", 2);
@@ -177,11 +221,16 @@ void builtins_register(nano_t &nano) {
   nano.syscall_register("bitand", 2);
   nano.syscall_register("sin", 1);
   nano.syscall_register("cos", 1);
+  nano.syscall_register("tan", 1);
 #if 0
   nano.add_function("shl",     2);
   nano.add_function("shr",     2);
 #endif
   nano.syscall_register("chr", 1);
+
+  nano.syscall_register("round", 1);
+  nano.syscall_register("ceil",  1);
+  nano.syscall_register("floor", 1);
 }
 
 void builtins_resolve(program_t &prog) {
@@ -192,9 +241,16 @@ void builtins_resolve(program_t &prog) {
   map["max"]    = builtin_max;
   map["len"]    = builtin_len;
   map["bitand"] = builtin_bitand;
+
   map["sin"]    = builtin_sin;
   map["cos"]    = builtin_cos;
+  map["tan"]    = builtin_tan;
+
   map["chr"]    = builtin_chr;
+
+  map["round"] = builtin_round;
+  map["ceil"]  = builtin_ceil;
+  map["floor"] = builtin_floor;
 
   for (auto &itt : prog.syscalls()) {
     auto i = map.find(itt.name_);

@@ -3,6 +3,7 @@
 
 namespace nano {
 void program_builder_t::set_line(lexer_t &lexer, const token_t *t) {
+  (void)lexer;
   const uint32_t pc = head();
   if (t) {
     program_.add_line(pc, t->line_);

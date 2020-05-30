@@ -70,12 +70,6 @@ struct function_t {
   function_t()
     : code_start_(0)
     , code_end_(0) {}
-
-  function_t(const std::string &name, int32_t pos)
-    : name_(name)
-    , code_start_(0)
-    , code_end_(0)
-  {}
 };
 
 } // namespace nano

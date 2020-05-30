@@ -27,11 +27,11 @@ SDL_GLContext g_glcontext = nullptr;
 TextEditor g_editor;
 bool g_running = true;
 
-#if 0
+#if 1
 std::string g_init_source = R"(
 function main()
-  print("Hello World!")
-  return 0
+  var test[3] = 1, 2, 3
+  return test[2]
 end
 )";
 #else
@@ -87,7 +87,6 @@ std::unordered_set<int> g_breakpoints;
 void vm_print(nano::thread_t &t, int32_t) {
   using namespace nano;
   value_t *s = t.get_stack().pop();
-  assert(s);
   if (!s->is_a<val_type_string>()) {
     t.raise_error(thread_error_t::e_bad_argument);
   } else {
@@ -139,6 +138,7 @@ void app_setup() {
 void lang_on_error() {
   if (g_thread->has_error()) {
     nano::thread_error_t error = g_thread->get_error();
+    (void)error;
     TextEditor::ErrorMarkers markers;
     const char *str = nano::get_thread_error(g_thread->get_error());
     nano::line_t line = g_thread->get_source_line();
@@ -690,6 +690,9 @@ void poll_events() {
 }
 
 int main(int argc, char **argv) {
+
+  (void)argc;
+  (void)argv;
 
   if (!init_sdl()) {
     return 1;

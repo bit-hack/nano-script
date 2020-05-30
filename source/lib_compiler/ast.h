@@ -77,7 +77,7 @@ struct ast_program_t : public ast_node_t {
     : ast_node_t(TYPE)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     for (size_t i = 0; i < children.size(); ++i) {
       if (children[i] == which) {
         children[i] = with;
@@ -188,7 +188,7 @@ struct ast_exp_array_t : public ast_node_t {
     , decl(nullptr)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     index = (which == index) ? with : index;
   }
 
@@ -207,7 +207,7 @@ struct ast_stmt_call_t : public ast_node_t {
     , expr(expr)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     if ((const void*)expr == (const void*)which) {
       expr = with->cast<ast_exp_call_t>();
       assert(expr);
@@ -227,7 +227,7 @@ struct ast_exp_call_t : public ast_node_t {
     , ast_node_t(TYPE)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     for (size_t i = 0; i < args.size(); ++i) {
       if (args[i] == which) {
         args[i] = with;
@@ -255,7 +255,7 @@ struct ast_exp_bin_op_t : public ast_node_t {
     , right(nullptr)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     left  = (left  == which) ? with : left;
     right = (right == which) ? with : right;
   }
@@ -274,7 +274,7 @@ struct ast_exp_unary_op_t : public ast_node_t {
     , child(nullptr)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     child = (child  == which) ? with : child;
   }
 
@@ -293,7 +293,7 @@ struct ast_stmt_if_t : public ast_node_t {
     , else_block(nullptr)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     expr = (expr == which) ? with : expr;
     if ((const void *)then_block == (const void *)which) {
       then_block = with->cast<ast_block_t>();
@@ -327,7 +327,7 @@ struct ast_block_t: public ast_node_t {
     return nodes.empty();
   }
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     for (size_t i = 0; i < nodes.size(); ++i) {
       if (nodes[i] == which) {
         nodes[i] = with;
@@ -348,7 +348,7 @@ struct ast_stmt_while_t : public ast_node_t {
     , body(nullptr)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     expr = (expr == which) ? with : expr;
     if (which == body) {
       body = with->cast<ast_block_t>();
@@ -374,7 +374,7 @@ struct ast_stmt_for_t : public ast_node_t {
     , body(nullptr)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     start = (start == which) ? with : start;
     end   = (end   == which) ? with : end;
     if (which == body) {
@@ -409,7 +409,7 @@ struct ast_stmt_return_t : public ast_node_t {
     , expr(nullptr)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     expr = (expr == which) ? with : expr;
   }
 
@@ -427,7 +427,7 @@ struct ast_stmt_assign_var_t : public ast_node_t {
     , decl(nullptr)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     expr = (expr == which) ? with : expr;
   }
 
@@ -448,7 +448,7 @@ struct ast_stmt_assign_array_t : public ast_node_t {
     , decl(nullptr)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     index = (index == which) ? with : index;
     expr = (expr == which) ? with : expr;
   }
@@ -490,7 +490,7 @@ struct ast_decl_func_t : public ast_node_t {
     , stack_size(0)
   {}
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     auto *w = with->cast<ast_decl_var_t>();
     assert(w);
     for (size_t i = 0; i < args.size(); ++i) {
@@ -564,7 +564,7 @@ struct ast_decl_var_t : public ast_node_t {
     }
   }
 
-  virtual void replace_child(const ast_node_t *which, ast_node_t *with) {
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
     expr = (expr == which) ? with : expr;
     size = (size == which) ? with : size;
   }

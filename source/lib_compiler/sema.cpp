@@ -781,7 +781,9 @@ void run_sema(nano_t &nano) {
   sema_num_args_t(nano).visit(prog);
   sema_type_uses_t(nano).visit(prog);
   sema_array_size_t(nano).visit(prog);
+#if 0
   sema_array_init_t(nano).visit(prog);
+#endif
 }
 
 } // namespace nano

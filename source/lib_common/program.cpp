@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <memory>
 
 #include "program.h"
 
@@ -78,7 +79,7 @@ bool consume(FILE *fd, std::string &string) {
   }
   assert(size < 256);
   string.resize(size);
-  auto &data = std::make_unique<char[]>(size + 1);
+  auto data = std::make_unique<char[]>(size + 1);
   if (fread(data.get(), 1, size, fd) != size) {
     return false;
   }

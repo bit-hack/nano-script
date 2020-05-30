@@ -6,24 +6,6 @@ namespace nano {
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
-// flatten array initalizers
-//
-struct pregen_array_init_t: public ast_visitor_t {
-
-  pregen_array_init_t(nano_t &nano)
-    : nano_(nano)
-  {
-  }
-
-  void visit(ast_program_t *a) override {
-    // XXX: TODO
-  }
-
-  nano_t &nano_;
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-//
 // compute function stack sizes and decl offsets
 //
 struct pregen_offset_t: public ast_visitor_t {
@@ -271,8 +253,6 @@ struct pregen_init_t : public ast_visitor_t {
 void run_pre_codegen(nano_t &nano) {
   auto *prog = &(nano.ast().program);
 
-  // flatten array initalizers
-  pregen_array_init_t(nano).visit(prog);
   // generate an @init function
   pregen_init_t(nano).visit(prog);
 

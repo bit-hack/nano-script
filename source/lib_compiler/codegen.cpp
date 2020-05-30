@@ -426,23 +426,40 @@ struct codegen_pass_t: ast_visitor_t {
     // collect the globals
     if (n->is_global()) {
       stream_.add_global(n->name->str_, n->offset);
+      return;
     }
     // must be local
-    else {
-      if (n->is_const) {
-        // nothing to do for const variables
-        return;
-      }
-      if (n->is_array()) {
-        emit(INS_NEW_ARY, n->count(), n->name);
-        set_decl_(n, n->name);
-      } else {
-        assert(n->is_local());
-        if (n->expr) {
-          dispatch(n->expr);
-          emit(INS_SETV, n->offset, n->name);
+    if (n->is_const) {
+      // nothing to do for const variables
+      return;
+    }
+    // create an array
+    if (n->is_array()) {
+      emit(INS_NEW_ARY, n->count(), n->name);
+      set_decl_(n, n->name);
+#if 1
+      // if there is an array initalizer
+      if (const auto *init = n->expr->cast<ast_array_init_t>()) {
+        int32_t i = 0;
+        for (const auto &t : init->item) {
+          // value
+          emit(INS_NEW_INT, t->get_int(), t);
+          // index
+          emit(INS_NEW_INT, i++, t);
+          // get array
+          get_decl_(n, t);
+          // set element
+          emit(INS_SETA, t);
         }
       }
+#endif
+      return;
+    }
+    // set variable
+    assert(n->is_local());
+    if (n->expr) {
+      dispatch(n->expr);
+      emit(INS_SETV, n->offset, n->name);
     }
   }
 
