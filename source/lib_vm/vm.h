@@ -19,6 +19,16 @@ namespace nano {
 
 struct thread_t;
 
+struct handlers_t {
+
+  handlers_t()
+    : on_member_get(nullptr)
+  {}
+
+  // return true if successful
+  bool (*on_member_get)(thread_t &t, value_t *v, const std::string &member);
+};
+
 struct vm_t {
 
   vm_t(program_t &program);
@@ -47,6 +57,9 @@ struct vm_t {
 
   // threads
   std::set<thread_t *> threads_;
+
+  // handlers
+  handlers_t handlers;
 };
 
 } // namespace nano

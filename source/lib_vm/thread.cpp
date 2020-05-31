@@ -573,16 +573,28 @@ void thread_t::do_INS_SETA_() {
 }
 
 void thread_t::do_INS_GETM_() {
+
+  // pop value and operands
   value_t *obj = stack_.pop();
   const int32_t operand = read_operand_();
-  const std::string &str = vm_.program_.strings()[operand];
 
-  // XXX: farm this out to some registered handlers
+  // get the member string
+  const auto &strtab = vm_.program_.strings();
+  assert(strtab.size() > operand);
+  const std::string &member = vm_.program_.strings()[operand];
 
   if (obj->is_a<val_type_array>()) {
-    if (str == "length") {
+    if (member == "length") {
       const int32_t size = obj->array_size();
       stack_.push_int(size);
+      return;
+    }
+  }
+
+  // try a user handler if one is provided
+  if (vm_.handlers.on_member_get) {
+    if (vm_.handlers.on_member_get(*this, obj, member)) {
+      // user says it was handled
       return;
     }
   }

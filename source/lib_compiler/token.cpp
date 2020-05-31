@@ -98,6 +98,7 @@ const char *token_t::token_name(token_e e) {
   case TOK_LBRACKET: return "[";
   case TOK_RBRACKET: return "]";
   case TOK_NONE:     return "none";
+  case TOK_DOT:      return ".";
   default:
     assert(!"unhandled token type");
     return "";
