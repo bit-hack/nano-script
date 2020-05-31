@@ -233,6 +233,9 @@ bool lexer_t::lex(const char *s, int32_t file_no) {
         push_(TOK_GT);
       }
       continue;
+    case '.':
+      push_(TOK_DOT);
+      continue;
     } // switch
 
     // try to parse number

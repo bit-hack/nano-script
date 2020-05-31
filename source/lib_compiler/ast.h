@@ -33,6 +33,7 @@ enum ast_type_t {
   ast_decl_var_e,
   ast_decl_str_e,
   ast_array_init_e,
+  ast_exp_member_e
 };
 
 struct ast_node_t {
@@ -176,6 +177,22 @@ struct ast_exp_none_t: public ast_node_t {
   {}
 
   const token_t *token;
+};
+
+struct ast_exp_member_t: public ast_node_t {
+  static const ast_type_t TYPE = ast_exp_member_e;
+
+  ast_exp_member_t(const token_t *name, const token_t *member)
+    : ast_node_t(TYPE)
+    , name(name)
+    , member(member)
+    , decl(nullptr)
+  {}
+
+  const token_t *name;
+  const token_t *member;
+  // where this was declared
+  ast_node_t *decl;
 };
 
 struct ast_exp_array_t : public ast_node_t {
@@ -624,6 +641,7 @@ struct ast_visitor_t {
   }
 
   virtual void visit(ast_exp_ident_t* n) { (void)n; }
+  virtual void visit(ast_exp_member_t* n) { (void)n; }
   virtual void visit(ast_exp_lit_var_t* n) { (void)n; }
   virtual void visit(ast_exp_lit_str_t* n) { (void)n; }
   virtual void visit(ast_exp_lit_float_t *n) { (void)n; }
@@ -724,6 +742,12 @@ struct ast_printer_t : ast_visitor_t {
   void visit(ast_program_t* n) override {
     indent_();
     fprintf(fd_, "ast_program_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  void visit(ast_exp_member_t* n) override {
+    indent_();
+    fprintf(fd_, "ast_exp_member_t {name: %s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 

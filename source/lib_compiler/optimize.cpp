@@ -42,6 +42,7 @@ struct op_decl_elim_t: public ast_visitor_t {
   }
 
   void visit(ast_exp_call_t *n) override {
+    // XXX: do we need this?
     ast_visitor_t::visit(n);
   }
 
@@ -82,11 +83,24 @@ struct op_decl_elim_t: public ast_visitor_t {
     }
     return false;
   }
+  
+  void visit(ast_exp_member_t *n) {
+    if (!removing_) {
+      // find the decl
+      const ast_decl_var_t *decl = n->decl->cast<const ast_decl_var_t>();
+      assert(decl);
+      if (decl) {
+        uses_.insert(decl);
+      }
+    }
+    ast_visitor_t::visit(n);
+  }
 
   void visit(ast_exp_ident_t *n) override {
     if (!removing_) {
       // find the decl
       const ast_decl_var_t *decl = n->decl->cast<const ast_decl_var_t>();
+      // XXX: should we not assert decl?
       if (decl) {
         uses_.insert(decl);
       }

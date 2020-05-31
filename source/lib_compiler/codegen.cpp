@@ -71,6 +71,12 @@ struct codegen_pass_t: ast_visitor_t {
     }
   }
 
+  int32_t add_string_(const std::string &str) {
+    const int32_t index = int32_t(strings_.size());
+    strings_.push_back(str);
+    return index;
+  }
+
   void get_func_(ast_decl_func_t *func, const token_t *t = nullptr) {
     assert(func);
     if (func->is_syscall) {
@@ -109,8 +115,12 @@ struct codegen_pass_t: ast_visitor_t {
   }
 
   void visit(ast_exp_lit_str_t* n) override {
+#if 1
+    const int32_t index = add_string_(n->value);
+#else
     const int32_t index = int32_t(strings_.size());
     strings_.push_back(n->value);
+#endif
     emit(INS_NEW_STR, index, n->token);
   }
 
@@ -136,6 +146,16 @@ struct codegen_pass_t: ast_visitor_t {
     }
     if (ast_decl_func_t *func = n->decl->cast<ast_decl_func_t>()) {
       get_func_(func, n->name);
+      return;
+    }
+    assert(!"unknown decl type");
+  }
+
+  void visit(ast_exp_member_t* n) override {
+    if (ast_decl_var_t *decl = n->decl->cast<ast_decl_var_t>()) {
+      const int32_t index = add_string_(n->member->str_);
+      get_decl_(decl, n->name);
+      emit(INS_GETM, index, n->member);
       return;
     }
     assert(!"unknown decl type");
@@ -585,6 +605,7 @@ void codegen_pass_t::emit(instruction_e ins, int32_t o1, const token_t *t) {
   case INS_GETG:
   case INS_SETG:
   case INS_ICALL:
+  case INS_GETM:
     stream_.write8(uint8_t(ins));
     stream_.write32(o1);
     break;

@@ -25,6 +25,7 @@ enum class thread_error_t {
   e_bad_array_object,
   e_bad_type_operation,
   e_bad_argument,
+  e_bad_member_access,
 };
 
 const char *get_thread_error(const nano::thread_error_t &err);

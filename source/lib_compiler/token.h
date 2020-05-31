@@ -47,7 +47,8 @@ enum token_e {
   TOK_STRING,
   TOK_NONE,
   TOK_CONST,
-  TOK_IMPORT
+  TOK_IMPORT,
+  TOK_DOT,
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----

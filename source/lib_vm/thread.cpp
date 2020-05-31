@@ -572,6 +572,24 @@ void thread_t::do_INS_SETA_() {
   a->array()[index] = gc_.copy(*v);
 }
 
+void thread_t::do_INS_GETM_() {
+  value_t *obj = stack_.pop();
+  const int32_t operand = read_operand_();
+  const std::string &str = vm_.program_.strings()[operand];
+
+  // XXX: farm this out to some registered handlers
+
+  if (obj->is_a<val_type_array>()) {
+    if (str == "length") {
+      const int32_t size = obj->array_size();
+      stack_.push_int(size);
+      return;
+    }
+  }
+
+  raise_error(thread_error_t::e_bad_member_access);
+}
+
 void thread_t::reset() {
   error_ = thread_error_t::e_success;
   stack_.clear();
@@ -663,6 +681,7 @@ void thread_t::step_imp_() {
   case INS_SETG:     do_INS_SETG_();       break;
   case INS_GETA:     do_INS_GETA_();       break;
   case INS_SETA:     do_INS_SETA_();       break;
+  case INS_GETM:     do_INS_GETM_();       break;
   default:
     set_error_(thread_error_t::e_bad_opcode);
   }

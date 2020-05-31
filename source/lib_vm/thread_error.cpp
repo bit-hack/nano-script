@@ -24,6 +24,7 @@ const char *get_thread_error(const nano::thread_error_t &err) {
   case thread_error_t::e_bad_type_operation:  return "e_bad_type_operation";
   case thread_error_t::e_bad_argument:        return "e_bad_argument";
   case thread_error_t::e_bad_array_index:     return "e_bad_array_index";
+  case thread_error_t::e_bad_member_access:   return "e_bad_member_access";
   default:
     assert(false);
     return "";

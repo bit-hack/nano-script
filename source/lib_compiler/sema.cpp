@@ -393,7 +393,18 @@ struct sema_decl_annotate_t : public ast_visitor_t {
         errs_.unexpected_token((*n->name));
       }
     }
-    // assert(false);
+  }
+
+  void visit(ast_exp_member_t *n) override {
+    ast_visitor_t::visit(n);
+    n->decl = find_decl(n->name->str_);
+    if (n->decl) {
+      if (!n->decl->cast<ast_decl_var_t>()) {
+        assert(!"TODO: Revise this later please");
+      }
+      return;
+    }
+    errs_.unknown_identifier(*n->name);
   }
 
   void visit(ast_exp_ident_t *n) override {

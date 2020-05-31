@@ -24,7 +24,9 @@ const char *gMnemonic[] = {
   // local variables
   "INS_GETV", "INS_SETV", "INS_GETA", "INS_SETA",
   // global variables
-  "INS_GETG", "INS_SETG"
+  "INS_GETG", "INS_SETG",
+  // member access
+  "INS_GETM"
 };
 
 // make sure this is kept up to date with the opcode table 'instruction_e'
@@ -96,6 +98,7 @@ int32_t disassembler_t::disasm(const uint8_t *ptr, std::string &out) const {
   case INS_GETG:
   case INS_SETG:
   case INS_ICALL:
+  case INS_GETM:
     out = gMnemonic[op];
     out += " ";
     out += std::to_string(val1);

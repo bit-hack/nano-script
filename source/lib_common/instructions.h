@@ -141,6 +141,12 @@ enum instruction_e {
   //    stack[ operand ] = v
   INS_SETG,
 
+  // get member:
+  //    decl      = pop()
+  //    member    = operand
+  //    push( [member] )
+  INS_GETM,
+
   // number of instructions
   __INS_COUNT__,
 };

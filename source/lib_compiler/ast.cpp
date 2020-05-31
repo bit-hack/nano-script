@@ -13,6 +13,7 @@ void ast_visitor_t::dispatch(ast_node_t *n) {
   switch (n->type) {
   case ast_program_e:           visit(n->cast<ast_program_t>());           break;
   case ast_exp_ident_e:         visit(n->cast<ast_exp_ident_t>());         break;
+  case ast_exp_member_e:        visit(n->cast<ast_exp_member_t>());        break;
   case ast_exp_lit_var_e:       visit(n->cast<ast_exp_lit_var_t>());       break;
   case ast_exp_lit_str_e:       visit(n->cast<ast_exp_lit_str_t>());       break;
   case ast_exp_lit_float_e:     visit(n->cast<ast_exp_lit_float_t>());     break;
@@ -65,6 +66,11 @@ struct gc_visitor_t: public ast_visitor_t {
   }
 
   void visit(ast_exp_ident_t* n) override {
+    nodes_.insert(n);
+    ast_visitor_t::visit(n);
+  }
+
+  void visit(ast_exp_member_t* n) override {
     nodes_.insert(n);
     ast_visitor_t::visit(n);
   }

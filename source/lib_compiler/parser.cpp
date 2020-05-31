@@ -138,10 +138,20 @@ void parser_t::parse_lhs_() {
 
     if (const token_t *t = stream_.found(TOK_IDENT)) {
 
+      // <TOK_IDENT> . <TOK_IDENT>
+      if (stream_.found(TOK_DOT)) {
+        // expect a member
+        const token_t *member = stream_.pop(TOK_IDENT);
+        ast_exp_member_t *expr = ast.alloc<ast_exp_member_t>(t, member);
+        exp_stack_.push_back(expr);
+        break;
+      }
+
       // <TOK_IDENT> [ ... ]
       if (stream_.found(TOK_LBRACKET)) {
 
-        // XXX: move out of here
+        // XXX: move out of here... why?
+        // so we can array access other things than TOK_IDENT?
 
         // array access
         ast_exp_array_t *expr = ast.alloc<ast_exp_array_t>(t);
@@ -150,9 +160,10 @@ void parser_t::parse_lhs_() {
         // expect a closing bracket
         stream_.pop(TOK_RBRACKET);
         break;
+      }
 
-      // <TOK_IDENT>
-      } else {
+      // <TOK_IDENT>      
+      {
         // load a local/global
         ast_node_t *expr = ast.alloc<ast_exp_ident_t>(t);
         exp_stack_.push_back(expr);

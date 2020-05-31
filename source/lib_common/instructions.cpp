@@ -20,6 +20,7 @@ bool ins_has_operand(const instruction_e ins) {
   case INS_SETV:
   case INS_GETG:
   case INS_SETG:
+  case INS_GETM:
     return true;
   default:
     return false;
