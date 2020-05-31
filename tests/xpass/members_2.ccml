@@ -1,0 +1,7 @@
+#expect 32
+
+var test[30]
+
+function main()
+  return test.length + 2
+end
