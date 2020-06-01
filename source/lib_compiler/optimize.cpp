@@ -83,7 +83,19 @@ struct op_decl_elim_t: public ast_visitor_t {
     }
     return false;
   }
-  
+
+  void visit(ast_stmt_assign_member_t *n) {
+    if (!removing_) {
+      // find the decl
+      const ast_decl_var_t *decl = n->decl->cast<const ast_decl_var_t>();
+      assert(decl);
+      if (decl) {
+        uses_.insert(decl);
+      }
+    }
+    ast_visitor_t::visit(n);
+  }
+
   void visit(ast_exp_member_t *n) {
     if (!removing_) {
       // find the decl

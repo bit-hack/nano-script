@@ -23,6 +23,7 @@ struct handlers_t {
 
   handlers_t()
     : on_member_get(nullptr)
+    , on_member_set(nullptr)
     , on_array_get(nullptr)
     , on_array_set(nullptr)
     , on_equals(nullptr)
