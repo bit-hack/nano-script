@@ -147,6 +147,12 @@ enum instruction_e {
   //    push( [member] )
   INS_GETM,
 
+  // set member:
+  //    value     = pop()
+  //    decl      = pop()
+  //    member    = operand
+  INS_SETM,
+
   // number of instructions
   __INS_COUNT__,
 };

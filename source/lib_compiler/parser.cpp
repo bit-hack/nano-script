@@ -544,10 +544,12 @@ ast_node_t* parser_t::parse_stmt_() {
   //    <TOK_IDENT> ( <expression list> ) '\n'
   //    <TOK_IDENT> = <expr> '\n'
   //    <TOK_IDENT> <op> = <expr> '\n'
+  //    <TOK_IDENT> . <TOK_IDENT> =
   //    if ( <expr> ) '\n'
   //    while ( <expr> ) '\n'
   //    for ( <TOK_IDENT> = <expr> to <expr> )
   //    return <expr> '\n'
+  //    import <STRING_LIT>
 
   // consume any blank lines
   while (stream_.found(TOK_EOL));
@@ -567,6 +569,9 @@ ast_node_t* parser_t::parse_stmt_() {
     case TOK_MUL:
     case TOK_DIV:
       stmt = parse_compound_(*t);
+      break;
+    case TOK_DOT:
+      stmt = parse_member_assign_(*t);
       break;
     case TOK_ASSIGN:
       // x = ...
@@ -617,6 +622,28 @@ ast_node_t* parser_t::parse_stmt_() {
   return stmt;
 }
 
+ast_node_t* parser_t::parse_member_assign_(const token_t &t) {
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
+
+  auto stmt = ast.alloc<ast_stmt_assign_member_t>(&t);
+  
+  // format:
+  //                V
+  //    <TOK_IDENT>   <TOK_DOT> <TOK_IDENT> = <expr>
+
+  stream_.pop(TOK_DOT);
+
+  stmt->name = &t;
+  stmt->member = stream_.pop(TOK_IDENT);
+
+  stream_.pop(TOK_ASSIGN);
+
+  stmt->expr = parse_expr_();
+
+  return stmt;
+}
+
 ast_node_t* parser_t::parse_function_(const token_t &t) {
   (void)t;
   token_stream_t &stream_ = nano_.lexer().stream();
@@ -653,7 +680,13 @@ ast_node_t* parser_t::parse_function_(const token_t &t) {
   func->body = ast.alloc<ast_block_t>();
   assert(func->body);
 
-  while (!stream_.found(TOK_END)) {
+  while (true) {
+
+    if (const token_t *end = stream_.found(TOK_END)) {
+      func->end = end;
+      break;
+    }
+
     ast_node_t *stmt = parse_stmt_();
     func->body->add(stmt);
   }

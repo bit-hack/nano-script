@@ -214,6 +214,7 @@ protected:
   void do_INS_GETA_();
   void do_INS_SETA_();
   void do_INS_GETM_();
+  void do_INS_SETM_();
 };
 
 } // namespace nano

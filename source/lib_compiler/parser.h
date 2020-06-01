@@ -45,6 +45,7 @@ protected:
   ast_node_t* parse_const_(const token_t &var);
   ast_node_t* parse_global_(const token_t &t);
   bool parse_import_(const token_t &t);
+  ast_node_t *parse_member_assign_(const token_t &t);
 
   // expressions parsing helpers
   void parse_expr_ex_(uint32_t tide);

@@ -23,10 +23,32 @@ struct handlers_t {
 
   handlers_t()
     : on_member_get(nullptr)
+    , on_array_get(nullptr)
+    , on_array_set(nullptr)
+    , on_equals(nullptr)
+    , on_add(nullptr)
+    , on_sub(nullptr)
+    , on_mul(nullptr)
+    , on_div(nullptr)
   {}
 
-  // return true if successful
   bool (*on_member_get)(thread_t &t, value_t *v, const std::string &member);
+
+  bool (*on_member_set)(thread_t &t, value_t *obj, value_t *expr, const std::string &member);
+
+  bool (*on_array_get)(thread_t &t, value_t *a, const value_t *index);
+
+  bool (*on_array_set)(thread_t &t, value_t *a, const value_t *index, value_t *val);
+
+  bool (*on_equals)(thread_t &t, const value_t *l, const value_t *r);
+
+  bool (*on_add)(thread_t &t, const value_t *l, const value_t *r);
+
+  bool (*on_sub)(thread_t &t, const value_t *l, const value_t *r);
+
+  bool (*on_mul)(thread_t &t, const value_t *l, const value_t *r);
+
+  bool (*on_div)(thread_t &t, const value_t *l, const value_t *r);
 };
 
 struct vm_t {

@@ -388,6 +388,19 @@ struct codegen_pass_t: ast_visitor_t {
     set_decl_(d, n->name);
   }
 
+  void visit(ast_stmt_assign_member_t *n) override {
+    assert(n);
+    // dispatch the value to set
+    dispatch(n->expr);
+    ast_decl_var_t *d = n->decl;
+    assert(d);
+    assert(!d->is_const);
+    get_decl_(d, n->name);
+    // add the member string
+    const int32_t index = add_string_(n->member->str_);
+    emit(INS_SETM, index, n->member);
+  }
+
   void visit(ast_stmt_assign_array_t *n) override {
     assert(n);
     // dispatch the value to set
@@ -433,10 +446,10 @@ struct codegen_pass_t: ast_visitor_t {
       }
     }
     if (!is_return) {
-      emit(INS_NEW_INT, 0, nullptr);
+      emit(INS_NEW_INT, 0, n->end);
       const auto *f = stack.front()->cast<ast_decl_func_t>();
       const int32_t operand = int32_t(f->args.size()) + f->stack_size;
-      emit(INS_RET, operand, nullptr);
+      emit(INS_RET, operand, n->end);
     }
 
     func->code_end_ = pos();
@@ -606,6 +619,7 @@ void codegen_pass_t::emit(instruction_e ins, int32_t o1, const token_t *t) {
   case INS_SETG:
   case INS_ICALL:
   case INS_GETM:
+  case INS_SETM:
     stream_.write8(uint8_t(ins));
     stream_.write32(o1);
     break;

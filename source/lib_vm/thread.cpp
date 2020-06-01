@@ -142,6 +142,14 @@ void thread_t::do_INS_ADD_() {
     stack_.push(s);
     return;
   }
+
+  // try a user handler
+  if (vm_.handlers.on_add) {
+    if (vm_.handlers.on_add(*this, l, r)) {
+      return;
+    }
+  }
+
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -159,6 +167,14 @@ void thread_t::do_INS_SUB_() {
     stack_.push_float(l->as_float() - r->as_float());
     return;
   }
+
+  // try a user handler
+  if (vm_.handlers.on_sub) {
+    if (vm_.handlers.on_sub(*this, l, r)) {
+      return;
+    }
+  }
+
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -174,6 +190,14 @@ void thread_t::do_INS_MUL_() {
     stack_.push_float(l->as_float() * r->as_float());
     return;
   }
+
+  // try a user handler
+  if (vm_.handlers.on_mul) {
+    if (vm_.handlers.on_mul(*this, l, r)) {
+      return;
+    }
+  }
+
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -195,6 +219,14 @@ void thread_t::do_INS_DIV_() {
     stack_.push_float(l->as_float() / r->as_float());
     return;
   }
+
+  // try a user handler
+  if (vm_.handlers.on_div) {
+    if (vm_.handlers.on_div(*this, l, r)) {
+      return;
+    }
+  }
+
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -342,6 +374,14 @@ void thread_t::do_INS_EQ_() {
       l->as_float() == r->as_float() ? 1 : 0);
     return;
   }
+
+  // check with user handlers
+  if (vm_.handlers.on_equals) {
+    if (vm_.handlers.on_equals(*this, l, r)) {
+      return;
+    }
+  }
+
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -522,6 +562,15 @@ void thread_t::do_INS_SETG_() {
 void thread_t::do_INS_GETA_() {
   value_t *a = stack_.pop();
   value_t *i = stack_.pop();
+
+  // check user handlers for this action
+  // XXX: can we try it at the end
+  if (vm_.handlers.on_array_get) {
+    if (vm_.handlers.on_array_get(*this, a, i)) {
+      return;
+    }
+  }
+
   if (!a) {
     raise_error(thread_error_t::e_bad_array_object);
     return;
@@ -556,6 +605,15 @@ void thread_t::do_INS_SETA_() {
   value_t *a = stack_.pop();
   value_t *i = stack_.pop();
   value_t *v = stack_.pop();
+
+  // check user handlers for this action
+  // XXX: try this at the end
+  if (vm_.handlers.on_array_set) {
+    if (vm_.handlers.on_array_set(*this, a, i, v)) {
+      return;
+    }
+  }
+
   if (a->type() != val_type_array) {
     raise_error(thread_error_t::e_bad_array_object);
     return;
@@ -570,6 +628,28 @@ void thread_t::do_INS_SETA_() {
     return;
   }
   a->array()[index] = gc_.copy(*v);
+}
+
+void thread_t::do_INS_SETM_() {
+
+  // pop value and operands
+  value_t *obj = stack_.pop();
+  value_t *expr = stack_.pop();
+  const int32_t operand = read_operand_();
+
+  // get the member string
+  const auto &strtab = vm_.program_.strings();
+  assert(strtab.size() > operand);
+  const std::string &member = vm_.program_.strings()[operand];
+
+  // try the user handler
+  if (vm_.handlers.on_member_set) {
+    if (vm_.handlers.on_member_set(*this, obj, expr, member)) {
+      return;
+    }
+  }
+
+  raise_error(thread_error_t::e_bad_member_access);
 }
 
 void thread_t::do_INS_GETM_() {
@@ -694,6 +774,7 @@ void thread_t::step_imp_() {
   case INS_GETA:     do_INS_GETA_();       break;
   case INS_SETA:     do_INS_SETA_();       break;
   case INS_GETM:     do_INS_GETM_();       break;
+  case INS_SETM:     do_INS_SETM_();       break;
   default:
     set_error_(thread_error_t::e_bad_opcode);
   }

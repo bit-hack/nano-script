@@ -22,6 +22,7 @@ enum ast_type_t {
   ast_exp_call_e,
   ast_exp_bin_op_e,
   ast_exp_unary_op_e,
+
   ast_stmt_if_e,
   ast_stmt_while_e,
   ast_stmt_for_e,
@@ -33,7 +34,8 @@ enum ast_type_t {
   ast_decl_var_e,
   ast_decl_str_e,
   ast_array_init_e,
-  ast_exp_member_e
+  ast_exp_member_e,
+  ast_stmt_assign_member_e
 };
 
 struct ast_node_t {
@@ -476,6 +478,28 @@ struct ast_stmt_assign_array_t : public ast_node_t {
   ast_decl_var_t *decl;
 };
 
+struct ast_stmt_assign_member_t : public ast_node_t {
+  static const ast_type_t TYPE = ast_stmt_assign_member_e;
+
+  ast_stmt_assign_member_t(const token_t *name)
+    : ast_node_t(TYPE)
+    , name(name)
+    , member(nullptr)
+    , expr(nullptr)
+    , decl(nullptr)
+  {}
+
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
+    expr = (expr == which) ? with : expr;
+  }
+
+  const token_t *name;
+  const token_t *member;
+  ast_node_t *expr;
+  // where was 'name' declared
+  ast_decl_var_t *decl;
+};
+
 struct ast_array_init_t: public ast_node_t {
   static const ast_type_t TYPE = ast_array_init_e;
 
@@ -496,6 +520,7 @@ struct ast_decl_func_t : public ast_node_t {
     , name(n->str_)
     , body(nullptr)
     , stack_size(0)
+    , end(nullptr)
   {}
 
   ast_decl_func_t(const std::string &n)
@@ -505,6 +530,7 @@ struct ast_decl_func_t : public ast_node_t {
     , name(n)
     , body(nullptr)
     , stack_size(0)
+    , end(nullptr)
   {}
 
   void replace_child(const ast_node_t *which, ast_node_t *with) override {
@@ -522,6 +548,7 @@ struct ast_decl_func_t : public ast_node_t {
   }
 
   const token_t *token;
+  const token_t *end;
 
   bool is_syscall;
 
@@ -705,6 +732,10 @@ struct ast_visitor_t {
     }
   }
 
+  virtual void visit(ast_stmt_assign_member_t* n) {
+    dispatch(n->expr);
+  }
+
   virtual void visit(ast_block_t *n) {
     for (auto *a : n->nodes)
       dispatch(a);
@@ -843,6 +874,12 @@ struct ast_printer_t : ast_visitor_t {
   void visit(ast_stmt_for_t* n) override {
     indent_();
     fprintf(fd_, "ast_stmt_for_t {name=%s}\n", n->name->string());
+    ast_visitor_t::visit(n);
+  }
+
+  void visit(ast_stmt_assign_member_t* n) override {
+    indent_();
+    fprintf(fd_, "ast_stmt_assign_member_t\n");
     ast_visitor_t::visit(n);
   }
 
