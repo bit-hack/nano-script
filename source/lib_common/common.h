@@ -45,6 +45,7 @@ struct disassembler_t;
 
 struct thread_t;
 
+typedef uint32_t thread_id_t;
 
 typedef void(*nano_syscall_t)(struct thread_t &thread, int32_t num_args);
 

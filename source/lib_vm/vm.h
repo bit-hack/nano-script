@@ -7,7 +7,7 @@
 #include <cstring>
 #include <cstdlib>
 #include <memory>
-#include <set>
+#include <map>
 
 #include "../lib_common/common.h"
 #include "../lib_common/types.h"
@@ -32,6 +32,8 @@ struct handlers_t {
     , on_mul(nullptr)
     , on_div(nullptr)
   {}
+
+  // on_collect?
 
   bool (*on_member_get)(thread_t &t, value_t *v, const std::string &member);
 
@@ -68,6 +70,9 @@ struct vm_t {
                  value_t* &return_code,
                  thread_error_t &error);
 
+  // run a frame and schedule all threads
+  bool run_frame();
+
   // the currently bound program
   program_t &program_;
 
@@ -79,7 +84,8 @@ struct vm_t {
   std::vector<value_t*> g_;
 
   // threads
-  std::set<thread_t *> threads_;
+  std::map<thread_id_t, thread_t *> threads_;
+  thread_id_t next_thread_id_;
 
   // handlers
   handlers_t handlers;

@@ -13,14 +13,16 @@ namespace nano {
 
 vm_t::vm_t(program_t &program)
   : program_(program)
-  , gc_(new value_gc_t) {}
+  , gc_(new value_gc_t)
+  , next_thread_id_(1)
+{}
 
 void vm_t::gc_collect() {
   // traverse globals
   gc_->trace(g_.data(), g_.size());
   // traverse thread stack
-  for (thread_t *t : threads_) {
-    gc_->trace(t->stack_.data(), t->stack_.head());
+  for (const auto &pair : threads_) {
+    gc_->trace(pair.second->stack_.data(), pair.second->stack_.head());
   }
   // collect
   gc_->collect();
@@ -30,8 +32,8 @@ void vm_t::reset() {
   // reset the garbage collector
   gc_->reset();
   // delete all threads
-  for (thread_t *t : threads_) {
-    delete t;
+  for (auto &pair : threads_) {
+    delete pair.second;
   }
   threads_.clear();
 }
@@ -69,8 +71,23 @@ bool vm_t::call_once(const function_t &func,
     error = thread.get_error();
     return false;
   }
-  return_code = thread.get_return_code();
+  return_code = thread.get_return_value();
   return true;
+}
+
+// run a frame and schedule all threads
+bool vm_t::run_frame() {
+
+  // decrement wait count for all threads
+  for (auto &pair : threads_) {
+    auto &waits = pair.second->waits;
+    waits -= waits > 0 ? 1 : 0;
+  }
+
+  // run all active threads
+
+
+  return false;
 }
 
 } // namespace nano

@@ -79,6 +79,8 @@ struct value_gc_t {
 
   value_t *new_syscall(uint32_t index);
 
+  value_t *new_thread(thread_id_t tid);
+
   value_t *copy(const value_t &v);
 
   void collect();

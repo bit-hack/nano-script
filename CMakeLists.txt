@@ -35,6 +35,7 @@ set(NANO_BUILD_DRIVER false CACHE BOOL "Build the driver")
 set(NANO_BUILD_SDL_DRIVER false CACHE BOOL "Build the SDL driver")
 set(NANO_BUILD_COMP false CACHE BOOL "Build the compiler")
 set(NANO_BUILD_IDE false CACHE BOOL "Build the IDE")
+set(NANO_BUILD_INTEGRATION_TESTS false CACHE BOOL "Build the integration tests")
 
 if (${NANO_BUILD_IDE} OR ${NANO_BUILD_SDL_DRIVER})
   find_package(SDL2 REQUIRED)
@@ -66,4 +67,8 @@ endif()
 
 if (${NANO_BUILD_IDE})
   add_subdirectory("examples/ide")
+endif()
+
+if (${NANO_BUILD_INTEGRATION_TESTS})
+  add_subdirectory("tests/integration")
 endif()

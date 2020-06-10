@@ -39,6 +39,11 @@ void value_stack_t::push_string(const std::string &v) {
   push(s);
 }
 
+void value_stack_t::push_thread(thread_id_t tid) {
+  value_t *v = gc_.new_thread(tid);
+  push(v);
+}
+
 void value_stack_t::set_error(thread_error_t error) {
   thread_.raise_error(error);
 }
@@ -52,6 +57,7 @@ std::string value_t::to_string() const {
   case val_type_none:    return "none";
   case val_type_func:    return "function@" + std::to_string(v);
   case val_type_syscall: return "syscall@" + std::to_string(v);
+  case val_type_thread:  return "thread@" + std::to_string(v);
   default:
     assert(!"unknown");
     return "";

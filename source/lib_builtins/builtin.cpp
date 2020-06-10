@@ -194,6 +194,59 @@ static void builtin_sqrt(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
+static void builtin_thread_new(struct nano::thread_t &t, int32_t nargs) {
+  (void)nargs;
+  const nano::value_t *v = t.get_stack().pop();
+  if (v->is_a<val_type_func>()) {
+    // TODO
+    return;
+  }
+  t.raise_error(thread_error_t::e_bad_argument);
+}
+
+static void builtin_thread_start(struct nano::thread_t &t, int32_t nargs) {
+  (void)nargs;
+  const nano::value_t *v = t.get_stack().pop();
+  if (v->is_a<val_type_thread>()) {
+    thread_t *t = v->thread();
+    // TODO
+    return;
+  }
+  t.raise_error(thread_error_t::e_bad_argument);
+}
+
+static void builtin_thread_pause(struct nano::thread_t &t, int32_t nargs) {
+  (void)nargs;
+  const nano::value_t *v = t.get_stack().pop();
+  if (v->is_a<val_type_thread>()) {
+    thread_t *t = v->thread();
+    // TODO
+    return;
+  }
+  t.raise_error(thread_error_t::e_bad_argument);
+}
+
+static void builtin_thread_kill(struct nano::thread_t &t, int32_t nargs) {
+  (void)nargs;
+  const nano::value_t *v = t.get_stack().pop();
+  if (v->is_a<val_type_thread>()) {
+    thread_t *t = v->thread();
+    // TODO
+    return;
+  }
+  t.raise_error(thread_error_t::e_bad_argument);
+}
+
+static void builtin_wait(struct nano::thread_t &t, int32_t nargs) {
+  (void)nargs;
+  const nano::value_t *v = t.get_stack().pop();
+  if (v->is_a<val_type_int>()) {
+    t.waits = v->as_int();
+    return;
+  }
+  t.raise_error(thread_error_t::e_bad_argument);
+}
+
 void builtins_register(nano_t &nano) {
 
   nano.syscall_register("abs", 1);
@@ -214,29 +267,36 @@ void builtins_register(nano_t &nano) {
   nano.syscall_register("floor", 1);
 
   nano.syscall_register("sqrt", 1);
+
+  nano.syscall_register("thread_new", 1);
+  nano.syscall_register("thread_start", 1);
+  nano.syscall_register("thread_pause", 1);
+  nano.syscall_register("thread_kill", 1);
+
+  nano.syscall_register("wait", 1);
 }
 
 void builtins_resolve(program_t &prog) {
 
   std::map<std::string, nano_syscall_t> map;
-  map["abs"]    = builtin_abs;
-  map["min"]    = builtin_min;
-  map["max"]    = builtin_max;
-
-  map["bitand"] = builtin_bitand;
-
-  map["sin"]    = builtin_sin;
-  map["cos"]    = builtin_cos;
-  map["tan"]    = builtin_tan;
-
-  map["len"]    = builtin_len;
-  map["chr"]    = builtin_chr;
-
-  map["round"] = builtin_round;
-  map["ceil"]  = builtin_ceil;
-  map["floor"] = builtin_floor;
-
-  map["sqrt"]  = builtin_sqrt;
+  map["abs"]          = builtin_abs;
+  map["min"]          = builtin_min;
+  map["max"]          = builtin_max;
+  map["bitand"]       = builtin_bitand;
+  map["sin"]          = builtin_sin;
+  map["cos"]          = builtin_cos;
+  map["tan"]          = builtin_tan;
+  map["len"]          = builtin_len;
+  map["chr"]          = builtin_chr;
+  map["round"]        = builtin_round;
+  map["ceil"]         = builtin_ceil;
+  map["floor"]        = builtin_floor;
+  map["sqrt"]         = builtin_sqrt;
+  map["thread_new"]   = builtin_thread_new;
+  map["thread_start"] = builtin_thread_start;
+  map["thread_pause"] = builtin_thread_pause;
+  map["thread_kill"]  = builtin_thread_kill;
+  map["wait"]         = builtin_wait;
 
   for (auto &itt : prog.syscalls()) {
     auto i = map.find(itt.name_);

@@ -73,6 +73,14 @@ value_t *value_gc_t::new_syscall(uint32_t index) {
   return v;
 }
 
+value_t *value_gc_t::new_thread(thread_id_t tid) {
+  value_t *v = space_to().alloc<value_t>(0);
+  assert(v);
+  v->type_ = val_type_thread;
+  v->v = tid;
+  return v;
+}
+
 bool value_gc_t::should_collect() const {
   const size_t x = (space_to().size() * 100) / space_to().capacity();
   // collect if over 75%
@@ -137,6 +145,14 @@ void value_gc_t::trace(value_t **list, size_t num) {
       value_t *n = to.alloc<value_t>(0);
       n->type_ = v->type();
       n->v = v->v;
+      list[i] = n;
+      break;
+    }
+    case val_type_thread:
+    {
+      value_t *n = to.alloc<value_t>(0);
+      n->type_ = val_type_thread;
+      n->p = v->p;
       list[i] = n;
       break;
     }

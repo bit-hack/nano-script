@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 
+#include "../lib_common/common.h"
 #include "thread_error.h"
 
 
@@ -23,6 +24,7 @@ enum value_type_t {
   val_type_float,
   val_type_func,
   val_type_syscall,
+  val_type_thread,
 
   val_type_user = 0x100,
 };
@@ -55,9 +57,14 @@ struct value_t {
     v = val;
   }
 
+  void *pointer() const {
+    assert(type() >= val_type_user);
+    return p;
+  }
+
   int32_t integer() const {
     assert(type() == val_type_int);
-    return (int32_t)v;
+    return v;
   }
 
   const char *string() const {
@@ -79,6 +86,11 @@ struct value_t {
     return this == nullptr ?
       value_type_t::val_type_none :
       type_;
+  }
+
+  thread_t *thread() const {
+    assert(type() == val_type_thread);
+    return (thread_t*)p;
   }
 
   int32_t strlen() const {
@@ -113,6 +125,7 @@ struct value_t {
 
   int32_t as_bool() const {
     switch (type()) {
+    case val_type_thread: // while active?
     case val_type_array:
     case val_type_func:
     case val_type_syscall: return true;
@@ -138,6 +151,8 @@ struct value_t {
     int32_t v;
     // floating point value
     float f;
+    // pointer type
+    void *p;
   };
 };
 
@@ -163,6 +178,9 @@ struct value_stack_t {
   // push a new syscall
   void push_syscall(const int32_t number);
 
+  // push a thread
+  void push_thread(thread_id_t tid);
+
   void clear() {
     stack_.clear();
   }
@@ -185,7 +203,7 @@ struct value_stack_t {
   }
 
   // peek a stack value
-  value_t* peek() {
+  value_t* peek() const {
     assert(!stack_.empty());
     value_t *out = stack_.back();
     return out;

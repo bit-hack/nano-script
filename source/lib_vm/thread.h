@@ -31,6 +31,14 @@ struct frame_t {
   bool terminal_;
 };
 
+
+enum class thread_flag_t {
+  paused    = 1,
+  finished  = 2,
+  error     = 4,
+};
+
+
 struct thread_t {
 
   thread_t(vm_t &vm);
@@ -48,19 +56,26 @@ struct thread_t {
   // step a source line
   bool step_line();
 
-  bool finished() const { return finished_; }
+  bool finished() const {
+    return finished_;
+  }
 
-  // return the current error code
-  value_t *get_return_code() const {
-    return finished_ ? return_code_ : nullptr;
+  value_t *get_return_value() const {
+    return finished_ ? stack_.peek() : nullptr;
   }
 
   // return the total cycle count
-  uint32_t get_cycle_count() const { return cycles_; }
+  uint32_t get_cycle_count() const {
+    return cycles_;
+  }
 
-  bool has_error() const { return error_ != thread_error_t::e_success; }
+  bool has_error() const {
+    return error_ != thread_error_t::e_success;
+  }
 
-  thread_error_t get_error() const { return error_; }
+  thread_error_t get_error() const {
+    return error_;
+  }
 
   // return the current source line number
   line_t get_source_line() const;
@@ -72,20 +87,30 @@ struct thread_t {
   }
 
   // return garbage collector
-  value_gc_t &gc() { return gc_; }
+  value_gc_t &gc() {
+    return gc_;
+  }
 
   // return the value stack
-  value_stack_t &get_stack() { return stack_; }
+  value_stack_t &get_stack() {
+    return stack_;
+  }
 
   // halt this thread
-  void halt() { halted_ = true; }
+  void halt() {
+    halted_ = true;
+  }
 
   void reset();
 
   // return the program counter
-  int32_t get_pc() const { return pc_; }
+  int32_t get_pc() const {
+    return pc_;
+  }
 
-  const std::vector<frame_t> &frames() const { return f_; }
+  const std::vector<frame_t> &frames() const {
+    return f_;
+  }
 
   void breakpoint_add(line_t line);
   void breakpoint_remove(line_t line);
@@ -94,6 +119,12 @@ struct thread_t {
   // space for user data
   void *user_data;
 
+  // this threads id
+  const thread_id_t id;
+
+  // number of frames to wait for
+  int32_t waits;
+
 protected:
   friend struct vm_t;
 
@@ -101,9 +132,6 @@ protected:
   // we need to do this so we can resume from a breakpoint without hitting it
   // again.
   line_t last_line_;
-
-  // the return value of the thread function
-  value_t *return_code_;
 
   // set when a thread raises and error
   thread_error_t error_;
@@ -166,7 +194,6 @@ protected:
   void set_error_(thread_error_t error) {
     finished_ = true;
     error_ = error;
-    return_code_ = nullptr;
   }
 
   value_t *getv_(int32_t offs);
