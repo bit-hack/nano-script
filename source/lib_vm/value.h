@@ -185,7 +185,7 @@ struct value_stack_t {
   }
 
   // peek a stack value
-  value_t* peek() {
+  value_t* peek() const {
     assert(!stack_.empty());
     value_t *out = stack_.back();
     return out;

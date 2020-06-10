@@ -59,8 +59,7 @@ bool to_string(char *buf, size_t size, const value_t *val) {
 
 
 thread_t::thread_t(vm_t &vm)
-  : return_code_(nullptr)
-  , cycles_(0)
+  : cycles_(0)
   , finished_(true)
   , halted_(false)
   , pc_(0)
@@ -688,7 +687,6 @@ void thread_t::reset() {
   f_.clear();
   halted_ = false;
   finished_ = false;
-  return_code_ = nullptr;
 }
 
 bool thread_t::prepare(const function_t &func, int32_t argc,
@@ -698,7 +696,6 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
   finished_ = true;
   cycles_ = 0;
   halted_ = false;
-  return_code_ = nullptr;
 
   stack_.clear();
 
@@ -707,7 +704,6 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
 
   // verify num arguments
   if (int32_t(func.num_args()) != argc) {
-    return_code_ = nullptr;
     error_ = thread_error_t::e_bad_num_args;
     return false;
   }
@@ -821,7 +817,6 @@ uint32_t thread_t::leave_() {
     finished_ |= f_.empty();
     if (finished_) {
       assert(stack_.head() > 0);
-      return_code_ = stack_.peek();
     }
     return ret_pc;
   }

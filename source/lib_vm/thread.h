@@ -52,7 +52,7 @@ struct thread_t {
 
   // return the current error code
   value_t *get_return_code() const {
-    return finished_ ? return_code_ : nullptr;
+    return finished_ ? stack_.peek() : nullptr;
   }
 
   // return the total cycle count
@@ -101,9 +101,6 @@ protected:
   // we need to do this so we can resume from a breakpoint without hitting it
   // again.
   line_t last_line_;
-
-  // the return value of the thread function
-  value_t *return_code_;
 
   // set when a thread raises and error
   thread_error_t error_;
@@ -166,7 +163,6 @@ protected:
   void set_error_(thread_error_t error) {
     finished_ = true;
     error_ = error;
-    return_code_ = nullptr;
   }
 
   value_t *getv_(int32_t offs);
