@@ -69,7 +69,7 @@ bool vm_t::call_once(const function_t &func,
     error = thread.get_error();
     return false;
   }
-  return_code = thread.get_return_code();
+  return_code = thread.get_return_value();
   return true;
 }
 

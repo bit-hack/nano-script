@@ -215,7 +215,7 @@ void lang_prepare() {
 void lang_on_finish() {
   if (g_thread->finished()) {
     g_output.push_back("Finished after " + std::to_string(g_thread->get_cycle_count()) + " cycles");
-    const nano::value_t *ret = g_thread->get_return_code();
+    const nano::value_t *ret = g_thread->get_return_value();
     std::string ret_str = ret->to_string();
     g_output.push_back("Returned " + ret_str);
     g_run_option |= RUN_STOP;

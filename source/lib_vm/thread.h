@@ -51,7 +51,7 @@ struct thread_t {
   bool finished() const { return finished_; }
 
   // return the current error code
-  value_t *get_return_code() const {
+  value_t *get_return_value() const {
     return finished_ ? stack_.peek() : nullptr;
   }
 
