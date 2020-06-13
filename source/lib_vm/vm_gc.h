@@ -5,6 +5,7 @@
 #include <vector>
 #include <array>
 #include <unordered_map>
+#include <unordered_set>
 
 #include "value.h"
 
@@ -125,40 +126,19 @@ protected:
   }
 
   void forward_add(const value_t *key, value_t *val) {
-#if 0
-    forward_.emplace_back(key, val);
-#else
     forward_[key] = val;
-#endif
   }
 
   value_t *forward_find(const value_t *v) {
-#if 0
-    for (const auto &p : forward_) {
-      if (v == p.first) {
-        return p.second;
-      }
-    }
-    return nullptr;
-#else
     auto itt = forward_.find(v);
     return itt == forward_.end() ? nullptr : itt->second;
-#endif
   }
 
   // since getv puts an array on the stack and then geta/seta to set its member
   // we have to keep a list of already moved arrays.  this could be avoided if
   // we used different instructions to avoid using getv, and instead looked it
   // up when we need.
-  //
-  // its assumed forward_ will always be very small
-  //
-  // XXX: why not use a std::unordered_map?
-#if 0
-  std::vector<std::pair<const value_t *, value_t *>> forward_;
-#else
   std::unordered_map<const value_t *, value_t *> forward_;
-#endif
 
   uint32_t flipflop_;
   std::array<arena_t, 2> space_;

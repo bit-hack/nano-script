@@ -250,6 +250,15 @@ function_t *program_t::function_find(int32_t pc) {
   return nullptr;
 }
 
+const function_t *program_t::function_find(int32_t pc) const {
+  for (const function_t &f : functions_) {
+    if (pc >= f.code_start_ && pc < f.code_end_) {
+      return &f;
+    }
+  }
+  return nullptr;
+}
+
 bool program_t::syscall_resolve(const std::string &name, nano_syscall_t syscall) {
   bool res = false;
   for (auto &i : syscalls_) {

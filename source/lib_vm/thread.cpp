@@ -68,14 +68,7 @@ thread_t::thread_t(vm_t &vm)
   , stack_(*this, *(vm.gc_))
 {
   f_.reserve(16);
-  vm_.threads_.insert(this);
   reset();
-}
-
-thread_t::~thread_t() {
-  auto itt = vm_.threads_.find(this);
-  assert(itt != vm_.threads_.end());
-  vm_.threads_.erase(itt);
 }
 
 int32_t thread_t::read_operand_() {
@@ -105,8 +98,7 @@ void thread_t::do_INS_ADD_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   // int like
-  if (l->is_a<val_type_int>() &&
-      r->is_a<val_type_int>()) {
+  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
     stack_.push_int(l->v + r->v);
     return;
   }
@@ -141,14 +133,12 @@ void thread_t::do_INS_ADD_() {
     stack_.push(s);
     return;
   }
-
   // try a user handler
   if (vm_.handlers.on_add) {
     if (vm_.handlers.on_add(*this, l, r)) {
       return;
     }
   }
-
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -156,8 +146,7 @@ void thread_t::do_INS_SUB_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   // int like
-  if (l->is_a<val_type_int>() &&
-      r->is_a<val_type_int>()) {
+  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
     stack_.push_int(l->v - r->v);
     return;
   }
@@ -166,20 +155,19 @@ void thread_t::do_INS_SUB_() {
     stack_.push_float(l->as_float() - r->as_float());
     return;
   }
-
   // try a user handler
   if (vm_.handlers.on_sub) {
     if (vm_.handlers.on_sub(*this, l, r)) {
       return;
     }
   }
-
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_MUL_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
+  // int like
   if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
     stack_.push_int(l->v * r->v);
     return;
@@ -196,15 +184,14 @@ void thread_t::do_INS_MUL_() {
       return;
     }
   }
-
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_DIV_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() &&
-      r->is_a<val_type_int>()) {
+  // int like
+  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
     if (r->v == 0) {
       set_error_(thread_error_t::e_bad_divide_by_zero);
     } else {
@@ -218,22 +205,20 @@ void thread_t::do_INS_DIV_() {
     stack_.push_float(l->as_float() / r->as_float());
     return;
   }
-
   // try a user handler
   if (vm_.handlers.on_div) {
     if (vm_.handlers.on_div(*this, l, r)) {
       return;
     }
   }
-
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
 void thread_t::do_INS_MOD_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() &&
-      r->is_a<val_type_int>()) {
+  // int like
+  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
     if (r->v == 0) {
       set_error_(thread_error_t::e_bad_divide_by_zero);
     } else {
@@ -275,8 +260,7 @@ void thread_t::do_INS_LT_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
   // integer only comparison
-  if (l->is_a<val_type_int>() &&
-      r->is_a<val_type_int>()) {
+  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
     stack_.push_int(l->v < r->v ? 1 : 0);
     return;
   }
@@ -291,8 +275,8 @@ void thread_t::do_INS_LT_() {
 void thread_t::do_INS_GT_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() &&
-      r->is_a<val_type_int>()) {
+  // integer only comparison
+  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
     stack_.push_int(l->v > r->v ? 1 : 0);
     return;
   }
@@ -307,8 +291,8 @@ void thread_t::do_INS_GT_() {
 void thread_t::do_INS_LEQ_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() &&
-      r->is_a<val_type_int>()) {
+  // integer only comparison
+  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
     stack_.push_int(l->v <= r->v ? 1 : 0);
     return;
   }
@@ -323,8 +307,8 @@ void thread_t::do_INS_LEQ_() {
 void thread_t::do_INS_GEQ_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() &&
-      r->is_a<val_type_int>()) {
+  // integer only comparison
+  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
     stack_.push_int(l->v >= r->v ? 1 : 0);
     return;
   }
@@ -338,8 +322,8 @@ void thread_t::do_INS_GEQ_() {
 void thread_t::do_INS_EQ_() {
   const value_t *r = stack_.pop();
   const value_t *l = stack_.pop();
-  if (l->is_a<val_type_int>() &&
-      r->is_a<val_type_int>()) {
+  // integer only comparison
+  if (l->is_a<val_type_int>() && r->is_a<val_type_int>()) {
     stack_.push_int(l->v == r->v ? 1 : 0);
     return;
   }
@@ -373,14 +357,12 @@ void thread_t::do_INS_EQ_() {
       l->as_float() == r->as_float() ? 1 : 0);
     return;
   }
-
   // check with user handlers
   if (vm_.handlers.on_equals) {
     if (vm_.handlers.on_equals(*this, l, r)) {
       return;
     }
   }
-
   raise_error(thread_error_t::e_bad_type_operation);
 }
 
@@ -774,7 +756,6 @@ void thread_t::step_imp_() {
   default:
     set_error_(thread_error_t::e_bad_opcode);
   }
-
   // check for any breakpoints
   if (!breakpoints_.empty()) {
     // check if the source line is in our list
@@ -787,7 +768,6 @@ void thread_t::step_imp_() {
     // keep track of the last source line we were on
     last_line_ = l;
   }
-
   // increment cycle count
   ++cycles_;
 }
@@ -868,10 +848,22 @@ bool thread_t::resume(int32_t cycles) {
   for (; cycles; --cycles) {
     tick_gc_(cycles);
     step_imp_();
-    if (finished_ || halted_) {
+    if (finished_) {
+      if (has_error()) {
+        if (vm_.handlers.on_thread_error) {
+          vm_.handlers.on_thread_error(*this);
+        }
+      }
+      if (vm_.handlers.on_thread_finish) {
+        vm_.handlers.on_thread_finish(*this);
+      }
+      break;
+    }
+    if (halted_) {
       break;
     }
   }
+  // cycles timeout
   return !has_error();
 }
 
@@ -885,6 +877,7 @@ void thread_t::setv_(int32_t offs, value_t *val) {
   stack_.set(index, val);
 }
 
+#if 0
 bool thread_t::call_init_() {
   error_ = thread_error_t::e_success;
   finished_ = true;
@@ -915,6 +908,7 @@ bool thread_t::call_init_() {
   }
   return finished();
 }
+#endif
 
 void thread_t::breakpoint_add(line_t line) {
   breakpoints_.insert(line);

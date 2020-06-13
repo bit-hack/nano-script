@@ -33,9 +33,6 @@ struct frame_t {
 
 struct thread_t {
 
-  thread_t(vm_t &vm);
-  ~thread_t();
-
   // prepare to execute a function
   bool prepare(const function_t &func, int32_t argc, const value_t *argv);
 
@@ -48,7 +45,9 @@ struct thread_t {
   // step a source line
   bool step_line();
 
-  bool finished() const { return finished_; }
+  bool finished() const {
+    return finished_;
+  }
 
   // return the current error code
   value_t *get_return_value() const {
@@ -56,11 +55,17 @@ struct thread_t {
   }
 
   // return the total cycle count
-  uint32_t get_cycle_count() const { return cycles_; }
+  uint32_t get_cycle_count() const {
+    return cycles_;
+  }
 
-  bool has_error() const { return error_ != thread_error_t::e_success; }
+  bool has_error() const {
+    return error_ != thread_error_t::e_success;
+  }
 
-  thread_error_t get_error() const { return error_; }
+  thread_error_t get_error() const {
+    return error_;
+  }
 
   // return the current source line number
   line_t get_source_line() const;
@@ -72,20 +77,30 @@ struct thread_t {
   }
 
   // return garbage collector
-  value_gc_t &gc() { return gc_; }
+  value_gc_t &gc() {
+    return gc_;
+  }
 
   // return the value stack
-  value_stack_t &get_stack() { return stack_; }
+  value_stack_t &get_stack() {
+    return stack_;
+  }
 
   // halt this thread
-  void halt() { halted_ = true; }
+  void halt() {
+    halted_ = true;
+  }
 
   void reset();
 
   // return the program counter
-  int32_t get_pc() const { return pc_; }
+  int32_t get_pc() const {
+    return pc_;
+  }
 
-  const std::vector<frame_t> &frames() const { return f_; }
+  const std::vector<frame_t> &frames() const {
+    return f_;
+  }
 
   void breakpoint_add(line_t line);
   void breakpoint_remove(line_t line);
@@ -96,6 +111,9 @@ struct thread_t {
 
 protected:
   friend struct vm_t;
+
+  // should only be constructed via vm_t
+  thread_t(vm_t &vm);
 
   // when we resume a thread we must keep track of the previous source line.
   // we need to do this so we can resume from a breakpoint without hitting it
@@ -126,13 +144,12 @@ protected:
   // frame stack
   std::vector<frame_t> f_;
 
+  // value stack
   friend struct value_stack_t;
   value_stack_t stack_;
 
+  // breakpoint list
   std::set<line_t> breakpoints_;
-
-  // execute thread init function which will initalize any globals
-  bool call_init_();
 
   // tick the garbage collector
   void tick_gc_(int32_t cycles);

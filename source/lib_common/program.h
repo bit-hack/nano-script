@@ -82,6 +82,7 @@ struct program_t {
 
   const function_t *function_find(const std::string &name) const;
         function_t *function_find(const std::string &name);
+  const function_t *function_find(int32_t pc) const;
         function_t *function_find(int32_t pc);
 
   // serialization functions

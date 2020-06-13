@@ -127,9 +127,14 @@ struct value_t {
 
   std::string to_string() const;
 
-  // note: dont check this directly, please use type() instead as 'this' ptr
-  //       can be nullptr
-  value_type_t type_;
+  bool is_value_type() const {
+    switch (type()) {
+    // XXX: and user types?
+    case val_type_array:
+      return false;
+    }
+    return true;
+  }
 
   union {
     // int value
@@ -139,6 +144,13 @@ struct value_t {
     // floating point value
     float f;
   };
+
+protected:
+  friend struct value_gc_t;
+
+  // note: dont check this directly, please use type() instead as 'this' ptr
+  //       can be nullptr
+  value_type_t type_;
 };
 
 struct value_stack_t {

@@ -372,13 +372,12 @@ int main(int argc, char **argv) {
   }
 
   nano::vm_t vm(program);
-  nano::thread_t thread(vm);
 
   if (!vm.call_init()) {
     fprintf(stderr, "failed while executing @init\n");
   }
 
-  if (!thread.prepare(*func, 0, nullptr)) {
+  if (!vm.new_thread(*func, 0, nullptr)) {
     fprintf(stderr, "unable prepare function 'main'\n");
     exit(1);
   }
@@ -387,7 +386,7 @@ int main(int argc, char **argv) {
   while (active) {
 
     if (SDL_GetTicks() > tick_mark) {
-      if (!thread.resume(1024)) {
+      if (!vm.resume(1024)) {
         break;
       }
     }
@@ -405,7 +404,9 @@ int main(int argc, char **argv) {
     }
   }
 
-  if (thread.has_error()) {
+  if (vm.has_error()) {
+    // XXX: FIXME
+#if 0
     const thread_error_t err = thread.get_error();
     if (err != thread_error_t::e_success) {
       line_t line = thread.get_source_line();
@@ -415,6 +416,7 @@ int main(int argc, char **argv) {
       const std::string &s = sources.get_line(line);
       printf("%s\n", s.c_str());
     }
+#endif
     return 1;
   }
 

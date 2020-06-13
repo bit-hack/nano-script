@@ -2,6 +2,8 @@
 
 #include "vm_gc.h"
 
+#define HARDCORE 1
+
 namespace nano {
 
 value_t *value_gc_t::new_int(const int32_t value) {
@@ -76,7 +78,11 @@ value_t *value_gc_t::new_syscall(uint32_t index) {
 bool value_gc_t::should_collect() const {
   const size_t x = (space_to().size() * 100) / space_to().capacity();
   // collect if over 75%
+#if HARDCORE
+  return true;
+#else
   return x > 75;
+#endif
 }
 
 value_t *value_gc_t::copy(const value_t &a) {
@@ -104,13 +110,8 @@ value_t *value_gc_t::copy(const value_t &a) {
 }
 
 void value_gc_t::collect() {
-
-  // currently the grammar doesnt allow us to have cyclic data structures
-  // but be aware we might need to support it when the language evolves.
-
   swap();
   space_to().clear();
-
   forward_clear();
 }
 
@@ -122,7 +123,7 @@ void value_gc_t::trace(value_t **list, size_t num) {
   for (size_t i = 0; i < num; ++i) {
     value_t *&v = list[i];
 
-    // already collected so skip to avoid cyclic loops
+    // already collected so skip to avoid cyclic trace loops
     if (to.owns(v)) {
       continue;
     }
@@ -133,23 +134,17 @@ void value_gc_t::trace(value_t **list, size_t num) {
       break;
     }
     case val_type_syscall:
-    case val_type_func: {
+    case val_type_func:
+    case val_type_int: {
       value_t *n = to.alloc<value_t>(0);
       n->type_ = v->type();
       n->v = v->v;
       list[i] = n;
       break;
     }
-    case val_type_int: {
-      value_t *n = to.alloc<value_t>(0);
-      n->type_ = val_type_int;
-      n->v = v->integer();
-      list[i] = n;
-      break;
-    }
     case val_type_float: {
       value_t *n = to.alloc<value_t>(0);
-      n->type_ = val_type_float;
+      n->type_ = v->type();
       n->f = v->f;
       list[i] = n;
       break;
@@ -158,7 +153,7 @@ void value_gc_t::trace(value_t **list, size_t num) {
       assert(int32_t(strlen(v->string())) == v->v);
       const int32_t size = v->v;
       value_t *n = to.alloc<value_t>(size + 1);
-      n->type_ = val_type_string;
+      n->type_ = v->type();
       n->v = size;
       memcpy(n->string(), v->string(), size + 1);
       list[i] = n;
@@ -174,8 +169,9 @@ void value_gc_t::trace(value_t **list, size_t num) {
       // collect child elements
       const int32_t size = v->array_size();
       trace(v->array(), size);
+      // move into to space
       value_t *n = to.alloc<value_t>(size * sizeof(value_t *));
-      n->type_ = val_type_array;
+      n->type_ = v->type();
       n->v = size;
       memcpy(n->array(), v->array(), size * sizeof(value_t *));
       // keep track of forwarded global arrays that may have to move

@@ -196,7 +196,6 @@ int main(int argc, char **argv) {
 
   // create the vm and a thread
   nano::vm_t vm{program};
-  nano::thread_t thread{vm};
 
   // call the global init function
   if (!vm.call_init()) {
@@ -209,7 +208,10 @@ int main(int argc, char **argv) {
   {
     thread_error_t error = thread_error_t::e_success;
     if (!vm.call_once(*func, 0, nullptr, res, error)) {
-      on_runtime_error(thread, sources);
+
+        // XXX: 
+
+//      on_runtime_error(error, sources);
       return -6;
     }
   }

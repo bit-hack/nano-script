@@ -63,7 +63,7 @@ end
 
 nano::program_t g_program;
 std::unique_ptr<nano::vm_t> g_vm;
-std::unique_ptr<nano::thread_t> g_thread;
+nano::thread_t *g_thread = nullptr;
 
 enum run_option_t {
   RUN_COMPILE   = 1,
@@ -93,6 +93,36 @@ void vm_print(nano::thread_t &t, int32_t) {
     g_output.push_back(s->string());
   }
   t.get_stack().push_int(0);
+}
+
+bool vm_handle_on_thread_error(nano::thread_t &t) {
+
+  if (t.has_error()) {
+    nano::thread_error_t error = t.get_error();
+    (void)error;
+    TextEditor::ErrorMarkers markers;
+    const char *str = nano::get_thread_error(t.get_error());
+    nano::line_t line = t.get_source_line();
+    markers[line.line] = str;
+    g_editor.SetErrorMarkers(markers);
+  }
+
+  g_thread = nullptr;
+  return true;
+}
+
+bool vm_handle_on_thread_finish(nano::thread_t &t) {
+
+  if (g_vm->finished()) {
+    g_output.push_back("Finished after " + std::to_string(t.get_cycle_count()) + " cycles");
+    const nano::value_t *ret = t.get_return_value();
+    std::string ret_str = ret->to_string();
+    g_output.push_back("Returned " + ret_str);
+    g_run_option |= RUN_STOP;
+  }
+
+  g_thread = nullptr;
+  return true;
 }
 
 bool init_sdl() {
@@ -135,18 +165,6 @@ void app_setup() {
   g_editor.SetText(g_init_source);
 }
 
-void lang_on_error() {
-  if (g_thread->has_error()) {
-    nano::thread_error_t error = g_thread->get_error();
-    (void)error;
-    TextEditor::ErrorMarkers markers;
-    const char *str = nano::get_thread_error(g_thread->get_error());
-    nano::line_t line = g_thread->get_source_line();
-    markers[line.line] = str;
-    g_editor.SetErrorMarkers(markers);
-  }
-}
-
 void gui_highlight_pc() {
   if (!g_thread) {
     return;
@@ -163,16 +181,13 @@ void gui_highlight_pc() {
     c[1].mColumn = 64;
     g_editor.SetSelection(c[0], c[1]);
   }
-  if (g_thread->has_error()) {
-    lang_on_error();
-  }
 }
 
 void lang_prepare() {
 
   // restart the program if needed
   if (g_run_option & RUN_RESTART) {
-    g_thread.reset();
+    g_thread = nullptr;
     g_vm.reset();
   }
 
@@ -188,6 +203,8 @@ void lang_prepare() {
 
   g_output.push_back("Launching program");
   g_vm.reset(new nano::vm_t{g_program});
+  g_vm->handlers.on_thread_error = vm_handle_on_thread_error;
+  g_vm->handlers.on_thread_finish = vm_handle_on_thread_finish;
 
   if (!g_vm->call_init()) {
     g_output.push_back("Error when calling '@init' function!");
@@ -199,9 +216,9 @@ void lang_prepare() {
     return;
   }
 
-  g_thread.reset(new nano::thread_t{*g_vm});
-  if (!g_thread->prepare(*func, 0, nullptr)) {
-    g_output.push_back("Error: unable to prepare function!");
+  g_thread = g_vm->new_thread(*func, 0, nullptr);
+  if (!g_thread) {
+    g_output.push_back("Error: unable to start thread!");
     return;
   }
 
@@ -209,16 +226,6 @@ void lang_prepare() {
   if (g_run_option & (RUN_STEP_INST | RUN_STEP_LINE)) {
     g_run_option &= ~(RUN_STEP_INST | RUN_STEP_LINE);
     gui_highlight_pc();
-  }
-}
-
-void lang_on_finish() {
-  if (g_thread->finished()) {
-    g_output.push_back("Finished after " + std::to_string(g_thread->get_cycle_count()) + " cycles");
-    const nano::value_t *ret = g_thread->get_return_value();
-    std::string ret_str = ret->to_string();
-    g_output.push_back("Returned " + ret_str);
-    g_run_option |= RUN_STOP;
   }
 }
 
@@ -261,14 +268,7 @@ void lang_run() {
     }
   }
 
-  if (g_thread->has_error()) {
-    lang_on_error();
-  }
-
-  if (g_thread->finished()) {
-    lang_on_finish();
-  }
-  else {
+  if (g_thread) {
     gui_highlight_pc();
   }
 }
@@ -283,7 +283,7 @@ void lang_compile() {
   }
 
   // clear out the VM before we tear down the program
-  g_thread.reset();
+  g_thread = nullptr;
   g_vm.reset();
 
   // wipe the program
@@ -601,7 +601,7 @@ void gui_debug() {
   if (ImGui::CollapsingHeader("Globals")) {
     if (g_vm && g_thread) {
       for (const auto &g : g_program.globals()) {
-        const nano::value_t *v = g_vm->g_[g.offset_];
+        const nano::value_t *v = g_vm->globals()[g.offset_];
         ImGui::Text("%8s: %s", g.name_.c_str(), v->to_string().c_str());
       }
     }
@@ -629,7 +629,7 @@ void gui_debug() {
       int32_t i = 0;
       for (auto itt = frames.rbegin(); itt != frames.rend(); ++itt, ++i) {
         const auto &frame = *itt;
-        const nano::function_t *func = g_vm->program_.function_find(frame.callee_);
+        const nano::function_t *func = g_vm->program().function_find(frame.callee_);
         assert(func);
 
         ImGui::Text("frame %d: '%s'", i, func->name_.c_str());
@@ -728,7 +728,7 @@ int main(int argc, char **argv) {
     lang_run();
 
     if (g_run_option & RUN_STOP) {
-      g_thread.reset();
+      g_thread = nullptr;
       g_vm.reset();
     }
 
