@@ -194,6 +194,59 @@ static void builtin_sqrt(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
+static void builtin_new_thread(struct nano::thread_t &t, int32_t nargs) {
+  // we need at least one argument
+  if (nargs <= 0) {
+    t.raise_error(thread_error_t::e_bad_argument);
+    return;
+  }
+  // collect the arguments
+  std::vector<const value_t *> args;
+  args.resize(nargs - 1);
+  for (int i = 1; i < nargs; ++i) {
+    args[args.size() - i] = t.get_stack().pop();
+  }
+
+  const nano::value_t *v = t.get_stack().pop();
+  if (!v) {
+    t.raise_error(thread_error_t::e_bad_argument);
+    return;
+  }
+  if (!v->is_a<val_type_func>()) {
+    t.raise_error(thread_error_t::e_bad_argument);
+    return;
+  }
+  auto &vm = t.vm();
+  const auto &prog = vm.program();
+  const function_t *func = prog.function_find(v->v);
+  if (!func) {
+    t.raise_error(thread_error_t::e_bad_argument);
+    return;
+  }
+  if (func->args_.size() + 1 != nargs) {
+    t.raise_error(thread_error_t::e_bad_argument);
+    return;
+  }
+  vm.new_thread(*func, int32_t(args.size()), args.data());
+  t.get_stack().push_int(0);
+  return;
+}
+
+static void builtin_wait(struct nano::thread_t &t, int32_t nargs) {
+  (void)nargs;
+  const nano::value_t *v = t.get_stack().pop();
+  if (v && (v->is_number())) {
+    const int32_t w = v->as_int();
+    t.waits = w;
+    t.get_stack().push_int(0);
+    if (t.waits > 0) {
+      t.halt();
+    }
+    return;
+  }
+  t.raise_error(thread_error_t::e_bad_argument);
+}
+
 void builtins_register(nano_t &nano) {
 
   nano.syscall_register("abs", 1);
@@ -214,6 +267,9 @@ void builtins_register(nano_t &nano) {
   nano.syscall_register("floor", 1);
 
   nano.syscall_register("sqrt", 1);
+
+  nano.syscall_register("new_thread", -1);
+  nano.syscall_register("wait", 1);
 }
 
 void builtins_resolve(program_t &prog) {
@@ -237,6 +293,9 @@ void builtins_resolve(program_t &prog) {
   map["floor"] = builtin_floor;
 
   map["sqrt"]  = builtin_sqrt;
+
+  map["new_thread"]  = builtin_new_thread;
+  map["wait"] = builtin_wait;
 
   for (auto &itt : prog.syscalls()) {
     auto i = map.find(itt.name_);

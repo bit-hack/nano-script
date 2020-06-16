@@ -88,8 +88,14 @@ void nano_t::reset() {
 void nano_t::syscall_register(const std::string &name, int32_t num_args) {
   ast_decl_func_t *func = ast_->alloc<ast_decl_func_t>(name);
   func->is_syscall = true;
-  for (int32_t i = 0; i < num_args; ++i) {
-    func->args.emplace_back(nullptr);
+  if (num_args < 0) {
+    // this signals var args
+    func->is_varargs = true;
+  }
+  else {
+    for (int32_t i = 0; i < num_args; ++i) {
+      func->args.emplace_back(nullptr);
+    }
   }
   auto &prog = ast_->program;
   prog.children.push_back(func);

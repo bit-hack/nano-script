@@ -34,7 +34,7 @@ struct frame_t {
 struct thread_t {
 
   // prepare to execute a function
-  bool prepare(const function_t &func, int32_t argc, const value_t *argv);
+  bool prepare(const function_t &func, int32_t argc, const value_t **argv);
 
   // run for a number of clock cycles
   bool resume(int32_t cycles);
@@ -108,6 +108,14 @@ struct thread_t {
 
   // space for user data
   void *user_data;
+
+  // return the owning virtual machine instance
+  vm_t &vm() const {
+    return vm_;
+  }
+
+  // number of frames to wait
+  int waits;
 
 protected:
   friend struct vm_t;

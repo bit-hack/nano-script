@@ -73,7 +73,7 @@ struct vm_t {
   // XXX: remove return value and error field
   bool call_once(const function_t &func,
                  int32_t argc,
-                 const value_t *argv,
+                 const value_t **argv,
                  value_t* &return_code,
                  thread_error_t &error);
 
@@ -81,7 +81,7 @@ struct vm_t {
   // note: returned pointer is owned by the vm_t do not delete it
   thread_t* new_thread(const function_t &func,
                        int32_t argc,
-                       const value_t *argv);
+                       const value_t **argv);
 
   // resume the VM for a number of cycles
   bool resume(uint32_t cycles);

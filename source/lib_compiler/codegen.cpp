@@ -186,7 +186,7 @@ struct codegen_pass_t: ast_visitor_t {
     if (ast_exp_ident_t *ident = n->callee->cast<ast_exp_ident_t>()) {
       if (ast_decl_func_t *func = ident->decl->cast<ast_decl_func_t>()) {
         // this should have been checked beforehand
-        assert(func->args.size() == num_args);
+        assert(func->is_varargs || func->args.size() == num_args);
         if (func->is_syscall) {
           // emit a syscall
           uint32_t index = stream_.add_syscall(func->name);

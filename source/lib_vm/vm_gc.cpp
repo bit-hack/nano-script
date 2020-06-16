@@ -2,7 +2,7 @@
 
 #include "vm_gc.h"
 
-#define HARDCORE 1
+#define HARDCORE 0
 
 namespace nano {
 
@@ -77,10 +77,10 @@ value_t *value_gc_t::new_syscall(uint32_t index) {
 
 bool value_gc_t::should_collect() const {
   const size_t x = (space_to().size() * 100) / space_to().capacity();
-  // collect if over 75%
 #if HARDCORE
   return true;
 #else
+  // collect if over 75%
   return x > 75;
 #endif
 }

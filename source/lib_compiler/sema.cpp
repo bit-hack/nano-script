@@ -682,11 +682,16 @@ struct sema_num_args_t : public ast_visitor_t {
     // if this can be lowered to a direct call
     if (ast_exp_ident_t *ident = call->callee->cast<ast_exp_ident_t>()) {
       if (ast_decl_func_t *callee = ident->decl->cast<ast_decl_func_t>()) {
-        if (call->args.size() > callee->args.size()) {
-          errs_.too_many_args(*ident->name);
+        if (callee->is_syscall && callee->is_varargs) {
+          // its varargs so lets make an exception here
         }
-        if (call->args.size() < callee->args.size()) {
-          errs_.not_enought_args(*ident->name);
+        else {
+          if (call->args.size() > callee->args.size()) {
+            errs_.too_many_args(*ident->name);
+          }
+          if (call->args.size() < callee->args.size()) {
+            errs_.not_enought_args(*ident->name);
+          }
         }
       }
     }

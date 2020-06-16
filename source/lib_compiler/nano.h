@@ -30,6 +30,9 @@ struct nano_t {
 
   void reset();
 
+  // register a system call
+  //
+  // note: if num_args < 0 it can take a variable number of arguments
   void syscall_register(const std::string &name, int32_t num_args);
 
   // enable codegen optimizations

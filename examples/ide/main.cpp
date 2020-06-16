@@ -112,16 +112,18 @@ bool vm_handle_on_thread_error(nano::thread_t &t) {
 }
 
 bool vm_handle_on_thread_finish(nano::thread_t &t) {
-
-  if (g_vm->finished()) {
+  if (t.finished()) {
     g_output.push_back("Finished after " + std::to_string(t.get_cycle_count()) + " cycles");
     const nano::value_t *ret = t.get_return_value();
     std::string ret_str = ret->to_string();
     g_output.push_back("Returned " + ret_str);
-    g_run_option |= RUN_STOP;
   }
-
-  g_thread = nullptr;
+  if (g_vm->finished()) {
+//    g_run_option |= RUN_STOP;
+  }
+  if (&t == g_thread) {
+    g_thread = nullptr;
+  }
   return true;
 }
 
@@ -231,40 +233,47 @@ void lang_prepare() {
 
 void lang_run() {
 
-  // check we have something to run
-  if (0 == (g_run_option & (RUN_CONTINUE | RUN_STEP_INST | RUN_STEP_LINE))) {
+  if (!g_vm) {
     return;
   }
 
-  if (!g_thread || !g_vm) {
+  if (g_vm->finished()) {
+    g_run_option |= RUN_STOP;
     return;
   }
 
-  for (const auto &b : g_breakpoints) {
-    g_thread->breakpoint_add(nano::line_t{0, b});
-  }
+  if (g_thread) {
+    for (const auto &b : g_breakpoints) {
+      g_thread->breakpoint_add(nano::line_t{0, b});
+    }
 
-  if (g_thread->finished() || g_thread->has_error()) {
-    g_output.push_back("Error: thread has terminated!");
-    return;
-  }
+    if (g_thread->finished() || g_thread->has_error()) {
+      g_output.push_back("Error: thread has terminated!");
+      return;
+    }
 
-  if (g_run_option & RUN_STEP_INST) {
-    if (!g_thread->step_inst()) {
-      g_output.push_back("Error: thread.step_inst() returned false");
+    if (g_run_option & RUN_STEP_INST) {
+      if (!g_thread->step_inst()) {
+        g_output.push_back("Error: thread.step_inst() returned false");
+      }
+    }
+
+    if (g_run_option & RUN_STEP_LINE) {
+      if (!g_thread->step_line()) {
+        g_output.push_back("Error: thread.step_line() returned false");
+      }
     }
   }
 
-  if (g_run_option & RUN_STEP_LINE) {
-    if (!g_thread->step_line()) {
-      g_output.push_back("Error: thread.step_line() returned false");
-    }
+  bool will_finish = false;
+  if (g_vm && !g_vm->finished()) {
+    will_finish = true;
   }
 
-  if (g_run_option & RUN_CONTINUE) {
+  if (g_run_option & RUN_CONTINUE || will_finish) {
     uint32_t max_cycles = 128 * 1024;
-    if (!g_thread->resume(max_cycles)) {
-      g_output.push_back("Error: thread.resume() returned false");
+    if (!g_vm->resume(max_cycles)) {
+      g_output.push_back("Error: vm.resume() returned false");
     }
   }
 

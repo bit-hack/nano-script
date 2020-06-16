@@ -54,7 +54,7 @@ bool vm_t::call_init() {
 
 bool vm_t::call_once(const function_t &func,
                      int32_t argc,
-                     const value_t *argv,
+                     const value_t **argv,
                      value_t* &return_code,
                      thread_error_t &error) {
 
@@ -78,7 +78,7 @@ bool vm_t::call_once(const function_t &func,
 
 thread_t *vm_t::new_thread(const function_t &func,
                            int32_t argc,
-                           const value_t *argv) {
+                           const value_t **argv) {
   std::unique_ptr<thread_t> t(new thread_t(*this));
   if (!t->prepare(func, argc, argv)) {
     return nullptr;
@@ -94,6 +94,11 @@ bool vm_t::resume(uint32_t cycles) {
   for (; itt != threads_.end();) {
     thread_t *t = *itt;
     assert(t);
+    if (t->waits) {
+      --t->waits;
+      ++itt;
+      continue;
+    }
     if (t->finished() || t->has_error()) {
       // delete the thread
       delete t;

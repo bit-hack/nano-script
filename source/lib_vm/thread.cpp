@@ -57,15 +57,16 @@ bool to_string(char *buf, size_t size, const value_t *val) {
 
 } // namespace {}
 
-
 thread_t::thread_t(vm_t &vm)
-  : cycles_(0)
+  : waits(0)
+  , cycles_(0)
   , finished_(true)
   , halted_(false)
   , pc_(0)
   , vm_(vm)
   , gc_(*(vm.gc_))
   , stack_(*this, *(vm.gc_))
+  , user_data(nullptr)
 {
   f_.reserve(16);
   reset();
@@ -672,7 +673,7 @@ void thread_t::reset() {
 }
 
 bool thread_t::prepare(const function_t &func, int32_t argc,
-                       const value_t *argv) {
+                       const value_t **argv) {
 
   error_ = thread_error_t::e_success;
   finished_ = true;
@@ -692,7 +693,8 @@ bool thread_t::prepare(const function_t &func, int32_t argc,
 
   // push any arguments
   for (int i = 0; i < argc; ++i) {
-    stack_.push(gc_.copy(argv[i]));
+    const value_t *v = argv[i];
+    stack_.push(gc_.copy(*v));
   }
 
   // push the initial frame

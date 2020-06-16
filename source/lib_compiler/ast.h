@@ -517,6 +517,7 @@ struct ast_decl_func_t : public ast_node_t {
     : ast_node_t(TYPE)
     , token(n)
     , is_syscall(false)
+    , is_varargs(false)
     , name(n->str_)
     , body(nullptr)
     , stack_size(0)
@@ -527,6 +528,7 @@ struct ast_decl_func_t : public ast_node_t {
     : ast_node_t(TYPE)
     , token(nullptr)
     , is_syscall(false)
+    , is_varargs(false)
     , name(n)
     , body(nullptr)
     , stack_size(0)
@@ -551,6 +553,7 @@ struct ast_decl_func_t : public ast_node_t {
   const token_t *end;
 
   bool is_syscall;
+  bool is_varargs;
 
   const std::string name;
   std::vector<ast_decl_var_t *> args;
