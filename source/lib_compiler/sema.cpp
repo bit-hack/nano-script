@@ -225,11 +225,8 @@ struct sema_global_var_t : public ast_visitor_t {
   }
 
   void visit(ast_decl_var_t *n) override {
-
     eval_t eval(errs_);
-
     assert(n->expr);
-
     switch (n->expr->type) {
     case ast_exp_none_e:
       n->expr = nullptr;
@@ -243,7 +240,8 @@ struct sema_global_var_t : public ast_visitor_t {
       }
       else {
         if (strict_) {
-          errs_.global_var_const_expr(*n->name);
+          // disable for now since the entire expression is lifted into @init
+//        errs_.global_var_const_expr(*n->name);
         }
       }
     } break;
@@ -252,7 +250,9 @@ struct sema_global_var_t : public ast_visitor_t {
     case ast_exp_lit_float_e:
       break;
     default:
-      errs_.global_var_const_expr(*n->name);
+      // disable for now since the entire expression is lifted into @init
+//    errs_.global_var_const_expr(*n->name);
+      break;
     }
   }
 

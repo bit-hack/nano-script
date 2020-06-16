@@ -189,22 +189,11 @@ struct pregen_init_t : public ast_visitor_t {
       return;
     }
     assert(v->is_global());
-    if (auto *n = v->expr->cast<ast_exp_lit_var_t>()) {
-      (void)n;
-      auto *a = ast_.alloc<ast_stmt_assign_var_t>(v->name);
-      a->decl = v;
-      a->expr = v->expr;
-      init_->body->add(a);
-      return;
-    }
-    if (auto *n = v->expr->cast<ast_exp_lit_str_t>()) {
-      (void)n;
-      auto *a = ast_.alloc<ast_stmt_assign_var_t>(v->name);
-      a->decl = v;
-      a->expr = v->expr;
-      init_->body->add(a);
-      return;
-    }
+    auto *a = ast_.alloc<ast_stmt_assign_var_t>(v->name);
+    a->decl = v;
+    // XXX: we might need to copy the expr instead of double using it
+    a->expr = v->expr;
+    init_->body->add(a);
   }
 
   void visit(ast_program_t *p) override {
