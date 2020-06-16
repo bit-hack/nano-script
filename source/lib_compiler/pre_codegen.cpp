@@ -205,34 +205,6 @@ struct pregen_init_t : public ast_visitor_t {
       init_->body->add(a);
       return;
     }
-    if (auto *n = v->expr->cast<ast_array_init_t>()) {
-      (void)n;
-      int i = 0;
-      for (auto *t : n->item) {
-        auto *a = ast_.alloc<ast_stmt_assign_array_t>(v->name);
-        a->decl = v;
-        a->index = ast_.alloc<ast_exp_lit_var_t>(i);
-        switch (t->type_) {
-        case TOK_INT:
-          a->expr = ast_.alloc<ast_exp_lit_var_t>(t->get_int());
-          break;
-        case TOK_FLOAT:
-          a->expr = ast_.alloc<ast_exp_lit_float_t>(t->get_float());
-          break;
-        case TOK_STRING:
-          a->expr = ast_.alloc<ast_exp_lit_str_t>(t->string());
-          break;
-        case TOK_NONE:
-          a->expr = ast_.alloc<ast_exp_none_t>();
-          break;
-        default:
-          break;
-        }
-        init_->body->add(a);
-        ++i;
-      }
-      return;
-    }
   }
 
   void visit(ast_program_t *p) override {

@@ -153,6 +153,11 @@ enum instruction_e {
   //    member    = operand
   INS_SETM,
 
+  // initalize array
+  //    for (i = 0 to operand)
+  //      array[i] = pop()
+  INS_ARY_INIT,
+
   // number of instructions
   __INS_COUNT__,
 };

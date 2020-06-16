@@ -384,7 +384,10 @@ void run_optimize(nano_t &nano) {
     opt_post_ret_t    (nano).visit(&(nano.ast().program));
     opt_const_expr_t  (nano).visit(&(nano.ast().program));
     opt_if_remove_t   (nano).visit(&(nano.ast().program));
-    op_decl_elim_t    (nano).visit(&(nano.ast().program));
+
+// we have to disable this at the moment since we need to teach it that asignments
+// can make values alias.
+//    op_decl_elim_t    (nano).visit(&(nano.ast().program));
   }
 }
 

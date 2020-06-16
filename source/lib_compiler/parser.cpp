@@ -113,6 +113,23 @@ bool parser_t::is_operator_() const {
   return op_type_(stream_.type()) > 0;
 }
 
+ast_node_t *parser_t::parse_array_init_(const token_t &t) {
+  token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
+
+  ast_exp_array_init_t *init = ast.alloc<ast_exp_array_init_t>(&t);
+
+  // format:
+  //    [ <expr> , <expr> , ... ]
+
+  do {
+    ast_node_t *expr = parse_expr_();
+    init->expr.push_back(expr);
+  } while (stream_.found(TOK_COMMA));
+
+  return init;
+}
+
 void parser_t::parse_lhs_() {
   token_stream_t &stream_ = nano_.lexer().stream();
   auto &ast = nano_.ast();
@@ -125,14 +142,25 @@ void parser_t::parse_lhs_() {
   //    <TOK_FLOAT>
   //    <TOK_STRING>
   //    <TOK_NONE>
+  //    [ <expr> , <expr> , ... ]
 
   do {
+
+    // [ <expr> , <expr> , ... ]
+    if (const token_t *t = stream_.found(TOK_LBRACKET)) {
+      ast_node_t *expr = parse_array_init_(*t);
+      exp_stack_.push_back(expr);
+      // expect closing bracket
+      stream_.pop(TOK_RBRACKET);
+      break;
+    }
 
     // ( <expr> )
     if (stream_.found(TOK_LPAREN)) {
       ast_node_t *expr = parse_expr_();
       exp_stack_.push_back(expr);
-      stream_.found(TOK_RPAREN);
+      // expect closing parenthesis
+      stream_.pop(TOK_RPAREN);
       break;
     }
 
@@ -162,7 +190,7 @@ void parser_t::parse_lhs_() {
         break;
       }
 
-      // <TOK_IDENT>      
+      // <TOK_IDENT>
       {
         // load a local/global
         ast_node_t *expr = ast.alloc<ast_exp_ident_t>(t);
@@ -233,7 +261,13 @@ void parser_t::parse_expr_ex_(uint32_t tide) {
 
   while (true) {
 
+#if 0
     // XXX: parse [] here
+    if (const token_t *t = stream_.found(TOK_LBRACKET)) {
+      // TODO
+      continue;
+    }
+#endif
 
     // <EXPR> ( ... )
     if (const token_t *t = stream_.found(TOK_LPAREN)) {
@@ -274,48 +308,6 @@ ast_node_t* parser_t::parse_expr_() {
   return out;
 }
 
-ast_node_t* parser_t::parse_decl_array_(const token_t &name) {
-  token_stream_t &stream_ = nano_.lexer().stream();
-  auto &ast = nano_.ast();
-
-  // format:
-  //                        V
-  //    var <TOK_IDENT> '['   <expr> ']'
-
-  auto *decl = ast.alloc<ast_decl_var_t>(&name, ast_decl_var_t::e_local);
-
-  decl->size = parse_expr_();
-
-  stream_.pop(TOK_RBRACKET);
-
-  // initalization
-  if (stream_.found(TOK_ASSIGN)) {
-
-    auto *init = ast.alloc<ast_array_init_t>();
-    decl->expr = init;
-
-    do {
-      // pop new lines
-      while (stream_.found(TOK_EOL));
-      // pop a value
-      const token_t *num = stream_.pop();
-      switch (num->type_) {
-      case TOK_INT:
-      case TOK_FLOAT:
-      case TOK_STRING:
-      case TOK_NONE:
-        init->item.push_back(num);
-        break;
-      default:
-        nano_.errors().bad_array_init_value(*num);
-        break;
-      }
-    } while (stream_.found(TOK_COMMA));
-  }
-
-  return decl;
-}
-
 ast_node_t* parser_t::parse_decl_var_(const token_t &t) {
   (void)t;
   token_stream_t &stream_ = nano_.lexer().stream();
@@ -323,16 +315,9 @@ ast_node_t* parser_t::parse_decl_var_(const token_t &t) {
 
   // format:
   //        V
-  //    var   <TOK_IDENT> [ = <expr> ]
+  //    var   <TOK_IDENT>
 
   const token_t *name = stream_.pop(TOK_IDENT);
-
-  // check for [ <TOK_INT> ] array declaration
-  if (const token_t *bracket = stream_.found(TOK_LBRACKET)) {
-    (void)bracket;
-    // pass control to a specialized array decl parser
-    return parse_decl_array_(*name);
-  }
 
   auto *decl = ast.alloc<ast_decl_var_t>(name, ast_decl_var_t::e_local);
 
@@ -580,7 +565,7 @@ ast_node_t* parser_t::parse_stmt_() {
       break;
     case TOK_LPAREN:
     {
-      // x( 
+      // x(
       const token_t *c = stream_.pop();
       ast_node_t *expr = parse_call_(*c);
       ast_exp_call_t *call = expr->cast<ast_exp_call_t>();

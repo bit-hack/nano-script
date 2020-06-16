@@ -236,6 +236,7 @@ protected:
   void do_INS_SETA_();
   void do_INS_GETM_();
   void do_INS_SETM_();
+  void do_INS_ARY_INIT_();
 };
 
 } // namespace nano

@@ -664,6 +664,18 @@ void thread_t::do_INS_GETM_() {
   raise_error(thread_error_t::e_bad_member_access);
 }
 
+void thread_t::do_INS_ARY_INIT_() {
+  const int32_t operand = read_operand_();
+  assert(operand > 0);
+  value_t *array = gc_.new_array(operand);
+  value_t **data = array->array();
+  for (int i = operand - 1; i >= 0; --i) {
+    value_t *obj = stack_.pop();
+    data[i] = obj;
+  }
+  stack_.push(array);
+}
+
 void thread_t::reset() {
   error_ = thread_error_t::e_success;
   stack_.clear();
@@ -755,6 +767,7 @@ void thread_t::step_imp_() {
   case INS_SETA:     do_INS_SETA_();       break;
   case INS_GETM:     do_INS_GETM_();       break;
   case INS_SETM:     do_INS_SETM_();       break;
+  case INS_ARY_INIT: do_INS_ARY_INIT_();   break;
   default:
     set_error_(thread_error_t::e_bad_opcode);
   }
@@ -878,39 +891,6 @@ void thread_t::setv_(int32_t offs, value_t *val) {
   const int32_t index = frame_().sp_ + offs;
   stack_.set(index, val);
 }
-
-#if 0
-bool thread_t::call_init_() {
-  error_ = thread_error_t::e_success;
-  finished_ = true;
-  cycles_ = 0;
-  halted_ = false;
-
-  stack_.clear();
-
-  // search for the init function
-  const function_t *init = vm_.program_.function_find("@init");
-  if (!init) {
-    // no init to do?
-    return true;
-  }
-  // save the target pc (entry point)
-  pc_ = init->code_start_;
-  // push the initial frame
-  enter_(stack_.head(), pc_, init->code_start_);
-  frame_().terminal_ = true;
-  // catch any misc errors
-  if (error_ != thread_error_t::e_success) {
-    return false;
-  }
-  // good to go
-  finished_ = false;
-  if (!resume(1024 * 8)) {
-    return false;
-  }
-  return finished();
-}
-#endif
 
 void thread_t::breakpoint_add(line_t line) {
   breakpoints_.insert(line);

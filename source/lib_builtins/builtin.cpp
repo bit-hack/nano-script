@@ -14,7 +14,6 @@ namespace nano {
 static void builtin_abs(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *v = t.get_stack().pop();
-  assert(v);
   switch (v->type()) {
   case val_type_int: {
     const int32_t res = (v->v < 0) ? (-v->v) : (v->v);
@@ -33,16 +32,7 @@ static void builtin_max(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *a = t.get_stack().pop();
   const nano::value_t *b = t.get_stack().pop();
-  assert(a && b);
-  if (a->is_a<val_type_int>() &&
-      b->is_a<val_type_int>()) {
-    const int32_t ai = a->v;
-    const int32_t bi = b->v;
-    t.get_stack().push_int(ai > bi ? ai : bi);
-    return;
-  }
-  if (a->is_a<val_type_float>() ||
-      b->is_a<val_type_float>()) {
+  if (a->is_number() && b->is_number()) {
     const float af = a->as_float();
     const float bf = b->as_float();
     t.get_stack().push_float(af > bf ? af : bf);
@@ -55,16 +45,7 @@ static void builtin_min(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *a = t.get_stack().pop();
   const nano::value_t *b = t.get_stack().pop();
-  assert(a && b);
-  if (a->is_a<val_type_int>() &&
-      b->is_a<val_type_int>()) {
-    const int32_t ai = a->v;
-    const int32_t bi = b->v;
-    t.get_stack().push_int(ai < bi ? ai : bi);
-    return;
-  }
-  if (a->is_a<val_type_float>() ||
-      b->is_a<val_type_float>()) {
+  if (a->is_number() && b->is_number()) {
     const float af = a->as_float();
     const float bf = b->as_float();
     t.get_stack().push_float(af < bf ? af : bf);
@@ -77,7 +58,6 @@ static void builtin_bitand(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *a = t.get_stack().pop();
   const nano::value_t *b = t.get_stack().pop();
-  assert(a && b);
   if (a->is_a<val_type_int>() &&
       b->is_a<val_type_int>()) {
     const int32_t res = a->v & b->v;
@@ -90,7 +70,6 @@ static void builtin_bitand(struct nano::thread_t &t, int32_t nargs) {
 static void builtin_len(struct nano::thread_t &t, int32_t nargs) {
   (void)nargs;
   const nano::value_t *a = t.get_stack().pop();
-  assert(a);
   switch (a->type()) {
   case val_type_array: {
     const int32_t res = a->array_size();
@@ -247,6 +226,23 @@ static void builtin_wait(struct nano::thread_t &t, int32_t nargs) {
   t.raise_error(thread_error_t::e_bad_argument);
 }
 
+static void builtin_new_array(struct nano::thread_t &t, int32_t nargs) {
+  (void)nargs;
+  const nano::value_t *v = t.get_stack().pop();
+  if (v && (v->is_number())) {
+    const int32_t w = v->as_int();
+    if (w <= 0) {
+      t.raise_error(thread_error_t::e_bad_argument);
+      return;
+    }
+    // create a new array
+    value_t *array = t.gc().new_array(w);
+    t.get_stack().push(array);
+    return;
+  }
+  t.raise_error(thread_error_t::e_bad_argument);
+}
+
 void builtins_register(nano_t &nano) {
 
   nano.syscall_register("abs", 1);
@@ -270,6 +266,8 @@ void builtins_register(nano_t &nano) {
 
   nano.syscall_register("new_thread", -1);
   nano.syscall_register("wait", 1);
+
+  nano.syscall_register("new_array", 1);
 }
 
 void builtins_resolve(program_t &prog) {
@@ -296,6 +294,8 @@ void builtins_resolve(program_t &prog) {
 
   map["new_thread"]  = builtin_new_thread;
   map["wait"] = builtin_wait;
+
+  map["new_array"] = builtin_new_array;
 
   for (auto &itt : prog.syscalls()) {
     auto i = map.find(itt.name_);

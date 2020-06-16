@@ -22,6 +22,8 @@ enum ast_type_t {
   ast_exp_call_e,
   ast_exp_bin_op_e,
   ast_exp_unary_op_e,
+  ast_exp_array_init_e,
+  ast_exp_member_e,
 
   ast_stmt_if_e,
   ast_stmt_while_e,
@@ -30,12 +32,11 @@ enum ast_type_t {
   ast_stmt_assign_var_e,
   ast_stmt_assign_array_e,
   ast_stmt_call_e,
+  ast_stmt_assign_member_e,
+
   ast_decl_func_e,
   ast_decl_var_e,
   ast_decl_str_e,
-  ast_array_init_e,
-  ast_exp_member_e,
-  ast_stmt_assign_member_e
 };
 
 struct ast_node_t {
@@ -197,6 +198,28 @@ struct ast_exp_member_t: public ast_node_t {
   ast_node_t *decl;
 };
 
+struct ast_exp_array_init_t : public ast_node_t {
+  static const ast_type_t TYPE = ast_exp_array_init_e;
+
+  ast_exp_array_init_t(const token_t *name)
+    : ast_node_t(TYPE)
+    , name(name)
+  {}
+
+  void replace_child(const ast_node_t *which, ast_node_t *with) override {
+    for (int i = 0; i < expr.size(); ++i) {
+      if (expr[i] == which) {
+        expr[i] = with;
+      }
+    }
+  }
+
+  const token_t *name;
+  // index expression
+  std::vector<ast_node_t *> expr;
+};
+
+// XXX: should be called ast_exp_deref_t
 struct ast_exp_array_t : public ast_node_t {
   static const ast_type_t TYPE = ast_exp_array_e;
 
@@ -500,16 +523,6 @@ struct ast_stmt_assign_member_t : public ast_node_t {
   ast_decl_var_t *decl;
 };
 
-struct ast_array_init_t: public ast_node_t {
-  static const ast_type_t TYPE = ast_array_init_e;
-
-  ast_array_init_t()
-    : ast_node_t(TYPE)
-  {}
-
-  std::vector<const token_t *> item;
-};
-
 struct ast_decl_func_t : public ast_node_t {
   static const ast_type_t TYPE = ast_decl_func_e;
 
@@ -580,7 +593,6 @@ struct ast_decl_var_t : public ast_node_t {
     , scope(kind)
     , name(name)
     , expr(nullptr)
-    , size(nullptr)
     , is_const(false)
     , offset(0)
   {}
@@ -597,23 +609,8 @@ struct ast_decl_var_t : public ast_node_t {
     return scope == e_global;
   }
 
-  bool is_array() const {
-    return size != nullptr;
-  }
-
-  int32_t count() const {
-    if (!size) {
-      return 1;
-    }
-    else {
-      const auto *v = size->cast<ast_exp_lit_var_t>();
-      return v->val;
-    }
-  }
-
   void replace_child(const ast_node_t *which, ast_node_t *with) override {
     expr = (expr == which) ? with : expr;
-    size = (size == which) ? with : size;
   }
 
   scope_t scope;
@@ -622,8 +619,6 @@ struct ast_decl_var_t : public ast_node_t {
 
   // if var this could be valid
   ast_node_t *expr;
-  // size if array
-  ast_node_t *size;
 
   bool is_const;
 
@@ -676,7 +671,11 @@ struct ast_visitor_t {
   virtual void visit(ast_exp_lit_str_t* n) { (void)n; }
   virtual void visit(ast_exp_lit_float_t *n) { (void)n; }
   virtual void visit(ast_exp_none_t* n) { (void)n; }
-  virtual void visit(ast_array_init_t* n) { (void)n; }
+
+  virtual void visit(ast_exp_array_init_t* n) {
+    for (auto *c : n->expr)
+      dispatch(c);
+  }
 
   virtual void visit(ast_exp_array_t* n) {
     dispatch(n->index);
@@ -751,9 +750,6 @@ struct ast_visitor_t {
   }
 
   virtual void visit(ast_decl_var_t* n) {
-    if (n->size) {
-      dispatch(n->size);
-    }
     dispatch(n->expr);
   }
 
@@ -824,6 +820,12 @@ struct ast_printer_t : ast_visitor_t {
   void visit(ast_exp_call_t* n) override {
     indent_();
     fprintf(fd_, "ast_exp_call_t\n");
+    ast_visitor_t::visit(n);
+  }
+
+  void visit(ast_exp_array_init_t* n) override {
+    indent_();
+    fprintf(fd_, "ast_exp_array_init_t\n");
     ast_visitor_t::visit(n);
   }
 
@@ -916,15 +918,9 @@ struct ast_printer_t : ast_visitor_t {
     ast_visitor_t::visit(n);
   }
 
-  void visit(ast_array_init_t* n) override {
-    indent_();
-    fprintf(fd_, "ast_array_init_t {size: %d}\n", int(n->item.size()));
-    ast_visitor_t::visit(n);
-  }
-
   void visit(ast_decl_var_t* n) override {
     indent_();
-    fprintf(fd_, "ast_decl_var_t {name: %s, size:%d}\n", n->name->string(), int(n->count()));
+    fprintf(fd_, "ast_decl_var_t {name: %s}\n", n->name->string());
     ast_visitor_t::visit(n);
   }
 

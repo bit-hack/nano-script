@@ -196,9 +196,6 @@ struct sema_const_t: public ast_visitor_t {
   void visit(ast_decl_var_t *n) override {
     ast_visitor_t::visit(n);
     if (n->is_const) {
-      if (n->is_array()) {
-        errs_.const_array_invalid(*n->name);
-      }
       if (!n->expr) {
         errs_.const_needs_init(*n->name);
       }
@@ -227,20 +224,6 @@ struct sema_global_var_t : public ast_visitor_t {
     , strict_(false) {
   }
 
-  void visit(ast_array_init_t *n) override {
-    for (auto *t : n->item) {
-      switch (t->type_) {
-      case TOK_INT:
-      case TOK_NONE:
-      case TOK_STRING:
-      case TOK_FLOAT:
-        break;
-      default:
-        errs_.bad_array_init_value(*t);
-      }
-    }
-  }
-
   void visit(ast_decl_var_t *n) override {
 
     eval_t eval(errs_);
@@ -250,8 +233,6 @@ struct sema_global_var_t : public ast_visitor_t {
     switch (n->expr->type) {
     case ast_exp_none_e:
       n->expr = nullptr;
-      break;
-    case ast_array_init_e:
       break;
     case ast_exp_bin_op_e:
     case ast_exp_unary_op_e: {
@@ -356,9 +337,6 @@ struct sema_decl_annotate_t : public ast_visitor_t {
     if (!n->decl) {
       errs_.unknown_variable(*n->name);
     }
-    if (n->decl->is_array()) {
-      errs_.ident_is_array_not_var(*n->name);
-    }
   }
 
   void visit(ast_stmt_assign_array_t *n) override {
@@ -392,13 +370,7 @@ struct sema_decl_annotate_t : public ast_visitor_t {
       errs_.unknown_array(*n->name);
     }
     n->decl = found->cast<ast_decl_var_t>();
-    if (n->decl) {
-      if (!n->decl->is_array()) {
-        // runtime error as strings are also acceptable
-        // errs_.variable_is_not_array(*n->name);
-      }
-      return;
-    } else {
+    if (!n->decl) {
       if (found->cast<ast_decl_func_t>()) {
         errs_.expected_func_call(*n->name);
       } else {
@@ -427,9 +399,7 @@ struct sema_decl_annotate_t : public ast_visitor_t {
       errs_.unknown_identifier(*n->name);
     }
     if (const auto *v = n->decl->cast<ast_decl_var_t>()) {
-      if (v->is_array()) {
-        errs_.array_requires_subscript(*n->name);
-      }
+      // ?
     } else {
       if (n->decl->cast<ast_decl_func_t>()) {
         // this is fine
@@ -585,85 +555,6 @@ protected:
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
-// check for valid/compatable type usage for certain operations
-//
-struct sema_type_uses_t : public ast_visitor_t {
-
-  sema_type_uses_t(nano_t &nano)
-    : errs_(nano.errors()) {
-  }
-
-  void visit(ast_decl_var_t *var) override {
-    add_(var);
-  }
-
-  void visit(ast_stmt_assign_array_t *a) override {
-    const ast_decl_var_t *d = get_decl_(a->name->str_);
-    if (d && !d->is_array()) {
-      errs_.variable_is_not_array(*d->name);
-    }
-  }
-
-  void visit(ast_stmt_assign_var_t *v) override {
-    const ast_decl_var_t *d = get_decl_(v->name->str_);
-    if (d && d->is_array()) {
-      errs_.ident_is_array_not_var(*d->name);
-    }
-  }
-
-  void visit(ast_exp_ident_t *i) override {
-    const ast_decl_var_t *d = get_decl_(i->name->str_);
-    if (d && d->is_array()) {
-      errs_.ident_is_array_not_var(*d->name);
-    }
-  }
-
-  void visit(ast_stmt_if_t *stmt) override {
-    scope_.emplace_back();
-    ast_visitor_t::visit(stmt);
-    scope_.pop_back();
-  }
-
-  void visit(ast_stmt_while_t *stmt) override {
-    scope_.emplace_back();
-    ast_visitor_t::visit(stmt);
-    scope_.pop_back();
-  }
-
-  void visit(ast_decl_func_t *func) override {
-    scope_.emplace_back();
-    ast_visitor_t::visit(func);
-    scope_.pop_back();
-  }
-
-  void visit(ast_program_t *prog) override {
-    scope_.emplace_back();
-    ast_visitor_t::visit(prog);
-    scope_.pop_back();
-  }
-
-protected:
-  error_manager_t &errs_;
-  std::vector<std::set<const ast_decl_var_t *>> scope_;
-
-  void add_(const ast_decl_var_t *v) {
-    scope_.back().insert(v);
-  }
-
-  const ast_decl_var_t *get_decl_(const std::string &name) const {
-    for (const auto &s : scope_) {
-      for (const auto &n : s) {
-        if (n->name->str_ == name) {
-          return n;
-        }
-      }
-    }
-    return nullptr;
-  }
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-//
 // check call sites use the correct number of arguments
 //
 struct sema_num_args_t : public ast_visitor_t {
@@ -713,61 +604,6 @@ struct sema_num_args_t : public ast_visitor_t {
 };
 
 // ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-//
-// check for a valid array size
-//
-struct sema_array_size_t : public ast_visitor_t {
-
-  error_manager_t &errs_;
-  ast_t &ast_;
-
-  sema_array_size_t(nano_t &nano)
-    : errs_(nano.errors())
-    , ast_(nano.ast()) {
-  }
-
-  void visit(ast_decl_var_t *d) override {
-    if (!d->is_array()) {
-      return;
-    }
-    // size should be valid
-    if (d->size == nullptr) {
-      assert(!"ast_decl_var_t array needs size");
-    }
-
-    // ensure size is const expr
-    eval_t eval{errs_};
-    int32_t res = 0;
-    if (!eval.eval(d->size, res)) {
-      errs_.global_var_const_expr(*d->name);
-    }
-
-    // size should be resolved as literal int now
-    if (!d->size->is_a<ast_exp_lit_var_t>()) {
-      d->size = ast_.alloc<ast_exp_lit_var_t>(res);
-    }
-
-    // size should be a valid count
-    if (d->count() <= 1) {
-      errs_.array_size_must_be_greater_than(*d->name);
-    }
-    if (d->expr) {
-      if (auto i = d->expr->cast<ast_array_init_t>()) {
-        const int32_t space = d->count();
-        const int32_t inits = int32_t(i->item.size());
-        if (space < inits) {
-          errs_.too_many_array_inits(*d->name, inits, space);
-        }
-      }
-    }
-  }
-
-  void visit(ast_program_t *p) override {
-    ast_visitor_t::visit(p);
-  }
-};
-
-// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 void run_sema(nano_t &nano) {
   auto *prog = &(nano.ast().program);
   sema_decl_annotate_t(nano).visit(prog);
@@ -775,8 +611,6 @@ void run_sema(nano_t &nano) {
   sema_const_t(nano).visit(prog);
   sema_multi_decls_t(nano).visit(prog);
   sema_num_args_t(nano).visit(prog);
-  sema_type_uses_t(nano).visit(prog);
-  sema_array_size_t(nano).visit(prog);
 }
 
 } // namespace nano

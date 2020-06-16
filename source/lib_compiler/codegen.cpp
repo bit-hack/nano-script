@@ -139,7 +139,6 @@ struct codegen_pass_t: ast_visitor_t {
 
   void visit(ast_exp_ident_t* n) override {
     if (ast_decl_var_t *decl = n->decl->cast<ast_decl_var_t>()) {
-      assert(!decl->is_array());
       assert(!decl->is_const);
       get_decl_(decl, n->name);
       return;
@@ -159,6 +158,12 @@ struct codegen_pass_t: ast_visitor_t {
       return;
     }
     assert(!"unknown decl type");
+  }
+
+  void visit(ast_exp_array_init_t* n) override {
+    ast_visitor_t::visit(n);
+    assert(!n->expr.empty());
+    emit(INS_ARY_INIT, int32_t(n->expr.size()), n->name);
   }
 
   void visit(ast_exp_array_t* n) override {
@@ -466,28 +471,6 @@ struct codegen_pass_t: ast_visitor_t {
       // nothing to do for const variables
       return;
     }
-    // create an array
-    if (n->is_array()) {
-      emit(INS_NEW_ARY, n->count(), n->name);
-      set_decl_(n, n->name);
-#if 1
-      // if there is an array initalizer
-      if (const auto *init = n->expr->cast<ast_array_init_t>()) {
-        int32_t i = 0;
-        for (const auto &t : init->item) {
-          // value
-          emit(INS_NEW_INT, t->get_int(), t);
-          // index
-          emit(INS_NEW_INT, i++, t);
-          // get array
-          get_decl_(n, t);
-          // set element
-          emit(INS_SETA, t);
-        }
-      }
-#endif
-      return;
-    }
     // set variable
     assert(n->is_local());
     if (n->expr) {
@@ -540,10 +523,6 @@ protected:
       if (auto *d = n->cast<ast_decl_var_t>()) {
         if (d->is_const) {
           continue;
-        }
-        if (d->is_array()) {
-          emit(INS_NEW_ARY, d->count(), d->name);
-          emit(INS_SETG, offset, d->name);
         }
         ++offset;
       }
@@ -620,6 +599,7 @@ void codegen_pass_t::emit(instruction_e ins, int32_t o1, const token_t *t) {
   case INS_ICALL:
   case INS_GETM:
   case INS_SETM:
+  case INS_ARY_INIT:
     stream_.write8(uint8_t(ins));
     stream_.write32(o1);
     break;
