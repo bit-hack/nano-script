@@ -175,21 +175,6 @@ void parser_t::parse_lhs_() {
         break;
       }
 
-      // <TOK_IDENT> [ ... ]
-      if (stream_.found(TOK_LBRACKET)) {
-
-        // XXX: move out of here... why?
-        // so we can array access other things than TOK_IDENT?
-
-        // array access
-        ast_exp_array_t *expr = ast.alloc<ast_exp_array_t>(t);
-        expr->index = parse_expr_();
-        exp_stack_.push_back(expr);
-        // expect a closing bracket
-        stream_.pop(TOK_RBRACKET);
-        break;
-      }
-
       // <TOK_IDENT>
       {
         // load a local/global
@@ -234,6 +219,7 @@ void parser_t::parse_lhs_() {
 
 void parser_t::parse_expr_ex_(uint32_t tide) {
   token_stream_t &stream_ = nano_.lexer().stream();
+  auto &ast = nano_.ast();
 
   // format:
   //    ['not'] [-] <lhs> [ '(' <expr> ')' ]
@@ -261,13 +247,19 @@ void parser_t::parse_expr_ex_(uint32_t tide) {
 
   while (true) {
 
-#if 0
-    // XXX: parse [] here
+    // [ ... ]
     if (const token_t *t = stream_.found(TOK_LBRACKET)) {
-      // TODO
+      // array access
+      ast_node_t *lhs = exp_stack_.back();
+      exp_stack_.pop_back();
+
+      ast_exp_deref_t *expr = ast.alloc<ast_exp_deref_t>(lhs, t);
+      expr->index = parse_expr_();
+      exp_stack_.push_back(expr);
+      // expect a closing bracket
+      stream_.pop(TOK_RBRACKET);
       continue;
     }
-#endif
 
     // <EXPR> ( ... )
     if (const token_t *t = stream_.found(TOK_LPAREN)) {
@@ -679,6 +671,7 @@ ast_node_t* parser_t::parse_function_(const token_t &t) {
   return func;
 }
 
+#if 0
 ast_node_t* parser_t::parse_array_get_(const token_t &name) {
   token_stream_t &stream_ = nano_.lexer().stream();
   auto &ast = nano_.ast();
@@ -687,7 +680,7 @@ ast_node_t* parser_t::parse_array_get_(const token_t &name) {
   //                  V
   //    <TOK_IDENT> [   <expr> ]
 
-  auto *expr = ast.alloc<ast_exp_array_t>(&name);
+  auto *expr = ast.alloc<ast_exp_deref_t>(&name);
   expr->index = parse_expr_();
 
   // expect a closing bracket
@@ -695,6 +688,7 @@ ast_node_t* parser_t::parse_array_get_(const token_t &name) {
 
   return expr;
 }
+#endif
 
 ast_node_t* parser_t::parse_array_set_(const token_t &name) {
   token_stream_t &stream_ = nano_.lexer().stream();

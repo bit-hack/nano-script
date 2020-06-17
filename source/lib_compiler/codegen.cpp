@@ -166,16 +166,10 @@ struct codegen_pass_t: ast_visitor_t {
     emit(INS_ARY_INIT, int32_t(n->expr.size()), n->name);
   }
 
-  void visit(ast_exp_array_t* n) override {
-    ast_decl_var_t *decl = n->decl;
-    assert(decl);
-    assert(!decl->is_const);
-    // emit the array index
+  void visit(ast_exp_deref_t* n) override {
     dispatch(n->index);
-    // load the array object
-    get_decl_(decl, n->name);
-    // index the array
-    emit(INS_GETA, n->name);
+    dispatch(n->lhs);
+    emit(INS_DEREF, n->token);
   }
 
   void visit(ast_exp_call_t* n) override {
@@ -566,7 +560,7 @@ void codegen_pass_t::emit(instruction_e ins, const token_t *t) {
   case INS_EQ:
   case INS_NEG:
   case INS_SETA:
-  case INS_GETA:
+  case INS_DEREF:
   case INS_NEW_NONE:
     stream_.write8(uint8_t(ins));
     break;

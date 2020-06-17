@@ -220,25 +220,26 @@ struct ast_exp_array_init_t : public ast_node_t {
 };
 
 // XXX: should be called ast_exp_deref_t
-struct ast_exp_array_t : public ast_node_t {
+struct ast_exp_deref_t : public ast_node_t {
   static const ast_type_t TYPE = ast_exp_array_e;
 
-  ast_exp_array_t(const token_t *name)
+  ast_exp_deref_t(ast_node_t *lhs, const token_t *t)
     : ast_node_t(TYPE)
-    , name(name)
+    , token(t)
+    , lhs(lhs)
     , index(nullptr)
-    , decl(nullptr)
   {}
 
   void replace_child(const ast_node_t *which, ast_node_t *with) override {
     index = (which == index) ? with : index;
+    lhs = (which == lhs) ? with : lhs;
   }
 
-  const token_t *name;
+  const token_t *token;
+  // the object we are dereferencing
+  ast_node_t *lhs;
   // index expression
   ast_node_t *index;
-  // where this was declared
-  ast_decl_var_t *decl;
 };
 
 struct ast_stmt_call_t : public ast_node_t {
@@ -677,7 +678,8 @@ struct ast_visitor_t {
       dispatch(c);
   }
 
-  virtual void visit(ast_exp_array_t* n) {
+  virtual void visit(ast_exp_deref_t* n) {
+    dispatch(n->lhs);
     dispatch(n->index);
   }
 
@@ -811,9 +813,9 @@ struct ast_printer_t : ast_visitor_t {
     ast_visitor_t::visit(n);
   }
 
-  void visit(ast_exp_array_t* n) override {
+  void visit(ast_exp_deref_t* n) override {
     indent_();
-    fprintf(fd_, "ast_exp_array_t {name: %s}\n", n->name->string());
+    fprintf(fd_, "ast_exp_deref_t\n");
     ast_visitor_t::visit(n);
   }
 

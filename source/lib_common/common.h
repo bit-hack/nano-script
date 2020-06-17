@@ -19,7 +19,7 @@ struct ast_block_t;
 struct ast_node_t;
 struct ast_program_t;
 struct ast_exp_ident_t;
-struct ast_exp_array_t;
+struct ast_exp_deref_t;
 struct ast_exp_call_t;
 struct ast_exp_bin_op_t;
 struct ast_exp_unary_op_t;

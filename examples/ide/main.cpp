@@ -27,39 +27,12 @@ SDL_GLContext g_glcontext = nullptr;
 TextEditor g_editor;
 bool g_running = true;
 
-#if 1
 std::string g_init_source = R"(
 function main()
-  var test[3] = 1, 2, 3
+  var test = [1, 2, 3]
   return test[2]
 end
 )";
-#else
-std::string g_init_source = R"(
-var seed = 12345
-
-function rand()
-  seed = seed * 1664525 + 1013904223
-  return abs(seed) 
-end
-
-function main()
-    var d[4]
-    d[0] = 0
-    d[1] = 1
-    d[2] = 2
-    d[3] = 3
-    var i
-    for (i = 0 to 4)
-        var j = rand() % 4
-        var t = d[j]
-        d[j] = d[i]
-        d[i] = t
-    end
-    print(d[0] + ", " + d[1] + ", " + d[2] + ", " + d[3])
-end
-)";
-#endif
 
 nano::program_t g_program;
 std::unique_ptr<nano::vm_t> g_vm;

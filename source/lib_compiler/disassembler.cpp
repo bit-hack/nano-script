@@ -22,7 +22,7 @@ const char *gMnemonic[] = {
   "INS_NEW_INT", "INS_NEW_STR", "INS_NEW_ARY", "INS_NEW_NONE", "INS_NEW_FLT",
   "INS_NEW_FUNC", "INS_NEW_SYSCALL", "INS_LOCALS", "INS_GLOBALS",
   // local variables
-  "INS_GETV", "INS_SETV", "INS_GETA", "INS_SETA",
+  "INS_GETV", "INS_SETV", "INS_DEREF", "INS_SETA",
   // global variables
   "INS_GETG", "INS_SETG",
   // member access
@@ -71,7 +71,7 @@ int32_t disassembler_t::disasm(const uint8_t *ptr, std::string &out) const {
   case INS_GEQ:
   case INS_EQ:
   case INS_SETA:
-  case INS_GETA:
+  case INS_DEREF:
   case INS_NEW_NONE:
     out = gMnemonic[op];
     return i;

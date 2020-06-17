@@ -120,7 +120,8 @@ struct op_decl_elim_t: public ast_visitor_t {
     ast_visitor_t::visit(n);
   }
 
-  void visit(ast_exp_array_t *n) override {
+#if 0
+  void visit(ast_exp_deref_t *n) override {
     if (!removing_) {
       // find the decl
       const ast_decl_var_t *decl = n->decl->cast<const ast_decl_var_t>();
@@ -130,6 +131,7 @@ struct op_decl_elim_t: public ast_visitor_t {
     }
     ast_visitor_t::visit(n);
   }
+#endif
 
   void visit(ast_program_t *p) override {
     uses_.clear();

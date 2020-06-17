@@ -123,7 +123,7 @@ enum instruction_e {
   //    index = pop()
   //    array = pop()
   //    push( array[ index ] )
-  INS_GETA,
+  INS_DEREF,
 
   // set array element
   //    value = pop()
