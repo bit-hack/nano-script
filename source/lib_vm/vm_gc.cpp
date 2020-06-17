@@ -123,10 +123,20 @@ void value_gc_t::trace(value_t **list, size_t num) {
   for (size_t i = 0; i < num; ++i) {
     value_t *&v = list[i];
 
+    // a value may be new yet contain referenced to old data therefore we must
+    // visit these nodes regardless
+    switch (v->type()) {
+    case val_type_array:
+      // collect child elements
+      const int32_t size = v->array_size();
+      trace(v->array(), size);
+    }
+
     // already collected so skip to avoid cyclic trace loops
     if (to.owns(v)) {
       continue;
     }
+    assert(v == nullptr || space_from().owns(v));
 
     switch (v->type()) {
     case val_type_none: {
@@ -164,11 +174,12 @@ void value_gc_t::trace(value_t **list, size_t num) {
       // point our pointers will point to the wrong half space
       if (value_t *x = forward_find(v)) {
         list[i] = x;
-        continue;
+        break;
       }
-      // collect child elements
+
+      // may want to swap in the new pointer prior to trace to break cycles
+
       const int32_t size = v->array_size();
-      trace(v->array(), size);
       // move into to space
       value_t *n = to.alloc<value_t>(size * sizeof(value_t *));
       n->type_ = v->type();

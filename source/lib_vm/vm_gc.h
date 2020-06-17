@@ -36,6 +36,9 @@ struct arena_t {
 
   void clear() {
     head_ = 0;
+#if 0
+    memset(data_.data(), 0xDE, data_.size());
+#endif
   }
 
   size_t size() const {
@@ -126,6 +129,7 @@ protected:
   }
 
   void forward_add(const value_t *key, value_t *val) {
+    assert(forward_.count(key) == 0);
     forward_[key] = val;
   }
 

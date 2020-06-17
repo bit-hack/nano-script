@@ -266,9 +266,11 @@ void lang_run() {
   }
 
   bool will_finish = false;
+#if 0
   if (g_vm && !g_vm->finished()) {
     will_finish = true;
   }
+#endif
 
   if (g_run_option & RUN_CONTINUE || will_finish) {
     uint32_t max_cycles = 128 * 1024;

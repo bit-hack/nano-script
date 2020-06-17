@@ -609,7 +609,14 @@ void thread_t::do_INS_SETA_() {
     raise_error(thread_error_t::e_bad_array_bounds);
     return;
   }
-  a->array()[index] = gc_.copy(*v);
+  if (v->is_a<val_type_array>()) {
+    // we dont want to copy in this case since arrays are 'reference' type
+    // objects. perhaps this can be copied into gc_.copy() soon.
+    a->array()[index] = v;
+  }
+  else {
+    a->array()[index] = gc_.copy(*v);
+  }
 }
 
 void thread_t::do_INS_SETM_() {
@@ -821,6 +828,7 @@ bool thread_t::step_inst() {
   if (finished_) {
     return false;
   }
+  vm_.gc_collect();
   step_imp_();
   return !has_error();
 }

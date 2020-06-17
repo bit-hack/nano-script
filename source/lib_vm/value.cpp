@@ -44,14 +44,17 @@ void value_stack_t::set_error(thread_error_t error) {
 }
 
 std::string value_t::to_string() const {
+  char temp[32] = {'\0'};
   switch (this ? type_ : val_type_none) {
   case val_type_int:     return std::to_string(v);
   case val_type_float:   return std::to_string(f);
   case val_type_string:  return "\"" + std::string(string()) + "\"";
-  case val_type_array:   return "array@" + std::to_string((uint64_t)(void*)this);
   case val_type_none:    return "none";
   case val_type_func:    return "function@" + std::to_string(v);
   case val_type_syscall: return "syscall@" + std::to_string(v);
+  case val_type_array:
+    snprintf(temp, sizeof(temp), "%p", this);
+    return std::string("array@") + temp;
   default:
     assert(!"unknown");
     return "";
