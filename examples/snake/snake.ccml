@@ -3,8 +3,8 @@ const height = 128
 
 const max_segs = 32
 
-var snake_x[max_segs]
-var snake_y[max_segs]
+var snake_x = new_array(max_segs)
+var snake_y = new_array(max_segs)
 var head
 var dir
 var grow

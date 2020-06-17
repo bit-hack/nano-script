@@ -3,7 +3,7 @@ const height = 64
 const area = width * height
 
 var toggle = 0
-var cell[area * 2]
+var cell = new_array(area * 2)
 
 function draw()
   var i = 0

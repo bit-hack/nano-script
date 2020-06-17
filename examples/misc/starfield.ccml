@@ -3,9 +3,9 @@ const height = 128
 
 const num = 128
 
-var star_x[num]
-var star_y[num]
-var star_z[num]
+var star_x = new_array(num)
+var star_y = new_array(num)
+var star_z = new_array(num)
 
 function init()
   var i

@@ -354,6 +354,7 @@ int main(int argc, char **argv) {
     }
   }
 
+  builtins_resolve(program);
   program.syscall_resolve("cls",     vm_cls);
   program.syscall_resolve("rand",    vm_rand);
   program.syscall_resolve("video",   vm_video);

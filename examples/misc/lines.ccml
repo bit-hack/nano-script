@@ -2,10 +2,10 @@ const width  = 128
 const height = 128
 const count  = 16
 
-var  x[count]
-var  y[count]
-var dx[count]
-var dy[count]
+var  x = new_array(count)
+var  y = new_array(count)
+var dx = new_array(count)
+var dy = new_array(count)
 
 function init()
   var i

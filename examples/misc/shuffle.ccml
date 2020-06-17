@@ -1,9 +1,5 @@
 function main()
-    var d[4]
-    d[0] = 0
-    d[1] = 1
-    d[2] = 2
-    d[3] = 3
+    var d = [0, 1, 2, 3]
     var i
     for (i = 0 to 4)
         var j = rand() % 4
