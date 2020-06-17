@@ -12,7 +12,7 @@ function main()
 
   var size = 16
 
-  var data[16]
+  var data = new_array(size)
   var i = 0
 
   # fill array with random data

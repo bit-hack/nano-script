@@ -1,0 +1,15 @@
+#expect 1235
+
+function foo()
+  var a = new_array(3)
+  var b = a
+  a[1] = 1
+  b[2] = 1234
+  return a
+end
+
+function main()
+  var x = foo()
+  var y = x
+  return x[1] + y[2]
+end

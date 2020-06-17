@@ -1,6 +1,6 @@
 #expect 3
 
 function main()
-  var test[3]
+  var test = new_array(3)
   return test.length
 end

@@ -1,0 +1,15 @@
+#expect 3
+
+function x()
+  return 1
+end
+
+function y()
+  return 2
+end
+
+function main()
+  var a = [ x, y ]
+  var b = [ a[0](), a[1]() ]
+  return b[0] + b[1]
+end

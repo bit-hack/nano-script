@@ -1,7 +1,7 @@
 #expect testcase
 
 function main()
-  var x[2]
+  var x = new_array(2)
   x[0] = "test"
   x[1] = "case"
   puts(x[0] + x[1])

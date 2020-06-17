@@ -1,6 +1,6 @@
 #expect helloworld
 
-var a[2] = "hello", "world"
+var a = ["hello", "world"]
 
 function main()
     return a[0] + a[1]

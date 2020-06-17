@@ -1,7 +1,7 @@
 #expect 1234
 
 function main()
-  var my_array[4]
+  var my_array = new_array(4)
   my_array[2] = 1234
   return my_array[2]
 end

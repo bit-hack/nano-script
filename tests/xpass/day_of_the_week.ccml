@@ -1,6 +1,6 @@
 #expect friday
 
-var name[7] = "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"
+var name = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
 
 function wday(year, month, day)
  	var adjustment = (14 - month) / 12

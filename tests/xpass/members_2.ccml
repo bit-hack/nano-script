@@ -1,7 +1,8 @@
 #expect 32
 
-var test[30]
+var test
 
 function main()
+  test = new_array(30)
   return test.length + 2
 end

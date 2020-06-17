@@ -3,7 +3,7 @@
 # via sieve of eratosthenes
 
 var size = 512
-var data[512]
+var data
 
 function fill()
   var i = size
@@ -42,6 +42,7 @@ function check()
 end
 
 function main()
+  data = new_array(size)
   fill()
   seive()
   check()

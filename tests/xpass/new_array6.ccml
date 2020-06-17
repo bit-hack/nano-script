@@ -1,0 +1,11 @@
+#expect 4
+
+function main()
+  var test = [1, 2, 3]
+  test[1] = test
+  var a = test[1]
+  var b = a[1]
+  var c = b[1]
+  var d = c[1]
+  return d[0] + d[2]
+end

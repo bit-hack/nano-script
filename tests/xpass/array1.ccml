@@ -1,7 +1,7 @@
 #expect 55
 
 var size = 10
-var a[10]
+var a
 
 function init()
     var i = 0
@@ -22,6 +22,7 @@ function sum()
 end
 
 function main()
+    a = new_array(size)
     init()
     return sum()
 end

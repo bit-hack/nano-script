@@ -1,6 +1,6 @@
 #expect 1234
 
 function main()
-  var test[3] = 1234
+  var test = [1234]
   return test[0]
 end

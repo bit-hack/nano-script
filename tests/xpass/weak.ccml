@@ -1,7 +1,6 @@
 #expect Hello World
 function main()
-  var f[16]
+  var f = new_array(16)
   f[1] = "Hello World"
   return f[1]
 end
-

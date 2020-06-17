@@ -9,7 +9,7 @@ function b()
 end
 
 function main()
-  var x[2]
+  var x = new_array(2)
   x[0] = b()
   return x[0]()
 end

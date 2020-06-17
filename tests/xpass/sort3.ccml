@@ -10,7 +10,7 @@ function rng()
 end
 
 var size = 16
-var arr[16]
+var arr
 
 function swap(a, b)
     var t = arr[a]
@@ -48,6 +48,8 @@ function quickSort(low, high)
 end
 
 function main()
+
+  arr = new_array(size)
 
   var i
   var j

@@ -11,7 +11,7 @@
 var width  = 64
 var height = 64
 
-var cell[4096]
+var cell #[4096]
 
 function draw()
   var area = width * height
@@ -46,6 +46,7 @@ function setup()
 end
 
 function main()
+  cell = new_array(4096)
   setup()
   draw()
 end

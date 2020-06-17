@@ -1,9 +1,10 @@
 #expect hey hey 3
 
 const size = 10 + 2
-var arr[size + 1]
+var arr
 
 function main()
+  arr = new_array(size + 1)
   var i
   for (i = 0 to size)
     arr[i] = "hey hey " + i

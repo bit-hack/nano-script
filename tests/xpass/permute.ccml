@@ -1,7 +1,7 @@
 #expect some words this is
 
-var words[4] = "this", "is", "some", "words"
-var index[4] = 2, 3, 0, 1
+var words = ["this", "is", "some", "words"]
+var index = [2, 3, 0, 1]
 
 function main()
     var out = ""
