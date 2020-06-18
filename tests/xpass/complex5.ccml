@@ -1,0 +1,9 @@
+#expect 3
+
+function a(b)
+  return b
+end
+
+function main()
+  return a([1, 2, 3])[2]
+end

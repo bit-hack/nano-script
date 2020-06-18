@@ -541,7 +541,7 @@ void thread_t::do_INS_SETG_() {
   }
 }
 
-void thread_t::do_INS_GETA_() {
+void thread_t::do_INS_DEREF_() {
   value_t *a = stack_.pop();
   value_t *i = stack_.pop();
 
@@ -770,7 +770,7 @@ void thread_t::step_imp_() {
   case INS_SETV:     do_INS_SETV_();       break;
   case INS_GETG:     do_INS_GETG_();       break;
   case INS_SETG:     do_INS_SETG_();       break;
-  case INS_DEREF:     do_INS_GETA_();       break;
+  case INS_DEREF:    do_INS_DEREF_();      break;
   case INS_SETA:     do_INS_SETA_();       break;
   case INS_GETM:     do_INS_GETM_();       break;
   case INS_SETM:     do_INS_SETM_();       break;

@@ -1,0 +1,12 @@
+#expect 15
+
+function a(x, y)
+  x[0] = 7
+  y[1] = 8
+end
+
+function main()
+  var x = [1, 2, 3]
+  a(x, x)
+  return x[0] + x[1]
+end

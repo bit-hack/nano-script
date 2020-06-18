@@ -1,0 +1,22 @@
+#expect helloworld
+
+function a()
+  return "hello"
+end
+
+function b()
+  return "world"
+end
+
+function x()
+  return [a, b]
+end
+
+function main()
+  var s = ""
+  var i
+  for (i = 0 to 2)
+    s += x()[i]()
+  end
+  print(s)
+end

@@ -158,6 +158,7 @@ int main(int argc, char **argv) {
     nano.syscall_register("puts", 1);
     nano.syscall_register("gets", 0);
     nano.syscall_register("rand", 0);
+    nano.syscall_register("print", 1);
 
     // build the program
     nano::error_t error;
@@ -177,6 +178,7 @@ int main(int argc, char **argv) {
   program.syscall_resolve("puts", vm_puts);
   program.syscall_resolve("gets", vm_gets);
   program.syscall_resolve("rand", vm_rand);
+  program.syscall_resolve("print", vm_puts);
 
   builtins_resolve(program);
   program.serial_save("temp.bin");

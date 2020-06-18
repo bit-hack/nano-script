@@ -1,0 +1,12 @@
+#expect 6
+
+var c = 0
+
+function main()
+  var x = [1, 4]
+  var i
+  for (i = x[0] to x[1])
+    c += i
+  end
+  return c
+end

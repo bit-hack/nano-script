@@ -1,0 +1,16 @@
+#expect helloworld
+
+function foo()
+  return "hello"
+end
+
+function bar()
+  return "world"
+end
+
+var a = foo()
+var b = bar()
+
+function main()
+  print(a + b)
+end

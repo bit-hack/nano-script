@@ -1,0 +1,11 @@
+#expect 3
+
+function x(a, b)
+  return [a, b]
+end
+
+var y = x(1, 2)
+
+function main()
+  return y[0] + y[1]
+end
